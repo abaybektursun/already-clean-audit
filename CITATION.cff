@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+type: dataset
+title: 'An independent, pre-registered audit of "Neural Networks Are Already Clean": neuron-pole explanations on three open models and a developmental test on OLMo-3-7B checkpoints'
+authors:
+  - family-names: Bektursun
+    given-names: Abay
+url: "https://github.com/abaybektursun/already-clean-audit"
+license: CC-BY-4.0
+preferred-citation:
+  type: generic
+  title: 'An independent, pre-registered audit of "Neural Networks Are Already Clean": neuron-pole explanations on three open models and a developmental test on OLMo-3-7B checkpoints'
+  authors:
+    - family-names: Bektursun
+      given-names: Abay
+  year: 2026
+  url: "https://github.com/abaybektursun/already-clean-audit"
+  notes: "Pre-registration tag already-clean-freeze-2026-10-20 (commit dc18799a); metrics.json sha256 a95bfa57bfe65246"
