@@ -1,0 +1,313 @@
+{
+ "model_key": "Q4B",
+ "arm": 2,
+ "d_p": 32.0,
+ "model_reasons": [],
+ "g_n": {
+  "n_contributing": 80,
+  "n_drawn": 80,
+  "need": 56,
+  "pass": true,
+  "failing_input": {
+   "n": 55,
+   "fails": true
+  }
+ },
+ "rows": {
+  "H_suff": {
+   "label": "SUPPORTED, interval above chance 1/3, interval above alpha = 0 (paired) [R-pass 0.95, R-equiv 0.00; no room for equivalence] [coherence gate not shown to work]",
+   "label_if_not_cancelled": null,
+   "o_dp": {
+    "est": 0.53125,
+    "lo": 0.425,
+    "hi": 0.6375,
+    "n": 80,
+    "n_finite": 10000
+   },
+   "paired_minus_alpha0": {
+    "est": 0.1875,
+    "lo": 0.05625,
+    "hi": 0.325,
+    "n": 80,
+    "n_finite": 10000
+   }
+  },
+  "H_pred_agree": {
+   "label": "AGREE ABOVE DISAGREE, BELOW 2X, interval above ratio 1, interval crosses ratio 2 [R-pass 0.38, R-equiv 0.00; underpowered for a direction; no room for equivalence] [coherence gate not shown to work]",
+   "label_if_not_cancelled": null,
+   "R": {
+    "est": 1.5178907721280601,
+    "lo": 1.003260655645524,
+    "hi": 2.2040907029478456,
+    "n": 80,
+    "n_finite": 10000
+   },
+   "difference": {
+    "est": 0.24641577060931896,
+    "lo": 0.001711187541419428,
+    "hi": 0.47292303284950343,
+    "n": 80,
+    "n_finite": 10000
+   }
+  },
+  "H_pred_conf": {
+   "label": "NOT SHOWN, interval crosses 0 [R-pass 0.93, R-equiv 0.00; no room for equivalence] [coherence gate not shown to work]",
+   "label_if_not_cancelled": null,
+   "spearman": {
+    "est": -0.03311063443930494,
+    "lo": -0.24787549904011114,
+    "hi": 0.1857864657545232,
+    "n": 80,
+    "n_finite": 10000
+   }
+  },
+  "H_depth": {
+   "label": "NOT SHOWN, interval crosses 0 [R-pass 0.74, R-equiv 0.00; rule fires on the null; underpowered for a direction; no room for equivalence] [coherence gate not shown to work]",
+   "label_if_not_cancelled": null,
+   "diff_t2_minus_t0": {
+    "est": 0.06942496493688644,
+    "lo": -0.19047619047619047,
+    "hi": 0.32608695652173914,
+    "n": 80,
+    "n_finite": 10000
+   }
+  }
+ },
+ "secondary": {
+  "other_doses": {
+   "0.0": {
+    "n": 80,
+    "est": 0.34375,
+    "lo": 0.26234375000000015,
+    "hi": 0.43125
+   },
+   "2.0": {
+    "n": 80,
+    "est": 0.3375,
+    "lo": 0.25,
+    "hi": 0.425
+   },
+   "4.0": {
+    "n": 80,
+    "est": 0.39375,
+    "lo": 0.30625,
+    "hi": 0.475
+   }
+  },
+  "one_minus_matched_unk_dp": {
+   "n": 40,
+   "est": 0.0,
+   "lo": -0.2,
+   "hi": 0.1875
+  },
+  "by_explainer": {
+   "anthropic/claude-opus-5-5": {
+    "n": 58,
+    "est": 0.49137931034482757,
+    "lo": 0.3793103448275862,
+    "hi": 0.603448275862069
+   },
+   "anthropic/claude-sonnet-5-5": {
+    "n": 22,
+    "est": 0.6363636363636364,
+    "lo": 0.45454545454545453,
+    "hi": 0.8181818181818182
+   }
+  },
+  "cells_not_shown_to_fire": [],
+  "guesses": [
+   {
+    "pole": "L01N7930-",
+    "prompt_i": 0,
+    "guess": "Degenerate verbatim repetition and looping of phrases (e.g. 'the train was delayed', 'Our mission is to provide quality education'), with redundant clauses, 'and then' chaining, and repeated near-identical list items.",
+    "label": "Fires on the second piece of a familiar dotted or slashed name inside URLs, file paths and code imports, i.e. the segment that follows a known host or namespace prefix, such as \".blogspot\" in \"1.bp.blogspot.com\", \".net\" in \"jsfiddle.net/…\", \"/photos\" in \"images.pexels.com/photos/…\", \"/bin\" in \"#!/usr/bin/env\", \".Drawing\" in \"using System.Drawing;\" and \"/material\" in \"package:flutter/material.dart\"."
+   },
+   {
+    "pole": "L01N7930-",
+    "prompt_i": 1,
+    "guess": "Degenerate repetition loops of phrases (\"of her of her\", \"The author of the story has been presented\"), with dropped words and glitchy grammar; repeated sentence templates and runaway digit strings.",
+    "label": "Fires on the second piece of a familiar dotted or slashed name inside URLs, file paths and code imports, i.e. the segment that follows a known host or namespace prefix, such as \".blogspot\" in \"1.bp.blogspot.com\", \".net\" in \"jsfiddle.net/…\", \"/photos\" in \"images.pexels.com/photos/…\", \"/bin\" in \"#!/usr/bin/env\", \".Drawing\" in \"using System.Drawing;\" and \"/material\" in \"package:flutter/material.dart\"."
+   },
+   {
+    "pole": "L02N4675+",
+    "prompt_i": 0,
+    "guess": "Degenerate repetition loops: the same sentence or digit/character repeated over and over, plus meta-text about quoted input, numbers, and test sentences, with an assistant-style tone.",
+    "label": "Fires on the middle or final word-piece of a word that the tokenizer has split into several pieces, especially when the word is in ALL CAPS (FUKUSHIMA, VULNERABLE, MASSACHUSETTS, DINOSAURS, ARDUINO), is a lowercase brand or URL compound (Brainly, jstor.org, christmaslover.nl), or is a rare word (itinerant, subtlety, Tailormade); it does not fire on common words that are a single whole token."
+   },
+   {
+    "pole": "L02N4675+",
+    "prompt_i": 1,
+    "guess": "Degenerate repetition loops: the same short declarative sentence repeated verbatim (\"It is not a poem\", \"I am a student\", \"He is on the move\"), with simple copular 'is/am' and 'not' phrasing.",
+    "label": "Fires on the middle or final word-piece of a word that the tokenizer has split into several pieces, especially when the word is in ALL CAPS (FUKUSHIMA, VULNERABLE, MASSACHUSETTS, DINOSAURS, ARDUINO), is a lowercase brand or URL compound (Brainly, jstor.org, christmaslover.nl), or is a rare word (itinerant, subtlety, Tailormade); it does not fire on common words that are a single whole token."
+   },
+   {
+    "pole": "L02N6522-",
+    "prompt_i": 0,
+    "guess": "Degenerate repetition and loops of the same phrase or token sequence (e.g. counting numbers, repeated lines), plus lists of items, code/log fragments and stop-word lists, in mixed topics and languages.",
+    "label": "Fires on the predictable word that completes a fixed website boilerplate phrase, such as 'Additional info for', 'Similar Topics', 'share|improve this answer', 'Sign up to view the full content', 'View Full Document', 'Transcript of', 'Unformatted text preview' or 'jstor.org', where the next token is fully determined by site template text rather than by the content."
+   },
+   {
+    "pole": "L02N6522-",
+    "prompt_i": 1,
+    "guess": "Essay-style prose on US history, law and politics (Supreme Court, civil rights, Constitution, academic freedom), plus first-person opinion statements ('I feel', 'I would like to') and repetitive phrasing.",
+    "label": "Fires on the predictable word that completes a fixed website boilerplate phrase, such as 'Additional info for', 'Similar Topics', 'share|improve this answer', 'Sign up to view the full content', 'View Full Document', 'Transcript of', 'Unformatted text preview' or 'jstor.org', where the next token is fully determined by site template text rather than by the content."
+   },
+   {
+    "pole": "L03N1314+",
+    "prompt_i": 0,
+    "guess": "Degenerate repetitive loops and meta-text formatting: triple-backtick code fences, instructions/rewrite tasks, one-word-per-line fragments, repeated phrases or sentences, plus tech/documentation content and a Russian passage.",
+    "label": "Fires on the word or word-piece that comes right after a long glued-together identifier (snake_case like user_additional_info or xtreme_binary_robot, CamelCase like MatematicaMaluca or WizardsOfWaverlyPlace, or run-together usernames and URL names), especially when that next word restates part of the identifier, as in \"Estrella estrella;\", \"IZoo zoo\", \"auth_user auth_user_pkey\" or \"[new_royalslider id=\"."
+   },
+   {
+    "pole": "L03N1314+",
+    "prompt_i": 1,
+    "guess": "Repetitive looping of the same phrase or sentence, in first-person reflective blog-like prose (\"I've been thinking a lot about what it means\", \"I don't like this\"), with 'written yesterday' framing and degenerate repetition.",
+    "label": "Fires on the word or word-piece that comes right after a long glued-together identifier (snake_case like user_additional_info or xtreme_binary_robot, CamelCase like MatematicaMaluca or WizardsOfWaverlyPlace, or run-together usernames and URL names), especially when that next word restates part of the identifier, as in \"Estrella estrella;\", \"IZoo zoo\", \"auth_user auth_user_pkey\" or \"[new_royalslider id=\"."
+   },
+   {
+    "pole": "L03N6693+",
+    "prompt_i": 0,
+    "guess": "Rambling, repetitive low-coherence text of mixed genres; long run-on lists with repeated 'and a ... in the corner' clauses, numeric digit strings, and looping phrases like 'he's not going to make it'.",
+    "label": "Fires on the word piece that comes right after a 'has'/'hes'/'hass' fragment inside a longer word, especially surnames and names split as Has+lam (Haslam), Hes+lem, Ghas+em (Ghasem), Has+le, Has+ler and the like, and also the 'hassle/hassled/hassling' word split as hass+le; the whole word 'has' or 'hassle' as one token does not fire."
+   },
+   {
+    "pole": "L03N6693+",
+    "prompt_i": 1,
+    "guess": "First-person blog-style narrative prose with personal anecdotes, dates and times, curly apostrophes, double spaces after periods, and topics like history, WWI/WWII, Hindenburg, Andromeda, books and events.",
+    "label": "Fires on the word piece that comes right after a 'has'/'hes'/'hass' fragment inside a longer word, especially surnames and names split as Has+lam (Haslam), Hes+lem, Ghas+em (Ghasem), Has+le, Has+ler and the like, and also the 'hassle/hassled/hassling' word split as hass+le; the whole word 'has' or 'hassle' as one token does not fire."
+   }
+  ]
+ },
+ "g_judge2": {
+  "label_prompted_rate": 1.0,
+  "n_label_poles": 40,
+  "floor": 0.6,
+  "alpha0_rate": 0.3958333333333333,
+  "ceiling": 0.5,
+  "failing_input": {
+   "alpha0_rate_same_poles": 0.3125,
+   "fails": true
+  },
+  "pass": true,
+  "reasons": []
+ },
+ "g_coh": {
+  "band": {
+   "lo": 0.3697065591026735,
+   "hi": 4.997431646057521,
+   "hi_alpha0": 1.9115263400709406,
+   "hi_natural": 4.997431646057521,
+   "n_alpha0": 75,
+   "n_alpha0_empty": 0,
+   "n_natural": 256
+  },
+  "failing_inputs": {
+   "repeated": {
+    "nll": 0.2741260525411538,
+    "collapsed": true
+   },
+   "random": {
+    "nll": 13.546220709880194,
+    "collapsed": true
+   }
+  },
+  "passing_inputs": {
+   "natural_test": {
+    "n": 256,
+    "share_coherent": 0.93359375,
+    "pass": true
+   },
+   "alpha0": {
+    "n": 75,
+    "share_coherent": 0.9866666666666667,
+    "pass": true
+   },
+   "label_prompted": {
+    "n": 400,
+    "share_coherent": 0.88,
+    "pass": false
+   }
+  },
+  "pass": false,
+  "split": {
+   "n_calibration": 75,
+   "n_test": 75
+  }
+ },
+ "coherence_filter": false,
+ "frozen_coherent_only": {
+  "rule": "A27: the frozen coherent-only reading on the cells whose shown samples all lie inside the band (the judge saw every sample)",
+  "n_cells": 1436,
+  "rows": {
+   "H_suff": {
+    "label": "CANCELLED (coherence gate not shown to work)",
+    "label_if_not_cancelled": "ABOVE CHANCE, NOT ABOVE ALPHA = 0, interval above chance 1/3, interval crosses alpha = 0 (paired) [R-pass 0.95, R-equiv 0.00; no room for equivalence]",
+    "o_dp": {
+     "est": 0.4866666666666667,
+     "lo": 0.38,
+     "hi": 0.5933333333333334,
+     "n": 75,
+     "n_finite": 10000
+    },
+    "paired_minus_alpha0": {
+     "est": 0.14,
+     "lo": 0.0,
+     "hi": 0.28,
+     "n": 75,
+     "n_finite": 10000
+    }
+   },
+   "H_pred_agree": {
+    "label": "CANCELLED (coherence gate not shown to work)",
+    "label_if_not_cancelled": "NOT SHOWN, interval crosses ratio 1, interval crosses ratio 2 [R-pass 0.38, R-equiv 0.00; underpowered for a direction; no room for equivalence]",
+    "R": {
+     "est": 1.5906862745098038,
+     "lo": 0.9850631458094146,
+     "hi": 2.424242424242424,
+     "n": 75,
+     "n_finite": 10000
+    },
+    "difference": {
+     "est": 0.2552966101694915,
+     "lo": -0.007991843515990773,
+     "hi": 0.49853801169590645,
+     "n": 75,
+     "n_finite": 10000
+    }
+   },
+   "H_pred_conf": {
+    "label": "CANCELLED (coherence gate not shown to work)",
+    "label_if_not_cancelled": "NOT SHOWN, interval crosses 0 [R-pass 0.93, R-equiv 0.00; no room for equivalence]",
+    "spearman": {
+     "est": 0.016610371098054355,
+     "lo": -0.21258447795507943,
+     "hi": 0.24299029326997917,
+     "n": 75,
+     "n_finite": 10000
+    }
+   },
+   "H_depth": {
+    "label": "CANCELLED (coherence gate not shown to work)",
+    "label_if_not_cancelled": "NOT SHOWN, interval crosses 0 [R-pass 0.74, R-equiv 0.00; rule fires on the null; underpowered for a direction; no room for equivalence]",
+    "diff_t2_minus_t0": {
+     "est": 0.06896551724137934,
+     "lo": -0.20139176065162903,
+     "hi": 0.3390484400656814,
+     "n": 75,
+     "n_finite": 10000
+    }
+   }
+  },
+  "g_n": {
+   "n_contributing": 75,
+   "n_drawn": 80,
+   "need": 56,
+   "pass": true,
+   "failing_input": {
+    "n": 55,
+    "fails": true
+   }
+  }
+ },
+ "created_utc": "2026-10-26T20:15:12Z"
+}

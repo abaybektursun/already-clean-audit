@@ -1,0 +1,1740 @@
+{
+ "model_key": "O7",
+ "arm": 0,
+ "model_reasons": [],
+ "n_items": 150,
+ "n_one": 100,
+ "A": {
+  "n": 100,
+  "est": 0.19,
+  "lo": 0.12,
+  "hi": 0.27
+ },
+ "Sh": {
+  "n": 100,
+  "est": 0.065,
+  "lo": 0.03,
+  "hi": 0.105
+ },
+ "Fx": {
+  "n": 100,
+  "est": 0.05,
+  "lo": 0.01,
+  "hi": 0.1
+ },
+ "rows": {
+  "H_write": {
+   "label": "H_WRITE, interval crosses margin delta_w 0.1 [R-pass 0.82, R-equiv 0.77; frozen constant plant: R-pass 0.99, n = 5 0.83 (cannot fail)]",
+   "label_if_not_cancelled": null,
+   "D_w": {
+    "n": 100,
+    "est": 0.125,
+    "lo": 0.035,
+    "hi": 0.215
+   },
+   "D_f": {
+    "n": 100,
+    "est": 0.14,
+    "lo": 0.06,
+    "hi": 0.22
+   },
+   "delta_w": 0.1,
+   "room": {
+    "n": 100,
+    "r_null": 0.001,
+    "r_pass": 0.8195,
+    "r_equiv": 0.773,
+    "effect": 0.15,
+    "failing_input_n5": {
+     "n": 5,
+     "r_null": null,
+     "r_pass": 0.043,
+     "r_equiv": null,
+     "fails": true
+    },
+    "plant": "A25: true-label answers Bernoulli(p_sh + E (1 - p_sh)) on the planted side, Bernoulli(p_sh) on the unplanted side; shuffled answers as judged",
+    "failing_input_zero_plant": {
+     "r_pass_n5": 0.002,
+     "r_pass_full_n": 0.001,
+     "fails": true
+    },
+    "frozen_constant_plant": {
+     "r_null": 0.0275,
+     "r_pass": 0.9945,
+     "r_equiv": 0.4845,
+     "failing_input_n5": {
+      "r_pass": 0.8325,
+      "fails": false
+     }
+    },
+    "cancelled": false,
+    "stamps": [],
+    "readable": true,
+    "equiv_readable": true
+   }
+  },
+  "H_depth": {
+   "label": "NOT SHOWN, interval crosses 0 [R-pass 0.91, R-equiv 0.05; zero plant fires above 5% at n = 5; rule fires on the null; no room for equivalence; frozen constant plant: R-pass 0.61, n = 5 0.48]",
+   "label_if_not_cancelled": null,
+   "diff_t2_minus_t0": {
+    "n": [
+     30,
+     36
+    ],
+    "est": 0.21666666666666667,
+    "lo": -0.0027777777777777683,
+    "hi": 0.44166666666666665,
+    "n_nonfinite": 0
+   },
+   "room": {
+    "n": [
+     30,
+     36
+    ],
+    "r_null": 0.3905,
+    "r_pass": 0.913,
+    "r_equiv": 0.0455,
+    "effect": 0.2,
+    "failing_input_n5": {
+     "n": [
+      5,
+      5
+     ],
+     "r_null": null,
+     "r_pass": 0.256,
+     "r_equiv": null,
+     "fails": true
+    },
+    "plant": "A25: true-label answers Bernoulli(p_sh + E (1 - p_sh)) on the planted side, Bernoulli(p_sh) on the unplanted side; shuffled answers as judged",
+    "failing_input_zero_plant": {
+     "r_pass_n5": 0.0965,
+     "r_pass_full_n": 0.3905,
+     "fails": false
+    },
+    "frozen_constant_plant": {
+     "r_null": 0.0165,
+     "r_pass": 0.608,
+     "r_equiv": 0.061,
+     "failing_input_n5": {
+      "r_pass": 0.4785,
+      "fails": true
+     }
+    },
+    "cancelled": true,
+    "stamps": [
+     "zero plant fires above 5% at n = 5",
+     "rule fires on the null",
+     "no room for equivalence"
+    ],
+    "readable": false,
+    "equiv_readable": false
+   }
+  },
+  "H_ONE_model": {
+   "label": "NOT SHOWN, interval crosses 0 [R-pass 0.36, R-equiv 0.02; underpowered for a direction; no room for equivalence; frozen constant plant: R-pass 0.99, n = 5 0.83 (cannot fail)]",
+   "label_if_not_cancelled": null,
+   "d": {
+    "n": 50,
+    "est": 0.04,
+    "lo": -0.12,
+    "hi": 0.2
+   },
+   "n_pairs": 50,
+   "room": {
+    "n": 50,
+    "r_null": 0.0155,
+    "r_pass": 0.356,
+    "r_equiv": 0.023,
+    "effect": 0.15,
+    "failing_input_n5": {
+     "n": 5,
+     "r_null": null,
+     "r_pass": 0.0725,
+     "r_equiv": null,
+     "fails": true
+    },
+    "plant": "A25: true-label answers Bernoulli(p_sh + E (1 - p_sh)) on the planted side, Bernoulli(p_sh) on the unplanted side; shuffled answers as judged",
+    "failing_input_zero_plant": {
+     "r_pass_n5": 0.0155,
+     "r_pass_full_n": 0.0155,
+     "fails": true
+    },
+    "frozen_constant_plant": {
+     "r_null": 0.2785,
+     "r_pass": 0.9865,
+     "r_equiv": 0.0185,
+     "failing_input_n5": {
+      "r_pass": 0.8255,
+      "fails": false
+     }
+    },
+    "cancelled": false,
+    "stamps": [
+     "underpowered for a direction",
+     "no room for equivalence"
+    ],
+    "readable": true,
+    "equiv_readable": false
+   }
+  },
+  "B1_model": {
+   "label": "NOT SHOWN, interval crosses 0 [R-pass 0.54, R-equiv 0.00; underpowered for a direction; no room for equivalence; frozen constant plant: R-pass 0.97, n = 5 0.83 (cannot fail)]",
+   "label_if_not_cancelled": null,
+   "L": {
+    "n": 100,
+    "est": 0.0,
+    "lo": -0.05,
+    "hi": 0.05
+   },
+   "n": 100,
+   "room": {
+    "n": 100,
+    "r_null": 0.0215,
+    "r_pass": 0.538,
+    "r_equiv": 0.0025,
+    "effect": 0.1,
+    "failing_input_n5": {
+     "n": 5,
+     "r_null": null,
+     "r_pass": 0.027,
+     "r_equiv": null,
+     "fails": true
+    },
+    "plant": "A25: true-label answers Bernoulli(p_sh + E (1 - p_sh)) on the planted side, Bernoulli(p_sh) on the unplanted side; shuffled answers as judged",
+    "failing_input_zero_plant": {
+     "r_pass_n5": 0.001,
+     "r_pass_full_n": 0.0215,
+     "fails": true
+    },
+    "frozen_constant_plant": {
+     "r_null": 0.136,
+     "r_pass": 0.9745,
+     "r_equiv": 0.0045,
+     "failing_input_n5": {
+      "r_pass": 0.8325,
+      "fails": false
+     }
+    },
+    "cancelled": false,
+    "stamps": [
+     "underpowered for a direction",
+     "no room for equivalence"
+    ],
+    "readable": true,
+    "equiv_readable": false
+   }
+  },
+  "fc3": {
+   "label": "NOT MEASURED (A22: Arm 0 fc3 is not run)",
+   "label_if_not_cancelled": null,
+   "by_class": null,
+   "letter_shares": null,
+   "B3_letters_ok": null
+  }
+ },
+ "secondary": {
+  "with_vocab_label_set": {
+   "A": {
+    "label": "RATE, interval above 0",
+    "label_if_not_cancelled": null,
+    "A": {
+     "n": 100,
+     "est": 0.19,
+     "lo": 0.12,
+     "hi": 0.27
+    }
+   }
+  },
+  "original_label_set": {
+   "A": {
+    "label": "RATE, interval above 0",
+    "label_if_not_cancelled": null,
+    "A": {
+     "n": 100,
+     "est": 0.17,
+     "lo": 0.1,
+     "hi": 0.25
+    }
+   }
+  },
+  "literal_overlap": {
+   "reexplained": {
+    "readout": "D_w",
+    "literal": {
+     "label": "ROW, interval above 0",
+     "label_if_not_cancelled": null,
+     "D_w": {
+      "n": 18,
+      "est": 0.5555555555555556,
+      "lo": 0.3333333333333333,
+      "hi": 0.7777777777777778
+     }
+    },
+    "non_literal": {
+     "label": "ROW, interval crosses 0",
+     "label_if_not_cancelled": null,
+     "D_w": {
+      "n": 82,
+      "est": 0.03048780487804878,
+      "lo": -0.054878048780487805,
+      "hi": 0.11585365853658537
+     }
+    },
+    "n_literal": 18
+   },
+   "with_vocab": {
+    "readout": "A (yn_true rate; A22 runs no shuffles here)",
+    "literal": {
+     "label": "RATE, interval above 0",
+     "label_if_not_cancelled": null,
+     "A": {
+      "n": 22,
+      "est": 0.5,
+      "lo": 0.2727272727272727,
+      "hi": 0.7272727272727273
+     }
+    },
+    "non_literal": {
+     "label": "RATE, interval above 0",
+     "label_if_not_cancelled": null,
+     "A": {
+      "n": 78,
+      "est": 0.10256410256410256,
+      "lo": 0.038461538461538464,
+      "hi": 0.1794871794871795
+     }
+    },
+    "n_literal": 22
+   },
+   "original": {
+    "readout": "A (yn_true rate; A22 runs no shuffles here)",
+    "literal": {
+     "label": "RATE, interval above 0",
+     "label_if_not_cancelled": null,
+     "A": {
+      "n": 19,
+      "est": 0.631578947368421,
+      "lo": 0.42105263157894735,
+      "hi": 0.8421052631578947
+     }
+    },
+    "non_literal": {
+     "label": "RATE, interval above 0",
+     "label_if_not_cancelled": null,
+     "A": {
+      "n": 81,
+      "est": 0.06172839506172839,
+      "lo": 0.012345679012345678,
+      "hi": 0.12345679012345678
+     }
+    },
+    "n_literal": 19
+   }
+  },
+  "reexplained_as_ONE": {
+   "label": "ROW, interval above 0",
+   "label_if_not_cancelled": null,
+   "D_w": {
+    "n": 96,
+    "est": 0.11979166666666667,
+    "lo": 0.026041666666666668,
+    "hi": 0.21354166666666666
+   }
+  },
+  "by_sign": {
+   "1": {
+    "label": "ROW, interval crosses 0",
+    "label_if_not_cancelled": null,
+    "D_w": {
+     "n": 46,
+     "est": 0.09782608695652174,
+     "lo": -0.03260869565217391,
+     "hi": 0.2391304347826087
+    }
+   },
+   "-1": {
+    "label": "ROW, interval above 0",
+    "label_if_not_cancelled": null,
+    "D_w": {
+     "n": 54,
+     "est": 0.14814814814814814,
+     "lo": 0.027777777777777776,
+     "hi": 0.26851851851851855
+    }
+   }
+  },
+  "by_explainer": {
+   "anthropic/claude-opus-5-5": {
+    "label": "ROW, interval crosses 0",
+    "label_if_not_cancelled": null,
+    "D_w": {
+     "n": 73,
+     "est": 0.0958904109589041,
+     "lo": -0.00684931506849315,
+     "hi": 0.2054794520547945
+    }
+   },
+   "anthropic/claude-sonnet-5-5": {
+    "label": "ROW, interval above 0",
+    "label_if_not_cancelled": null,
+    "D_w": {
+     "n": 27,
+     "est": 0.2037037037037037,
+     "lo": 0.037037037037037035,
+     "hi": 0.37037037037037035
+    }
+   }
+  },
+  "by_tercile": {
+   "0": {
+    "label": "ROW, interval crosses 0",
+    "label_if_not_cancelled": null,
+    "D_w": {
+     "n": 36,
+     "est": 0.0,
+     "lo": -0.1527777777777778,
+     "hi": 0.1527777777777778
+    },
+    "A": {
+     "n": 36,
+     "est": 0.1388888888888889,
+     "lo": 0.027777777777777776,
+     "hi": 0.25
+    },
+    "Sh": {
+     "n": 36,
+     "est": 0.1388888888888889,
+     "lo": 0.06944444444444445,
+     "hi": 0.2222222222222222
+    },
+    "Fx": {
+     "n": 36,
+     "est": 0.1111111111111111,
+     "lo": 0.027777777777777776,
+     "hi": 0.2222222222222222
+    }
+   },
+   "1": {
+    "label": "ROW, interval above 0",
+    "label_if_not_cancelled": null,
+    "D_w": {
+     "n": 34,
+     "est": 0.17647058823529413,
+     "lo": 0.04411764705882353,
+     "hi": 0.3382352941176471
+    },
+    "A": {
+     "n": 34,
+     "est": 0.20588235294117646,
+     "lo": 0.08823529411764706,
+     "hi": 0.35294117647058826
+    },
+    "Sh": {
+     "n": 34,
+     "est": 0.029411764705882353,
+     "lo": 0.0,
+     "hi": 0.07352941176470588
+    },
+    "Fx": {
+     "n": 34,
+     "est": 0.029411764705882353,
+     "lo": 0.0,
+     "hi": 0.08823529411764706
+    }
+   },
+   "2": {
+    "label": "ROW, interval above 0",
+    "label_if_not_cancelled": null,
+    "D_w": {
+     "n": 30,
+     "est": 0.21666666666666667,
+     "lo": 0.06666666666666667,
+     "hi": 0.38333333333333336
+    },
+    "A": {
+     "n": 30,
+     "est": 0.23333333333333334,
+     "lo": 0.1,
+     "hi": 0.4
+    },
+    "Sh": {
+     "n": 30,
+     "est": 0.016666666666666666,
+     "lo": 0.0,
+     "hi": 0.05
+    },
+    "Fx": {
+     "n": 30,
+     "est": 0.0,
+     "lo": 0.0,
+     "hi": 0.0
+    }
+   }
+  },
+  "A_one_vs_unk": {
+   "ONE": {
+    "n": 100,
+    "est": 0.19,
+    "lo": 0.12,
+    "hi": 0.27
+   },
+   "UNK": {
+    "n": 50,
+    "est": 0.12,
+    "lo": 0.04,
+    "hi": 0.22
+   }
+  },
+  "H_ONE_without_same_neuron": {
+   "label": "NOT SHOWN, interval crosses 0",
+   "label_if_not_cancelled": null,
+   "d": {
+    "n": 46,
+    "est": 0.06521739130434782,
+    "lo": -0.10869565217391304,
+    "hi": 0.2391304347826087
+   }
+  }
+ },
+ "g_proj": {
+  "n": 411,
+  "median_rel_score_err": 7.406213195504385e-07,
+  "numeric_pass": true,
+  "share_top10_overlap": 1.0,
+  "overlap_min": 9,
+  "overlap_histogram": {
+   "10": 411
+  },
+  "pass": true,
+  "frozen": {
+   "rule": "top-10 lists equal in order (frozen reading)",
+   "share_top10_equal": 1.0,
+   "pass": true
+  },
+  "failing_input": {
+   "rule": "the banked list against our top 10 of the neighbouring neuron's column (neuron i + 1, same layer and sign)",
+   "share": 0.0,
+   "median_overlap": 0.0,
+   "fails": true
+  }
+ },
+ "g_n": {
+  "n_items": 150,
+  "need": 140,
+  "pass": true,
+  "failing_input": {
+   "n": 139,
+   "fails": true
+  }
+ },
+ "g_retest": {
+  "yn_shuf1": {
+   "n": 15,
+   "kappa": 1.0,
+   "pass": true,
+   "failing_input": {
+    "kappa": -0.07142857142857194,
+    "fails": true
+   },
+   "stamp": null
+  },
+  "yn_true": {
+   "n": 15,
+   "kappa": 1.0,
+   "pass": true,
+   "failing_input": {
+    "kappa": 0.16666666666666607,
+    "fails": true
+   },
+   "stamp": null
+  }
+ },
+ "g_judge0": {
+  "pc_true_yes_rate": 0.88,
+  "n_pc": 50,
+  "floor": 0.6,
+  "shuffle_yes_rate": 0.056666666666666664,
+  "ceiling": 0.5,
+  "failing_input": {
+   "pc_shuf_yes_rate": 0.04,
+   "fails": true
+  },
+  "by_distinct": {
+   "10-12": {
+    "n": 0,
+    "pc_true_yes_rate": null
+   },
+   "13-20": {
+    "n": 50,
+    "pc_true_yes_rate": 0.88
+   }
+  },
+  "floor_note": null,
+  "label": "PASS",
+  "pass": true,
+  "reasons": []
+ },
+ "pair_values_H_ONE": [
+  1.0,
+  0.5,
+  0.0,
+  -0.5,
+  0.0,
+  1.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  -1.5,
+  0.0,
+  0.0,
+  -1.0,
+  0.0,
+  0.0,
+  0.0,
+  -0.5,
+  0.0,
+  -0.5,
+  0.0,
+  0.0,
+  0.5,
+  -1.0,
+  1.0,
+  0.0,
+  -1.0,
+  0.0,
+  -1.0,
+  1.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  1.0,
+  0.5,
+  1.0,
+  0.0,
+  -1.0,
+  1.0,
+  0.0,
+  0.0,
+  1.0,
+  0.0,
+  0.5,
+  0.0
+ ],
+ "null_values_H_ONE": [
+  0,
+  -1,
+  0,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  -1,
+  0,
+  1,
+  0,
+  0,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  0
+ ],
+ "pair_values_B1": [
+  0,
+  -1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  -1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  0,
+  0,
+  0,
+  0,
+  -1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  -1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "null_values_B1": [
+  0.0,
+  0.0,
+  1.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  1.0,
+  0.0,
+  -1.0,
+  -1.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  -1.0,
+  0.0,
+  1.0,
+  0.0,
+  0.0,
+  1.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  1.0,
+  0.0,
+  0.0,
+  0.0,
+  -1.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  1.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  1.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ],
+ "plant_H_ONE": [
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   1,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   1,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   1,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   1,
+   1,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   1,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   1,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   1,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   1,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   1,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0.065
+  ]
+ ],
+ "plant_B1": [
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   1,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   1,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   1,
+   0.065
+  ],
+  [
+   0,
+   1,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   1,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   1,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   1,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   1,
+   1,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   1,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   1,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   1,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   1,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ],
+  [
+   0,
+   0,
+   0.065
+  ]
+ ],
+ "created_utc": "2026-10-26T14:29:03Z"
+}

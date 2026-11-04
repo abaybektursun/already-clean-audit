@@ -1,0 +1,313 @@
+{
+ "model_key": "O7",
+ "arm": 2,
+ "d_p": 16.0,
+ "model_reasons": [],
+ "g_n": {
+  "n_contributing": 80,
+  "n_drawn": 80,
+  "need": 56,
+  "pass": true,
+  "failing_input": {
+   "n": 55,
+   "fails": true
+  }
+ },
+ "rows": {
+  "H_suff": {
+   "label": "SUPPORTED, interval above chance 1/3, interval above alpha = 0 (paired) [R-pass 0.99, R-equiv 0.10; no room for equivalence] [coherence gate not shown to work] [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+   "label_if_not_cancelled": null,
+   "o_dp": {
+    "est": 0.45,
+    "lo": 0.35,
+    "hi": 0.55625,
+    "n": 80,
+    "n_finite": 10000
+   },
+   "paired_minus_alpha0": {
+    "est": 0.15625,
+    "lo": 0.05,
+    "hi": 0.2625,
+    "n": 80,
+    "n_finite": 10000
+   }
+  },
+  "H_pred_agree": {
+   "label": "NOT SHOWN, interval crosses ratio 1, interval below ratio 2 [R-pass 0.76, R-equiv 0.00; underpowered for a direction; no room for equivalence] [coherence gate not shown to work] [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+   "label_if_not_cancelled": null,
+   "R": {
+    "est": 1.2348008385744236,
+    "lo": 0.6879581766917293,
+    "hi": 1.9726638156499607,
+    "n": 80,
+    "n_finite": 10000
+   },
+   "difference": {
+    "est": 0.1003584229390681,
+    "lo": -0.1466876871542405,
+    "hi": 0.35,
+    "n": 80,
+    "n_finite": 10000
+   }
+  },
+  "H_pred_conf": {
+   "label": "REFUTED (negative) NOT READABLE, interval below 0 [R-pass 0.96, R-equiv 0.00; rule fires on the null; no room for equivalence] [coherence gate not shown to work] [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+   "label_if_not_cancelled": null,
+   "spearman": {
+    "est": -0.3647504701222126,
+    "lo": -0.5397202525833936,
+    "hi": -0.1286740692234515,
+    "n": 80,
+    "n_finite": 10000
+   }
+  },
+  "H_depth": {
+   "label": "NOT SHOWN, interval crosses 0 [R-pass 0.99, R-equiv 0.00; rule fires on the null; no room for equivalence] [coherence gate not shown to work] [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+   "label_if_not_cancelled": null,
+   "diff_t2_minus_t0": {
+    "est": 0.1538461538461538,
+    "lo": -0.10741577060931898,
+    "hi": 0.4109919817477014,
+    "n": 80,
+    "n_finite": 10000
+   }
+  }
+ },
+ "secondary": {
+  "other_doses": {
+   "0.0": {
+    "n": 80,
+    "est": 0.29375,
+    "lo": 0.21875,
+    "hi": 0.36875
+   },
+   "2.0": {
+    "n": 80,
+    "est": 0.325,
+    "lo": 0.24375,
+    "hi": 0.4125
+   },
+   "4.0": {
+    "n": 80,
+    "est": 0.33125,
+    "lo": 0.25625,
+    "hi": 0.4125
+   }
+  },
+  "one_minus_matched_unk_dp": {
+   "n": 40,
+   "est": 0.025,
+   "lo": -0.175,
+   "hi": 0.2125
+  },
+  "by_explainer": {
+   "anthropic/claude-opus-5-5": {
+    "n": 57,
+    "est": 0.40350877192982454,
+    "lo": 0.2894736842105263,
+    "hi": 0.5175438596491229
+   },
+   "anthropic/claude-sonnet-5-5": {
+    "n": 23,
+    "est": 0.5652173913043478,
+    "lo": 0.3695652173913043,
+    "hi": 0.7391304347826086
+   }
+  },
+  "cells_not_shown_to_fire": [],
+  "guesses": [
+   {
+    "pole": "L00N181+",
+    "prompt_i": 0,
+    "guess": "Meta-text about text itself and repetition: \"Here is some text:\" loops, numbered lists describing text properties, repeated phrases, with missing words (dropped nouns like \"the\") and generic filler/template content.",
+    "label": "Fires on the token right after a tech/media/web noun such as website, media, application, project, email, file, news, book, home, editor, api, Java or photo, mainly when that next token is an unusual word or the start of a compound (e.g. \"website necessitates\", \"project inception\", \"Java getter\", \"Book Trailers\", \"photoresponsive\", \"Website Extras\"). [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]"
+   },
+   {
+    "pole": "L00N181+",
+    "prompt_i": 1,
+    "guess": "Rambling first-person blog prose with dropped words and repetition, e.g. 'the, and, are the same thing' or 'I was angry because'; sentences with missing nouns after 'the' and repeated phrases.",
+    "label": "Fires on the token right after a tech/media/web noun such as website, media, application, project, email, file, news, book, home, editor, api, Java or photo, mainly when that next token is an unusual word or the start of a compound (e.g. \"website necessitates\", \"project inception\", \"Java getter\", \"Book Trailers\", \"photoresponsive\", \"Website Extras\"). [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]"
+   },
+   {
+    "pole": "L00N181-",
+    "prompt_i": 0,
+    "guess": "Placeholder or filler text and degenerate repetition: 'Here is some text:', 'Content here', Lorem ipsum, sample text, repeated sentences and phrases looping, plus generic boilerplate.",
+    "label": "A layer-0 token detector that fires on a specific set of word tokens, mostly names of languages, regions and religions (Hindi, Tamil, Arabic, Anglican, Malaysia, UK, Hiragana, evangelism) plus 'ransom' or 'ransomware', 'rainbow' and 'Telegram', strongest when the word trails another word in a keyword-stuffed SEO title such as 'online casino Uk', 'betting Malaysia', 'News Hindi' or 'Bitcoin ransom'. [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]"
+   },
+   {
+    "pole": "L00N181-",
+    "prompt_i": 1,
+    "guess": "Duplicated function words, especially a repeated \"the the\" glitch, within opinionated blog-style prose on politics, law, and society (abortion, Constitution, ICC, disasters), written in first person.",
+    "label": "A layer-0 token detector that fires on a specific set of word tokens, mostly names of languages, regions and religions (Hindi, Tamil, Arabic, Anglican, Malaysia, UK, Hiragana, evangelism) plus 'ransom' or 'ransomware', 'rainbow' and 'Telegram', strongest when the word trails another word in a keyword-stuffed SEO title such as 'online casino Uk', 'betting Malaysia', 'News Hindi' or 'Bitcoin ransom'. [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]"
+   },
+   {
+    "pole": "L00N2968-",
+    "prompt_i": 0,
+    "guess": "Repetition of the phrase \"Here is some text:\" and verbatim repeated lines or loops; placeholder/filler text, web-page boilerplate, and HTML/code snippets echoing the prompt's wording.",
+    "label": "Fires on the token \" hashed\" (lowercase, with a leading space), especially in code where it is a variable name or the first piece of an identifier such as hashedPassword, hashedKey, hashed_password or hashedData, though it also fires on plain \"hashed data\" or \"hashed password\" in code comments; weaker offshoots are \" tang\" (tangents) and \"news\" as an identifier piece. [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]"
+   },
+   {
+    "pole": "L00N2968-",
+    "prompt_i": 1,
+    "guess": "Stray duplicated function words, especially repeated or inserted \"the\"/\"of\" (\"the the\", \"of the of\", \"a the\"), plus ordinary blog/news prose with first-person narration and repetitive sentence structure.",
+    "label": "Fires on the token \" hashed\" (lowercase, with a leading space), especially in code where it is a variable name or the first piece of an identifier such as hashedPassword, hashedKey, hashed_password or hashedData, though it also fires on plain \"hashed data\" or \"hashed password\" in code comments; weaker offshoots are \" tang\" (tangents) and \"news\" as an identifier piece. [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]"
+   },
+   {
+    "pole": "L00N3387+",
+    "prompt_i": 0,
+    "guess": "Placeholder/filler text and repetitive list formatting, especially the phrase \"Here is some text:\", repeated \"Text text\" and \"This is some useful content\", plus numbered or bulleted lists and stuttering duplicated lines.",
+    "label": "A token-level detector (layer 0) for a handful of word-start pieces: mainly 'altern' when it begins 'alternated' or 'alternately', the word 'variant'/'variants' (also 'Variants'), and similar verb stems split before a suffix such as 'equ' in 'equated', 'Interrupt' in 'Interrupted'/'Interrupting' and 'Dig' in 'Digging'; the meaning of the surrounding text does not matter. [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]"
+   },
+   {
+    "pole": "L00N3387+",
+    "prompt_i": 1,
+    "guess": "Repetitive, circular phrasing: the same clause restated with 'because/was due yesterday', repeated 'the key', 'walked to the next flight', plus glitchy doubled words like 'the the'. Casual first-person blog-style narrative.",
+    "label": "A token-level detector (layer 0) for a handful of word-start pieces: mainly 'altern' when it begins 'alternated' or 'alternately', the word 'variant'/'variants' (also 'Variants'), and similar verb stems split before a suffix such as 'equ' in 'equated', 'Interrupt' in 'Interrupted'/'Interrupting' and 'Dig' in 'Digging'; the meaning of the surrounding text does not matter. [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]"
+   },
+   {
+    "pole": "L00N3387-",
+    "prompt_i": 0,
+    "guess": "Placeholder/filler text and repetitive formatting demos: the phrase \"Here is some text:\", \"This is also some text\", \"text text text\", bold/strikethrough/link labels, looping repeated lines, alphabet lists.",
+    "label": "Fires on the first fragment of a word that the tokenizer splits into pieces, such as \"cond\" in condone or condense, \"Paren\" in Parenthood or Parenthetically, \"exh\" in exhale, \"catal\" in catalyzers, \"Hann\" in Hannibal or \"LOCK\" in LOCKED, and fires most strongly right after a first-person subject like \"I\", \"I'm\" or \"we're\"; \"Bottom\" in \"Bottom line:\" is a similar trigger. [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]"
+   },
+   {
+    "pole": "L00N3387-",
+    "prompt_i": 1,
+    "guess": "Stray repeated definite articles \"the the\" and dangling \"the\"/\"to\" with missing nouns, plus repetitive looping phrases; news-style prose about events (Sandy, Yankees, Fannie Mae).",
+    "label": "Fires on the first fragment of a word that the tokenizer splits into pieces, such as \"cond\" in condone or condense, \"Paren\" in Parenthood or Parenthetically, \"exh\" in exhale, \"catal\" in catalyzers, \"Hann\" in Hannibal or \"LOCK\" in LOCKED, and fires most strongly right after a first-person subject like \"I\", \"I'm\" or \"we're\"; \"Bottom\" in \"Bottom line:\" is a similar trigger. [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]"
+   }
+  ]
+ },
+ "g_judge2": {
+  "label_prompted_rate": 1.0,
+  "n_label_poles": 40,
+  "floor": 0.6,
+  "alpha0_rate": 0.325,
+  "ceiling": 0.5,
+  "failing_input": {
+   "alpha0_rate_same_poles": 0.275,
+   "fails": true
+  },
+  "pass": true,
+  "reasons": []
+ },
+ "g_coh": {
+  "band": {
+   "lo": 0.11271340199973566,
+   "hi": 4.363237079524102,
+   "hi_alpha0": 2.119132460768588,
+   "hi_natural": 4.363237079524102,
+   "n_alpha0": 75,
+   "n_alpha0_empty": 0,
+   "n_natural": 256
+  },
+  "failing_inputs": {
+   "repeated": {
+    "nll": 1.509532247398359,
+    "collapsed": false
+   },
+   "random": {
+    "nll": 13.567741259932518,
+    "collapsed": true
+   }
+  },
+  "passing_inputs": {
+   "natural_test": {
+    "n": 256,
+    "share_coherent": 0.921875,
+    "pass": true
+   },
+   "alpha0": {
+    "n": 75,
+    "share_coherent": 0.9733333333333334,
+    "pass": true
+   },
+   "label_prompted": {
+    "n": 400,
+    "share_coherent": 0.9775,
+    "pass": true
+   }
+  },
+  "pass": false,
+  "split": {
+   "n_calibration": 75,
+   "n_test": 75
+  }
+ },
+ "coherence_filter": false,
+ "frozen_coherent_only": {
+  "rule": "A27: the frozen coherent-only reading on the cells whose shown samples all lie inside the band (the judge saw every sample)",
+  "n_cells": 1485,
+  "rows": {
+   "H_suff": {
+    "label": "CANCELLED (coherence gate not shown to work) [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+    "label_if_not_cancelled": "SUPPORTED, interval above chance 1/3, interval above alpha = 0 (paired) [R-pass 0.99, R-equiv 0.10; no room for equivalence] [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+    "o_dp": {
+     "est": 0.47333333333333333,
+     "lo": 0.36666666666666664,
+     "hi": 0.5866666666666667,
+     "n": 75,
+     "n_finite": 10000
+    },
+    "paired_minus_alpha0": {
+     "est": 0.18,
+     "lo": 0.07333333333333333,
+     "hi": 0.29333333333333333,
+     "n": 75,
+     "n_finite": 10000
+    }
+   },
+   "H_pred_agree": {
+    "label": "CANCELLED (coherence gate not shown to work) [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+    "label_if_not_cancelled": "NOT SHOWN, interval crosses ratio 1, interval crosses ratio 2 [R-pass 0.76, R-equiv 0.00; underpowered for a direction; no room for equivalence] [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+    "R": {
+     "est": 1.3379469434832758,
+     "lo": 0.7629164005959983,
+     "hi": 2.1323529411764706,
+     "n": 75,
+     "n_finite": 10000
+    },
+    "difference": {
+     "est": 0.14858012170385398,
+     "lo": -0.11371348056130669,
+     "hi": 0.41126055786299187,
+     "n": 75,
+     "n_finite": 10000
+    }
+   },
+   "H_pred_conf": {
+    "label": "CANCELLED (coherence gate not shown to work) [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+    "label_if_not_cancelled": "REFUTED (negative) NOT READABLE, interval below 0 [R-pass 0.96, R-equiv 0.00; rule fires on the null; no room for equivalence] [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+    "spearman": {
+     "est": -0.34085927956047685,
+     "lo": -0.5350755410929903,
+     "hi": -0.10715101830054534,
+     "n": 75,
+     "n_finite": 10000
+    }
+   },
+   "H_depth": {
+    "label": "CANCELLED (coherence gate not shown to work) [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+    "label_if_not_cancelled": "NOT SHOWN, interval crosses 0 [R-pass 0.99, R-equiv 0.00; rule fires on the null; no room for equivalence] [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+    "diff_t2_minus_t0": {
+     "est": 0.07692307692307687,
+     "lo": -0.2077310370788632,
+     "hi": 0.35017100954600955,
+     "n": 75,
+     "n_finite": 10000
+    }
+   }
+  },
+  "g_n": {
+   "n_contributing": 75,
+   "n_drawn": 80,
+   "need": 56,
+   "pass": true,
+   "failing_input": {
+    "n": 55,
+    "fails": true
+   }
+  }
+ },
+ "created_utc": "2026-10-26T20:15:22Z"
+}

@@ -1,0 +1,4628 @@
+{
+ "inputs": {
+  "amend2_run": "studies/reuse/results/amend2/1",
+  "primary_run": "studies/reuse/results/primary/1",
+  "primary_verdict": "studies/reuse/results/primary/verdict.json",
+  "s3_run": "studies/reuse/results/sniper/2",
+  "s3_json": "studies/reuse/results/sniper/S3.json",
+  "items": "studies/reuse/inputs/primary_items.json",
+  "items_sha256": "82bb936e2da57e77b5f45281ca4d570b41ac762adc32144a5097405f002e8fae",
+  "setting": "studies/reuse/inputs/setting_items.json",
+  "setting_sha256": "6753766065c84631a98c7634c8939e31d5f7c1240f0504af00941f6ef0973d98",
+  "spec2": "studies/reuse/SPEC2.md",
+  "m": 50,
+  "n_boot": 2000,
+  "seed": 0,
+  "failing_input_mode": null,
+  "pg_git_sha": {
+   "t15": "e1024553c3e2",
+   "t06": "e1024553c3e2",
+   "t07": "e1024553c3e2",
+   "t08": "e1024553c3e2",
+   "t09": "e1024553c3e2",
+   "t10": "e1024553c3e2",
+   "t11": "e1024553c3e2",
+   "t12": "e1024553c3e2",
+   "t13": "e1024553c3e2"
+  }
+ },
+ "count": {
+  "n_jobs": 150,
+  "live_at_birth": 148,
+  "live_at_T15": 149,
+  "live_at_both": 147,
+  "live_at_birth_by_load": {
+   "t06": 2,
+   "t07": 3,
+   "t08": 9,
+   "t09": 17,
+   "t10": 13,
+   "t11": 28,
+   "t12": 41,
+   "t13": 35
+  },
+  "ceiling_reads_at_birth": 138,
+  "ceiling_splits_T15": 129,
+  "planted_pairs": 56,
+  "planted_nonfinite_I": 1,
+  "planted_would_cancel": {
+   "t06": 13,
+   "t07": 8,
+   "t08": 8,
+   "t09": 5,
+   "t10": 1,
+   "t11": 0,
+   "t12": 2,
+   "t13": 0
+  },
+  "forwards_by_load": {
+   "t15": 6484,
+   "t06": 6088,
+   "t07": 6120,
+   "t08": 6216,
+   "t09": 6402,
+   "t10": 6314,
+   "t11": 6584,
+   "t12": 6870,
+   "t13": 6718
+  },
+  "artifact": [
+   "studies/reuse/results/amend2/1/t15/metrics.json",
+   "studies/reuse/results/amend2/1/t06/metrics.json",
+   "studies/reuse/results/amend2/1/t07/metrics.json",
+   "studies/reuse/results/amend2/1/t08/metrics.json",
+   "studies/reuse/results/amend2/1/t09/metrics.json",
+   "studies/reuse/results/amend2/1/t10/metrics.json",
+   "studies/reuse/results/amend2/1/t11/metrics.json",
+   "studies/reuse/results/amend2/1/t12/metrics.json",
+   "studies/reuse/results/amend2/1/t13/metrics.json",
+   "studies/reuse/results/primary/1/t15/metrics.json",
+   "studies/reuse/results/primary/1/t06/metrics.json",
+   "studies/reuse/results/primary/1/t07/metrics.json",
+   "studies/reuse/results/primary/1/t08/metrics.json",
+   "studies/reuse/results/primary/1/t09/metrics.json",
+   "studies/reuse/results/primary/1/t10/metrics.json",
+   "studies/reuse/results/primary/1/t11/metrics.json",
+   "studies/reuse/results/primary/1/t12/metrics.json",
+   "studies/reuse/results/primary/1/t13/metrics.json"
+  ]
+ },
+ "gates": {
+  "known_number t15": {
+   "value": 0.0,
+   "tol": 0.01,
+   "failing_input": {
+    "input": "a_wrong at T_15: the previous grid checkpoint's exemplar_a",
+    "value": 0.19487728677276725
+   },
+   "identity": {
+    "value": 0.0,
+    "reason": "the bank against itself"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t15/metrics.json"
+   ]
+  },
+  "completeness t15": {
+   "value": 0.0010306638723704964,
+   "tol": 0.01,
+   "failing_input": {
+    "input": "the column from the wrong layer",
+    "value": 0.3238200545310974
+   },
+   "identity": {
+    "value": null,
+    "reason": "no identity input is banked for completeness"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t15/metrics.json"
+   ]
+  },
+  "identity t15": {
+   "value": 0.0,
+   "tol": 0.001,
+   "n_contexts": 889,
+   "failing_input_n": 889,
+   "failing_input": {
+    "input": "own drivers, m 50 direct (contexts over 1e-3)",
+    "value": 889
+   },
+   "identity": {
+    "value": null,
+    "reason": "the gate is read on the identity arm itself; its value is the identity value"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t15/metrics.json",
+    "studies/reuse/results/amend2/1/t15/falls/*.npz"
+   ]
+  },
+  "known_number t06": {
+   "value": 0.0,
+   "tol": 0.01,
+   "failing_input": {
+    "input": "a_wrong at T_6: the previous grid checkpoint's exemplar_a",
+    "value": 0.06333445371846437
+   },
+   "identity": {
+    "value": 0.0,
+    "reason": "the bank against itself"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t06/metrics.json"
+   ]
+  },
+  "completeness t06": {
+   "value": 0.001118676271289587,
+   "tol": 0.01,
+   "failing_input": {
+    "input": "the column from the wrong layer",
+    "value": 0.22408752143383026
+   },
+   "identity": {
+    "value": null,
+    "reason": "no identity input is banked for completeness"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t06/metrics.json"
+   ]
+  },
+  "identity t06": {
+   "value": 0.0,
+   "tol": 0.001,
+   "n_contexts": 1344,
+   "failing_input_n": 1344,
+   "failing_input": {
+    "input": "own drivers, m 50 direct (contexts over 1e-3)",
+    "value": 1343
+   },
+   "identity": {
+    "value": null,
+    "reason": "the gate is read on the identity arm itself; its value is the identity value"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t06/metrics.json",
+    "studies/reuse/results/amend2/1/t06/falls/*.npz"
+   ]
+  },
+  "known_number t07": {
+   "value": 0.000819961463809643,
+   "tol": 0.01,
+   "failing_input": {
+    "input": "a_wrong at T_7: the previous grid checkpoint's exemplar_a",
+    "value": 0.07868939426605578
+   },
+   "identity": {
+    "value": 0.0,
+    "reason": "the bank against itself"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t07/metrics.json"
+   ]
+  },
+  "completeness t07": {
+   "value": 0.0012617202010005713,
+   "tol": 0.01,
+   "failing_input": {
+    "input": "the column from the wrong layer",
+    "value": 0.32522740960121155
+   },
+   "identity": {
+    "value": null,
+    "reason": "no identity input is banked for completeness"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t07/metrics.json"
+   ]
+  },
+  "identity t07": {
+   "value": 0.0,
+   "tol": 0.001,
+   "n_contexts": 1344,
+   "failing_input_n": 1344,
+   "failing_input": {
+    "input": "own drivers, m 50 direct (contexts over 1e-3)",
+    "value": 1343
+   },
+   "identity": {
+    "value": null,
+    "reason": "the gate is read on the identity arm itself; its value is the identity value"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t07/metrics.json",
+    "studies/reuse/results/amend2/1/t07/falls/*.npz"
+   ]
+  },
+  "known_number t08": {
+   "value": 0.0008851542610905565,
+   "tol": 0.01,
+   "failing_input": {
+    "input": "a_wrong at T_8: the previous grid checkpoint's exemplar_a",
+    "value": 0.05364612084112383
+   },
+   "identity": {
+    "value": 0.0,
+    "reason": "the bank against itself"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t08/metrics.json"
+   ]
+  },
+  "completeness t08": {
+   "value": 0.0011829049326479435,
+   "tol": 0.01,
+   "failing_input": {
+    "input": "the column from the wrong layer",
+    "value": 0.24265962094068527
+   },
+   "identity": {
+    "value": null,
+    "reason": "no identity input is banked for completeness"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t08/metrics.json"
+   ]
+  },
+  "identity t08": {
+   "value": 0.0,
+   "tol": 0.001,
+   "n_contexts": 1344,
+   "failing_input_n": 1344,
+   "failing_input": {
+    "input": "own drivers, m 50 direct (contexts over 1e-3)",
+    "value": 1342
+   },
+   "identity": {
+    "value": null,
+    "reason": "the gate is read on the identity arm itself; its value is the identity value"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t08/metrics.json",
+    "studies/reuse/results/amend2/1/t08/falls/*.npz"
+   ]
+  },
+  "known_number t09": {
+   "value": 0.00024701980075715423,
+   "tol": 0.01,
+   "failing_input": {
+    "input": "a_wrong at T_9: the previous grid checkpoint's exemplar_a",
+    "value": 0.029578937538463485
+   },
+   "identity": {
+    "value": 0.0,
+    "reason": "the bank against itself"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t09/metrics.json"
+   ]
+  },
+  "completeness t09": {
+   "value": 0.0008651390089653432,
+   "tol": 0.01,
+   "failing_input": {
+    "input": "the column from the wrong layer",
+    "value": 0.23180870711803436
+   },
+   "identity": {
+    "value": null,
+    "reason": "no identity input is banked for completeness"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t09/metrics.json"
+   ]
+  },
+  "identity t09": {
+   "value": 0.0,
+   "tol": 0.001,
+   "n_contexts": 1344,
+   "failing_input_n": 1344,
+   "failing_input": {
+    "input": "own drivers, m 50 direct (contexts over 1e-3)",
+    "value": 1338
+   },
+   "identity": {
+    "value": null,
+    "reason": "the gate is read on the identity arm itself; its value is the identity value"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t09/metrics.json",
+    "studies/reuse/results/amend2/1/t09/falls/*.npz"
+   ]
+  },
+  "known_number t10": {
+   "value": 0.0007734560594757688,
+   "tol": 0.01,
+   "failing_input": {
+    "input": "a_wrong at T_10: the previous grid checkpoint's exemplar_a",
+    "value": 0.1468453072399958
+   },
+   "identity": {
+    "value": 0.0,
+    "reason": "the bank against itself"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t10/metrics.json"
+   ]
+  },
+  "completeness t10": {
+   "value": 0.0012794611975550652,
+   "tol": 0.01,
+   "failing_input": {
+    "input": "the column from the wrong layer",
+    "value": 0.24074269086122513
+   },
+   "identity": {
+    "value": null,
+    "reason": "no identity input is banked for completeness"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t10/metrics.json"
+   ]
+  },
+  "identity t10": {
+   "value": 0.0,
+   "tol": 0.001,
+   "n_contexts": 1344,
+   "failing_input_n": 1344,
+   "failing_input": {
+    "input": "own drivers, m 50 direct (contexts over 1e-3)",
+    "value": 1343
+   },
+   "identity": {
+    "value": null,
+    "reason": "the gate is read on the identity arm itself; its value is the identity value"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t10/metrics.json",
+    "studies/reuse/results/amend2/1/t10/falls/*.npz"
+   ]
+  },
+  "known_number t11": {
+   "value": 0.0003021315977600342,
+   "tol": 0.01,
+   "failing_input": {
+    "input": "a_wrong at T_11: the previous grid checkpoint's exemplar_a",
+    "value": 0.12102014709698802
+   },
+   "identity": {
+    "value": 0.0,
+    "reason": "the bank against itself"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t11/metrics.json"
+   ]
+  },
+  "completeness t11": {
+   "value": 0.0009985077776946127,
+   "tol": 0.01,
+   "failing_input": {
+    "input": "the column from the wrong layer",
+    "value": 0.2558227553963661
+   },
+   "identity": {
+    "value": null,
+    "reason": "no identity input is banked for completeness"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t11/metrics.json"
+   ]
+  },
+  "identity t11": {
+   "value": 0.0,
+   "tol": 0.001,
+   "n_contexts": 1344,
+   "failing_input_n": 1344,
+   "failing_input": {
+    "input": "own drivers, m 50 direct (contexts over 1e-3)",
+    "value": 1344
+   },
+   "identity": {
+    "value": null,
+    "reason": "the gate is read on the identity arm itself; its value is the identity value"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t11/metrics.json",
+    "studies/reuse/results/amend2/1/t11/falls/*.npz"
+   ]
+  },
+  "known_number t12": {
+   "value": 0.0008169767474135661,
+   "tol": 0.01,
+   "failing_input": {
+    "input": "a_wrong at T_12: the previous grid checkpoint's exemplar_a",
+    "value": 0.12603903111757375
+   },
+   "identity": {
+    "value": 0.0,
+    "reason": "the bank against itself"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t12/metrics.json"
+   ]
+  },
+  "completeness t12": {
+   "value": 0.0009582680650055408,
+   "tol": 0.01,
+   "failing_input": {
+    "input": "the column from the wrong layer",
+    "value": 0.2692252993583679
+   },
+   "identity": {
+    "value": null,
+    "reason": "no identity input is banked for completeness"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t12/metrics.json"
+   ]
+  },
+  "identity t12": {
+   "value": 0.0,
+   "tol": 0.001,
+   "n_contexts": 1344,
+   "failing_input_n": 1344,
+   "failing_input": {
+    "input": "own drivers, m 50 direct (contexts over 1e-3)",
+    "value": 1342
+   },
+   "identity": {
+    "value": null,
+    "reason": "the gate is read on the identity arm itself; its value is the identity value"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t12/metrics.json",
+    "studies/reuse/results/amend2/1/t12/falls/*.npz"
+   ]
+  },
+  "known_number t13": {
+   "value": 0.0013254752973527384,
+   "tol": 0.01,
+   "failing_input": {
+    "input": "a_wrong at T_13: the previous grid checkpoint's exemplar_a",
+    "value": 0.1288775479989188
+   },
+   "identity": {
+    "value": 0.0,
+    "reason": "the bank against itself"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t13/metrics.json"
+   ]
+  },
+  "completeness t13": {
+   "value": 0.001132183417212218,
+   "tol": 0.01,
+   "failing_input": {
+    "input": "the column from the wrong layer",
+    "value": 0.2754121795296669
+   },
+   "identity": {
+    "value": null,
+    "reason": "no identity input is banked for completeness"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t13/metrics.json"
+   ]
+  },
+  "identity t13": {
+   "value": 0.0,
+   "tol": 0.001,
+   "n_contexts": 1344,
+   "failing_input_n": 1344,
+   "failing_input": {
+    "input": "own drivers, m 50 direct (contexts over 1e-3)",
+    "value": 1343
+   },
+   "identity": {
+    "value": null,
+    "reason": "the gate is read on the identity arm itself; its value is the identity value"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t13/metrics.json",
+    "studies/reuse/results/amend2/1/t13/falls/*.npz"
+   ]
+  },
+  "b2_a_before_reproduces": {
+   "value": 0.0,
+   "tol": 0.01,
+   "max_value": 0.0,
+   "n_reads": 300,
+   "failing_input": {
+    "input": "the same job's a_before at the other checkpoint (birth <-> T_15) in the primary bank",
+    "value": 0.34690967071926043
+   },
+   "identity": {
+    "value": 0.0,
+    "reason": "a bank against itself"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t15/metrics.json",
+    "studies/reuse/results/amend2/1/t06/metrics.json",
+    "studies/reuse/results/amend2/1/t07/metrics.json",
+    "studies/reuse/results/amend2/1/t08/metrics.json",
+    "studies/reuse/results/amend2/1/t09/metrics.json",
+    "studies/reuse/results/amend2/1/t10/metrics.json",
+    "studies/reuse/results/amend2/1/t11/metrics.json",
+    "studies/reuse/results/amend2/1/t12/metrics.json",
+    "studies/reuse/results/amend2/1/t13/metrics.json",
+    "studies/reuse/results/amend2/1/t15/falls/*.npz",
+    "studies/reuse/results/amend2/1/t06/falls/*.npz",
+    "studies/reuse/results/amend2/1/t07/falls/*.npz",
+    "studies/reuse/results/amend2/1/t08/falls/*.npz",
+    "studies/reuse/results/amend2/1/t09/falls/*.npz",
+    "studies/reuse/results/amend2/1/t10/falls/*.npz",
+    "studies/reuse/results/amend2/1/t11/falls/*.npz",
+    "studies/reuse/results/amend2/1/t12/falls/*.npz",
+    "studies/reuse/results/amend2/1/t13/falls/*.npz",
+    "studies/reuse/results/primary/1/t15/metrics.json",
+    "studies/reuse/results/primary/1/t06/metrics.json",
+    "studies/reuse/results/primary/1/t07/metrics.json",
+    "studies/reuse/results/primary/1/t08/metrics.json",
+    "studies/reuse/results/primary/1/t09/metrics.json",
+    "studies/reuse/results/primary/1/t10/metrics.json",
+    "studies/reuse/results/primary/1/t11/metrics.json",
+    "studies/reuse/results/primary/1/t12/metrics.json",
+    "studies/reuse/results/primary/1/t13/metrics.json",
+    "studies/reuse/results/primary/1/t15/falls/*.npz",
+    "studies/reuse/results/primary/1/t06/falls/*.npz",
+    "studies/reuse/results/primary/1/t07/falls/*.npz",
+    "studies/reuse/results/primary/1/t08/falls/*.npz",
+    "studies/reuse/results/primary/1/t09/falls/*.npz",
+    "studies/reuse/results/primary/1/t10/falls/*.npz",
+    "studies/reuse/results/primary/1/t11/falls/*.npz",
+    "studies/reuse/results/primary/1/t12/falls/*.npz",
+    "studies/reuse/results/primary/1/t13/falls/*.npz"
+   ]
+  },
+  "b2_drivers_reproduce": {
+   "value": 0,
+   "rule": "reads whose D(J) or D(O*) differs from the primary bank's own or cross set: must be 0",
+   "n_reads": 300,
+   "failing_input": {
+    "input": "the primary bank's own and cross sets at the other checkpoint",
+    "value": 300
+   },
+   "identity": {
+    "value": 0,
+    "reason": "a set against itself"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t15/metrics.json",
+    "studies/reuse/results/amend2/1/t06/metrics.json",
+    "studies/reuse/results/amend2/1/t07/metrics.json",
+    "studies/reuse/results/amend2/1/t08/metrics.json",
+    "studies/reuse/results/amend2/1/t09/metrics.json",
+    "studies/reuse/results/amend2/1/t10/metrics.json",
+    "studies/reuse/results/amend2/1/t11/metrics.json",
+    "studies/reuse/results/amend2/1/t12/metrics.json",
+    "studies/reuse/results/amend2/1/t13/metrics.json",
+    "studies/reuse/results/amend2/1/t15/falls/*.npz",
+    "studies/reuse/results/amend2/1/t06/falls/*.npz",
+    "studies/reuse/results/amend2/1/t07/falls/*.npz",
+    "studies/reuse/results/amend2/1/t08/falls/*.npz",
+    "studies/reuse/results/amend2/1/t09/falls/*.npz",
+    "studies/reuse/results/amend2/1/t10/falls/*.npz",
+    "studies/reuse/results/amend2/1/t11/falls/*.npz",
+    "studies/reuse/results/amend2/1/t12/falls/*.npz",
+    "studies/reuse/results/amend2/1/t13/falls/*.npz",
+    "studies/reuse/results/primary/1/t15/metrics.json",
+    "studies/reuse/results/primary/1/t06/metrics.json",
+    "studies/reuse/results/primary/1/t07/metrics.json",
+    "studies/reuse/results/primary/1/t08/metrics.json",
+    "studies/reuse/results/primary/1/t09/metrics.json",
+    "studies/reuse/results/primary/1/t10/metrics.json",
+    "studies/reuse/results/primary/1/t11/metrics.json",
+    "studies/reuse/results/primary/1/t12/metrics.json",
+    "studies/reuse/results/primary/1/t13/metrics.json",
+    "studies/reuse/results/primary/1/t15/falls/*.npz",
+    "studies/reuse/results/primary/1/t06/falls/*.npz",
+    "studies/reuse/results/primary/1/t07/falls/*.npz",
+    "studies/reuse/results/primary/1/t08/falls/*.npz",
+    "studies/reuse/results/primary/1/t09/falls/*.npz",
+    "studies/reuse/results/primary/1/t10/falls/*.npz",
+    "studies/reuse/results/primary/1/t11/falls/*.npz",
+    "studies/reuse/results/primary/1/t12/falls/*.npz",
+    "studies/reuse/results/primary/1/t13/falls/*.npz"
+   ]
+  },
+  "b3_s3_splits_agree": {
+   "value": 0.0,
+   "tol": 0.01,
+   "n_splits": 15,
+   "max_abs_I_diff": 0.0,
+   "max_abs_own_diff": 0.0,
+   "max_abs_cross_diff": 0.0,
+   "splits": [
+    {
+     "split": "L09N10255-__c0",
+     "known_ratio": 0.0,
+     "known_ratio_vs_birth": 0.21446965904168294,
+     "I_amend2": 0.9680470147252654,
+     "I_S3": 0.9680470147252654,
+     "own_amend2": 0.5532625514062149,
+     "own_S3": 0.5532625514062149,
+     "cross_amend2": 0.5355841612480701,
+     "cross_S3": 0.5355841612480701,
+     "artifact": [
+      "studies/reuse/results/amend2/1/t15/falls/L09N10255-__c0_ceiling_side2.npz",
+      "studies/reuse/results/sniper/2/t15/falls/L09N10255-__c0_ceiling_side2.npz"
+     ]
+    },
+    {
+     "split": "L09N7823+__c0",
+     "known_ratio": 0.0,
+     "known_ratio_vs_birth": 0.06296079364905574,
+     "I_amend2": 0.7878879719100512,
+     "I_S3": 0.7878879719100512,
+     "own_amend2": 0.45949884662868073,
+     "own_S3": 0.45949884662868073,
+     "cross_amend2": 0.3620336143652789,
+     "cross_S3": 0.3620336143652789,
+     "artifact": [
+      "studies/reuse/results/amend2/1/t15/falls/L09N7823+__c0_ceiling_side2.npz",
+      "studies/reuse/results/sniper/2/t15/falls/L09N7823+__c0_ceiling_side2.npz"
+     ]
+    },
+    {
+     "split": "L11N4690-__c1",
+     "known_ratio": 0.0,
+     "known_ratio_vs_birth": 0.41120975437604046,
+     "I_amend2": 0.7052866038570005,
+     "I_S3": 0.7052866038570005,
+     "own_amend2": 0.4359590604473242,
+     "own_S3": 0.4359590604473242,
+     "cross_amend2": 0.30747608516358205,
+     "cross_S3": 0.30747608516358205,
+     "artifact": [
+      "studies/reuse/results/amend2/1/t15/falls/L11N4690-__c1_ceiling_side2.npz",
+      "studies/reuse/results/sniper/2/t15/falls/L11N4690-__c1_ceiling_side2.npz"
+     ]
+    },
+    {
+     "split": "L12N10223+__c1",
+     "known_ratio": 0.0,
+     "known_ratio_vs_birth": 0.2765525626668989,
+     "I_amend2": 0.8608373722121007,
+     "I_S3": 0.8608373722121007,
+     "own_amend2": 0.8093080800344258,
+     "own_S3": 0.8093080800344258,
+     "cross_amend2": 0.6966826409268555,
+     "cross_S3": 0.6966826409268555,
+     "artifact": [
+      "studies/reuse/results/amend2/1/t15/falls/L12N10223+__c1_ceiling_side2.npz",
+      "studies/reuse/results/sniper/2/t15/falls/L12N10223+__c1_ceiling_side2.npz"
+     ]
+    },
+    {
+     "split": "L13N2406-__c0",
+     "known_ratio": 0.0,
+     "known_ratio_vs_birth": 0.22370046557801004,
+     "I_amend2": 0.9741975800341528,
+     "I_S3": 0.9741975800341528,
+     "own_amend2": 0.45688978492134763,
+     "own_S3": 0.45688978492134763,
+     "cross_amend2": 0.4451009228127014,
+     "cross_S3": 0.4451009228127014,
+     "artifact": [
+      "studies/reuse/results/amend2/1/t15/falls/L13N2406-__c0_ceiling_side2.npz",
+      "studies/reuse/results/sniper/2/t15/falls/L13N2406-__c0_ceiling_side2.npz"
+     ]
+    },
+    {
+     "split": "L14N5412+__c0",
+     "known_ratio": 0.0,
+     "known_ratio_vs_birth": 0.3673005022197859,
+     "I_amend2": 0.5035608941988381,
+     "I_S3": 0.5035608941988381,
+     "own_amend2": 0.4546995839107069,
+     "own_S3": 0.4546995839107069,
+     "cross_amend2": 0.22896892906591518,
+     "cross_S3": 0.22896892906591518,
+     "artifact": [
+      "studies/reuse/results/amend2/1/t15/falls/L14N5412+__c0_ceiling_side2.npz",
+      "studies/reuse/results/sniper/2/t15/falls/L14N5412+__c0_ceiling_side2.npz"
+     ]
+    },
+    {
+     "split": "L16N10459+__c0",
+     "known_ratio": 0.0,
+     "known_ratio_vs_birth": 0.2681788815141373,
+     "I_amend2": 0.8694632109211307,
+     "I_S3": 0.8694632109211307,
+     "own_amend2": 0.3733160850337767,
+     "own_S3": 0.3733160850337767,
+     "cross_amend2": 0.32458460198197336,
+     "cross_S3": 0.32458460198197336,
+     "artifact": [
+      "studies/reuse/results/amend2/1/t15/falls/L16N10459+__c0_ceiling_side2.npz",
+      "studies/reuse/results/sniper/2/t15/falls/L16N10459+__c0_ceiling_side2.npz"
+     ]
+    },
+    {
+     "split": "L17N4727+__c0",
+     "known_ratio": 0.0,
+     "known_ratio_vs_birth": 0.49975610825882344,
+     "I_amend2": 0.7920699109143712,
+     "I_S3": 0.7920699109143712,
+     "own_amend2": 0.5392986591027732,
+     "own_S3": 0.5392986591027732,
+     "cross_amend2": 0.4271622408717734,
+     "cross_S3": 0.4271622408717734,
+     "artifact": [
+      "studies/reuse/results/amend2/1/t15/falls/L17N4727+__c0_ceiling_side2.npz",
+      "studies/reuse/results/sniper/2/t15/falls/L17N4727+__c0_ceiling_side2.npz"
+     ]
+    },
+    {
+     "split": "L19N7865-__c3",
+     "known_ratio": 0.0,
+     "known_ratio_vs_birth": 0.3698056063651302,
+     "I_amend2": -0.17557585204740914,
+     "I_S3": -0.17557585204740914,
+     "own_amend2": 0.22672133987287824,
+     "own_S3": 0.22672133987287824,
+     "cross_amend2": -0.03980679242551083,
+     "cross_S3": -0.03980679242551083,
+     "artifact": [
+      "studies/reuse/results/amend2/1/t15/falls/L19N7865-__c3_ceiling_side2.npz",
+      "studies/reuse/results/sniper/2/t15/falls/L19N7865-__c3_ceiling_side2.npz"
+     ]
+    },
+    {
+     "split": "L19N9036-__c0",
+     "known_ratio": 0.0,
+     "known_ratio_vs_birth": 0.5873399142741534,
+     "I_amend2": 1.020228438198831,
+     "I_S3": 1.020228438198831,
+     "own_amend2": 0.6634661403239369,
+     "own_S3": 0.6634661403239369,
+     "cross_amend2": 0.6768870241404966,
+     "cross_S3": 0.6768870241404966,
+     "artifact": [
+      "studies/reuse/results/amend2/1/t15/falls/L19N9036-__c0_ceiling_side2.npz",
+      "studies/reuse/results/sniper/2/t15/falls/L19N9036-__c0_ceiling_side2.npz"
+     ]
+    },
+    {
+     "split": "L20N5759-__c0",
+     "known_ratio": 0.0,
+     "known_ratio_vs_birth": 0.25978152719381525,
+     "I_amend2": 1.0115930639441777,
+     "I_S3": 1.0115930639441777,
+     "own_amend2": 0.8070725314993208,
+     "own_S3": 0.8070725314993208,
+     "cross_amend2": 0.8164289749645818,
+     "cross_S3": 0.8164289749645818,
+     "artifact": [
+      "studies/reuse/results/amend2/1/t15/falls/L20N5759-__c0_ceiling_side2.npz",
+      "studies/reuse/results/sniper/2/t15/falls/L20N5759-__c0_ceiling_side2.npz"
+     ]
+    },
+    {
+     "split": "L23N10179+__c2",
+     "known_ratio": 0.0,
+     "known_ratio_vs_birth": 0.3548554743466254,
+     "I_amend2": 0.5018608798419895,
+     "I_S3": 0.5018608798419895,
+     "own_amend2": 0.7731659666330281,
+     "own_S3": 0.7731659666330281,
+     "cross_amend2": 0.38802175227833374,
+     "cross_S3": 0.38802175227833374,
+     "artifact": [
+      "studies/reuse/results/amend2/1/t15/falls/L23N10179+__c2_ceiling_side2.npz",
+      "studies/reuse/results/sniper/2/t15/falls/L23N10179+__c2_ceiling_side2.npz"
+     ]
+    },
+    {
+     "split": "L25N5749+__c1",
+     "known_ratio": 0.0,
+     "known_ratio_vs_birth": 0.7870830677173756,
+     "I_amend2": 0.9918890073578842,
+     "I_S3": 0.9918890073578842,
+     "own_amend2": 0.8773552095998072,
+     "own_S3": 0.8773552095998072,
+     "cross_amend2": 0.8702389879502211,
+     "cross_S3": 0.8702389879502211,
+     "artifact": [
+      "studies/reuse/results/amend2/1/t15/falls/L25N5749+__c1_ceiling_side2.npz",
+      "studies/reuse/results/sniper/2/t15/falls/L25N5749+__c1_ceiling_side2.npz"
+     ]
+    },
+    {
+     "split": "L27N8796+__c0",
+     "known_ratio": 0.0,
+     "known_ratio_vs_birth": 0.2578063283280036,
+     "I_amend2": 0.7562865574662663,
+     "I_S3": 0.7562865574662663,
+     "own_amend2": 0.45358648579408306,
+     "own_S3": 0.45358648579408306,
+     "cross_amend2": 0.3430413618544286,
+     "cross_S3": 0.3430413618544286,
+     "artifact": [
+      "studies/reuse/results/amend2/1/t15/falls/L27N8796+__c0_ceiling_side2.npz",
+      "studies/reuse/results/sniper/2/t15/falls/L27N8796+__c0_ceiling_side2.npz"
+     ]
+    },
+    {
+     "split": "L30N6507-__c0",
+     "known_ratio": 0.0,
+     "known_ratio_vs_birth": 0.15479960786732813,
+     "I_amend2": 0.5128699620360575,
+     "I_S3": 0.5128699620360575,
+     "own_amend2": 0.46063347900978424,
+     "own_S3": 0.46063347900978424,
+     "cross_amend2": 0.23624507489228513,
+     "cross_S3": 0.23624507489228513,
+     "artifact": [
+      "studies/reuse/results/amend2/1/t15/falls/L30N6507-__c0_ceiling_side2.npz",
+      "studies/reuse/results/sniper/2/t15/falls/L30N6507-__c0_ceiling_side2.npz"
+     ]
+    }
+   ],
+   "failing_input": {
+    "input": "the same split's side-2 a_before at its birth load (primary bank)",
+    "value": 0.2765525626668989
+   },
+   "identity": {
+    "value": 0.0,
+    "reason": "a bank against itself"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t15/metrics.json",
+    "studies/reuse/results/sniper/2/t15/metrics.json",
+    "studies/reuse/results/primary/1/t06/falls/*_ceiling_side2.npz",
+    "studies/reuse/results/primary/1/t07/falls/*_ceiling_side2.npz",
+    "studies/reuse/results/primary/1/t08/falls/*_ceiling_side2.npz",
+    "studies/reuse/results/primary/1/t09/falls/*_ceiling_side2.npz",
+    "studies/reuse/results/primary/1/t10/falls/*_ceiling_side2.npz",
+    "studies/reuse/results/primary/1/t11/falls/*_ceiling_side2.npz",
+    "studies/reuse/results/primary/1/t12/falls/*_ceiling_side2.npz",
+    "studies/reuse/results/primary/1/t13/falls/*_ceiling_side2.npz"
+   ]
+  },
+  "room_b": {
+   "value": 0.3655742848813728,
+   "line": 0.2,
+   "ceiling_median_birth": 0.6533051762390816,
+   "n_ceiling_reads": 138,
+   "planted_p95": 0.2877308913577088,
+   "planted_used": "I_full",
+   "rule": "median I_ceil over the own ceiling splits read at birth - weighted 95th percentile of planted I at birth >= 0.200",
+   "failing_input": {
+    "input": "planted side labels shuffled within pair at the same loads (own and cross)",
+    "value": -0.3755484159211073
+   },
+   "identity": {
+    "value": null,
+    "reason": "the identity arm gives own and cross falls of 0, so I is 0/0"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t06/metrics.json",
+    "studies/reuse/results/amend2/1/t07/metrics.json",
+    "studies/reuse/results/amend2/1/t08/metrics.json",
+    "studies/reuse/results/amend2/1/t09/metrics.json",
+    "studies/reuse/results/amend2/1/t10/metrics.json",
+    "studies/reuse/results/amend2/1/t11/metrics.json",
+    "studies/reuse/results/amend2/1/t12/metrics.json",
+    "studies/reuse/results/amend2/1/t13/metrics.json",
+    "studies/reuse/results/amend2/1/t06/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t07/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t08/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t09/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t10/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t11/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t12/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t13/falls/*__planted*.npz",
+    "studies/reuse/results/primary/1/t06/metrics.json",
+    "studies/reuse/results/primary/1/t07/metrics.json",
+    "studies/reuse/results/primary/1/t08/metrics.json",
+    "studies/reuse/results/primary/1/t09/metrics.json",
+    "studies/reuse/results/primary/1/t10/metrics.json",
+    "studies/reuse/results/primary/1/t11/metrics.json",
+    "studies/reuse/results/primary/1/t12/metrics.json",
+    "studies/reuse/results/primary/1/t13/metrics.json",
+    "studies/reuse/results/primary/1/t06/falls/*.npz",
+    "studies/reuse/results/primary/1/t07/falls/*.npz",
+    "studies/reuse/results/primary/1/t08/falls/*.npz",
+    "studies/reuse/results/primary/1/t09/falls/*.npz",
+    "studies/reuse/results/primary/1/t10/falls/*.npz",
+    "studies/reuse/results/primary/1/t11/falls/*.npz",
+    "studies/reuse/results/primary/1/t12/falls/*.npz",
+    "studies/reuse/results/primary/1/t13/falls/*.npz",
+    "studies/reuse/results/primary/1/t06/falls/*_ceiling_side2.npz",
+    "studies/reuse/results/primary/1/t07/falls/*_ceiling_side2.npz",
+    "studies/reuse/results/primary/1/t08/falls/*_ceiling_side2.npz",
+    "studies/reuse/results/primary/1/t09/falls/*_ceiling_side2.npz",
+    "studies/reuse/results/primary/1/t10/falls/*_ceiling_side2.npz",
+    "studies/reuse/results/primary/1/t11/falls/*_ceiling_side2.npz",
+    "studies/reuse/results/primary/1/t12/falls/*_ceiling_side2.npz",
+    "studies/reuse/results/primary/1/t13/falls/*_ceiling_side2.npz"
+   ]
+  },
+  "positive_control_rj": {
+   "value": 0.5275728539285014,
+   "floor": 0.25,
+   "n_jobs": 150,
+   "failing_input": {
+    "input": "R_J in place of own: median fall at birth must be under 0.25",
+    "value": -0.004605536816870823
+   },
+   "identity": {
+    "value": 0.0,
+    "reason": "median identity-arm fall at birth (primary bank)"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t06/metrics.json",
+    "studies/reuse/results/amend2/1/t07/metrics.json",
+    "studies/reuse/results/amend2/1/t08/metrics.json",
+    "studies/reuse/results/amend2/1/t09/metrics.json",
+    "studies/reuse/results/amend2/1/t10/metrics.json",
+    "studies/reuse/results/amend2/1/t11/metrics.json",
+    "studies/reuse/results/amend2/1/t12/metrics.json",
+    "studies/reuse/results/amend2/1/t13/metrics.json",
+    "studies/reuse/results/amend2/1/t06/falls/*.npz",
+    "studies/reuse/results/amend2/1/t07/falls/*.npz",
+    "studies/reuse/results/amend2/1/t08/falls/*.npz",
+    "studies/reuse/results/amend2/1/t09/falls/*.npz",
+    "studies/reuse/results/amend2/1/t10/falls/*.npz",
+    "studies/reuse/results/amend2/1/t11/falls/*.npz",
+    "studies/reuse/results/amend2/1/t12/falls/*.npz",
+    "studies/reuse/results/amend2/1/t13/falls/*.npz",
+    "studies/reuse/results/primary/1/t06/metrics.json",
+    "studies/reuse/results/primary/1/t07/metrics.json",
+    "studies/reuse/results/primary/1/t08/metrics.json",
+    "studies/reuse/results/primary/1/t09/metrics.json",
+    "studies/reuse/results/primary/1/t10/metrics.json",
+    "studies/reuse/results/primary/1/t11/metrics.json",
+    "studies/reuse/results/primary/1/t12/metrics.json",
+    "studies/reuse/results/primary/1/t13/metrics.json",
+    "studies/reuse/results/primary/1/t06/falls/*.npz",
+    "studies/reuse/results/primary/1/t07/falls/*.npz",
+    "studies/reuse/results/primary/1/t08/falls/*.npz",
+    "studies/reuse/results/primary/1/t09/falls/*.npz",
+    "studies/reuse/results/primary/1/t10/falls/*.npz",
+    "studies/reuse/results/primary/1/t11/falls/*.npz",
+    "studies/reuse/results/primary/1/t12/falls/*.npz",
+    "studies/reuse/results/primary/1/t13/falls/*.npz"
+   ]
+  }
+ },
+ "rules": {
+  "R1b": {
+   "I_birth": {
+    "value": 0.2258794862804861,
+    "lo": 0.1700787111103181,
+    "hi": 0.3077698196137135,
+    "n_rows": 148,
+    "n_neurons": 102
+   },
+   "planted_birth": {
+    "value": 0.030532164485109183,
+    "lo": 0.020832529877754198,
+    "hi": 0.05132999862732924
+   },
+   "comparison": {
+    "overlap": false,
+    "side": "real T higher"
+   },
+   "verdict": "not refuted: no overlap and real I is higher",
+   "t15_comparison": {
+    "I_T15": {
+     "value": 0.3753463295572431,
+     "lo": 0.30261643300361685,
+     "hi": 0.4460691966111502,
+     "n_rows": 149,
+     "n_neurons": 104
+    },
+    "planted_T15": {
+     "value": 0.1740553533187712,
+     "lo": 0.11736633111490201,
+     "hi": 0.22145977087923352
+    },
+    "comparison": {
+     "overlap": false,
+     "side": "real T higher"
+    },
+    "artifact": [
+     "studies/reuse/results/primary/1/t15/metrics.json",
+     "studies/reuse/results/sniper/2/t15/metrics.json",
+     "studies/reuse/results/sniper/2/t15/falls/*__planted_draws.npz",
+     "studies/reuse/results/sniper/S3.json"
+    ]
+   },
+   "artifact": [
+    "studies/reuse/results/primary/1/t06/metrics.json",
+    "studies/reuse/results/primary/1/t07/metrics.json",
+    "studies/reuse/results/primary/1/t08/metrics.json",
+    "studies/reuse/results/primary/1/t09/metrics.json",
+    "studies/reuse/results/primary/1/t10/metrics.json",
+    "studies/reuse/results/primary/1/t11/metrics.json",
+    "studies/reuse/results/primary/1/t12/metrics.json",
+    "studies/reuse/results/primary/1/t13/metrics.json",
+    "studies/reuse/results/primary/1/t06/falls/*.npz",
+    "studies/reuse/results/primary/1/t07/falls/*.npz",
+    "studies/reuse/results/primary/1/t08/falls/*.npz",
+    "studies/reuse/results/primary/1/t09/falls/*.npz",
+    "studies/reuse/results/primary/1/t10/falls/*.npz",
+    "studies/reuse/results/primary/1/t11/falls/*.npz",
+    "studies/reuse/results/primary/1/t12/falls/*.npz",
+    "studies/reuse/results/primary/1/t13/falls/*.npz",
+    "studies/reuse/results/amend2/1/t06/metrics.json",
+    "studies/reuse/results/amend2/1/t07/metrics.json",
+    "studies/reuse/results/amend2/1/t08/metrics.json",
+    "studies/reuse/results/amend2/1/t09/metrics.json",
+    "studies/reuse/results/amend2/1/t10/metrics.json",
+    "studies/reuse/results/amend2/1/t11/metrics.json",
+    "studies/reuse/results/amend2/1/t12/metrics.json",
+    "studies/reuse/results/amend2/1/t13/metrics.json",
+    "studies/reuse/results/amend2/1/t06/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t07/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t08/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t09/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t10/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t11/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t12/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t13/falls/*__planted*.npz"
+   ]
+  },
+  "R2b": {
+   "value": 0.1262277365574888,
+   "lo": 0.10047111056704514,
+   "hi": 0.14081329689098857,
+   "n_rows": 148,
+   "n_neurons": 102,
+   "n_nonfinite_draws": 0,
+   "n_boot": 2000,
+   "seed": 0,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t06/metrics.json",
+    "studies/reuse/results/amend2/1/t07/metrics.json",
+    "studies/reuse/results/amend2/1/t08/metrics.json",
+    "studies/reuse/results/amend2/1/t09/metrics.json",
+    "studies/reuse/results/amend2/1/t10/metrics.json",
+    "studies/reuse/results/amend2/1/t11/metrics.json",
+    "studies/reuse/results/amend2/1/t12/metrics.json",
+    "studies/reuse/results/amend2/1/t13/metrics.json",
+    "studies/reuse/results/amend2/1/t06/falls/*.npz",
+    "studies/reuse/results/amend2/1/t07/falls/*.npz",
+    "studies/reuse/results/amend2/1/t08/falls/*.npz",
+    "studies/reuse/results/amend2/1/t09/falls/*.npz",
+    "studies/reuse/results/amend2/1/t10/falls/*.npz",
+    "studies/reuse/results/amend2/1/t11/falls/*.npz",
+    "studies/reuse/results/amend2/1/t12/falls/*.npz",
+    "studies/reuse/results/amend2/1/t13/falls/*.npz",
+    "studies/reuse/results/primary/1/t06/metrics.json",
+    "studies/reuse/results/primary/1/t07/metrics.json",
+    "studies/reuse/results/primary/1/t08/metrics.json",
+    "studies/reuse/results/primary/1/t09/metrics.json",
+    "studies/reuse/results/primary/1/t10/metrics.json",
+    "studies/reuse/results/primary/1/t11/metrics.json",
+    "studies/reuse/results/primary/1/t12/metrics.json",
+    "studies/reuse/results/primary/1/t13/metrics.json",
+    "studies/reuse/results/primary/1/t06/falls/*.npz",
+    "studies/reuse/results/primary/1/t07/falls/*.npz",
+    "studies/reuse/results/primary/1/t08/falls/*.npz",
+    "studies/reuse/results/primary/1/t09/falls/*.npz",
+    "studies/reuse/results/primary/1/t10/falls/*.npz",
+    "studies/reuse/results/primary/1/t11/falls/*.npz",
+    "studies/reuse/results/primary/1/t12/falls/*.npz",
+    "studies/reuse/results/primary/1/t13/falls/*.npz"
+   ],
+   "verdict": "specific beyond activity: the interval is above 0",
+   "stamp": null
+  },
+  "R3b": {
+   "value": 0.01664518072828286,
+   "lo": -0.03094428271627676,
+   "hi": 0.05303626689432615,
+   "n_jobs": 147,
+   "n_ceiling_reads": 138,
+   "n_neurons": 104,
+   "n_nonfinite_draws": 0,
+   "n_boot": 2000,
+   "seed": 0,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t15/metrics.json",
+    "studies/reuse/results/amend2/1/t15/falls/*_ceiling_side2.npz",
+    "studies/reuse/results/primary/1/t06/falls/*_ceiling_side2.npz",
+    "studies/reuse/results/primary/1/t07/falls/*_ceiling_side2.npz",
+    "studies/reuse/results/primary/1/t08/falls/*_ceiling_side2.npz",
+    "studies/reuse/results/primary/1/t09/falls/*_ceiling_side2.npz",
+    "studies/reuse/results/primary/1/t10/falls/*_ceiling_side2.npz",
+    "studies/reuse/results/primary/1/t11/falls/*_ceiling_side2.npz",
+    "studies/reuse/results/primary/1/t12/falls/*_ceiling_side2.npz",
+    "studies/reuse/results/primary/1/t13/falls/*_ceiling_side2.npz",
+    "studies/reuse/results/primary/1/t15/metrics.json",
+    "studies/reuse/results/primary/1/t06/metrics.json",
+    "studies/reuse/results/primary/1/t07/metrics.json",
+    "studies/reuse/results/primary/1/t08/metrics.json",
+    "studies/reuse/results/primary/1/t09/metrics.json",
+    "studies/reuse/results/primary/1/t10/metrics.json",
+    "studies/reuse/results/primary/1/t11/metrics.json",
+    "studies/reuse/results/primary/1/t12/metrics.json",
+    "studies/reuse/results/primary/1/t13/metrics.json",
+    "studies/reuse/results/primary/1/t15/falls/*.npz",
+    "studies/reuse/results/primary/1/t06/falls/*.npz",
+    "studies/reuse/results/primary/1/t07/falls/*.npz",
+    "studies/reuse/results/primary/1/t08/falls/*.npz",
+    "studies/reuse/results/primary/1/t09/falls/*.npz",
+    "studies/reuse/results/primary/1/t10/falls/*.npz",
+    "studies/reuse/results/primary/1/t11/falls/*.npz",
+    "studies/reuse/results/primary/1/t12/falls/*.npz",
+    "studies/reuse/results/primary/1/t13/falls/*.npz"
+   ],
+   "R3_jobs_rise": {
+    "value": 0.09795129611904185,
+    "lo": 0.06776108048720991,
+    "hi": 0.12755043199041627,
+    "n_rows": 147
+   },
+   "ceiling_rise": {
+    "value": 0.08130611539075899,
+    "lo": 0.052046788304305314,
+    "hi": 0.11934554714205799,
+    "n_rows": 138,
+    "n_neurons": 104
+   },
+   "verdict": "generic: the interval contains 0"
+  }
+ },
+ "reported": {
+  "planted_birth": {
+   "key": "I_full",
+   "value": 0.030532164485109183,
+   "lo": 0.020832529877754198,
+   "hi": 0.05132999862732924,
+   "p95": 0.2877308913577088,
+   "by_tercile": {
+    "0": {
+     "weighted_median": -0.004166996337483127,
+     "n_pairs": 18,
+     "per_load_median": {
+      "t06": 0.04600493502095104,
+      "t07": 0.024691246193694297,
+      "t08": 0.020969613188357668,
+      "t09": -0.016940862565392185,
+      "t10": 0.007594514545241465,
+      "t11": 0.03778302715305387,
+      "t12": -0.004739682415662168,
+      "t13": -0.01747151181961777
+     }
+    },
+    "1": {
+     "weighted_median": 0.04156510369567575,
+     "n_pairs": 20,
+     "per_load_median": {
+      "t06": -0.061017031640206415,
+      "t07": 0.019486790080512732,
+      "t08": 0.1494756407877741,
+      "t09": 0.01535370266245304,
+      "t10": 0.038588340417194604,
+      "t11": 0.028731925754073198,
+      "t12": 0.033816387125290136,
+      "t13": 0.07215626229861154
+     }
+    },
+    "2": {
+     "weighted_median": 0.05419838609713493,
+     "n_pairs": 18,
+     "per_load_median": {
+      "t06": -0.020891587904407163,
+      "t07": -0.002339109874899461,
+      "t08": -0.0544441412292562,
+      "t09": -0.009785773474297568,
+      "t10": 0.0753993715401218,
+      "t11": 0.052722497890069664,
+      "t12": 0.063124891357145,
+      "t13": 0.07916309729179864
+     }
+    }
+   },
+   "n_nonfinite": 1,
+   "weights_load": {
+    "t06": 2.0,
+    "t07": 3.0,
+    "t08": 9.0,
+    "t09": 17.0,
+    "t10": 13.0,
+    "t11": 28.0,
+    "t12": 41.0,
+    "t13": 35.0
+   },
+   "weights_tercile": {
+    "0": 0.3333333333333333,
+    "1": 0.3333333333333333,
+    "2": 0.3333333333333333
+   },
+   "n_boot": 2000,
+   "seed": 0,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t06/metrics.json",
+    "studies/reuse/results/amend2/1/t07/metrics.json",
+    "studies/reuse/results/amend2/1/t08/metrics.json",
+    "studies/reuse/results/amend2/1/t09/metrics.json",
+    "studies/reuse/results/amend2/1/t10/metrics.json",
+    "studies/reuse/results/amend2/1/t11/metrics.json",
+    "studies/reuse/results/amend2/1/t12/metrics.json",
+    "studies/reuse/results/amend2/1/t13/metrics.json",
+    "studies/reuse/results/amend2/1/t06/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t07/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t08/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t09/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t10/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t11/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t12/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t13/falls/*__planted*.npz"
+   ]
+  },
+  "planted_birth_shuffled": {
+   "key": "I_sh",
+   "value": 0.6665096046879558,
+   "lo": 0.6009914138673222,
+   "hi": 0.7235863152032096,
+   "p95": 1.028853592160189,
+   "by_tercile": {
+    "0": {
+     "weighted_median": 0.6345852035873006,
+     "n_pairs": 18,
+     "per_load_median": {
+      "t06": 0.5599759080440923,
+      "t07": 0.32105068508190227,
+      "t08": 0.6376482742115808,
+      "t09": 0.49214635839548293,
+      "t10": 0.5823115167275333,
+      "t11": 0.631611027491261,
+      "t12": 0.6600734594416808,
+      "t13": 0.6344882498754354
+     }
+    },
+    "1": {
+     "weighted_median": 0.6626292177775092,
+     "n_pairs": 20,
+     "per_load_median": {
+      "t06": 0.12442416902835883,
+      "t07": 0.5420440688717548,
+      "t08": 0.5918398013793817,
+      "t09": 0.5910766595563034,
+      "t10": 0.6627096733798492,
+      "t11": 0.6671916105012394,
+      "t12": 0.6947703358114616,
+      "t13": 0.6512731322231969
+     }
+    },
+    "2": {
+     "weighted_median": 0.7023143926990578,
+     "n_pairs": 18,
+     "per_load_median": {
+      "t06": 0.5520312637423385,
+      "t07": 0.5527511410031835,
+      "t08": 0.6829304319309161,
+      "t09": 0.6093206148521148,
+      "t10": 0.690475626553628,
+      "t11": 0.6442296146958931,
+      "t12": 0.7216113991494022,
+      "t13": 0.7113179016228898
+     }
+    }
+   },
+   "n_nonfinite": 0,
+   "weights_load": {
+    "t06": 2.0,
+    "t07": 3.0,
+    "t08": 9.0,
+    "t09": 17.0,
+    "t10": 13.0,
+    "t11": 28.0,
+    "t12": 41.0,
+    "t13": 35.0
+   },
+   "weights_tercile": {
+    "0": 0.3333333333333333,
+    "1": 0.3333333333333333,
+    "2": 0.3333333333333333
+   },
+   "n_boot": 2000,
+   "seed": 0,
+   "artifact": [
+    "studies/reuse/results/amend2/1/t06/metrics.json",
+    "studies/reuse/results/amend2/1/t07/metrics.json",
+    "studies/reuse/results/amend2/1/t08/metrics.json",
+    "studies/reuse/results/amend2/1/t09/metrics.json",
+    "studies/reuse/results/amend2/1/t10/metrics.json",
+    "studies/reuse/results/amend2/1/t11/metrics.json",
+    "studies/reuse/results/amend2/1/t12/metrics.json",
+    "studies/reuse/results/amend2/1/t13/metrics.json",
+    "studies/reuse/results/amend2/1/t06/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t07/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t08/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t09/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t10/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t11/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t12/falls/*__planted*.npz",
+    "studies/reuse/results/amend2/1/t13/falls/*__planted*.npz"
+   ]
+  },
+  "B2": {
+   "rj_fall_birth_live": {
+    "value": -0.004605536816870823,
+    "lo": -0.012398844635146584,
+    "hi": 0.0013408486852299385,
+    "n_rows": 148,
+    "n_neurons": 102,
+    "n_nonfinite_draws": 0,
+    "n_boot": 2000,
+    "seed": 0,
+    "artifact": [
+     "studies/reuse/results/amend2/1/t06/metrics.json",
+     "studies/reuse/results/amend2/1/t07/metrics.json",
+     "studies/reuse/results/amend2/1/t08/metrics.json",
+     "studies/reuse/results/amend2/1/t09/metrics.json",
+     "studies/reuse/results/amend2/1/t10/metrics.json",
+     "studies/reuse/results/amend2/1/t11/metrics.json",
+     "studies/reuse/results/amend2/1/t12/metrics.json",
+     "studies/reuse/results/amend2/1/t13/metrics.json",
+     "studies/reuse/results/amend2/1/t06/falls/*.npz",
+     "studies/reuse/results/amend2/1/t07/falls/*.npz",
+     "studies/reuse/results/amend2/1/t08/falls/*.npz",
+     "studies/reuse/results/amend2/1/t09/falls/*.npz",
+     "studies/reuse/results/amend2/1/t10/falls/*.npz",
+     "studies/reuse/results/amend2/1/t11/falls/*.npz",
+     "studies/reuse/results/amend2/1/t12/falls/*.npz",
+     "studies/reuse/results/amend2/1/t13/falls/*.npz"
+    ]
+   },
+   "rj_fall_T15_live": 0.02847172856392926,
+   "random_fall_birth_live": 0.006500963835827534,
+   "foreign_fall_birth_live": 0.00974449977080888,
+   "cross_minus_rj_T15_live": {
+    "value": 0.12662114523636256,
+    "lo": 0.10576880359174325,
+    "hi": 0.15910333228098328,
+    "n_rows": 149,
+    "n_neurons": 104,
+    "n_nonfinite_draws": 0,
+    "n_boot": 2000,
+    "seed": 0,
+    "artifact": [
+     "studies/reuse/results/amend2/1/t15/metrics.json",
+     "studies/reuse/results/primary/1/t15/metrics.json"
+    ]
+   },
+   "energy_rel_gap_median_over_reads": 0.0001489588442196745,
+   "rj_fall_birth_by_label": {
+    "related": -0.008500249290715349,
+    "unrelated": -0.0023130506377806305
+   },
+   "artifact": [
+    "studies/reuse/results/amend2/1/t06/metrics.json",
+    "studies/reuse/results/amend2/1/t07/metrics.json",
+    "studies/reuse/results/amend2/1/t08/metrics.json",
+    "studies/reuse/results/amend2/1/t09/metrics.json",
+    "studies/reuse/results/amend2/1/t10/metrics.json",
+    "studies/reuse/results/amend2/1/t11/metrics.json",
+    "studies/reuse/results/amend2/1/t12/metrics.json",
+    "studies/reuse/results/amend2/1/t13/metrics.json",
+    "studies/reuse/results/amend2/1/t06/falls/*.npz",
+    "studies/reuse/results/amend2/1/t07/falls/*.npz",
+    "studies/reuse/results/amend2/1/t08/falls/*.npz",
+    "studies/reuse/results/amend2/1/t09/falls/*.npz",
+    "studies/reuse/results/amend2/1/t10/falls/*.npz",
+    "studies/reuse/results/amend2/1/t11/falls/*.npz",
+    "studies/reuse/results/amend2/1/t12/falls/*.npz",
+    "studies/reuse/results/amend2/1/t13/falls/*.npz",
+    "studies/reuse/results/primary/1/t06/metrics.json",
+    "studies/reuse/results/primary/1/t07/metrics.json",
+    "studies/reuse/results/primary/1/t08/metrics.json",
+    "studies/reuse/results/primary/1/t09/metrics.json",
+    "studies/reuse/results/primary/1/t10/metrics.json",
+    "studies/reuse/results/primary/1/t11/metrics.json",
+    "studies/reuse/results/primary/1/t12/metrics.json",
+    "studies/reuse/results/primary/1/t13/metrics.json",
+    "studies/reuse/results/primary/1/t06/falls/*.npz",
+    "studies/reuse/results/primary/1/t07/falls/*.npz",
+    "studies/reuse/results/primary/1/t08/falls/*.npz",
+    "studies/reuse/results/primary/1/t09/falls/*.npz",
+    "studies/reuse/results/primary/1/t10/falls/*.npz",
+    "studies/reuse/results/primary/1/t11/falls/*.npz",
+    "studies/reuse/results/primary/1/t12/falls/*.npz",
+    "studies/reuse/results/primary/1/t13/falls/*.npz"
+   ]
+  },
+  "B3": {
+   "I_ceil_T15_median_over_splits": 0.7227155831445506,
+   "I_ceil_birth_median": 0.6533051762390816,
+   "n_rises": 98,
+   "n_reads": 138,
+   "n_splits_T15": 129,
+   "ceiling_rise": {
+    "value": 0.08130611539075899,
+    "lo": 0.052046788304305314,
+    "hi": 0.11934554714205799,
+    "n_rows": 138,
+    "n_neurons": 104,
+    "n_nonfinite_draws": 0,
+    "n_boot": 2000,
+    "seed": 0,
+    "artifact": [
+     "studies/reuse/results/amend2/1/t15/metrics.json",
+     "studies/reuse/results/amend2/1/t15/falls/*_ceiling_side2.npz",
+     "studies/reuse/results/primary/1/t06/falls/*_ceiling_side2.npz",
+     "studies/reuse/results/primary/1/t07/falls/*_ceiling_side2.npz",
+     "studies/reuse/results/primary/1/t08/falls/*_ceiling_side2.npz",
+     "studies/reuse/results/primary/1/t09/falls/*_ceiling_side2.npz",
+     "studies/reuse/results/primary/1/t10/falls/*_ceiling_side2.npz",
+     "studies/reuse/results/primary/1/t11/falls/*_ceiling_side2.npz",
+     "studies/reuse/results/primary/1/t12/falls/*_ceiling_side2.npz",
+     "studies/reuse/results/primary/1/t13/falls/*_ceiling_side2.npz"
+    ]
+   },
+   "reads": [
+    {
+     "split": "L15N474-__c1",
+     "step": "t06",
+     "neuron": "L15N474",
+     "I_birth": 0.8472745523899943,
+     "I_T15": 0.9334072978662534,
+     "d": 0.08613274547625915
+    },
+    {
+     "split": "L27N7794+__c1",
+     "step": "t06",
+     "neuron": "L27N7794",
+     "I_birth": 0.5449184275776106,
+     "I_T15": 0.41237380458613804,
+     "d": -0.13254462299147252
+    },
+    {
+     "split": "L05N6854+__c3",
+     "step": "t07",
+     "neuron": "L05N6854",
+     "I_birth": 0.19213827781022064,
+     "I_T15": 0.5547018103188905,
+     "d": 0.3625635325086699
+    },
+    {
+     "split": "L25N10878+__c3",
+     "step": "t07",
+     "neuron": "L25N10878",
+     "I_birth": 0.20601806048703875,
+     "I_T15": 0.6582320712674156,
+     "d": 0.4522140107803768
+    },
+    {
+     "split": "L25N5749+__c1",
+     "step": "t07",
+     "neuron": "L25N5749",
+     "I_birth": 0.8193865480077587,
+     "I_T15": 0.9918890073578842,
+     "d": 0.17250245935012554
+    },
+    {
+     "split": "L04N3542-__c1",
+     "step": "t08",
+     "neuron": "L04N3542",
+     "I_birth": 0.7056038722449289,
+     "I_T15": 0.7382127821779465,
+     "d": 0.03260890993301757
+    },
+    {
+     "split": "L06N6273-__c0",
+     "step": "t08",
+     "neuron": "L06N6273",
+     "I_birth": 0.7189258630688612,
+     "I_T15": 0.9235240405209757,
+     "d": 0.2045981774521145
+    },
+    {
+     "split": "L07N7004-__c1",
+     "step": "t08",
+     "neuron": "L07N7004",
+     "I_birth": -11.76502593956339,
+     "I_T15": 0.575740580112776,
+     "d": 12.340766519676166
+    },
+    {
+     "split": "L08N6822+__c0",
+     "step": "t08",
+     "neuron": "L08N6822",
+     "I_birth": 0.8261372364202982,
+     "I_T15": 0.8781840247246036,
+     "d": 0.052046788304305314
+    },
+    {
+     "split": "L11N4690-__c1",
+     "step": "t08",
+     "neuron": "L11N4690",
+     "I_birth": 0.5636848457336429,
+     "I_T15": 0.7052866038570005,
+     "d": 0.14160175812335762
+    },
+    {
+     "split": "L18N6315+__c4",
+     "step": "t08",
+     "neuron": "L18N6315",
+     "I_birth": 0.6923546521682336,
+     "I_T15": 0.7164309263903678,
+     "d": 0.02407627422213421
+    },
+    {
+     "split": "L25N5749+__c3",
+     "step": "t08",
+     "neuron": "L25N5749",
+     "I_birth": 0.8163231296298515,
+     "I_T15": 0.6116958133556673,
+     "d": -0.2046273162741843
+    },
+    {
+     "split": "L04N5845-__c2",
+     "step": "t09",
+     "neuron": "L04N5845",
+     "I_birth": 0.8881138048168847,
+     "I_T15": 0.6410102215681162,
+     "d": -0.24710358324876858
+    },
+    {
+     "split": "L06N2537+__c1",
+     "step": "t09",
+     "neuron": "L06N2537",
+     "I_birth": 0.7768598720818343,
+     "I_T15": 0.885216187374603,
+     "d": 0.10835631529276868
+    },
+    {
+     "split": "L07N534-__c2",
+     "step": "t09",
+     "neuron": "L07N534",
+     "I_birth": 0.3573398115342238,
+     "I_T15": 0.7626353895541778,
+     "d": 0.405295578019954
+    },
+    {
+     "split": "L08N3846-__c0",
+     "step": "t09",
+     "neuron": "L08N3846",
+     "I_birth": 0.7887089078627479,
+     "I_T15": 0.9548404847142101,
+     "d": 0.16613157685146218
+    },
+    {
+     "split": "L08N9190-__c1",
+     "step": "t09",
+     "neuron": "L08N9190",
+     "I_birth": 0.8954406926417541,
+     "I_T15": 0.8416676531958316,
+     "d": -0.05377303944592249
+    },
+    {
+     "split": "L09N7823+__c0",
+     "step": "t09",
+     "neuron": "L09N7823",
+     "I_birth": 0.5358606514257099,
+     "I_T15": 0.7878879719100512,
+     "d": 0.2520273204843413
+    },
+    {
+     "split": "L10N5687+__c0",
+     "step": "t09",
+     "neuron": "L10N5687",
+     "I_birth": 0.8132611910553187,
+     "I_T15": 0.9742273097421722,
+     "d": 0.1609661186868535
+    },
+    {
+     "split": "L10N9794+__c1",
+     "step": "t09",
+     "neuron": "L10N9794",
+     "I_birth": 0.7794083734126944,
+     "I_T15": 0.9120235271609168,
+     "d": 0.13261515374822241
+    },
+    {
+     "split": "L12N5447-__c2",
+     "step": "t09",
+     "neuron": "L12N5447",
+     "I_birth": 0.6438578780532611,
+     "I_T15": 0.9733687321773268,
+     "d": 0.32951085412406567
+    },
+    {
+     "split": "L18N703-__c2",
+     "step": "t09",
+     "neuron": "L18N703",
+     "I_birth": 0.881639729273433,
+     "I_T15": 0.9442158015131985,
+     "d": 0.06257607223976547
+    },
+    {
+     "split": "L19N1554+__c2",
+     "step": "t09",
+     "neuron": "L19N1554",
+     "I_birth": 0.39010084642952597,
+     "I_T15": 0.6812115640191355,
+     "d": 0.29111071758960955
+    },
+    {
+     "split": "L19N6189+__c2",
+     "step": "t09",
+     "neuron": "L19N6189",
+     "I_birth": 0.33638002344347423,
+     "I_T15": 0.625728776855326,
+     "d": 0.2893487534118518
+    },
+    {
+     "split": "L20N5782-__c2",
+     "step": "t09",
+     "neuron": "L20N5782",
+     "I_birth": 0.8496241660387862,
+     "I_T15": 0.8681246441288583,
+     "d": 0.018500478090072048
+    },
+    {
+     "split": "L21N7258-__c0",
+     "step": "t09",
+     "neuron": "L21N7258",
+     "I_birth": 0.7423897816711621,
+     "I_T15": 0.8061123735552144,
+     "d": 0.06372259188405227
+    },
+    {
+     "split": "L25N5377+__c2",
+     "step": "t09",
+     "neuron": "L25N5377",
+     "I_birth": 0.25179689045839876,
+     "I_T15": 0.5496509812102207,
+     "d": 0.29785409075182195
+    },
+    {
+     "split": "L26N3583-__c0",
+     "step": "t09",
+     "neuron": "L26N3583",
+     "I_birth": 0.8168411381845135,
+     "I_T15": 0.9683743857720184,
+     "d": 0.15153324758750486
+    },
+    {
+     "split": "L06N8759+__c0",
+     "step": "t10",
+     "neuron": "L06N8759",
+     "I_birth": 0.8073089455370395,
+     "I_T15": 0.8319073620609051,
+     "d": 0.02459841652386563
+    },
+    {
+     "split": "L07N1160-__c1",
+     "step": "t10",
+     "neuron": "L07N1160",
+     "I_birth": 0.812246985275602,
+     "I_T15": 0.8509892370669997,
+     "d": 0.038742251791397675
+    },
+    {
+     "split": "L09N7823+__c0",
+     "step": "t10",
+     "neuron": "L09N7823",
+     "I_birth": 0.5467323333468888,
+     "I_T15": 0.7878879719100512,
+     "d": 0.24115563856316247
+    },
+    {
+     "split": "L10N9794+__c1",
+     "step": "t10",
+     "neuron": "L10N9794",
+     "I_birth": 0.6054111329158507,
+     "I_T15": 0.9120235271609168,
+     "d": 0.30661239424506614
+    },
+    {
+     "split": "L12N2948+__c1",
+     "step": "t10",
+     "neuron": "L12N2948",
+     "I_birth": 0.8245332754506012,
+     "I_T15": 0.9301640042217313,
+     "d": 0.10563072877113011
+    },
+    {
+     "split": "L13N2406-__c0",
+     "step": "t10",
+     "neuron": "L13N2406",
+     "I_birth": 0.8553222112821236,
+     "I_T15": 0.9741975800341528,
+     "d": 0.1188753687520292
+    },
+    {
+     "split": "L24N1234-__c1",
+     "step": "t10",
+     "neuron": "L24N1234",
+     "I_birth": 0.3470201049642919,
+     "I_T15": 0.5030062974723791,
+     "d": 0.1559861925080872
+    },
+    {
+     "split": "L27N10591+__c3",
+     "step": "t10",
+     "neuron": "L27N10591",
+     "I_birth": 0.4775058371397793,
+     "I_T15": 0.3761155787578006,
+     "d": -0.10139025838197868
+    },
+    {
+     "split": "L28N4613+__c1",
+     "step": "t10",
+     "neuron": "L28N4613",
+     "I_birth": 0.7011280809648065,
+     "I_T15": 0.7068301563479323,
+     "d": 0.0057020753831258375
+    },
+    {
+     "split": "L30N6507+__c0",
+     "step": "t10",
+     "neuron": "L30N6507",
+     "I_birth": 0.3987327435538674,
+     "I_T15": 0.7150410754501807,
+     "d": 0.3163083318963133
+    },
+    {
+     "split": "L31N3149-__c4",
+     "step": "t10",
+     "neuron": "L31N3149",
+     "I_birth": 0.5249451194853229,
+     "I_T15": 0.741606802867083,
+     "d": 0.21666168338176017
+    },
+    {
+     "split": "L31N7529+__c4",
+     "step": "t10",
+     "neuron": "L31N7529",
+     "I_birth": 0.32110299823538974,
+     "I_T15": 0.5412996862123775,
+     "d": 0.22019668797698772
+    },
+    {
+     "split": "L04N3936-__c0",
+     "step": "t11",
+     "neuron": "L04N3936",
+     "I_birth": 0.3651804615024139,
+     "I_T15": 0.8343806632140996,
+     "d": 0.46920020171168575
+    },
+    {
+     "split": "L04N7402-__c0",
+     "step": "t11",
+     "neuron": "L04N7402",
+     "I_birth": 0.7837082670856723,
+     "I_T15": 0.7699550148933215,
+     "d": -0.013753252192350796
+    },
+    {
+     "split": "L06N10970-__c0",
+     "step": "t11",
+     "neuron": "L06N10970",
+     "I_birth": 0.925407022928268,
+     "I_T15": 0.7686578634611985,
+     "d": -0.15674915946706958
+    },
+    {
+     "split": "L08N10948+__c0",
+     "step": "t11",
+     "neuron": "L08N10948",
+     "I_birth": 0.8957723767370552,
+     "I_T15": 0.9704878383722836,
+     "d": 0.07471546163522835
+    },
+    {
+     "split": "L08N3846-__c0",
+     "step": "t11",
+     "neuron": "L08N3846",
+     "I_birth": 0.8747745862795371,
+     "I_T15": 0.9548404847142101,
+     "d": 0.08006589843467304
+    },
+    {
+     "split": "L08N9190+__c0",
+     "step": "t11",
+     "neuron": "L08N9190",
+     "I_birth": 0.8206221327512007,
+     "I_T15": 1.0109295350292735,
+     "d": 0.19030740227807286
+    },
+    {
+     "split": "L09N10681+__c3",
+     "step": "t11",
+     "neuron": "L09N10681",
+     "I_birth": 0.7856062751253744,
+     "I_T15": 0.7272919201298583,
+     "d": -0.05831435499551607
+    },
+    {
+     "split": "L11N4690-__c1",
+     "step": "t11",
+     "neuron": "L11N4690",
+     "I_birth": 0.5282890226083625,
+     "I_T15": 0.7052866038570005,
+     "d": 0.17699758124863796
+    },
+    {
+     "split": "L12N10223+__c1",
+     "step": "t11",
+     "neuron": "L12N10223",
+     "I_birth": 0.820104451897436,
+     "I_T15": 0.8608373722121007,
+     "d": 0.04073292031466469
+    },
+    {
+     "split": "L12N5641+__c5",
+     "step": "t11",
+     "neuron": "L12N5641",
+     "I_birth": 0.9497566601167029,
+     "I_T15": 0.674542523247041,
+     "d": -0.2752141368696619
+    },
+    {
+     "split": "L15N10014+__c0",
+     "step": "t11",
+     "neuron": "L15N10014",
+     "I_birth": 0.6052442587867177,
+     "I_T15": 0.8393939469413749,
+     "d": 0.2341496881546572
+    },
+    {
+     "split": "L17N4727+__c0",
+     "step": "t11",
+     "neuron": "L17N4727",
+     "I_birth": 0.5933593056181592,
+     "I_T15": 0.7920699109143712,
+     "d": 0.19871060529621198
+    },
+    {
+     "split": "L17N5407+__c1",
+     "step": "t11",
+     "neuron": "L17N5407",
+     "I_birth": 0.8250130942946041,
+     "I_T15": 0.8956179284671716,
+     "d": 0.07060483417256747
+    },
+    {
+     "split": "L18N6315+__c2",
+     "step": "t11",
+     "neuron": "L18N6315",
+     "I_birth": 0.8317892421554253,
+     "I_T15": 0.8124587540692909,
+     "d": -0.019330488086134356
+    },
+    {
+     "split": "L19N2718-__c3",
+     "step": "t11",
+     "neuron": "L19N2718",
+     "I_birth": 0.52696116261266,
+     "I_T15": 0.7082044523418065,
+     "d": 0.1812432897291465
+    },
+    {
+     "split": "L20N978-__c1",
+     "step": "t11",
+     "neuron": "L20N978",
+     "I_birth": 0.21831406407885273,
+     "I_T15": 0.3690744855505958,
+     "d": 0.15076042147174307
+    },
+    {
+     "split": "L21N10623-__c1",
+     "step": "t11",
+     "neuron": "L21N10623",
+     "I_birth": 0.44152136912902284,
+     "I_T15": 0.7380188960625629,
+     "d": 0.29649752693354003
+    },
+    {
+     "split": "L22N10231+__c0",
+     "step": "t11",
+     "neuron": "L22N10231",
+     "I_birth": 0.5522822521113138,
+     "I_T15": 0.6348285844581587,
+     "d": 0.08254633234684494
+    },
+    {
+     "split": "L22N7990+__c3",
+     "step": "t11",
+     "neuron": "L22N7990",
+     "I_birth": 0.8575816983856337,
+     "I_T15": 0.9274097802815771,
+     "d": 0.06982808189594336
+    },
+    {
+     "split": "L23N10071+__c0",
+     "step": "t11",
+     "neuron": "L23N10071",
+     "I_birth": 0.48343203869808776,
+     "I_T15": 0.7356689627527746,
+     "d": 0.25223692405468684
+    },
+    {
+     "split": "L23N10179+__c2",
+     "step": "t11",
+     "neuron": "L23N10179",
+     "I_birth": 0.7621502730128729,
+     "I_T15": 0.5018608798419895,
+     "d": -0.2602893931708834
+    },
+    {
+     "split": "L24N5066+__c1",
+     "step": "t11",
+     "neuron": "L24N5066",
+     "I_birth": 0.3016994837322972,
+     "I_T15": 0.6664790623863088,
+     "d": 0.3647795786540116
+    },
+    {
+     "split": "L25N5377+__c0",
+     "step": "t11",
+     "neuron": "L25N5377",
+     "I_birth": 0.4603823405195944,
+     "I_T15": 0.6339938793681434,
+     "d": 0.17361153884854902
+    },
+    {
+     "split": "L27N7623+__c2",
+     "step": "t11",
+     "neuron": "L27N7623",
+     "I_birth": 0.4139264228468546,
+     "I_T15": 0.5787435901344569,
+     "d": 0.16481716728760226
+    },
+    {
+     "split": "L27N8796+__c0",
+     "step": "t11",
+     "neuron": "L27N8796",
+     "I_birth": 0.810323426160942,
+     "I_T15": 0.7562865574662663,
+     "d": -0.05403686869467572
+    },
+    {
+     "split": "L30N6507-__c0",
+     "step": "t11",
+     "neuron": "L30N6507",
+     "I_birth": 0.4270115681631725,
+     "I_T15": 0.5128699620360575,
+     "d": 0.08585839387288502
+    },
+    {
+     "split": "L31N3262-__c0",
+     "step": "t11",
+     "neuron": "L31N3262",
+     "I_birth": 0.5957391329019261,
+     "I_T15": 0.8396944009186385,
+     "d": 0.2439552680167123
+    },
+    {
+     "split": "L31N7529+__c1",
+     "step": "t11",
+     "neuron": "L31N7529",
+     "I_birth": 0.5255215740112839,
+     "I_T15": 0.6449480569402483,
+     "d": 0.1194264829289644
+    },
+    {
+     "split": "L04N10274+__c0",
+     "step": "t12",
+     "neuron": "L04N10274",
+     "I_birth": 0.783063146047745,
+     "I_T15": 0.8881596443649789,
+     "d": 0.10509649831723389
+    },
+    {
+     "split": "L05N4149+__c0",
+     "step": "t12",
+     "neuron": "L05N4149",
+     "I_birth": 0.7216741249346252,
+     "I_T15": 0.7227155831445506,
+     "d": 0.0010414582099254055
+    },
+    {
+     "split": "L06N10970+__c0",
+     "step": "t12",
+     "neuron": "L06N10970",
+     "I_birth": 0.8259646895334117,
+     "I_T15": 0.655220021456297,
+     "d": -0.17074466807711475
+    },
+    {
+     "split": "L06N7759-__c0",
+     "step": "t12",
+     "neuron": "L06N7759",
+     "I_birth": 0.8967656363744724,
+     "I_T15": 0.880744803375168,
+     "d": -0.016020832999304346
+    },
+    {
+     "split": "L08N9190+__c0",
+     "step": "t12",
+     "neuron": "L08N9190",
+     "I_birth": 0.7794724059879511,
+     "I_T15": 1.0109295350292735,
+     "d": 0.23145712904132243
+    },
+    {
+     "split": "L09N10255-__c0",
+     "step": "t12",
+     "neuron": "L09N10255",
+     "I_birth": 0.746834925325742,
+     "I_T15": 0.9680470147252654,
+     "d": 0.22121208939952341
+    },
+    {
+     "split": "L09N10681+__c3",
+     "step": "t12",
+     "neuron": "L09N10681",
+     "I_birth": 0.7863015789511859,
+     "I_T15": 0.7272919201298583,
+     "d": -0.05900965882132758
+    },
+    {
+     "split": "L09N2031-__c2",
+     "step": "t12",
+     "neuron": "L09N2031",
+     "I_birth": 0.20719764562210446,
+     "I_T15": 0.1114901955498615,
+     "d": -0.09570745007224296
+    },
+    {
+     "split": "L10N9052+__c1",
+     "step": "t12",
+     "neuron": "L10N9052",
+     "I_birth": 0.5393075133439813,
+     "I_T15": 0.7460001667044347,
+     "d": 0.2066926533604534
+    },
+    {
+     "split": "L12N5641+__c5",
+     "step": "t12",
+     "neuron": "L12N5641",
+     "I_birth": 0.7875089612200643,
+     "I_T15": 0.674542523247041,
+     "d": -0.1129664379730233
+    },
+    {
+     "split": "L13N2847-__c1",
+     "step": "t12",
+     "neuron": "L13N2847",
+     "I_birth": 0.7065049082966978,
+     "I_T15": 0.687321348328283,
+     "d": -0.01918355996841481
+    },
+    {
+     "split": "L13N8376+__c0",
+     "step": "t12",
+     "neuron": "L13N8376",
+     "I_birth": 0.5331563422890546,
+     "I_T15": 0.5320883140943647,
+     "d": -0.001068028194689874
+    },
+    {
+     "split": "L15N10014-__c0",
+     "step": "t12",
+     "neuron": "L15N10014",
+     "I_birth": 0.42738272381945697,
+     "I_T15": 0.6908804936119435,
+     "d": 0.2634977697924865
+    },
+    {
+     "split": "L17N8536+__c1",
+     "step": "t12",
+     "neuron": "L17N8536",
+     "I_birth": 0.44117234864991156,
+     "I_T15": 0.510768458119584,
+     "d": 0.06959610946967248
+    },
+    {
+     "split": "L17N88+__c0",
+     "step": "t12",
+     "neuron": "L17N88",
+     "I_birth": 0.4636332368774778,
+     "I_T15": 0.5470540855831211,
+     "d": 0.08342084870564326
+    },
+    {
+     "split": "L18N2982-__c1",
+     "step": "t12",
+     "neuron": "L18N2982",
+     "I_birth": 0.4172622134921408,
+     "I_T15": 0.495188098041671,
+     "d": 0.0779258845495302
+    },
+    {
+     "split": "L18N6315+__c2",
+     "step": "t12",
+     "neuron": "L18N6315",
+     "I_birth": 0.8321761812136036,
+     "I_T15": 0.8124587540692909,
+     "d": -0.019717427144312683
+    },
+    {
+     "split": "L18N703+__c2",
+     "step": "t12",
+     "neuron": "L18N703",
+     "I_birth": 0.7713018235233461,
+     "I_T15": 0.7220938097385561,
+     "d": -0.049208013784790006
+    },
+    {
+     "split": "L19N1154-__c0",
+     "step": "t12",
+     "neuron": "L19N1154",
+     "I_birth": 0.9074156675465245,
+     "I_T15": 0.9046943527941591,
+     "d": -0.002721314752365367
+    },
+    {
+     "split": "L19N9036-__c0",
+     "step": "t12",
+     "neuron": "L19N9036",
+     "I_birth": 0.8406635577639998,
+     "I_T15": 1.020228438198831,
+     "d": 0.1795648804348311
+    },
+    {
+     "split": "L20N5759-__c0",
+     "step": "t12",
+     "neuron": "L20N5759",
+     "I_birth": 0.9723820815662937,
+     "I_T15": 1.0115930639441777,
+     "d": 0.03921098237788401
+    },
+    {
+     "split": "L21N2147-__c1",
+     "step": "t12",
+     "neuron": "L21N2147",
+     "I_birth": 0.9317801149384244,
+     "I_T15": 0.8051855811154619,
+     "d": -0.12659453382296249
+    },
+    {
+     "split": "L21N7258-__c2",
+     "step": "t12",
+     "neuron": "L21N7258",
+     "I_birth": 0.7390497506863664,
+     "I_T15": 0.7742498297618271,
+     "d": 0.035200079075460744
+    },
+    {
+     "split": "L22N10231+__c2",
+     "step": "t12",
+     "neuron": "L22N10231",
+     "I_birth": 0.6206542644812354,
+     "I_T15": 0.44666674075687807,
+     "d": -0.17398752372435733
+    },
+    {
+     "split": "L22N6104+__c0",
+     "step": "t12",
+     "neuron": "L22N6104",
+     "I_birth": 0.7978547945598053,
+     "I_T15": 0.7107465079536757,
+     "d": -0.08710828660612968
+    },
+    {
+     "split": "L22N6104-__c2",
+     "step": "t12",
+     "neuron": "L22N6104",
+     "I_birth": 0.20013474328306505,
+     "I_T15": 0.3193993546382166,
+     "d": 0.11926461135515157
+    },
+    {
+     "split": "L22N8185-__c0",
+     "step": "t12",
+     "neuron": "L22N8185",
+     "I_birth": 0.9721387486985551,
+     "I_T15": 0.9517284850007734,
+     "d": -0.02041026369778165
+    },
+    {
+     "split": "L23N10179+__c4",
+     "step": "t12",
+     "neuron": "L23N10179",
+     "I_birth": 0.33174693313295406,
+     "I_T15": 0.40606551146068204,
+     "d": 0.07431857832772798
+    },
+    {
+     "split": "L23N1430+__c3",
+     "step": "t12",
+     "neuron": "L23N1430",
+     "I_birth": 0.6716150148475838,
+     "I_T15": 0.6569259609002738,
+     "d": -0.014689053947310016
+    },
+    {
+     "split": "L26N5340-__c1",
+     "step": "t12",
+     "neuron": "L26N5340",
+     "I_birth": 0.7415030400234416,
+     "I_T15": 0.8196773608139961,
+     "d": 0.07817432079055453
+    },
+    {
+     "split": "L26N5599+__c3",
+     "step": "t12",
+     "neuron": "L26N5599",
+     "I_birth": 0.4753294521227892,
+     "I_T15": 0.6910456044890719,
+     "d": 0.21571615236628272
+    },
+    {
+     "split": "L26N9711+__c0",
+     "step": "t12",
+     "neuron": "L26N9711",
+     "I_birth": 0.7956553795779372,
+     "I_T15": 0.7187352573217701,
+     "d": -0.07692012225616707
+    },
+    {
+     "split": "L26N9711+__c1",
+     "step": "t12",
+     "neuron": "L26N9711",
+     "I_birth": 0.09169621253266746,
+     "I_T15": 0.11807834712612382,
+     "d": 0.026382134593456355
+    },
+    {
+     "split": "L26N9711-__c0",
+     "step": "t12",
+     "neuron": "L26N9711",
+     "I_birth": 0.5947813260139045,
+     "I_T15": 0.5786228362245307,
+     "d": -0.016158489789373842
+    },
+    {
+     "split": "L28N1930+__c3",
+     "step": "t12",
+     "neuron": "L28N1930",
+     "I_birth": 0.33967260672461447,
+     "I_T15": 0.5639938458597976,
+     "d": 0.22432123913518315
+    },
+    {
+     "split": "L29N10781-__c1",
+     "step": "t12",
+     "neuron": "L29N10781",
+     "I_birth": 0.13750818283195881,
+     "I_T15": 0.317814309479668,
+     "d": 0.18030612664770918
+    },
+    {
+     "split": "L31N10791+__c0",
+     "step": "t12",
+     "neuron": "L31N10791",
+     "I_birth": 0.8782264763931669,
+     "I_T15": 0.8595211739906374,
+     "d": -0.018705302402529433
+    },
+    {
+     "split": "L05N2634-__c1",
+     "step": "t13",
+     "neuron": "L05N2634",
+     "I_birth": 0.7987000866610261,
+     "I_T15": 1.0067771254209608,
+     "d": 0.20807703875993466
+    },
+    {
+     "split": "L05N8714-__c3",
+     "step": "t13",
+     "neuron": "L05N8714",
+     "I_birth": 0.35105335075653293,
+     "I_T15": 0.3918807637552577,
+     "d": 0.04082741299872478
+    },
+    {
+     "split": "L06N10970-__c2",
+     "step": "t13",
+     "neuron": "L06N10970",
+     "I_birth": 0.1339474467605415,
+     "I_T15": 0.3191485355117123,
+     "d": 0.1852010887511708
+    },
+    {
+     "split": "L07N2194+__c4",
+     "step": "t13",
+     "neuron": "L07N2194",
+     "I_birth": 0.8515357064706738,
+     "I_T15": 0.9736157101025574,
+     "d": 0.12208000363188365
+    },
+    {
+     "split": "L08N8341+__c4",
+     "step": "t13",
+     "neuron": "L08N8341",
+     "I_birth": 0.3540329015986929,
+     "I_T15": 0.6823049957355092,
+     "d": 0.3282720941368163
+    },
+    {
+     "split": "L09N10681+__c4",
+     "step": "t13",
+     "neuron": "L09N10681",
+     "I_birth": 0.4311559041372989,
+     "I_T15": 0.4649498699716487,
+     "d": 0.03379396583434985
+    },
+    {
+     "split": "L09N10681-__c4",
+     "step": "t13",
+     "neuron": "L09N10681",
+     "I_birth": 0.4602619524236492,
+     "I_T15": 0.7649210090889899,
+     "d": 0.30465905666534066
+    },
+    {
+     "split": "L09N2031-__c1",
+     "step": "t13",
+     "neuron": "L09N2031",
+     "I_birth": 0.6051632810234314,
+     "I_T15": 0.5663126834033935,
+     "d": -0.03885059762003795
+    },
+    {
+     "split": "L09N8024+__c2",
+     "step": "t13",
+     "neuron": "L09N8024",
+     "I_birth": 0.29290145784462385,
+     "I_T15": 0.22514790444579558,
+     "d": -0.06775355339882827
+    },
+    {
+     "split": "L10N10529-__c2",
+     "step": "t13",
+     "neuron": "L10N10529",
+     "I_birth": 0.7563228257218113,
+     "I_T15": 0.8577268209050641,
+     "d": 0.10140399518325283
+    },
+    {
+     "split": "L10N10702+__c3",
+     "step": "t13",
+     "neuron": "L10N10702",
+     "I_birth": 0.23925896246545736,
+     "I_T15": 0.44580898198427693,
+     "d": 0.20655001951881957
+    },
+    {
+     "split": "L10N9100-__c2",
+     "step": "t13",
+     "neuron": "L10N9100",
+     "I_birth": 0.8442287358956956,
+     "I_T15": 0.972740586536726,
+     "d": 0.12851185064103043
+    },
+    {
+     "split": "L10N9794-__c0",
+     "step": "t13",
+     "neuron": "L10N9794",
+     "I_birth": 0.15566580598762797,
+     "I_T15": 0.22350427114747562,
+     "d": 0.06783846515984765
+    },
+    {
+     "split": "L12N10223-__c1",
+     "step": "t13",
+     "neuron": "L12N10223",
+     "I_birth": 0.6627524744249021,
+     "I_T15": 0.7809001817823974,
+     "d": 0.11814770735749525
+    },
+    {
+     "split": "L12N5641+__c2",
+     "step": "t13",
+     "neuron": "L12N5641",
+     "I_birth": 0.49004590480756993,
+     "I_T15": 0.7356528241161646,
+     "d": 0.24560691930859468
+    },
+    {
+     "split": "L12N5641-__c1",
+     "step": "t13",
+     "neuron": "L12N5641",
+     "I_birth": 0.8043388605029247,
+     "I_T15": 0.8327025073615794,
+     "d": 0.028363646858654668
+    },
+    {
+     "split": "L14N5412+__c0",
+     "step": "t13",
+     "neuron": "L14N5412",
+     "I_birth": 0.5172280517054547,
+     "I_T15": 0.5035608941988381,
+     "d": -0.013667157506616623
+    },
+    {
+     "split": "L14N9004+__c0",
+     "step": "t13",
+     "neuron": "L14N9004",
+     "I_birth": 0.7295995314712234,
+     "I_T15": 0.8018994411470359,
+     "d": 0.07229990967581257
+    },
+    {
+     "split": "L16N10459+__c0",
+     "step": "t13",
+     "neuron": "L16N10459",
+     "I_birth": 0.7106830083510921,
+     "I_T15": 0.8694632109211307,
+     "d": 0.15878020257003855
+    },
+    {
+     "split": "L16N6982-__c3",
+     "step": "t13",
+     "neuron": "L16N6982",
+     "I_birth": 0.5602775506333502,
+     "I_T15": 0.27324087397343677,
+     "d": -0.2870366766599134
+    },
+    {
+     "split": "L18N2982-__c2",
+     "step": "t13",
+     "neuron": "L18N2982",
+     "I_birth": 0.37413333865036147,
+     "I_T15": 0.24758969229760824,
+     "d": -0.12654364635275323
+    },
+    {
+     "split": "L18N8102+__c0",
+     "step": "t13",
+     "neuron": "L18N8102",
+     "I_birth": 0.29968884053675626,
+     "I_T15": 0.10710637516373701,
+     "d": -0.19258246537301926
+    },
+    {
+     "split": "L18N8102+__c3",
+     "step": "t13",
+     "neuron": "L18N8102",
+     "I_birth": -0.003657013533600002,
+     "I_T15": 0.08217803263720538,
+     "d": 0.08583504617080538
+    },
+    {
+     "split": "L19N7865-__c3",
+     "step": "t13",
+     "neuron": "L19N7865",
+     "I_birth": 0.02697353749494799,
+     "I_T15": -0.17557585204740914,
+     "d": -0.20254938954235713
+    },
+    {
+     "split": "L21N3982-__c1",
+     "step": "t13",
+     "neuron": "L21N3982",
+     "I_birth": 0.9090963172982319,
+     "I_T15": 0.8930747431162838,
+     "d": -0.01602157418194816
+    },
+    {
+     "split": "L21N6487+__c2",
+     "step": "t13",
+     "neuron": "L21N6487",
+     "I_birth": 0.12942480383138588,
+     "I_T15": 0.40943724866670217,
+     "d": 0.2800124448353163
+    },
+    {
+     "split": "L24N8193+__c0",
+     "step": "t13",
+     "neuron": "L24N8193",
+     "I_birth": 0.7784652371556737,
+     "I_T15": 0.7015917493025666,
+     "d": -0.0768734878531071
+    },
+    {
+     "split": "L27N3309-__c3",
+     "step": "t13",
+     "neuron": "L27N3309",
+     "I_birth": 0.5442472684800994,
+     "I_T15": 0.782823109576214,
+     "d": 0.23857584109611463
+    },
+    {
+     "split": "L28N1930+__c3",
+     "step": "t13",
+     "neuron": "L28N1930",
+     "I_birth": 0.5197959827753443,
+     "I_T15": 0.5639938458597976,
+     "d": 0.04419786308445328
+    },
+    {
+     "split": "L28N5955-__c3",
+     "step": "t13",
+     "neuron": "L28N5955",
+     "I_birth": 0.3293534465324892,
+     "I_T15": 0.5674661684494479,
+     "d": 0.23811272191695865
+    },
+    {
+     "split": "L28N6373-__c1",
+     "step": "t13",
+     "neuron": "L28N6373",
+     "I_birth": 0.7340002685055558,
+     "I_T15": 0.8777876487638052,
+     "d": 0.14378738025824944
+    },
+    {
+     "split": "L30N7717-__c2",
+     "step": "t13",
+     "neuron": "L30N7717",
+     "I_birth": 0.4652785711184306,
+     "I_T15": 0.5026142142071979,
+     "d": 0.0373356430887673
+    },
+    {
+     "split": "L31N6449-__c0",
+     "step": "t13",
+     "neuron": "L31N6449",
+     "I_birth": 0.9113593006601333,
+     "I_T15": 0.7905643031930526,
+     "d": -0.12079499746708067
+    }
+   ]
+  },
+  "t15_comparison": {
+   "I_T15": {
+    "value": 0.3753463295572431,
+    "lo": 0.30261643300361685,
+    "hi": 0.4460691966111502,
+    "n_rows": 149,
+    "n_neurons": 104
+   },
+   "planted_T15": {
+    "value": 0.1740553533187712,
+    "lo": 0.11736633111490201,
+    "hi": 0.22145977087923352
+   },
+   "comparison": {
+    "overlap": false,
+    "side": "real T higher"
+   },
+   "artifact": [
+    "studies/reuse/results/primary/1/t15/metrics.json",
+    "studies/reuse/results/sniper/2/t15/metrics.json",
+    "studies/reuse/results/sniper/2/t15/falls/*__planted_draws.npz",
+    "studies/reuse/results/sniper/S3.json"
+   ]
+  }
+ },
+ "predictions": [
+  {
+   "row": "| planted median at birth, pooled | 0.14 [0.09, 0.19] | outside [0.05, 0.25] |",
+   "observed": "0.031 [0.021, 0.051]",
+   "outcome": "refuted"
+  },
+  {
+   "row": "| room-b | 0.25 | under 0.20 |",
+   "observed": "0.366",
+   "outcome": "landed"
+  },
+  {
+   "row": "| R1b | refuted (overlap) | not refuted |",
+   "observed": "not refuted: no overlap and real I is higher",
+   "outcome": "refuted"
+  },
+  {
+   "row": "| R_J fall median | 0.02 | over 0.06 |",
+   "observed": "-0.005 at birth over 148 live jobs",
+   "outcome": "landed"
+  },
+  {
+   "row": "| R2b | specific beyond activity | interval contains 0 |",
+   "observed": "0.126 [0.100, 0.141]",
+   "outcome": "landed"
+  },
+  {
+   "row": "| ceiling rise over 138, paired median | 0.10 [0.05, 0.16] | under 0.03 or over 0.20 |",
+   "observed": "0.081 [0.052, 0.119] over 138 reads",
+   "outcome": "landed"
+  },
+  {
+   "row": "| R3b | generic | reuse grows beyond |",
+   "observed": "0.017 [-0.031, 0.053]: generic",
+   "outcome": "landed"
+  }
+ ],
+ "pairs": {
+  "PL05_00": {
+   "tercile": 0,
+   "layer": 5,
+   "I_full": {
+    "t06": -0.10095849062702865,
+    "t07": 0.024691246193694297,
+    "t08": -0.5672517560665137,
+    "t09": -0.015942819220913222,
+    "t10": -0.012053254486885354,
+    "t11": 0.039511218545862085,
+    "t12": 0.0906142857567723,
+    "t13": 0.04871764686594263
+   },
+   "I_sh": {
+    "t06": 0.050660831291226144,
+    "t07": 1.1285745676042502,
+    "t08": -0.17598052935586997,
+    "t09": 0.9660943222219112,
+    "t10": -0.16446837646586124,
+    "t11": 0.8260776221899625,
+    "t12": 0.8730441786868889,
+    "t13": 0.8562175470181725
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": true,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL05_01": {
+   "tercile": 0,
+   "layer": 5,
+   "I_full": {
+    "t06": 0.014423719315203818,
+    "t07": 0.021223078824315973,
+    "t08": -0.0031087919182160575,
+    "t09": 0.0057210187379939745,
+    "t10": 0.004447694376097511,
+    "t11": -0.016780399787461882,
+    "t12": -0.02044614203042583,
+    "t13": -0.037359011294795
+   },
+   "I_sh": {
+    "t06": 0.025835541605723534,
+    "t07": 0.7844847270465124,
+    "t08": 0.8569741843531534,
+    "t09": 0.7873743592188724,
+    "t10": 0.9563374202582866,
+    "t11": 0.7985314656383381,
+    "t12": 0.6555447273167971,
+    "t13": 0.5824423049457915
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL05_02": {
+   "tercile": 0,
+   "layer": 5,
+   "I_full": {
+    "t06": 0.049808281345378666,
+    "t07": 0.387256216309114,
+    "t08": 0.1797669064320905,
+    "t09": -0.021463998033691093,
+    "t10": -0.013030856595145598,
+    "t11": 0.06810499650648295,
+    "t12": 0.023541660976202222,
+    "t13": -0.009594007826190987
+   },
+   "I_sh": {
+    "t06": 0.5633495724401872,
+    "t07": 0.4185965637810378,
+    "t08": -0.3396187760252292,
+    "t09": 0.525019676205309,
+    "t10": 0.31955458717290103,
+    "t11": 0.32587933750016457,
+    "t12": 0.33274536458812265,
+    "t13": 0.3538280636568284
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL05_03": {
+   "tercile": 0,
+   "layer": 5,
+   "I_full": {
+    "t06": 0.007147647185008342,
+    "t07": 0.04445101975731854,
+    "t08": -0.06541800156951777,
+    "t09": -0.06436787334593234,
+    "t10": -0.024375845640113684,
+    "t11": 0.03739785306491004,
+    "t12": -0.06332967012602328,
+    "t13": -0.02311105995658839
+   },
+   "I_sh": {
+    "t06": 0.10026810056231834,
+    "t07": 0.2952120002492622,
+    "t08": 0.5001670803933379,
+    "t09": 0.45927304058565693,
+    "t10": 0.6117601308411335,
+    "t11": 0.8206293042992777,
+    "t12": 0.8182417294368471,
+    "t13": 0.8990273293732876
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL05_05": {
+   "tercile": 0,
+   "layer": 5,
+   "I_full": {
+    "t06": -0.05492061428151351,
+    "t07": NaN,
+    "t08": -0.04379719782182826,
+    "t09": 0.030621755683023725,
+    "t10": -0.006891317599603024,
+    "t11": 0.038168201241197706,
+    "t12": -0.01623825889067018,
+    "t13": -0.0018165076217213786
+   },
+   "I_sh": {
+    "t06": 2.9781568957214346,
+    "t07": 0.16092133552705407,
+    "t08": 1.308657467634923,
+    "t09": 0.09500067742653336,
+    "t10": 0.8520940279267077,
+    "t11": 0.6466052435640685,
+    "t12": 0.8269278930005303,
+    "t13": 0.6335618417236262
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": true,
+    "t08": true,
+    "t09": true,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL05_06": {
+   "tercile": 0,
+   "layer": 5,
+   "I_full": {
+    "t06": 1.372463383428711,
+    "t07": 0.38681398956615093,
+    "t08": 0.009558367778762077,
+    "t09": -0.893415507748268,
+    "t10": 0.09483005229256705,
+    "t11": -0.07436313472223753,
+    "t12": 0.07764680147654442,
+    "t13": -0.06475260024890922
+   },
+   "I_sh": {
+    "t06": 4.293294525497643,
+    "t07": 0.10557257410115545,
+    "t08": 1.3891063439301867,
+    "t09": -0.270734138306396,
+    "t10": 0.3565583886084925,
+    "t11": 0.6166168114184536,
+    "t12": 0.3700278619190018,
+    "t13": 0.2529878527456149
+   },
+   "would_cancel": {
+    "t06": true,
+    "t07": true,
+    "t08": true,
+    "t09": true,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL05_07": {
+   "tercile": 0,
+   "layer": 5,
+   "I_full": {
+    "t06": 6.843797614902351,
+    "t07": 0.0065599881880671505,
+    "t08": 3.911082565882039,
+    "t09": 0.3387974667970187,
+    "t10": 0.027483816290112574,
+    "t11": 0.04459958610314288,
+    "t12": 0.06409027543877775,
+    "t13": -0.07422356432367692
+   },
+   "I_sh": {
+    "t06": 1.1275199304543804,
+    "t07": 0.3487796945798681,
+    "t08": 0.7886052959132531,
+    "t09": 0.7722525643349959,
+    "t10": 0.7181750947565508,
+    "t11": 0.7709486663402293,
+    "t12": 0.7682734771838935,
+    "t13": 0.6904603741431053
+   },
+   "would_cancel": {
+    "t06": true,
+    "t07": false,
+    "t08": true,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL05_08": {
+   "tercile": 0,
+   "layer": 5,
+   "I_full": {
+    "t06": -0.11524172903626202,
+    "t07": -0.2955074354114981,
+    "t08": 0.17756706974348987,
+    "t09": -0.13265125172211178,
+    "t10": 0.18717793461356497,
+    "t11": 0.04263893393148488,
+    "t12": -0.02247502267975412,
+    "t13": -0.023725645277571747
+   },
+   "I_sh": {
+    "t06": -0.5053813389462609,
+    "t07": -3.9400610898253388,
+    "t08": 0.6531665007601303,
+    "t09": 0.5625792042855922,
+    "t10": 0.32017902052985664,
+    "t11": 0.7344265201367335,
+    "t12": 0.6646021915665646,
+    "t13": 0.7806638324141421
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL05_09": {
+   "tercile": 0,
+   "layer": 5,
+   "I_full": {
+    "t06": 0.2080367459317724,
+    "t07": -0.07899229050353611,
+    "t08": 0.08354132912773722,
+    "t09": 0.2717483131409087,
+    "t10": 0.1736306532510085,
+    "t11": 0.04071551356474699,
+    "t12": 0.16758308628829435,
+    "t13": 0.1573112745660335
+   },
+   "I_sh": {
+    "t06": 1.3391941014171125,
+    "t07": -0.4274767706940612,
+    "t08": 0.6221300476630313,
+    "t09": 0.3547307116380727,
+    "t10": 0.31159450371568026,
+    "t11": 0.4898064971632613,
+    "t12": 0.516804548859572,
+    "t13": 0.4777499002659299
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL05_10": {
+   "tercile": 0,
+   "layer": 5,
+   "I_full": {
+    "t06": 0.14110312500085004,
+    "t07": 0.1526361747555524,
+    "t08": 20.507577272440013,
+    "t09": 0.11338085356001114,
+    "t10": -0.04838426893935755,
+    "t11": -0.01363391320745272,
+    "t12": 0.05095899076466666,
+    "t13": -0.2128510941092172
+   },
+   "I_sh": {
+    "t06": 1.0519489153677546,
+    "t07": -0.11565006370875154,
+    "t08": -0.2750708949477576,
+    "t09": 0.06099410035963609,
+    "t10": 0.10987454006191424,
+    "t11": 0.426980423244406,
+    "t12": 0.68580261882403,
+    "t13": 0.47811707147969296
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": true,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL05_11": {
+   "tercile": 0,
+   "layer": 5,
+   "I_full": {
+    "t06": 0.02325854769399077,
+    "t07": 0.1190250142874311,
+    "t08": 0.03501482902678528,
+    "t09": 0.034373189492011076,
+    "t10": 0.001194267792219227,
+    "t11": -0.004738684013237977,
+    "t12": -0.029964172897504242,
+    "t13": -0.014980361308055249
+   },
+   "I_sh": {
+    "t06": 0.5566022436479974,
+    "t07": 0.675827210411454,
+    "t08": 0.4947034631554519,
+    "t09": 0.8546874949089928,
+    "t10": 0.5528629026139332,
+    "t11": 0.5430793446684421,
+    "t12": 0.6251292738869635,
+    "t13": 1.0123414223241745
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL05_12": {
+   "tercile": 0,
+   "layer": 5,
+   "I_full": {
+    "t06": -0.014112208697869034,
+    "t07": -0.08191857811574572,
+    "t08": 0.024138611406590998,
+    "t09": 0.00119486169448722,
+    "t10": -0.008343317253772204,
+    "t11": -0.010258116011138504,
+    "t12": -0.005312368493841209,
+    "t13": -0.01996266233118029
+   },
+   "I_sh": {
+    "t06": 1.189550943592843,
+    "t07": 0.8629565227536502,
+    "t08": 0.8469293810164786,
+    "t09": 0.927913959217331,
+    "t10": 0.8732028443377188,
+    "t11": 0.9597764931180571,
+    "t12": 0.9828328594529064,
+    "t13": 1.003854160400418
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL05_13": {
+   "tercile": 0,
+   "layer": 5,
+   "I_full": {
+    "t06": 0.11707457622872312,
+    "t07": -0.00579780626025522,
+    "t08": 0.44432676099188984,
+    "t09": 0.10771778044109724,
+    "t10": 0.03077492670215312,
+    "t11": -0.05013665549661125,
+    "t12": 0.006458424489401212,
+    "t13": -0.11181322152093229
+   },
+   "I_sh": {
+    "t06": 0.9355720691179704,
+    "t07": 0.8989276097568616,
+    "t08": 1.1114131068435789,
+    "t09": 0.8895370964983144,
+    "t10": 0.8701466698772199,
+    "t11": 0.7306838429349483,
+    "t12": 0.9148037726059873,
+    "t13": 0.903096715938286
+   },
+   "would_cancel": {
+    "t06": true,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL05_14": {
+   "tercile": 0,
+   "layer": 5,
+   "I_full": {
+    "t06": 0.07887009498370655,
+    "t07": 0.07926959019594597,
+    "t08": -0.1868999191853568,
+    "t09": -0.06878443021187612,
+    "t10": -0.02062426380803032,
+    "t11": 0.03620481558816309,
+    "t12": -0.004166996337483127,
+    "t13": 0.04453424853780742
+   },
+   "I_sh": {
+    "t06": 0.4215919198199369,
+    "t07": 0.3468893699145423,
+    "t08": 0.8649653836702211,
+    "t09": 0.43745412651720755,
+    "t10": 0.4429876205908553,
+    "t11": 0.43807354114266644,
+    "t12": 0.31884473786884693,
+    "t13": 0.5131471532567969
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL05_15": {
+   "tercile": 0,
+   "layer": 5,
+   "I_full": {
+    "t06": 0.39017479800079324,
+    "t07": -0.37300772986341363,
+    "t08": -3.661420183086927,
+    "t09": -5.829436515854769,
+    "t10": 0.06925193924223993,
+    "t11": 0.13661462908243405,
+    "t12": 0.046046182891409174,
+    "t13": 0.0805777494654715
+   },
+   "I_sh": {
+    "t06": -0.38609086671624737,
+    "t07": -0.7389879773957696,
+    "t08": 0.3120956399827805,
+    "t09": 0.29321699857164213,
+    "t10": 0.6171207306496519,
+    "t11": 0.47798685481880826,
+    "t12": 0.27858478527184094,
+    "t13": 0.2782554268195154
+   },
+   "would_cancel": {
+    "t06": true,
+    "t07": false,
+    "t08": true,
+    "t09": true,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL05_16": {
+   "tercile": 0,
+   "layer": 5,
+   "I_full": {
+    "t06": -1.5681771278131231,
+    "t07": -0.04744387329024763,
+    "t08": 0.017800614970124338,
+    "t09": -0.2789562771653669,
+    "t10": 0.6128213938426194,
+    "t11": 0.2877308913577088,
+    "t12": -0.07928717965563356,
+    "t13": -0.013238244714130919
+   },
+   "I_sh": {
+    "t06": -2.536696326024805,
+    "t07": -0.6144351340556191,
+    "t08": 0.033517340792936307,
+    "t09": -0.1159800098279976,
+    "t10": 0.7412182295327483,
+    "t11": 0.3945771390367719,
+    "t12": 0.07203874470394317,
+    "t13": -0.07550605726743033
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL05_17": {
+   "tercile": 0,
+   "layer": 5,
+   "I_full": {
+    "t06": 0.04220158869652342,
+    "t07": 0.21540155147446027,
+    "t08": -0.00763499621591811,
+    "t09": -0.01793890590987115,
+    "t10": 0.010741334714385419,
+    "t11": 0.03286105479328262,
+    "t12": -0.016415073613179135,
+    "t13": -0.06935127947589789
+   },
+   "I_sh": {
+    "t06": 0.5994142780377906,
+    "t07": 0.8812496565747013,
+    "t08": 0.8491649031312349,
+    "t09": 0.772666147473243,
+    "t10": 0.781677991361568,
+    "t11": 0.8591502983873985,
+    "t12": 0.8735845079657798,
+    "t13": 0.9298171414899792
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL05_19": {
+   "tercile": 0,
+   "layer": 5,
+   "I_full": {
+    "t06": 0.11584103564854366,
+    "t07": 0.07782712747263015,
+    "t08": 0.15188407849924002,
+    "t09": -0.6218239441898944,
+    "t10": 0.11002650053148545,
+    "t11": 0.20949444237146045,
+    "t12": -0.012989240637089196,
+    "t13": 0.09894220716513494
+   },
+   "I_sh": {
+    "t06": 0.14704230865365572,
+    "t07": -0.1482261653352568,
+    "t08": 0.1064362644565666,
+    "t09": -0.13395063835021925,
+    "t10": -0.2537330700219429,
+    "t11": 0.42021429927040355,
+    "t12": 0.6345852035873006,
+    "t13": 0.6354146580272447
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": true,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL15_00": {
+   "tercile": 1,
+   "layer": 15,
+   "I_full": {
+    "t06": 0.05746445318123398,
+    "t07": 0.18440417933413722,
+    "t08": -0.8380556536958007,
+    "t09": -0.23409685297912625,
+    "t10": 0.32796416261733613,
+    "t11": -0.0006750638197523161,
+    "t12": 0.5257796969044788,
+    "t13": 0.33348784643872476
+   },
+   "I_sh": {
+    "t06": 0.3936884366590901,
+    "t07": 0.4929453054437245,
+    "t08": 0.42787380153197374,
+    "t09": 0.10483904765226969,
+    "t10": 1.1977466639716634,
+    "t11": 0.44886871551887403,
+    "t12": 1.3333893794955713,
+    "t13": 0.3705650117477952
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": true,
+    "t13": false
+   }
+  },
+  "PL15_01": {
+   "tercile": 1,
+   "layer": 15,
+   "I_full": {
+    "t06": -0.1918387355221765,
+    "t07": 0.1383660214964741,
+    "t08": 0.4607880411602426,
+    "t09": 0.09411299844020794,
+    "t10": -0.03731667644775698,
+    "t11": 0.23898682832711157,
+    "t12": 0.2176672737540857,
+    "t13": 0.03213512281501087
+   },
+   "I_sh": {
+    "t06": 0.70105865218925,
+    "t07": 0.8883958904385585,
+    "t08": 0.8152374019235151,
+    "t09": 0.731380012304956,
+    "t10": 0.673202563006781,
+    "t11": 0.6317262147248099,
+    "t12": 0.7074937137958737,
+    "t13": 0.6720624108024486
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": true,
+    "t08": true,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL15_02": {
+   "tercile": 1,
+   "layer": 15,
+   "I_full": {
+    "t06": -0.1013327356127144,
+    "t07": -0.016497204081032227,
+    "t08": -0.004835591924289952,
+    "t09": 0.002384836124947229,
+    "t10": 0.3226024801774791,
+    "t11": 0.03394146769685329,
+    "t12": 0.13389093835692814,
+    "t13": 0.03530550311864678
+   },
+   "I_sh": {
+    "t06": -0.009135984120041215,
+    "t07": 0.2834552811100732,
+    "t08": 0.6656039730896827,
+    "t09": 0.9751605006427503,
+    "t10": 1.5909346046320305,
+    "t11": 1.0831751105657006,
+    "t12": 0.9344439240957934,
+    "t13": 0.9240949892161715
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL15_03": {
+   "tercile": 1,
+   "layer": 15,
+   "I_full": {
+    "t06": 16.697949036752618,
+    "t07": 0.970798389276911,
+    "t08": -0.9195795645672846,
+    "t09": 0.20740813134132946,
+    "t10": 0.07049669198096348,
+    "t11": 0.11905740287944742,
+    "t12": 0.3224603615035401,
+    "t13": 0.30145539360759016
+   },
+   "I_sh": {
+    "t06": -0.5877477141175201,
+    "t07": 1.3038179519211333,
+    "t08": -24.561072074802723,
+    "t09": 0.5555371131061286,
+    "t10": 0.8993306621949628,
+    "t11": -0.11768945362309069,
+    "t12": 0.8591536966523518,
+    "t13": 1.004306132280088
+   },
+   "would_cancel": {
+    "t06": true,
+    "t07": true,
+    "t08": false,
+    "t09": false,
+    "t10": true,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL15_04": {
+   "tercile": 1,
+   "layer": 15,
+   "I_full": {
+    "t06": -0.1107519893615308,
+    "t07": 0.2655138968563846,
+    "t08": 0.17611426813732758,
+    "t09": 0.22166075623221293,
+    "t10": 0.043643045896949645,
+    "t11": 0.033128241158508105,
+    "t12": 0.015663999353843362,
+    "t13": 0.2154811173635507
+   },
+   "I_sh": {
+    "t06": 3.6406358768804705,
+    "t07": 3.3647073548428237,
+    "t08": 0.31192868281816805,
+    "t09": 0.24360125472956753,
+    "t10": 0.6522167837529175,
+    "t11": 0.7837254975770319,
+    "t12": 0.6780686207055778,
+    "t13": 0.5446895618868953
+   },
+   "would_cancel": {
+    "t06": true,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL15_05": {
+   "tercile": 1,
+   "layer": 15,
+   "I_full": {
+    "t06": -0.41919212857836374,
+    "t07": 0.0013361064880932263,
+    "t08": 16.9203850850999,
+    "t09": 0.028322569199958854,
+    "t10": 0.0729289287582327,
+    "t11": -0.04623507641369546,
+    "t12": -0.02405769998332096,
+    "t13": 0.1970432028791945
+   },
+   "I_sh": {
+    "t06": 0.17829208597157117,
+    "t07": 0.36595369976387254,
+    "t08": 0.5954848666920185,
+    "t09": 0.40566198184021784,
+    "t10": 0.49410340097941985,
+    "t11": 0.6626292177775092,
+    "t12": 0.4678168609862694,
+    "t13": 0.9078832973750144
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": true,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL15_06": {
+   "tercile": 1,
+   "layer": 15,
+   "I_full": {
+    "t06": -0.006082816018374262,
+    "t07": 2.120134388691768,
+    "t08": 0.16296195827492171,
+    "t09": -0.0023497810955574495,
+    "t10": -0.040959526733156094,
+    "t11": 0.02354435437810026,
+    "t12": 0.06620634339386626,
+    "t13": 0.10036127508142254
+   },
+   "I_sh": {
+    "t06": 0.5244136476133983,
+    "t07": -37.58909782547907,
+    "t08": 0.774462354207298,
+    "t09": 0.8170074150010308,
+    "t10": 2.1838199603720163,
+    "t11": 0.9164873168920887,
+    "t12": 0.900835558461165,
+    "t13": 0.7584223310021471
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": true,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL15_07": {
+   "tercile": 1,
+   "layer": 15,
+   "I_full": {
+    "t06": -0.16502971449791012,
+    "t07": -0.9388786544844205,
+    "t08": -0.18844710196338874,
+    "t09": -0.0740483981989333,
+    "t10": -0.03661484731453175,
+    "t11": -0.030454181916323955,
+    "t12": -0.09887358998423718,
+    "t13": 0.04685317433255384
+   },
+   "I_sh": {
+    "t06": 2.2789753825130576,
+    "t07": 3.091776253835893,
+    "t08": 0.8530720946959311,
+    "t09": 0.4575973173842912,
+    "t10": 0.6331748792099992,
+    "t11": 0.6939138656705689,
+    "t12": 0.6511613869407764,
+    "t13": 0.6250359518628412
+   },
+   "would_cancel": {
+    "t06": true,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL15_08": {
+   "tercile": 1,
+   "layer": 15,
+   "I_full": {
+    "t06": -2.2293853966018102,
+    "t07": 0.6297494343869227,
+    "t08": 1.8627637756099527,
+    "t09": -0.22587990894847762,
+    "t10": 0.20882272575319571,
+    "t11": 0.2573107485393684,
+    "t12": 0.04801371043787035,
+    "t13": 0.20862353181345702
+   },
+   "I_sh": {
+    "t06": -2.0553078680821297,
+    "t07": -0.07876554173034392,
+    "t08": 0.2565220666033486,
+    "t09": 0.13828867450667226,
+    "t10": 0.26860073569810183,
+    "t11": 0.572830072835281,
+    "t12": 0.5578916775682173,
+    "t13": 0.5167696892442636
+   },
+   "would_cancel": {
+    "t06": true,
+    "t07": false,
+    "t08": true,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL15_09": {
+   "tercile": 1,
+   "layer": 15,
+   "I_full": {
+    "t06": 0.07516097623067758,
+    "t07": -0.10447840717992579,
+    "t08": 0.04493619138253025,
+    "t09": -0.46857279183513256,
+    "t10": 0.03353363493743956,
+    "t11": -0.22742273048059827,
+    "t12": 1.4622491513580325e-05,
+    "t13": -0.010977069617742263
+   },
+   "I_sh": {
+    "t06": -28.19813791615257,
+    "t07": 0.03323877988599548,
+    "t08": 1.9935116029976063,
+    "t09": 0.6309591124285943,
+    "t10": 1.17859332605845,
+    "t11": 0.8956817596809233,
+    "t12": 0.9654485394438593,
+    "t13": 0.8571295241581276
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL15_10": {
+   "tercile": 1,
+   "layer": 15,
+   "I_full": {
+    "t06": -0.24083963029357894,
+    "t07": 0.01038519952787292,
+    "t08": 0.016488931298981286,
+    "t09": 0.10217336903941335,
+    "t10": 0.04985131392001172,
+    "t11": 0.23583752175123393,
+    "t12": 0.11715972770252826,
+    "t13": 0.023633594814523068
+   },
+   "I_sh": {
+    "t06": 1.4091848457156135,
+    "t07": 1.2725222164062209,
+    "t08": -0.06293647191847694,
+    "t09": 0.17339092455801744,
+    "t10": 0.33816122139431953,
+    "t11": 0.8469859073521822,
+    "t12": 0.47821452967998906,
+    "t13": 0.6567277145310407
+   },
+   "would_cancel": {
+    "t06": true,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL15_11": {
+   "tercile": 1,
+   "layer": 15,
+   "I_full": {
+    "t06": 0.04616360039988557,
+    "t07": -0.03300320614757669,
+    "t08": 0.011050178334574487,
+    "t09": -0.0003731831444020617,
+    "t10": -0.00047748052470281545,
+    "t11": -0.0017305233070234777,
+    "t12": -0.003764962791783042,
+    "t13": -0.014798074574970808
+   },
+   "I_sh": {
+    "t06": 0.042942271653144994,
+    "t07": 0.6706493884450806,
+    "t08": 0.8044155946549056,
+    "t09": 0.874561793541359,
+    "t10": 0.8902215985636991,
+    "t11": 0.9944730358047469,
+    "t12": 0.9849200919318433,
+    "t13": 1.072628096625653
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL15_12": {
+   "tercile": 1,
+   "layer": 15,
+   "I_full": {
+    "t06": -0.3745204008989167,
+    "t07": 0.028588380633152544,
+    "t08": 0.13598932330062644,
+    "t09": 0.053257905384171,
+    "t10": 0.1161978921013572,
+    "t11": 0.02433561034963829,
+    "t12": 0.019619063812709916,
+    "t13": 0.03229772349164479
+   },
+   "I_sh": {
+    "t06": -0.22959956434794754,
+    "t07": 0.3103990598829194,
+    "t08": 0.9865812964662959,
+    "t09": 3.2907827362451223,
+    "t10": 1.9397507715643874,
+    "t11": 0.35570316401580104,
+    "t12": 0.511217722699227,
+    "t13": 0.4969523042642799
+   },
+   "would_cancel": {
+    "t06": true,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL15_13": {
+   "tercile": 1,
+   "layer": 15,
+   "I_full": {
+    "t06": -0.02070132766769843,
+    "t07": 0.24699613111586485,
+    "t08": 0.2526057091853795,
+    "t09": 3.978600361660461,
+    "t10": -0.1496043006706999,
+    "t11": -0.11047771186433751,
+    "t12": -0.16011572591047027,
+    "t13": 0.06303226548621542
+   },
+   "I_sh": {
+    "t06": -6.646834324846552,
+    "t07": 1.0048659366162165,
+    "t08": 2.7641544551908113,
+    "t09": 1.1833030167233476,
+    "t10": 0.49590838221395966,
+    "t11": 0.6598410202218125,
+    "t12": 0.5918629576425315,
+    "t13": 0.5430079644423353
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL15_14": {
+   "tercile": 1,
+   "layer": 15,
+   "I_full": {
+    "t06": -2.535181759509477,
+    "t07": -0.28854943331021204,
+    "t08": 0.05168456960358611,
+    "t09": 0.04649490386218125,
+    "t10": 0.6510132633484357,
+    "t11": 0.0462582181115452,
+    "t12": 0.012162462063218811,
+    "t13": 0.04156510369567575
+   },
+   "I_sh": {
+    "t06": 0.07055625208514649,
+    "t07": 0.5911428322997851,
+    "t08": 0.11803706577041752,
+    "t09": 0.5198903050783346,
+    "t10": 0.9498934391435133,
+    "t11": 0.6725726686806872,
+    "t12": 0.893874105071741,
+    "t13": 0.9127422450217787
+   },
+   "would_cancel": {
+    "t06": true,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL15_15": {
+   "tercile": 1,
+   "layer": 15,
+   "I_full": {
+    "t06": 30.460660784733737,
+    "t07": 0.09326942221887942,
+    "t08": 0.5237196639002424,
+    "t09": -0.17009176460886682,
+    "t10": -0.034582911395057495,
+    "t11": 0.022964261091487626,
+    "t12": 0.09619699980145462,
+    "t13": -0.03873780403780007
+   },
+   "I_sh": {
+    "t06": -1.2419874011814946,
+    "t07": 0.28097387406733565,
+    "t08": 0.5421902195486386,
+    "t09": 0.13384311407299387,
+    "t10": 0.16912007534680262,
+    "t11": 0.1226014815739589,
+    "t12": 2.373940607673338,
+    "t13": 0.43352394570812236
+   },
+   "would_cancel": {
+    "t06": true,
+    "t07": true,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL15_16": {
+   "tercile": 1,
+   "layer": 15,
+   "I_full": {
+    "t06": 0.01591769257331609,
+    "t07": -0.03874774792244512,
+    "t08": 0.05216062046345869,
+    "t09": -0.36612392555765116,
+    "t10": -0.1923413448947813,
+    "t11": 0.0405170150139953,
+    "t12": 0.09398081774908466,
+    "t13": 0.1188056024478963
+   },
+   "I_sh": {
+    "t06": 0.9286587404874723,
+    "t07": 0.26321699619099675,
+    "t08": 0.45207102910454955,
+    "t09": 1.028853592160189,
+    "t10": 0.3738577479652395,
+    "t11": 0.4284689206234861,
+    "t12": 0.6940961812625209,
+    "t13": 0.5842554941088538
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL15_17": {
+   "tercile": 1,
+   "layer": 15,
+   "I_full": {
+    "t06": -0.21177065995550395,
+    "t07": -0.2251443561411651,
+    "t08": 0.24514517532809554,
+    "t09": 0.6319370491394637,
+    "t10": -0.11579691314919215,
+    "t11": 0.08979605847789202,
+    "t12": 0.2509872311550279,
+    "t13": 0.14560750554112983
+   },
+   "I_sh": {
+    "t06": 0.4442676670214271,
+    "t07": 0.7708358430123713,
+    "t08": 0.6464312163030569,
+    "t09": 0.47640966918812744,
+    "t10": 0.6817452646793398,
+    "t11": 0.6813209608434678,
+    "t12": 0.6954444903604025,
+    "t13": 0.8402678661060307
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL15_18": {
+   "tercile": 1,
+   "layer": 15,
+   "I_full": {
+    "t06": 0.3432611812652117,
+    "t07": 3.500156926853698,
+    "t08": 0.23780032554762037,
+    "t09": -0.023873624192994002,
+    "t10": -0.03192340978752295,
+    "t11": -0.003562954234352057,
+    "t12": -0.025395534315983848,
+    "t13": 0.10459167068760987
+   },
+   "I_sh": {
+    "t06": -0.12356179786945255,
+    "t07": 1.53972673107934,
+    "t08": -0.13975864466339488,
+    "t09": 1.3863295073569646,
+    "t10": 0.2822423232297994,
+    "t11": 0.1009292367684952,
+    "t12": 0.3140136334121213,
+    "t13": 0.4560054552701138
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": true,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL15_19": {
+   "tercile": 1,
+   "layer": 15,
+   "I_full": {
+    "t06": 0.015067626574382889,
+    "t07": -0.05201809087518414,
+    "t08": 0.23464337599584656,
+    "t09": 0.12533416805954084,
+    "t10": 0.13252057043331378,
+    "t11": 0.10965481025807312,
+    "t12": -0.014914497210775271,
+    "t13": 0.08128025911100765
+   },
+   "I_sh": {
+    "t06": 0.34323954830715697,
+    "t07": 0.2219487969569372,
+    "t08": 0.5881947360667449,
+    "t09": 0.6266162060064782,
+    "t10": 0.5750984830973959,
+    "t11": 0.6717540032249698,
+    "t12": 0.5897351266446358,
+    "t13": 0.6458185499153531
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL26_00": {
+   "tercile": 2,
+   "layer": 26,
+   "I_full": {
+    "t06": 0.31361243154714386,
+    "t07": 0.8164744941427801,
+    "t08": -0.7770888405284214,
+    "t09": 0.199001195893782,
+    "t10": 0.19059042904789197,
+    "t11": 0.06160437706666798,
+    "t12": 0.14883921038846493,
+    "t13": 0.24732599670122316
+   },
+   "I_sh": {
+    "t06": 0.19307961601109175,
+    "t07": -0.1850693556796575,
+    "t08": -0.02698270750272754,
+    "t09": 0.06885793703308593,
+    "t10": 0.06908580048861289,
+    "t11": 0.29748654181099105,
+    "t12": 0.19682188119732794,
+    "t13": 0.3347137045126818
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": true,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL26_01": {
+   "tercile": 2,
+   "layer": 26,
+   "I_full": {
+    "t06": 0.019444498581092973,
+    "t07": 0.009071333131910006,
+    "t08": -0.06803109156715928,
+    "t09": -0.386446580423276,
+    "t10": -0.06071880127152754,
+    "t11": 0.03165964885334399,
+    "t12": 0.08703112631025488,
+    "t13": -0.005466657401768319
+   },
+   "I_sh": {
+    "t06": 0.5206553871945668,
+    "t07": 0.7519036567716038,
+    "t08": 3.9592422851549993,
+    "t09": 1.5112504710287404,
+    "t10": 0.36647785513695175,
+    "t11": 0.5871285034235927,
+    "t12": 0.6885286182785434,
+    "t13": 0.7023143926990578
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL26_02": {
+   "tercile": 2,
+   "layer": 26,
+   "I_full": {
+    "t06": 0.08629951536794292,
+    "t07": -0.17379849858589735,
+    "t08": -0.23542408210419033,
+    "t09": 0.12281984766042688,
+    "t10": 0.07818805550790094,
+    "t11": 0.16039351230563087,
+    "t12": 0.1115528521437726,
+    "t13": 0.176749753301989
+   },
+   "I_sh": {
+    "t06": 0.7383576031266778,
+    "t07": 0.48808474011722897,
+    "t08": 0.08153713569928248,
+    "t09": 0.6308287030226499,
+    "t10": 0.847509149825948,
+    "t11": 0.9348177427725227,
+    "t12": 0.7012475920938697,
+    "t13": 0.8179236582984097
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL26_03": {
+   "tercile": 2,
+   "layer": 26,
+   "I_full": {
+    "t06": -0.10287658539830226,
+    "t07": 0.5012303116177866,
+    "t08": -0.13980338655602656,
+    "t09": -0.030291694704862326,
+    "t10": 0.2167711310777941,
+    "t11": 0.06125410067139962,
+    "t12": 0.01733786729609122,
+    "t13": 0.07956127554090602
+   },
+   "I_sh": {
+    "t06": 0.4841736223569047,
+    "t07": 0.15609979267256296,
+    "t08": 0.015501369095974526,
+    "t09": 0.16656490110288577,
+    "t10": 0.2528222610462239,
+    "t11": 0.252065652338521,
+    "t12": 0.4214589585500994,
+    "t13": 0.36677779721218867
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL26_04": {
+   "tercile": 2,
+   "layer": 26,
+   "I_full": {
+    "t06": 0.2952053793727743,
+    "t07": -0.026217643243782462,
+    "t08": 0.12584061875452765,
+    "t09": 0.20343671647182468,
+    "t10": 0.13557392877289626,
+    "t11": 0.13402224147587677,
+    "t12": -0.013553033282291823,
+    "t13": 0.03181924948611262
+   },
+   "I_sh": {
+    "t06": 0.5923949350215776,
+    "t07": 1.2058275390456372,
+    "t08": 0.9105215617386861,
+    "t09": 1.040756853336884,
+    "t10": 0.6641575199375399,
+    "t11": 0.7505846666127641,
+    "t12": 0.7777636585744476,
+    "t13": 0.7092612251861309
+   },
+   "would_cancel": {
+    "t06": true,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL26_05": {
+   "tercile": 2,
+   "layer": 26,
+   "I_full": {
+    "t06": 1.1881704276909744,
+    "t07": 0.0528631789535844,
+    "t08": -0.08037859529604482,
+    "t09": -0.12431781130222078,
+    "t10": 0.03964795338139555,
+    "t11": -0.050157233277396227,
+    "t12": 0.05419838609713493,
+    "t13": 0.07522089605598624
+   },
+   "I_sh": {
+    "t06": -0.43063792463432876,
+    "t07": 0.5002831400746567,
+    "t08": 0.5610221323660478,
+    "t09": 0.3620775626957082,
+    "t10": 0.7561138545143948,
+    "t11": 0.5695696959315311,
+    "t12": 0.6516552295672624,
+    "t13": 0.6349083930801627
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL26_07": {
+   "tercile": 2,
+   "layer": 26,
+   "I_full": {
+    "t06": 0.12330645662135277,
+    "t07": -0.19241114019439082,
+    "t08": -0.36703044844132227,
+    "t09": -0.1714138651134652,
+    "t10": 0.11598765218083458,
+    "t11": 0.05082457441727986,
+    "t12": 0.18162930348252906,
+    "t13": 0.03617843541227087
+   },
+   "I_sh": {
+    "t06": 0.5792357533368411,
+    "t07": 0.1275128651842725,
+    "t08": 0.032460519409877674,
+    "t09": 0.17273417009709846,
+    "t10": 0.4543071310620428,
+    "t11": 0.32256181174872617,
+    "t12": 0.2021861402247638,
+    "t13": 0.22417971079146376
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL26_09": {
+   "tercile": 2,
+   "layer": 26,
+   "I_full": {
+    "t06": -0.4131932331381188,
+    "t07": -0.08231554267590604,
+    "t08": -2.3210424205598263,
+    "t09": 0.025410074388889602,
+    "t10": -0.08360148966543385,
+    "t11": 0.10370625721936448,
+    "t12": 0.20378337275540598,
+    "t13": 0.16517338811394994
+   },
+   "I_sh": {
+    "t06": -0.006861907455751812,
+    "t07": 0.4512921690941653,
+    "t08": 0.45233974571734953,
+    "t09": 0.5878125266815796,
+    "t10": 0.565744278649265,
+    "t11": 0.7365685760501566,
+    "t12": 0.8460917544873249,
+    "t13": 0.7133745780596487
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL26_10": {
+   "tercile": 2,
+   "layer": 26,
+   "I_full": {
+    "t06": -0.06820902247116366,
+    "t07": -0.1226037350865528,
+    "t08": -0.14357973051790143,
+    "t09": -0.046837052586287745,
+    "t10": 0.1126906940396316,
+    "t11": 0.0961767390027689,
+    "t12": 0.2367045258275342,
+    "t13": 0.2398725032605491
+   },
+   "I_sh": {
+    "t06": 0.4079050530554062,
+    "t07": 0.27061061438537615,
+    "t08": 0.6213983867142708,
+    "t09": 0.4356914604569116,
+    "t10": 0.7167937331697163,
+    "t11": 0.6152631991607701,
+    "t12": 0.7160113289306562,
+    "t13": 0.6320877107587844
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL26_11": {
+   "tercile": 2,
+   "layer": 26,
+   "I_full": {
+    "t06": -0.01021755116627104,
+    "t07": 0.19051654575754187,
+    "t08": 0.1404510587664437,
+    "t09": -0.03420884745202964,
+    "t10": 0.08240012979038092,
+    "t11": 0.05462042136285946,
+    "t12": 72.65930691205351,
+    "t13": 0.16315333024465442
+   },
+   "I_sh": {
+    "t06": 0.6660784443409917,
+    "t07": -0.12464230129110312,
+    "t08": 0.6304614564355799,
+    "t09": 0.5350522588916377,
+    "t10": 0.18731437003934823,
+    "t11": 0.5742811317764751,
+    "t12": 0.5192881930087249,
+    "t13": 0.48452165573022277
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": true,
+    "t13": false
+   }
+  },
+  "PL26_12": {
+   "tercile": 2,
+   "layer": 26,
+   "I_full": {
+    "t06": 0.09115752479534946,
+    "t07": 0.0003925735879121044,
+    "t08": 0.016196258948494344,
+    "t09": -0.0015797845927404722,
+    "t10": 0.018916690110343172,
+    "t11": 0.026930007834787526,
+    "t12": 0.04779265673384608,
+    "t13": 0.046529622686594004
+   },
+   "I_sh": {
+    "t06": 0.5248267741478359,
+    "t07": 0.6052191419317102,
+    "t08": 0.7688479674460557,
+    "t09": 0.8293389974232366,
+    "t10": 0.891680907931512,
+    "t11": 0.9244204022840414,
+    "t12": 0.7306573301671995,
+    "t13": 0.8099701967113226
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL26_13": {
+   "tercile": 2,
+   "layer": 26,
+   "I_full": {
+    "t06": -0.16927727224656744,
+    "t07": -0.11382262227132298,
+    "t08": -0.0030317916613239707,
+    "t09": 0.03358691689781711,
+    "t10": 6.0292409776197795e-05,
+    "t11": -0.006886500215865984,
+    "t12": 0.025528849820410517,
+    "t13": 0.04031217197308334
+   },
+   "I_sh": {
+    "t06": 0.6360811497375539,
+    "t07": 0.6580989834530083,
+    "t08": 0.7841800482878135,
+    "t09": 0.7547121468150142,
+    "t10": 0.8925610179746949,
+    "t11": 0.9038704406099802,
+    "t12": 0.8250579577729664,
+    "t13": 0.8425810611804532
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL26_14": {
+   "tercile": 2,
+   "layer": 26,
+   "I_full": {
+    "t06": -0.0827214767587082,
+    "t07": 0.06776071574787888,
+    "t08": 0.31822162804282506,
+    "t09": 0.17998668558492936,
+    "t10": 0.2275206400984573,
+    "t11": 0.16410235109116117,
+    "t12": 0.10291866692481273,
+    "t13": 0.07945108847414406
+   },
+   "I_sh": {
+    "t06": -0.17561139962946082,
+    "t07": 1.379628386278671,
+    "t08": 0.9075718577022375,
+    "t09": 0.6854837283411075,
+    "t10": 0.5235695743439778,
+    "t11": 0.5950896663950265,
+    "t12": 0.6922329535332432,
+    "t13": 0.7214009220928168
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL26_15": {
+   "tercile": 2,
+   "layer": 26,
+   "I_full": {
+    "t06": -0.09461643634303919,
+    "t07": -0.005070793337711026,
+    "t08": 0.021478545402090793,
+    "t09": -0.0326063747509079,
+    "t10": 0.08647787615071227,
+    "t11": -0.030858949501042218,
+    "t12": -0.004981459938153681,
+    "t13": 0.03567857403464864
+   },
+   "I_sh": {
+    "t06": 0.6045854607928606,
+    "t07": 1.2757324066494664,
+    "t08": 0.8935290286310095,
+    "t09": 0.7999944120524,
+    "t10": 0.845215441214627,
+    "t11": 0.6731960302310162,
+    "t12": 0.7272114693681482,
+    "t13": 0.7471768298184265
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL26_16": {
+   "tercile": 2,
+   "layer": 26,
+   "I_full": {
+    "t06": 0.14822616922998727,
+    "t07": 0.21950959831063063,
+    "t08": 0.040363415707486056,
+    "t09": 0.03185691628070548,
+    "t10": 0.07085556056749928,
+    "t11": 0.035373069991137894,
+    "t12": 0.021929140205152332,
+    "t13": 0.07887510610945322
+   },
+   "I_sh": {
+    "t06": 0.2843212642318895,
+    "t07": 0.6501506703320837,
+    "t08": 0.7789264530022735,
+    "t09": 0.5640497571591119,
+    "t10": 0.6022484750262513,
+    "t11": 0.7974494751157769,
+    "t12": 0.7738877852989107,
+    "t13": 0.8268830697540335
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL26_17": {
+   "tercile": 2,
+   "layer": 26,
+   "I_full": {
+    "t06": -0.03156562464254328,
+    "t07": -0.09966798699663729,
+    "t08": -0.0415840995675937,
+    "t09": -0.0031869809551620474,
+    "t10": 0.012287457647049138,
+    "t11": 0.019110970057258234,
+    "t12": 0.0645570408808187,
+    "t13": 0.045160793563165984
+   },
+   "I_sh": {
+    "t06": 0.796167885679255,
+    "t07": 0.8330579020943534,
+    "t08": 0.7353994074262522,
+    "t09": 0.9421052990367794,
+    "t10": 0.9372163449166269,
+    "t11": 0.8709814542688388,
+    "t12": 0.8608757071131292,
+    "t13": 0.8764791446442596
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL26_18": {
+   "tercile": 2,
+   "layer": 26,
+   "I_full": {
+    "t06": -0.06513115601983578,
+    "t07": 0.6141765314082837,
+    "t08": -0.05890310885720928,
+    "t09": -0.08325684317909311,
+    "t10": -0.04918148855248662,
+    "t11": -0.005736649880448454,
+    "t12": -0.008789683329350506,
+    "t13": 0.23869597378906587
+   },
+   "I_sh": {
+    "t06": 10.430519927013053,
+    "t07": 0.3650840358844775,
+    "t08": 1.1054026308231264,
+    "t09": 0.32956716005725006,
+    "t10": 1.039752598115695,
+    "t11": 0.7220917545703832,
+    "t12": 0.8568837535574044,
+    "t13": 0.748740923894192
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  },
+  "PL26_19": {
+   "tercile": 2,
+   "layer": 26,
+   "I_full": {
+    "t06": -0.04944844882502518,
+    "t07": -0.049236611779275546,
+    "t08": -0.04998517360130311,
+    "t09": -0.01638456599343309,
+    "t10": 0.07261068757234267,
+    "t11": 0.15602892324211579,
+    "t12": 0.06169274183347128,
+    "t13": 0.11649095357871325
+   },
+   "I_sh": {
+    "t06": 0.7962256919367287,
+    "t07": 0.7983105956375948,
+    "t08": 0.5440226667103302,
+    "t09": 0.868140547654329,
+    "t10": 0.7488637888829663,
+    "t11": 0.5327341098456249,
+    "t12": 0.7665029904216024,
+    "t13": 0.6565472131665521
+   },
+   "would_cancel": {
+    "t06": false,
+    "t07": false,
+    "t08": false,
+    "t09": false,
+    "t10": false,
+    "t11": false,
+    "t12": false,
+    "t13": false
+   }
+  }
+ }
+}

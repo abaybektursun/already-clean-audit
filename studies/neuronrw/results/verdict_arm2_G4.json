@@ -1,0 +1,313 @@
+{
+ "model_key": "G4",
+ "arm": 2,
+ "d_p": 16.0,
+ "model_reasons": [],
+ "g_n": {
+  "n_contributing": 80,
+  "n_drawn": 80,
+  "need": 56,
+  "pass": true,
+  "failing_input": {
+   "n": 55,
+   "fails": true
+  }
+ },
+ "rows": {
+  "H_suff": {
+   "label": "SUPPORTED, interval above chance 1/3, interval above alpha = 0 (paired) [R-pass 1.00, R-equiv 0.13; no room for equivalence] [coherence gate not shown to work] [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+   "label_if_not_cancelled": null,
+   "o_dp": {
+    "est": 0.525,
+    "lo": 0.41875,
+    "hi": 0.63125,
+    "n": 80,
+    "n_finite": 10000
+   },
+   "paired_minus_alpha0": {
+    "est": 0.28125,
+    "lo": 0.1375,
+    "hi": 0.41875,
+    "n": 80,
+    "n_finite": 10000
+   }
+  },
+  "H_pred_agree": {
+   "label": "AGREE ABOVE DISAGREE, BELOW 2X, interval above ratio 1, interval crosses ratio 2 [R-pass 0.65, R-equiv 0.00; underpowered for a direction; no room for equivalence] [coherence gate not shown to work] [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+   "label_if_not_cancelled": null,
+   "R": {
+    "est": 1.8461538461538463,
+    "lo": 1.2818510231099989,
+    "hi": 2.684276980329611,
+    "n": 80,
+    "n_finite": 10000
+   },
+   "difference": {
+    "est": 0.3666666666666667,
+    "lo": 0.1416644265232975,
+    "hi": 0.5703125,
+    "n": 80,
+    "n_finite": 10000
+   }
+  },
+  "H_pred_conf": {
+   "label": "NOT SHOWN, interval crosses 0 [R-pass 0.98, R-equiv 0.00; rule fires on the null; no room for equivalence] [coherence gate not shown to work] [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+   "label_if_not_cancelled": null,
+   "spearman": {
+    "est": -0.06691860004797094,
+    "lo": -0.286459403388332,
+    "hi": 0.16319345402289281,
+    "n": 80,
+    "n_finite": 10000
+   }
+  },
+  "H_depth": {
+   "label": "NOT SHOWN, interval crosses 0 [R-pass 0.24, R-equiv 0.01; underpowered for a direction; no room for equivalence] [coherence gate not shown to work] [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+   "label_if_not_cancelled": null,
+   "diff_t2_minus_t0": {
+    "est": 0.12179487179487175,
+    "lo": -0.15000494071146248,
+    "hi": 0.39000961538461526,
+    "n": 80,
+    "n_finite": 10000
+   }
+  }
+ },
+ "secondary": {
+  "other_doses": {
+   "0.0": {
+    "n": 80,
+    "est": 0.24375,
+    "lo": 0.175,
+    "hi": 0.31875
+   },
+   "2.0": {
+    "n": 80,
+    "est": 0.4625,
+    "lo": 0.375,
+    "hi": 0.55
+   },
+   "4.0": {
+    "n": 80,
+    "est": 0.5,
+    "lo": 0.40625,
+    "hi": 0.59375
+   }
+  },
+  "one_minus_matched_unk_dp": {
+   "n": 40,
+   "est": 0.0375,
+   "lo": -0.1375,
+   "hi": 0.2125
+  },
+  "by_explainer": {
+   "anthropic/claude-opus-5-5": {
+    "n": 60,
+    "est": 0.5166666666666667,
+    "lo": 0.39166666666666666,
+    "hi": 0.6416666666666667
+   },
+   "anthropic/claude-sonnet-5-5": {
+    "n": 20,
+    "est": 0.55,
+    "lo": 0.35,
+    "hi": 0.75
+   }
+  },
+  "cells_not_shown_to_fire": [],
+  "guesses": [
+   {
+    "pole": "L00N169-",
+    "prompt_i": 0,
+    "guess": "Degenerate repetition loops of short phrases and function words (\"the text to sleep to be in\", \"it is it being said\", \"This is the text\", \"21\"), with stray quotes and garbled tokens, rather than any coherent topic.",
+    "label": "Fires on the token \"ill\"/\"ell\" family pieces (still, Still, Mill, hell, hill, kill, till) when they appear as a middle piece glued inside a longer word or identifier rather than as a standalone word, e.g. Bet|hell, Mc|Mill|an, str|Mill|ones, image|Still, Nuts|hells, Ke|hill|ah, ind|still|inger, Summers|kill. [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]"
+   },
+   {
+    "pole": "L00N169-",
+    "prompt_i": 1,
+    "guess": "Degenerate repetitive first-person text: \"I am/I was/I have been\" with feelings (excited, nauseous, proud, not feeling it), reading, plus stray blank lines and broken HTML tags like <strong>, <em>, <b>.",
+    "label": "Fires on the token \"ill\"/\"ell\" family pieces (still, Still, Mill, hell, hill, kill, till) when they appear as a middle piece glued inside a longer word or identifier rather than as a standalone word, e.g. Bet|hell, Mc|Mill|an, str|Mill|ones, image|Still, Nuts|hells, Ke|hill|ah, ind|still|inger, Summers|kill. [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]"
+   },
+   {
+    "pole": "L00N6518-",
+    "prompt_i": 0,
+    "guess": "Degenerate repetitive junk: lines of single tokens or digits repeated (1, 3, quotes, A), plus HTML tags like <strong>, <em>, <h2>, and words such as VISIT and Content:**.",
+    "label": "Fires on the whole lowercase word token \" macroeconomic\" (with leading space), in any sentence about the economy, policy, or markets; it is a single-token detector for that word, and related words like \"economic\", \"macro\", \"Macroeconomic\" capitalized, or \"microeconomic\" should fire far less. [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]"
+   },
+   {
+    "pole": "L00N6518-",
+    "prompt_i": 1,
+    "guess": "Degenerate repetition of HTML tags like <strong>, <h3>, plus date/timestamp fragments (weekday, month, year 2017-2020), numbers, NULL, and ellipses; blog-post-date headers with broken markup.",
+    "label": "Fires on the whole lowercase word token \" macroeconomic\" (with leading space), in any sentence about the economy, policy, or markets; it is a single-token detector for that word, and related words like \"economic\", \"macro\", \"Macroeconomic\" capitalized, or \"microeconomic\" should fire far less. [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]"
+   },
+   {
+    "pole": "L00N770+",
+    "prompt_i": 0,
+    "guess": "Degenerate, ungrammatical word salad about listening, reading, text, posts and internet/forum content, with repeated function words (\"of the same\", \"you can take\", \"it's is\"), contractions, HTML tags like <em>, and stray punctuation.",
+    "label": "Fires on the word \"modification\" itself (whole token, with or without a leading space or capital, including inside identifiers like modification_date, LastModification, decommodification), in any context: genetic, code, exercise, legal license text. [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]"
+   },
+   {
+    "pole": "L00N770+",
+    "prompt_i": 1,
+    "guess": "Degraded, ungrammatical blog-style text built around verbs of reading, listening, writing and posting (read, listen, hear, written, post, get, take), with the filler \"of the\" and \"is read of\", plus bed/sleep and slot.",
+    "label": "Fires on the word \"modification\" itself (whole token, with or without a leading space or capital, including inside identifiers like modification_date, LastModification, decommodification), in any context: genetic, code, exercise, legal license text. [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]"
+   },
+   {
+    "pole": "L00N770-",
+    "prompt_i": 0,
+    "guess": "Academic-citation-style fragments: repeated numbers and years like 2013, 201, 10, 100 in parentheses, plus the word 'research', article/paper/chapter/abstract, and stray HTML <em> tags; degenerate repetition.",
+    "label": "A token-identity neuron in the first layer whose strongest hits are a few specific tokens: the capitalized word \"Satellite\" (as in Global Navigation Satellite System or Japan Satellite Systems), the piece \"Datas\" that begins \"Datasheet\" or \"Datasette\", and the piece \"beaut\" that begins the split forms \"beautify\", \"beautific\" or archaic \"beautie\". [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]"
+   },
+   {
+    "pole": "L00N770-",
+    "prompt_i": 1,
+    "guess": "Degenerate repetitive text with HTML tags (<strong>, <em>, <blockquote>, <h2>), parenthesized years like (2010)/(201), repeated numbers such as 10, and bullet fragments; incoherent academic-citation/blog-markup style.",
+    "label": "A token-identity neuron in the first layer whose strongest hits are a few specific tokens: the capitalized word \"Satellite\" (as in Global Navigation Satellite System or Japan Satellite Systems), the piece \"Datas\" that begins \"Datasheet\" or \"Datasette\", and the piece \"beaut\" that begins the split forms \"beautify\", \"beautific\" or archaic \"beautie\". [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]"
+   },
+   {
+    "pole": "L01N4035-",
+    "prompt_i": 0,
+    "guess": "Run-on descriptive definitions of websites/places using \"is a/an ... place to read\", \"the Internet\", online community, library, readers, books, with UK place names (London, Edinburgh, Oxford); repeated \"is a\" copula chains.",
+    "label": "In British English text about UK places, fires on distinctively British local tokens: the first digit of a UK road number after \"A\" or \"M\" (A34, A487, M602), the digit or district letters of a UK postcode (BS8, M30, G4), and the planning or estate-agent word \"amenity/amenities\" (as in \"local amenities\", \"private amenity space\"), plus British place-name words such as Croft, Hoe and Miners. [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]"
+   },
+   {
+    "pole": "L01N4035-",
+    "prompt_i": 1,
+    "guess": "Run-on definitional \"X is a place/community/site for readers\" clauses, with the Internet, websites, schools, hospitals, churches and Welsh/UK places (Cardiff, Wales, Swansea, St Mary's), plus stray <strong> tags.",
+    "label": "In British English text about UK places, fires on distinctively British local tokens: the first digit of a UK road number after \"A\" or \"M\" (A34, A487, M602), the digit or district letters of a UK postcode (BS8, M30, G4), and the planning or estate-agent word \"amenity/amenities\" (as in \"local amenities\", \"private amenity space\"), plus British place-name words such as Croft, Hoe and Miners. [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]"
+   }
+  ]
+ },
+ "g_judge2": {
+  "label_prompted_rate": 1.0,
+  "n_label_poles": 40,
+  "floor": 0.6,
+  "alpha0_rate": 0.375,
+  "ceiling": 0.5,
+  "failing_input": {
+   "alpha0_rate_same_poles": 0.225,
+   "fails": true
+  },
+  "pass": true,
+  "reasons": []
+ },
+ "g_coh": {
+  "band": {
+   "lo": 0.3385078422468837,
+   "hi": 4.594511284705732,
+   "hi_alpha0": 2.5371185812124066,
+   "hi_natural": 4.594511284705732,
+   "n_alpha0": 75,
+   "n_alpha0_empty": 0,
+   "n_natural": 256
+  },
+  "failing_inputs": {
+   "repeated": {
+    "nll": 0.3237612214094649,
+    "collapsed": true
+   },
+   "random": {
+    "nll": 17.189675837755203,
+    "collapsed": true
+   }
+  },
+  "passing_inputs": {
+   "natural_test": {
+    "n": 256,
+    "share_coherent": 0.88671875,
+    "pass": false
+   },
+   "alpha0": {
+    "n": 75,
+    "share_coherent": 0.92,
+    "pass": true
+   },
+   "label_prompted": {
+    "n": 400,
+    "share_coherent": 0.9425,
+    "pass": true
+   }
+  },
+  "pass": false,
+  "split": {
+   "n_calibration": 75,
+   "n_test": 75
+  }
+ },
+ "coherence_filter": false,
+ "frozen_coherent_only": {
+  "rule": "A27: the frozen coherent-only reading on the cells whose shown samples all lie inside the band (the judge saw every sample)",
+  "n_cells": 1199,
+  "rows": {
+   "H_suff": {
+    "label": "CANCELLED (coherence gate not shown to work) [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+    "label_if_not_cancelled": "CANCELLED: NO COHERENT DOSE (47 of 80 ONE poles contributing at d_p, need 56), interval above chance 1/3 [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+    "o_dp": {
+     "est": 0.48936170212765956,
+     "lo": 0.35106382978723405,
+     "hi": 0.6276595744680851,
+     "n": 47,
+     "n_finite": 10000
+    },
+    "paired_minus_alpha0": {
+     "est": 0.2765957446808511,
+     "lo": 0.09574468085106383,
+     "hi": 0.44680851063829785,
+     "n": 47,
+     "n_finite": 10000
+    }
+   },
+   "H_pred_agree": {
+    "label": "CANCELLED (coherence gate not shown to work) [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+    "label_if_not_cancelled": "SUPPORTED, interval above ratio 1, interval crosses ratio 2 [R-pass 0.65, R-equiv 0.00; underpowered for a direction; no room for equivalence] [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+    "R": {
+     "est": 2.2435897435897436,
+     "lo": 1.3837286628733998,
+     "hi": 4.0,
+     "n": 47,
+     "n_finite": 10000
+    },
+    "difference": {
+     "est": 0.46190476190476193,
+     "lo": 0.17803030303030304,
+     "hi": 0.7083333333333333,
+     "n": 47,
+     "n_finite": 10000
+    }
+   },
+   "H_pred_conf": {
+    "label": "CANCELLED (coherence gate not shown to work) [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+    "label_if_not_cancelled": "NOT SHOWN, interval crosses 0 [R-pass 0.98, R-equiv 0.00; rule fires on the null; no room for equivalence] [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+    "spearman": {
+     "est": -0.15784605179638475,
+     "lo": -0.4264057739207978,
+     "hi": 0.13789943235502822,
+     "n": 47,
+     "n_finite": 10000
+    }
+   },
+   "H_depth": {
+    "label": "CANCELLED (coherence gate not shown to work) [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+    "label_if_not_cancelled": "NOT SHOWN, interval crosses 0 [R-pass 0.24, R-equiv 0.01; underpowered for a direction; no room for equivalence] [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+    "diff_t2_minus_t0": {
+     "est": 0.05718954248366015,
+     "lo": -0.27380952380952384,
+     "hi": 0.3844578215901745,
+     "n": 47,
+     "n_finite": 10000
+    }
+   }
+  },
+  "g_n": {
+   "n_contributing": 47,
+   "n_drawn": 80,
+   "need": 56,
+   "pass": false,
+   "failing_input": {
+    "n": 55,
+    "fails": true
+   }
+  }
+ },
+ "created_utc": "2026-10-26T20:15:17Z"
+}

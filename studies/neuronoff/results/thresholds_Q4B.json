@@ -1,0 +1,493 @@
+{
+ "model_key": "Q4B",
+ "created_utc": "2026-10-25T19:54:34Z",
+ "inputs": {
+  "studies/neuronoff/plan/pairs_Q4B.json": "4b5fa33e29bd057efb45be833251272d0c42655abdf4ed854d0ec37694263288",
+  "bank/off/q4b/1/out/poles/L05N471p.json": "0a372de64f59cee13f6b27c2e61c17c5ce879f75a09790f79265e26667679404",
+  "bank/off/q4b/1/out/poles/L05N816m.json": "c04bd1103bfb8a8e368efb545923fb3b4d9bd65622c3c78e8699b12461b0ad00",
+  "bank/off/q4b/1/out/poles/L12N2605m.json": "f7cdcdc0e3fdcb4a7947c4c1591737b2546c444f390eb2fb634a4b2cb7203e54",
+  "bank/off/q4b/1/out/poles/L12N8184p.json": "0f3a70e84b806a49c9322a4ed9d07e0a609dccac501d0459278a70970b6832cf",
+  "bank/off/q4b/1/out/poles/L14N4015m.json": "ae5731ea5dc213428b3be080d3e43efaa5befe30ee465c49b55eaaa43da487f3",
+  "bank/off/q4b/1/out/poles/L14N4419p.json": "2e3cfca84ff1e74663766d76521413e06e4a96469294b8b6ccc49e112d55e0b4",
+  "bank/off/q4b/1/out/poles/L14N4419m.json": "73fde4fe1c8e7ac8c823ba1b199a0afe6b7cec4e547b899fbdc88e6fb11f297c",
+  "bank/off/q4b/1/out/poles/L14N4783p.json": "be554bffb520a09c3a93f501c744a0d1b52ece0848cea5f738f542d2a18034e4",
+  "bank/off/q4b/1/out/poles/L16N2662p.json": "d7bb790b4002294a3e7c752c33803d2c7f5570a052c74bbd191b5e74cae33555",
+  "bank/off/q4b/1/out/poles/L16N6833p.json": "02cc91b44a5d05771aed70095c76e9cbd90e5b16d9fb36c378c787b592904b8e",
+  "bank/off/q4b/1/out/poles/L17N3004p.json": "9f7e64f692f5a25a7dcc261ae9c776e9fd6321cfb7944ab7e926a23d4a325f53",
+  "bank/off/q4b/1/out/poles/L17N3004m.json": "76a14815e18aee2591df686205c60b093c8851127e9be5be6cc18dec5fb6131e",
+  "bank/off/q4b/1/out/poles/L17N4176p.json": "892629d22229b1a64da31728e036e6091628e375d74da455b55e5c32938347cc",
+  "bank/off/q4b/1/out/poles/L17N4778p.json": "c68c0fead0562b1d1cd028df74ccf4a2141cfb94f61bf578627d6b1cfc12ed76",
+  "bank/off/q4b/1/out/poles/L18N1776p.json": "517f1909b396ce90a9b2df7e68e336fe2ebdf9b084f847893a3f23cff7732091",
+  "bank/off/q4b/1/out/poles/L18N2635m.json": "204ff869fe66b440a5979c781a1acc274fc7287ee9ee56089d0cecc8341b1a30",
+  "bank/off/q4b/1/out/poles/L18N2645p.json": "901d24f59341a97ce1cbed03a5db259a9e0f6e84d07eb5ad6d6e171346bcb42f",
+  "bank/off/q4b/1/out/poles/L18N2645m.json": "d79a9b7d914370da3345e9ac01d68e9d8aef693ce874369095b3cde502ed7118",
+  "bank/off/q4b/1/out/poles/L18N7160p.json": "68c36047f25df621cfc0047e7f535699d013989328d7fec6ec38b1f59916a915",
+  "bank/off/q4b/1/out/poles/L18N7160m.json": "9fcf8394a578bb90a1a38834bb086abf0423fcba8b92d22eada162a3ac2e6a5a",
+  "bank/off/q4b/1/out/poles/L20N5089m.json": "afed31059f59eb627be959bb07e59b8a54b90f3ba050729cb7a6f340b22874c2",
+  "bank/off/q4b/1/out/poles/L20N5110m.json": "36d66d142440bca0ded5d613ad008b1443766bd31d118a9a60dbdb2c3bdbf091",
+  "bank/off/q4b/1/out/poles/L20N7249p.json": "d933b0c75f4528487a8a323e3804a22b72b4edbdb255608053b1b4999cc4b599",
+  "bank/off/q4b/1/out/poles/L20N7603m.json": "8131bba3d5e07035c2955ba7094ce4e6ca3e379b7b43001c64143a11a42906fc",
+  "bank/off/q4b/1/out/poles/L21N1897m.json": "0c0e524f85cf2e9f6001b99213b3023d0febb31d246a337b7eb52580bb3d2c7d",
+  "bank/off/q4b/1/out/poles/L21N3107p.json": "e22bfe6db750581ee66598f51cf13404679273188c3968b5678d025f9e4c1154",
+  "bank/off/q4b/1/out/poles/L21N3107m.json": "7c0c39e1fe7c5e289bd3d5b1c68d4ee2d382f83a410d1f13392ceb6263d62c0f",
+  "bank/off/q4b/1/out/poles/L21N5637p.json": "ffcdc898fb1e15ca77736b175264eed8a5ebb345255d22fe798ec44dafa339c9",
+  "bank/off/q4b/1/out/poles/L21N5732p.json": "e4be0664822704f87e8a816c19f85ed3899a732ef15761077f73adaa4c277296",
+  "bank/off/q4b/1/out/poles/L21N7763m.json": "f22befb21ecaf067da07c51449f2b1f9e912487f1fed62e6d05e8951ad888657",
+  "bank/off/q4b/1/out/poles/L22N1722p.json": "aaaece56f863f66da5396807a17ac5aeaf6092cb22ee80b5b26855963fc22873",
+  "bank/off/q4b/1/out/poles/L22N1722m.json": "6c862faa9a94dd23aa1a8821f365e15795d159e5fdbe0dbfe1e5919d26669c4b",
+  "bank/off/q4b/1/out/poles/L22N3065m.json": "e535cd63bbe68ec75b57e61fd7ac74c39b415bd9cb8866ed857476c63aea815e",
+  "bank/off/q4b/1/out/poles/L22N7061m.json": "406797a9d669a65a9d223c0cdd27fff0c3e380bb500a727cb727165a2895f771",
+  "bank/off/q4b/1/out/poles/L23N7445m.json": "be68de0af9634a7fb82b6c27da0cebd52a97dd6dac9e1bef27b2d9f4316bfdc7",
+  "bank/off/q4b/1/out/poles/L23N8899m.json": "9780dfb04ef10e808b0cdfc864237f1e6f57e8f9bddef5366ab37f3c60f07ddc",
+  "bank/off/q4b/1/out/poles/L24N3091m.json": "f68f277977b4ca057e2b5e2564804396a7d7bb2270045fbcb7fe0c7162aac59b",
+  "bank/off/q4b/1/out/poles/L24N4477m.json": "0b7531f4760e19d324d1c3a05b983903c5641f26e7ac5d504c8cd9540289728f",
+  "bank/off/q4b/1/out/poles/L26N634p.json": "b90417a19208cbb02c669cc1ec3aca2d5c37ba6f5f4b04c1e07ce98f85db2b8d",
+  "bank/off/q4b/1/out/poles/L26N8581p.json": "d6eac77e5c79717afd25b6b97dd29b8363f96cab67a84deaca3db198f4026c0a",
+  "bank/off/q4b/1/out/poles/L27N7674m.json": "64532b5d554b93e5147008d62cc613aed858ac8251a20602452d2a6aeabff3d9",
+  "bank/off/q4b/1/out/poles/L27N7773p.json": "38beb802c82e04fdc902db66c0c4880a7ec28766d275c3f11e522e09b582ccfc",
+  "bank/off/q4b/1/out/poles/L31N2970m.json": "a2a48e31cb888464829e44495176aa1ebcf31b24428f79be6391c31884f2e96b",
+  "bank/off/q4b/1/out/poles/L31N5699p.json": "e15c86f71b8e5ad9483c219917a61b91e3486f734f22f6a8781748b5d05e8a32",
+  "bank/off/q4b/1/out/poles/L33N1962m.json": "cdf745d2b6a901ed1271c0f7d26506d1558a37d4bc9be69e087101d73ac3cb36",
+  "bank/off/q4b/1/out/poles/L33N2724p.json": "dfb4003abe689c73f2729339e2ea775e7f5c818436c264514d2e086d35495c8d",
+  "bank/off/q4b/1/out/poles/L34N9051p.json": "2da5f6f78cfd9c37907cf3ad9362f40dc053b230e6188ab8f4c6be3117a68424",
+  "bank/off/q4b/1/out/poles/L34N9051m.json": "72e6a2459838e6b73b31a91e34cb51d128b432d58f6b49d7dc04d45fb7a25d3c",
+  "bank/off/q4b/1/out/poles/L35N6252p.json": "0952afc633a7b1533b85a5d9c090f598711b9fc90a72a88d665926300721bbbc",
+  "bank/off/q4b/1/out/poles/L35N8591p.json": "6517152d4599fb44186c4ac4ab169b9ceeee7b9aa56f021860e7dd8b127a58d7",
+  "bank/off/q4b/1/out/arm_b/L11N5238p_teacher.jsonl": "368cdbbb94f1fc7628070504874631af4a4c1626e8a4afd83fa3d20fa7956d47",
+  "bank/off/q4b/1/out/arm_b/L27N2924m_teacher.jsonl": "cd299cf2976918cb2920442a0c7ae6c2af6394030f9f6f1fea570381e8ea5b1a",
+  "bank/off/q4b/1/out/arm_b/L08N3398m_teacher.jsonl": "283711d79ea78fa8cbf04234a77decd6e51896412b50a1f63ee42755e9330ba0",
+  "bank/off/q4b/1/out/arm_b/L04N5165p_teacher.jsonl": "01548b6081f380cb0f5ce3d01950fac4db2369e8483e8c3e5e0dbb170fe420db"
+ },
+ "arm_a": {
+  "n_null_pairs": 33,
+  "n_null_valid": 4,
+  "cancelled": [
+   {
+    "pair_id": "Q4B-N001",
+    "reasons": [
+     "L23N8899-: G-pc"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N002",
+    "reasons": [
+     "L21N3107+: G-pc"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N005",
+    "reasons": [
+     "L18N2645-: G-pc",
+     "L18N2635-: G-pc"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N006",
+    "reasons": [
+     "L22N1722+: G-pc"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N007",
+    "reasons": [
+     "L21N1897-: G-pc"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N008",
+    "reasons": [
+     "L24N4477-: G-pc"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N009",
+    "reasons": [
+     "L18N2645+: G-pc"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N010",
+    "reasons": [
+     "L22N3065-: G-pc"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N012",
+    "reasons": [
+     "L17N4176+: G-pc",
+     "L17N4778+: G-pc"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N013",
+    "reasons": [
+     "L20N7603-: G-pc"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N014",
+    "reasons": [
+     "L20N7249+: G-pc",
+     "L20N5110-: G-pc"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N015",
+    "reasons": [
+     "L05N816-: G-pc"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N016",
+    "reasons": [
+     "L18N1776+: G-pc",
+     "L18N7160-: G-pc"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N017",
+    "reasons": [
+     "L19N1020-: not measured",
+     "L19N6516+: not measured"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N018",
+    "reasons": [
+     "L19N6951+: not measured",
+     "L19N1020+: not measured"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N019",
+    "reasons": [
+     "L29N9527+: not measured",
+     "L29N8202-: not measured"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N020",
+    "reasons": [
+     "L30N6819+: not measured",
+     "L30N2857+: not measured"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N022",
+    "reasons": [
+     "L14N4419+: G-pc",
+     "L14N4015-: G-pc"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N023",
+    "reasons": [
+     "L16N2662+: G-pc"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N024",
+    "reasons": [
+     "L17N6736-: not measured"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N025",
+    "reasons": [
+     "L14N4419-: G-pc"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N026",
+    "reasons": [
+     "L26N8581+: G-pc"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N027",
+    "reasons": [
+     "L27N7674-: G-pc"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N028",
+    "reasons": [
+     "L21N5732+: G-pc"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N029",
+    "reasons": [
+     "L17N3004-: G-pc",
+     "L17N9569-: not measured"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N030",
+    "reasons": [
+     "L12N8184+: G-pc"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N031",
+    "reasons": [
+     "L13N2038+: not measured",
+     "L13N2349+: not measured"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N032",
+    "reasons": [
+     "L32N8029-: not measured",
+     "L32N5074-: not measured"
+    ]
+   },
+   {
+    "pair_id": "Q4B-N033",
+    "reasons": [
+     "L26N821-: not measured",
+     "L26N634-: not measured"
+    ]
+   }
+  ],
+  "delta_own": 0.0080749913164982,
+  "delta_coll": 0.0001475548500505154,
+  "delta_e": 0.00017534798144541922,
+  "rule": "delta = median_j |d_j| over valid null pairs (SPEC \u00a77.2)",
+  "room": {
+   "own": {
+    "n": 100,
+    "R_a": true,
+    "hw95": 0.005657752987517597,
+    "morcos_room": true,
+    "power": 0.5485,
+    "direction_room": false,
+    "failing_input_n5": {
+     "n": 5,
+     "R_a": true,
+     "hw95": 0.01362329800442467,
+     "morcos_room": false,
+     "power": 0.499,
+     "direction_room": false,
+     "fails": true
+    },
+    "reported_n10": {
+     "n": 10,
+     "R_a": true,
+     "hw95": 0.009640525495971133,
+     "morcos_room": false,
+     "power": 0.643,
+     "direction_room": false
+    },
+    "cancelled": false
+   },
+   "coll": {
+    "n": 100,
+    "R_a": true,
+    "hw95": 6.682528579664843e-05,
+    "morcos_room": true,
+    "power": 0.9995,
+    "direction_room": true,
+    "failing_input_n5": {
+     "n": 5,
+     "R_a": true,
+     "hw95": 0.00036929298923277655,
+     "morcos_room": false,
+     "power": 0.2545,
+     "direction_room": false,
+     "fails": true
+    },
+    "reported_n10": {
+     "n": 10,
+     "R_a": true,
+     "hw95": 0.0002180591375147125,
+     "morcos_room": false,
+     "power": 0.2745,
+     "direction_room": false
+    },
+    "cancelled": false
+   },
+   "energy": {
+    "n": 100,
+    "R_a": true,
+    "hw95": 0.00015593201407424937,
+    "morcos_room": true,
+    "power": 0.5485,
+    "direction_room": false,
+    "failing_input_n5": {
+     "n": 5,
+     "R_a": true,
+     "hw95": 0.0002452851161767655,
+     "morcos_room": false,
+     "power": 0.499,
+     "direction_room": false,
+     "fails": true
+    },
+    "reported_n10": {
+     "n": 10,
+     "R_a": true,
+     "hw95": 0.00020060856512550744,
+     "morcos_room": false,
+     "power": 0.643,
+     "direction_room": false
+    },
+    "cancelled": false
+   }
+  },
+  "null_diffs_own": [
+   -0.018175370186877444,
+   0.007078756811024505,
+   0.0042367491640106884,
+   0.009071225821971896
+  ],
+  "null_diffs_coll": [
+   6.469589399486684e-05,
+   0.0005124309559629524,
+   0.00022615502250260077,
+   -6.895467759843003e-05
+  ],
+  "null_diffs_e": [
+   -0.0003273281969216856,
+   0.00012441010068950576,
+   0.00018745392745899298,
+   0.00016324203543184547
+  ],
+  "fit_failing_input_not_failed": 0,
+  "pc_failing_input_not_failed": 0
+ },
+ "arm_b": {
+  "L11N5238+": {
+   "ctrl1": "L11N4144+",
+   "ctrl2": "L11N4304+",
+   "n_prompts_valid": 20,
+   "excluded_prompts": [],
+   "cancelled": false,
+   "m_B": 0.03252707225629677,
+   "m_B_star": 0.03252707225629677,
+   "null_diffs": [
+    -0.11250596507306909,
+    -0.015200846246443689,
+    0.0031336665924754925,
+    0.06981275517318863,
+    -0.04683978017510526,
+    -0.026916722359601408,
+    -0.058509563095867634,
+    -0.006329988915240392,
+    -0.08312723631388508,
+    0.0887870719016064,
+    0.14699008551542647,
+    0.009410560014657676,
+    0.022501841274788603,
+    0.022800324353738688,
+    -0.0018070381303232352,
+    -0.09251053746265825,
+    -0.006195208254212048,
+    0.014230382614186965,
+    0.049744277326681186,
+    -0.07168468133022543
+   ],
+   "pc_mean_drop": 0.5383119829589148,
+   "room": true
+  },
+  "L27N2924-": {
+   "ctrl1": "L27N7674+",
+   "ctrl2": "L27N8528-",
+   "n_prompts_valid": 20,
+   "excluded_prompts": [],
+   "cancelled": false,
+   "m_B": 0.047236106025520704,
+   "m_B_star": 0.047236106025520704,
+   "null_diffs": [
+    -0.05837142467498779,
+    0.0009946227073669434,
+    -0.21497619152069092,
+    -0.042329929769039154,
+    -0.041816964745521545,
+    0.023558855056762695,
+    0.080771803855896,
+    -0.0340177770704031,
+    0.01611313223838806,
+    0.00036856532096862793,
+    0.005918667302466929,
+    0.036700308322906494,
+    0.1108473464846611,
+    -0.0241217203438282,
+    -0.09037414938211441,
+    0.0017960257828235626,
+    0.09913110733032227,
+    0.04082184284925461,
+    -0.0003001987934112549,
+    -0.1555616781115532
+   ],
+   "pc_mean_drop": 1.0075258521741488,
+   "room": true
+  },
+  "L08N3398-": {
+   "ctrl1": "L08N9674-",
+   "ctrl2": "L08N6028+",
+   "n_prompts_valid": 20,
+   "excluded_prompts": [],
+   "cancelled": false,
+   "m_B": 0.07002756111604494,
+   "m_B_star": 0.07002756111604494,
+   "null_diffs": [
+    -0.1491795949114021,
+    0.11658359051216394,
+    0.24654459254816175,
+    -0.11257651056803297,
+    -0.13246681114833336,
+    -0.15381705109030008,
+    0.049274491175310686,
+    0.0027806891594082117,
+    0.10259661579038948,
+    -0.060933983523455026,
+    0.11627814173698425,
+    -0.07887840270996094,
+    0.10925995744764805,
+    0.10018338073859923,
+    -0.0022582811070606112,
+    0.05823989002965391,
+    -0.005909152328968048,
+    0.1165843466296792,
+    0.17923487816005945,
+    -0.1323792189359665
+   ],
+   "pc_mean_drop": 1.341909343174177,
+   "room": true
+  },
+  "L04N5165+": {
+   "ctrl1": "L04N9078-",
+   "ctrl2": "L04N5781-",
+   "n_prompts_valid": 19,
+   "excluded_prompts": [
+    7
+   ],
+   "cancelled": false,
+   "m_B": 0.06388396752070931,
+   "m_B_star": 0.06388396752070931,
+   "null_diffs": [
+    0.025579197390470654,
+    -0.023988112747247214,
+    -0.17704199068248272,
+    -0.08371413499116898,
+    0.037502827821299434,
+    0.13333040289580822,
+    -0.23079130973201245,
+    0.0020901039242744446,
+    0.22397297572751995,
+    -0.018668253906071186,
+    0.009868215769529343,
+    -0.11191555950790644,
+    0.005647476762533188,
+    0.0030518524581566453,
+    0.002754666085820645,
+    -0.0707682414122246,
+    -0.02638848082278855,
+    -0.042448424675967544,
+    -0.057042296044528484
+   ],
+   "pc_mean_drop": 0.8063338727820097,
+   "room": true
+  }
+ }
+}

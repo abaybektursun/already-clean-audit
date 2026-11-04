@@ -1,0 +1,972 @@
+{
+ "model_key": "G4",
+ "created_utc": "2026-10-25T20:50:23Z",
+ "inputs": {
+  "studies/neuronoff/plan/plan_G4.json": "b280de5cfefdaba225f82b527daea81ec0763515d75177518ef4f23de174caa5",
+  "<local>/interp_research-neuronoff/bank/off/g4/1/out/arm_b/L07N10202m_samples.jsonl": "59778cb0e09f981791892b1f75bbf4b4af82eae22f82f5b9abbc1961f425ee6b",
+  "<local>/interp_research-neuronoff/bank/off/g4/1/out/arm_b/L06N599p_samples.jsonl": "544e153e812795580d1b6205be253268c9ff80f17462165a5f9b1ff9fd17d251",
+  "<local>/interp_research-neuronoff/bank/off/g4/1/out/arm_b/L08N7823p_samples.jsonl": "24f7680adbfa199579257bf1c2ff0bb790cea53fcdcf7c2bdf4bed2e2806a609"
+ },
+ "poles": {
+  "L07N10202-": {
+   "pattern": "\\buseEffect\\b",
+   "readout": "presence rate",
+   "table": {
+    "clean": {
+     "0": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.95
+     },
+     "1": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.25
+     },
+     "2": {
+      "n": 20,
+      "presence": 19,
+      "mean_matches": 3.05
+     },
+     "3": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.05
+     },
+     "4": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.0
+     },
+     "5": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 3.25
+     },
+     "6": {
+      "n": 20,
+      "presence": 15,
+      "mean_matches": 1.85
+     },
+     "7": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.05
+     },
+     "8": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.1
+     },
+     "9": {
+      "n": 20,
+      "presence": 14,
+      "mean_matches": 1.45
+     },
+     "10": {
+      "n": 20,
+      "presence": 1,
+      "mean_matches": 0.1
+     },
+     "11": {
+      "n": 20,
+      "presence": 19,
+      "mean_matches": 1.0
+     },
+     "12": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.4
+     },
+     "13": {
+      "n": 20,
+      "presence": 1,
+      "mean_matches": 0.05
+     },
+     "14": {
+      "n": 20,
+      "presence": 17,
+      "mean_matches": 1.75
+     },
+     "15": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.45
+     },
+     "16": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.05
+     },
+     "17": {
+      "n": 20,
+      "presence": 3,
+      "mean_matches": 0.15
+     },
+     "18": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.0
+     },
+     "19": {
+      "n": 20,
+      "presence": 12,
+      "mean_matches": 1.1
+     }
+    },
+    "ablate_pole": {
+     "0": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.85
+     },
+     "1": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.9
+     },
+     "2": {
+      "n": 20,
+      "presence": 18,
+      "mean_matches": 3.05
+     },
+     "3": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.0
+     },
+     "4": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.05
+     },
+     "5": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.2
+     },
+     "6": {
+      "n": 20,
+      "presence": 17,
+      "mean_matches": 2.0
+     },
+     "7": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.0
+     },
+     "8": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.1
+     },
+     "9": {
+      "n": 20,
+      "presence": 14,
+      "mean_matches": 1.35
+     },
+     "10": {
+      "n": 20,
+      "presence": 1,
+      "mean_matches": 0.1
+     },
+     "11": {
+      "n": 20,
+      "presence": 19,
+      "mean_matches": 1.0
+     },
+     "12": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.3
+     },
+     "13": {
+      "n": 20,
+      "presence": 2,
+      "mean_matches": 0.1
+     },
+     "14": {
+      "n": 20,
+      "presence": 16,
+      "mean_matches": 1.6
+     },
+     "15": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.15
+     },
+     "16": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.05
+     },
+     "17": {
+      "n": 20,
+      "presence": 5,
+      "mean_matches": 0.3
+     },
+     "18": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.9
+     },
+     "19": {
+      "n": 20,
+      "presence": 9,
+      "mean_matches": 0.9
+     }
+    },
+    "ablate_ctrl1": {
+     "0": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.85
+     },
+     "1": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.8
+     },
+     "2": {
+      "n": 20,
+      "presence": 19,
+      "mean_matches": 3.25
+     },
+     "3": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.0
+     },
+     "4": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.0
+     },
+     "5": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 3.05
+     },
+     "6": {
+      "n": 20,
+      "presence": 15,
+      "mean_matches": 1.45
+     },
+     "7": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.0
+     },
+     "8": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.05
+     },
+     "9": {
+      "n": 20,
+      "presence": 14,
+      "mean_matches": 1.45
+     },
+     "10": {
+      "n": 20,
+      "presence": 1,
+      "mean_matches": 0.1
+     },
+     "11": {
+      "n": 20,
+      "presence": 19,
+      "mean_matches": 1.0
+     },
+     "12": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.55
+     },
+     "13": {
+      "n": 20,
+      "presence": 0,
+      "mean_matches": 0.0
+     },
+     "14": {
+      "n": 20,
+      "presence": 17,
+      "mean_matches": 1.3
+     },
+     "15": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.4
+     },
+     "16": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.0
+     },
+     "17": {
+      "n": 20,
+      "presence": 5,
+      "mean_matches": 0.3
+     },
+     "18": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.95
+     },
+     "19": {
+      "n": 20,
+      "presence": 10,
+      "mean_matches": 0.85
+     }
+    }
+   },
+   "difference": {
+    "n": 20,
+    "mean": -0.0025000000000000066,
+    "lo": -0.02,
+    "hi": 0.012499999999999987
+   },
+   "threshold": 0.1,
+   "behaviour_changed": false
+  },
+  "L06N599+": {
+   "pattern": "\\bimport\\s+[\\w.]+\\s+as\\s+\\w+|\\bfrom\\s+[\\w.]+\\s+import\\s+\\w+\\s+as\\s+\\w+",
+   "readout": "presence rate",
+   "table": {
+    "clean": {
+     "0": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.15
+     },
+     "1": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 4.55
+     },
+     "2": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.35
+     },
+     "3": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.35
+     },
+     "4": {
+      "n": 20,
+      "presence": 19,
+      "mean_matches": 1.6
+     },
+     "5": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.85
+     },
+     "6": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.1
+     },
+     "7": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.0
+     },
+     "8": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.45
+     },
+     "9": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.6
+     },
+     "10": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.9
+     },
+     "11": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 3.85
+     },
+     "12": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.85
+     },
+     "13": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.85
+     },
+     "14": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 3.9
+     },
+     "15": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.45
+     },
+     "16": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 3.35
+     },
+     "17": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 3.35
+     },
+     "18": {
+      "n": 20,
+      "presence": 12,
+      "mean_matches": 0.75
+     },
+     "19": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.4
+     }
+    },
+    "ablate_pole": {
+     "0": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.15
+     },
+     "1": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 4.5
+     },
+     "2": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.1
+     },
+     "3": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.25
+     },
+     "4": {
+      "n": 20,
+      "presence": 19,
+      "mean_matches": 1.85
+     },
+     "5": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.9
+     },
+     "6": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.15
+     },
+     "7": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.0
+     },
+     "8": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.7
+     },
+     "9": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.6
+     },
+     "10": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.05
+     },
+     "11": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 3.95
+     },
+     "12": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.8
+     },
+     "13": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.45
+     },
+     "14": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 4.25
+     },
+     "15": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.45
+     },
+     "16": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 3.4
+     },
+     "17": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 3.2
+     },
+     "18": {
+      "n": 20,
+      "presence": 12,
+      "mean_matches": 0.8
+     },
+     "19": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.5
+     }
+    },
+    "ablate_ctrl1": {
+     "0": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.15
+     },
+     "1": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 4.45
+     },
+     "2": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.05
+     },
+     "3": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.25
+     },
+     "4": {
+      "n": 20,
+      "presence": 19,
+      "mean_matches": 1.55
+     },
+     "5": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.95
+     },
+     "6": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.1
+     },
+     "7": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.0
+     },
+     "8": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.45
+     },
+     "9": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.6
+     },
+     "10": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.0
+     },
+     "11": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 3.65
+     },
+     "12": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.85
+     },
+     "13": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 3.1
+     },
+     "14": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 3.8
+     },
+     "15": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.45
+     },
+     "16": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 3.1
+     },
+     "17": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.8
+     },
+     "18": {
+      "n": 20,
+      "presence": 12,
+      "mean_matches": 0.85
+     },
+     "19": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.9
+     }
+    }
+   },
+   "difference": {
+    "n": 20,
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0
+   },
+   "threshold": 0.1,
+   "behaviour_changed": false
+  },
+  "L08N7823+": {
+   "pattern": "(?i)\\breferences\\s+[\\w.`\"\\[\\]]+\\s*\\(",
+   "readout": "presence rate",
+   "table": {
+    "clean": {
+     "0": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.15
+     },
+     "1": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.35
+     },
+     "2": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.1
+     },
+     "3": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.4
+     },
+     "4": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.35
+     },
+     "5": {
+      "n": 20,
+      "presence": 19,
+      "mean_matches": 1.9
+     },
+     "6": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.3
+     },
+     "7": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.2
+     },
+     "8": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.2
+     },
+     "9": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.0
+     },
+     "10": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.9
+     },
+     "11": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.15
+     },
+     "12": {
+      "n": 20,
+      "presence": 16,
+      "mean_matches": 1.0
+     },
+     "13": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.65
+     },
+     "14": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 3.1
+     },
+     "15": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.6
+     },
+     "16": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.4
+     },
+     "17": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.1
+     },
+     "18": {
+      "n": 20,
+      "presence": 19,
+      "mean_matches": 1.9
+     },
+     "19": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.4
+     }
+    },
+    "ablate_pole": {
+     "0": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.1
+     },
+     "1": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.3
+     },
+     "2": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.1
+     },
+     "3": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.25
+     },
+     "4": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.35
+     },
+     "5": {
+      "n": 20,
+      "presence": 19,
+      "mean_matches": 1.9
+     },
+     "6": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.25
+     },
+     "7": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.2
+     },
+     "8": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.1
+     },
+     "9": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.0
+     },
+     "10": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.0
+     },
+     "11": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.05
+     },
+     "12": {
+      "n": 20,
+      "presence": 16,
+      "mean_matches": 0.8
+     },
+     "13": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.65
+     },
+     "14": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 3.15
+     },
+     "15": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.75
+     },
+     "16": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.6
+     },
+     "17": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.15
+     },
+     "18": {
+      "n": 20,
+      "presence": 19,
+      "mean_matches": 2.0
+     },
+     "19": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.35
+     }
+    },
+    "ablate_ctrl1": {
+     "0": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.1
+     },
+     "1": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.35
+     },
+     "2": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.1
+     },
+     "3": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.35
+     },
+     "4": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.35
+     },
+     "5": {
+      "n": 20,
+      "presence": 19,
+      "mean_matches": 1.9
+     },
+     "6": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.45
+     },
+     "7": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.2
+     },
+     "8": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.1
+     },
+     "9": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.0
+     },
+     "10": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.0
+     },
+     "11": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.15
+     },
+     "12": {
+      "n": 20,
+      "presence": 16,
+      "mean_matches": 0.85
+     },
+     "13": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.65
+     },
+     "14": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 3.2
+     },
+     "15": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.75
+     },
+     "16": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.4
+     },
+     "17": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 1.2
+     },
+     "18": {
+      "n": 20,
+      "presence": 19,
+      "mean_matches": 1.95
+     },
+     "19": {
+      "n": 20,
+      "presence": 20,
+      "mean_matches": 2.5
+     }
+    }
+   },
+   "difference": {
+    "n": 20,
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0
+   },
+   "threshold": 0.1,
+   "behaviour_changed": false
+  }
+ }
+}

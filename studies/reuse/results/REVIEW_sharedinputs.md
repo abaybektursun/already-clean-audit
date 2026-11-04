@@ -1,0 +1,30 @@
+# REUSE SPEC10 (the newer cluster's dependence on the older cluster's drivers against the pole's other clusters') review, 2026-11-03 (Opus built the job and the verdict; Fable 5.1 coordinated and reviews; revised after an Opus read, 31 items, all applied)
+
+Read-only on the bank (`sharedinputs/1/t15/`). Own recount `../scripts/review/fable_sharedinputs_recount.py` (`sharedinputs/recount_fable.txt`, `recount_fable_sharedinputs.json`; seed 1 against the verdict's seed 0): job falls from the npz, I_O and I_K, d, X1 and X1f with a bootstrap over neurons, the cancel rule at this load, K's own fall, the reverse arm, the known number against SPEC6's falls; it shares no code with `verdict_sharedinputs.py`. Samples opened before any number (`samples/cases.json`: three cases' sets; `samples/arms.jsonl`: 726 arm rows with every context's prompt, marked token, clean and ablated activation and the five largest ablated attributions; the first case's own arm falls 0.36 on 11 contexts of real text ending at the marked token).
+
+**Verdict.** Every gate passes (the known number against SPEC6 exactly 0; K validity 0 against 107; own′ 0.508 and 0.480; no case cancelled). X1 (primary) 0.028 [0.002, 0.104], not separated; X1f (fresh, deciding) −0.046 [−0.091, 0.030], H_old refuted: the dependence is shared. Five failing inputs each exit 1. Six of six §7 rows landed.
+
+## 1. Verified, recount (seed 1) against the verdict (seed 0)
+
+| quantity | verdict | recount |
+|---|---|---|
+| I_O primary; fresh | 0.242 [0.198, 0.333]; 0.255 [0.156, 0.363] | 0.242 [0.198, 0.333]; 0.255 [0.157, 0.363] |
+| I_K primary; fresh | 0.242 [0.149, 0.353]; 0.332 [0.168, 0.433] | 0.242 [0.156, 0.353]; 0.332 [0.187, 0.433] |
+| d primary (X1); fresh (X1f) | 0.028 [0.002, 0.104]; −0.046 [−0.091, 0.030] | 0.028 [0.002, 0.104]; −0.046 [−0.087, 0.030] |
+| share I_O > I_K primary; fresh | 0.609; 0.442 | 0.61; 0.44 |
+| K's own fall; reverse fall, primary | 0.514; 0.109 | 0.514; 0.109 |
+| known number against SPEC6 | 0.0 | 0.0000 |
+
+## 2. Findings
+
+**F1. By the deciding rule the dependence is not specific to the older cluster, and "shared" or "equal" overstate what was read.** On the fresh set the paired difference d is −0.046 [−0.091, 0.030] (the upper end 0.030 at every seed 0 to 9), below the 0.05 line, with I_K's median (0.332) above I_O's (0.255) but the paired interval containing 0; on the primary set the medians are equal (0.242 and 0.242) while the paired d is +0.028 [0.002, 0.104] and I_O exceeds I_K in 61% of cases; pooled, 0.020 [−0.019, 0.051], containing the line. The reverse arm is symmetric with I_K pairwise (−0.001 [−0.027, 0.034] and 0.006 [−0.000, 0.010]; Spearman 0.73 and 0.79), on readouts that are mostly other cases' cross arms re-paired (117 of 135); on the 17 parent–child pairs read both ways, new-on-old minus old-on-new is −0.008 [−0.066, 0.043]. K's own fall (0.51 and 0.46) matches J's, read mostly from other cases' own′ arms (117 of 135 bitwise). My first version said "shared", "equal", "runs both ways at about the same size" and "real clusters"; corrected.
+
+**F2. The dependence follows the shared drivers, and the K read are J's lineage.** 127 of 135 K are linked to J through UNITE's pairings (88 siblings sharing the case's O*, 17 children of J, 14 O*'s own O*); the 8 outside, on 2 neurons, read I_K 0.061 with overlap 0.04, at the two-neuron null. Per K the ratio runs from 0.02 to 0.64 and follows the overlap of the driver sets along one line for O* and K alike (I ≈ 0.08 + 1.45 s; the separate O* term +0.005 and −0.017; adjusted for the overlap, d within ±0.02 on both sets); cross_K partly replays cross_O (D′(K) overlaps D′(O*) by 0.12; 44% of D′(K) ∩ D′(J) lies in D′(O*)); two K of one case differ by 0.116 where O* and K differ by 0.139 (paired −0.053 [−0.113, 0.007]). So "not specific to the old–new pair" holds; "a property of the neuron" was not tested beyond J's lineage, and the ablation adds little beyond SPEC9's overlap result. With SPEC9's read (overlap 0.14 with O*, 0.125 with the other clusters) the headline is restated in measured terms: a neuron's clusters share about an eighth of their drivers, and replacing one cluster's drivers lowers the neuron on another by about a quarter of its own-driver fall, in proportion to the shared drivers, at T_15 on the clusters UNITE's pairings link.
+
+**F3. Spec and write-up defects, for the next author.** (a) The birth checkpoints were not read with K. (b) The siblings carry the fresh outcome (−0.063 against an unreadable 0.014 [−0.543, 0.030] on 11 non-sibling cases, 4 neurons); the sibling split is not flat. (c) §8 promised the shared-document flag; 12 of 135 K share a document with J (7 with overlapping windows), and without them d is −0.020 [−0.122, 0.037] fresh and 0.029 [0.009, 0.111] primary. (d) The line 0.05 was set on earlier distinctions; the per-case null was in the bank. (e) The K-own and reverse arms duplicate other cases' arms; a spec should say so and not count them as new readouts. (f) SPEC4's ceilings are 0.649, 0.672 and 0.683 (0.65 to 0.68), not "0.65 to 0.67".
+
+**F4. Errata of this review's first version (journal 04:45 CST).** "Equal (0.242 and 0.242)" without the paired d; "the reverse arm shows the symmetry" as a new measurement; "own fall 0.51 and 0.47" (0.46); "any cluster, about a quarter" (0.02 to 0.64 per K); "a settled reading"; "the sibling split is flat"; "every number equal" in the recount (four interval ends differ by up to 0.02).
+
+## 3. Disposition
+
+H_old refuted on the deciding set by the frozen rule; the headline is restated in measured terms (`POST_full.md`, `README.md`): at T_15 the newer cluster's dependence on the older cluster's drivers is not larger, by the 0.05 line, than on the drivers of the other clusters UNITE's pairings link to it, and it follows the drivers they share. Not settled: whether the dependence is a property of the neuron beyond J's lineage (8 K outside it read at the null), and its value at the birth checkpoints; both are refinements for a successor program, not queued.

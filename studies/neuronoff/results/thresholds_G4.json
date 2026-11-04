@@ -1,0 +1,491 @@
+{
+ "model_key": "G4",
+ "created_utc": "2026-10-25T20:06:38Z",
+ "inputs": {
+  "studies/neuronoff/plan/pairs_G4.json": "fb073a805b9d64d5b4f0a0a0a7d2c21382adee75c17ae94e8540b8ea54f35045",
+  "bank/off/g4/1/out/poles/L02N4128m.json": "91a3b1f2d646b05142946d8d9a4869391f77132c0d7a622327643ebd59da8dbe",
+  "bank/off/g4/1/out/poles/L02N5540p.json": "689c5bd236f6dff8f197b1d5dac787805ef336a9e44a288d7c4bd9cdda29b205",
+  "bank/off/g4/1/out/poles/L07N7848m.json": "3961b7e15681b001b87ccb4f973f941872b1d6f31efc51b3f46f857192c4a735",
+  "bank/off/g4/1/out/poles/L07N9691m.json": "2cd11e137e5daed56c0d8ecd6736912d3f614a0bf20127c02adb5545baaf380d",
+  "bank/off/g4/1/out/poles/L09N6180p.json": "f8a79d96ce4cc41d44be6f929a8da5cd4c72568aee8c4142433c6ee77b842c95",
+  "bank/off/g4/1/out/poles/L09N9673p.json": "6b1e01404f36564f27594a5c6d5532541f60e75ba791ba857ff9e1f9f2616450",
+  "bank/off/g4/1/out/poles/L10N4243p.json": "9a418aa37a4bfe96159b11cfc4bff2e79e721f34a605bb7b387abc67a0f25da1",
+  "bank/off/g4/1/out/poles/L10N7279m.json": "344ce4e695984b03021ac7462da6796c67b0ad1cecb2d80d5bb814f9972bbcb6",
+  "bank/off/g4/1/out/poles/L10N7517p.json": "1409c3156f19f5d7b3ae8bb824fda98527bad9f31b439dfc253fdf2d87c2449e",
+  "bank/off/g4/1/out/poles/L10N9543p.json": "1d117b506313c1491d1e5b28b035624b65217a81576df0737250eda76b1856ef",
+  "bank/off/g4/1/out/poles/L12N9137p.json": "607d88f1cec68d98219318d9b3d6946b8cddb7c07f9d2d156898c6b9fa803c39",
+  "bank/off/g4/1/out/poles/L12N9137m.json": "86f9d80d020c075a5f8ac51f06eed24fa60070e9e47d22946d7e98877e2ddcf2",
+  "bank/off/g4/1/out/poles/L13N414p.json": "969fb49c362093915e6ca018334bcfcab4bcfdf14f329677c719e6485d291959",
+  "bank/off/g4/1/out/poles/L13N414m.json": "65b299830d2660c3ca3d0d788b69a84c694b7b3c1d2c75de7a385b93982eb408",
+  "bank/off/g4/1/out/poles/L13N6288p.json": "2a716a320ca503a7f9c5fe766af9e80c9b1c4c2740a8586305315344cfdf36ff",
+  "bank/off/g4/1/out/poles/L13N7491m.json": "b16f9b878f3a21cf481b98012da8b324f9be22a89d852ebbb69d438f74d46659",
+  "bank/off/g4/1/out/poles/L13N8332m.json": "7f981522937f86a7f503f9e3cbb44f6284f63c62597753d48ecc0dbe4612ba4f",
+  "bank/off/g4/1/out/poles/L13N9495m.json": "c8c4e756318fc046110f842f780cec2e6890e7a89869cc52ef8eee4d7152e20c",
+  "bank/off/g4/1/out/poles/L14N2316p.json": "decb83fc502fb035ccf8aa731a9bb76cc93ca0dfd3f7067c771bcc004a8c6f35",
+  "bank/off/g4/1/out/poles/L14N3525p.json": "2371c5bbad53920fc8c491c0a5ba774e270128a396e232f185cd0b6e902501b2",
+  "bank/off/g4/1/out/poles/L14N6656p.json": "6ada1013a44c5d78a292b28e64b2c0e83ad1e80ec8c72b83c9356055e5a12f24",
+  "bank/off/g4/1/out/poles/L16N4630p.json": "cb9ee5436d5239d63ff624a5a99da3114077fd2b408b3c3db80ce08995526b35",
+  "bank/off/g4/1/out/poles/L16N4630m.json": "d8d033eb1b5620b4f527c41a5f6bf05bebddd4b96a2489936f8f0def96f51a1e",
+  "bank/off/g4/1/out/poles/L16N4652p.json": "7bf5ca3707c77c9a70572b36dc4f872edac490222d789e2f7c08f48946a24e52",
+  "bank/off/g4/1/out/poles/L16N6415m.json": "bc96bb48119b5d2531ce0334d5e95e06093b85ae7779291c841bfc063509b5db",
+  "bank/off/g4/1/out/poles/L16N8452p.json": "1655ec19a10497635c6907cf011ed41eabeb4b718ed50edc9ecbf56c2d6441de",
+  "bank/off/g4/1/out/poles/L16N8452m.json": "5676118bcbeb7f12fdf57dc0be5da899e89707324d2bcf5bb75da2210b5b4702",
+  "bank/off/g4/1/out/poles/L17N6077p.json": "985ee313039c79a53ce2c92dba92c52de21b5d9e2ba1bc7bc4bf2cfc9e424b75",
+  "bank/off/g4/1/out/poles/L17N6077m.json": "a47d66de0d6bb5271bd59281e8fed6f41c34fbf36c269845de9a4204661341cc",
+  "bank/off/g4/1/out/poles/L17N8385p.json": "5f1a7d735a47e5176da6b535e0eb9ff82d0f6e03e1623d8766bc9b430b1ff7dc",
+  "bank/off/g4/1/out/poles/L17N8681m.json": "af14b3687585ee5091ddeb5d5cb675b94f2fa9fdcd44831a969e89936eef526b",
+  "bank/off/g4/1/out/poles/L18N101m.json": "72627d644f65369f5de622decda9035e78fcb4ec37f6b7458f0bc2b04b75ea3c",
+  "bank/off/g4/1/out/poles/L18N1159p.json": "cefb2a7a5c873a72aff69f87d87161f8afdbe12c7dd8d641c81440677375609b",
+  "bank/off/g4/1/out/poles/L18N2649m.json": "4d9b847f33ab261938f61f7b164f06533c3e78ce0df53bd6f0ba8c0963d2ec8b",
+  "bank/off/g4/1/out/poles/L18N3736p.json": "d6248bd998043282cbeef7aa692533064b008ad02900f990433ff0df5a9050d0",
+  "bank/off/g4/1/out/poles/L18N5367m.json": "c9489270391bddfb543816adfd76c03451fe1b1f0a4c24b780e0bf513456c8cf",
+  "bank/off/g4/1/out/poles/L18N804p.json": "76ab4ba0319afc41c7cc6567c61ace7c959ed435b441770bad9b3e90a7ee9757",
+  "bank/off/g4/1/out/poles/L19N3216m.json": "299a83292c50e26d3ea0299a0b7b448804f0c2ccb1da6155499e041018956e57",
+  "bank/off/g4/1/out/poles/L19N4173m.json": "759528e81626e9a20db62be153306eb840eb0f4e5357bab2c2529f1d1ca7593d",
+  "bank/off/g4/1/out/poles/L19N608m.json": "c8c03f4da6946bef97194387709a185734bce16d89b763956c8658bdd08aa90b",
+  "bank/off/g4/1/out/poles/L19N8848m.json": "83f27b790443a11a8cfc048102db194b28be8280a58948228f0ef920748008cb",
+  "bank/off/g4/1/out/poles/L20N1682p.json": "9264779fe046422a9d1ec2d5a564984ad2de6ef3061e23d659f4c540d94c055a",
+  "bank/off/g4/1/out/poles/L20N5217m.json": "bdf7229ab27a699d306517836474cc2bd1bd96702b47f5f16f114d80222eb78e",
+  "bank/off/g4/1/out/poles/L20N5228m.json": "646b02a30f571a1fa40db1531a56f6e7f6994528b034becbc103aa42115f99ec",
+  "bank/off/g4/1/out/poles/L20N6507p.json": "2b0d025d2db188ee2054e58301212b8a9bad4dee6bc5f43ceec198cbdcab7d27",
+  "bank/off/g4/1/out/poles/L20N6507m.json": "f00ef2fbd87cf950a18bbc2da71386f0f9ffa37ec0e557f0e3c00f95e2cdcebb",
+  "bank/off/g4/1/out/poles/L20N8832p.json": "4fcad946b62d9006a69cf0e81fccbddd573a7288876a75fcae3b95842fab4450",
+  "bank/off/g4/1/out/poles/L21N6835m.json": "bf02fc189708f6e4d23c2bfca662a31a67cd2b885d802c4dddd7d30350b55ed0",
+  "bank/off/g4/1/out/poles/L21N7662p.json": "672253efeb936c370c1fc0764d0539213108289b323f96afcd1412ad96202596",
+  "bank/off/g4/1/out/poles/L25N6962p.json": "3fc401b07df084cb5f6e90f92a8551c6ccd4b4e0bb0e1632445f55dbb2c9db27",
+  "bank/off/g4/1/out/poles/L25N7615m.json": "5daa733a68524c061c5510d102dcbf08597c58cad522bdd6dffae098f608bb54",
+  "bank/off/g4/1/out/poles/L27N3256p.json": "8a8e41271fb94412d296444767cab1b37c6be5613d775a9559d4f5ee85961b8b",
+  "bank/off/g4/1/out/poles/L27N3655p.json": "8f289894c0731437b88bf42b09c0d587ce44531bdeaa30bc81e1eda19949a24d",
+  "bank/off/g4/1/out/poles/L27N6487p.json": "ccb4db13fa6f79a89751e311e391f60ff48eee0821dcdd0e0eeafe3a6455f7d0",
+  "bank/off/g4/1/out/poles/L27N6897m.json": "06944c0704f8c3f78d4520ad56bcbfcf74e3cb6b436e1b115ea3ef1de05fc3f0",
+  "bank/off/g4/1/out/poles/L28N2301m.json": "9913094aa7f12e9a0495ab7ac62b7a4513c65a5c8aa9f2e60b18395b5e3eb23d",
+  "bank/off/g4/1/out/poles/L28N576p.json": "8bfd5f9d95401181099a00662b8d3a82c9b0b99811d9a4a5e8041a00d081fa34",
+  "bank/off/g4/1/out/poles/L28N576m.json": "aeb113e8b6b216d9112ca4268a8c22be1fce10dd002b1eae8b874e2e708280a6",
+  "bank/off/g4/1/out/poles/L29N6627p.json": "4e4e4e7e9c97896aed70e6a214c0204fe008d426a80e8c300b4e13a4c732a0a3",
+  "bank/off/g4/1/out/poles/L29N8328p.json": "45e42096ef44efa4eba8c3e1cea3a1aadafb49c12eb1757441af69ea9e2ba8bd",
+  "bank/off/g4/1/out/poles/L30N1199m.json": "eba43e182c7410cb072abd74af85234584a9b555724ea23a945c183bb52d8e6f",
+  "bank/off/g4/1/out/poles/L30N3331p.json": "3a9d8915f0a9a0c948d2b6bec3ca4be21219d0284ee8dc5872636766859cf32d",
+  "bank/off/g4/1/out/poles/L30N3725m.json": "ab00cee52a72896f99c9282fd7a0936ff00226652d5bbae1e3a5022f2476a690",
+  "bank/off/g4/1/out/poles/L30N3907m.json": "c2fdac544e5e400723808fd280693daee3b1f9ccedb1f48f672f5a615d0452be",
+  "bank/off/g4/1/out/poles/L31N3077m.json": "01538c8571e72ec450b1fb5afe308b2e6aa75ea04fa2e2e5a3e781073d737a5d",
+  "bank/off/g4/1/out/poles/L31N3299m.json": "591648abbea1de9517b7039cde4128b208aeaded70da6bd8ab979185888ec8ab",
+  "bank/off/g4/1/out/poles/L31N6209m.json": "3a859d7dd3a366cded9b46034ac68e6b7de46d7a106dafeaad510fca8d38adfd",
+  "bank/off/g4/1/out/poles/L31N8157p.json": "136ab9e57bda8d89030cdd963f848a60d4cc0cdeaee922c0258b658793dfd2db",
+  "bank/off/g4/1/out/poles/L32N1152p.json": "d5f7aeb8fbe1d59ae473fe2fed78064999dfbe316eb43fa7f38b509113fea201",
+  "bank/off/g4/1/out/poles/L32N1152m.json": "a3d64ddff8c2a660c4f9ac5edff7368aeabdbaa27b6af3665a0f5b9f36bcdd92",
+  "bank/off/g4/1/out/poles/L32N1796p.json": "54da11a454ac66a17de28f922616d50341b6c6f0b686af2214b31bbac272cf86",
+  "bank/off/g4/1/out/poles/L32N7621p.json": "b8fda6750f47ee6af627976fef0ac2964e7a96a1f09d640c42ad57469ec3eb44",
+  "bank/off/g4/1/out/arm_b/L07N10202m_teacher.jsonl": "e2ce058a1c57abcc9d308b5978ccbd39a86b7068da1bfe6a8bf888c639348844",
+  "bank/off/g4/1/out/arm_b/L06N599p_teacher.jsonl": "95d93e0cd059f4d5d86c751686c8c5d9b9c78410a0ca942b51b3d74e7ab9066c",
+  "bank/off/g4/1/out/arm_b/L08N7823p_teacher.jsonl": "b0785862bc0d60e9768cb51c4198ab4938cf9ac2e1486ce5f2b9332089a0e9f8"
+ },
+ "arm_a": {
+  "n_null_pairs": 38,
+  "n_null_valid": 9,
+  "cancelled": [
+   {
+    "pair_id": "G4-N001",
+    "reasons": [
+     "L02N4128-: G-pc"
+    ]
+   },
+   {
+    "pair_id": "G4-N003",
+    "reasons": [
+     "L18N3736+: G-pc"
+    ]
+   },
+   {
+    "pair_id": "G4-N004",
+    "reasons": [
+     "L16N8452-: G-pc"
+    ]
+   },
+   {
+    "pair_id": "G4-N006",
+    "reasons": [
+     "L19N608-: G-pc"
+    ]
+   },
+   {
+    "pair_id": "G4-N007",
+    "reasons": [
+     "L30N3907-: G-pc"
+    ]
+   },
+   {
+    "pair_id": "G4-N008",
+    "reasons": [
+     "L12N9137-: G-pc"
+    ]
+   },
+   {
+    "pair_id": "G4-N009",
+    "reasons": [
+     "L13N6288+: G-pc"
+    ]
+   },
+   {
+    "pair_id": "G4-N010",
+    "reasons": [
+     "L30N1199-: G-pc"
+    ]
+   },
+   {
+    "pair_id": "G4-N011",
+    "reasons": [
+     "L14N6656+: G-pc"
+    ]
+   },
+   {
+    "pair_id": "G4-N012",
+    "reasons": [
+     "L19N3216-: G-pc",
+     "L19N4173-: G-pc"
+    ]
+   },
+   {
+    "pair_id": "G4-N013",
+    "reasons": [
+     "L16N4652+: G-pc"
+    ]
+   },
+   {
+    "pair_id": "G4-N014",
+    "reasons": [
+     "L32N1796+: G-pc"
+    ]
+   },
+   {
+    "pair_id": "G4-N016",
+    "reasons": [
+     "L20N5228-: G-pc"
+    ]
+   },
+   {
+    "pair_id": "G4-N017",
+    "reasons": [
+     "L10N9543+: G-pc",
+     "L10N4243+: G-pc"
+    ]
+   },
+   {
+    "pair_id": "G4-N018",
+    "reasons": [
+     "L17N6077-: G-pc",
+     "L17N8385+: G-pc"
+    ]
+   },
+   {
+    "pair_id": "G4-N019",
+    "reasons": [
+     "L29N8328+: G-pc"
+    ]
+   },
+   {
+    "pair_id": "G4-N020",
+    "reasons": [
+     "L27N6897-: G-pc"
+    ]
+   },
+   {
+    "pair_id": "G4-N021",
+    "reasons": [
+     "L13N9495-: G-pc"
+    ]
+   },
+   {
+    "pair_id": "G4-N022",
+    "reasons": [
+     "L13N8332-: G-pc",
+     "L13N7491-: G-pc"
+    ]
+   },
+   {
+    "pair_id": "G4-N023",
+    "reasons": [
+     "L17N4161-: not measured",
+     "L17N1489+: not measured"
+    ]
+   },
+   {
+    "pair_id": "G4-N025",
+    "reasons": [
+     "L09N6180+: G-pc"
+    ]
+   },
+   {
+    "pair_id": "G4-N027",
+    "reasons": [
+     "L17N6077+: G-pc"
+    ]
+   },
+   {
+    "pair_id": "G4-N028",
+    "reasons": [
+     "L18N101-: G-pc"
+    ]
+   },
+   {
+    "pair_id": "G4-N029",
+    "reasons": [
+     "L16N4630-: G-pc",
+     "L16N8452+: G-fit",
+     "L16N8452+: G-pc"
+    ]
+   },
+   {
+    "pair_id": "G4-N031",
+    "reasons": [
+     "L28N2301-: G-pc",
+     "L28N5924-: not measured"
+    ]
+   },
+   {
+    "pair_id": "G4-N032",
+    "reasons": [
+     "L14N2316+: G-pc",
+     "L14N8610+: not measured"
+    ]
+   },
+   {
+    "pair_id": "G4-N033",
+    "reasons": [
+     "L10N7279-: G-pc"
+    ]
+   },
+   {
+    "pair_id": "G4-N036",
+    "reasons": [
+     "L28N576+: G-pc"
+    ]
+   },
+   {
+    "pair_id": "G4-N038",
+    "reasons": [
+     "L25N6962+: G-pc"
+    ]
+   }
+  ],
+  "delta_own": 0.01302968147676438,
+  "delta_coll": 0.00011991626868254959,
+  "delta_e": 0.015991926083150608,
+  "rule": "delta = median_j |d_j| over valid null pairs (SPEC \u00a77.2)",
+  "room": {
+   "own": {
+    "n": 100,
+    "R_a": true,
+    "hw95": 0.001830026823672597,
+    "morcos_room": true,
+    "power": 0.002,
+    "direction_room": false,
+    "failing_input_n5": {
+     "n": 5,
+     "R_a": true,
+     "hw95": 0.0186108586067337,
+     "morcos_room": false,
+     "power": 0.112,
+     "direction_room": false,
+     "fails": true
+    },
+    "reported_n10": {
+     "n": 10,
+     "R_a": true,
+     "hw95": 0.013943745028874587,
+     "morcos_room": false,
+     "power": 0.156,
+     "direction_room": false
+    },
+    "cancelled": false
+   },
+   "coll": {
+    "n": 100,
+    "R_a": true,
+    "hw95": 3.624991826625852e-05,
+    "morcos_room": true,
+    "power": 1.0,
+    "direction_room": true,
+    "failing_input_n5": {
+     "n": 5,
+     "R_a": true,
+     "hw95": 0.00017928996348248218,
+     "morcos_room": false,
+     "power": 0.5435,
+     "direction_room": false,
+     "fails": true
+    },
+    "reported_n10": {
+     "n": 10,
+     "R_a": true,
+     "hw95": 0.00014754115981158254,
+     "morcos_room": false,
+     "power": 0.8535,
+     "direction_room": true
+    },
+    "cancelled": false
+   },
+   "energy": {
+    "n": 100,
+    "R_a": true,
+    "hw95": 0.0027624043558220077,
+    "morcos_room": true,
+    "power": 0.114,
+    "direction_room": false,
+    "failing_input_n5": {
+     "n": 5,
+     "R_a": true,
+     "hw95": 0.032784306277414146,
+     "morcos_room": false,
+     "power": 0.1845,
+     "direction_room": false,
+     "fails": true
+    },
+    "reported_n10": {
+     "n": 10,
+     "R_a": true,
+     "hw95": 0.021570817032050008,
+     "morcos_room": false,
+     "power": 0.184,
+     "direction_room": false
+    },
+    "cancelled": false
+   }
+  },
+  "null_diffs_own": [
+   0.013628535755270262,
+   -0.004924727146760688,
+   -0.010088809535263863,
+   0.02419203573670302,
+   0.03265268072485924,
+   -0.01302968147676438,
+   -0.011125292098604404,
+   -0.09642654717626102,
+   0.0074652384512592105
+  ],
+  "null_diffs_coll": [
+   -9.115060872406933e-05,
+   -0.00017531317158285542,
+   8.111444899257247e-05,
+   -0.00041537998137591847,
+   -0.00011991626868254959,
+   -1.8650772191552284e-05,
+   -0.0002803557406943179,
+   -5.627154069851037e-05,
+   -0.00023866365828241476
+  ],
+  "null_diffs_e": [
+   0.00914936255143479,
+   -0.0026649653345127843,
+   -0.007673532905287531,
+   0.04957668647167769,
+   0.015991926083150608,
+   -0.017941100557819015,
+   -0.018049690238858954,
+   -0.053809789661841856,
+   0.013198341616931546
+  ],
+  "fit_failing_input_not_failed": 0,
+  "pc_failing_input_not_failed": 0
+ },
+ "arm_b": {
+  "L07N10202-": {
+   "ctrl1": "L07N5834-",
+   "ctrl2": "L07N4140+",
+   "n_prompts_valid": 20,
+   "excluded_prompts": [],
+   "cancelled": false,
+   "m_B": 0.037975028007376746,
+   "m_B_star": 0.037975028007376746,
+   "null_diffs": [
+    -0.01277971442323178,
+    0.13463056832551956,
+    0.04378487169742584,
+    -0.0024058017297647893,
+    -0.019318631966598332,
+    -0.01979633793234825,
+    0.09532091021537781,
+    0.003689422410388943,
+    0.006776111375074834,
+    -0.03378556598909199,
+    0.05925929546356201,
+    0.009057228453457355,
+    0.01699089678004384,
+    0.035455405712127686,
+    0.023974210023880005,
+    0.001158386468887329,
+    0.0027099885628558695,
+    0.0514812171459198,
+    -0.00029637181432917714,
+    -0.01148378849029541
+   ],
+   "pc_mean_drop": 0.8163410899993323,
+   "room": true
+  },
+  "L06N599+": {
+   "ctrl1": "L06N8972-",
+   "ctrl2": "L06N2449-",
+   "n_prompts_valid": 20,
+   "excluded_prompts": [],
+   "cancelled": false,
+   "m_B": 0.005147875323746117,
+   "m_B_star": 0.02,
+   "null_diffs": [
+    -0.0006494863191619515,
+    0.005869142711162567,
+    0.0006733241025358438,
+    -0.0017014667391777039,
+    -0.005179198808036745,
+    0.004979268996976316,
+    -1.8085469491779804e-05,
+    -0.019857779145240784,
+    -1.2628966942429543e-05,
+    0.030166745418682694,
+    -0.0017096407245844603,
+    -0.021280601620674133,
+    0.00031262170523405075,
+    0.0004308316856622696,
+    -0.00010913144797086716,
+    -8.736408199183643e-05,
+    -0.0005404185503721237,
+    0.004199737682938576,
+    0.011480450630187988,
+    0.0003636190667748451
+   ],
+   "pc_mean_drop": 0.12269377434786292,
+   "room": true
+  },
+  "L08N7823+": {
+   "ctrl1": "L08N6441+",
+   "ctrl2": "L08N7758-",
+   "n_prompts_valid": 20,
+   "excluded_prompts": [],
+   "cancelled": false,
+   "m_B": 0.03838650033598242,
+   "m_B_star": 0.03838650033598242,
+   "null_diffs": [
+    -0.09463263303041458,
+    -0.0008514896035194397,
+    -0.030762819340452552,
+    0.010011078789830208,
+    -0.003992768237367272,
+    -0.08000021745101549,
+    0.01472663227468729,
+    0.000509622972458601,
+    -0.00860237216176074,
+    0.09151779831154272,
+    0.00022564688697457314,
+    -0.009755953797139227,
+    -0.18083237251266837,
+    0.06693381152581424,
+    0.05035935319028795,
+    -0.005361442599678412,
+    -0.03215405344963074,
+    -0.00024499185383319855,
+    -0.014142069965600967,
+    -0.01617196947336197
+   ],
+   "pc_mean_drop": 0.38891677469108854,
+   "room": true
+  }
+ }
+}

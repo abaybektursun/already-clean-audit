@@ -149,3 +149,28 @@ table, the kappas per model, `A`, `a_ctrl`, the 1,238 and 574 counts, the formul
 and `SPEC_D1.md`. The BibTeX block is byte-identical. The `README.md` line numbers in the tables above are those of the
 2026-10-31 README. Two files were added, `CITATION.cff` (citation metadata) and `LICENSE` (the CC BY 4.0 notice);
 neither has a leakage-check hit. The copied study files and the figures are unchanged.
+
+## Addition of 2026-11-04: the later studies
+
+`studies/` was copied on 2026-11-04 from the private working repository at commit 99228ebf3. A script applied the rules
+below line by line and logged 1193 rows in 37 files. PNG figures are unchanged. A line count is preserved in every
+file except the one named below.
+
+| pattern class | replacement | rows |
+|---|---|---|
+| local absolute path containing the username | see the log | 1140 |
+| S3 bucket name | see the log | 21 |
+| EC2 instance id | see the log | 15 |
+| AWS profile name | see the log | 11 |
+| API key or token environment-variable name | see the log | 3 |
+| local agent or settings path under the home .claude directory | see the log | 2 |
+| username | see the log | 1 |
+
+Two further notes:
+
+- `studies/x/realprompt/REPORT.md` ends at §5. §6, the generated samples, is left out because model output there holds
+  email addresses. `results/score.json` is left out for the same reason.
+- Not copied: study journals, handoffs, build notes, drafts, per-case banks and sample files.
+
+The full log is [`studies/REDACTIONS_2026-11-04.tsv`](studies/REDACTIONS_2026-11-04.tsv): file, line, pattern class, replacement, count.
+

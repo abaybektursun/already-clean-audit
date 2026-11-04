@@ -1,0 +1,244 @@
+{
+ "inputs": {
+  "n_items": 62,
+  "n_answered": 62,
+  "n_declined": 0,
+  "artifact": [
+   "studies/reuse/results/phase0/relatedness/keys/reuse3-relatedness.jsonl",
+   "studies/reuse/results/phase0/relatedness/explain/responses/reuse3-relatedness.jsonl",
+   "studies/reuse/results/phase0/relatedness/explain/responses/reuse3-relatedness.declined.jsonl",
+   "studies/reuse/results/phase0/verdict_coherence.json",
+   "studies/reuse/results/primary/1/t*/metrics.json",
+   "studies/reuse/results/primary/1/t*/falls/*.npz"
+  ],
+  "coherent_pairs": 12,
+  "coherent_O_star_jobs": 20
+ },
+ "gate_rel": {
+  "planted": {
+   "constructed": "unrelated",
+   "n": 30,
+   "labelled_as_constructed": 26,
+   "declined": 0,
+   "share": 0.8666666666666667,
+   "pass": true,
+   "counts": {
+    "unrelated": 26,
+    "related": 4
+   }
+  },
+  "ceiling": {
+   "constructed": "related",
+   "n": 20,
+   "labelled_as_constructed": 13,
+   "declined": 0,
+   "share": 0.65,
+   "pass": false,
+   "counts": {
+    "unrelated": 7,
+    "related": 13
+   }
+  },
+  "pass": false,
+  "rule": "at least 0.85 of each control group labelled as constructed (two-neuron sides unrelated, ceiling splits of coherent O* jobs related), declines in the denominator (SPEC3 \u00a73 Stage 2)"
+ },
+ "agreement_with_clusterer": {
+  "value": 0.5,
+  "n_answered_primary": 12,
+  "n_declined_primary": 0,
+  "confusion_clusterer_judge": {
+   "related->related": 3,
+   "related->unrelated": 6,
+   "unrelated->unrelated": 3
+  },
+  "judge_label_counts": {
+   "unrelated": 9,
+   "related": 3
+  }
+ },
+ "R4_clusterer_coherent": {
+  "value": 0.4659314205704521,
+  "lo": 0.09564566427118867,
+  "hi": 0.5877778724928812,
+  "n": 12,
+  "n_groups": 9,
+  "group": "neuron",
+  "n_nonfinite_draws": 44,
+  "n_boot": 2000,
+  "seed": 0,
+  "n_by_label": {
+   "related": 9,
+   "unrelated": 3
+  },
+  "what": "R4 under the clusterer's labels over the live coherent pairs (the restriction's own effect)"
+ },
+ "R4_clusterer_all": {
+  "value": 0.22717657296906968,
+  "lo": 0.13338134883691297,
+  "hi": 0.29665637682419366,
+  "n": 148,
+  "n_groups": 102,
+  "group": "neuron",
+  "n_nonfinite_draws": 0,
+  "n_boot": 2000,
+  "seed": 0,
+  "n_by_label": {
+   "related": 56,
+   "unrelated": 92
+  },
+  "what": "the frozen R4 recomputed: clusterer labels, all live jobs"
+ },
+ "R4d": {
+  "verdict": "not read: gate rel failed, the labels are not used (SPEC3 \u00a71, \u00a73)",
+  "outcome": "not read"
+ },
+ "predictions": [
+  {
+   "row": "ceiling splits of coherent O* jobs labelled related",
+   "predicted": 0.9,
+   "refuted_when": null,
+   "observed": 0.65
+  },
+  {
+   "row": "gate rel",
+   "predicted": "passes",
+   "refuted_when": "fails (H_rel, SPEC3 \u00a72)",
+   "observed": "fails"
+  },
+  {
+   "row": "agreement with the clusterer on coherent pairs",
+   "predicted": 0.75,
+   "refuted_when": "under 0.65 or gate rel fails (H_rel, SPEC3 \u00a72)",
+   "observed": 0.5,
+   "outcome": "refuted"
+  },
+  {
+   "row": "R4d",
+   "predicted": "0.25 [0.10, 0.40]",
+   "refuted_when": "the interval contains 0 (H_R4, SPEC3 \u00a72)",
+   "observed": null,
+   "outcome": "not read"
+  },
+  {
+   "row": "R4 under clusterer labels on coherent pairs",
+   "predicted": 0.25,
+   "refuted_when": null,
+   "observed": [
+    0.4659314205704521,
+    0.09564566427118867,
+    0.5877778724928812
+   ]
+  }
+ ],
+ "rows": [
+  {
+   "job": "L28N6373-:c0",
+   "neuron": "L28N6373",
+   "I": 0.6168763674797896,
+   "cancelled": false,
+   "label_clusterer": "related",
+   "label": "unrelated",
+   "declined": false
+  },
+  {
+   "job": "L12N5447-:c0",
+   "neuron": "L12N5447",
+   "I": 0.5874627618056791,
+   "cancelled": false,
+   "label_clusterer": "related",
+   "label": "related",
+   "declined": false
+  },
+  {
+   "job": "L06N6273-:c3",
+   "neuron": "L06N6273",
+   "I": 0.39127095054203465,
+   "cancelled": false,
+   "label_clusterer": "related",
+   "label": "related",
+   "declined": false
+  },
+  {
+   "job": "L22N8185-:c3",
+   "neuron": "L22N8185",
+   "I": 0.15085486255517827,
+   "cancelled": false,
+   "label_clusterer": "related",
+   "label": "unrelated",
+   "declined": false
+  },
+  {
+   "job": "L06N2537+:c3",
+   "neuron": "L06N2537",
+   "I": 0.13276943357088888,
+   "cancelled": false,
+   "label_clusterer": "unrelated",
+   "label": "unrelated",
+   "declined": false
+  },
+  {
+   "job": "L06N6273-:c2",
+   "neuron": "L06N6273",
+   "I": 0.5654918721563751,
+   "cancelled": false,
+   "label_clusterer": "related",
+   "label": "unrelated",
+   "declined": false
+  },
+  {
+   "job": "L06N6273-:c1",
+   "neuron": "L06N6273",
+   "I": 0.6172229547050893,
+   "cancelled": false,
+   "label_clusterer": "related",
+   "label": "unrelated",
+   "declined": false
+  },
+  {
+   "job": "L08N3846-:c2",
+   "neuron": "L08N3846",
+   "I": 0.61159044816193,
+   "cancelled": false,
+   "label_clusterer": "related",
+   "label": "unrelated",
+   "declined": false
+  },
+  {
+   "job": "L06N8759+:c1",
+   "neuron": "L06N8759",
+   "I": 0.07008100670735311,
+   "cancelled": false,
+   "label_clusterer": "related",
+   "label": "related",
+   "declined": false
+  },
+  {
+   "job": "L08N8341+:c5",
+   "neuron": "L08N8341",
+   "I": 0.3077698196137135,
+   "cancelled": false,
+   "label_clusterer": "related",
+   "label": "unrelated",
+   "declined": false
+  },
+  {
+   "job": "L22N7990+:c0",
+   "neuron": "L22N7990",
+   "I": 0.099560451585923,
+   "cancelled": false,
+   "label_clusterer": "unrelated",
+   "label": "unrelated",
+   "declined": false
+  },
+  {
+   "job": "L22N8185-:c1",
+   "neuron": "L22N8185",
+   "I": -0.00031511068720203335,
+   "cancelled": false,
+   "label_clusterer": "unrelated",
+   "label": "unrelated",
+   "declined": false
+  }
+ ],
+ "mode": "as collected"
+}

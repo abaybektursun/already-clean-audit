@@ -1,0 +1,218 @@
+{
+ "models": [
+  "G4",
+  "O7",
+  "Q4B"
+ ],
+ "counted": [
+  "G4",
+  "O7",
+  "Q4B"
+ ],
+ "frozen_rule": {
+  "rule": "frozen: exact-order G-proj, layer-0 G-known failing input, constant-plant room check",
+  "reasons": {
+   "G4": [
+    "frozen G-proj: exact-order share 0.880 < 0.99"
+   ],
+   "O7": [
+    "frozen G-known failing input (layer 0 only) shifts 0.114 < 0.5 nats"
+   ],
+   "Q4B": []
+  },
+  "labels": {
+   "G4": {
+    "H_write": "CANCELLED (frozen G-proj: exact-order share 0.880 < 0.99)",
+    "H_depth": "CANCELLED (frozen G-proj: exact-order share 0.880 < 0.99)"
+   },
+   "O7": {
+    "H_write": "CANCELLED (frozen G-known failing input (layer 0 only) shifts 0.114 < 0.5 nats)",
+    "H_depth": "CANCELLED (frozen G-known failing input (layer 0 only) shifts 0.114 < 0.5 nats)"
+   },
+   "Q4B": {
+    "H_write": "H_WRITE NOT READABLE (frozen constant-plant room check cannot fail)",
+    "H_depth": "SUPPORTED NOT READABLE (frozen constant-plant room check cannot fail)"
+   }
+  },
+  "H_write": "MIXED (1 counted models)",
+  "H_depth": "MIXED (1 counted models)",
+  "H_write_room_check_only": {
+   "labels": {
+    "G4": "H_WRITE NOT READABLE (frozen constant-plant room check cannot fail) [frozen G-proj reading: exact-order share 0.880 < 0.99, CANCELLED under the frozen rule]",
+    "O7": "H_WRITE NOT READABLE (frozen constant-plant room check cannot fail)",
+    "Q4B": "H_WRITE NOT READABLE (frozen constant-plant room check cannot fail)"
+   },
+   "study": "MIXED (3 counted models)"
+  },
+  "H_write_frozen_g_proj_g_known_only": {
+   "labels": {
+    "G4": "CANCELLED (frozen G-proj: exact-order share 0.880 < 0.99)",
+    "O7": "CANCELLED (frozen G-known failing input (layer 0 only) shifts 0.114 < 0.5 nats)",
+    "Q4B": "H_WRITE, interval above margin delta_w 0.03 [R-pass 1.00, R-equiv 1.00; frozen constant plant: R-pass 1.00, n = 5 1.00 (cannot fail)]"
+   },
+   "study": "MIXED (1 counted models)"
+  },
+  "counted": [
+   "Q4B"
+  ],
+  "H_ONE_pooled": {
+   "label": "NOT SHOWN, interval crosses 0 [R-pass 1.00, R-equiv 0.40; room check cannot fail; rule fires on the null; no room for equivalence]",
+   "value": {
+    "n": 50,
+    "est": 0.02,
+    "lo": -0.11,
+    "hi": 0.15
+   },
+   "counted": [
+    "Q4B"
+   ],
+   "room": {
+    "n": 50,
+    "r_null": 0.149,
+    "r_pass": 1.0,
+    "r_equiv": 0.402,
+    "effect": 0.15,
+    "failing_input_n5": {
+     "n": 5,
+     "r_null": null,
+     "r_pass": 1.0,
+     "r_equiv": null,
+     "fails": false
+    },
+    "cancelled": true,
+    "stamps": [
+     "room check cannot fail",
+     "rule fires on the null",
+     "no room for equivalence"
+    ],
+    "readable": false,
+    "equiv_readable": false
+   }
+  },
+  "B1_pooled": {
+   "label": "NOT SHOWN, interval crosses 0 [R-pass 1.00, R-equiv 0.73; room check cannot fail]",
+   "value": {
+    "n": 100,
+    "est": 0.02,
+    "lo": -0.02,
+    "hi": 0.06
+   },
+   "counted": [
+    "Q4B"
+   ],
+   "room": {
+    "n": 100,
+    "r_null": 0.0215,
+    "r_pass": 1.0,
+    "r_equiv": 0.733,
+    "effect": 0.1,
+    "failing_input_n5": {
+     "n": 5,
+     "r_null": null,
+     "r_pass": 1.0,
+     "r_equiv": null,
+     "fails": false
+    },
+    "cancelled": true,
+    "stamps": [
+     "room check cannot fail"
+    ],
+    "readable": false,
+    "equiv_readable": true
+   }
+  }
+ },
+ "H_write": "H_WRITE",
+ "H_depth": "MIXED (3 counted models)",
+ "H_ONE_pooled": {
+  "label": "NOT SHOWN, interval crosses 0 [R-pass 0.98, R-equiv 0.97; frozen constant plant: R-pass 1.00, n = 5 0.91 (cannot fail)]",
+  "label_if_not_cancelled": null,
+  "d": {
+   "n": 150,
+   "est": 0.05,
+   "lo": -0.03333333333333333,
+   "hi": 0.13333333333333333
+  },
+  "room": {
+   "n": 150,
+   "r_null": 0.0275,
+   "r_pass": 0.979,
+   "r_equiv": 0.969,
+   "effect": 0.15,
+   "failing_input_n5": {
+    "n": 5,
+    "r_null": null,
+    "r_pass": 0.054,
+    "r_equiv": null,
+    "fails": true
+   },
+   "plant": "A25: true-label answers Bernoulli(p_sh + E (1 - p_sh)) on the planted side, Bernoulli(p_sh) on the unplanted side; shuffled answers as judged",
+   "failing_input_zero_plant": {
+    "r_pass_n5": 0.0045,
+    "r_pass_full_n": 0.0275,
+    "fails": true
+   },
+   "frozen_constant_plant": {
+    "r_null": 0.314,
+    "r_pass": 1.0,
+    "r_equiv": 0.7905,
+    "failing_input_n5": {
+     "r_pass": 0.907,
+     "fails": false
+    }
+   },
+   "cancelled": false,
+   "stamps": [],
+   "readable": true,
+   "equiv_readable": true
+  }
+ },
+ "B1_pooled": {
+  "label": "EQUIVALENT, interval crosses 0 [R-pass 0.99, R-equiv 0.90; frozen constant plant: R-pass 1.00, n = 5 0.92 (cannot fail)]",
+  "label_if_not_cancelled": null,
+  "L": {
+   "n": 300,
+   "est": 0.013333333333333334,
+   "lo": -0.01,
+   "hi": 0.03666666666666667
+  },
+  "room": {
+   "n": 300,
+   "r_null": 0.0155,
+   "r_pass": 0.994,
+   "r_equiv": 0.8995,
+   "effect": 0.1,
+   "failing_input_n5": {
+    "n": 5,
+    "r_null": null,
+    "r_pass": 0.0165,
+    "r_equiv": null,
+    "fails": true
+   },
+   "plant": "A25: true-label answers Bernoulli(p_sh + E (1 - p_sh)) on the planted side, Bernoulli(p_sh) on the unplanted side; shuffled answers as judged",
+   "failing_input_zero_plant": {
+    "r_pass_n5": 0.0005,
+    "r_pass_full_n": 0.0155,
+    "fails": true
+   },
+   "frozen_constant_plant": {
+    "r_null": 0.2365,
+    "r_pass": 1.0,
+    "r_equiv": 0.686,
+    "failing_input_n5": {
+     "r_pass": 0.921,
+     "fails": false
+    }
+   },
+   "cancelled": false,
+   "stamps": [],
+   "readable": true,
+   "equiv_readable": true
+  }
+ },
+ "amended_exploratory": {
+  "H_write": "H_WRITE",
+  "H_depth": "MIXED (3 counted models)",
+  "note": "exploratory: holds only under A24 (1), A24 (2) and A25"
+ }
+}

@@ -1,28 +1,49 @@
 # An independent, pre-registered audit of "Neural Networks Are Already Clean"
 
-Neuron-pole explanations on three open models, and a developmental test on OLMo-3-7B training checkpoints.
+Neuron-pole explanations on three open models, and tests of how a neuron's activation clusters depend on each other on
+OLMo-3-7B. Six studies, each pre-registered. Updated 2026-11-04.
 
-This repository is the public, read-only copy of one closed study. The study audits Goodfire's essay "Neural Networks
-Are Already Clean" on open models. It asks two questions. Q1: what fraction of MLP neuron poles have one job? Q2: when a
-pole has several jobs at the end of pretraining, did the later jobs grow out of its earlier ones?
+A neuron's clusters depend on each other's inputs, but the older cluster is not special and no event marks a new
+cluster's arrival. On OLMo-3-7B, replacing one cluster's upstream drivers lowers the neuron on another cluster by 0.23 to
+0.29 of the fall from its own drivers. Two unrelated neurons summed give 0.004 to 0.007, and one cluster split in two
+gives 0.65. So the clusters are neither independent nor one cluster counted twice.
 
-Under rules frozen before any confirmation number was read, 52–60% of MLP neuron poles in three open models have one
-job. The developmental test on OLMo-3-7B's training checkpoints is mixed: the parent test estimates that 26.5%
-[21.1%, 32.1%] of the jobs born late are unrelated to the pole's earlier record (a post-closeout sensitivity that
-matches the judge's control ceiling to the test items gives 20.6% [13.2%, 27.1%]), while the main job is the oldest
-job more often than a permutation null allows. The study's thresholds are not the essay's, so its fractions are not the
-same quantity as the essay's estimate ([Result](#result)).
+## Results
 
-This copy was taken from Abay Bektursun's private working repository, which holds all of the author's infrastructure,
-skills and AI research. Only this one study is here: its pre-registration, results, figures and checker reports.
-The raw data, the code and the study journal are not ([What is not here](#what-is-not-here)). Local paths and
-infrastructure names are redacted, and two lines of `SPEC_D1.md` are reworded ([`REDACTIONS.md`](REDACTIONS.md)).
+A pole is one sign of one MLP neuron. A cluster is one group within a pole's top-50 contexts. The ratio is the fall in
+the neuron on cluster A when cluster B's top-50 drivers are replaced, divided by the fall when A's own are replaced.
+
+| question | result | status | study |
+|---|---|---|---|
+| How many poles have one job? | 0.597, 0.563, 0.518 on three models under a blind test; not understood 0.320 to 0.415; reader agreement kappa 0.07 to 0.18 | frozen rule | [`results/RESULTS.md`](results/RESULTS.md) |
+| Are a neuron's clusters independent? | No. Ratio 0.293 under a zero write (two-neuron null 0.007) and 0.231 under a write at the marked token alone (null 0.004); 69% of cases clear the null's 95th percentile against 5% of pairs | pre-registered, OLMo-3-7B only | [REUSE](studies/reuse/README.md), [INSTRUMENTS](studies/instruments/results/RESULTS.md) |
+| Does a newer cluster depend most on the older one? | Not separated from the neuron's other clusters: d −0.046 [−0.091, 0.030] at the end of training, −0.014 [−0.076, 0.025] at birth | pre-registered; 127 of 135 comparison clusters share its lineage, so a lineage-wide dependence is not excluded | [REUSE](studies/reuse/README.md) |
+| Does anything happen at a cluster's birth? | No signature fired: break at the birth in 0.307 [0.225, 0.395] of cases, shuffled null's 95th percentile 0.283; gain 1.05 [0.98, 1.27] times elsewhere | pre-registered | [REUSE](studies/reuse/results/RESULTS.md) |
+| Does a pole's label predict what it writes? | Mostly when the label names an output token: D_w 0.553 to 0.618 against 0.030 to 0.096 for other labels | exploratory; no frozen headline | [NEURONRW](studies/neuronrw/CLOSEOUT.md) |
+| Does removing a labelled pole matter? | Removing one pole moves own-context NLL by a median 0.0026 to 0.0093 nats; 0 of 7 code-construct poles changed behaviour | main comparison cancelled by its positive control | [NEURONOFF](studies/neuronoff/CLOSEOUT.md) |
+| Does pushing a code neuron write that code? | Refuted on 3 of 3 gemma-3-4b-pt neurons; 3 Qwen3-4B-Base neurons not scorable | frozen rule | [REALPROMPT](studies/x/realprompt/REPORT.md) |
+| Do shared drivers forecast the collateral fall? | r 0.81 [0.76, 0.85] over 277 cases | exploratory | [INSTRUMENTS](studies/instruments/results/RESULTS.md) |
+| Does the value an ablation writes matter? | On OLMo-3-7B the null's 95th percentile runs from 0.098 to 0.575 by written value and exclusion; the null's median is 0.004 on the other two models | pre-registered | [INSTRUMENTS](studies/instruments/results/RESULTS.md) |
+
+**Limits on these results.** The ratio has been read on OLMo-3-7B only, in one run. The clusters come from a language-model
+clusterer, and a separate reader called 109 of 129 of them not coherent, so read "job" below as "cluster". The 0.65 split
+was measured at birth under the mean write. The first study's unrelated share, 26.5% [21.1%, 32.1%], labels packing under
+its frozen rule, but a matched ceiling gives 20.6% [13.2%, 27.1%]. Its object is the same clusters, so it is not the
+headline here. INSTRUMENTS stage E6b had not closed at this copy and is not included.
+
+## What is in this repository
+
+This is a public, read-only copy of six studies from Abay Bektursun's private working repository: pre-registrations,
+results, verdict files, figures and review reports. The raw data, the code and the study journals are not here. The
+files at the top level are the first study, the audit ([Audit details](#audit-details)). The later studies are under
+[`studies/`](studies/). Local paths and infrastructure names are redacted ([`REDACTIONS.md`](REDACTIONS.md)).
 
 ## Start here
 
 | you want | open |
 |---|---|
-| the answer in five minutes | [Result](#result) and [Limits](#limits) on this page |
+| the answer in five minutes | [Results](#results) on this page |
+| the audit, the first study | [Audit details](#audit-details) |
 | every reported number, with footnotes on defects, sensitivities and provenance | [`results/RESULTS.md`](results/RESULTS.md) |
 | the hypotheses and the observation that would refute each | [`SPEC_D1.md` §1](SPEC_D1.md#1-question-decision-hypotheses-refuting-observations) |
 | the measurement, step by step | [`SPEC_D1.md` §2](SPEC_D1.md#2-the-measurement-exactly) |
@@ -39,7 +60,11 @@ infrastructure names are redacted, and two lines of `SPEC_D1.md` are reworded ([
 estimate, drawn as a labelled reference, never as this study's threshold. The footer names the `metrics.json` the figure
 was drawn from.*
 
-## What the study measures
+## Audit details
+
+Everything from here to the end of the page describes the first study.
+
+### What the study measures
 
 The essay is "Neural Networks Are Already Clean" (Nick Cammarata, Goodfire;
 https://already-clean.goodfire.com/essay.md). It reports ≈ 90 / 7 / 2–4 (one main job / two related jobs / not yet
@@ -89,9 +114,9 @@ related by construction. 0.5 is chance. The value is clipped to [0, 1].
 
 The hypotheses, the observation that would refute each, and the decision rules are in `SPEC_D1.md` §1 and §6.
 
-## Result
+### Result
 
-### Q1: one-job fractions
+#### Q1: one-job fractions
 
 Under explanations that pass the frozen §6.1 rule, the one-job fractions are 0.597 [0.557, 0.635] on Q4B,
 0.563 [0.523, 0.602] on G4 and 0.518 [0.478, 0.558] on O7 (Wilson 95%, 600 poles each). Not understood (UNK) is
@@ -112,7 +137,7 @@ study's one-job fractions are under the thresholds frozen in §6.1, on different
 definitions, so the two sets of numbers are not the same quantity. This is an independent measurement, not a
 refutation.
 
-### Q2: did the later jobs grow out of earlier ones?
+#### Q2: did the later jobs grow out of earlier ones?
 
 The developmental outcome (Q2, O7, 600 poles) is mixed and is reported as mixed under §6.7. The unrelated share of
 late-born jobs is p_u = 0.265 [0.211, 0.321]; its lower bound is above the frozen 0.20 rule, so the rule labels the
@@ -139,7 +164,7 @@ Every number is in [`results/RESULTS.md`](results/RESULTS.md); the prediction gr
 *F5. Parent-test accuracy on late-born clusters and on the positive controls, against random and hard decoys, with
 chance drawn at 0.5. Right panel: `p_u` with its interval and the two frozen rule lines.*
 
-## Limits
+### Limits
 
 Limits stated in the record:
 
@@ -163,7 +188,7 @@ Limits stated in the record:
 - **F42.** A second post-closeout finding (F42, `SPEC_D1.md` §15 item 18): in Gemma-3-4B layers 10–11, 25 windows split
   at a CRLF hold 3.44% and 5.19% of top-50 slots. Three sampled G4 poles are affected, all UNK, so no count moves.
 
-## Freeze record
+### Freeze record
 
 | event | time (UTC) | where it is recorded |
 |---|---|---|
@@ -193,11 +218,12 @@ Limits stated in the record:
 - **Essay version.** The live page now carries a footnote dated 2026-10-30 that revises one sentence about an
   InceptionV1 neuron, so line numbers may have shifted. The 90 / 7 / 2–4 sentence was still on the page on 2026-10-31.
 
-## Files
+### Files
 
 | path | what it is |
 |---|---|
 | [`README.md`](README.md) | this file |
+| [`studies/`](studies/) | the five later studies: REUSE, INSTRUMENTS, NEURONOFF, NEURONRW, REALPROMPT |
 | [`SPEC_D1.md`](SPEC_D1.md) | the pre-registration: question, hypotheses with refuting observations, measurement, frozen rules (§6), controls, runbook, prediction grid (§11, filled at unblind), budget, literature record, pre-mortem, closures (§15); amendments after the freeze carry their dates in place |
 | [`DATA_CONTRACT.md`](DATA_CONTRACT.md) | file formats, paths and invariants of the harvest, explain and verdict stages |
 | [`INDEX.md`](INDEX.md) | the study's own index of its files, written for the private working repository; several files it names are not in this copy |
@@ -213,7 +239,7 @@ Limits stated in the record:
 The figures are byte-identical to the study's copies. The text files differ from the study's files only on the lines
 listed in `REDACTIONS.md`.
 
-### Figures
+#### Figures
 
 | figure | what it shows |
 |---|---|
@@ -224,7 +250,7 @@ listed in `REDACTIONS.md`.
 | [F5](results/figures/png/F5_parent_test.png) | parent-test accuracy and `p_u` |
 | [F6](results/figures/png/F6_gallery.png) | a three-pole gallery |
 
-### Checker reports
+#### Checker reports
 
 The reports were written by Claude Opus checker agents, except `acceptance_final.md`, which is the output of a script.
 The brief is in `checks/CHECKERS.md`. The study journal, which holds the answers to the flags, is not part of this copy.
@@ -243,7 +269,7 @@ W0–W5 are the study's waves (`SPEC_D1.md` §9.2).
 | [`checks/w5_rerun_2026-10-25.md`](checks/w5_rerun_2026-10-25.md) | re-derivation of the unblind from banked inputs |
 | [`checks/substantive_25.txt`](checks/substantive_25.txt), [`checks/nonpassing_172.txt`](checks/nonpassing_172.txt) | chunk lists used in the manual-backend audit |
 
-## What is not here
+### What is not here
 
 - The raw harvests (per-checkpoint top-50 activations and statistics for every pole), the explain directories
   (requests, responses, explanations, probe texts and scores, clusters, judgments, per-call records), the

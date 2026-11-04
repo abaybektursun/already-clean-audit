@@ -1,0 +1,731 @@
+{
+ "mode": "as banked",
+ "spec": "studies/instruments/SPEC_instruments.md §5.3-§5.5, amendments 16-18 and 23-27",
+ "inputs": {
+  "items_sha256": "5914e374ab73558dc94ffbebe64b454d809d3d98e03d9f4170cd843f1e2df369",
+  "metrics_sha256": "24b6a2863631f9cb990f9331ef75b0a57b766fcd66f78b601bf084da5e46965b",
+  "partitions_sha256": "5ca20b5cce79857a3b8d1d98bfcf4a1187ad25009b05ff5c2329a1397e4d20c8",
+  "n_poles": 353,
+  "n_included": 351,
+  "excluded": [
+   "L01N2204-",
+   "L03N1140+"
+  ],
+  "excluded_rule": "C has fewer than 2 clusters"
+ },
+ "gates": {
+  "known_number": {
+   "median_overlap": 1.0,
+   "min_overlap": 1.0,
+   "line": 0.9,
+   "n_cases": 20,
+   "reversed_order": {
+    "median_overlap": 0.3,
+    "min_overlap": 0.04,
+    "failed": true,
+    "finding": null
+   },
+   "different_pole": {
+    "median_overlap": 0.0,
+    "overlaps": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "pairs": [
+     [
+      "L06N10970-",
+      "L06N2537+"
+     ],
+     [
+      "L06N2537+",
+      "L08N3846-"
+     ],
+     [
+      "L08N3846-",
+      "L08N9190+"
+     ],
+     [
+      "L08N9190+",
+      "L09N2031-"
+     ],
+     [
+      "L09N2031-",
+      "L09N7823+"
+     ],
+     [
+      "L09N7823+",
+      "L10N9794+"
+     ],
+     [
+      "L10N9794+",
+      "L11N4690-"
+     ],
+     [
+      "L11N4690-",
+      "L12N5641-"
+     ],
+     [
+      "L12N5641-",
+      "L16N10459+"
+     ],
+     [
+      "L16N10459+",
+      "L18N6315+"
+     ],
+     [
+      "L18N6315+",
+      "L18N8102+"
+     ],
+     [
+      "L18N8102+",
+      "L22N10231+"
+     ],
+     [
+      "L22N10231+",
+      "L22N8185-"
+     ],
+     [
+      "L22N8185-",
+      "L23N1430+"
+     ],
+     [
+      "L23N1430+",
+      "L25N5377+"
+     ],
+     [
+      "L25N5377+",
+      "L26N5599+"
+     ],
+     [
+      "L26N5599+",
+      "L26N9711+"
+     ],
+     [
+      "L26N9711+",
+      "L31N10791+"
+     ],
+     [
+      "L31N10791+",
+      "L31N7529+"
+     ],
+     [
+      "L31N7529+",
+      "L06N10970-"
+     ]
+    ],
+    "source": "computed by the verdict from the banked A_U; the job banked no different-pole read"
+   },
+   "own_from_A_U": {
+    "median_overlap": 1.0,
+    "overlaps": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "max_abs_diff_vs_job": 0.0,
+    "role": "positive control of the A_U route; must reach the line for the different-pole input to count"
+   },
+   "failing_input": "the contexts in reversed rank order (the job's read)",
+   "failing_input_median_overlap": 0.3,
+   "failing_input_valid": true,
+   "job_record": {
+    "median_overlap": 1.0,
+    "failing_input_median_overlap": 0.3,
+    "pass": true,
+    "failing_input_failed": true
+   },
+   "failing_input_failed": true,
+   "fed_median_overlap": 1.0,
+   "pass": true
+  },
+  "ac": {
+   "max_rel_banked_top200": 1.4673367848603658e-07,
+   "tol": 1e-05,
+   "job_full_row": {
+    "max_rel": 1.6365470401069615e-07,
+    "failing_input_min_of_max_rel": 0.9211689233779907,
+    "n_contexts": 17650,
+    "tol": 1e-05,
+    "pass": true,
+    "failing_input_failed": true
+   },
+   "pass": true
+  },
+  "sanity": {
+   "n_poles": 351,
+   "n_bad": 0,
+   "bad_first": [],
+   "median_null_median_ari": -0.004766155332394858,
+   "max_abs_random_mean_ari": 0.007653061224489793,
+   "median_random_median_ari_reported": -0.006778309409888357,
+   "tol": 0.05,
+   "pass": true
+  },
+  "ceiling": {
+   "n_poles": 96,
+   "median_ari_s0_s1": 0.7626777812092886,
+   "median_null_p95": 0.06238566979322021,
+   "median_ami_s0_s1": 0.8239061353399197,
+   "median_null_ami_p95": 0.07178905393797569,
+   "pass": true
+  },
+  "samples": {
+   "path": "<local>/interp_research/studies/instruments/results/e3/samples/e3.jsonl",
+   "exists": true,
+   "n_rows": 5,
+   "pass": true
+  }
+ },
+ "R1": {
+  "value": -0.003953969590321599,
+  "lo": -0.03963216376249534,
+  "hi": 0.023849496375906658,
+  "n": 351,
+  "lines": {
+   "holds_above": 0.05,
+   "H_token_below": -0.05
+  },
+  "reading": "not separated"
+ },
+ "R1_ami": {
+  "value": -0.006092439365435465,
+  "lo": -0.035256262002329286,
+  "hi": 0.01908654532216201,
+  "n": 351,
+  "role": "reported beside R1 (amendment 23); decides nothing",
+  "reading": "not separated"
+ },
+ "R2": {
+  "value": -0.11709401709401708,
+  "lo": -0.14216524216524215,
+  "hi": -0.09259259259259259,
+  "n": 351,
+  "statistic": "mean over poles (amendment 25)",
+  "lines": {
+   "holds_above": 0.05,
+   "refuted_below": 0.0
+  },
+  "reading": "H_predict refuted"
+ },
+ "R2_median": {
+  "value": -0.09999999999999998,
+  "lo": -0.10000000000000009,
+  "hi": -0.09999999999999998,
+  "n": 351,
+  "role": "the median, reported beside R2 (amendment 25); decides nothing",
+  "reading": "H_predict refuted"
+ },
+ "H_boring": {
+  "share_above_null": {
+   "value": 0.792022792022792,
+   "lo": 0.7492877492877493,
+   "hi": 0.8319088319088319,
+   "n": 351
+  },
+  "line": 0.15,
+  "reading": "H_boring refuted"
+ },
+ "reported": {
+  "masked": {
+   "D_ari": {
+    "value": -0.003953969590321599,
+    "lo": -0.03963216376249534,
+    "hi": 0.023849496375906658,
+    "n": 351
+   },
+   "D_ami": {
+    "value": -0.006092439365435465,
+    "lo": -0.035256262002329286,
+    "hi": 0.01908654532216201,
+    "n": 351
+   },
+   "ari_VC": {
+    "value": 0.25256212705668224,
+    "lo": 0.20623926731539782,
+    "hi": 0.2938627431220397,
+    "n": 351
+   },
+   "ami_VC": {
+    "value": 0.37428481306491357,
+    "lo": 0.31254743864468315,
+    "hi": 0.40636204628810896,
+    "n": 351
+   },
+   "null_ari_p95_median": 0.061495586212615305,
+   "null_ami_p95_median": 0.06946631261444197,
+   "share_above_null_ari": {
+    "value": 0.792022792022792,
+    "lo": 0.7492877492877493,
+    "hi": 0.8319088319088319,
+    "n": 351
+   },
+   "share_above_null_ami": {
+    "value": 0.8803418803418803,
+    "lo": 0.8433048433048433,
+    "hi": 0.9116809116809117,
+    "n": 351
+   },
+   "echo_removed_D_ari": {
+    "value": -0.003954073931547231,
+    "lo": -0.03968565502903039,
+    "hi": 0.017141572552977477,
+    "n": 351
+   },
+   "echo_removed_D_ami": {
+    "value": -0.016801720908340756,
+    "lo": -0.03758341570805618,
+    "hi": 0.01596455823764764,
+    "n": 351
+   },
+   "heldout": {
+    "driver": {
+     "value": 0.6,
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 351
+    },
+    "token": {
+     "value": 0.8,
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 351
+    },
+    "majority": {
+     "value": 0.4,
+     "lo": 0.4,
+     "hi": 0.4,
+     "n": 351
+    }
+   },
+   "heldout_mean": {
+    "driver": {
+     "value": 0.6247863247863248,
+     "lo": 0.6014245014245014,
+     "hi": 0.6470156695156695,
+     "n": 351
+    },
+    "token": {
+     "value": 0.741880341880342,
+     "lo": 0.7207977207977208,
+     "hi": 0.7629700854700853,
+     "n": 351
+    },
+    "majority": {
+     "value": 0.43447293447293445,
+     "lo": 0.4093945868945869,
+     "hi": 0.4586965811965812,
+     "n": 351
+    }
+   },
+   "R2_D": {
+    "value": -0.09999999999999998,
+    "lo": -0.10000000000000009,
+    "hi": -0.09999999999999998,
+    "n": 351
+   },
+   "R2_D_mean": {
+    "value": -0.11709401709401708,
+    "lo": -0.14216524216524215,
+    "hi": -0.09259259259259259,
+    "n": 351
+   }
+  },
+  "unmasked": {
+   "D_ari": {
+    "value": -0.007404967540550367,
+    "lo": -0.035808275091360024,
+    "hi": 0.010551363645167344,
+    "n": 351
+   },
+   "D_ami": {
+    "value": -0.006092439365435465,
+    "lo": -0.035256262002329286,
+    "hi": 0.022148640741959325,
+    "n": 351
+   },
+   "ari_VC": {
+    "value": 0.2618405592514011,
+    "lo": 0.21641609834950984,
+    "hi": 0.2997603764530146,
+    "n": 351
+   },
+   "ami_VC": {
+    "value": 0.3744004483067025,
+    "lo": 0.3355422600248556,
+    "hi": 0.4219897949369235,
+    "n": 351
+   },
+   "null_ari_p95_median": 0.061806147590897594,
+   "null_ami_p95_median": 0.06970887181080301,
+   "share_above_null_ari": {
+    "value": 0.7948717948717948,
+    "lo": 0.7492877492877493,
+    "hi": 0.8347578347578347,
+    "n": 351
+   },
+   "share_above_null_ami": {
+    "value": 0.8831908831908832,
+    "lo": 0.8490028490028491,
+    "hi": 0.9145299145299145,
+    "n": 351
+   },
+   "echo_removed_D_ari": {
+    "value": -0.0077072790428547484,
+    "lo": -0.036684239547797065,
+    "hi": 0.00929589318515972,
+    "n": 351
+   },
+   "echo_removed_D_ami": {
+    "value": -0.008298758085959868,
+    "lo": -0.03704335767424413,
+    "hi": 0.014916381831097265,
+    "n": 351
+   },
+   "heldout": {
+    "driver": {
+     "value": 0.6,
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 351
+    },
+    "token": {
+     "value": 0.8,
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 351
+    },
+    "majority": {
+     "value": 0.4,
+     "lo": 0.4,
+     "hi": 0.4,
+     "n": 351
+    }
+   },
+   "heldout_mean": {
+    "driver": {
+     "value": 0.629059829059829,
+     "lo": 0.6045584045584045,
+     "hi": 0.6521438746438746,
+     "n": 351
+    },
+    "token": {
+     "value": 0.741880341880342,
+     "lo": 0.7207977207977208,
+     "hi": 0.7629700854700853,
+     "n": 351
+    },
+    "majority": {
+     "value": 0.43447293447293445,
+     "lo": 0.4093945868945869,
+     "hi": 0.4586965811965812,
+     "n": 351
+    }
+   },
+   "R2_D": {
+    "value": -0.09999999999999998,
+    "lo": -0.10000000000000009,
+    "hi": -0.09999999999999998,
+    "n": 351
+   },
+   "R2_D_mean": {
+    "value": -0.11282051282051281,
+    "lo": -0.13874643874643874,
+    "hi": -0.08803418803418803,
+    "n": 351
+   }
+  },
+  "ari_KC": {
+   "value": 0.21978287092882992,
+   "lo": 0.17474266573831881,
+   "hi": 0.24952918308538236,
+   "n": 351
+  },
+  "ami_KC": {
+   "value": 0.3340589315478683,
+   "lo": 0.30803665486142356,
+   "hi": 0.3775098736499471,
+   "n": 351
+  },
+  "ceiling_all_poles": {
+   "ari": {
+    "value": 0.6453536725305036,
+    "lo": 0.6153931536651422,
+    "hi": 0.6957992442800862,
+    "n": 353
+   },
+   "ami": {
+    "value": 0.7238797348130036,
+    "lo": 0.6817135580465811,
+    "hi": 0.7666887899319671,
+    "n": 353
+   },
+   "null_ari_p95_median": 0.056477438136826784
+  }
+ },
+ "detector": {
+  "flag_by_band": {
+   "layers 1-3": {
+    "value": 0.8064516129032258,
+    "lo": 0.7338709677419355,
+    "hi": 0.8709677419354839,
+    "n": 124
+   },
+   "layers 4-31": {
+    "value": 0.7444933920704846,
+    "lo": 0.6872246696035242,
+    "hi": 0.7973568281938326,
+    "n": 227
+   }
+  },
+  "sil_above_null_by_band": {
+   "layers 1-3": {
+    "value": 0.9919354838709677,
+    "lo": 0.9758064516129032,
+    "hi": 1.0,
+    "n": 124
+   },
+   "layers 4-31": {
+    "value": 0.9515418502202643,
+    "lo": 0.920704845814978,
+    "hi": 0.9779735682819384,
+    "n": 227
+   }
+  },
+  "ari_above_null_by_band": {
+   "layers 1-3": {
+    "value": 0.8064516129032258,
+    "lo": 0.7338709677419355,
+    "hi": 0.8709677419354839,
+    "n": 124
+   },
+   "layers 4-31": {
+    "value": 0.7841409691629956,
+    "lo": 0.7268722466960352,
+    "hi": 0.8370044052863436,
+    "n": 227
+   }
+  },
+  "flag_sil_floor_by_band_exploratory": {
+   "layers 1-3": {
+    "value": 0.6129032258064516,
+    "lo": 0.5241935483870968,
+    "hi": 0.6935483870967742,
+    "n": 124
+   },
+   "layers 4-31": {
+    "value": 0.4977973568281938,
+    "lo": 0.43601321585903086,
+    "hi": 0.5682819383259912,
+    "n": 227
+   }
+  },
+  "flag_by_layer": {
+   "1": 0.7435897435897436,
+   "2": 0.8292682926829268,
+   "3": 0.8409090909090909,
+   "4": 0.7777777777777778,
+   "5": 0.6,
+   "6": 0.6363636363636364,
+   "7": 0.8888888888888888,
+   "8": 0.8571428571428571,
+   "9": 1.0,
+   "10": 0.8,
+   "11": 0.6,
+   "12": 0.4444444444444444,
+   "13": 0.625,
+   "14": 0.8,
+   "15": 0.4,
+   "16": 0.8,
+   "17": 0.6666666666666666,
+   "18": 0.5454545454545454,
+   "19": 1.0,
+   "20": 0.8888888888888888,
+   "21": 0.8,
+   "22": 1.0,
+   "23": 0.6,
+   "24": 0.9,
+   "25": 1.0,
+   "26": 0.7,
+   "27": 0.8,
+   "28": 0.5454545454545454,
+   "29": 0.5,
+   "30": 0.875,
+   "31": 0.6666666666666666
+  },
+  "n_by_layer": {
+   "1": 39,
+   "2": 41,
+   "3": 44,
+   "4": 9,
+   "5": 5,
+   "6": 11,
+   "7": 9,
+   "8": 7,
+   "9": 8,
+   "10": 10,
+   "11": 5,
+   "12": 9,
+   "13": 8,
+   "14": 5,
+   "15": 5,
+   "16": 5,
+   "17": 6,
+   "18": 11,
+   "19": 8,
+   "20": 9,
+   "21": 10,
+   "22": 9,
+   "23": 10,
+   "24": 10,
+   "25": 7,
+   "26": 10,
+   "27": 10,
+   "28": 11,
+   "29": 6,
+   "30": 8,
+   "31": 6
+  },
+  "k_sil_counts": {
+   "2": 38,
+   "3": 17,
+   "4": 9,
+   "5": 28,
+   "6": 27,
+   "7": 69,
+   "8": 163
+  },
+  "flag": "best silhouette over k = 2..8 above its column-shuffle null's p95 and ARI(V, C) above its permutation null's p95 (amendment 24)",
+  "exploratory": "best silhouette >= 0.25 and ARI(V, C) above its permutation null's p95",
+  "bands": "layers 1-3 (the low band; layer 0 has no driver vector, amendment 26) and layers 4-31"
+ },
+ "predictions": [
+  {
+   "row": "median ARI(V, C)",
+   "predicted": "0.12 [0.05, 0.25]",
+   "observed": {
+    "value": 0.25256212705668224,
+    "lo": 0.20623926731539782,
+    "hi": 0.2938627431220397,
+    "n": 351
+   }
+  },
+  {
+   "row": "null 95th percentile (median over poles)",
+   "predicted": "0.08",
+   "observed": 0.061495586212615305
+  },
+  {
+   "row": "ceiling ARI(s0, s1), low-layer poles",
+   "predicted": "0.35 [0.20, 0.50]",
+   "observed": 0.7626777812092886
+  },
+  {
+   "row": "ARI(K, C)",
+   "predicted": "0.10 [0.03, 0.20]",
+   "observed": {
+    "value": 0.21978287092882992,
+    "lo": 0.17474266573831881,
+    "hi": 0.24952918308538236,
+    "n": 351
+   }
+  },
+  {
+   "row": "R1 D",
+   "predicted": "+0.03 [-0.05, 0.12] -> not separated",
+   "refuted_when": "below 0",
+   "observed": {
+    "value": -0.003953969590321599,
+    "lo": -0.03963216376249534,
+    "hi": 0.023849496375906658,
+    "n": 351,
+    "lines": {
+     "holds_above": 0.05,
+     "H_token_below": -0.05
+    },
+    "reading": "not separated"
+   }
+  },
+  {
+   "row": "R2 D (mean over poles, amendment 25)",
+   "predicted": "+0.05 [-0.05, 0.15] -> not separated",
+   "refuted_when": "below 0",
+   "observed": {
+    "value": -0.11709401709401708,
+    "lo": -0.14216524216524215,
+    "hi": -0.09259259259259259,
+    "n": 351,
+    "statistic": "mean over poles (amendment 25)",
+    "lines": {
+     "holds_above": 0.05,
+     "refuted_below": 0.0
+    },
+    "reading": "H_predict refuted"
+   }
+  },
+  {
+   "row": "flagged share, layers 1-3 (amendments 18, 24, 26; §5.5 says 0 to 3)",
+   "predicted": "0.30 [0.10, 0.50]",
+   "observed": {
+    "value": 0.8064516129032258,
+    "lo": 0.7338709677419355,
+    "hi": 0.8709677419354839,
+    "n": 124
+   }
+  },
+  {
+   "row": "flagged share, layers 4-31 (amendments 18, 24)",
+   "predicted": "0.55 [0.35, 0.75]",
+   "observed": {
+    "value": 0.7444933920704846,
+    "lo": 0.6872246696035242,
+    "hi": 0.7973568281938326,
+    "n": 227
+   }
+  },
+  {
+   "row": "R3 (reader)",
+   "predicted": "+0.07 -> not separated",
+   "observed": "not read here: verdict_e3_r3.py"
+  }
+ ],
+ "bootstrap": {
+  "draws": 2000,
+  "seed": 0,
+  "interval": "2.5 and 97.5 percentiles"
+ }
+}

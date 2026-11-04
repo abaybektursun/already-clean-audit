@@ -1,0 +1,6828 @@
+{
+ "inputs": {
+  "run": "studies/reuse/results/sharedinputs/1",
+  "items": "studies/reuse/inputs/birth_items.json",
+  "items_sha256": "918c94abe22c0a783d830705ac274bb7054c483ac522aaba216df187b28d0fd6",
+  "birth_verdict": "studies/reuse/results/birth/verdict_birth.json",
+  "birth_verdict_sha256": "5e16a6a5bbda3b4e8c58b10a2326bfd861200bdcbd3954be5c64888689984a73",
+  "spec6_falls": "studies/reuse/results/generic/1/generic/t15/falls",
+  "spec": "studies/reuse/SPEC10_sharedinputs.md",
+  "n_boot": 2000,
+  "seed": 0,
+  "failing_input_mode": null,
+  "pg_git_sha": "a60f97e01ee5",
+  "device_name": "NVIDIA L40S"
+ },
+ "count": {
+  "primary": 64,
+  "fresh": 43,
+  "primary_live": 64,
+  "fresh_live": 43,
+  "neurons": {
+   "primary": 28,
+   "fresh": 17
+  },
+  "K_reads": 135,
+  "K_per_case": [
+   1,
+   2
+  ],
+  "sets_scanned": 726,
+  "forwards": 16312,
+  "tokens_forwarded": 4855595
+ },
+ "gates": {
+  "known_number t15": {
+   "value": 0.0,
+   "tol": 0.01,
+   "reading": "the bank",
+   "failing_input": {
+    "input": "a_wrong at T_15: the previous grid checkpoint's exemplar_a",
+    "value": 0.19487728677276725
+   },
+   "identity": {
+    "value": 0.0,
+    "reason": "the bank against itself"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/sharedinputs/1/t15/metrics.json"
+   ]
+  },
+  "completeness t15": {
+   "value": 0.0010306638723704964,
+   "tol": 0.01,
+   "failing_input": {
+    "input": "the column from the wrong layer",
+    "value": 0.3238200545310974
+   },
+   "identity": {
+    "value": null,
+    "reason": "no identity input is banked for completeness"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/sharedinputs/1/t15/metrics.json"
+   ]
+  },
+  "capture_identity t15": {
+   "value": 0.0,
+   "tol": 1e-05,
+   "n_contexts": 20,
+   "pole": "L04N10274+",
+   "a_P_abs_max": 0.35769828107510965,
+   "reading": "layer L",
+   "failing_input": {
+    "input": "P's neuron read at layer 3 (the hook on L-1)",
+    "value": 0.35796789287815806
+   },
+   "identity": {
+    "value": 0.0,
+    "reason": "two identical captures: the gate's value is the identity value"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/sharedinputs/1/t15/metrics.json"
+   ]
+  },
+  "known_spec6": {
+   "value": 0.0,
+   "line": 0.01,
+   "n_cases": 64,
+   "max_abs_diff": 0.0,
+   "job_record": {
+    "value": 0.0,
+    "pass": true
+   },
+   "statistic": "median over primary cases of |fall here - SPEC6's T_15 free-scale fall| over own' and cross_O, at most 0.01",
+   "reading": "the case's own SPEC6 falls",
+   "failing_input": {
+    "input": "the next case's SPEC6 falls (case-list order, cyclic)",
+    "value": 0.08048750311214992
+   },
+   "identity": {
+    "value": 0.0,
+    "reason": "SPEC6's falls against themselves"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+    "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+    "studies/reuse/results/birth/verdict_birth.json",
+    "studies/reuse/results/generic/1/generic/t15/falls/*__g1__free.npz"
+   ]
+  },
+  "exclusion": {
+   "value": {
+    "n_in_B": 0,
+    "n_flagged": 0,
+    "n_not_first_outside": 0,
+    "n_bank_short": 0,
+    "B_count": 3412
+   },
+   "n_sets": 726,
+   "n_members": 36300,
+   "fi_sets_with_B": 409,
+   "count_rule": "round(0.01 x 341248) = 3412",
+   "count_ok": true,
+   "job_record": {
+    "n_sets": 349,
+    "n_members": 17450,
+    "n_in_B": 0,
+    "unexcluded_n_in_B": 706,
+    "unexcluded_n_sets_with_B": 233,
+    "random_n_sets": 107,
+    "random_n_in_B": 0,
+    "pass": true,
+    "failing_input_failed": true,
+    "rule": "no member of any D' or random' is in B_t; failing input: the unexcluded top 50 (reuse_ablate.top_m) of every ranked set against B_t"
+   },
+   "failing_input": {
+    "input": "the unexcluded rankings (the first 50 of every top-200 bank) against B_t: members found",
+    "value": 1211
+   },
+   "identity": {
+    "value": 3412,
+    "reason": "B_t's members against B_t: every member found"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+    "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+    "studies/reuse/results/birth/verdict_birth.json",
+    "studies/reuse/results/sharedinputs/1/t15/high_background.json"
+   ]
+  },
+  "positive_control primary": {
+   "value": 0.5081641244035354,
+   "floor": 0.25,
+   "n_cases": 64,
+   "own_median": 0.5081641244035354,
+   "reading": "own'",
+   "failing_input": {
+    "input": "random' in place of own': median fall under 0.25",
+    "value": 0.009334546601042725
+   },
+   "identity": {
+    "value": 0.0,
+    "reason": "the median identity-arm fall"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+    "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+    "studies/reuse/results/birth/verdict_birth.json"
+   ]
+  },
+  "cancel_share primary": {
+   "value": 0.0,
+   "line": 0.4,
+   "n_cancelled": 0,
+   "n_cases": 64,
+   "share_unswapped": 0.0,
+   "reading": "the bank",
+   "failing_input": {
+    "input": "own' and random' swapped",
+    "value": 1.0
+   },
+   "identity": {
+    "value": null,
+    "reason": "the cancel rule compares own' and random'; the identity arm is neither"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+    "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+    "studies/reuse/results/birth/verdict_birth.json"
+   ]
+  },
+  "positive_control fresh": {
+   "value": 0.4803936329539666,
+   "floor": 0.25,
+   "n_cases": 43,
+   "own_median": 0.4803936329539666,
+   "reading": "own'",
+   "failing_input": {
+    "input": "random' in place of own': median fall under 0.25",
+    "value": 0.016177930935822954
+   },
+   "identity": {
+    "value": 0.0,
+    "reason": "the median identity-arm fall"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+    "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+    "studies/reuse/results/birth/verdict_birth.json"
+   ]
+  },
+  "cancel_share fresh": {
+   "value": 0.0,
+   "line": 0.4,
+   "n_cancelled": 0,
+   "n_cases": 43,
+   "share_unswapped": 0.0,
+   "reading": "the bank",
+   "failing_input": {
+    "input": "own' and random' swapped",
+    "value": 1.0
+   },
+   "identity": {
+    "value": null,
+    "reason": "the cancel rule compares own' and random'; the identity arm is neither"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+    "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+    "studies/reuse/results/birth/verdict_birth.json"
+   ]
+  },
+  "k_validity": {
+   "value": 0,
+   "n_cases": 107,
+   "n_K": 135,
+   "problems": [],
+   "job_record": {
+    "value": 0,
+    "pass": true
+   },
+   "reading": "the banked K",
+   "failing_input": {
+    "input": "every K replaced by J (J's cluster index, J's contexts)",
+    "value": 107
+   },
+   "identity": {
+    "value": 0,
+    "reason": "each case's J reads checked against its items' J_tok: mismatches"
+   },
+   "pass": true,
+   "failing_input_failed": true,
+   "ok": true,
+   "artifact": [
+    "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+    "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+    "studies/reuse/results/birth/verdict_birth.json",
+    "studies/reuse/results/sharedinputs/1/t15/cases.json",
+    "studies/reuse/inputs/birth_items.json"
+   ]
+  }
+ },
+ "rules": {
+  "X1": {
+   "value": 0.027619406510188405,
+   "lo": 0.002152095606951803,
+   "hi": 0.1042011475794454,
+   "n_rows": 64,
+   "n_neurons": 28,
+   "n_nonfinite_draws": 0,
+   "n_boot": 2000,
+   "seed": 0,
+   "artifact": [
+    "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+    "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+    "studies/reuse/results/birth/verdict_birth.json"
+   ],
+   "line": 0.05,
+   "statistic": "median over live cases of d = I_O - I_K",
+   "n_cases": 64,
+   "verdict": "not separated: the interval contains 0.05",
+   "set": "primary",
+   "decides": false
+  },
+  "X1f": {
+   "value": -0.04616507569755507,
+   "lo": -0.09058278598355834,
+   "hi": 0.030160963096926896,
+   "n_rows": 43,
+   "n_neurons": 17,
+   "n_nonfinite_draws": 0,
+   "n_boot": 2000,
+   "seed": 0,
+   "artifact": [
+    "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+    "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+    "studies/reuse/results/birth/verdict_birth.json"
+   ],
+   "line": 0.05,
+   "statistic": "median over live cases of d = I_O - I_K",
+   "n_cases": 43,
+   "verdict": "H_old refuted: the interval is below 0.05 (the dependence is shared)",
+   "set": "fresh",
+   "decides": true
+  }
+ },
+ "reported": {
+  "gates_failed": [],
+  "a_before_max_abs_diff_same_contexts": 0.0,
+  "primary": {
+   "n_listed": 64,
+   "n_live": 64,
+   "n_cancelled": 0,
+   "n_neurons": 28,
+   "I_O": {
+    "value": 0.24206563110627977,
+    "lo": 0.1975645041993419,
+    "hi": 0.3329120936357325,
+    "n_rows": 64,
+    "n_neurons": 28,
+    "n_nonfinite_draws": 0,
+    "n_boot": 2000,
+    "seed": 0,
+    "artifact": [
+     "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+     "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+     "studies/reuse/results/birth/verdict_birth.json"
+    ],
+    "spec6_reread": 0.302,
+    "spec6_inside": true
+   },
+   "I_K": {
+    "value": 0.24247122159669118,
+    "lo": 0.1490940440077896,
+    "hi": 0.35267132105403665,
+    "n_rows": 64,
+    "n_neurons": 28,
+    "n_nonfinite_draws": 0,
+    "n_boot": 2000,
+    "seed": 0,
+    "artifact": [
+     "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+     "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+     "studies/reuse/results/birth/verdict_birth.json"
+    ]
+   },
+   "share_I_O_gt_I_K": {
+    "value": 0.609375,
+    "lo": 0.5,
+    "hi": 0.7192982456140351,
+    "n_rows": 64,
+    "n_neurons": 28,
+    "n_nonfinite_draws": 0,
+    "n_boot": 2000,
+    "seed": 0,
+    "artifact": [
+     "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+     "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+     "studies/reuse/results/birth/verdict_birth.json"
+    ]
+   },
+   "K_own_fall": {
+    "value": 0.5142414351045748,
+    "lo": 0.4780938470045171,
+    "hi": 0.5987915269078066,
+    "n_rows": 64,
+    "n_neurons": 28,
+    "n_nonfinite_draws": 0,
+    "n_boot": 2000,
+    "seed": 0,
+    "artifact": [
+     "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+     "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+     "studies/reuse/results/birth/verdict_birth.json"
+    ]
+   },
+   "reverse_fall": {
+    "value": 0.10912293895563634,
+    "lo": 0.0796554252069788,
+    "hi": 0.16051448885828495,
+    "n_rows": 64,
+    "n_neurons": 28,
+    "n_nonfinite_draws": 0,
+    "n_boot": 2000,
+    "seed": 0,
+    "artifact": [
+     "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+     "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+     "studies/reuse/results/birth/verdict_birth.json"
+    ]
+   },
+   "reverse_ratio": {
+    "value": 0.23433178717114028,
+    "lo": 0.166990703002225,
+    "hi": 0.336533840204048,
+    "n_rows": 64,
+    "n_neurons": 28,
+    "n_nonfinite_draws": 0,
+    "n_boot": 2000,
+    "seed": 0,
+    "artifact": [
+     "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+     "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+     "studies/reuse/results/birth/verdict_birth.json"
+    ]
+   },
+   "sibling": {
+    "value": 0.016713681001855774,
+    "lo": -0.011509934914123054,
+    "hi": 0.10682117647499614,
+    "n_rows": 41,
+    "n_neurons": 19,
+    "n_nonfinite_draws": 0,
+    "n_boot": 2000,
+    "seed": 0,
+    "artifact": [
+     "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+     "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+     "studies/reuse/results/birth/verdict_birth.json"
+    ],
+    "n_cases": 41,
+    "n_K": 44
+   },
+   "non_sibling": {
+    "value": 0.04453457632818302,
+    "lo": -0.023719700512599917,
+    "hi": 0.12765972170045262,
+    "n_rows": 27,
+    "n_neurons": 14,
+    "n_nonfinite_draws": 0,
+    "n_boot": 2000,
+    "seed": 0,
+    "artifact": [
+     "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+     "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+     "studies/reuse/results/birth/verdict_birth.json"
+    ],
+    "n_cases": 27,
+    "n_K": 33
+   },
+   "cross_K_per_K_median": 0.10827385859620044,
+   "n_K_reads": 77,
+   "d_all_listed": {
+    "value": 0.027619406510188405,
+    "lo": 0.002152095606951803,
+    "hi": 0.1042011475794454,
+    "n_rows": 64,
+    "n_neurons": 28,
+    "n_nonfinite_draws": 0,
+    "n_boot": 2000,
+    "seed": 0,
+    "artifact": [
+     "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+     "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+     "studies/reuse/results/birth/verdict_birth.json"
+    ]
+   },
+   "falls_median": {
+    "own": 0.5081641244035354,
+    "crossO": 0.12123350822513972,
+    "random": 0.009334546601042725,
+    "identity": 0.0
+   }
+  },
+  "fresh": {
+   "n_listed": 43,
+   "n_live": 43,
+   "n_cancelled": 0,
+   "n_neurons": 17,
+   "I_O": {
+    "value": 0.25477814850419994,
+    "lo": 0.15632203671786443,
+    "hi": 0.3627381695661999,
+    "n_rows": 43,
+    "n_neurons": 17,
+    "n_nonfinite_draws": 0,
+    "n_boot": 2000,
+    "seed": 0,
+    "artifact": [
+     "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+     "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+     "studies/reuse/results/birth/verdict_birth.json"
+    ],
+    "spec6_reread": 0.302,
+    "spec6_inside": true
+   },
+   "I_K": {
+    "value": 0.3321272227083731,
+    "lo": 0.167555607483708,
+    "hi": 0.4329553586139917,
+    "n_rows": 43,
+    "n_neurons": 17,
+    "n_nonfinite_draws": 0,
+    "n_boot": 2000,
+    "seed": 0,
+    "artifact": [
+     "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+     "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+     "studies/reuse/results/birth/verdict_birth.json"
+    ]
+   },
+   "share_I_O_gt_I_K": {
+    "value": 0.4418604651162791,
+    "lo": 0.32558139534883723,
+    "hi": 0.5609756097560976,
+    "n_rows": 43,
+    "n_neurons": 17,
+    "n_nonfinite_draws": 0,
+    "n_boot": 2000,
+    "seed": 0,
+    "artifact": [
+     "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+     "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+     "studies/reuse/results/birth/verdict_birth.json"
+    ]
+   },
+   "K_own_fall": {
+    "value": 0.46473401997710534,
+    "lo": 0.3683828562181899,
+    "hi": 0.581833611087197,
+    "n_rows": 43,
+    "n_neurons": 17,
+    "n_nonfinite_draws": 0,
+    "n_boot": 2000,
+    "seed": 0,
+    "artifact": [
+     "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+     "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+     "studies/reuse/results/birth/verdict_birth.json"
+    ]
+   },
+   "reverse_fall": {
+    "value": 0.14892500322070618,
+    "lo": 0.07928623429017848,
+    "hi": 0.20467327288677273,
+    "n_rows": 43,
+    "n_neurons": 17,
+    "n_nonfinite_draws": 0,
+    "n_boot": 2000,
+    "seed": 0,
+    "artifact": [
+     "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+     "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+     "studies/reuse/results/birth/verdict_birth.json"
+    ]
+   },
+   "reverse_ratio": {
+    "value": 0.3321272227083731,
+    "lo": 0.1435437549887461,
+    "hi": 0.4751563074255475,
+    "n_rows": 43,
+    "n_neurons": 17,
+    "n_nonfinite_draws": 0,
+    "n_boot": 2000,
+    "seed": 0,
+    "artifact": [
+     "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+     "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+     "studies/reuse/results/birth/verdict_birth.json"
+    ]
+   },
+   "sibling": {
+    "value": -0.06295636296038112,
+    "lo": -0.17272288913458714,
+    "hi": 0.027909196329482022,
+    "n_rows": 38,
+    "n_neurons": 16,
+    "n_nonfinite_draws": 0,
+    "n_boot": 2000,
+    "seed": 0,
+    "artifact": [
+     "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+     "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+     "studies/reuse/results/birth/verdict_birth.json"
+    ],
+    "n_cases": 38,
+    "n_K": 44
+   },
+   "non_sibling": {
+    "value": 0.014162264350596754,
+    "lo": -0.542760522336619,
+    "hi": 0.030160963096926896,
+    "n_rows": 11,
+    "n_neurons": 4,
+    "n_nonfinite_draws": 0,
+    "n_boot": 2000,
+    "seed": 0,
+    "artifact": [
+     "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+     "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+     "studies/reuse/results/birth/verdict_birth.json"
+    ],
+    "n_cases": 11,
+    "n_K": 14
+   },
+   "cross_K_per_K_median": 0.14374702673126444,
+   "n_K_reads": 58,
+   "d_all_listed": {
+    "value": -0.04616507569755507,
+    "lo": -0.09058278598355834,
+    "hi": 0.030160963096926896,
+    "n_rows": 43,
+    "n_neurons": 17,
+    "n_nonfinite_draws": 0,
+    "n_boot": 2000,
+    "seed": 0,
+    "artifact": [
+     "studies/reuse/results/sharedinputs/1/t15/metrics.json",
+     "studies/reuse/results/sharedinputs/1/t15/falls/*.npz",
+     "studies/reuse/results/birth/verdict_birth.json"
+    ]
+   },
+   "falls_median": {
+    "own": 0.4803936329539666,
+    "crossO": 0.0961537575886553,
+    "random": 0.016177930935822954,
+    "identity": 0.0
+   }
+  },
+  "gpu_hours": {
+   "job_wall_hours": 0.1587777777777778,
+   "forwards": 16312,
+   "captures": 3722,
+   "tokens_forwarded": 4855595,
+   "memory_max_allocated_gb": 20.707193344,
+   "device_name": "NVIDIA L40S",
+   "note": "download + load + after-load seconds from metrics.json; the billed instance time is the launcher's record"
+  }
+ },
+ "predictions": [
+  {
+   "row": "| I_O primary; fresh | 0.29 [0.23, 0.35]; 0.26 [0.18, 0.34] | outside [0.10, 0.50] |",
+   "observed": "0.242 [0.198, 0.333]; 0.255 [0.156, 0.363]",
+   "outcome": "landed"
+  },
+  {
+   "row": "| I_K primary; fresh | 0.26 [0.18, 0.33]; 0.24 [0.15, 0.33] | outside [0.05, 0.50] |",
+   "observed": "0.242 [0.149, 0.353]; 0.332 [0.168, 0.433]",
+   "outcome": "landed"
+  },
+  {
+   "row": "| d primary (X1); fresh (X1f) | 0.03 [\u22120.03, 0.09]; 0.02 [\u22120.05, 0.09] | outside [\u22120.15, 0.25] |",
+   "observed": "0.028 [0.002, 0.104]; -0.046 [-0.091, 0.030]",
+   "outcome": "landed"
+  },
+  {
+   "row": "| share with I_O > I_K, fresh | 0.55 [0.42, 0.68] | outside [0.3, 0.9] |",
+   "observed": "0.442 [0.326, 0.561]",
+   "outcome": "landed"
+  },
+  {
+   "row": "| K's own fall (positive control for K) | 0.50 [0.42, 0.58] | under 0.25 |",
+   "observed": "0.514 [0.478, 0.599]; 0.465 [0.368, 0.582]",
+   "outcome": "landed"
+  },
+  {
+   "row": "| GPU hours (one load) | 0.4 [0.25, 0.7] | over 1.2 |",
+   "observed": "0.159 h of job wall time",
+   "outcome": "landed"
+  }
+ ],
+ "cases": [
+  {
+   "job": "L06N10970-:c2",
+   "pole": "L06N10970-",
+   "neuron": "L06N10970",
+   "set": "primary",
+   "layer": 6,
+   "c": 2,
+   "o_star": 0,
+   "K": [
+    3
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.36101394991353025,
+    "crossO": 0.10562084760130257,
+    "crossK_c3": 0.059533907225360165,
+    "random": 0.02045195166925887,
+    "Kown_c3": 0.3215550707450685,
+    "reverse_c3": 0.07411674121946651
+   },
+   "own": 0.36101394991353025,
+   "crossO": 0.10562084760130257,
+   "random": 0.02045195166925887,
+   "identity": 0.0,
+   "crossK": {
+    "3": 0.059533907225360165
+   },
+   "I_K_each": {
+    "3": 0.16490749800560248
+   },
+   "I_O": 0.2925672197060551,
+   "I_K": 0.16490749800560248,
+   "d": 0.12765972170045262,
+   "o_gt_k": true,
+   "Kown": {
+    "3": 0.3215550707450685
+   },
+   "Kown_mean": 0.3215550707450685,
+   "reverse": {
+    "3": 0.07411674121946651
+   },
+   "reverse_mean": 0.07411674121946651,
+   "rev_ratio": 0.23049470514562923,
+   "sibling": {
+    "3": false
+   },
+   "d_sib": null,
+   "d_non": 0.12765972170045262,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 11,
+   "key": "L06N10970-__c2",
+   "live": true
+  },
+  {
+   "job": "L06N10970-:c3",
+   "pole": "L06N10970-",
+   "neuron": "L06N10970",
+   "set": "primary",
+   "layer": 6,
+   "c": 3,
+   "o_star": 2,
+   "K": [
+    0
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.3215550707450685,
+    "crossO": 0.07411674121946651,
+    "crossK_c0": 0.022420328817656057,
+    "random": -0.010936992994267794,
+    "Kown_c0": 0.7020010111404447,
+    "reverse_c0": 0.006357967534771511
+   },
+   "own": 0.3215550707450685,
+   "crossO": 0.07411674121946651,
+   "random": -0.010936992994267794,
+   "identity": 0.0,
+   "crossK": {
+    "0": 0.022420328817656057
+   },
+   "I_K_each": {
+    "0": 0.06972469370707289
+   },
+   "I_O": 0.23049470514562923,
+   "I_K": 0.06972469370707289,
+   "d": 0.16077001143855635,
+   "o_gt_k": true,
+   "Kown": {
+    "0": 0.7020010111404447
+   },
+   "Kown_mean": 0.7020010111404447,
+   "reverse": {
+    "0": 0.006357967534771511
+   },
+   "reverse_mean": 0.006357967534771511,
+   "rev_ratio": 0.009056920764889774,
+   "sibling": {
+    "0": false
+   },
+   "d_sib": null,
+   "d_non": 0.16077001143855635,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L06N10970-__c3",
+   "live": true
+  },
+  {
+   "job": "L06N2537+:c2",
+   "pole": "L06N2537+",
+   "neuron": "L06N2537",
+   "set": "primary",
+   "layer": 6,
+   "c": 2,
+   "o_star": 1,
+   "K": [
+    3
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.5905147135962804,
+    "crossO": 0.2352082694318549,
+    "crossK_c3": 0.3666235334811503,
+    "random": 0.08522977179046366,
+    "Kown_c3": 0.8432519848840087,
+    "reverse_c3": 0.4684336674123813
+   },
+   "own": 0.5905147135962804,
+   "crossO": 0.2352082694318549,
+   "random": 0.08522977179046366,
+   "identity": 0.0,
+   "crossK": {
+    "3": 0.3666235334811503
+   },
+   "I_K_each": {
+    "3": 0.620854188794695
+   },
+   "I_O": 0.39831059923878664,
+   "I_K": 0.620854188794695,
+   "d": -0.22254358955590836,
+   "o_gt_k": false,
+   "Kown": {
+    "3": 0.8432519848840087
+   },
+   "Kown_mean": 0.8432519848840087,
+   "reverse": {
+    "3": 0.4684336674123813
+   },
+   "reverse_mean": 0.4684336674123813,
+   "rev_ratio": 0.5555085262880413,
+   "sibling": {
+    "3": true
+   },
+   "d_sib": -0.22254358955590836,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L06N2537+__c2",
+   "live": true
+  },
+  {
+   "job": "L06N2537+:c3",
+   "pole": "L06N2537+",
+   "neuron": "L06N2537",
+   "set": "primary",
+   "layer": 6,
+   "c": 3,
+   "o_star": 1,
+   "K": [
+    2
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.8432519848840087,
+    "crossO": 0.18244667407099935,
+    "crossK_c2": 0.4684336674123813,
+    "random": 0.09764684929754147,
+    "Kown_c2": 0.5905147135962804,
+    "reverse_c2": 0.3666235334811503
+   },
+   "own": 0.8432519848840087,
+   "crossO": 0.18244667407099935,
+   "random": 0.09764684929754147,
+   "identity": 0.0,
+   "crossK": {
+    "2": 0.4684336674123813
+   },
+   "I_K_each": {
+    "2": 0.5555085262880413
+   },
+   "I_O": 0.2163608000236078,
+   "I_K": 0.5555085262880413,
+   "d": -0.33914772626443346,
+   "o_gt_k": false,
+   "Kown": {
+    "2": 0.5905147135962804
+   },
+   "Kown_mean": 0.5905147135962804,
+   "reverse": {
+    "2": 0.3666235334811503
+   },
+   "reverse_mean": 0.3666235334811503,
+   "rev_ratio": 0.620854188794695,
+   "sibling": {
+    "2": true
+   },
+   "d_sib": -0.33914772626443346,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L06N2537+__c3",
+   "live": true
+  },
+  {
+   "job": "L06N6273-:c1",
+   "pole": "L06N6273-",
+   "neuron": "L06N6273",
+   "set": "primary",
+   "layer": 6,
+   "c": 1,
+   "o_star": 0,
+   "K": [
+    2,
+    3
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.4989113107302945,
+    "crossO": 0.2217847357445673,
+    "crossK_c2": 0.1666629266049593,
+    "crossK_c3": 0.3259779530623326,
+    "random": 0.05695506387376503,
+    "Kown_c2": 0.5257154017184551,
+    "reverse_c2": 0.10980238805492457,
+    "Kown_c3": 0.4716995342226473,
+    "reverse_c3": 0.21122658966164537
+   },
+   "own": 0.4989113107302945,
+   "crossO": 0.2217847357445673,
+   "random": 0.05695506387376503,
+   "identity": 0.0,
+   "crossK": {
+    "2": 0.1666629266049593,
+    "3": 0.3259779530623326
+   },
+   "I_K_each": {
+    "2": 0.33405321350803224,
+    "3": 0.6533785585762204
+   },
+   "I_O": 0.44453739767880607,
+   "I_K": 0.49371588604212635,
+   "d": -0.04917848836332028,
+   "o_gt_k": false,
+   "Kown": {
+    "2": 0.5257154017184551,
+    "3": 0.4716995342226473
+   },
+   "Kown_mean": 0.4987074679705512,
+   "reverse": {
+    "2": 0.10980238805492457,
+    "3": 0.21122658966164537
+   },
+   "reverse_mean": 0.16051448885828495,
+   "rev_ratio": 0.3283309079158774,
+   "sibling": {
+    "2": true,
+    "3": true
+   },
+   "d_sib": -0.04917848836332028,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 10,
+   "key": "L06N6273-__c1",
+   "live": true
+  },
+  {
+   "job": "L06N6273-:c2",
+   "pole": "L06N6273-",
+   "neuron": "L06N6273",
+   "set": "primary",
+   "layer": 6,
+   "c": 2,
+   "o_star": 0,
+   "K": [
+    1,
+    3
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.5257154017184551,
+    "crossO": 0.3035071786923914,
+    "crossK_c1": 0.10980238805492457,
+    "crossK_c3": 0.3531107107978454,
+    "random": 0.04968189544569728,
+    "Kown_c1": 0.4989113107302945,
+    "reverse_c1": 0.1666629266049593,
+    "Kown_c3": 0.4716995342226473,
+    "reverse_c3": 0.2527013989288126
+   },
+   "own": 0.5257154017184551,
+   "crossO": 0.3035071786923914,
+   "random": 0.04968189544569728,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.10980238805492457,
+    "3": 0.3531107107978454
+   },
+   "I_K_each": {
+    "1": 0.20886279476690855,
+    "3": 0.6716765566380581
+   },
+   "I_O": 0.5773222121708611,
+   "I_K": 0.4402696757024833,
+   "d": 0.13705253646837778,
+   "o_gt_k": true,
+   "Kown": {
+    "1": 0.4989113107302945,
+    "3": 0.4716995342226473
+   },
+   "Kown_mean": 0.4853054224764709,
+   "reverse": {
+    "1": 0.1666629266049593,
+    "3": 0.2527013989288126
+   },
+   "reverse_mean": 0.20968216276688595,
+   "rev_ratio": 0.43488928266831417,
+   "sibling": {
+    "1": true,
+    "3": true
+   },
+   "d_sib": 0.13705253646837778,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 7,
+   "key": "L06N6273-__c2",
+   "live": true
+  },
+  {
+   "job": "L06N6273-:c3",
+   "pole": "L06N6273-",
+   "neuron": "L06N6273",
+   "set": "primary",
+   "layer": 6,
+   "c": 3,
+   "o_star": 0,
+   "K": [
+    1,
+    2
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.4716995342226473,
+    "crossO": 0.31115980255573883,
+    "crossK_c1": 0.21122658966164537,
+    "crossK_c2": 0.2527013989288126,
+    "random": 0.04573399056083779,
+    "Kown_c1": 0.4989113107302945,
+    "reverse_c1": 0.3259779530623326,
+    "Kown_c2": 0.5257154017184551,
+    "reverse_c2": 0.3531107107978454
+   },
+   "own": 0.4716995342226473,
+   "crossO": 0.31115980255573883,
+   "random": 0.04573399056083779,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.21122658966164537,
+    "2": 0.2527013989288126
+   },
+   "I_K_each": {
+    "1": 0.44779902106484615,
+    "2": 0.535725351828596
+   },
+   "I_O": 0.6596567941677636,
+   "I_K": 0.4917621864467211,
+   "d": 0.16789460772104248,
+   "o_gt_k": true,
+   "Kown": {
+    "1": 0.4989113107302945,
+    "2": 0.5257154017184551
+   },
+   "Kown_mean": 0.5123133562243748,
+   "reverse": {
+    "1": 0.3259779530623326,
+    "2": 0.3531107107978454
+   },
+   "reverse_mean": 0.33954433193008904,
+   "rev_ratio": 0.6625275576071392,
+   "sibling": {
+    "1": true,
+    "2": true
+   },
+   "d_sib": 0.16789460772104248,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 8,
+   "key": "L06N6273-__c3",
+   "live": true
+  },
+  {
+   "job": "L08N3846-:c1",
+   "pole": "L08N3846-",
+   "neuron": "L08N3846",
+   "set": "primary",
+   "layer": 8,
+   "c": 1,
+   "o_star": 0,
+   "K": [
+    2
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.5072192344753222,
+    "crossO": 0.14585013730458904,
+    "crossK_c2": 0.037278855660331296,
+    "random": 0.0016152487117448292,
+    "Kown_c2": 0.5541639411053522,
+    "reverse_c2": 0.28440318536534487
+   },
+   "own": 0.5072192344753222,
+   "crossO": 0.14585013730458904,
+   "random": 0.0016152487117448292,
+   "identity": 0.0,
+   "crossK": {
+    "2": 0.037278855660331296
+   },
+   "I_K_each": {
+    "2": 0.07349653389799639
+   },
+   "I_O": 0.28754851431345924,
+   "I_K": 0.07349653389799639,
+   "d": 0.21405198041546286,
+   "o_gt_k": true,
+   "Kown": {
+    "2": 0.5541639411053522
+   },
+   "Kown_mean": 0.5541639411053522,
+   "reverse": {
+    "2": 0.28440318536534487
+   },
+   "reverse_mean": 0.28440318536534487,
+   "rev_ratio": 0.5132112796766706,
+   "sibling": {
+    "2": true
+   },
+   "d_sib": 0.21405198041546286,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L08N3846-__c1",
+   "live": true
+  },
+  {
+   "job": "L08N3846-:c2",
+   "pole": "L08N3846-",
+   "neuron": "L08N3846",
+   "set": "primary",
+   "layer": 8,
+   "c": 2,
+   "o_star": 0,
+   "K": [
+    1
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.5541639411053522,
+    "crossO": 0.3743244607236085,
+    "crossK_c1": 0.28440318536534487,
+    "random": 0.0037615365900957945,
+    "Kown_c1": 0.5072192344753222,
+    "reverse_c1": 0.037278855660331296
+   },
+   "own": 0.5541639411053522,
+   "crossO": 0.3743244607236085,
+   "random": 0.0037615365900957945,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.28440318536534487
+   },
+   "I_K_each": {
+    "1": 0.5132112796766706
+   },
+   "I_O": 0.6754760332781119,
+   "I_K": 0.5132112796766706,
+   "d": 0.16226475360144132,
+   "o_gt_k": true,
+   "Kown": {
+    "1": 0.5072192344753222
+   },
+   "Kown_mean": 0.5072192344753222,
+   "reverse": {
+    "1": 0.037278855660331296
+   },
+   "reverse_mean": 0.037278855660331296,
+   "rev_ratio": 0.07349653389799639,
+   "sibling": {
+    "1": true
+   },
+   "d_sib": 0.16226475360144132,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L08N3846-__c2",
+   "live": true
+  },
+  {
+   "job": "L08N9190+:c1",
+   "pole": "L08N9190+",
+   "neuron": "L08N9190",
+   "set": "primary",
+   "layer": 8,
+   "c": 1,
+   "o_star": 0,
+   "K": [
+    4
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.6766665000361154,
+    "crossO": 0.5527602474251602,
+    "crossK_c4": 0.4269750118214359,
+    "random": 0.0699753079150147,
+    "Kown_c4": 0.657725373008163,
+    "reverse_c4": 0.3887541799449477
+   },
+   "own": 0.6766665000361154,
+   "crossO": 0.5527602474251602,
+   "random": 0.0699753079150147,
+   "identity": 0.0,
+   "crossK": {
+    "4": 0.4269750118214359
+   },
+   "I_K_each": {
+    "4": 0.6309977098003923
+   },
+   "I_O": 0.8168872663204961,
+   "I_K": 0.6309977098003923,
+   "d": 0.18588955652010386,
+   "o_gt_k": true,
+   "Kown": {
+    "4": 0.657725373008163
+   },
+   "Kown_mean": 0.657725373008163,
+   "reverse": {
+    "4": 0.3887541799449477
+   },
+   "reverse_mean": 0.3887541799449477,
+   "rev_ratio": 0.5910585114984197,
+   "sibling": {
+    "4": true
+   },
+   "d_sib": 0.18588955652010386,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 7,
+   "key": "L08N9190+__c1",
+   "live": true
+  },
+  {
+   "job": "L08N9190+:c4",
+   "pole": "L08N9190+",
+   "neuron": "L08N9190",
+   "set": "primary",
+   "layer": 8,
+   "c": 4,
+   "o_star": 0,
+   "K": [
+    1
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.657725373008163,
+    "crossO": 0.4824571232107205,
+    "crossK_c1": 0.3887541799449477,
+    "random": 0.019890179552531678,
+    "Kown_c1": 0.6766665000361154,
+    "reverse_c1": 0.4269750118214359
+   },
+   "own": 0.657725373008163,
+   "crossO": 0.4824571232107205,
+   "random": 0.019890179552531678,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.3887541799449477
+   },
+   "I_K_each": {
+    "1": 0.5910585114984197
+   },
+   "I_O": 0.7335236604970274,
+   "I_K": 0.5910585114984197,
+   "d": 0.14246514899860774,
+   "o_gt_k": true,
+   "Kown": {
+    "1": 0.6766665000361154
+   },
+   "Kown_mean": 0.6766665000361154,
+   "reverse": {
+    "1": 0.4269750118214359
+   },
+   "reverse_mean": 0.4269750118214359,
+   "rev_ratio": 0.6309977098003923,
+   "sibling": {
+    "1": true
+   },
+   "d_sib": 0.14246514899860774,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 7,
+   "key": "L08N9190+__c4",
+   "live": true
+  },
+  {
+   "job": "L09N10681+:c0",
+   "pole": "L09N10681+",
+   "neuron": "L09N10681",
+   "set": "primary",
+   "layer": 9,
+   "c": 0,
+   "o_star": 3,
+   "K": [
+    4,
+    6
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.7037688500745705,
+    "crossO": 0.07019850111422127,
+    "crossK_c4": 0.07274286735472048,
+    "crossK_c6": 0.03885645354317772,
+    "random": 0.0073225177229859426,
+    "Kown_c4": 0.44793246930948205,
+    "reverse_c4": 0.09872705657801926,
+    "Kown_c6": 0.5518653078561706,
+    "reverse_c6": 0.035612695774803
+   },
+   "own": 0.7037688500745705,
+   "crossO": 0.07019850111422127,
+   "random": 0.0073225177229859426,
+   "identity": 0.0,
+   "crossK": {
+    "4": 0.07274286735472048,
+    "6": 0.03885645354317772
+   },
+   "I_K_each": {
+    "4": 0.10336187421056323,
+    "6": 0.055211954236196355
+   },
+   "I_O": 0.09974653056437938,
+   "I_K": 0.07928691422337979,
+   "d": 0.02045961634099959,
+   "o_gt_k": true,
+   "Kown": {
+    "4": 0.44793246930948205,
+    "6": 0.5518653078561706
+   },
+   "Kown_mean": 0.49989888858282633,
+   "reverse": {
+    "4": 0.09872705657801926,
+    "6": 0.035612695774803
+   },
+   "reverse_mean": 0.06716987617641113,
+   "rev_ratio": 0.14246880857148758,
+   "sibling": {
+    "4": true,
+    "6": false
+   },
+   "d_sib": -0.0036153436461838495,
+   "d_non": 0.04453457632818302,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 8,
+   "key": "L09N10681+__c0",
+   "live": true
+  },
+  {
+   "job": "L09N10681+:c4",
+   "pole": "L09N10681+",
+   "neuron": "L09N10681",
+   "set": "primary",
+   "layer": 9,
+   "c": 4,
+   "o_star": 3,
+   "K": [
+    0,
+    6
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.44793246930948205,
+    "crossO": 0.10392923769275057,
+    "crossK_c0": 0.09872705657801926,
+    "crossK_c6": 0.12380847849667331,
+    "random": 0.0024682131373446508,
+    "Kown_c0": 0.7037688500745705,
+    "reverse_c0": 0.07274286735472048,
+    "Kown_c6": 0.5518653078561706,
+    "reverse_c6": 0.21362157516377345
+   },
+   "own": 0.44793246930948205,
+   "crossO": 0.10392923769275057,
+   "random": 0.0024682131373446508,
+   "identity": 0.0,
+   "crossK": {
+    "0": 0.09872705657801926,
+    "6": 0.12380847849667331
+   },
+   "I_K_each": {
+    "0": 0.22040611775746832,
+    "6": 0.2763998749354616
+   },
+   "I_O": 0.23201987981126812,
+   "I_K": 0.24840299634646495,
+   "d": -0.016383116535196834,
+   "o_gt_k": false,
+   "Kown": {
+    "0": 0.7037688500745705,
+    "6": 0.5518653078561706
+   },
+   "Kown_mean": 0.6278170789653705,
+   "reverse": {
+    "0": 0.07274286735472048,
+    "6": 0.21362157516377345
+   },
+   "reverse_mean": 0.14318222125924696,
+   "rev_ratio": 0.245225967135914,
+   "sibling": {
+    "0": true,
+    "6": false
+   },
+   "d_sib": 0.011613762053799798,
+   "d_non": -0.044379995124193466,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 10,
+   "key": "L09N10681+__c4",
+   "live": true
+  },
+  {
+   "job": "L09N10681+:c6",
+   "pole": "L09N10681+",
+   "neuron": "L09N10681",
+   "set": "primary",
+   "layer": 9,
+   "c": 6,
+   "o_star": 4,
+   "K": [
+    0,
+    3
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.5518653078561706,
+    "crossO": 0.21362157516377345,
+    "crossK_c0": 0.035612695774803,
+    "crossK_c3": 0.24195155554580072,
+    "random": -0.0015798140576069044,
+    "Kown_c0": 0.7037688500745705,
+    "reverse_c0": 0.03885645354317772,
+    "Kown_c3": 0.5465088038147076,
+    "reverse_c3": 0.17915730833154003
+   },
+   "own": 0.5518653078561706,
+   "crossO": 0.21362157516377345,
+   "random": -0.0015798140576069044,
+   "identity": 0.0,
+   "crossK": {
+    "0": 0.035612695774803,
+    "3": 0.24195155554580072
+   },
+   "I_K_each": {
+    "0": 0.06453149938550681,
+    "3": 0.4384250144038029
+   },
+   "I_O": 0.3870900600612648,
+   "I_K": 0.25147825689465486,
+   "d": 0.13561180316660992,
+   "o_gt_k": true,
+   "Kown": {
+    "0": 0.7037688500745705,
+    "3": 0.5465088038147076
+   },
+   "Kown_mean": 0.625138826944639,
+   "reverse": {
+    "0": 0.03885645354317772,
+    "3": 0.17915730833154003
+   },
+   "reverse_mean": 0.10900688093735887,
+   "rev_ratio": 0.19151670196003764,
+   "sibling": {
+    "0": false,
+    "3": false
+   },
+   "d_sib": null,
+   "d_non": 0.13561180316660992,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 8,
+   "key": "L09N10681+__c6",
+   "live": true
+  },
+  {
+   "job": "L09N2031-:c0",
+   "pole": "L09N2031-",
+   "neuron": "L09N2031",
+   "set": "primary",
+   "layer": 9,
+   "c": 0,
+   "o_star": 1,
+   "K": [
+    2
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.4395959358893389,
+    "crossO": 0.07566673996185828,
+    "crossK_c2": 0.014820910771681767,
+    "random": 0.006125893843757804,
+    "Kown_c2": 0.6311101942233188,
+    "reverse_c2": 0.08761334926711442
+   },
+   "own": 0.4395959358893389,
+   "crossO": 0.07566673996185828,
+   "random": 0.006125893843757804,
+   "identity": 0.0,
+   "crossK": {
+    "2": 0.014820910771681767
+   },
+   "I_K_each": {
+    "2": 0.03371484939163016
+   },
+   "I_O": 0.1721279333685791,
+   "I_K": 0.03371484939163016,
+   "d": 0.13841308397694893,
+   "o_gt_k": true,
+   "Kown": {
+    "2": 0.6311101942233188
+   },
+   "Kown_mean": 0.6311101942233188,
+   "reverse": {
+    "2": 0.08761334926711442
+   },
+   "reverse_mean": 0.08761334926711442,
+   "rev_ratio": 0.13882417059502034,
+   "sibling": {
+    "2": false
+   },
+   "d_sib": null,
+   "d_non": 0.13841308397694893,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L09N2031-__c0",
+   "live": true
+  },
+  {
+   "job": "L09N2031-:c1",
+   "pole": "L09N2031-",
+   "neuron": "L09N2031",
+   "set": "primary",
+   "layer": 9,
+   "c": 1,
+   "o_star": 2,
+   "K": [
+    0
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.4489411134566854,
+    "crossO": 0.02152826977265101,
+    "crossK_c0": 0.1444753124857168,
+    "random": -0.003110166581329448,
+    "Kown_c0": 0.4395959358893389,
+    "reverse_c0": 0.07566673996185828
+   },
+   "own": 0.4489411134566854,
+   "crossO": 0.02152826977265101,
+   "random": -0.003110166581329448,
+   "identity": 0.0,
+   "crossK": {
+    "0": 0.1444753124857168
+   },
+   "I_K_each": {
+    "0": 0.32181350327509267
+   },
+   "I_O": 0.04795343782816205,
+   "I_K": 0.32181350327509267,
+   "d": -0.27386006544693065,
+   "o_gt_k": false,
+   "Kown": {
+    "0": 0.4395959358893389
+   },
+   "Kown_mean": 0.4395959358893389,
+   "reverse": {
+    "0": 0.07566673996185828
+   },
+   "reverse_mean": 0.07566673996185828,
+   "rev_ratio": 0.1721279333685791,
+   "sibling": {
+    "0": false
+   },
+   "d_sib": null,
+   "d_non": -0.27386006544693065,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 11,
+   "key": "L09N2031-__c1",
+   "live": true
+  },
+  {
+   "job": "L09N7823+:c1",
+   "pole": "L09N7823+",
+   "neuron": "L09N7823",
+   "set": "primary",
+   "layer": 9,
+   "c": 1,
+   "o_star": 0,
+   "K": [
+    5
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.4432380663578388,
+    "crossO": 0.1615717403366754,
+    "crossK_c5": 0.15631735440385577,
+    "random": 0.02240296204493302,
+    "Kown_c5": 0.5700129033833347,
+    "reverse_c5": 0.29528485974135016
+   },
+   "own": 0.4432380663578388,
+   "crossO": 0.1615717403366754,
+   "random": 0.02240296204493302,
+   "identity": 0.0,
+   "crossK": {
+    "5": 0.15631735440385577
+   },
+   "I_K_each": {
+    "5": 0.35267132105403665
+   },
+   "I_O": 0.3645258667973565,
+   "I_K": 0.35267132105403665,
+   "d": 0.011854545743319844,
+   "o_gt_k": true,
+   "Kown": {
+    "5": 0.5700129033833347
+   },
+   "Kown_mean": 0.5700129033833347,
+   "reverse": {
+    "5": 0.29528485974135016
+   },
+   "reverse_mean": 0.29528485974135016,
+   "rev_ratio": 0.5180318866269078,
+   "sibling": {
+    "5": true
+   },
+   "d_sib": 0.011854545743319844,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 7,
+   "key": "L09N7823+__c1",
+   "live": true
+  },
+  {
+   "job": "L09N7823+:c5",
+   "pole": "L09N7823+",
+   "neuron": "L09N7823",
+   "set": "primary",
+   "layer": 9,
+   "c": 5,
+   "o_star": 0,
+   "K": [
+    1
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.5700129033833347,
+    "crossO": 0.1831343269650482,
+    "crossK_c1": 0.29528485974135016,
+    "random": 0.0032409838882257566,
+    "Kown_c1": 0.4432380663578388,
+    "reverse_c1": 0.15631735440385577
+   },
+   "own": 0.5700129033833347,
+   "crossO": 0.1831343269650482,
+   "random": 0.0032409838882257566,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.29528485974135016
+   },
+   "I_K_each": {
+    "1": 0.5180318866269078
+   },
+   "I_O": 0.321281019917351,
+   "I_K": 0.5180318866269078,
+   "d": -0.19675086670955683,
+   "o_gt_k": false,
+   "Kown": {
+    "1": 0.4432380663578388
+   },
+   "Kown_mean": 0.4432380663578388,
+   "reverse": {
+    "1": 0.15631735440385577
+   },
+   "reverse_mean": 0.15631735440385577,
+   "rev_ratio": 0.35267132105403665,
+   "sibling": {
+    "1": true
+   },
+   "d_sib": -0.19675086670955683,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 7,
+   "key": "L09N7823+__c5",
+   "live": true
+  },
+  {
+   "job": "L10N5687+:c1",
+   "pole": "L10N5687+",
+   "neuron": "L10N5687",
+   "set": "primary",
+   "layer": 10,
+   "c": 1,
+   "o_star": 0,
+   "K": [
+    3
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.7177802649523719,
+    "crossO": 0.33086437565026244,
+    "crossK_c3": 0.24151597307191144,
+    "random": 0.0068585145007759,
+    "Kown_c3": 0.6515544379600262,
+    "reverse_c3": 0.3734364311712432
+   },
+   "own": 0.7177802649523719,
+   "crossO": 0.33086437565026244,
+   "random": 0.0068585145007759,
+   "identity": 0.0,
+   "crossK": {
+    "3": 0.24151597307191144
+   },
+   "I_K_each": {
+    "3": 0.3364761959399053
+   },
+   "I_O": 0.4609549632466098,
+   "I_K": 0.3364761959399053,
+   "d": 0.12447876730670449,
+   "o_gt_k": true,
+   "Kown": {
+    "3": 0.6515544379600262
+   },
+   "Kown_mean": 0.6515544379600262,
+   "reverse": {
+    "3": 0.3734364311712432
+   },
+   "reverse_mean": 0.3734364311712432,
+   "rev_ratio": 0.573146938175186,
+   "sibling": {
+    "3": true
+   },
+   "d_sib": 0.12447876730670449,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L10N5687+__c1",
+   "live": true
+  },
+  {
+   "job": "L10N5687+:c3",
+   "pole": "L10N5687+",
+   "neuron": "L10N5687",
+   "set": "primary",
+   "layer": 10,
+   "c": 3,
+   "o_star": 0,
+   "K": [
+    1
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.6515544379600262,
+    "crossO": 0.3707269661885227,
+    "crossK_c1": 0.3734364311712432,
+    "random": 0.009168508078773405,
+    "Kown_c1": 0.7177802649523719,
+    "reverse_c1": 0.24151597307191144
+   },
+   "own": 0.6515544379600262,
+   "crossO": 0.3707269661885227,
+   "random": 0.009168508078773405,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.3734364311712432
+   },
+   "I_K_each": {
+    "1": 0.573146938175186
+   },
+   "I_O": 0.5689884752366114,
+   "I_K": 0.573146938175186,
+   "d": -0.004158462938574581,
+   "o_gt_k": false,
+   "Kown": {
+    "1": 0.7177802649523719
+   },
+   "Kown_mean": 0.7177802649523719,
+   "reverse": {
+    "1": 0.24151597307191144
+   },
+   "reverse_mean": 0.24151597307191144,
+   "rev_ratio": 0.3364761959399053,
+   "sibling": {
+    "1": true
+   },
+   "d_sib": -0.004158462938574581,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 6,
+   "key": "L10N5687+__c3",
+   "live": true
+  },
+  {
+   "job": "L10N9794+:c0",
+   "pole": "L10N9794+",
+   "neuron": "L10N9794",
+   "set": "primary",
+   "layer": 10,
+   "c": 0,
+   "o_star": 1,
+   "K": [
+    2
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.6099882918645698,
+    "crossO": 0.5647646741989886,
+    "crossK_c2": 0.4106715302528055,
+    "random": 0.026063659353681795,
+    "Kown_c2": 0.5648923054024597,
+    "reverse_c2": 0.43894484096539044
+   },
+   "own": 0.6099882918645698,
+   "crossO": 0.5647646741989886,
+   "random": 0.026063659353681795,
+   "identity": 0.0,
+   "crossK": {
+    "2": 0.4106715302528055
+   },
+   "I_K_each": {
+    "2": 0.6732449388454544
+   },
+   "I_O": 0.9258614988701753,
+   "I_K": 0.6732449388454544,
+   "d": 0.2526165600247209,
+   "o_gt_k": true,
+   "Kown": {
+    "2": 0.5648923054024597
+   },
+   "Kown_mean": 0.5648923054024597,
+   "reverse": {
+    "2": 0.43894484096539044
+   },
+   "reverse_mean": 0.43894484096539044,
+   "rev_ratio": 0.7770416356665762,
+   "sibling": {
+    "2": true
+   },
+   "d_sib": 0.2526165600247209,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L10N9794+__c0",
+   "live": true
+  },
+  {
+   "job": "L10N9794+:c2",
+   "pole": "L10N9794+",
+   "neuron": "L10N9794",
+   "set": "primary",
+   "layer": 10,
+   "c": 2,
+   "o_star": 1,
+   "K": [
+    0
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.5648923054024597,
+    "crossO": 0.4364048026364551,
+    "crossK_c0": 0.43894484096539044,
+    "random": 0.025423985837512496,
+    "Kown_c0": 0.6099882918645698,
+    "reverse_c0": 0.4106715302528055
+   },
+   "own": 0.5648923054024597,
+   "crossO": 0.4364048026364551,
+   "random": 0.025423985837512496,
+   "identity": 0.0,
+   "crossK": {
+    "0": 0.43894484096539044
+   },
+   "I_K_each": {
+    "0": 0.7770416356665762
+   },
+   "I_O": 0.77254513552904,
+   "I_K": 0.7770416356665762,
+   "d": -0.004496500137536219,
+   "o_gt_k": false,
+   "Kown": {
+    "0": 0.6099882918645698
+   },
+   "Kown_mean": 0.6099882918645698,
+   "reverse": {
+    "0": 0.4106715302528055
+   },
+   "reverse_mean": 0.4106715302528055,
+   "rev_ratio": 0.6732449388454544,
+   "sibling": {
+    "0": true
+   },
+   "d_sib": -0.004496500137536219,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L10N9794+__c2",
+   "live": true
+  },
+  {
+   "job": "L11N4690-:c2",
+   "pole": "L11N4690-",
+   "neuron": "L11N4690",
+   "set": "primary",
+   "layer": 11,
+   "c": 2,
+   "o_star": 1,
+   "K": [
+    3
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.4157976191409872,
+    "crossO": 0.12051551369094494,
+    "crossK_c3": 0.11356600492329137,
+    "random": 0.00023638694150388838,
+    "Kown_c3": 0.38008234169914407,
+    "reverse_c3": 0.024834549655214345
+   },
+   "own": 0.4157976191409872,
+   "crossO": 0.12051551369094494,
+   "random": 0.00023638694150388838,
+   "identity": 0.0,
+   "crossK": {
+    "3": 0.11356600492329137
+   },
+   "I_K_each": {
+    "3": 0.27312807889066776
+   },
+   "I_O": 0.28984175989252353,
+   "I_K": 0.27312807889066776,
+   "d": 0.016713681001855774,
+   "o_gt_k": true,
+   "Kown": {
+    "3": 0.38008234169914407
+   },
+   "Kown_mean": 0.38008234169914407,
+   "reverse": {
+    "3": 0.024834549655214345
+   },
+   "reverse_mean": 0.024834549655214345,
+   "rev_ratio": 0.06533991961897627,
+   "sibling": {
+    "3": true
+   },
+   "d_sib": 0.016713681001855774,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 7,
+   "key": "L11N4690-__c2",
+   "live": true
+  },
+  {
+   "job": "L11N4690-:c3",
+   "pole": "L11N4690-",
+   "neuron": "L11N4690",
+   "set": "primary",
+   "layer": 11,
+   "c": 3,
+   "o_star": 1,
+   "K": [
+    2
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.38008234169914407,
+    "crossO": 0.11461936295463462,
+    "crossK_c2": 0.024834549655214345,
+    "random": 0.008110831401053958,
+    "Kown_c2": 0.4157976191409872,
+    "reverse_c2": 0.11356600492329137
+   },
+   "own": 0.38008234169914407,
+   "crossO": 0.11461936295463462,
+   "random": 0.008110831401053958,
+   "identity": 0.0,
+   "crossK": {
+    "2": 0.024834549655214345
+   },
+   "I_K_each": {
+    "2": 0.06533991961897627
+   },
+   "I_O": 0.3015645568858395,
+   "I_K": 0.06533991961897627,
+   "d": 0.2362246372668632,
+   "o_gt_k": true,
+   "Kown": {
+    "2": 0.4157976191409872
+   },
+   "Kown_mean": 0.4157976191409872,
+   "reverse": {
+    "2": 0.11356600492329137
+   },
+   "reverse_mean": 0.11356600492329137,
+   "rev_ratio": 0.27312807889066776,
+   "sibling": {
+    "2": true
+   },
+   "d_sib": 0.2362246372668632,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 10,
+   "key": "L11N4690-__c3",
+   "live": true
+  },
+  {
+   "job": "L12N5641+:c0",
+   "pole": "L12N5641+",
+   "neuron": "L12N5641",
+   "set": "primary",
+   "layer": 12,
+   "c": 0,
+   "o_star": 2,
+   "K": [
+    3,
+    5
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.5214214179791817,
+    "crossO": 0.15057958892195486,
+    "crossK_c3": 0.17287026569400052,
+    "crossK_c5": 0.054669720370434605,
+    "random": 0.005914267169213108,
+    "Kown_c3": 0.5091090143317486,
+    "reverse_c3": 0.10817927681371133,
+    "Kown_c5": 0.6884740394838644,
+    "reverse_c5": 0.053621317078253856
+   },
+   "own": 0.5214214179791817,
+   "crossO": 0.15057958892195486,
+   "random": 0.005914267169213108,
+   "identity": 0.0,
+   "crossK": {
+    "3": 0.17287026569400052,
+    "5": 0.054669720370434605
+   },
+   "I_K_each": {
+    "3": 0.33153656473103016,
+    "5": 0.10484747746326245
+   },
+   "I_O": 0.28878673512403913,
+   "I_K": 0.2181920210971463,
+   "d": 0.07059471402689282,
+   "o_gt_k": true,
+   "Kown": {
+    "3": 0.5091090143317486,
+    "5": 0.6884740394838644
+   },
+   "Kown_mean": 0.5987915269078066,
+   "reverse": {
+    "3": 0.10817927681371133,
+    "5": 0.053621317078253856
+   },
+   "reverse_mean": 0.0809002969459826,
+   "rev_ratio": 0.14518587444645797,
+   "sibling": {
+    "3": false,
+    "5": false
+   },
+   "d_sib": null,
+   "d_non": 0.07059471402689282,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 10,
+   "key": "L12N5641+__c0",
+   "live": true
+  },
+  {
+   "job": "L12N5641+:c2",
+   "pole": "L12N5641+",
+   "neuron": "L12N5641",
+   "set": "primary",
+   "layer": 12,
+   "c": 2,
+   "o_star": 5,
+   "K": [
+    0,
+    3
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.5958541403965429,
+    "crossO": 0.20508337157301582,
+    "crossK_c0": 0.2322417649007945,
+    "crossK_c3": 0.26430233402271125,
+    "random": 0.006724439574717521,
+    "Kown_c0": 0.5214214179791817,
+    "reverse_c0": 0.15057958892195486,
+    "Kown_c3": 0.5091090143317486,
+    "reverse_c3": 0.2541239218501449
+   },
+   "own": 0.5958541403965429,
+   "crossO": 0.20508337157301582,
+   "random": 0.006724439574717521,
+   "identity": 0.0,
+   "crossK": {
+    "0": 0.2322417649007945,
+    "3": 0.26430233402271125
+   },
+   "I_K_each": {
+    "0": 0.3897627777600687,
+    "3": 0.44356884697791504
+   },
+   "I_O": 0.3441838491489413,
+   "I_K": 0.41666581236899186,
+   "d": -0.07248196322005057,
+   "o_gt_k": false,
+   "Kown": {
+    "0": 0.5214214179791817,
+    "3": 0.5091090143317486
+   },
+   "Kown_mean": 0.5152652161554652,
+   "reverse": {
+    "0": 0.15057958892195486,
+    "3": 0.2541239218501449
+   },
+   "reverse_mean": 0.20235175538604988,
+   "rev_ratio": 0.3939704863090775,
+   "sibling": {
+    "0": false,
+    "3": true
+   },
+   "d_sib": -0.09938499782897375,
+   "d_non": -0.04557892861112739,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L12N5641+__c2",
+   "live": true
+  },
+  {
+   "job": "L12N5641+:c3",
+   "pole": "L12N5641+",
+   "neuron": "L12N5641",
+   "set": "primary",
+   "layer": 12,
+   "c": 3,
+   "o_star": 5,
+   "K": [
+    0,
+    2
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.5091090143317486,
+    "crossO": 0.09102521643068122,
+    "crossK_c0": 0.10817927681371133,
+    "crossK_c2": 0.2541239218501449,
+    "random": 0.014235111325400722,
+    "Kown_c0": 0.5214214179791817,
+    "reverse_c0": 0.17287026569400052,
+    "Kown_c2": 0.5958541403965429,
+    "reverse_c2": 0.26430233402271125
+   },
+   "own": 0.5091090143317486,
+   "crossO": 0.09102521643068122,
+   "random": 0.014235111325400722,
+   "identity": 0.0,
+   "crossK": {
+    "0": 0.10817927681371133,
+    "2": 0.2541239218501449
+   },
+   "I_K_each": {
+    "0": 0.2124874511517074,
+    "2": 0.49915423749411586
+   },
+   "I_O": 0.17879317369809294,
+   "I_K": 0.3558208443229116,
+   "d": -0.17702767062481867,
+   "o_gt_k": false,
+   "Kown": {
+    "0": 0.5214214179791817,
+    "2": 0.5958541403965429
+   },
+   "Kown_mean": 0.5586377791878623,
+   "reverse": {
+    "0": 0.17287026569400052,
+    "2": 0.26430233402271125
+   },
+   "reverse_mean": 0.21858629985835587,
+   "rev_ratio": 0.3875527058544726,
+   "sibling": {
+    "0": false,
+    "2": true
+   },
+   "d_sib": -0.3203610637960229,
+   "d_non": -0.033694277453614446,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L12N5641+__c3",
+   "live": true
+  },
+  {
+   "job": "L12N5641-:c0",
+   "pole": "L12N5641-",
+   "neuron": "L12N5641",
+   "set": "primary",
+   "layer": 12,
+   "c": 0,
+   "o_star": 1,
+   "K": [
+    2
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.6477252846523481,
+    "crossO": -0.01155328492727589,
+    "crossK_c2": -0.006516660686975887,
+    "random": -0.001182517141830677,
+    "Kown_c2": 0.7941794707850802,
+    "reverse_c2": 0.060219163592692596
+   },
+   "own": 0.6477252846523481,
+   "crossO": -0.01155328492727589,
+   "random": -0.001182517141830677,
+   "identity": 0.0,
+   "crossK": {
+    "2": -0.006516660686975887
+   },
+   "I_K_each": {
+    "2": -0.010060840361471387
+   },
+   "I_O": -0.017836705160393505,
+   "I_K": -0.010060840361471387,
+   "d": -0.007775864798922118,
+   "o_gt_k": false,
+   "Kown": {
+    "2": 0.7941794707850802
+   },
+   "Kown_mean": 0.7941794707850802,
+   "reverse": {
+    "2": 0.060219163592692596
+   },
+   "reverse_mean": 0.060219163592692596,
+   "rev_ratio": 0.07582563615395824,
+   "sibling": {
+    "2": true
+   },
+   "d_sib": -0.007775864798922118,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 11,
+   "key": "L12N5641-__c0",
+   "live": true
+  },
+  {
+   "job": "L12N5641-:c2",
+   "pole": "L12N5641-",
+   "neuron": "L12N5641",
+   "set": "primary",
+   "layer": 12,
+   "c": 2,
+   "o_star": 1,
+   "K": [
+    0
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.7941794707850802,
+    "crossO": -0.017204139127827985,
+    "crossK_c0": 0.060219163592692596,
+    "random": -0.004382164101730019,
+    "Kown_c0": 0.6477252846523481,
+    "reverse_c0": -0.006516660686975887
+   },
+   "own": 0.7941794707850802,
+   "crossO": -0.017204139127827985,
+   "random": -0.004382164101730019,
+   "identity": 0.0,
+   "crossK": {
+    "0": 0.060219163592692596
+   },
+   "I_K_each": {
+    "0": 0.07582563615395824
+   },
+   "I_O": -0.021662785001003566,
+   "I_K": 0.07582563615395824,
+   "d": -0.0974884211549618,
+   "o_gt_k": false,
+   "Kown": {
+    "0": 0.6477252846523481
+   },
+   "Kown_mean": 0.6477252846523481,
+   "reverse": {
+    "0": -0.006516660686975887
+   },
+   "reverse_mean": -0.006516660686975887,
+   "rev_ratio": -0.010060840361471387,
+   "sibling": {
+    "0": true
+   },
+   "d_sib": -0.0974884211549618,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 10,
+   "key": "L12N5641-__c2",
+   "live": true
+  },
+  {
+   "job": "L16N10459+:c1",
+   "pole": "L16N10459+",
+   "neuron": "L16N10459",
+   "set": "primary",
+   "layer": 16,
+   "c": 1,
+   "o_star": 0,
+   "K": [
+    3
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.38056319642087705,
+    "crossO": 0.0016807432083450818,
+    "crossK_c3": 0.008945290864151256,
+    "random": 0.006320227684250527,
+    "Kown_c3": 0.9981587490808086,
+    "reverse_c3": -0.010268333291549607
+   },
+   "own": 0.38056319642087705,
+   "crossO": 0.0016807432083450818,
+   "random": 0.006320227684250527,
+   "identity": 0.0,
+   "crossK": {
+    "3": 0.008945290864151256
+   },
+   "I_K_each": {
+    "3": 0.023505401857772844
+   },
+   "I_O": 0.00441646282181815,
+   "I_K": 0.023505401857772844,
+   "d": -0.019088939035954693,
+   "o_gt_k": false,
+   "Kown": {
+    "3": 0.9981587490808086
+   },
+   "Kown_mean": 0.9981587490808086,
+   "reverse": {
+    "3": -0.010268333291549607
+   },
+   "reverse_mean": -0.010268333291549607,
+   "rev_ratio": -0.010287274745630974,
+   "sibling": {
+    "3": true
+   },
+   "d_sib": -0.019088939035954693,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 9,
+   "key": "L16N10459+__c1",
+   "live": true
+  },
+  {
+   "job": "L16N10459+:c3",
+   "pole": "L16N10459+",
+   "neuron": "L16N10459",
+   "set": "primary",
+   "layer": 16,
+   "c": 3,
+   "o_star": 0,
+   "K": [
+    1
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.9981587490808086,
+    "crossO": 0.015472288020212352,
+    "crossK_c1": -0.010268333291549607,
+    "random": -0.012331289435874764,
+    "Kown_c1": 0.38056319642087705,
+    "reverse_c1": 0.008945290864151256
+   },
+   "own": 0.9981587490808086,
+   "crossO": 0.015472288020212352,
+   "random": -0.012331289435874764,
+   "identity": 0.0,
+   "crossK": {
+    "1": -0.010268333291549607
+   },
+   "I_K_each": {
+    "1": -0.010287274745630974
+   },
+   "I_O": 0.015500828935738509,
+   "I_K": -0.010287274745630974,
+   "d": 0.02578810368136948,
+   "o_gt_k": true,
+   "Kown": {
+    "1": 0.38056319642087705
+   },
+   "Kown_mean": 0.38056319642087705,
+   "reverse": {
+    "1": 0.008945290864151256
+   },
+   "reverse_mean": 0.008945290864151256,
+   "rev_ratio": 0.023505401857772844,
+   "sibling": {
+    "1": true
+   },
+   "d_sib": 0.02578810368136948,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L16N10459+__c3",
+   "live": true
+  },
+  {
+   "job": "L18N2982-:c2",
+   "pole": "L18N2982-",
+   "neuron": "L18N2982",
+   "set": "primary",
+   "layer": 18,
+   "c": 2,
+   "o_star": 1,
+   "K": [
+    3
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.39204123780671624,
+    "crossO": 0.09363324952861549,
+    "crossK_c3": 0.10293235027797977,
+    "random": 0.0408735787497339,
+    "Kown_c3": 0.34811314543405075,
+    "reverse_c3": 0.08201789472697872
+   },
+   "own": 0.39204123780671624,
+   "crossO": 0.09363324952861549,
+   "random": 0.0408735787497339,
+   "identity": 0.0,
+   "crossK": {
+    "3": 0.10293235027797977
+   },
+   "I_K_each": {
+    "3": 0.26255490584061303
+   },
+   "I_O": 0.2388352053280131,
+   "I_K": 0.26255490584061303,
+   "d": -0.023719700512599917,
+   "o_gt_k": false,
+   "Kown": {
+    "3": 0.34811314543405075
+   },
+   "Kown_mean": 0.34811314543405075,
+   "reverse": {
+    "3": 0.08201789472697872
+   },
+   "reverse_mean": 0.08201789472697872,
+   "rev_ratio": 0.23560700250119346,
+   "sibling": {
+    "3": false
+   },
+   "d_sib": null,
+   "d_non": -0.023719700512599917,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 11,
+   "key": "L18N2982-__c2",
+   "live": true
+  },
+  {
+   "job": "L18N2982-:c3",
+   "pole": "L18N2982-",
+   "neuron": "L18N2982",
+   "set": "primary",
+   "layer": 18,
+   "c": 3,
+   "o_star": 2,
+   "K": [
+    1
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.34811314543405075,
+    "crossO": 0.08201789472697872,
+    "crossK_c1": 0.12991005237849704,
+    "random": 0.004506080934322331,
+    "Kown_c1": 0.4780938470045171,
+    "reverse_c1": 0.16307194838250488
+   },
+   "own": 0.34811314543405075,
+   "crossO": 0.08201789472697872,
+   "random": 0.004506080934322331,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.12991005237849704
+   },
+   "I_K_each": {
+    "1": 0.37318341488229784
+   },
+   "I_O": 0.23560700250119346,
+   "I_K": 0.37318341488229784,
+   "d": -0.13757641238110438,
+   "o_gt_k": false,
+   "Kown": {
+    "1": 0.4780938470045171
+   },
+   "Kown_mean": 0.4780938470045171,
+   "reverse": {
+    "1": 0.16307194838250488
+   },
+   "reverse_mean": 0.16307194838250488,
+   "rev_ratio": 0.34108773707134565,
+   "sibling": {
+    "1": false
+   },
+   "d_sib": null,
+   "d_non": -0.13757641238110438,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 9,
+   "key": "L18N2982-__c3",
+   "live": true
+  },
+  {
+   "job": "L18N6315+:c1",
+   "pole": "L18N6315+",
+   "neuron": "L18N6315",
+   "set": "primary",
+   "layer": 18,
+   "c": 1,
+   "o_star": 2,
+   "K": [
+    4
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.5128103455368355,
+    "crossO": 0.0353681001032243,
+    "crossK_c4": 0.02352073657709183,
+    "random": 0.0026911757803733476,
+    "Kown_c4": 0.3424671314311226,
+    "reverse_c4": 0.07981421561958844
+   },
+   "own": 0.5128103455368355,
+   "crossO": 0.0353681001032243,
+   "random": 0.0026911757803733476,
+   "identity": 0.0,
+   "crossK": {
+    "4": 0.02352073657709183
+   },
+   "I_K_each": {
+    "4": 0.04586634568081724
+   },
+   "I_O": 0.06896916259791756,
+   "I_K": 0.04586634568081724,
+   "d": 0.023102816917100324,
+   "o_gt_k": true,
+   "Kown": {
+    "4": 0.3424671314311226
+   },
+   "Kown_mean": 0.3424671314311226,
+   "reverse": {
+    "4": 0.07981421561958844
+   },
+   "reverse_mean": 0.07981421561958844,
+   "rev_ratio": 0.23305657184108708,
+   "sibling": {
+    "4": true
+   },
+   "d_sib": 0.023102816917100324,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 6,
+   "key": "L18N6315+__c1",
+   "live": true
+  },
+  {
+   "job": "L18N6315+:c2",
+   "pole": "L18N6315+",
+   "neuron": "L18N6315",
+   "set": "primary",
+   "layer": 18,
+   "c": 2,
+   "o_star": 4,
+   "K": [
+    1
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.4546519431568947,
+    "crossO": 0.08083853577112236,
+    "crossK_c1": 0.029446622802403264,
+    "random": 0.009500585123312045,
+    "Kown_c1": 0.5128103455368355,
+    "reverse_c1": 0.0353681001032243
+   },
+   "own": 0.4546519431568947,
+   "crossO": 0.08083853577112236,
+   "random": 0.009500585123312045,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.029446622802403264
+   },
+   "I_K_each": {
+    "1": 0.06476739678695621
+   },
+   "I_O": 0.17780312387937158,
+   "I_K": 0.06476739678695621,
+   "d": 0.11303572709241537,
+   "o_gt_k": true,
+   "Kown": {
+    "1": 0.5128103455368355
+   },
+   "Kown_mean": 0.5128103455368355,
+   "reverse": {
+    "1": 0.0353681001032243
+   },
+   "reverse_mean": 0.0353681001032243,
+   "rev_ratio": 0.06896916259791756,
+   "sibling": {
+    "1": false
+   },
+   "d_sib": null,
+   "d_non": 0.11303572709241537,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 11,
+   "key": "L18N6315+__c2",
+   "live": true
+  },
+  {
+   "job": "L18N6315+:c4",
+   "pole": "L18N6315+",
+   "neuron": "L18N6315",
+   "set": "primary",
+   "layer": 18,
+   "c": 4,
+   "o_star": 2,
+   "K": [
+    1
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.3424671314311226,
+    "crossO": 0.07587244122658979,
+    "crossK_c1": 0.07981421561958844,
+    "random": -0.005055887088541467,
+    "Kown_c1": 0.5128103455368355,
+    "reverse_c1": 0.02352073657709183
+   },
+   "own": 0.3424671314311226,
+   "crossO": 0.07587244122658979,
+   "random": -0.005055887088541467,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.07981421561958844
+   },
+   "I_K_each": {
+    "1": 0.23305657184108708
+   },
+   "I_O": 0.22154663692696402,
+   "I_K": 0.23305657184108708,
+   "d": -0.011509934914123054,
+   "o_gt_k": false,
+   "Kown": {
+    "1": 0.5128103455368355
+   },
+   "Kown_mean": 0.5128103455368355,
+   "reverse": {
+    "1": 0.02352073657709183
+   },
+   "reverse_mean": 0.02352073657709183,
+   "rev_ratio": 0.04586634568081724,
+   "sibling": {
+    "1": true
+   },
+   "d_sib": -0.011509934914123054,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 7,
+   "key": "L18N6315+__c4",
+   "live": true
+  },
+  {
+   "job": "L18N8102+:c2",
+   "pole": "L18N8102+",
+   "neuron": "L18N8102",
+   "set": "primary",
+   "layer": 18,
+   "c": 2,
+   "o_star": 0,
+   "K": [
+    3,
+    4
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.2735459841185161,
+    "crossO": 0.028190093079655865,
+    "crossK_c3": 0.03343528504686702,
+    "crossK_c4": 0.005129274526335416,
+    "random": 0.021110998186007722,
+    "Kown_c3": 0.4356986820710133,
+    "reverse_c3": 0.0012148880717407584,
+    "Kown_c4": 0.30189510610861353,
+    "reverse_c4": 0.02171923159703721
+   },
+   "own": 0.2735459841185161,
+   "crossO": 0.028190093079655865,
+   "random": 0.021110998186007722,
+   "identity": 0.0,
+   "crossK": {
+    "3": 0.03343528504686702,
+    "4": 0.005129274526335416
+   },
+   "I_K_each": {
+    "3": 0.12222912046985453,
+    "4": 0.01875105036860316
+   },
+   "I_O": 0.10305431158310213,
+   "I_K": 0.07049008541922884,
+   "d": 0.03256422616387329,
+   "o_gt_k": true,
+   "Kown": {
+    "3": 0.4356986820710133,
+    "4": 0.30189510610861353
+   },
+   "Kown_mean": 0.3687968940898134,
+   "reverse": {
+    "3": 0.0012148880717407584,
+    "4": 0.02171923159703721
+   },
+   "reverse_mean": 0.011467059834388985,
+   "rev_ratio": 0.03736567049519298,
+   "sibling": {
+    "3": false,
+    "4": false
+   },
+   "d_sib": null,
+   "d_non": 0.03256422616387329,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 10,
+   "key": "L18N8102+__c2",
+   "live": true
+  },
+  {
+   "job": "L18N8102+:c4",
+   "pole": "L18N8102+",
+   "neuron": "L18N8102",
+   "set": "primary",
+   "layer": 18,
+   "c": 4,
+   "o_star": 3,
+   "K": [
+    0,
+    2
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.30189510610861353,
+    "crossO": 0.00820503316136771,
+    "crossK_c0": -0.010672437780166851,
+    "crossK_c2": 0.02171923159703721,
+    "random": 0.03362228451427424,
+    "Kown_c0": 0.3292223036786737,
+    "reverse_c0": 0.07002762454871204,
+    "Kown_c2": 0.2735459841185161,
+    "reverse_c2": 0.005129274526335416
+   },
+   "own": 0.30189510610861353,
+   "crossO": 0.00820503316136771,
+   "random": 0.03362228451427424,
+   "identity": 0.0,
+   "crossK": {
+    "0": -0.010672437780166851,
+    "2": 0.02171923159703721
+   },
+   "I_K_each": {
+    "0": -0.03535147660302649,
+    "2": 0.0719429734287353
+   },
+   "I_O": 0.027178423880828875,
+   "I_K": 0.018295748412854407,
+   "d": 0.008882675467974468,
+   "o_gt_k": true,
+   "Kown": {
+    "0": 0.3292223036786737,
+    "2": 0.2735459841185161
+   },
+   "Kown_mean": 0.3013841438985949,
+   "reverse": {
+    "0": 0.07002762454871204,
+    "2": 0.005129274526335416
+   },
+   "reverse_mean": 0.037578449537523734,
+   "rev_ratio": 0.11572862423961366,
+   "sibling": {
+    "0": false,
+    "2": false
+   },
+   "d_sib": null,
+   "d_non": 0.008882675467974468,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 7,
+   "key": "L18N8102+__c4",
+   "live": true
+  },
+  {
+   "job": "L21N7258-:c2",
+   "pole": "L21N7258-",
+   "neuron": "L21N7258",
+   "set": "primary",
+   "layer": 21,
+   "c": 2,
+   "o_star": 0,
+   "K": [
+    4
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.5094195248256849,
+    "crossO": 0.1726925513078101,
+    "crossK_c4": 0.07595141705278793,
+    "random": -0.0038905183674328276,
+    "Kown_c4": 0.8389275577308295,
+    "reverse_c4": 0.06312775035012685
+   },
+   "own": 0.5094195248256849,
+   "crossO": 0.1726925513078101,
+   "random": -0.0038905183674328276,
+   "identity": 0.0,
+   "crossK": {
+    "4": 0.07595141705278793
+   },
+   "I_K_each": {
+    "4": 0.1490940440077896
+   },
+   "I_O": 0.33899868947289113,
+   "I_K": 0.1490940440077896,
+   "d": 0.18990464546510152,
+   "o_gt_k": true,
+   "Kown": {
+    "4": 0.8389275577308295
+   },
+   "Kown_mean": 0.8389275577308295,
+   "reverse": {
+    "4": 0.06312775035012685
+   },
+   "reverse_mean": 0.06312775035012685,
+   "rev_ratio": 0.07524815434705441,
+   "sibling": {
+    "4": false
+   },
+   "d_sib": null,
+   "d_non": 0.18990464546510152,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 9,
+   "key": "L21N7258-__c2",
+   "live": true
+  },
+  {
+   "job": "L21N7258-:c4",
+   "pole": "L21N7258-",
+   "neuron": "L21N7258",
+   "set": "primary",
+   "layer": 21,
+   "c": 4,
+   "o_star": 2,
+   "K": [
+    0
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.8389275577308295,
+    "crossO": 0.06312775035012685,
+    "crossK_c0": 0.08510411193718725,
+    "random": -0.006218070045453147,
+    "Kown_c0": 0.4137155096325371,
+    "reverse_c0": 0.1092389969739138
+   },
+   "own": 0.8389275577308295,
+   "crossO": 0.06312775035012685,
+   "random": -0.006218070045453147,
+   "identity": 0.0,
+   "crossK": {
+    "0": 0.08510411193718725
+   },
+   "I_K_each": {
+    "0": 0.1014439341668318
+   },
+   "I_O": 0.07524815434705441,
+   "I_K": 0.1014439341668318,
+   "d": -0.026195779819777387,
+   "o_gt_k": false,
+   "Kown": {
+    "0": 0.4137155096325371
+   },
+   "Kown_mean": 0.4137155096325371,
+   "reverse": {
+    "0": 0.1092389969739138
+   },
+   "reverse_mean": 0.1092389969739138,
+   "rev_ratio": 0.2640437557464067,
+   "sibling": {
+    "0": false
+   },
+   "d_sib": null,
+   "d_non": -0.026195779819777387,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 6,
+   "key": "L21N7258-__c4",
+   "live": true
+  },
+  {
+   "job": "L22N10231+:c0",
+   "pole": "L22N10231+",
+   "neuron": "L22N10231",
+   "set": "primary",
+   "layer": 22,
+   "c": 0,
+   "o_star": 2,
+   "K": [
+    1
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.48816891615090735,
+    "crossO": -0.024711479318529572,
+    "crossK_c1": 0.09125044140589988,
+    "random": -0.04034858436164442,
+    "Kown_c1": 0.6594497265500358,
+    "reverse_c1": 0.12261063651342573
+   },
+   "own": 0.48816891615090735,
+   "crossO": -0.024711479318529572,
+   "random": -0.04034858436164442,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.09125044140589988
+   },
+   "I_K_each": {
+    "1": 0.1869239076616908
+   },
+   "I_O": -0.0506207554413205,
+   "I_K": 0.1869239076616908,
+   "d": -0.2375446631030113,
+   "o_gt_k": false,
+   "Kown": {
+    "1": 0.6594497265500358
+   },
+   "Kown_mean": 0.6594497265500358,
+   "reverse": {
+    "1": 0.12261063651342573
+   },
+   "reverse_mean": 0.12261063651342573,
+   "rev_ratio": 0.18592870931173652,
+   "sibling": {
+    "1": true
+   },
+   "d_sib": -0.2375446631030113,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L22N10231+__c0",
+   "live": true
+  },
+  {
+   "job": "L22N10231+:c1",
+   "pole": "L22N10231+",
+   "neuron": "L22N10231",
+   "set": "primary",
+   "layer": 22,
+   "c": 1,
+   "o_star": 2,
+   "K": [
+    0
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.6594497265500358,
+    "crossO": 0.052010381799434645,
+    "crossK_c0": 0.12261063651342573,
+    "random": 0.019456834832223973,
+    "Kown_c0": 0.48816891615090735,
+    "reverse_c0": 0.09125044140589988
+   },
+   "own": 0.6594497265500358,
+   "crossO": 0.052010381799434645,
+   "random": 0.019456834832223973,
+   "identity": 0.0,
+   "crossK": {
+    "0": 0.12261063651342573
+   },
+   "I_K_each": {
+    "0": 0.18592870931173652
+   },
+   "I_O": 0.07886936593564325,
+   "I_K": 0.18592870931173652,
+   "d": -0.10705934337609327,
+   "o_gt_k": false,
+   "Kown": {
+    "0": 0.48816891615090735
+   },
+   "Kown_mean": 0.48816891615090735,
+   "reverse": {
+    "0": 0.09125044140589988
+   },
+   "reverse_mean": 0.09125044140589988,
+   "rev_ratio": 0.1869239076616908,
+   "sibling": {
+    "0": true
+   },
+   "d_sib": -0.10705934337609327,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L22N10231+__c1",
+   "live": true
+  },
+  {
+   "job": "L22N10231+:c2",
+   "pole": "L22N10231+",
+   "neuron": "L22N10231",
+   "set": "primary",
+   "layer": 22,
+   "c": 2,
+   "o_star": 0,
+   "K": [
+    1
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.4902656727546293,
+    "crossO": 0.045875692880146514,
+    "crossK_c1": 0.012970829516847691,
+    "random": 0.021016787969901262,
+    "Kown_c1": 0.6594497265500358,
+    "reverse_c1": 0.052010381799434645
+   },
+   "own": 0.4902656727546293,
+   "crossO": 0.045875692880146514,
+   "random": 0.021016787969901262,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.012970829516847691
+   },
+   "I_K_each": {
+    "1": 0.026456736087536358
+   },
+   "I_O": 0.0935731286720264,
+   "I_K": 0.026456736087536358,
+   "d": 0.06711639258449004,
+   "o_gt_k": true,
+   "Kown": {
+    "1": 0.6594497265500358
+   },
+   "Kown_mean": 0.6594497265500358,
+   "reverse": {
+    "1": 0.052010381799434645
+   },
+   "reverse_mean": 0.052010381799434645,
+   "rev_ratio": 0.07886936593564325,
+   "sibling": {
+    "1": false
+   },
+   "d_sib": null,
+   "d_non": 0.06711639258449004,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 6,
+   "key": "L22N10231+__c2",
+   "live": true
+  },
+  {
+   "job": "L22N8185-:c1",
+   "pole": "L22N8185-",
+   "neuron": "L22N8185",
+   "set": "primary",
+   "layer": 22,
+   "c": 1,
+   "o_star": 0,
+   "K": [
+    3
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.5404350486415657,
+    "crossO": 0.01861607762915218,
+    "crossK_c3": 0.07950438066815499,
+    "random": 0.007924134347595238,
+    "Kown_c3": 0.8151859452457693,
+    "reverse_c3": 0.05455444111925017
+   },
+   "own": 0.5404350486415657,
+   "crossO": 0.01861607762915218,
+   "random": 0.007924134347595238,
+   "identity": 0.0,
+   "crossK": {
+    "3": 0.07950438066815499
+   },
+   "I_K_each": {
+    "3": 0.14711181457974778
+   },
+   "I_O": 0.0344464661867239,
+   "I_K": 0.14711181457974778,
+   "d": -0.11266534839302389,
+   "o_gt_k": false,
+   "Kown": {
+    "3": 0.8151859452457693
+   },
+   "Kown_mean": 0.8151859452457693,
+   "reverse": {
+    "3": 0.05455444111925017
+   },
+   "reverse_mean": 0.05455444111925017,
+   "rev_ratio": 0.06692269590443273,
+   "sibling": {
+    "3": true
+   },
+   "d_sib": -0.11266534839302389,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L22N8185-__c1",
+   "live": true
+  },
+  {
+   "job": "L22N8185-:c3",
+   "pole": "L22N8185-",
+   "neuron": "L22N8185",
+   "set": "primary",
+   "layer": 22,
+   "c": 3,
+   "o_star": 0,
+   "K": [
+    1
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.8151859452457693,
+    "crossO": 0.13859693617451535,
+    "crossK_c1": 0.05455444111925017,
+    "random": 0.049502636371680134,
+    "Kown_c1": 0.5404350486415657,
+    "reverse_c1": 0.07950438066815499
+   },
+   "own": 0.8151859452457693,
+   "crossO": 0.13859693617451535,
+   "random": 0.049502636371680134,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.05455444111925017
+   },
+   "I_K_each": {
+    "1": 0.06692269590443273
+   },
+   "I_O": 0.1700187999840085,
+   "I_K": 0.06692269590443273,
+   "d": 0.10309610407957578,
+   "o_gt_k": true,
+   "Kown": {
+    "1": 0.5404350486415657
+   },
+   "Kown_mean": 0.5404350486415657,
+   "reverse": {
+    "1": 0.07950438066815499
+   },
+   "reverse_mean": 0.07950438066815499,
+   "rev_ratio": 0.14711181457974778,
+   "sibling": {
+    "1": true
+   },
+   "d_sib": 0.10309610407957578,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 11,
+   "key": "L22N8185-__c3",
+   "live": true
+  },
+  {
+   "job": "L23N10179+:c2",
+   "pole": "L23N10179+",
+   "neuron": "L23N10179",
+   "set": "primary",
+   "layer": 23,
+   "c": 2,
+   "o_star": 4,
+   "K": [
+    3
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.6796286515359041,
+    "crossO": 0.16411378880697328,
+    "crossK_c3": 0.2743559317027951,
+    "random": 0.10361735711213559,
+    "Kown_c3": 0.46273981989346813,
+    "reverse_c3": 0.202055019449889
+   },
+   "own": 0.6796286515359041,
+   "crossO": 0.16411378880697328,
+   "random": 0.10361735711213559,
+   "identity": 0.0,
+   "crossK": {
+    "3": 0.2743559317027951
+   },
+   "I_K_each": {
+    "3": 0.4036850581310449
+   },
+   "I_O": 0.24147567710114898,
+   "I_K": 0.4036850581310449,
+   "d": -0.1622093810298959,
+   "o_gt_k": false,
+   "Kown": {
+    "3": 0.46273981989346813
+   },
+   "Kown_mean": 0.46273981989346813,
+   "reverse": {
+    "3": 0.202055019449889
+   },
+   "reverse_mean": 0.202055019449889,
+   "rev_ratio": 0.43664930218541825,
+   "sibling": {
+    "3": false
+   },
+   "d_sib": null,
+   "d_non": -0.1622093810298959,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L23N10179+__c2",
+   "live": true
+  },
+  {
+   "job": "L23N10179+:c3",
+   "pole": "L23N10179+",
+   "neuron": "L23N10179",
+   "set": "primary",
+   "layer": 23,
+   "c": 3,
+   "o_star": 2,
+   "K": [
+    4
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.46273981989346813,
+    "crossO": 0.202055019449889,
+    "crossK_c4": 0.11041601324169305,
+    "random": 0.029391841266808355,
+    "Kown_c4": 0.47157319557023275,
+    "reverse_c4": 0.08814539592662889
+   },
+   "own": 0.46273981989346813,
+   "crossO": 0.202055019449889,
+   "random": 0.029391841266808355,
+   "identity": 0.0,
+   "crossK": {
+    "4": 0.11041601324169305
+   },
+   "I_K_each": {
+    "4": 0.2386135977386018
+   },
+   "I_O": 0.43664930218541825,
+   "I_K": 0.2386135977386018,
+   "d": 0.19803570444681645,
+   "o_gt_k": true,
+   "Kown": {
+    "4": 0.47157319557023275
+   },
+   "Kown_mean": 0.47157319557023275,
+   "reverse": {
+    "4": 0.08814539592662889
+   },
+   "reverse_mean": 0.08814539592662889,
+   "rev_ratio": 0.18691773992803443,
+   "sibling": {
+    "4": false
+   },
+   "d_sib": null,
+   "d_non": 0.19803570444681645,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 7,
+   "key": "L23N10179+__c3",
+   "live": true
+  },
+  {
+   "job": "L23N1430+:c0",
+   "pole": "L23N1430+",
+   "neuron": "L23N1430",
+   "set": "primary",
+   "layer": 23,
+   "c": 0,
+   "o_star": 3,
+   "K": [
+    2
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.8667197042838266,
+    "crossO": 0.19717465347293409,
+    "crossK_c2": 0.06195397132450401,
+    "random": 0.02554924074660004,
+    "Kown_c2": 0.5132176540536844,
+    "reverse_c2": -0.015229201256401387
+   },
+   "own": 0.8667197042838266,
+   "crossO": 0.19717465347293409,
+   "random": 0.02554924074660004,
+   "identity": 0.0,
+   "crossK": {
+    "2": 0.06195397132450401
+   },
+   "I_K_each": {
+    "2": 0.07148097708900801
+   },
+   "I_O": 0.22749529345921604,
+   "I_K": 0.07148097708900801,
+   "d": 0.15601431637020802,
+   "o_gt_k": true,
+   "Kown": {
+    "2": 0.5132176540536844
+   },
+   "Kown_mean": 0.5132176540536844,
+   "reverse": {
+    "2": -0.015229201256401387
+   },
+   "reverse_mean": -0.015229201256401387,
+   "rev_ratio": -0.02967396217981301,
+   "sibling": {
+    "2": true
+   },
+   "d_sib": 0.15601431637020802,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 10,
+   "key": "L23N1430+__c0",
+   "live": true
+  },
+  {
+   "job": "L23N1430+:c2",
+   "pole": "L23N1430+",
+   "neuron": "L23N1430",
+   "set": "primary",
+   "layer": 23,
+   "c": 2,
+   "o_star": 3,
+   "K": [
+    0
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.5132176540536844,
+    "crossO": 0.10111476339859404,
+    "crossK_c0": -0.015229201256401387,
+    "random": 0.023334156924078128,
+    "Kown_c0": 0.8667197042838266,
+    "reverse_c0": 0.06195397132450401
+   },
+   "own": 0.5132176540536844,
+   "crossO": 0.10111476339859404,
+   "random": 0.023334156924078128,
+   "identity": 0.0,
+   "crossK": {
+    "0": -0.015229201256401387
+   },
+   "I_K_each": {
+    "0": -0.02967396217981301
+   },
+   "I_O": 0.1970212103966655,
+   "I_K": -0.02967396217981301,
+   "d": 0.22669517257647853,
+   "o_gt_k": true,
+   "Kown": {
+    "0": 0.8667197042838266
+   },
+   "Kown_mean": 0.8667197042838266,
+   "reverse": {
+    "0": 0.06195397132450401
+   },
+   "reverse_mean": 0.06195397132450401,
+   "rev_ratio": 0.07148097708900801,
+   "sibling": {
+    "0": true
+   },
+   "d_sib": 0.22669517257647853,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 10,
+   "key": "L23N1430+__c2",
+   "live": true
+  },
+  {
+   "job": "L25N5377+:c0",
+   "pole": "L25N5377+",
+   "neuron": "L25N5377",
+   "set": "primary",
+   "layer": 25,
+   "c": 0,
+   "o_star": 2,
+   "K": [
+    1
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.5019711970530693,
+    "crossO": 0.4040899154847515,
+    "crossK_c1": 0.20730973619927826,
+    "random": 0.04845470163455315,
+    "Kown_c1": 0.6053655105435077,
+    "reverse_c1": 0.24434909504008126
+   },
+   "own": 0.5019711970530693,
+   "crossO": 0.4040899154847515,
+   "random": 0.04845470163455315,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.20730973619927826
+   },
+   "I_K_each": {
+    "1": 0.41299129793967265
+   },
+   "I_O": 0.8050061793526181,
+   "I_K": 0.41299129793967265,
+   "d": 0.39201488141294544,
+   "o_gt_k": true,
+   "Kown": {
+    "1": 0.6053655105435077
+   },
+   "Kown_mean": 0.6053655105435077,
+   "reverse": {
+    "1": 0.24434909504008126
+   },
+   "reverse_mean": 0.24434909504008126,
+   "rev_ratio": 0.40363894338925976,
+   "sibling": {
+    "1": false
+   },
+   "d_sib": null,
+   "d_non": 0.39201488141294544,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L25N5377+__c0",
+   "live": true
+  },
+  {
+   "job": "L25N5377+:c1",
+   "pole": "L25N5377+",
+   "neuron": "L25N5377",
+   "set": "primary",
+   "layer": 25,
+   "c": 1,
+   "o_star": 0,
+   "K": [
+    2
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.6053655105435077,
+    "crossO": 0.24434909504008126,
+    "crossK_c2": 0.3148748745836584,
+    "random": 0.01191784543927499,
+    "Kown_c2": 0.6368325320299907,
+    "reverse_c2": 0.2610386496518517
+   },
+   "own": 0.6053655105435077,
+   "crossO": 0.24434909504008126,
+   "random": 0.01191784543927499,
+   "identity": 0.0,
+   "crossK": {
+    "2": 0.3148748745836584
+   },
+   "I_K_each": {
+    "2": 0.5201400956935228
+   },
+   "I_O": 0.40363894338925976,
+   "I_K": 0.5201400956935228,
+   "d": -0.11650115230426306,
+   "o_gt_k": false,
+   "Kown": {
+    "2": 0.6368325320299907
+   },
+   "Kown_mean": 0.6368325320299907,
+   "reverse": {
+    "2": 0.2610386496518517
+   },
+   "reverse_mean": 0.2610386496518517,
+   "rev_ratio": 0.4099015620633502,
+   "sibling": {
+    "2": false
+   },
+   "d_sib": null,
+   "d_non": -0.11650115230426306,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L25N5377+__c1",
+   "live": true
+  },
+  {
+   "job": "L25N5749+:c0",
+   "pole": "L25N5749+",
+   "neuron": "L25N5749",
+   "set": "primary",
+   "layer": 25,
+   "c": 0,
+   "o_star": 3,
+   "K": [
+    1
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.6627697552408118,
+    "crossO": 0.4140890819472595,
+    "crossK_c1": 0.20305125375729763,
+    "random": -0.007441900970343827,
+    "Kown_c1": 0.8767259878474689,
+    "reverse_c1": 0.4143112706776159
+   },
+   "own": 0.6627697552408118,
+   "crossO": 0.4140890819472595,
+   "random": -0.007441900970343827,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.20305125375729763
+   },
+   "I_K_each": {
+    "1": 0.30636771239436034
+   },
+   "I_O": 0.6247857248658001,
+   "I_K": 0.30636771239436034,
+   "d": 0.31841801247143975,
+   "o_gt_k": true,
+   "Kown": {
+    "1": 0.8767259878474689
+   },
+   "Kown_mean": 0.8767259878474689,
+   "reverse": {
+    "1": 0.4143112706776159
+   },
+   "reverse_mean": 0.4143112706776159,
+   "rev_ratio": 0.4725664305843492,
+   "sibling": {
+    "1": false
+   },
+   "d_sib": null,
+   "d_non": 0.31841801247143975,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 10,
+   "key": "L25N5749+__c0",
+   "live": true
+  },
+  {
+   "job": "L25N5749+:c3",
+   "pole": "L25N5749+",
+   "neuron": "L25N5749",
+   "set": "primary",
+   "layer": 25,
+   "c": 3,
+   "o_star": 1,
+   "K": [
+    0
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.5830081878882104,
+    "crossO": 0.2634668676288066,
+    "crossK_c0": 0.2545263348117773,
+    "random": 0.004869049192324744,
+    "Kown_c0": 0.6627697552408118,
+    "reverse_c0": 0.4140890819472595
+   },
+   "own": 0.5830081878882104,
+   "crossO": 0.2634668676288066,
+   "random": 0.004869049192324744,
+   "identity": 0.0,
+   "crossK": {
+    "0": 0.2545263348117773
+   },
+   "I_K_each": {
+    "0": 0.43657420272900477
+   },
+   "I_O": 0.4519093781223625,
+   "I_K": 0.43657420272900477,
+   "d": 0.015335175393357714,
+   "o_gt_k": true,
+   "Kown": {
+    "0": 0.6627697552408118
+   },
+   "Kown_mean": 0.6627697552408118,
+   "reverse": {
+    "0": 0.4140890819472595
+   },
+   "reverse_mean": 0.4140890819472595,
+   "rev_ratio": 0.6247857248658001,
+   "sibling": {
+    "0": false
+   },
+   "d_sib": null,
+   "d_non": 0.015335175393357714,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L25N5749+__c3",
+   "live": true
+  },
+  {
+   "job": "L26N5599+:c0",
+   "pole": "L26N5599+",
+   "neuron": "L26N5599",
+   "set": "primary",
+   "layer": 26,
+   "c": 0,
+   "o_star": 3,
+   "K": [
+    1
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.6196025200666891,
+    "crossO": 0.09468593629624943,
+    "crossK_c1": -0.002103428965752825,
+    "random": 0.041438617987644304,
+    "Kown_c1": 0.48437483663910474,
+    "reverse_c1": 0.06706384556150474
+   },
+   "own": 0.6196025200666891,
+   "crossO": 0.09468593629624943,
+   "random": 0.041438617987644304,
+   "identity": 0.0,
+   "crossK": {
+    "1": -0.002103428965752825
+   },
+   "I_K_each": {
+    "1": -0.003394803761492817
+   },
+   "I_O": 0.15281722270280337,
+   "I_K": -0.003394803761492817,
+   "d": 0.1562120264642962,
+   "o_gt_k": true,
+   "Kown": {
+    "1": 0.48437483663910474
+   },
+   "Kown_mean": 0.48437483663910474,
+   "reverse": {
+    "1": 0.06706384556150474
+   },
+   "reverse_mean": 0.06706384556150474,
+   "rev_ratio": 0.13845443753196512,
+   "sibling": {
+    "1": true
+   },
+   "d_sib": 0.1562120264642962,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L26N5599+__c0",
+   "live": true
+  },
+  {
+   "job": "L26N5599+:c1",
+   "pole": "L26N5599+",
+   "neuron": "L26N5599",
+   "set": "primary",
+   "layer": 26,
+   "c": 1,
+   "o_star": 3,
+   "K": [
+    0
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.48437483663910474,
+    "crossO": 0.11753625939790585,
+    "crossK_c0": 0.06706384556150474,
+    "random": 0.06414718147841246,
+    "Kown_c0": 0.6196025200666891,
+    "reverse_c0": -0.002103428965752825
+   },
+   "own": 0.48437483663910474,
+   "crossO": 0.11753625939790585,
+   "random": 0.06414718147841246,
+   "identity": 0.0,
+   "crossK": {
+    "0": 0.06706384556150474
+   },
+   "I_K_each": {
+    "0": 0.13845443753196512
+   },
+   "I_O": 0.24265558511141053,
+   "I_K": 0.13845443753196512,
+   "d": 0.1042011475794454,
+   "o_gt_k": true,
+   "Kown": {
+    "0": 0.6196025200666891
+   },
+   "Kown_mean": 0.6196025200666891,
+   "reverse": {
+    "0": -0.002103428965752825
+   },
+   "reverse_mean": -0.002103428965752825,
+   "rev_ratio": -0.003394803761492817,
+   "sibling": {
+    "0": true
+   },
+   "d_sib": 0.1042011475794454,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 9,
+   "key": "L26N5599+__c1",
+   "live": true
+  },
+  {
+   "job": "L26N9711+:c2",
+   "pole": "L26N9711+",
+   "neuron": "L26N9711",
+   "set": "primary",
+   "layer": 26,
+   "c": 2,
+   "o_star": 0,
+   "K": [
+    1,
+    3
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.3961109997168941,
+    "crossO": 0.0037371884177092667,
+    "crossK_c1": 0.019927662936546495,
+    "crossK_c3": 0.11476129929675051,
+    "random": 0.018258235774581834,
+    "Kown_c1": 0.40199351500856545,
+    "reverse_c1": 0.11966404919440388,
+    "Kown_c3": 0.4775632129320484,
+    "reverse_c3": 0.10350536013431491
+   },
+   "own": 0.3961109997168941,
+   "crossO": 0.0037371884177092667,
+   "random": 0.018258235774581834,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.019927662936546495,
+    "3": 0.11476129929675051
+   },
+   "I_K_each": {
+    "1": 0.050308279625632876,
+    "3": 0.28972005164908815
+   },
+   "I_O": 0.009434699920931976,
+   "I_K": 0.17001416563736052,
+   "d": -0.16057946571642853,
+   "o_gt_k": false,
+   "Kown": {
+    "1": 0.40199351500856545,
+    "3": 0.4775632129320484
+   },
+   "Kown_mean": 0.4397783639703069,
+   "reverse": {
+    "1": 0.11966404919440388,
+    "3": 0.10350536013431491
+   },
+   "reverse_mean": 0.1115847046643594,
+   "rev_ratio": 0.25720651304915404,
+   "sibling": {
+    "1": false,
+    "3": false
+   },
+   "d_sib": null,
+   "d_non": -0.16057946571642853,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L26N9711+__c2",
+   "live": true
+  },
+  {
+   "job": "L26N9711+:c3",
+   "pole": "L26N9711+",
+   "neuron": "L26N9711",
+   "set": "primary",
+   "layer": 26,
+   "c": 3,
+   "o_star": 1,
+   "K": [
+    0,
+    2
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.4775632129320484,
+    "crossO": 0.0943495393867649,
+    "crossK_c0": 0.001047769173632285,
+    "crossK_c2": 0.10350536013431491,
+    "random": 0.005884126176153299,
+    "Kown_c0": 0.7755396608408656,
+    "reverse_c0": 0.11021182118005085,
+    "Kown_c2": 0.3961109997168941,
+    "reverse_c2": 0.11476129929675051
+   },
+   "own": 0.4775632129320484,
+   "crossO": 0.0943495393867649,
+   "random": 0.005884126176153299,
+   "identity": 0.0,
+   "crossK": {
+    "0": 0.001047769173632285,
+    "2": 0.10350536013431491
+   },
+   "I_K_each": {
+    "0": 0.0021939905446221424,
+    "2": 0.2167364598684918
+   },
+   "I_O": 0.1975645041993419,
+   "I_K": 0.10946522520655697,
+   "d": 0.08809927899278494,
+   "o_gt_k": true,
+   "Kown": {
+    "0": 0.7755396608408656,
+    "2": 0.3961109997168941
+   },
+   "Kown_mean": 0.5858253302788798,
+   "reverse": {
+    "0": 0.11021182118005085,
+    "2": 0.11476129929675051
+   },
+   "reverse_mean": 0.11248656023840067,
+   "rev_ratio": 0.21591494844484926,
+   "sibling": {
+    "0": false,
+    "2": false
+   },
+   "d_sib": null,
+   "d_non": 0.08809927899278494,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 10,
+   "key": "L26N9711+__c3",
+   "live": true
+  },
+  {
+   "job": "L28N1930+:c0",
+   "pole": "L28N1930+",
+   "neuron": "L28N1930",
+   "set": "primary",
+   "layer": 28,
+   "c": 0,
+   "o_star": 3,
+   "K": [
+    5
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.43341478595619837,
+    "crossO": 0.04781128489639369,
+    "crossK_c5": 0.03504691201196961,
+    "random": 0.03441044337003597,
+    "Kown_c5": 0.36736076207169327,
+    "reverse_c5": 0.08169863493225814
+   },
+   "own": 0.43341478595619837,
+   "crossO": 0.04781128489639369,
+   "random": 0.03441044337003597,
+   "identity": 0.0,
+   "crossK": {
+    "5": 0.03504691201196961
+   },
+   "I_K_each": {
+    "5": 0.08086228976856252
+   },
+   "I_O": 0.11031299910756985,
+   "I_K": 0.08086228976856252,
+   "d": 0.029450709339007328,
+   "o_gt_k": true,
+   "Kown": {
+    "5": 0.36736076207169327
+   },
+   "Kown_mean": 0.36736076207169327,
+   "reverse": {
+    "5": 0.08169863493225814
+   },
+   "reverse_mean": 0.08169863493225814,
+   "rev_ratio": 0.22239347085281258,
+   "sibling": {
+    "5": true
+   },
+   "d_sib": 0.029450709339007328,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L28N1930+__c0",
+   "live": true
+  },
+  {
+   "job": "L28N1930+:c5",
+   "pole": "L28N1930+",
+   "neuron": "L28N1930",
+   "set": "primary",
+   "layer": 28,
+   "c": 5,
+   "o_star": 3,
+   "K": [
+    0
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.36736076207169327,
+    "crossO": 0.1222988404209056,
+    "crossK_c0": 0.08169863493225814,
+    "random": 0.028382509496590824,
+    "Kown_c0": 0.43341478595619837,
+    "reverse_c0": 0.03504691201196961
+   },
+   "own": 0.36736076207169327,
+   "crossO": 0.1222988404209056,
+   "random": 0.028382509496590824,
+   "identity": 0.0,
+   "crossK": {
+    "0": 0.08169863493225814
+   },
+   "I_K_each": {
+    "0": 0.22239347085281258
+   },
+   "I_O": 0.3329120936357325,
+   "I_K": 0.22239347085281258,
+   "d": 0.1105186227829199,
+   "o_gt_k": true,
+   "Kown": {
+    "0": 0.43341478595619837
+   },
+   "Kown_mean": 0.43341478595619837,
+   "reverse": {
+    "0": 0.03504691201196961
+   },
+   "reverse_mean": 0.03504691201196961,
+   "rev_ratio": 0.08086228976856252,
+   "sibling": {
+    "0": true
+   },
+   "d_sib": 0.1105186227829199,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L28N1930+__c5",
+   "live": true
+  },
+  {
+   "job": "L31N10791+:c1",
+   "pole": "L31N10791+",
+   "neuron": "L31N10791",
+   "set": "primary",
+   "layer": 31,
+   "c": 1,
+   "o_star": 0,
+   "K": [
+    3
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.452286593707,
+    "crossO": 0.10458775458921425,
+    "crossK_c3": 0.20064444096472242,
+    "random": 0.05374250771513587,
+    "Kown_c3": 0.43955005917517137,
+    "reverse_c3": 0.10827385859620044
+   },
+   "own": 0.452286593707,
+   "crossO": 0.10458775458921425,
+   "random": 0.05374250771513587,
+   "identity": 0.0,
+   "crossK": {
+    "3": 0.20064444096472242
+   },
+   "I_K_each": {
+    "3": 0.44362234865334915
+   },
+   "I_O": 0.23124221686961657,
+   "I_K": 0.44362234865334915,
+   "d": -0.21238013178373258,
+   "o_gt_k": false,
+   "Kown": {
+    "3": 0.43955005917517137
+   },
+   "Kown_mean": 0.43955005917517137,
+   "reverse": {
+    "3": 0.10827385859620044
+   },
+   "reverse_mean": 0.10827385859620044,
+   "rev_ratio": 0.24632884545478057,
+   "sibling": {
+    "3": true
+   },
+   "d_sib": -0.21238013178373258,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L31N10791+__c1",
+   "live": true
+  },
+  {
+   "job": "L31N10791+:c3",
+   "pole": "L31N10791+",
+   "neuron": "L31N10791",
+   "set": "primary",
+   "layer": 31,
+   "c": 3,
+   "o_star": 0,
+   "K": [
+    1
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.43955005917517137,
+    "crossO": 0.14624691180425162,
+    "crossK_c1": 0.10827385859620044,
+    "random": 0.09139555561281636,
+    "Kown_c1": 0.452286593707,
+    "reverse_c1": 0.20064444096472242
+   },
+   "own": 0.43955005917517137,
+   "crossO": 0.14624691180425162,
+   "random": 0.09139555561281636,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.10827385859620044
+   },
+   "I_K_each": {
+    "1": 0.24632884545478057
+   },
+   "I_O": 0.33271958165285714,
+   "I_K": 0.24632884545478057,
+   "d": 0.08639073619807658,
+   "o_gt_k": true,
+   "Kown": {
+    "1": 0.452286593707
+   },
+   "Kown_mean": 0.452286593707,
+   "reverse": {
+    "1": 0.20064444096472242
+   },
+   "reverse_mean": 0.20064444096472242,
+   "rev_ratio": 0.44362234865334915,
+   "sibling": {
+    "1": true
+   },
+   "d_sib": 0.08639073619807658,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L31N10791+__c3",
+   "live": true
+  },
+  {
+   "job": "L31N7529+:c1",
+   "pole": "L31N7529+",
+   "neuron": "L31N7529",
+   "set": "primary",
+   "layer": 31,
+   "c": 1,
+   "o_star": 4,
+   "K": [
+    2
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.3731682479462706,
+    "crossO": 0.17280571377207576,
+    "crossK_c2": 0.14752942176849335,
+    "random": 0.003144354490592145,
+    "Kown_c2": 0.4423639491647278,
+    "reverse_c2": 0.2146537682234205
+   },
+   "own": 0.3731682479462706,
+   "crossO": 0.17280571377207576,
+   "random": 0.003144354490592145,
+   "identity": 0.0,
+   "crossK": {
+    "2": 0.14752942176849335
+   },
+   "I_K_each": {
+    "2": 0.3953429118914074
+   },
+   "I_O": 0.4630772171081303,
+   "I_K": 0.3953429118914074,
+   "d": 0.06773430521672291,
+   "o_gt_k": true,
+   "Kown": {
+    "2": 0.4423639491647278
+   },
+   "Kown_mean": 0.4423639491647278,
+   "reverse": {
+    "2": 0.2146537682234205
+   },
+   "reverse_mean": 0.2146537682234205,
+   "rev_ratio": 0.4852424539312709,
+   "sibling": {
+    "2": true
+   },
+   "d_sib": 0.06773430521672291,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L31N7529+__c1",
+   "live": true
+  },
+  {
+   "job": "L31N7529+:c2",
+   "pole": "L31N7529+",
+   "neuron": "L31N7529",
+   "set": "primary",
+   "layer": 31,
+   "c": 2,
+   "o_star": 4,
+   "K": [
+    1
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.4423639491647278,
+    "crossO": 0.12195150275933449,
+    "crossK_c1": 0.2146537682234205,
+    "random": 0.006830500383059283,
+    "Kown_c1": 0.3731682479462706,
+    "reverse_c1": 0.14752942176849335
+   },
+   "own": 0.4423639491647278,
+   "crossO": 0.12195150275933449,
+   "random": 0.006830500383059283,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.2146537682234205
+   },
+   "I_K_each": {
+    "1": 0.4852424539312709
+   },
+   "I_O": 0.2756813772677531,
+   "I_K": 0.4852424539312709,
+   "d": -0.2095610766635178,
+   "o_gt_k": false,
+   "Kown": {
+    "1": 0.3731682479462706
+   },
+   "Kown_mean": 0.3731682479462706,
+   "reverse": {
+    "1": 0.14752942176849335
+   },
+   "reverse_mean": 0.14752942176849335,
+   "rev_ratio": 0.3953429118914074,
+   "sibling": {
+    "1": true
+   },
+   "d_sib": -0.2095610766635178,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 6,
+   "key": "L31N7529+__c2",
+   "live": true
+  },
+  {
+   "job": "L31N7529+:c4",
+   "pole": "L31N7529+",
+   "neuron": "L31N7529",
+   "set": "primary",
+   "layer": 31,
+   "c": 4,
+   "o_star": 1,
+   "K": [
+    2
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.3611505102930294,
+    "crossO": 0.24010960651782895,
+    "crossK_c2": 0.1207052625365416,
+    "random": 0.00625355297539071,
+    "Kown_c2": 0.4423639491647278,
+    "reverse_c2": 0.12195150275933449
+   },
+   "own": 0.3611505102930294,
+   "crossO": 0.24010960651782895,
+   "random": 0.00625355297539071,
+   "identity": 0.0,
+   "crossK": {
+    "2": 0.1207052625365416
+   },
+   "I_K_each": {
+    "2": 0.3342242613435713
+   },
+   "I_O": 0.6648463720098565,
+   "I_K": 0.3342242613435713,
+   "d": 0.3306221106662852,
+   "o_gt_k": true,
+   "Kown": {
+    "2": 0.4423639491647278
+   },
+   "Kown_mean": 0.4423639491647278,
+   "reverse": {
+    "2": 0.12195150275933449
+   },
+   "reverse_mean": 0.12195150275933449,
+   "rev_ratio": 0.2756813772677531,
+   "sibling": {
+    "2": false
+   },
+   "d_sib": null,
+   "d_non": 0.3306221106662852,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 7,
+   "key": "L31N7529+__c4",
+   "live": true
+  },
+  {
+   "job": "L04N802+:c3",
+   "pole": "L04N802+",
+   "neuron": "L04N802",
+   "set": "fresh",
+   "layer": 4,
+   "c": 3,
+   "o_star": 1,
+   "K": [
+    4
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.29725987167755163,
+    "crossO": 0.020584065624968555,
+    "crossK_c4": -0.007112220181430262,
+    "random": 0.016177930935822954,
+    "Kown_c4": 0.6157083330953744,
+    "reverse_c4": 0.033471898557427764
+   },
+   "own": 0.29725987167755163,
+   "crossO": 0.020584065624968555,
+   "random": 0.016177930935822954,
+   "identity": 0.0,
+   "crossK": {
+    "4": -0.007112220181430262
+   },
+   "I_K_each": {
+    "4": -0.0239259343728209
+   },
+   "I_O": 0.0692460287653519,
+   "I_K": -0.0239259343728209,
+   "d": 0.09317196313817279,
+   "o_gt_k": true,
+   "Kown": {
+    "4": 0.6157083330953744
+   },
+   "Kown_mean": 0.6157083330953744,
+   "reverse": {
+    "4": 0.033471898557427764
+   },
+   "reverse_mean": 0.033471898557427764,
+   "rev_ratio": 0.05436323784859819,
+   "sibling": {
+    "4": true
+   },
+   "d_sib": 0.09317196313817279,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 6,
+   "key": "L04N802+__c3",
+   "live": true
+  },
+  {
+   "job": "L04N802+:c4",
+   "pole": "L04N802+",
+   "neuron": "L04N802",
+   "set": "fresh",
+   "layer": 4,
+   "c": 4,
+   "o_star": 1,
+   "K": [
+    3
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.6157083330953744,
+    "crossO": -0.009702165138949817,
+    "crossK_c3": 0.033471898557427764,
+    "random": 0.057376676864573345,
+    "Kown_c3": 0.29725987167755163,
+    "reverse_c3": -0.007112220181430262
+   },
+   "own": 0.6157083330953744,
+   "crossO": -0.009702165138949817,
+   "random": 0.057376676864573345,
+   "identity": 0.0,
+   "crossK": {
+    "3": 0.033471898557427764
+   },
+   "I_K_each": {
+    "3": 0.05436323784859819
+   },
+   "I_O": -0.015757729134789757,
+   "I_K": 0.05436323784859819,
+   "d": -0.07012096698338795,
+   "o_gt_k": false,
+   "Kown": {
+    "3": 0.29725987167755163
+   },
+   "Kown_mean": 0.29725987167755163,
+   "reverse": {
+    "3": -0.007112220181430262
+   },
+   "reverse_mean": -0.007112220181430262,
+   "rev_ratio": -0.0239259343728209,
+   "sibling": {
+    "3": true
+   },
+   "d_sib": -0.07012096698338795,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 6,
+   "key": "L04N802+__c4",
+   "live": true
+  },
+  {
+   "job": "L07N10364+:c2",
+   "pole": "L07N10364+",
+   "neuron": "L07N10364",
+   "set": "fresh",
+   "layer": 7,
+   "c": 2,
+   "o_star": 3,
+   "K": [
+    4
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.36832603080190035,
+    "crossO": 0.07627132591255369,
+    "crossK_c4": 0.12805564201180814,
+    "random": 0.02191299603065195,
+    "Kown_c4": 0.4194763478380713,
+    "reverse_c4": 0.1547141906500992
+   },
+   "own": 0.36832603080190035,
+   "crossO": 0.07627132591255369,
+   "random": 0.02191299603065195,
+   "identity": 0.0,
+   "crossK": {
+    "4": 0.12805564201180814
+   },
+   "I_K_each": {
+    "4": 0.34766926935088466
+   },
+   "I_O": 0.20707557852074615,
+   "I_K": 0.34766926935088466,
+   "d": -0.1405936908301385,
+   "o_gt_k": false,
+   "Kown": {
+    "4": 0.4194763478380713
+   },
+   "Kown_mean": 0.4194763478380713,
+   "reverse": {
+    "4": 0.1547141906500992
+   },
+   "reverse_mean": 0.1547141906500992,
+   "rev_ratio": 0.3688269706920946,
+   "sibling": {
+    "4": true
+   },
+   "d_sib": -0.1405936908301385,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 11,
+   "key": "L07N10364+__c2",
+   "live": true
+  },
+  {
+   "job": "L07N10364+:c4",
+   "pole": "L07N10364+",
+   "neuron": "L07N10364",
+   "set": "fresh",
+   "layer": 7,
+   "c": 4,
+   "o_star": 3,
+   "K": [
+    2
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.4194763478380713,
+    "crossO": 0.03448094946930909,
+    "crossK_c2": 0.1547141906500992,
+    "random": 0.0018679707154663806,
+    "Kown_c2": 0.36832603080190035,
+    "reverse_c2": 0.12805564201180814
+   },
+   "own": 0.4194763478380713,
+   "crossO": 0.03448094946930909,
+   "random": 0.0018679707154663806,
+   "identity": 0.0,
+   "crossK": {
+    "2": 0.1547141906500992
+   },
+   "I_K_each": {
+    "2": 0.3688269706920946
+   },
+   "I_O": 0.08219998492649132,
+   "I_K": 0.3688269706920946,
+   "d": -0.28662698576560325,
+   "o_gt_k": false,
+   "Kown": {
+    "2": 0.36832603080190035
+   },
+   "Kown_mean": 0.36832603080190035,
+   "reverse": {
+    "2": 0.12805564201180814
+   },
+   "reverse_mean": 0.12805564201180814,
+   "rev_ratio": 0.34766926935088466,
+   "sibling": {
+    "2": true
+   },
+   "d_sib": -0.28662698576560325,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 7,
+   "key": "L07N10364+__c4",
+   "live": true
+  },
+  {
+   "job": "L07N10364-:c4",
+   "pole": "L07N10364-",
+   "neuron": "L07N10364",
+   "set": "fresh",
+   "layer": 7,
+   "c": 4,
+   "o_star": 0,
+   "K": [
+    5
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.30940234691905777,
+    "crossO": -0.008997276741923353,
+    "crossK_c5": 0.09736943140079764,
+    "random": -0.004348042696839103,
+    "Kown_c5": 0.23218703784121367,
+    "reverse_c5": 0.01944953700256978
+   },
+   "own": 0.30940234691905777,
+   "crossO": -0.008997276741923353,
+   "random": -0.004348042696839103,
+   "identity": 0.0,
+   "crossK": {
+    "5": 0.09736943140079764
+   },
+   "I_K_each": {
+    "5": 0.3147016574708475
+   },
+   "I_O": -0.0290795361816603,
+   "I_K": 0.3147016574708475,
+   "d": -0.3437811936525078,
+   "o_gt_k": false,
+   "Kown": {
+    "5": 0.23218703784121367
+   },
+   "Kown_mean": 0.23218703784121367,
+   "reverse": {
+    "5": 0.01944953700256978
+   },
+   "reverse_mean": 0.01944953700256978,
+   "rev_ratio": 0.08376667872334366,
+   "sibling": {
+    "5": true
+   },
+   "d_sib": -0.3437811936525078,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 7,
+   "key": "L07N10364-__c4",
+   "live": true
+  },
+  {
+   "job": "L07N10364-:c5",
+   "pole": "L07N10364-",
+   "neuron": "L07N10364",
+   "set": "fresh",
+   "layer": 7,
+   "c": 5,
+   "o_star": 0,
+   "K": [
+    4
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.23218703784121367,
+    "crossO": 0.05915618360785903,
+    "crossK_c4": 0.01944953700256978,
+    "random": -0.01161262070551568,
+    "Kown_c4": 0.30940234691905777,
+    "reverse_c4": 0.09736943140079764
+   },
+   "own": 0.23218703784121367,
+   "crossO": 0.05915618360785903,
+   "random": -0.01161262070551568,
+   "identity": 0.0,
+   "crossK": {
+    "4": 0.01944953700256978
+   },
+   "I_K_each": {
+    "4": 0.08376667872334366
+   },
+   "I_O": 0.25477814850419994,
+   "I_K": 0.08376667872334366,
+   "d": 0.1710114697808563,
+   "o_gt_k": true,
+   "Kown": {
+    "4": 0.30940234691905777
+   },
+   "Kown_mean": 0.30940234691905777,
+   "reverse": {
+    "4": 0.09736943140079764
+   },
+   "reverse_mean": 0.09736943140079764,
+   "rev_ratio": 0.3147016574708475,
+   "sibling": {
+    "4": true
+   },
+   "d_sib": 0.1710114697808563,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 8,
+   "key": "L07N10364-__c5",
+   "live": true
+  },
+  {
+   "job": "L07N8340+:c1",
+   "pole": "L07N8340+",
+   "neuron": "L07N8340",
+   "set": "fresh",
+   "layer": 7,
+   "c": 1,
+   "o_star": 0,
+   "K": [
+    2,
+    3
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.5656531714964537,
+    "crossO": -0.05538033797081395,
+    "crossK_c2": 0.02751958492792687,
+    "crossK_c3": 0.057122239188464374,
+    "random": 0.06573362928244088,
+    "Kown_c2": 0.5826422080317045,
+    "reverse_c2": -0.027602567487593765,
+    "Kown_c3": 0.6385205373190924,
+    "reverse_c3": 0.10323133481337944
+   },
+   "own": 0.5656531714964537,
+   "crossO": -0.05538033797081395,
+   "random": 0.06573362928244088,
+   "identity": 0.0,
+   "crossK": {
+    "2": 0.02751958492792687,
+    "3": 0.057122239188464374
+   },
+   "I_K_each": {
+    "2": 0.04865098670820305,
+    "3": 0.10098456451211199
+   },
+   "I_O": -0.09790511352442961,
+   "I_K": 0.07481777561015752,
+   "d": -0.17272288913458714,
+   "o_gt_k": false,
+   "Kown": {
+    "2": 0.5826422080317045,
+    "3": 0.6385205373190924
+   },
+   "Kown_mean": 0.6105813726753985,
+   "reverse": {
+    "2": -0.027602567487593765,
+    "3": 0.10323133481337944
+   },
+   "reverse_mean": 0.03781438366289284,
+   "rev_ratio": 0.05714893843146058,
+   "sibling": {
+    "2": true,
+    "3": true
+   },
+   "d_sib": -0.17272288913458714,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 7,
+   "key": "L07N8340+__c1",
+   "live": true
+  },
+  {
+   "job": "L07N8340+:c2",
+   "pole": "L07N8340+",
+   "neuron": "L07N8340",
+   "set": "fresh",
+   "layer": 7,
+   "c": 2,
+   "o_star": 0,
+   "K": [
+    1,
+    3
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.5826422080317045,
+    "crossO": 0.02668088523940594,
+    "crossK_c1": -0.027602567487593765,
+    "crossK_c3": -0.001932516014588196,
+    "random": 0.0002544341873491603,
+    "Kown_c1": 0.5656531714964537,
+    "reverse_c1": 0.02751958492792687,
+    "Kown_c3": 0.6385205373190924,
+    "reverse_c3": 0.1359937751976501
+   },
+   "own": 0.5826422080317045,
+   "crossO": 0.02668088523940594,
+   "random": 0.0002544341873491603,
+   "identity": 0.0,
+   "crossK": {
+    "1": -0.027602567487593765,
+    "3": -0.001932516014588196
+   },
+   "I_K_each": {
+    "1": -0.04737481615147897,
+    "3": -0.003316814312366189
+   },
+   "I_O": 0.04579291522586379,
+   "I_K": -0.02534581523192258,
+   "d": 0.07113873045778638,
+   "o_gt_k": true,
+   "Kown": {
+    "1": 0.5656531714964537,
+    "3": 0.6385205373190924
+   },
+   "Kown_mean": 0.6020868544077731,
+   "reverse": {
+    "1": 0.02751958492792687,
+    "3": 0.1359937751976501
+   },
+   "reverse_mean": 0.08175668006278848,
+   "rev_ratio": 0.1308168019724874,
+   "sibling": {
+    "1": true,
+    "3": true
+   },
+   "d_sib": 0.07113873045778638,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L07N8340+__c2",
+   "live": true
+  },
+  {
+   "job": "L07N8340+:c3",
+   "pole": "L07N8340+",
+   "neuron": "L07N8340",
+   "set": "fresh",
+   "layer": 7,
+   "c": 3,
+   "o_star": 0,
+   "K": [
+    1,
+    2
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.6385205373190924,
+    "crossO": 0.19434514458337054,
+    "crossK_c1": 0.10323133481337944,
+    "crossK_c2": 0.1359937751976501,
+    "random": 0.15006396442893274,
+    "Kown_c1": 0.5656531714964537,
+    "reverse_c1": 0.057122239188464374,
+    "Kown_c2": 0.5826422080317045,
+    "reverse_c2": -0.001932516014588196
+   },
+   "own": 0.6385205373190924,
+   "crossO": 0.19434514458337054,
+   "random": 0.15006396442893274,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.10323133481337944,
+    "2": 0.1359937751976501
+   },
+   "I_K_each": {
+    "1": 0.16167269301440013,
+    "2": 0.21298261723677175
+   },
+   "I_O": 0.30436788360692785,
+   "I_K": 0.18732765512558594,
+   "d": 0.1170402284813419,
+   "o_gt_k": true,
+   "Kown": {
+    "1": 0.5656531714964537,
+    "2": 0.5826422080317045
+   },
+   "Kown_mean": 0.5741476897640791,
+   "reverse": {
+    "1": 0.057122239188464374,
+    "2": -0.001932516014588196
+   },
+   "reverse_mean": 0.02759486158693809,
+   "rev_ratio": 0.0488338750998729,
+   "sibling": {
+    "1": true,
+    "2": true
+   },
+   "d_sib": 0.1170402284813419,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 9,
+   "key": "L07N8340+__c3",
+   "live": true
+  },
+  {
+   "job": "L10N3963-:c3",
+   "pole": "L10N3963-",
+   "neuron": "L10N3963",
+   "set": "fresh",
+   "layer": 10,
+   "c": 3,
+   "o_star": 0,
+   "K": [
+    4,
+    6
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.39709096777901687,
+    "crossO": 0.062286460007585226,
+    "crossK_c4": 0.06080789948505964,
+    "crossK_c6": 0.04465669627493359,
+    "random": 0.011366445372512269,
+    "Kown_c4": 0.33734863133780835,
+    "reverse_c4": 0.03307755258066328,
+    "Kown_c6": 0.33967474465736297,
+    "reverse_c6": 0.0764028794949972
+   },
+   "own": 0.39709096777901687,
+   "crossO": 0.062286460007585226,
+   "random": 0.011366445372512269,
+   "identity": 0.0,
+   "crossK": {
+    "4": 0.06080789948505964,
+    "6": 0.04465669627493359
+   },
+   "I_K_each": {
+    "4": 0.15313342387303944,
+    "6": 0.1124596122765131
+   },
+   "I_O": 0.15685690449209097,
+   "I_K": 0.13279651807477627,
+   "d": 0.0240603864173147,
+   "o_gt_k": true,
+   "Kown": {
+    "4": 0.33734863133780835,
+    "6": 0.33967474465736297
+   },
+   "Kown_mean": 0.3385116879975857,
+   "reverse": {
+    "4": 0.03307755258066328,
+    "6": 0.0764028794949972
+   },
+   "reverse_mean": 0.05474021603783024,
+   "rev_ratio": 0.16149053291829998,
+   "sibling": {
+    "4": true,
+    "6": true
+   },
+   "d_sib": 0.0240603864173147,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 6,
+   "key": "L10N3963-__c3",
+   "live": true
+  },
+  {
+   "job": "L10N3963-:c4",
+   "pole": "L10N3963-",
+   "neuron": "L10N3963",
+   "set": "fresh",
+   "layer": 10,
+   "c": 4,
+   "o_star": 0,
+   "K": [
+    3,
+    6
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.33734863133780835,
+    "crossO": 0.03287420959467196,
+    "crossK_c3": 0.03307755258066328,
+    "crossK_c6": 0.11910352215149322,
+    "random": 0.0191518219058247,
+    "Kown_c3": 0.39709096777901687,
+    "reverse_c3": 0.06080789948505964,
+    "Kown_c6": 0.33967474465736297,
+    "reverse_c6": 0.09306469664984408
+   },
+   "own": 0.33734863133780835,
+   "crossO": 0.03287420959467196,
+   "random": 0.0191518219058247,
+   "identity": 0.0,
+   "crossK": {
+    "3": 0.03307755258066328,
+    "6": 0.11910352215149322
+   },
+   "I_K_each": {
+    "3": 0.0980515392918273,
+    "6": 0.3530576711669756
+   },
+   "I_O": 0.09744877121423075,
+   "I_K": 0.22555460522940146,
+   "d": -0.12810583401517073,
+   "o_gt_k": false,
+   "Kown": {
+    "3": 0.39709096777901687,
+    "6": 0.33967474465736297
+   },
+   "Kown_mean": 0.3683828562181899,
+   "reverse": {
+    "3": 0.06080789948505964,
+    "6": 0.09306469664984408
+   },
+   "reverse_mean": 0.07693629806745186,
+   "rev_ratio": 0.2135576100142093,
+   "sibling": {
+    "3": true,
+    "6": true
+   },
+   "d_sib": -0.12810583401517073,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 10,
+   "key": "L10N3963-__c4",
+   "live": true
+  },
+  {
+   "job": "L10N3963-:c6",
+   "pole": "L10N3963-",
+   "neuron": "L10N3963",
+   "set": "fresh",
+   "layer": 10,
+   "c": 6,
+   "o_star": 0,
+   "K": [
+    3,
+    4
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.33967474465736297,
+    "crossO": 0.06977715376949808,
+    "crossK_c3": 0.0764028794949972,
+    "crossK_c4": 0.09306469664984408,
+    "random": 0.017113349963724617,
+    "Kown_c3": 0.39709096777901687,
+    "reverse_c3": 0.04465669627493359,
+    "Kown_c4": 0.33734863133780835,
+    "reverse_c4": 0.11910352215149322
+   },
+   "own": 0.33967474465736297,
+   "crossO": 0.06977715376949808,
+   "random": 0.017113349963724617,
+   "identity": 0.0,
+   "crossK": {
+    "3": 0.0764028794949972,
+    "4": 0.09306469664984408
+   },
+   "I_K_each": {
+    "3": 0.22492952654477266,
+    "4": 0.27398179615537915
+   },
+   "I_O": 0.20542343776510014,
+   "I_K": 0.2494556613500759,
+   "d": -0.04403222358497577,
+   "o_gt_k": false,
+   "Kown": {
+    "3": 0.39709096777901687,
+    "4": 0.33734863133780835
+   },
+   "Kown_mean": 0.3672197995584126,
+   "reverse": {
+    "3": 0.04465669627493359,
+    "4": 0.11910352215149322
+   },
+   "reverse_mean": 0.08188010921321341,
+   "rev_ratio": 0.23275864172174437,
+   "sibling": {
+    "3": true,
+    "4": true
+   },
+   "d_sib": -0.04403222358497577,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 11,
+   "key": "L10N3963-__c6",
+   "live": true
+  },
+  {
+   "job": "L14N5001-:c0",
+   "pole": "L14N5001-",
+   "neuron": "L14N5001",
+   "set": "fresh",
+   "layer": 14,
+   "c": 0,
+   "o_star": 2,
+   "K": [
+    1,
+    4
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.9319400431754791,
+    "crossO": -0.0354588638126801,
+    "crossK_c1": 0.76613249866558,
+    "crossK_c4": 0.8817902558879066,
+    "random": -0.011430482779097813,
+    "Kown_c1": 0.7889471798437682,
+    "reverse_c1": 0.6525584086782789,
+    "Kown_c4": 0.9071896482240304,
+    "reverse_c4": 0.8282550290903123
+   },
+   "own": 0.9319400431754791,
+   "crossO": -0.0354588638126801,
+   "random": -0.011430482779097813,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.76613249866558,
+    "4": 0.8817902558879066
+   },
+   "I_K_each": {
+    "1": 0.8220834637119692,
+    "4": 0.9461877535418558
+   },
+   "I_O": -0.03804843892302135,
+   "I_K": 0.8841356086269125,
+   "d": -0.9221840475499339,
+   "o_gt_k": false,
+   "Kown": {
+    "1": 0.7889471798437682,
+    "4": 0.9071896482240304
+   },
+   "Kown_mean": 0.8480684140338992,
+   "reverse": {
+    "1": 0.6525584086782789,
+    "4": 0.8282550290903123
+   },
+   "reverse_mean": 0.7404067188842955,
+   "rev_ratio": 0.8700577731132881,
+   "sibling": {
+    "1": true,
+    "4": false
+   },
+   "d_sib": -0.8601319026349905,
+   "d_non": -0.9842361924648771,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 9,
+   "key": "L14N5001-__c0",
+   "live": true
+  },
+  {
+   "job": "L14N5001-:c1",
+   "pole": "L14N5001-",
+   "neuron": "L14N5001",
+   "set": "fresh",
+   "layer": 14,
+   "c": 1,
+   "o_star": 2,
+   "K": [
+    0,
+    4
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.7889471798437682,
+    "crossO": 0.016690285459928206,
+    "crossK_c0": 0.6525584086782789,
+    "crossK_c4": 0.7117701090956916,
+    "random": -0.0014176278621255546,
+    "Kown_c0": 0.9319400431754791,
+    "reverse_c0": 0.76613249866558,
+    "Kown_c4": 0.9071896482240304,
+    "reverse_c4": 0.8323358613310342
+   },
+   "own": 0.7889471798437682,
+   "crossO": 0.016690285459928206,
+   "random": -0.0014176278621255546,
+   "identity": 0.0,
+   "crossK": {
+    "0": 0.6525584086782789,
+    "4": 0.7117701090956916
+   },
+   "I_K_each": {
+    "0": 0.8271255989627876,
+    "4": 0.9021771384449848
+   },
+   "I_O": 0.021155136726939455,
+   "I_K": 0.8646513687038861,
+   "d": -0.8434962319769467,
+   "o_gt_k": false,
+   "Kown": {
+    "0": 0.9319400431754791,
+    "4": 0.9071896482240304
+   },
+   "Kown_mean": 0.9195648456997547,
+   "reverse": {
+    "0": 0.76613249866558,
+    "4": 0.8323358613310342
+   },
+   "reverse_mean": 0.7992341799983071,
+   "rev_ratio": 0.8697858670875018,
+   "sibling": {
+    "0": true,
+    "4": false
+   },
+   "d_sib": -0.8059704622358481,
+   "d_non": -0.8810220017180453,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L14N5001-__c1",
+   "live": true
+  },
+  {
+   "job": "L14N5001-:c4",
+   "pole": "L14N5001-",
+   "neuron": "L14N5001",
+   "set": "fresh",
+   "layer": 14,
+   "c": 4,
+   "o_star": 1,
+   "K": [
+    0,
+    2
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.9071896482240304,
+    "crossO": 0.8323358613310342,
+    "crossK_c0": 0.8282550290903123,
+    "crossK_c2": -0.0427097901348403,
+    "random": 0.06805426602547598,
+    "Kown_c0": 0.9319400431754791,
+    "reverse_c0": 0.8817902558879066,
+    "Kown_c2": 1.1339986807960714,
+    "reverse_c2": 0.10379615824485597
+   },
+   "own": 0.9071896482240304,
+   "crossO": 0.8323358613310342,
+   "random": 0.06805426602547598,
+   "identity": 0.0,
+   "crossK": {
+    "0": 0.8282550290903123,
+    "2": -0.0427097901348403
+   },
+   "I_K_each": {
+    "0": 0.9129899472637886,
+    "2": -0.04707923003580518
+   },
+   "I_O": 0.9174882704630344,
+   "I_K": 0.4329553586139917,
+   "d": 0.4845329118490427,
+   "o_gt_k": true,
+   "Kown": {
+    "0": 0.9319400431754791,
+    "2": 1.1339986807960714
+   },
+   "Kown_mean": 1.0329693619857752,
+   "reverse": {
+    "0": 0.8817902558879066,
+    "2": 0.10379615824485597
+   },
+   "reverse_mean": 0.4927932070663813,
+   "rev_ratio": 0.5188594318825047,
+   "sibling": {
+    "0": false,
+    "2": false
+   },
+   "d_sib": null,
+   "d_non": 0.4845329118490427,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 6,
+   "key": "L14N5001-__c4",
+   "live": true
+  },
+  {
+   "job": "L17N7622-:c0",
+   "pole": "L17N7622-",
+   "neuron": "L17N7622",
+   "set": "fresh",
+   "layer": 17,
+   "c": 0,
+   "o_star": 1,
+   "K": [
+    2
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.25400738564984954,
+    "crossO": 0.12705503680781255,
+    "crossK_c2": 0.09886375674468995,
+    "random": 0.015836494681118432,
+    "Kown_c2": 0.46473401997710534,
+    "reverse_c2": 0.23127924369658556
+   },
+   "own": 0.25400738564984954,
+   "crossO": 0.12705503680781255,
+   "random": 0.015836494681118432,
+   "identity": 0.0,
+   "crossK": {
+    "2": 0.09886375674468995
+   },
+   "I_K_each": {
+    "2": 0.3892160713821689
+   },
+   "I_O": 0.5002021357873372,
+   "I_K": 0.3892160713821689,
+   "d": 0.11098606440516828,
+   "o_gt_k": true,
+   "Kown": {
+    "2": 0.46473401997710534
+   },
+   "Kown_mean": 0.46473401997710534,
+   "reverse": {
+    "2": 0.23127924369658556
+   },
+   "reverse_mean": 0.23127924369658556,
+   "rev_ratio": 0.4976593788162513,
+   "sibling": {
+    "2": true
+   },
+   "d_sib": 0.11098606440516828,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 11,
+   "key": "L17N7622-__c0",
+   "live": true
+  },
+  {
+   "job": "L17N7622-:c2",
+   "pole": "L17N7622-",
+   "neuron": "L17N7622",
+   "set": "fresh",
+   "layer": 17,
+   "c": 2,
+   "o_star": 1,
+   "K": [
+    0
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.46473401997710534,
+    "crossO": 0.20982476248511342,
+    "crossK_c0": 0.23127924369658556,
+    "random": 0.014328083443666012,
+    "Kown_c0": 0.25400738564984954,
+    "reverse_c0": 0.09886375674468995
+   },
+   "own": 0.46473401997710534,
+   "crossO": 0.20982476248511342,
+   "random": 0.014328083443666012,
+   "identity": 0.0,
+   "crossK": {
+    "0": 0.23127924369658556
+   },
+   "I_K_each": {
+    "0": 0.4976593788162513
+   },
+   "I_O": 0.4514943031186962,
+   "I_K": 0.4976593788162513,
+   "d": -0.04616507569755507,
+   "o_gt_k": false,
+   "Kown": {
+    "0": 0.25400738564984954
+   },
+   "Kown_mean": 0.25400738564984954,
+   "reverse": {
+    "0": 0.09886375674468995
+   },
+   "reverse_mean": 0.09886375674468995,
+   "rev_ratio": 0.3892160713821689,
+   "sibling": {
+    "0": true
+   },
+   "d_sib": -0.04616507569755507,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L17N7622-__c2",
+   "live": true
+  },
+  {
+   "job": "L18N2993+:c2",
+   "pole": "L18N2993+",
+   "neuron": "L18N2993",
+   "set": "fresh",
+   "layer": 18,
+   "c": 2,
+   "o_star": 1,
+   "K": [
+    3
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.3246671202645131,
+    "crossO": 0.0027827334745928584,
+    "crossK_c3": -0.009126121268715566,
+    "random": 0.028025370516401,
+    "Kown_c3": 0.24046935311817774,
+    "reverse_c3": 0.011206506999135375
+   },
+   "own": 0.3246671202645131,
+   "crossO": 0.0027827334745928584,
+   "random": 0.028025370516401,
+   "identity": 0.0,
+   "crossK": {
+    "3": -0.009126121268715566
+   },
+   "I_K_each": {
+    "3": -0.028109163814556658
+   },
+   "I_O": 0.008571035688263435,
+   "I_K": -0.028109163814556658,
+   "d": 0.036680199502820095,
+   "o_gt_k": true,
+   "Kown": {
+    "3": 0.24046935311817774
+   },
+   "Kown_mean": 0.24046935311817774,
+   "reverse": {
+    "3": 0.011206506999135375
+   },
+   "reverse_mean": 0.011206506999135375,
+   "rev_ratio": 0.046602641267255294,
+   "sibling": {
+    "3": true
+   },
+   "d_sib": 0.036680199502820095,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L18N2993+__c2",
+   "live": true
+  },
+  {
+   "job": "L18N2993+:c3",
+   "pole": "L18N2993+",
+   "neuron": "L18N2993",
+   "set": "fresh",
+   "layer": 18,
+   "c": 3,
+   "o_star": 1,
+   "K": [
+    2
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.24046935311817774,
+    "crossO": 0.09892542403674075,
+    "crossK_c2": 0.011206506999135375,
+    "random": 0.05527390890631897,
+    "Kown_c2": 0.3246671202645131,
+    "reverse_c2": -0.009126121268715566
+   },
+   "own": 0.24046935311817774,
+   "crossO": 0.09892542403674075,
+   "random": 0.05527390890631897,
+   "identity": 0.0,
+   "crossK": {
+    "2": 0.011206506999135375
+   },
+   "I_K_each": {
+    "2": 0.046602641267255294
+   },
+   "I_O": 0.4113847471786736,
+   "I_K": 0.046602641267255294,
+   "d": 0.36478210591141835,
+   "o_gt_k": true,
+   "Kown": {
+    "2": 0.3246671202645131
+   },
+   "Kown_mean": 0.3246671202645131,
+   "reverse": {
+    "2": -0.009126121268715566
+   },
+   "reverse_mean": -0.009126121268715566,
+   "rev_ratio": -0.028109163814556658,
+   "sibling": {
+    "2": true
+   },
+   "d_sib": 0.36478210591141835,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L18N2993+__c3",
+   "live": true
+  },
+  {
+   "job": "L18N2993-:c0",
+   "pole": "L18N2993-",
+   "neuron": "L18N2993",
+   "set": "fresh",
+   "layer": 18,
+   "c": 0,
+   "o_star": 2,
+   "K": [
+    1
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.45148893729679923,
+    "crossO": -0.019627476807227335,
+    "crossK_c1": 0.1706856482873581,
+    "random": 0.0028410254995621218,
+    "Kown_c1": 0.2494314640522526,
+    "reverse_c1": 0.21536273438956366
+   },
+   "own": 0.45148893729679923,
+   "crossO": -0.019627476807227335,
+   "random": 0.0028410254995621218,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.1706856482873581
+   },
+   "I_K_each": {
+    "1": 0.37805056599903575
+   },
+   "I_O": -0.04347277460383187,
+   "I_K": 0.37805056599903575,
+   "d": -0.4215233406028676,
+   "o_gt_k": false,
+   "Kown": {
+    "1": 0.2494314640522526
+   },
+   "Kown_mean": 0.2494314640522526,
+   "reverse": {
+    "1": 0.21536273438956366
+   },
+   "reverse_mean": 0.21536273438956366,
+   "rev_ratio": 0.8634144662056267,
+   "sibling": {
+    "1": true
+   },
+   "d_sib": -0.4215233406028676,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L18N2993-__c0",
+   "live": true
+  },
+  {
+   "job": "L18N2993-:c1",
+   "pole": "L18N2993-",
+   "neuron": "L18N2993",
+   "set": "fresh",
+   "layer": 18,
+   "c": 1,
+   "o_star": 2,
+   "K": [
+    0
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.2494314640522526,
+    "crossO": 0.09225444119150265,
+    "crossK_c0": 0.21536273438956366,
+    "random": 0.012321157742649793,
+    "Kown_c0": 0.45148893729679923,
+    "reverse_c0": 0.1706856482873581
+   },
+   "own": 0.2494314640522526,
+   "crossO": 0.09225444119150265,
+   "random": 0.012321157742649793,
+   "identity": 0.0,
+   "crossK": {
+    "0": 0.21536273438956366
+   },
+   "I_K_each": {
+    "0": 0.8634144662056267
+   },
+   "I_O": 0.3698588770347616,
+   "I_K": 0.8634144662056267,
+   "d": -0.49355558917086506,
+   "o_gt_k": false,
+   "Kown": {
+    "0": 0.45148893729679923
+   },
+   "Kown_mean": 0.45148893729679923,
+   "reverse": {
+    "0": 0.1706856482873581
+   },
+   "reverse_mean": 0.1706856482873581,
+   "rev_ratio": 0.37805056599903575,
+   "sibling": {
+    "0": true
+   },
+   "d_sib": -0.49355558917086506,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L18N2993-__c1",
+   "live": true
+  },
+  {
+   "job": "L20N8203-:c0",
+   "pole": "L20N8203-",
+   "neuron": "L20N8203",
+   "set": "fresh",
+   "layer": 20,
+   "c": 0,
+   "o_star": 3,
+   "K": [
+    1,
+    2
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.5581192386775387,
+    "crossO": 0.2985959405853934,
+    "crossK_c1": 0.2906917083880883,
+    "crossK_c2": 0.45684042320823676,
+    "random": -0.0007627928057499237,
+    "Kown_c1": 0.6441363058672124,
+    "reverse_c1": 0.3552902690837115,
+    "Kown_c2": 0.6699782146993793,
+    "reverse_c2": 0.6619304507103446
+   },
+   "own": 0.5581192386775387,
+   "crossO": 0.2985959405853934,
+   "random": -0.0007627928057499237,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.2906917083880883,
+    "2": 0.45684042320823676
+   },
+   "I_K_each": {
+    "1": 0.5208415840974792,
+    "2": 0.8185355235033975
+   },
+   "I_O": 0.5350038484480759,
+   "I_K": 0.6696885538004383,
+   "d": -0.13468470535236243,
+   "o_gt_k": false,
+   "Kown": {
+    "1": 0.6441363058672124,
+    "2": 0.6699782146993793
+   },
+   "Kown_mean": 0.6570572602832958,
+   "reverse": {
+    "1": 0.3552902690837115,
+    "2": 0.6619304507103446
+   },
+   "reverse_mean": 0.5086103598970281,
+   "rev_ratio": 0.7697821209464994,
+   "sibling": {
+    "1": false,
+    "2": true
+   },
+   "d_sib": -0.2835316750553216,
+   "d_non": 0.014162264350596754,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L20N8203-__c0",
+   "live": true
+  },
+  {
+   "job": "L20N8203-:c1",
+   "pole": "L20N8203-",
+   "neuron": "L20N8203",
+   "set": "fresh",
+   "layer": 20,
+   "c": 1,
+   "o_star": 2,
+   "K": [
+    0,
+    3
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.6441363058672124,
+    "crossO": 0.35407291582631334,
+    "crossK_c0": 0.3552902690837115,
+    "crossK_c3": 0.2867722434471128,
+    "random": -0.010210352169060926,
+    "Kown_c0": 0.5581192386775387,
+    "reverse_c0": 0.2906917083880883,
+    "Kown_c3": 0.5948756738381991,
+    "reverse_c3": 0.269196442863544
+   },
+   "own": 0.6441363058672124,
+   "crossO": 0.35407291582631334,
+   "random": -0.010210352169060926,
+   "identity": 0.0,
+   "crossK": {
+    "0": 0.3552902690837115,
+    "3": 0.2867722434471128
+   },
+   "I_K_each": {
+    "0": 0.5515762205103123,
+    "3": 0.44520428492386577
+   },
+   "I_O": 0.5496863204281252,
+   "I_K": 0.49839025271708903,
+   "d": 0.05129606771103612,
+   "o_gt_k": true,
+   "Kown": {
+    "0": 0.5581192386775387,
+    "3": 0.5948756738381991
+   },
+   "Kown_mean": 0.5764974562578689,
+   "reverse": {
+    "0": 0.2906917083880883,
+    "3": 0.269196442863544
+   },
+   "reverse_mean": 0.27994407562581614,
+   "rev_ratio": 0.4866835682072105,
+   "sibling": {
+    "0": false,
+    "3": false
+   },
+   "d_sib": null,
+   "d_non": 0.05129606771103612,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 7,
+   "key": "L20N8203-__c1",
+   "live": true
+  },
+  {
+   "job": "L20N8203-:c2",
+   "pole": "L20N8203-",
+   "neuron": "L20N8203",
+   "set": "fresh",
+   "layer": 20,
+   "c": 2,
+   "o_star": 3,
+   "K": [
+    0,
+    1
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.6699782146993793,
+    "crossO": 0.3507636711557225,
+    "crossK_c0": 0.6619304507103446,
+    "crossK_c1": 0.37347169959607013,
+    "random": 0.010415791477687213,
+    "Kown_c0": 0.5581192386775387,
+    "reverse_c0": 0.45684042320823676,
+    "Kown_c1": 0.6441363058672124,
+    "reverse_c1": 0.35407291582631334
+   },
+   "own": 0.6699782146993793,
+   "crossO": 0.3507636711557225,
+   "random": 0.010415791477687213,
+   "identity": 0.0,
+   "crossK": {
+    "0": 0.6619304507103446,
+    "1": 0.37347169959607013
+   },
+   "I_K_each": {
+    "0": 0.9879880213826866,
+    "1": 0.5574385724820137
+   },
+   "I_O": 0.5235448906545579,
+   "I_K": 0.7727132969323501,
+   "d": -0.24916840627779224,
+   "o_gt_k": false,
+   "Kown": {
+    "0": 0.5581192386775387,
+    "1": 0.6441363058672124
+   },
+   "Kown_mean": 0.6011277722723756,
+   "reverse": {
+    "0": 0.45684042320823676,
+    "1": 0.35407291582631334
+   },
+   "reverse_mean": 0.40545666951727505,
+   "rev_ratio": 0.6841109219657613,
+   "sibling": {
+    "0": true,
+    "1": false
+   },
+   "d_sib": -0.4644431307281287,
+   "d_non": -0.03389368182745578,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 11,
+   "key": "L20N8203-__c2",
+   "live": true
+  },
+  {
+   "job": "L22N7483-:c0",
+   "pole": "L22N7483-",
+   "neuron": "L22N7483",
+   "set": "fresh",
+   "layer": 22,
+   "c": 0,
+   "o_star": 3,
+   "K": [
+    5
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.5697364031341675,
+    "crossO": 0.38243648930392654,
+    "crossK_c5": 0.23954986294036892,
+    "random": 0.04667214383562568,
+    "Kown_c5": 0.4874488955956628,
+    "reverse_c5": 0.16104671466948567
+   },
+   "own": 0.5697364031341675,
+   "crossO": 0.38243648930392654,
+   "random": 0.04667214383562568,
+   "identity": 0.0,
+   "crossK": {
+    "5": 0.23954986294036892
+   },
+   "I_K_each": {
+    "5": 0.4204573582144043
+   },
+   "I_O": 0.6712516300522688,
+   "I_K": 0.4204573582144043,
+   "d": 0.25079427183786457,
+   "o_gt_k": true,
+   "Kown": {
+    "5": 0.4874488955956628
+   },
+   "Kown_mean": 0.4874488955956628,
+   "reverse": {
+    "5": 0.16104671466948567
+   },
+   "reverse_mean": 0.16104671466948567,
+   "rev_ratio": 0.33038686952544327,
+   "sibling": {
+    "5": false
+   },
+   "d_sib": null,
+   "d_non": 0.25079427183786457,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L22N7483-__c0",
+   "live": true
+  },
+  {
+   "job": "L22N7483-:c5",
+   "pole": "L22N7483-",
+   "neuron": "L22N7483",
+   "set": "fresh",
+   "layer": 22,
+   "c": 5,
+   "o_star": 0,
+   "K": [
+    3
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.4874488955956628,
+    "crossO": 0.16104671466948567,
+    "crossK_c3": 0.20190353744557935,
+    "random": 0.0007547400210071883,
+    "Kown_c3": 0.7031633025187501,
+    "reverse_c3": 0.35142082943410885
+   },
+   "own": 0.4874488955956628,
+   "crossO": 0.16104671466948567,
+   "random": 0.0007547400210071883,
+   "identity": 0.0,
+   "crossK": {
+    "3": 0.20190353744557935
+   },
+   "I_K_each": {
+    "3": 0.41420452332516444
+   },
+   "I_O": 0.33038686952544327,
+   "I_K": 0.41420452332516444,
+   "d": -0.08381765379972117,
+   "o_gt_k": false,
+   "Kown": {
+    "3": 0.7031633025187501
+   },
+   "Kown_mean": 0.7031633025187501,
+   "reverse": {
+    "3": 0.35142082943410885
+   },
+   "reverse_mean": 0.35142082943410885,
+   "rev_ratio": 0.49977128808529947,
+   "sibling": {
+    "3": false
+   },
+   "d_sib": null,
+   "d_non": -0.08381765379972117,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 7,
+   "key": "L22N7483-__c5",
+   "live": true
+  },
+  {
+   "job": "L22N7806-:c1",
+   "pole": "L22N7806-",
+   "neuron": "L22N7806",
+   "set": "fresh",
+   "layer": 22,
+   "c": 1,
+   "o_star": 0,
+   "K": [
+    3,
+    4
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.5634258764829937,
+    "crossO": 0.19157738873254546,
+    "crossK_c3": 0.07526939525583924,
+    "crossK_c4": 0.27389844807233715,
+    "random": 0.07980843311339045,
+    "Kown_c3": 0.37813634490659864,
+    "reverse_c3": 0.10528270705107022,
+    "Kown_c4": 0.4803936329539666,
+    "reverse_c4": 0.19256729939034212
+   },
+   "own": 0.5634258764829937,
+   "crossO": 0.19157738873254546,
+   "random": 0.07980843311339045,
+   "identity": 0.0,
+   "crossK": {
+    "3": 0.07526939525583924,
+    "4": 0.27389844807233715
+   },
+   "I_K_each": {
+    "3": 0.13359236484785617,
+    "4": 0.4861304024267768
+   },
+   "I_O": 0.34002234673424336,
+   "I_K": 0.30986138363731647,
+   "d": 0.030160963096926896,
+   "o_gt_k": true,
+   "Kown": {
+    "3": 0.37813634490659864,
+    "4": 0.4803936329539666
+   },
+   "Kown_mean": 0.42926498893028264,
+   "reverse": {
+    "3": 0.10528270705107022,
+    "4": 0.19256729939034212
+   },
+   "reverse_mean": 0.14892500322070618,
+   "rev_ratio": 0.33963919922227814,
+   "sibling": {
+    "3": false,
+    "4": false
+   },
+   "d_sib": null,
+   "d_non": 0.030160963096926896,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L22N7806-__c1",
+   "live": true
+  },
+  {
+   "job": "L22N7806-:c3",
+   "pole": "L22N7806-",
+   "neuron": "L22N7806",
+   "set": "fresh",
+   "layer": 22,
+   "c": 3,
+   "o_star": 1,
+   "K": [
+    0,
+    4
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.37813634490659864,
+    "crossO": 0.10528270705107022,
+    "crossK_c0": 0.1826112276910443,
+    "crossK_c4": 0.15150027826487877,
+    "random": 0.14617675685437714,
+    "Kown_c0": 0.5455739098191498,
+    "reverse_c0": 0.2864700491547656,
+    "Kown_c4": 0.4803936329539666,
+    "reverse_c4": 0.2002483084017212
+   },
+   "own": 0.37813634490659864,
+   "crossO": 0.10528270705107022,
+   "random": 0.14617675685437714,
+   "identity": 0.0,
+   "crossK": {
+    "0": 0.1826112276910443,
+    "4": 0.15150027826487877
+   },
+   "I_K_each": {
+    "0": 0.48292429477031645,
+    "4": 0.4006498722102474
+   },
+   "I_O": 0.2784252518151238,
+   "I_K": 0.44178708349028195,
+   "d": -0.16336183167515816,
+   "o_gt_k": false,
+   "Kown": {
+    "0": 0.5455739098191498,
+    "4": 0.4803936329539666
+   },
+   "Kown_mean": 0.5129837713865582,
+   "reverse": {
+    "0": 0.2864700491547656,
+    "4": 0.2002483084017212
+   },
+   "reverse_mean": 0.2433591787782434,
+   "rev_ratio": 0.4709611605179753,
+   "sibling": {
+    "0": false,
+    "4": true
+   },
+   "d_sib": -0.1222246203951236,
+   "d_non": -0.20449904295519267,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 9,
+   "key": "L22N7806-__c3",
+   "live": true
+  },
+  {
+   "job": "L22N7806-:c4",
+   "pole": "L22N7806-",
+   "neuron": "L22N7806",
+   "set": "fresh",
+   "layer": 22,
+   "c": 4,
+   "o_star": 1,
+   "K": [
+    0,
+    3
+   ],
+   "n_K": 2,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.4803936329539666,
+    "crossO": 0.19256729939034212,
+    "crossK_c0": 0.07581356502877028,
+    "crossK_c3": 0.2002483084017212,
+    "random": 0.1354698738819481,
+    "Kown_c0": 0.5455739098191498,
+    "reverse_c0": 0.06051527872065308,
+    "Kown_c3": 0.37813634490659864,
+    "reverse_c3": 0.15150027826487877
+   },
+   "own": 0.4803936329539666,
+   "crossO": 0.19256729939034212,
+   "random": 0.1354698738819481,
+   "identity": 0.0,
+   "crossK": {
+    "0": 0.07581356502877028,
+    "3": 0.2002483084017212
+   },
+   "I_K_each": {
+    "0": 0.15781550759236448,
+    "3": 0.41684213666693176
+   },
+   "I_O": 0.40085314662943244,
+   "I_K": 0.2873288221296481,
+   "d": 0.11352432449978433,
+   "o_gt_k": true,
+   "Kown": {
+    "0": 0.5455739098191498,
+    "3": 0.37813634490659864
+   },
+   "Kown_mean": 0.4618551273628742,
+   "reverse": {
+    "0": 0.06051527872065308,
+    "3": 0.15150027826487877
+   },
+   "reverse_mean": 0.10600777849276592,
+   "rev_ratio": 0.2557851383174262,
+   "sibling": {
+    "0": false,
+    "3": true
+   },
+   "d_sib": -0.015988990037499318,
+   "d_non": 0.24303763903706796,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 10,
+   "key": "L22N7806-__c4",
+   "live": true
+  },
+  {
+   "job": "L24N7411+:c0",
+   "pole": "L24N7411+",
+   "neuron": "L24N7411",
+   "set": "fresh",
+   "layer": 24,
+   "c": 0,
+   "o_star": 2,
+   "K": [
+    1
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.8415768646675369,
+    "crossO": 0.7651412962724345,
+    "crossK_c1": 0.8261790754759017,
+    "random": 0.04371588851337759,
+    "Kown_c1": 0.8522997386841267,
+    "reverse_c1": 0.8204989891217412
+   },
+   "own": 0.8415768646675369,
+   "crossO": 0.7651412962724345,
+   "random": 0.04371588851337759,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.8261790754759017
+   },
+   "I_K_each": {
+    "1": 0.9817036448622931
+   },
+   "I_O": 0.9091757727616502,
+   "I_K": 0.9817036448622931,
+   "d": -0.07252787210064293,
+   "o_gt_k": false,
+   "Kown": {
+    "1": 0.8522997386841267
+   },
+   "Kown_mean": 0.8522997386841267,
+   "reverse": {
+    "1": 0.8204989891217412
+   },
+   "reverse_mean": 0.8204989891217412,
+   "rev_ratio": 0.9626883030476076,
+   "sibling": {
+    "1": true
+   },
+   "d_sib": -0.07252787210064293,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L24N7411+__c0",
+   "live": true
+  },
+  {
+   "job": "L24N7411+:c1",
+   "pole": "L24N7411+",
+   "neuron": "L24N7411",
+   "set": "fresh",
+   "layer": 24,
+   "c": 1,
+   "o_star": 2,
+   "K": [
+    0
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.8522997386841267,
+    "crossO": 0.7537686634206234,
+    "crossK_c0": 0.8204989891217412,
+    "random": 0.05644083866980778,
+    "Kown_c0": 0.8415768646675369,
+    "reverse_c0": 0.8261790754759017
+   },
+   "own": 0.8522997386841267,
+   "crossO": 0.7537686634206234,
+   "random": 0.05644083866980778,
+   "identity": 0.0,
+   "crossK": {
+    "0": 0.8204989891217412
+   },
+   "I_K_each": {
+    "0": 0.9626883030476076
+   },
+   "I_O": 0.884393868974281,
+   "I_K": 0.9626883030476076,
+   "d": -0.07829443407332659,
+   "o_gt_k": false,
+   "Kown": {
+    "0": 0.8415768646675369
+   },
+   "Kown_mean": 0.8415768646675369,
+   "reverse": {
+    "0": 0.8261790754759017
+   },
+   "reverse_mean": 0.8261790754759017,
+   "rev_ratio": 0.9817036448622931,
+   "sibling": {
+    "0": true
+   },
+   "d_sib": -0.07829443407332659,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L24N7411+__c1",
+   "live": true
+  },
+  {
+   "job": "L25N5542-:c1",
+   "pole": "L25N5542-",
+   "neuron": "L25N5542",
+   "set": "fresh",
+   "layer": 25,
+   "c": 1,
+   "o_star": 0,
+   "K": [
+    3
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.5067832530227726,
+    "crossO": 0.03263409723266308,
+    "crossK_c3": 0.0027680402829826155,
+    "random": 0.005886095503930392,
+    "Kown_c3": 0.29489127201161286,
+    "reverse_c3": 0.15928536942242685
+   },
+   "own": 0.5067832530227726,
+   "crossO": 0.03263409723266308,
+   "random": 0.005886095503930392,
+   "identity": 0.0,
+   "crossK": {
+    "3": 0.0027680402829826155
+   },
+   "I_K_each": {
+    "3": 0.00546198057349427
+   },
+   "I_O": 0.0643945849394448,
+   "I_K": 0.00546198057349427,
+   "d": 0.05893260436595053,
+   "o_gt_k": true,
+   "Kown": {
+    "3": 0.29489127201161286
+   },
+   "Kown_mean": 0.29489127201161286,
+   "reverse": {
+    "3": 0.15928536942242685
+   },
+   "reverse_mean": 0.15928536942242685,
+   "rev_ratio": 0.5401494874224496,
+   "sibling": {
+    "3": true
+   },
+   "d_sib": 0.05893260436595053,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L25N5542-__c1",
+   "live": true
+  },
+  {
+   "job": "L25N5542-:c3",
+   "pole": "L25N5542-",
+   "neuron": "L25N5542",
+   "set": "fresh",
+   "layer": 25,
+   "c": 3,
+   "o_star": 0,
+   "K": [
+    1
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.29489127201161286,
+    "crossO": 0.06646871497687885,
+    "crossK_c1": 0.15928536942242685,
+    "random": 0.005379382348091103,
+    "Kown_c1": 0.5067832530227726,
+    "reverse_c1": 0.0027680402829826155
+   },
+   "own": 0.29489127201161286,
+   "crossO": 0.06646871497687885,
+   "random": 0.005379382348091103,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.15928536942242685
+   },
+   "I_K_each": {
+    "1": 0.5401494874224496
+   },
+   "I_O": 0.22540075372003993,
+   "I_K": 0.5401494874224496,
+   "d": -0.3147487337024097,
+   "o_gt_k": false,
+   "Kown": {
+    "1": 0.5067832530227726
+   },
+   "Kown_mean": 0.5067832530227726,
+   "reverse": {
+    "1": 0.0027680402829826155
+   },
+   "reverse_mean": 0.0027680402829826155,
+   "rev_ratio": 0.00546198057349427,
+   "sibling": {
+    "1": true
+   },
+   "d_sib": -0.3147487337024097,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L25N5542-__c3",
+   "live": true
+  },
+  {
+   "job": "L25N8888+:c1",
+   "pole": "L25N8888+",
+   "neuron": "L25N8888",
+   "set": "fresh",
+   "layer": 25,
+   "c": 1,
+   "o_star": 0,
+   "K": [
+    2
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.5929324790812097,
+    "crossO": 0.21507924213826712,
+    "crossK_c2": 0.08762567250446261,
+    "random": 0.09679106993051571,
+    "Kown_c2": 0.5474733003018818,
+    "reverse_c2": 0.16717062755113615
+   },
+   "own": 0.5929324790812097,
+   "crossO": 0.21507924213826712,
+   "random": 0.09679106993051571,
+   "identity": 0.0,
+   "crossK": {
+    "2": 0.08762567250446261
+   },
+   "I_K_each": {
+    "2": 0.14778355984183006
+   },
+   "I_O": 0.3627381695661999,
+   "I_K": 0.14778355984183006,
+   "d": 0.21495460972436986,
+   "o_gt_k": true,
+   "Kown": {
+    "2": 0.5474733003018818
+   },
+   "Kown_mean": 0.5474733003018818,
+   "reverse": {
+    "2": 0.16717062755113615
+   },
+   "reverse_mean": 0.16717062755113615,
+   "rev_ratio": 0.30534937038748144,
+   "sibling": {
+    "2": true
+   },
+   "d_sib": 0.21495460972436986,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L25N8888+__c1",
+   "live": true
+  },
+  {
+   "job": "L25N8888+:c2",
+   "pole": "L25N8888+",
+   "neuron": "L25N8888",
+   "set": "fresh",
+   "layer": 25,
+   "c": 2,
+   "o_star": 0,
+   "K": [
+    1
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.5474733003018818,
+    "crossO": 0.13662612915604483,
+    "crossK_c1": 0.16717062755113615,
+    "random": 0.14516764027832996,
+    "Kown_c1": 0.5929324790812097,
+    "reverse_c1": 0.08762567250446261
+   },
+   "own": 0.5474733003018818,
+   "crossO": 0.13662612915604483,
+   "random": 0.14516764027832996,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.16717062755113615
+   },
+   "I_K_each": {
+    "1": 0.30534937038748144
+   },
+   "I_O": 0.24955761145010713,
+   "I_K": 0.30534937038748144,
+   "d": -0.055791758937374314,
+   "o_gt_k": false,
+   "Kown": {
+    "1": 0.5929324790812097
+   },
+   "Kown_mean": 0.5929324790812097,
+   "reverse": {
+    "1": 0.08762567250446261
+   },
+   "reverse_mean": 0.08762567250446261,
+   "rev_ratio": 0.14778355984183006,
+   "sibling": {
+    "1": true
+   },
+   "d_sib": -0.055791758937374314,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 9,
+   "key": "L25N8888+__c2",
+   "live": true
+  },
+  {
+   "job": "L27N8999+:c1",
+   "pole": "L27N8999+",
+   "neuron": "L27N8999",
+   "set": "fresh",
+   "layer": 27,
+   "c": 1,
+   "o_star": 4,
+   "K": [
+    3
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.49475966838249175,
+    "crossO": 0.17214869194788618,
+    "crossK_c3": 0.004752976846211458,
+    "random": 0.026091686711346686,
+    "Kown_c3": 0.581833611087197,
+    "reverse_c3": 0.011422968455965696
+   },
+   "own": 0.49475966838249175,
+   "crossO": 0.17214869194788618,
+   "random": 0.026091686711346686,
+   "identity": 0.0,
+   "crossK": {
+    "3": 0.004752976846211458
+   },
+   "I_K_each": {
+    "3": 0.009606637626203998
+   },
+   "I_O": 0.3479440685023672,
+   "I_K": 0.009606637626203998,
+   "d": 0.3383374308761632,
+   "o_gt_k": true,
+   "Kown": {
+    "3": 0.581833611087197
+   },
+   "Kown_mean": 0.581833611087197,
+   "reverse": {
+    "3": 0.011422968455965696
+   },
+   "reverse_mean": 0.011422968455965696,
+   "rev_ratio": 0.019632706392848424,
+   "sibling": {
+    "3": true
+   },
+   "d_sib": 0.3383374308761632,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 9,
+   "key": "L27N8999+__c1",
+   "live": true
+  },
+  {
+   "job": "L27N8999+:c3",
+   "pole": "L27N8999+",
+   "neuron": "L27N8999",
+   "set": "fresh",
+   "layer": 27,
+   "c": 3,
+   "o_star": 4,
+   "K": [
+    1
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.581833611087197,
+    "crossO": 0.09064221106752805,
+    "crossK_c1": 0.011422968455965696,
+    "random": 0.015313988948742177,
+    "Kown_c1": 0.49475966838249175,
+    "reverse_c1": 0.004752976846211458
+   },
+   "own": 0.581833611087197,
+   "crossO": 0.09064221106752805,
+   "random": 0.015313988948742177,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.011422968455965696
+   },
+   "I_K_each": {
+    "1": 0.019632706392848424
+   },
+   "I_O": 0.15578716894363787,
+   "I_K": 0.019632706392848424,
+   "d": 0.13615446255078945,
+   "o_gt_k": true,
+   "Kown": {
+    "1": 0.49475966838249175
+   },
+   "Kown_mean": 0.49475966838249175,
+   "reverse": {
+    "1": 0.004752976846211458
+   },
+   "reverse_mean": 0.004752976846211458,
+   "rev_ratio": 0.009606637626203998,
+   "sibling": {
+    "1": true
+   },
+   "d_sib": 0.13615446255078945,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 9,
+   "key": "L27N8999+__c3",
+   "live": true
+  },
+  {
+   "job": "L27N955+:c0",
+   "pole": "L27N955+",
+   "neuron": "L27N955",
+   "set": "fresh",
+   "layer": 27,
+   "c": 0,
+   "o_star": 3,
+   "K": [
+    1
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.5825798343561523,
+    "crossO": 0.20974995736525587,
+    "crossK_c1": 0.1934906223906129,
+    "random": 0.06079539668254179,
+    "Kown_c1": 0.3929349315604971,
+    "reverse_c1": 0.15338691230836565
+   },
+   "own": 0.5825798343561523,
+   "crossO": 0.20974995736525587,
+   "random": 0.06079539668254179,
+   "identity": 0.0,
+   "crossK": {
+    "1": 0.1934906223906129
+   },
+   "I_K_each": {
+    "1": 0.3321272227083731
+   },
+   "I_O": 0.3600364190378551,
+   "I_K": 0.3321272227083731,
+   "d": 0.027909196329482022,
+   "o_gt_k": true,
+   "Kown": {
+    "1": 0.3929349315604971
+   },
+   "Kown_mean": 0.3929349315604971,
+   "reverse": {
+    "1": 0.15338691230836565
+   },
+   "reverse_mean": 0.15338691230836565,
+   "rev_ratio": 0.39036211847902325,
+   "sibling": {
+    "1": true
+   },
+   "d_sib": 0.027909196329482022,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 10,
+   "key": "L27N955+__c0",
+   "live": true
+  },
+  {
+   "job": "L27N955+:c1",
+   "pole": "L27N955+",
+   "neuron": "L27N955",
+   "set": "fresh",
+   "layer": 27,
+   "c": 1,
+   "o_star": 3,
+   "K": [
+    0
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.3929349315604971,
+    "crossO": 0.2029693589143617,
+    "crossK_c0": 0.15338691230836565,
+    "random": 0.045501780226146406,
+    "Kown_c0": 0.5825798343561523,
+    "reverse_c0": 0.1934906223906129
+   },
+   "own": 0.3929349315604971,
+   "crossO": 0.2029693589143617,
+   "random": 0.045501780226146406,
+   "identity": 0.0,
+   "crossK": {
+    "0": 0.15338691230836565
+   },
+   "I_K_each": {
+    "0": 0.39036211847902325
+   },
+   "I_O": 0.5165469970009834,
+   "I_K": 0.39036211847902325,
+   "d": 0.12618487852196014,
+   "o_gt_k": true,
+   "Kown": {
+    "0": 0.5825798343561523
+   },
+   "Kown_mean": 0.5825798343561523,
+   "reverse": {
+    "0": 0.1934906223906129
+   },
+   "reverse_mean": 0.1934906223906129,
+   "rev_ratio": 0.3321272227083731,
+   "sibling": {
+    "0": true
+   },
+   "d_sib": 0.12618487852196014,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L27N955+__c1",
+   "live": true
+  },
+  {
+   "job": "L28N4478-:c0",
+   "pole": "L28N4478-",
+   "neuron": "L28N4478",
+   "set": "fresh",
+   "layer": 28,
+   "c": 0,
+   "o_star": 1,
+   "K": [
+    2
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.32440253806932207,
+    "crossO": 0.017180672763893613,
+    "crossK_c2": 0.04656595844235015,
+    "random": 0.0033915613875305037,
+    "Kown_c2": 0.3011261743786034,
+    "reverse_c2": 0.03934483982367983
+   },
+   "own": 0.32440253806932207,
+   "crossO": 0.017180672763893613,
+   "random": 0.0033915613875305037,
+   "identity": 0.0,
+   "crossK": {
+    "2": 0.04656595844235015
+   },
+   "I_K_each": {
+    "2": 0.1435437549887461
+   },
+   "I_O": 0.05296096900518777,
+   "I_K": 0.1435437549887461,
+   "d": -0.09058278598355834,
+   "o_gt_k": false,
+   "Kown": {
+    "2": 0.3011261743786034
+   },
+   "Kown_mean": 0.3011261743786034,
+   "reverse": {
+    "2": 0.03934483982367983
+   },
+   "reverse_mean": 0.03934483982367983,
+   "rev_ratio": 0.13065898341408175,
+   "sibling": {
+    "2": true
+   },
+   "d_sib": -0.09058278598355834,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 6,
+   "key": "L28N4478-__c0",
+   "live": true
+  },
+  {
+   "job": "L28N4478-:c2",
+   "pole": "L28N4478-",
+   "neuron": "L28N4478",
+   "set": "fresh",
+   "layer": 28,
+   "c": 2,
+   "o_star": 1,
+   "K": [
+    0
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.3011261743786034,
+    "crossO": 0.026232716934594755,
+    "crossK_c0": 0.03934483982367983,
+    "random": 0.004670285336233066,
+    "Kown_c0": 0.32440253806932207,
+    "reverse_c0": 0.04656595844235015
+   },
+   "own": 0.3011261743786034,
+   "crossO": 0.026232716934594755,
+   "random": 0.004670285336233066,
+   "identity": 0.0,
+   "crossK": {
+    "0": 0.03934483982367983
+   },
+   "I_K_each": {
+    "0": 0.13065898341408175
+   },
+   "I_O": 0.08711536613755994,
+   "I_K": 0.13065898341408175,
+   "d": -0.04354361727652181,
+   "o_gt_k": false,
+   "Kown": {
+    "0": 0.32440253806932207
+   },
+   "Kown_mean": 0.32440253806932207,
+   "reverse": {
+    "0": 0.04656595844235015
+   },
+   "reverse_mean": 0.04656595844235015,
+   "rev_ratio": 0.1435437549887461,
+   "sibling": {
+    "0": true
+   },
+   "d_sib": -0.04354361727652181,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 12,
+   "key": "L28N4478-__c2",
+   "live": true
+  },
+  {
+   "job": "L30N6280+:c2",
+   "pole": "L30N6280+",
+   "neuron": "L30N6280",
+   "set": "fresh",
+   "layer": 30,
+   "c": 2,
+   "o_star": 0,
+   "K": [
+    3
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.441459124203629,
+    "crossO": 0.0961537575886553,
+    "crossK_c3": 0.20467327288677273,
+    "random": 0.0055291568504551025,
+    "Kown_c3": 0.41596165441303035,
+    "reverse_c3": 0.2591977992129803
+   },
+   "own": 0.441459124203629,
+   "crossO": 0.0961537575886553,
+   "random": 0.0055291568504551025,
+   "identity": 0.0,
+   "crossK": {
+    "3": 0.20467327288677273
+   },
+   "I_K_each": {
+    "3": 0.46362904664388455
+   },
+   "I_O": 0.21780897101653987,
+   "I_K": 0.46362904664388455,
+   "d": -0.24582007562734468,
+   "o_gt_k": false,
+   "Kown": {
+    "3": 0.41596165441303035
+   },
+   "Kown_mean": 0.41596165441303035,
+   "reverse": {
+    "3": 0.2591977992129803
+   },
+   "reverse_mean": 0.2591977992129803,
+   "rev_ratio": 0.6231290708244205,
+   "sibling": {
+    "3": true
+   },
+   "d_sib": -0.24582007562734468,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 9,
+   "key": "L30N6280+__c2",
+   "live": true
+  },
+  {
+   "job": "L30N6280+:c3",
+   "pole": "L30N6280+",
+   "neuron": "L30N6280",
+   "set": "fresh",
+   "layer": 30,
+   "c": 3,
+   "o_star": 0,
+   "K": [
+    2
+   ],
+   "n_K": 1,
+   "falls": {
+    "identity": 0.0,
+    "own": 0.41596165441303035,
+    "crossO": 0.1475126268034786,
+    "crossK_c2": 0.2591977992129803,
+    "random": 0.02332578034611784,
+    "Kown_c2": 0.441459124203629,
+    "reverse_c2": 0.20467327288677273
+   },
+   "own": 0.41596165441303035,
+   "crossO": 0.1475126268034786,
+   "random": 0.02332578034611784,
+   "identity": 0.0,
+   "crossK": {
+    "2": 0.2591977992129803
+   },
+   "I_K_each": {
+    "2": 0.6231290708244205
+   },
+   "I_O": 0.354630349308606,
+   "I_K": 0.6231290708244205,
+   "d": -0.2684987215158145,
+   "o_gt_k": false,
+   "Kown": {
+    "2": 0.441459124203629
+   },
+   "Kown_mean": 0.441459124203629,
+   "reverse": {
+    "2": 0.20467327288677273
+   },
+   "reverse_mean": 0.20467327288677273,
+   "rev_ratio": 0.46362904664388455,
+   "sibling": {
+    "2": true
+   },
+   "d_sib": -0.2684987215158145,
+   "d_non": null,
+   "cancelled": false,
+   "cancelled_swapped": true,
+   "n_pos": 7,
+   "key": "L30N6280+__c3",
+   "live": true
+  }
+ ]
+}

@@ -1,0 +1,82 @@
+{
+ "frozen_rule": {
+  "rule": "frozen: P8 (G-coh failed: CANCELLED) and the §7.1 two-model rule",
+  "labels": {
+   "G4": "CANCELLED (P8: coherence gate not shown to work)",
+   "O7": "CANCELLED (P8: coherence gate not shown to work)",
+   "Q4B": "CANCELLED (P8: coherence gate not shown to work)"
+  },
+  "labels_H_depth": {
+   "G4": "CANCELLED (P8: coherence gate not shown to work)",
+   "O7": "CANCELLED (P8: coherence gate not shown to work)",
+   "Q4B": "CANCELLED (P8: coherence gate not shown to work)"
+  },
+  "H_depth": "CANCELLED (P8: coherence gate not shown to work on every model)",
+  "H_suff": "CANCELLED (P8: coherence gate not shown to work on every model)",
+  "H_suff_two_model_rule_on_Q4B": "MIXED (1 counted models)"
+ },
+ "amended_exploratory": {
+  "models": [
+   "G4",
+   "O7",
+   "Q4B"
+  ],
+  "counted": [
+   "Q4B"
+  ],
+  "H_suff": "SUPPORTED (decided on Q4B alone, A27)",
+  "H_depth": "NOT SHOWN (decided on Q4B alone, A27)",
+  "excluded": {
+   "G4": "dose scale not validated; coherence gate not shown to work (A27)",
+   "O7": "dose scale not validated; coherence gate not shown to work (A27)"
+  },
+  "excluded_rows": {
+   "G4": {
+    "H_suff": "SUPPORTED, interval above chance 1/3, interval above alpha = 0 (paired) [R-pass 1.00, R-equiv 0.13; no room for equivalence] [coherence gate not shown to work] [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+    "H_depth": "NOT SHOWN, interval crosses 0 [R-pass 0.24, R-equiv 0.01; underpowered for a direction; no room for equivalence] [coherence gate not shown to work] [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]"
+   },
+   "O7": {
+    "H_suff": "SUPPORTED, interval above chance 1/3, interval above alpha = 0 (paired) [R-pass 0.99, R-equiv 0.10; no room for equivalence] [coherence gate not shown to work] [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]",
+    "H_depth": "NOT SHOWN, interval crosses 0 [R-pass 0.99, R-equiv 0.00; rule fires on the null; no room for equivalence] [coherence gate not shown to work] [exploratory: dose scale not validated; coherence gate not shown to work; running alpha_c 32 (A24), frozen alpha_c 64 (A27)]"
+   }
+  },
+  "note": "exploratory: holds only under A24 and A27"
+ },
+ "Q4B_H_suff": {
+  "label": "SUPPORTED, interval above chance 1/3, interval above alpha = 0 (paired) [R-pass 0.95, R-equiv 0.00; no room for equivalence] [coherence gate not shown to work]",
+  "o_dp": {
+   "est": 0.53125,
+   "lo": 0.425,
+   "hi": 0.6375,
+   "n": 80,
+   "n_finite": 10000
+  },
+  "frozen_coherent_only": {
+   "label": "CANCELLED (coherence gate not shown to work)",
+   "o_dp": {
+    "est": 0.4866666666666667,
+    "lo": 0.38,
+    "hi": 0.5933333333333334,
+    "n": 75,
+    "n_finite": 10000
+   },
+   "paired_minus_alpha0": {
+    "est": 0.14,
+    "lo": 0.0,
+    "hi": 0.28,
+    "n": 75,
+    "n_finite": 10000
+   }
+  }
+ },
+ "models": [
+  "G4",
+  "O7",
+  "Q4B"
+ ],
+ "counted": [
+  "Q4B"
+ ],
+ "H_suff": "frozen: CANCELLED (P8: coherence gate not shown to work on every model) (two-model rule on Q4B: MIXED (1 counted models)); amended, exploratory: SUPPORTED (decided on Q4B alone, A27)",
+ "H_depth": "frozen: CANCELLED (P8: coherence gate not shown to work on every model); amended, exploratory: NOT SHOWN (decided on Q4B alone, A27)"
+}

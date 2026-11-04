@@ -1,0 +1,374 @@
+{
+ "mode": "as collected",
+ "inputs": {
+  "n_items": 60,
+  "n_answered": 60,
+  "n_declined": 0,
+  "response_models": {
+   "claude-sonnet-5-5": 60
+  },
+  "artifact": {
+   "<local>/interp_research/studies/instruments/results/e0b/keys/inst0b-retest.jsonl": "916b54259311b7740a193b00e574b4a7a328502da4ae9515758cdb8c6c248276",
+   "<local>/interp_research/studies/instruments/results/e0b/explain/responses/inst0b-retest.jsonl": "2517ced07a18e5b9a016c973af4fe4b958c836180fb0f337d826d23a65e59786",
+   "<local>/interp_research/studies/instruments/results/e0b/explain/requests/inst0b-retest.jsonl": "0509b590551feb3aa27419362c1e4ca51697c3316abab96249f14fe12de69258",
+   "<local>/interp_research/studies/instruments/results/e0b/explain/responses/inst0b-retest.declined.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+ },
+ "known_number": {
+  "what": "SPEC3 Stage 1's labels on the 30 group i sets",
+  "want": [
+   27,
+   30
+  ],
+  "got": [
+   27,
+   30
+  ]
+ },
+ "rule_i": {
+  "k_coherent": 27,
+  "n": 30,
+  "declined": 0,
+  "counts": {
+   "coherent": 27,
+   "mixed": 3
+  },
+  "line": "at least 25 of 30",
+  "pass": true,
+  "reading": "reader stable",
+  "predicted": "26 [23, 29] of 30"
+ },
+ "rule_ii": {
+  "k_coherent": 29,
+  "n": 30,
+  "share": 0.9666666666666667,
+  "declined": 0,
+  "counts": {
+   "coherent": 29,
+   "mixed": 1
+  },
+  "line": "share at least 0.85",
+  "pass": true,
+  "reading": "construction adopted",
+  "predicted": "0.93 [0.83, 1.00]",
+  "by_band": {
+   "low": {
+    "k_coherent": 14,
+    "n": 15
+   },
+   "deep": {
+    "k_coherent": 15,
+    "n": 15
+   }
+  }
+ },
+ "e3_reader_stage": "proceeds; positive control: same token, same document",
+ "retest_agreement_with_spec3": {
+  "agree": 28,
+  "n": 30,
+  "table": [
+   {
+    "spec3_id": "judge:reuse3c:000021",
+    "id": "judge:inst0b:000043",
+    "source": "L05N6854+:c0",
+    "token_string": "future",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000024",
+    "id": "judge:inst0b:000053",
+    "source": "L09N2031-:c2",
+    "token_string": " majority",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000049",
+    "id": "judge:inst0b:000052",
+    "source": "L12N5447-:c0",
+    "token_string": " body",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000056",
+    "id": "judge:inst0b:000027",
+    "source": "L31N10791+:c1",
+    "token_string": " in",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000058",
+    "id": "judge:inst0b:000038",
+    "source": "L16N6982-:c0",
+    "token_string": " from",
+    "spec3_label": "coherent",
+    "e0b_label": "mixed"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000059",
+    "id": "judge:inst0b:000047",
+    "source": "L08N10948+:c0",
+    "token_string": " metals",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000062",
+    "id": "judge:inst0b:000046",
+    "source": "L05N2634-:c2",
+    "token_string": " in",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000086",
+    "id": "judge:inst0b:000023",
+    "source": "L10N9100-:c2",
+    "token_string": " which",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000101",
+    "id": "judge:inst0b:000006",
+    "source": "L20N5759-:c0",
+    "token_string": " Ella",
+    "spec3_label": "mixed",
+    "e0b_label": "mixed"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000125",
+    "id": "judge:inst0b:000049",
+    "source": "L15N474-:c2",
+    "token_string": " burned",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000169",
+    "id": "judge:inst0b:000014",
+    "source": "L21N6487+:c2",
+    "token_string": " the",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000187",
+    "id": "judge:inst0b:000048",
+    "source": "L18N703+:c4",
+    "token_string": " McC",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000188",
+    "id": "judge:inst0b:000042",
+    "source": "L10N9794+:c0",
+    "token_string": ".get",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000207",
+    "id": "judge:inst0b:000056",
+    "source": "L23N10071+:c1",
+    "token_string": " of",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000240",
+    "id": "judge:inst0b:000050",
+    "source": "L14N9004+:c1",
+    "token_string": " content",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000241",
+    "id": "judge:inst0b:000025",
+    "source": "L30N6507-:c2",
+    "token_string": " nursing",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000268",
+    "id": "judge:inst0b:000040",
+    "source": "L22N8185-:c3",
+    "token_string": " would",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000282",
+    "id": "judge:inst0b:000028",
+    "source": "L19N2718-:c0",
+    "token_string": " a",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000288",
+    "id": "judge:inst0b:000004",
+    "source": "L26N9711+:c2",
+    "token_string": " the",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000301",
+    "id": "judge:inst0b:000007",
+    "source": "L06N6273-:c1",
+    "token_string": " ship",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000302",
+    "id": "judge:inst0b:000005",
+    "source": "L22N7990+:c0",
+    "token_string": " Jet",
+    "spec3_label": "mixed",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000307",
+    "id": "judge:inst0b:000044",
+    "source": "L19N6189+:c0",
+    "token_string": " which",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000317",
+    "id": "judge:inst0b:000018",
+    "source": "L28N6373-:c0",
+    "token_string": " beat",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000318",
+    "id": "judge:inst0b:000033",
+    "source": "L06N2537+:c1",
+    "token_string": " batch",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000319",
+    "id": "judge:inst0b:000045",
+    "source": "L16N10459+:c3",
+    "token_string": ".",
+    "spec3_label": "mixed",
+    "e0b_label": "mixed"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000352",
+    "id": "judge:inst0b:000012",
+    "source": "L24N1234-:c1",
+    "token_string": ".",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000384",
+    "id": "judge:inst0b:000051",
+    "source": "L04N3542-:c2",
+    "token_string": "mp",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000424",
+    "id": "judge:inst0b:000003",
+    "source": "L25N5377+:c1",
+    "token_string": " it",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000434",
+    "id": "judge:inst0b:000009",
+    "source": "L04N5845-:c0",
+    "token_string": "Highlights",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   },
+   {
+    "spec3_id": "judge:reuse3c:000452",
+    "id": "judge:inst0b:000026",
+    "source": "L23N1430+:c0",
+    "token_string": " special",
+    "spec3_label": "coherent",
+    "e0b_label": "coherent"
+   }
+  ]
+ },
+ "against_construction": [
+  {
+   "id": "judge:inst0b:000006",
+   "group": "i",
+   "kind": "spec3_same_token",
+   "band": "deep",
+   "pole": "L20N5759-",
+   "set": "judge:reuse3c:000101",
+   "token_strings": [
+    " Ella"
+   ],
+   "n_docs": 10,
+   "label": "mixed",
+   "why": "Most marked tokens are ' Ella' as a person's first name (Fitzgerald, Mai, Baker, Faulhaber, Knox), but one is a Shopify theme name and one begins the film title 'Ella Enchanted', so the roles differ.",
+   "decline": null
+  },
+  {
+   "id": "judge:inst0b:000038",
+   "group": "i",
+   "kind": "spec3_same_token",
+   "band": "deep",
+   "pole": "L16N6982-",
+   "set": "judge:reuse3c:000058",
+   "token_strings": [
+    " from"
+   ],
+   "n_docs": 8,
+   "label": "mixed",
+   "why": "All the marked tokens are the preposition \"from\", but it does different work: it marks a change's starting point (\"went from 297.3 MB\"), a distance or reference point (\"an hour from camp\", \"24 n mi from Paxi\"), an origin of movement (\"traveled home from Berlin\", \"got up from the bed\"), and a baseline of comparison (\"20% from where the stock closed\", \"fell 0.05 points from a month earlier\"), so the role is not uniform.",
+   "decline": null
+  },
+  {
+   "id": "judge:inst0b:000045",
+   "group": "i",
+   "kind": "spec3_same_token",
+   "band": "deep",
+   "pole": "L16N10459+",
+   "set": "judge:reuse3c:000319",
+   "token_strings": [
+    "."
+   ],
+   "n_docs": 1,
+   "label": "mixed",
+   "why": "Almost every marked token is a period closing a sentence, but in the 'Dr⟦.⟧ Wiseman' passage the period marks an abbreviation in mid-sentence, which is a different role.",
+   "decline": null
+  },
+  {
+   "id": "judge:inst0b:000022",
+   "group": "ii",
+   "kind": "same_doc",
+   "band": "low",
+   "pole": "L00N5623+",
+   "set": "w4:L00N5623+:c0",
+   "token_strings": [
+    "entarios"
+   ],
+   "n_docs": 1,
+   "label": "mixed",
+   "why": "All marked tokens are the subword 'entarios' completing 'comentarios', but they sit in different positions: most finish a jQuery selector ID string like '#Comentarios', while others finish '#n_comentarios' (a different ID) or a REST URL path segment '/comentarios', so the roles in the code differ.",
+   "decline": null
+  }
+ ]
+}

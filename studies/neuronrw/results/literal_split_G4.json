@@ -1,0 +1,201 @@
+{
+ "model_key": "G4",
+ "rule": "literal: the re-explained label names one of the pole's own top-20 promoted output tokens (literal_overlap, SPEC §5.1); exploratory, made after the review",
+ "arm0": {
+  "literal": {
+   "n": 17,
+   "D_w": {
+    "n": 17,
+    "est": 0.6176470588235294,
+    "lo": 0.35294117647058826,
+    "hi": 0.8529411764705882
+   },
+   "A": {
+    "n": 17,
+    "est": 0.6470588235294118,
+    "lo": 0.4117647058823529,
+    "hi": 0.8823529411764706
+   }
+  },
+  "non_literal": {
+   "n": 83,
+   "D_w": {
+    "n": 83,
+    "est": 0.0963855421686747,
+    "lo": 0.03614457831325301,
+    "hi": 0.16265060240963855
+   },
+   "A": {
+    "n": 83,
+    "est": 0.10843373493975904,
+    "lo": 0.04819277108433735,
+    "hi": 0.18072289156626506
+   }
+  }
+ },
+ "arm2": {
+  "d_p": 16.0,
+  "literal": {
+   "n": 16,
+   "poles": [
+    "L15N9089+",
+    "L28N5924+",
+    "L09N10185+",
+    "L16N2951-",
+    "L26N9472-",
+    "L20N3525-",
+    "L28N8275-",
+    "L04N8650+",
+    "L14N6393+",
+    "L26N1382+",
+    "L03N6660-",
+    "L17N8681+",
+    "L11N1220+",
+    "L02N226-",
+    "L28N2019-",
+    "L15N2237+"
+   ],
+   "paired_gain": {
+    "n": 16,
+    "est": 0.5,
+    "lo": 0.25,
+    "hi": 0.75
+   },
+   "paired_gain_two_way": {
+    "est": 0.5,
+    "lo": 0.1875,
+    "hi": 0.75,
+    "n": 16,
+    "n_finite": 10000
+   },
+   "o_dp": 0.6875,
+   "o_0": 0.1875
+  },
+  "non_literal": {
+   "n": 64,
+   "poles": [
+    "L08N5222+",
+    "L00N169-",
+    "L15N2237-",
+    "L32N9465+",
+    "L04N9107+",
+    "L19N4400-",
+    "L25N9519+",
+    "L01N5562+",
+    "L00N6518-",
+    "L18N1046+",
+    "L26N2364+",
+    "L18N3736-",
+    "L24N3271-",
+    "L07N10202+",
+    "L19N4877+",
+    "L30N863-",
+    "L09N3578+",
+    "L12N9456-",
+    "L28N2019+",
+    "L19N8848+",
+    "L27N409+",
+    "L04N7359+",
+    "L21N5798-",
+    "L23N5382+",
+    "L16N4652-",
+    "L10N7669-",
+    "L15N2952+",
+    "L28N7525-",
+    "L21N2802-",
+    "L22N1709-",
+    "L25N5115-",
+    "L11N8470-",
+    "L17N9667+",
+    "L24N6884+",
+    "L13N7364-",
+    "L02N3067-",
+    "L20N6535-",
+    "L27N6897+",
+    "L12N9456+",
+    "L32N5928+",
+    "L06N6873+",
+    "L18N1122-",
+    "L24N8171+",
+    "L14N2741-",
+    "L31N8180-",
+    "L07N2032+",
+    "L17N4161+",
+    "L30N5206-",
+    "L11N8839-",
+    "L15N1284+",
+    "L27N2664+",
+    "L01N4035-",
+    "L14N2741+",
+    "L26N7840-",
+    "L03N10205+",
+    "L22N8401+",
+    "L30N10175+",
+    "L07N2359+",
+    "L19N5005+",
+    "L10N2884+",
+    "L21N9477-",
+    "L30N5206+",
+    "L02N54+",
+    "L27N3256-"
+   ],
+   "paired_gain": {
+    "n": 64,
+    "est": 0.2265625,
+    "lo": 0.0859375,
+    "hi": 0.359375
+   },
+   "paired_gain_two_way": {
+    "est": 0.2265625,
+    "lo": 0.0625,
+    "hi": 0.390625,
+    "n": 64,
+    "n_finite": 10000
+   },
+   "o_dp": 0.484375,
+   "o_0": 0.2578125
+  },
+  "p_lit": {
+   "rule": "A28 (2), registered on O7: literal two-way paired gain point >= 0.30 and the non-literal interval includes 0.10 or lies below it; refuted if the non-literal interval lies entirely above 0.15",
+   "reading": "in sample (P-lit was built from these data), not a test"
+  }
+ },
+ "repetition": {
+  "rule": "distinct-bigram ratio < 0.5 (the review's metric, chosen after seeing the data)",
+  "by_dose": {
+   "0.0": {
+    "n_cells": 5,
+    "n_samples": 50,
+    "share_cells_repetitive": 0.0,
+    "share_samples_repetitive": 0.1,
+    "band_collapse_share": 0.08,
+    "band_collapse_share_all_poles": 0.08
+   },
+   "2.0": {
+    "n_cells": 400,
+    "n_samples": 4000,
+    "share_cells_repetitive": 0.045,
+    "share_samples_repetitive": 0.17075,
+    "band_collapse_share": 0.02775,
+    "band_collapse_share_all_poles": 0.03233333333333333
+   },
+   "4.0": {
+    "n_cells": 400,
+    "n_samples": 4000,
+    "share_cells_repetitive": 0.25,
+    "share_samples_repetitive": 0.321,
+    "band_collapse_share": 0.03125,
+    "band_collapse_share_all_poles": 0.030333333333333334
+   },
+   "16.0": {
+    "n_cells": 400,
+    "n_samples": 4000,
+    "share_cells_repetitive": 0.4825,
+    "share_samples_repetitive": 0.48575,
+    "band_collapse_share": 0.28375,
+    "band_collapse_share_all_poles": 0.30216666666666664
+   }
+  }
+ },
+ "created_utc": "2026-10-26T20:16:37Z"
+}

@@ -1,0 +1,1221 @@
+{
+ "created_utc": "2026-10-25T20:50:14Z",
+ "inputs": {
+  "studies/neuronoff/plan/pairs_Q4B.json": "4b5fa33e29bd057efb45be833251272d0c42655abdf4ed854d0ec37694263288",
+  "studies/neuronoff/plan/plan_Q4B.json": "7af5184d61b0820b4d85706ddf4cdc6f557fd6a2e3c459bba6747248e4912134",
+  "studies/neuronoff/results/thresholds_Q4B.json": "db1378fbe3402265a294ea5d6f3ac6d915d35c2059b49564177c33af3ca19d89",
+  "<local>/interp_research-neurons-explain/bank/w5/verdict/samples/q1_Q4B_poles.jsonl": "6c05449674735ddd42056b4ba2c98f7e985bd174d160cd761f42372c970a9ae8",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L04N5165m.json": "b7e19c607b788196952b47fc21dd09d92cee7ca274b456d26f30bedb28af6dc2",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L04N5557m.json": "75aa3b361454e62f90c2175bbab805367898ca823b253537a7f5d2c49d96e220",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L05N471p.json": "0a372de64f59cee13f6b27c2e61c17c5ce879f75a09790f79265e26667679404",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L05N471m.json": "4a1165b6848c64e23f6820e6f41a6ea49f20398238f72b411010a676bd432c00",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L05N7701m.json": "89889ddfbba7d4d41b5361f5e5bc8c771ea85893990c960b4f7d1c3788020539",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L05N816p.json": "28d460d225f8c67e6ba3f6bef3382763a0a2a5938b87d145b3e816eda8b1849a",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L05N816m.json": "c04bd1103bfb8a8e368efb545923fb3b4d9bd65622c3c78e8699b12461b0ad00",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L06N5544p.json": "59dfc15bf6c96dc0aa0cf8f0b27a5727ce64cee5ea8150608cad4ba45459324d",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L06N7740m.json": "c9d2f6dda69747cba102c4fbe884e0440172dffeb379ce7f6d950b152e8610db",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L07N1025p.json": "54637ab7d276000bca00f76798135915a480db688cbc51f9097f299db2e81dac",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L07N1025m.json": "32e258b38ad169daddb5e90348479319ff7b52f0ea2a6d71f67a4220fdfdc189",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L07N472p.json": "72e51aa83c663a9963122ca896d07d3355c15f853764c887a66b12bf1b50f530",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L07N6119m.json": "f2a8cbba94fd91778520e4aed0a46a1af297c630d0ae05ce401b8aabdf67c27d",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L08N158p.json": "3f3a61d4d39bccee74df3fe4fe3558a45c64e8fc71e69a3a0006ab7724d8e620",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L08N3398p.json": "c722420e4652ff8fcef2cd4d2680b372be3845dcea24a36e1d7669700ca06390",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L11N4304m.json": "f9975421d747f32a34030ea06a3c34e73b53b1f9680b212751126a0669efc03a",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L11N9054m.json": "25c1c6c102ec42b018a55b70b8979328ad3b860f793af4d758c0892fd71fbe00",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L12N1451p.json": "525b8da25afe904f8000204d20b93014bcb898cbcf3eebacb422da78cad7d5e2",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L12N1451m.json": "13cab230efc7d62c0569193074ab35b192a5f73b319f5d2747b609e9035eef00",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L12N2605m.json": "f7cdcdc0e3fdcb4a7947c4c1591737b2546c444f390eb2fb634a4b2cb7203e54",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L12N4813p.json": "8c8e293fbe18427b3dd057e9ff08eb0f2138671e514a5a751aedf78ec89ce99e",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L12N4813m.json": "5bef65d4769b9621424235c6b818d0c8747e15943a2ce2a69eaf2e09e01d17fa",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L12N7367m.json": "a4b489e7cd6badbcedf55124c8271afcc5d124422196947da18c7d1cea3718d8",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L12N8184p.json": "0f3a70e84b806a49c9322a4ed9d07e0a609dccac501d0459278a70970b6832cf",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L12N8184m.json": "eafc6dd4f51abcb5d1c6874731886740d70455be3a1f22c3c258e3d946118f9e",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L12N8738p.json": "67f474699e9ad123d46756537851a49c02e8fd73e034ef5fc2bbe4af15729de3",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L12N9034p.json": "f34c5c1d8055bee888b45b3034246b6dbdd316b374da2ee44080ffaae989a3b5",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L14N4015p.json": "2b75baf046db1a823949a5532c063141bf0cdfc9022557595ec03ca16f14d948",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L14N4015m.json": "ae5731ea5dc213428b3be080d3e43efaa5befe30ee465c49b55eaaa43da487f3",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L14N4419p.json": "2e3cfca84ff1e74663766d76521413e06e4a96469294b8b6ccc49e112d55e0b4",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L14N4419m.json": "73fde4fe1c8e7ac8c823ba1b199a0afe6b7cec4e547b899fbdc88e6fb11f297c",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L14N4783p.json": "be554bffb520a09c3a93f501c744a0d1b52ece0848cea5f738f542d2a18034e4",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L14N4783m.json": "f260e849bbbf821ad0d63fb56e2cb7f6eea43ea22ce7996a7108c6b99ed72a1f",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L14N5447p.json": "1758077f57245781cd17e9d87d62093c1f797a72a6f391158cf29df472271206",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L14N593m.json": "97968a89ad152269b254edcbb85582e757b6e5c3d407949b9f090f6c855d4de7",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L14N7957p.json": "ba47777ec1f8b619e6cc1f3dfad8ca8738ffb1d40abe0ff5c54d03040bee8134",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L14N7957m.json": "1da6aa741a59b92d71cff6331fc84346eb2a8787985ba39ed2eb5cd018d4e9a5",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L15N3952p.json": "5776901f19d3fd572248aedc2a9f44c6affb75757dcd1733b2c0012c7b4d4b60",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L15N3952m.json": "9dbb0eb78c5c54d2ccc335c147c8745fdf6f0d51b9d4209d1f8eb3338b696b25",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L15N405p.json": "72c0505d4e2673f6d33209f4fa47dd4ca4fdd24e2f623245c2a20a63e697502d",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L15N5772m.json": "d6fb9bc4f34e4f22a9ca095f3788f34d9383299ed022167d02178dce2194649e",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L15N8849p.json": "5ebceaafc2333e49a828db80a5a01d04fcffe3778649e82478053a74c278739d",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L15N8849m.json": "64442536ade13ff42af20da56f062f30d9407c20f16cfb08b450c456558a5037",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L15N9151p.json": "e021eb0c47fc78d86bbdc462b7ad903ff1e3939bfe4e8836d9d74d8e7371c27c",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L15N9151m.json": "3af0889a292340599a62a966221abbe4cf0389917ce2903980e7f80aa17638a2",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L16N2515p.json": "db417fea0ec03af0dc586bc5c66a8df27d784a6c2373a3aaec7d779cb1f05271",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L16N2662p.json": "d7bb790b4002294a3e7c752c33803d2c7f5570a052c74bbd191b5e74cae33555",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L16N6833p.json": "02cc91b44a5d05771aed70095c76e9cbd90e5b16d9fb36c378c787b592904b8e",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L16N9181p.json": "a49c631532bc41b0faed37c9feeda4c4f8a42edf03fd93764b903d4d930f2831",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L16N9181m.json": "bf16626898f1e39fd81ed5913ec8a9adfc5203b4cda773c29ac45e86f9bdacde",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L16N9243m.json": "dd013297aaa024b47a03890d4ef547514a8850d17051e0ba37113a2f88a09198",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L17N3004p.json": "9f7e64f692f5a25a7dcc261ae9c776e9fd6321cfb7944ab7e926a23d4a325f53",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L17N3004m.json": "76a14815e18aee2591df686205c60b093c8851127e9be5be6cc18dec5fb6131e",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L17N4176p.json": "892629d22229b1a64da31728e036e6091628e375d74da455b55e5c32938347cc",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L17N4778p.json": "c68c0fead0562b1d1cd028df74ccf4a2141cfb94f61bf578627d6b1cfc12ed76",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L17N4778m.json": "e94933cfb81600eb166b6bd20e2e54c44b2301707c12fb37efaa1c7445a2bbee",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L17N7543p.json": "7335481d5786f3e97507831df8a79f8e7d96f3cbec45ec763300c999ff4a4227",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L17N9569p.json": "0ba3e7807e7604a3ce847a8ddf75f283f3c0bdfa03cd14ef215a52964ca9b9a7",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L18N1776p.json": "517f1909b396ce90a9b2df7e68e336fe2ebdf9b084f847893a3f23cff7732091",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L18N2635m.json": "204ff869fe66b440a5979c781a1acc274fc7287ee9ee56089d0cecc8341b1a30",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L18N2645p.json": "901d24f59341a97ce1cbed03a5db259a9e0f6e84d07eb5ad6d6e171346bcb42f",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L18N2645m.json": "d79a9b7d914370da3345e9ac01d68e9d8aef693ce874369095b3cde502ed7118",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L18N5580p.json": "371bc190c6bf7be2d693577248c940da1e9071422440f305eaa6cd18a2f0b64a",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L18N621p.json": "ba1099cd9b1ebbdd1bcfd7c5d824f0ff816b3c6d23f258ed56674acd2bcc9525",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L18N7160p.json": "68c36047f25df621cfc0047e7f535699d013989328d7fec6ec38b1f59916a915",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L18N7160m.json": "9fcf8394a578bb90a1a38834bb086abf0423fcba8b92d22eada162a3ac2e6a5a",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L18N8559m.json": "39d895cc6ebe7314bcf0fe033f00f50f880d2ae16421372344bf4f4cfa9f6adf",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L19N1373p.json": "a722abb68f6134eecf3e25bed4e73e35b9cc5fc1c97526303320fde5e62daaeb",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L19N2402m.json": "9c8dd0a3a9a492ca46379f37bc9509c18d2bfa65732e21a0c203b6513f0d58cf",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L19N6951m.json": "6dd4e5a066f9c9f16a64c676ab7ad2f8b9bd26d6f99a13adf6dc7772f2ce3bcb",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L19N9685p.json": "cc7a5fd184db8df60bc22e0013dcccf8a74fdcebd6df0097a6b2051e3149ccfd",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L20N5089p.json": "5df75db8d0bb7816691c21e14f612459b43781bdd9f7dfc1964558eea16c6fbd",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L20N5089m.json": "afed31059f59eb627be959bb07e59b8a54b90f3ba050729cb7a6f340b22874c2",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L20N5110m.json": "36d66d142440bca0ded5d613ad008b1443766bd31d118a9a60dbdb2c3bdbf091",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L20N7249p.json": "d933b0c75f4528487a8a323e3804a22b72b4edbdb255608053b1b4999cc4b599",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L20N7249m.json": "92e935e2b720d973b2ea7f2319328d5cc517b0059b0ebb270e9a16634a311783",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L20N7603m.json": "8131bba3d5e07035c2955ba7094ce4e6ca3e379b7b43001c64143a11a42906fc",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L20N9552p.json": "864e577b2bc6937c2cabc82cb82783791c948482cc6041f781c563b83512cda5",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L20N9552m.json": "b268418b0c7cda791293c6fbe1812afd2e6039e2d9a4b797f00dab2dbc9ed976",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L21N1823m.json": "baf1e5dbb46c2e6ab201266e3c4930165f0dc9f6c5af0bd184e5ba8c62c760b5",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L21N1897p.json": "4e3d7beb2aa4d33805505fb2745191d9b83932c68f3f8df29fc8d0ebe212789c",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L21N1897m.json": "0c0e524f85cf2e9f6001b99213b3023d0febb31d246a337b7eb52580bb3d2c7d",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L21N3107p.json": "e22bfe6db750581ee66598f51cf13404679273188c3968b5678d025f9e4c1154",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L21N3107m.json": "7c0c39e1fe7c5e289bd3d5b1c68d4ee2d382f83a410d1f13392ceb6263d62c0f",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L21N3519m.json": "aea2df2f6c4693536a0a6d83bdfa48531b0d8c922241bf1abbd9f3bc09350180",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L21N5637p.json": "ffcdc898fb1e15ca77736b175264eed8a5ebb345255d22fe798ec44dafa339c9",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L21N5732p.json": "e4be0664822704f87e8a816c19f85ed3899a732ef15761077f73adaa4c277296",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L21N7763m.json": "f22befb21ecaf067da07c51449f2b1f9e912487f1fed62e6d05e8951ad888657",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L21N9387p.json": "0c040ef38cb1a6855a3d4cea9ee62dfe294eb17145a7772f1d92475a016121fe",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L22N1722p.json": "aaaece56f863f66da5396807a17ac5aeaf6092cb22ee80b5b26855963fc22873",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L22N1722m.json": "6c862faa9a94dd23aa1a8821f365e15795d159e5fdbe0dbfe1e5919d26669c4b",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L22N3065p.json": "44d6a6cd382e9b2985f82041a77ade9121997666b1fb2297f880d7894b5240d4",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L22N3065m.json": "e535cd63bbe68ec75b57e61fd7ac74c39b415bd9cb8866ed857476c63aea815e",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L22N5394p.json": "520ef1fed400e4a8c894292742dcdf3438ddc9bb63d767cbd0e12378c5eeb4bc",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L22N6612p.json": "1bcaa92bcad4936b3e90d6efe54da18501b89174d7666974af4d95c70eab4f59",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L22N6612m.json": "9b43097ca2f59475a1bb8f2b8a7efdaab604cd631490c1efbd5e00f14f876e48",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L22N6898m.json": "794b61f82abcad43904497c2a60445c91c79022663a4b68f2198155eeb12f79a",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L22N7061m.json": "406797a9d669a65a9d223c0cdd27fff0c3e380bb500a727cb727165a2895f771",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L22N7232p.json": "2e4fb7e65cb00859f021e877e6d1fcfb08b46b788c16ccf80dec1f28411c3e6e",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L23N7445m.json": "be68de0af9634a7fb82b6c27da0cebd52a97dd6dac9e1bef27b2d9f4316bfdc7",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L23N8899m.json": "9780dfb04ef10e808b0cdfc864237f1e6f57e8f9bddef5366ab37f3c60f07ddc",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L23N8995m.json": "2b50249cc0c50c61c17cbf7e896eaa29d31e4d3b5a3f2fa1e200ec13e0676e3f",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L24N3091p.json": "5dc800574820da8b4f00edd9abd11c3539c68c0ad4088d7e66f9753846b17333",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L24N3091m.json": "f68f277977b4ca057e2b5e2564804396a7d7bb2270045fbcb7fe0c7162aac59b",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L24N4477m.json": "0b7531f4760e19d324d1c3a05b983903c5641f26e7ac5d504c8cd9540289728f",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L24N6548p.json": "7f72b03ecfac5a4f6ec55a57d4b47b6a41419d284e55ff83b4e820caee56e311",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L24N6912m.json": "56b182c7205402b9f2183e6a34c7b31d62f39e9a105fd0002b37229a47f8a001",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L25N4752p.json": "39c060de001ca683228ed18c9c59461b8cb47fd1c5b9e097e321bc807ee5bfbe",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L25N4752m.json": "08fb4d51b55558d7062e7c0aadef12b5dc5192bf28efca242204184dcc1752d9",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L25N5080p.json": "df792a3ad2bd844f851dde1a8bad24c29cf2d750c77ce08fc40a96a751a3bd35",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L25N9367p.json": "914546a435541a9b1a0ad6dbfc3a778a28c73cb85e6e7b436c1f8c2076799c37",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L26N3166m.json": "9be29ed833c90d34d134fc1a972f7584dc70f6cea545560cd7a50d633fc6e43d",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L26N3713m.json": "827dcd6e9feaa80828f6060937db32454a190bc5ed33abcae03d7c32383029d4",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L26N4718p.json": "e7f4a282a6142efbd56fca0c800285d682090a2f2649f224657f30d9ba9afe7b",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L26N4718m.json": "e726cecaa556a397884a1ada4b9f800380b6f5a6dc77466a2612f77e8707f8a1",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L26N5319m.json": "63ec2d02b6304a0ae33e9af980efb7da008993e966da31eece27b9165a7d2c70",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L26N634p.json": "b90417a19208cbb02c669cc1ec3aca2d5c37ba6f5f4b04c1e07ce98f85db2b8d",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L26N821p.json": "19fab9be1917b2ea679064e3a23c97ca24fd2ed54983ba2680eb99b7d692d8e3",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L26N8581p.json": "d6eac77e5c79717afd25b6b97dd29b8363f96cab67a84deaca3db198f4026c0a",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L27N6736p.json": "622ea4cdf889ff609e8597d55873fa588bcf5a5d16446f7babc83dcfde73c366",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L27N6736m.json": "44fcb90eb8d66c1574671cb85a5d960f89324fa7a12c2bc69de4b67db5d1c630",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L27N6887m.json": "a93f1d87b2e67b69e939cf45df7bdb9813c93005bde827795e887ebe430021b8",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L27N7674m.json": "64532b5d554b93e5147008d62cc613aed858ac8251a20602452d2a6aeabff3d9",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L27N7773p.json": "38beb802c82e04fdc902db66c0c4880a7ec28766d275c3f11e522e09b582ccfc",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L27N9359p.json": "366916ed62b1360ae77019d7a0d019bdce343108b2f4a066893295c1e0d93c90",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L28N3957p.json": "536b22edd16a96d5ea951cab9a5041246c7b7e725d16a1052af8464d791b61ff",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L28N4076p.json": "4b15f8ac56a8a65156c71da25853802dc4582f3e8bb648b6f781465c3a458819",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L28N4076m.json": "991475cf5f63b376a849886dd1491c52f8c51ec36342267804e4ac31c63b75bf",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L28N5632m.json": "8f3d761c38ac4ebfbc428f797d2c9995324d6df8c8c33b3bdd1e430d340b6254",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L29N8202p.json": "76d01163835089051be36851bdd0ec40434442729a965b1fe67a72d6ff4a888a",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L29N9473m.json": "a9bd4c147d74dce633c4277e7550930d76a30d3827cc231bb0801229de9bc420",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L31N2970p.json": "cab10009c7de8f090d63dc3db5575a339c7ed3cc483a6641910993602129ed0c",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L31N2970m.json": "a2a48e31cb888464829e44495176aa1ebcf31b24428f79be6391c31884f2e96b",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L31N3418m.json": "70e3075a67477aa16386e0c09f7afb593c9bb1e8c88c19ead637c92d38277466",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L31N5699p.json": "e15c86f71b8e5ad9483c219917a61b91e3486f734f22f6a8781748b5d05e8a32",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L31N6653p.json": "6512229489bed970b62897a6e52a17735d21126d5df29f7e84ec51e25f4fc1bc",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L31N9536m.json": "12f92d4b1a77b9347a78d1ff5880c4ad51c7634276c912bcc43bd15d979ef5d9",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L32N1136m.json": "d18b8aef0bb1ab2968362fcb49d104f74447705b973b2aecfbe0e46b0aa777df",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L32N9698p.json": "064e30dc36f5d4572d17ebc5bf31c64c5a142742f4a0aea5c7117d59eff6da44",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L33N1962m.json": "cdf745d2b6a901ed1271c0f7d26506d1558a37d4bc9be69e087101d73ac3cb36",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L33N2724p.json": "dfb4003abe689c73f2729339e2ea775e7f5c818436c264514d2e086d35495c8d",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L33N3093p.json": "794780c606c550f756f8a8297e280b330c0d3658db047630fcab50987c72e671",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L33N3093m.json": "346368c1c036ecb806f13a19ef873f70863d01063a4e3a36730966cc9fe8e961",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L33N4268m.json": "d9c8bc98156747271a22f605269d424908ba9d1fe5725a4dc91a0ec93b78d558",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L33N5981p.json": "c4ca455ddc17af123cdc581cd6e7c431b7a347fcce7ad01b14879e1cab290fb8",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L33N9519m.json": "e3498818875eed8ae2442a3b1093b9fc1031b0d5cf79f3881d5def46f7370b04",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L34N6564p.json": "c78809f250f659818007e1c4213292fdf41b9b72f65da0a6812fc8871844a89f",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L34N9051p.json": "2da5f6f78cfd9c37907cf3ad9362f40dc053b230e6188ab8f4c6be3117a68424",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L34N9051m.json": "72e6a2459838e6b73b31a91e34cb51d128b432d58f6b49d7dc04d45fb7a25d3c",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L35N1881p.json": "c37d3dcee84a25bb3ef082bb1e60ce0b0c49a4b99e17740fcdad6609109f2fbd",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L35N1881m.json": "98d4d61fb1098bfa00c0d0cee7f3921e83418cf344e4e58d4608a15af9a2e0da",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L35N6124p.json": "826637c35b44618f67f7f37e82525aca7acf2d79c9a306aba9d906d581a1abe2",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L35N6124m.json": "1f9a69244db21146202d67f5dbf14d0ae173492150109e4c36c9fa2847b7841c",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L35N6252p.json": "0952afc633a7b1533b85a5d9c090f598711b9fc90a72a88d665926300721bbbc",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L35N8591p.json": "6517152d4599fb44186c4ac4ab169b9ceeee7b9aa56f021860e7dd8b127a58d7",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/poles/L35N8591m.json": "1bddd92b6b034833a67f5117b9cefbcf3f7e9a555a40a6a34ae110bd86495a9b",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/arm_b/L11N5238p_teacher.jsonl": "368cdbbb94f1fc7628070504874631af4a4c1626e8a4afd83fa3d20fa7956d47",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/arm_b/L27N2924m_teacher.jsonl": "cd299cf2976918cb2920442a0c7ae6c2af6394030f9f6f1fea570381e8ea5b1a",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/arm_b/L08N3398m_teacher.jsonl": "283711d79ea78fa8cbf04234a77decd6e51896412b50a1f63ee42755e9330ba0",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/arm_b/L04N5165p_teacher.jsonl": "01548b6081f380cb0f5ce3d01950fac4db2369e8483e8c3e5e0dbb170fe420db",
+  "<local>/interp_research-neuronoff/bank/off/q4b/1/out/metrics.json": "d9d2d154f1adbb69168ac99617fa651d45f4d035b5807577208ed887f558b2ba"
+ },
+ "model_key": "Q4B",
+ "estimand": {
+  "statement": "ONE poles inside UNK's energy and layer range (same layer, all three matching variables within a factor 1.5 of an available UNK pole)",
+  "n_one_eligible": 354,
+  "n_one_feasible": 96,
+  "n_one_unmatched": 258,
+  "n_one_kept": 96,
+  "n_unk_eligible": 190,
+  "median_vars": {
+   "eligible_one": {
+    "density": 0.11376764653538904,
+    "meanabs": 0.07609986333827264,
+    "ho_med": 6.286703824996948,
+    "rate": 0.497412584200253
+   },
+   "kept_one": {
+    "density": 0.16789770385403954,
+    "meanabs": 0.08556124859912215,
+    "ho_med": 5.224597811698914,
+    "rate": 0.50623887189247
+   },
+   "eligible_unk": {
+    "density": 0.18372162415409315,
+    "meanabs": 0.10262864884099222,
+    "ho_med": 5.194710969924927,
+    "rate": 0.5082921175552624
+   }
+  },
+  "n_pairs_class_stable": 45
+ },
+ "n_one_unmatched": 258,
+ "n_pairs": 96,
+ "n_valid": 26,
+ "cancelled": [
+  {
+   "pair_id": "Q4B-A001",
+   "reasons": [
+    "L04N5165-: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A004",
+   "reasons": [
+    "L12N7367-: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A006",
+   "reasons": [
+    "L15N8849+: G-pc",
+    "L15N3952+: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A007",
+   "reasons": [
+    "L14N4015+: G-pc",
+    "L14N4419+: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A008",
+   "reasons": [
+    "L23N8899-: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A009",
+   "reasons": [
+    "L16N9181-: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A010",
+   "reasons": [
+    "L26N5319-: G-pc",
+    "L26N4718+: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A012",
+   "reasons": [
+    "L21N3107+: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A014",
+   "reasons": [
+    "L17N7543+: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A015",
+   "reasons": [
+    "L05N7701-: G-pc",
+    "L05N471-: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A017",
+   "reasons": [
+    "L14N7957+: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A019",
+   "reasons": [
+    "L18N8559-: G-pc",
+    "L18N2645-: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A020",
+   "reasons": [
+    "L12N4813+: G-pc",
+    "L12N1451-: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A021",
+   "reasons": [
+    "L07N6119-: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A025",
+   "reasons": [
+    "L26N4718-: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A027",
+   "reasons": [
+    "L22N1722+: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A029",
+   "reasons": [
+    "L14N4419-: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A031",
+   "reasons": [
+    "L21N9387+: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A033",
+   "reasons": [
+    "L26N8581+: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A034",
+   "reasons": [
+    "L21N5732+: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A036",
+   "reasons": [
+    "L17N3004-: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A037",
+   "reasons": [
+    "L18N2645+: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A040",
+   "reasons": [
+    "L08N158+: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A041",
+   "reasons": [
+    "L12N8738+: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A042",
+   "reasons": [
+    "L14N4783-: G-pc",
+    "L14N4015-: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A044",
+   "reasons": [
+    "L29N8202+: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A045",
+   "reasons": [
+    "L16N2515+: G-pc",
+    "L16N2662+: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A046",
+   "reasons": [
+    "L15N3952-: G-pc",
+    "L15N9151+: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A047",
+   "reasons": [
+    "L11N4304-: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A049",
+   "reasons": [
+    "L31N2970+: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A050",
+   "reasons": [
+    "L27N7674-: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A051",
+   "reasons": [
+    "L07N472+: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A053",
+   "reasons": [
+    "L12N8184+: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A054",
+   "reasons": [
+    "L17N4778-: G-pc",
+    "L17N4176+: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A055",
+   "reasons": [
+    "L22N6612-: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A056",
+   "reasons": [
+    "L19N9685+: G-pc",
+    "L19N6951-: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A058",
+   "reasons": [
+    "L20N7603-: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A059",
+   "reasons": [
+    "L20N7249+: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A061",
+   "reasons": [
+    "L15N405+: G-pc",
+    "L15N9151-: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A062",
+   "reasons": [
+    "L24N3091+: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A065",
+   "reasons": [
+    "L18N5580+: G-pc",
+    "L18N1776+: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A066",
+   "reasons": [
+    "L26N3166-: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A068",
+   "reasons": [
+    "L15N8849-: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A070",
+   "reasons": [
+    "L06N5544+: G-pc"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A071",
+   "reasons": [
+    "L32N6216+: not measured",
+    "L32N8029+: not measured"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A072",
+   "reasons": [
+    "L19N9685-: not measured",
+    "L19N1020-: not measured"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A073",
+   "reasons": [
+    "L24N3470+: not measured",
+    "L24N2529-: not measured"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A074",
+   "reasons": [
+    "L33N1238+: not measured",
+    "L33N1238-: not measured"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A075",
+   "reasons": [
+    "L24N2529+: not measured",
+    "L24N4477+: not measured"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A076",
+   "reasons": [
+    "L19N5468-: not measured",
+    "L19N6951+: not measured"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A077",
+   "reasons": [
+    "L19N7985+: not measured",
+    "L19N5468+: not measured"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A078",
+   "reasons": [
+    "L13N8636-: not measured",
+    "L13N2038+: not measured"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A079",
+   "reasons": [
+    "L06N6856+: not measured",
+    "L06N3934+: not measured"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A080",
+   "reasons": [
+    "L13N2197-: not measured",
+    "L13N2349+: not measured"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A081",
+   "reasons": [
+    "L13N2126+: not measured",
+    "L13N2349-: not measured"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A082",
+   "reasons": [
+    "L14N5447-: not measured",
+    "L14N4399+: not measured"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A083",
+   "reasons": [
+    "L00N160+: not measured",
+    "L00N2622-: not measured"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A084",
+   "reasons": [
+    "L21N5732-: not measured",
+    "L21N9387-: not measured"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A085",
+   "reasons": [
+    "L22N7232-: not measured",
+    "L22N5394-: not measured"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A086",
+   "reasons": [
+    "L32N5074+: not measured",
+    "L32N8029-: not measured"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A087",
+   "reasons": [
+    "L17N7543-: not measured",
+    "L17N6736-: not measured"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A088",
+   "reasons": [
+    "L16N1066+: not measured",
+    "L16N2662-: not measured"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A089",
+   "reasons": [
+    "L26N3713+: not measured",
+    "L26N821-: not measured"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A090",
+   "reasons": [
+    "L29N9473+: not measured",
+    "L29N9527+: not measured"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A091",
+   "reasons": [
+    "L32N6216-: not measured",
+    "L32N5074-: not measured"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A092",
+   "reasons": [
+    "L22N7061+: not measured",
+    "L22N9041+: not measured"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A093",
+   "reasons": [
+    "L33N5719+: not measured",
+    "L33N1962+: not measured"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A094",
+   "reasons": [
+    "L26N8119-: not measured",
+    "L26N634-: not measured"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A095",
+   "reasons": [
+    "L17N4752+: not measured",
+    "L17N9569-: not measured"
+   ]
+  },
+  {
+   "pair_id": "Q4B-A096",
+   "reasons": [
+    "L30N2714-: not measured",
+    "L30N6819+: not measured"
+   ]
+  }
+ ],
+ "n_null_valid": 4,
+ "model_reasons": [
+  "instrument not shown to fire (G-pc cancels more than 30% of poles)",
+  "underpowered after gates (26 valid pairs, 4 valid null pairs)"
+ ],
+ "M": -0.00010141068229586436,
+ "lo": -0.0044773635855044945,
+ "hi": 0.010809243170460833,
+ "stats": {
+  "own": {
+   "n": 26,
+   "M": -0.00010141068229586436,
+   "lo": -0.0044773635855044945,
+   "hi": 0.010809243170460833
+  },
+  "coll": {
+   "n": 26,
+   "M": -2.532416179963076e-05,
+   "lo": -8.106801768215978e-05,
+   "hi": 9.145081239813832e-05
+  },
+  "energy": {
+   "n": 26,
+   "M": -5.7885542378627544e-05,
+   "lo": -0.0003395327874392369,
+   "hi": 0.000717185951983206
+  }
+ },
+ "delta": 0.0080749913164982,
+ "delta_c": 0.0001475548500505154,
+ "delta_e": 0.00017534798144541922,
+ "room": {
+  "own": {
+   "n": 26,
+   "R_a": true,
+   "hw95": 0.005657752987517597,
+   "morcos_room": true,
+   "power": 0.5735,
+   "direction_room": false,
+   "failing_input_n5": {
+    "n": 5,
+    "R_a": true,
+    "hw95": 0.01362329800442467,
+    "morcos_room": false,
+    "power": 0.499,
+    "direction_room": false,
+    "fails": true
+   },
+   "reported_n10": {
+    "n": 10,
+    "R_a": true,
+    "hw95": 0.009640525495971133,
+    "morcos_room": false,
+    "power": 0.643,
+    "direction_room": false
+   },
+   "cancelled": false
+  },
+  "coll": {
+   "n": 26,
+   "R_a": true,
+   "hw95": 6.682528579664843e-05,
+   "morcos_room": true,
+   "power": 0.7005,
+   "direction_room": false,
+   "failing_input_n5": {
+    "n": 5,
+    "R_a": true,
+    "hw95": 0.00036929298923277655,
+    "morcos_room": false,
+    "power": 0.2545,
+    "direction_room": false,
+    "fails": true
+   },
+   "reported_n10": {
+    "n": 10,
+    "R_a": true,
+    "hw95": 0.0002180591375147125,
+    "morcos_room": false,
+    "power": 0.2745,
+    "direction_room": false
+   },
+   "cancelled": false
+  },
+  "energy": {
+   "n": 26,
+   "R_a": true,
+   "hw95": 0.00015593201407424937,
+   "morcos_room": true,
+   "power": 0.5735,
+   "direction_room": false,
+   "failing_input_n5": {
+    "n": 5,
+    "R_a": true,
+    "hw95": 0.0002452851161767655,
+    "morcos_room": false,
+    "power": 0.499,
+    "direction_room": false,
+    "fails": true
+   },
+   "reported_n10": {
+    "n": 10,
+    "R_a": true,
+    "hw95": 0.00020060856512550744,
+    "morcos_room": false,
+    "power": 0.643,
+    "direction_room": false
+   },
+   "cancelled": false
+  }
+ },
+ "stamps": {
+  "own": {
+   "morcos": "room",
+   "direction": "underpowered for a direction"
+  },
+  "coll": {
+   "morcos": "room",
+   "direction": "underpowered for a direction"
+  },
+  "energy": {
+   "morcos": "room",
+   "direction": "underpowered for a direction"
+  }
+ },
+ "label_own": "CANCELLED (instrument not shown to fire (G-pc cancels more than 30% of poles); underpowered after gates (26 valid pairs, 4 valid null pairs))",
+ "label_coll": "CANCELLED (instrument not shown to fire (G-pc cancels more than 30% of poles); underpowered after gates (26 valid pairs, 4 valid null pairs))",
+ "label_energy": "CANCELLED (instrument not shown to fire (G-pc cancels more than 30% of poles); underpowered after gates (26 valid pairs, 4 valid null pairs))",
+ "headline_own": "CANCELLED (instrument not shown to fire (G-pc cancels more than 30% of poles); underpowered after gates (26 valid pairs, 4 valid null pairs))",
+ "headline_rule": "cancelled",
+ "refutations": {
+  "H_cause": false,
+  "H_readout": false,
+  "H_morcos": false
+ },
+ "B": -0.0553879894580014,
+ "G_bal_pass": true,
+ "G_bal": {
+  "B": -0.0553879894580014,
+  "bound": 0.4054651081081644,
+  "pass": true,
+  "failing_input": {
+   "rule": "every E_ctrl divided by 1.6 when B >= 0, multiplied by 1.6 when B < 0",
+   "B": -0.5253916187037371,
+   "pass": false
+  }
+ },
+ "G_n": {
+  "n_valid": 26,
+  "n_null_valid": 4,
+  "pass": false,
+  "failing_input": {
+   "first_59_pairs": false,
+   "first_19_null_pairs": false
+  }
+ },
+ "absolute": {
+  "own_one": {
+   "n": 26,
+   "M": 0.00930511045802632,
+   "lo": 0.002514305838567452,
+   "hi": 0.019398457093629987
+  },
+  "own_ctrl": {
+   "n": 26,
+   "M": 0.0051836072123842315,
+   "lo": -0.0005587477181688882,
+   "hi": 0.017367658108487484
+  },
+  "coll_one": {
+   "n": 26,
+   "M": 0.0002507555377528265,
+   "lo": 8.347838015501648e-05,
+   "hi": 0.000295702303563865
+  },
+  "coll_ctrl": {
+   "n": 26,
+   "M": 0.00017996648850306644,
+   "lo": 8.669603312496745e-05,
+   "hi": 0.0002917333767792964
+  },
+  "clean_nll_one": {
+   "n": 26,
+   "M": 1.6784357924491269,
+   "lo": 1.3216137015563436,
+   "hi": 2.1816775275033025
+  },
+  "clean_nll_ctrl": {
+   "n": 26,
+   "M": 1.8443613923758675,
+   "lo": 1.4705864044028685,
+   "hi": 2.222843530372702
+  }
+ },
+ "pc_cancel_share": 0.4166666666666667,
+ "fit_failing_input_not_failed": 0,
+ "pc_failing_input_not_failed": 0,
+ "secondary": {
+  "energy_normalized": {
+   "stats": {
+    "n": 26,
+    "M": -5.7885542378627544e-05,
+    "lo": -0.0003395327874392369,
+    "hi": 0.000717185951983206
+   },
+   "delta_e": 0.00017534798144541922,
+   "room": {
+    "n": 26,
+    "R_a": true,
+    "hw95": 0.00015593201407424937,
+    "morcos_room": true,
+    "power": 0.5735,
+    "direction_room": false,
+    "failing_input_n5": {
+     "n": 5,
+     "R_a": true,
+     "hw95": 0.0002452851161767655,
+     "morcos_room": false,
+     "power": 0.499,
+     "direction_room": false,
+     "fails": true
+    },
+    "reported_n10": {
+     "n": 10,
+     "R_a": true,
+     "hw95": 0.00020060856512550744,
+     "morcos_room": false,
+     "power": 0.643,
+     "direction_room": false
+    },
+    "cancelled": false
+   },
+   "stamps": {
+    "morcos": "room",
+    "direction": "underpowered for a direction"
+   },
+   "label": "CANCELLED (instrument not shown to fire (G-pc cancels more than 30% of poles); underpowered after gates (26 valid pairs, 4 valid null pairs))"
+  },
+  "class_stable": {
+   "stats": {
+    "n": 15,
+    "M": 0.004941476814001363,
+    "lo": -0.0028274477925151584,
+    "hi": 0.03284130371783249
+   },
+   "label": "CANCELLED (instrument not shown to fire (G-pc cancels more than 30% of poles); underpowered after gates (26 valid pairs, 4 valid null pairs))",
+   "stamps": {
+    "morcos": "room",
+    "direction": "underpowered for a direction"
+   },
+   "label_if_not_cancelled": "INCONCLUSIVE"
+  },
+  "density_covariate": {
+   "spearman_D_vs_log_density_ratio": 0.04957264957264957,
+   "abs_ldr_le_log_1_25": {
+    "n": 16,
+    "M": 0.0023504411545309262,
+    "lo": -0.005451365713205973,
+    "hi": 0.01740857104909992
+   }
+  },
+  "predictable_target": {
+   "n_pairs": 26,
+   "n_pairs_dropped": 0,
+   "stats": {
+    "n": 26,
+    "M": 0.002377775389408001,
+    "lo": -0.005750342826795186,
+    "hi": 0.01427259234476287
+   },
+   "label": "CANCELLED (instrument not shown to fire (G-pc cancels more than 30% of poles); underpowered after gates (26 valid pairs, 4 valid null pairs))",
+   "stamps": {
+    "morcos": "room",
+    "direction": "underpowered for a direction"
+   },
+   "label_if_not_cancelled": "INCONCLUSIVE"
+  },
+  "strata": {
+   "explainer": {
+    "anthropic/claude-opus-5-5": {
+     "n": 14,
+     "M": 0.0005261841044966786,
+     "lo": -0.005451365713205973,
+     "hi": 0.007989954908161963
+    },
+    "anthropic/claude-sonnet-5-5": {
+     "n": 12,
+     "M": -0.0009015900732720187,
+     "lo": -0.0060766648650463755,
+     "hi": 0.02729134342045654
+    }
+   },
+   "tercile": {
+    "0": {
+     "n": 1,
+     "M": -0.012936776080241543,
+     "lo": -0.012936776080241543,
+     "hi": -0.012936776080241543
+    },
+    "1": {
+     "n": 8,
+     "M": 0.0023504411545309262,
+     "lo": -0.005451365713205973,
+     "hi": 0.011038433002322563
+    },
+    "2": {
+     "n": 17,
+     "M": -0.0012270890105628496,
+     "lo": -0.0056842040617198115,
+     "hi": 0.021741383123080594
+    }
+   },
+   "sign": {
+    "-1": {
+     "n": 11,
+     "M": 0.0024214250895056456,
+     "lo": -0.0064691256683729395,
+     "hi": 0.021741383123080594
+    },
+    "1": {
+     "n": 15,
+     "M": -0.0012270890105628496,
+     "lo": -0.005451365713205973,
+     "hi": 0.011038433002322563
+    }
+   }
+  },
+  "B3_explainer_same_sign": false,
+  "selectivity_own_over_coll": {
+   "one": {
+    "n": 26,
+    "M": 29.157128652451462,
+    "lo": 4.504367370475003,
+    "hi": 118.13610360875124,
+    "n_zero_coll_excluded": 0
+   },
+   "ctrl": {
+    "n": 26,
+    "M": 35.777293797262374,
+    "lo": 12.63327014405376,
+    "hi": 115.35077493510254,
+    "n_zero_coll_excluded": 0
+   }
+  }
+ },
+ "arm_b": {
+  "L11N5238+": {
+   "pole": "L11N5238+",
+   "ctrl1": "L11N4144+",
+   "ctrl2": "L11N4304+",
+   "n_prompts_valid": 20,
+   "excluded_prompts": [],
+   "m_B": 0.03252707225629677,
+   "m_B_star": 0.03252707225629677,
+   "pc_mean_drop": 0.5383119829589148,
+   "readouts": {
+    "R1": {
+     "delta_pole_mean": -0.0036194322483936504,
+     "delta_ctrl1_mean": -0.0032544265215733504,
+     "D": {
+      "n": 20,
+      "mean": -0.00036500572682029997,
+      "lo": -0.050851579634248766,
+      "hi": 0.05330999702340476
+     }
+    },
+    "R2": {
+     "delta_pole_mean": 0.0037748642207589,
+     "delta_ctrl1_mean": 0.012801276703248732,
+     "D": {
+      "n": 20,
+      "mean": -0.009026412482489832,
+      "lo": -0.024217469257491755,
+      "hi": 0.006825797534547743
+     }
+    },
+    "R3": {
+     "n_prompts": 20,
+     "n_excluded_no_position": 0,
+     "delta_pole_mean": 0.0018158477137925877,
+     "delta_ctrl1_mean": -0.0018026244704979415,
+     "D": {
+      "n": 20,
+      "mean": 0.003618472184290529,
+      "lo": 0.0012807141357596662,
+      "hi": 0.006437716450800008
+     }
+    }
+   },
+   "ceiling": {
+    "delta_pole_mean": -0.0036194322483936504,
+    "delta_layer_mean": 0.5383119829589148,
+    "pass": true
+   },
+   "pole_activation_max_frac": 0.7785767628651495,
+   "interval_vs_margin": "crosses",
+   "verdict": "NOT-SPECIAL, interval crosses margin"
+  },
+  "L27N2924-": {
+   "pole": "L27N2924-",
+   "ctrl1": "L27N7674+",
+   "ctrl2": "L27N8528-",
+   "n_prompts_valid": 20,
+   "excluded_prompts": [],
+   "m_B": 0.047236106025520704,
+   "m_B_star": 0.047236106025520704,
+   "pc_mean_drop": 1.0075258521741488,
+   "readouts": {
+    "R1": {
+     "delta_pole_mean": 0.04090166465903167,
+     "delta_ctrl1_mean": -0.003991468262393027,
+     "D": {
+      "n": 20,
+      "mean": 0.044893132921424696,
+      "lo": -0.05139057895881705,
+      "hi": 0.14618116573954465
+     }
+    },
+    "R2": {
+     "delta_pole_mean": 0.012330853566527366,
+     "delta_ctrl1_mean": 0.0015595991164445878,
+     "D": {
+      "n": 20,
+      "mean": 0.01077125445008278,
+      "lo": -0.05604456595145166,
+      "hi": 0.056372866854071606
+     }
+    },
+    "R3": {
+     "n_prompts": 17,
+     "n_excluded_no_position": 3,
+     "delta_pole_mean": 0.02448758279194818,
+     "delta_ctrl1_mean": 0.010643617696055744,
+     "D": {
+      "n": 17,
+      "mean": 0.01384396509589244,
+      "lo": -0.030368045693347296,
+      "hi": 0.0661811527830843
+     }
+    }
+   },
+   "ceiling": {
+    "delta_pole_mean": 0.04090166465903167,
+    "delta_layer_mean": 1.0075258521741488,
+    "pass": true
+   },
+   "pole_activation_max_frac": 1.0277016566172232,
+   "interval_vs_margin": "crosses",
+   "verdict": "NOT-SPECIAL, interval crosses margin"
+  },
+  "L08N3398-": {
+   "pole": "L08N3398-",
+   "ctrl1": "L08N9674-",
+   "ctrl2": "L08N6028+",
+   "n_prompts_valid": 20,
+   "excluded_prompts": [],
+   "m_B": 0.07002756111604494,
+   "m_B_star": 0.07002756111604494,
+   "pc_mean_drop": 1.341909343174177,
+   "readouts": {
+    "R1": {
+     "delta_pole_mean": 0.21576173348566954,
+     "delta_ctrl1_mean": 0.05220268029768249,
+     "D": {
+      "n": 20,
+      "mean": 0.16355905318798705,
+      "lo": -0.03633557988537859,
+      "hi": 0.4127818118986545
+     }
+    },
+    "R2": {
+     "delta_pole_mean": 0.042528171581216155,
+     "delta_ctrl1_mean": -0.0013832350494340062,
+     "D": {
+      "n": 20,
+      "mean": 0.043911406630650164,
+      "lo": -0.011345071933465078,
+      "hi": 0.13460515111568375
+     }
+    },
+    "R3": {
+     "n_prompts": 14,
+     "n_excluded_no_position": 6,
+     "delta_pole_mean": 0.033664508435841914,
+     "delta_ctrl1_mean": 0.014333856480204434,
+     "D": {
+      "n": 14,
+      "mean": 0.019330651955637483,
+      "lo": -0.014318291648539472,
+      "hi": 0.05693384872426705
+     }
+    }
+   },
+   "ceiling": {
+    "delta_pole_mean": 0.21576173348566954,
+    "delta_layer_mean": 1.341909343174177,
+    "pass": true
+   },
+   "pole_activation_max_frac": 0.8426242299653586,
+   "interval_vs_margin": "crosses",
+   "verdict": "UNRESOLVED, interval crosses margin"
+  },
+  "L04N5165+": {
+   "pole": "L04N5165+",
+   "ctrl1": "L04N9078-",
+   "ctrl2": "L04N5781-",
+   "n_prompts_valid": 19,
+   "excluded_prompts": [
+    7
+   ],
+   "m_B": 0.06388396752070931,
+   "m_B_star": 0.06388396752070931,
+   "pc_mean_drop": 0.8063338727820097,
+   "readouts": {
+    "R1": {
+     "delta_pole_mean": -0.012839742258381049,
+     "delta_ctrl1_mean": -0.02583708746054694,
+     "D": {
+      "n": 19,
+      "mean": 0.012997345202165889,
+      "lo": -0.027454168317394518,
+      "hi": 0.052225059352883206
+     }
+    },
+    "R2": {
+     "delta_pole_mean": 0.0037516206790123284,
+     "delta_ctrl1_mean": -0.010495089975991408,
+     "D": {
+      "n": 19,
+      "mean": 0.014246710655003736,
+      "lo": -0.001487203016145749,
+      "hi": 0.03507317417934245
+     }
+    },
+    "R3": {
+     "n_prompts": 0,
+     "n_excluded_no_position": 19,
+     "delta_pole_mean": null,
+     "delta_ctrl1_mean": null,
+     "D": {
+      "n": 0,
+      "mean": null,
+      "lo": null,
+      "hi": null
+     }
+    }
+   },
+   "ceiling": {
+    "delta_pole_mean": -0.012839742258381049,
+    "delta_layer_mean": 0.8063338727820097,
+    "pass": true
+   },
+   "pole_activation_max_frac": 0.05245454618286502,
+   "interval_vs_margin": "below",
+   "verdict": "instrument not shown to fire (pole activation at most 0.1 of its banked maximum at every scored position)"
+  }
+ }
+}
