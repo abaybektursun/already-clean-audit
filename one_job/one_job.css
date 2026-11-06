@@ -1,0 +1,159 @@
+/* "How many neurons have one job": the picture's styles, shared by the walkthrough page and index.html.
+   Every rule is scoped under #onejob, and every class is prefixed oj-, so nothing reaches the host page
+   and the host's own classes (.ref, .track, .row, ...) do not reach in. The host defines --bg, --ink,
+   --muted, --rule, --accent, --font-text and --font-mono, light and dark. The four class colors below were
+   checked with the dataviz validator against the host surfaces (#f4f6f4 light, #101514 dark); see README.md. */
+#onejob {
+  --oj-one: #036f4f;
+  --oj-two: #4ea683;
+  --oj-unrel: #c9690c;
+  --oj-unk: #bcc5c2;
+  --oj-band: color-mix(in srgb, var(--ink) 6%, transparent);
+  --oj-cols: 20;
+  --oj-rows: 30;
+  --oj-gutter: 34px;
+  --oj-gap: 18px;
+  --oj-dur: 280ms;
+  font: 400 16px/1.5 var(--font-text);
+  color: var(--ink);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) #onejob { --oj-one: #48a581; --oj-two: #047755; --oj-unrel: #cb7229; --oj-unk: #3a4542; }
+}
+:root[data-theme="dark"] #onejob { --oj-one: #48a581; --oj-two: #047755; --oj-unrel: #cb7229; --oj-unk: #3a4542; }
+@media (max-width: 640px) {
+  #onejob { --oj-cols: 15; --oj-rows: 40; --oj-gutter: 26px; --oj-gap: 10px; }
+}
+
+#onejob, #onejob * { box-sizing: border-box; }
+#onejob p { margin: 0; max-width: none; }
+#onejob button { font: inherit; color: inherit; }
+#onejob :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+/* control row: the strong line and the random button */
+#onejob .oj-top { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 14px 28px; }
+#onejob .oj-ctl { flex: 1 1 320px; min-width: 0; }
+#onejob .oj-ctl-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
+#onejob .oj-ctl-head label { font-size: 15px; font-weight: 700; }
+#onejob .oj-val { font-family: var(--font-mono); font-size: 20px; font-weight: 500; font-variant-numeric: tabular-nums; }
+#onejob .oj-note { font-size: 14px; color: var(--muted); }
+#onejob .oj-slider { position: relative; margin-top: 4px; padding-bottom: 24px; }
+#onejob input[type="range"] {
+  -webkit-appearance: none; appearance: none; display: block; width: 100%; height: 30px; margin: 0;
+  background: transparent; cursor: pointer;
+}
+#onejob input[type="range"]::-webkit-slider-runnable-track { height: 2px; background: var(--rule); border-radius: 1px; }
+#onejob input[type="range"]::-moz-range-track { height: 2px; background: var(--rule); border-radius: 1px; }
+#onejob input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none; width: 6px; height: 26px; margin-top: -12px; border: 0;
+  border-radius: 3px; background: var(--ink); box-shadow: 0 0 0 3px var(--bg);
+}
+#onejob input[type="range"]::-moz-range-thumb {
+  width: 6px; height: 26px; border: 0; border-radius: 3px; background: var(--ink); box-shadow: 0 0 0 3px var(--bg);
+}
+#onejob input[type="range"]:focus-visible { outline: none; }
+#onejob input[type="range"]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px var(--accent); }
+#onejob input[type="range"]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px var(--accent); }
+/* the thumb is 6px wide, so its center runs from 3px to 100% - 3px; ticks use the same span */
+#onejob .oj-stop {
+  position: absolute; top: 30px; transform: translateX(-50%); padding: 2px 4px; border: 0; background: transparent;
+  font-family: var(--font-mono); font-size: 11.5px; line-height: 1.2; color: var(--muted); cursor: pointer;
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+#onejob .oj-stop::before {
+  content: ""; position: absolute; left: 50%; top: -9px; width: 1px; height: 6px; background: var(--muted);
+  pointer-events: none;            /* the tick sits under the track; a press on it must reach the slider */
+}
+#onejob .oj-stop:hover { color: var(--ink); }
+#onejob .oj-stop.oj-on { color: var(--ink); font-weight: 500; }
+#onejob .oj-btn {
+  border: 1px solid var(--rule); background: transparent; border-radius: 8px; padding: 8px 14px;
+  font-size: 15px; cursor: pointer; margin-top: 34px;
+}
+#onejob .oj-btn:hover { background: var(--oj-band); }
+#onejob .oj-def { margin-top: 2px; font-size: 14px; color: var(--muted); max-width: 66ch; }
+
+/* legend */
+#onejob .oj-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 22px 0 0; font-size: 13.5px; color: var(--muted); }
+#onejob .oj-legend span { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
+#onejob .oj-key { display: inline-block; width: 10px; height: 10px; border-radius: 50%; flex: none; background: var(--oj-c); }
+#onejob .oj-key.oj-key-line { width: 16px; height: 0; border-radius: 0; border-top: 1.5px solid var(--ink); background: none; }
+#onejob .oj-c-one { --oj-c: var(--oj-one); }
+#onejob .oj-c-two { --oj-c: var(--oj-two); }
+#onejob .oj-c-unrel { --oj-c: var(--oj-unrel); }
+#onejob .oj-c-unk { --oj-c: var(--oj-unk); }
+
+/* chart: heads, then the three grids side by side on one baseline */
+#onejob .oj-chart { margin-top: 20px; }
+#onejob .oj-heads, #onejob .oj-plots {
+  display: grid; grid-template-columns: var(--oj-gutter) repeat(3, minmax(0, 1fr)); column-gap: var(--oj-gap);
+}
+#onejob .oj-heads { margin-bottom: 12px; align-items: end; }
+#onejob .oj-name { font-size: 14.5px; font-weight: 700; line-height: 1.25; }
+#onejob .oj-count { font-size: 34px; font-weight: 700; line-height: 1.05; letter-spacing: -0.01em; margin-top: 4px; }
+#onejob .oj-of { font-size: 13px; color: var(--muted); line-height: 1.3; text-wrap: balance; }
+#onejob .oj-plots { position: relative; }
+#onejob .oj-plots > .oj-axis { grid-column: 1; position: relative; }
+#onejob .oj-yl {
+  position: absolute; right: 7px; font-size: 11px; line-height: 1; color: var(--muted); transform: translateY(-50%);
+  font-variant-numeric: tabular-nums;
+}
+#onejob .oj-yl.oj-yl-ref { color: var(--ink); font-weight: 700; }
+#onejob .oj-grid { position: relative; aspect-ratio: var(--oj-cols) / var(--oj-rows); touch-action: manipulation; }
+#onejob .oj-d {
+  position: absolute; left: 0; bottom: 0; width: calc(100% / var(--oj-cols)); aspect-ratio: 1;
+  transform: translate(calc(var(--x, 0) * 100%), calc(var(--y, 0) * -100%));
+  transition: transform var(--oj-dur) cubic-bezier(.3, .7, .2, 1) var(--oj-delay, 0ms);
+  cursor: pointer;
+}
+#onejob .oj-d::before {
+  content: ""; position: absolute; inset: 13%; border-radius: 50%; background: var(--oj-c);
+  transition: background-color var(--oj-dur) ease, transform 120ms ease, box-shadow 120ms ease;
+}
+#onejob .oj-d:hover::before { transform: scale(1.3); }
+#onejob .oj-d.oj-sel { z-index: 3; }
+#onejob .oj-d.oj-sel::before { transform: scale(1.45); box-shadow: 0 0 0 1.5px var(--bg), 0 0 0 3px var(--ink); }
+#onejob.oj-still .oj-d, #onejob.oj-still .oj-d::before { transition: none; }
+/* the essay's estimate: one line across all three grids, at 540 of 600 (10% below the top) */
+#onejob .oj-ref {
+  position: absolute; z-index: 2; left: calc(var(--oj-gutter) - 4px); right: 0; top: 10%; height: 0;
+  border-top: 1.5px solid var(--ink); margin-top: -0.75px; pointer-events: none;
+}
+
+/* the neuron under the pointer, or drawn at random */
+#onejob .oj-panel { margin-top: 26px; padding-top: 14px; border-top: 1px solid var(--rule); min-height: 8.5em; }
+#onejob .oj-hint { color: var(--muted); font-size: 15px; }
+#onejob .oj-who { font-size: 14px; color: var(--muted); }
+#onejob .oj-who b { font-family: var(--font-mono); font-weight: 500; color: var(--ink); margin-right: 6px; }
+#onejob .oj-cls { display: flex; align-items: center; gap: 8px; margin-top: 6px; font-size: 16px; }
+#onejob .oj-cls .oj-key { width: 12px; height: 12px; }
+#onejob .oj-expl { margin-top: 8px; font-size: 15.5px; line-height: 1.5; max-width: 70ch; }
+#onejob .oj-why { margin-top: 8px; font-size: 14px; color: var(--muted); max-width: 70ch; }
+
+#onejob details { margin-top: 18px; font-size: 14px; color: var(--muted); }
+#onejob summary { cursor: pointer; width: max-content; max-width: 100%; }
+#onejob .oj-tablewrap { overflow-x: auto; margin-top: 10px; }
+#onejob table { border-collapse: collapse; font-size: 14px; min-width: 100%; font-variant-numeric: tabular-nums; }
+#onejob th, #onejob td {
+  text-align: right; padding: 5px 0 5px 14px; border-bottom: 1px solid var(--rule); white-space: nowrap;
+  vertical-align: baseline; font-family: inherit; letter-spacing: 0; color: var(--ink);
+}
+#onejob th { font-size: 13px; font-weight: 700; }
+#onejob th:first-child, #onejob td:first-child { text-align: left; padding-left: 0; }
+
+#onejob .oj-caption { margin-top: 22px; padding-top: 14px; border-top: 1px solid var(--rule); font-size: 14px; color: var(--muted); max-width: 72ch; }
+#onejob .oj-missing { font-size: 16px; }
+
+@media (max-width: 640px) {
+  #onejob .oj-count { font-size: 26px; }
+  #onejob .oj-name { font-size: 13px; }
+  #onejob .oj-of { font-size: 12px; }
+  #onejob .oj-yl { right: 5px; font-size: 10px; }
+  #onejob .oj-legend { font-size: 13px; gap: 4px 14px; }
+  #onejob .oj-btn { margin-top: 0; }
+  #onejob .oj-panel { min-height: 0; }
+  #onejob .oj-d.oj-sel::before { transform: scale(1.7); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #onejob .oj-d, #onejob .oj-d::before { transition: none; }
+}

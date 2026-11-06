@@ -1,0 +1,195 @@
+/* "When a neuron's groups are born": the picture's styles, shared by the walkthrough page and index.html.
+   Every rule is scoped under #nbirths and every class is prefixed nb-, so the host page's own classes neither
+   leak in nor out. The host defines --bg, --ink, --muted, --rule, --grid, --bar, --accent, --font-text and
+   --font-mono, light and dark. The training axis is the one of "One neuron across training"
+   (../neuron_across_training): 16 evenly spaced points, the same rail, ticks, thumb, labels and band. */
+#nbirths {
+  --namew: 15rem;
+  --gap: 18px;
+  --cellw: min(18px, 74%);
+  --cellh: 14px;
+  --rowh: 26px;
+  --band: color-mix(in srgb, var(--ink) 6%, transparent);
+  font: 400 16px/1.5 var(--font-text);
+  color: var(--ink);
+  margin: 1.5rem 0 0;
+}
+@media (max-width: 640px) {
+  #nbirths { --namew: 0px; --gap: 0px; --cellw: min(16px, 76%); --cellh: 12px; --rowh: 36px; }
+}
+
+#nbirths, #nbirths * { box-sizing: border-box; }
+#nbirths button, #nbirths select { font: inherit; color: inherit; }
+#nbirths :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+#nbirths .nb-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+#nbirths p { max-width: none; margin: 0; }
+#nbirths h3 { margin: 0; font-size: 14px; font-weight: 700; color: var(--ink); line-height: 1.4; }
+
+/* picker */
+#nbirths .nb-pick { display: flex; gap: 8px; flex-wrap: wrap; min-width: 0; }
+#nbirths .nb-select { position: relative; min-width: 0; max-width: 100%; }
+#nbirths select {
+  appearance: none; -webkit-appearance: none;
+  background: transparent; border: 1px solid var(--rule); border-radius: 8px;
+  padding: 8px 36px 8px 12px; font-size: 15px; font-family: var(--font-mono);
+  max-width: 100%; cursor: pointer;
+}
+#nbirths .nb-select::after {
+  content: ""; position: absolute; right: 14px; top: 50%; width: 7px; height: 7px; margin-top: -6px;
+  border-right: 1.5px solid var(--muted); border-bottom: 1.5px solid var(--muted); transform: rotate(45deg);
+  pointer-events: none;
+}
+#nbirths select option, #nbirths select optgroup { background: var(--bg); color: var(--ink); }
+#nbirths .nb-btn {
+  border: 1px solid var(--rule); background: transparent; border-radius: 8px; padding: 8px 14px;
+  font-size: 15px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;
+}
+#nbirths .nb-btn:hover { background: var(--band); }
+#nbirths .nb-btn svg { width: 12px; height: 12px; fill: currentColor; }
+
+#nbirths .nb-who { margin-top: 18px; font-size: 15px; color: var(--muted); max-width: 70ch; min-height: 3em; }
+#nbirths .nb-who b { font-weight: 500; color: var(--ink); font-family: var(--font-mono); }
+
+/* readout */
+#nbirths .nb-readout {
+  margin-top: 22px; display: grid; gap: 16px 40px; align-items: end;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+#nbirths .nb-count { font-size: 22px; color: var(--muted); line-height: 1.1; }
+#nbirths .nb-count b { font-size: 60px; line-height: 1; font-weight: 700; color: var(--ink); letter-spacing: -0.02em; margin-right: 4px; }
+#nbirths .nb-note { margin-top: 10px; font-size: 15px; color: var(--muted); min-height: 1.5em; }
+#nbirths .nb-label { font-size: 13px; color: var(--muted); }
+#nbirths .nb-value { font-size: 30px; line-height: 1.15; white-space: nowrap; }
+#nbirths .nb-pctbar { height: 3px; margin-top: 8px; background: var(--rule); border-radius: 2px; overflow: hidden; width: 160px; max-width: 100%; }
+#nbirths .nb-pctbar i { display: block; height: 100%; background: var(--muted); width: 0; transition: width 400ms ease; }
+
+/* chart: every line is a name column and a plot column of 16 evenly spaced points */
+#nbirths .nb-chart { margin-top: 32px; user-select: none; -webkit-user-select: none; }
+#nbirths .nb-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 20px; }
+#nbirths .nb-legend { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 13px; color: var(--muted); }
+#nbirths .nb-legend span { display: inline-flex; align-items: center; gap: 6px; }
+#nbirths .nb-key { display: inline-block; width: 12px; height: 12px; border-radius: 3px; flex: none; }
+
+#nbirths .nb-scrub { position: relative; margin-top: 14px; touch-action: pan-y; cursor: grab; }
+#nbirths .nb-scrub.is-dragging { cursor: grabbing; }
+#nbirths .nb-overlay { position: absolute; top: 0; bottom: 0; right: 0; left: calc(var(--namew) + var(--gap)); pointer-events: none; }
+#nbirths .nb-band {
+  position: absolute; top: -4px; bottom: -4px; width: calc(100% / 16); left: 0; border-radius: 8px;
+  background: var(--band); transition: left 260ms cubic-bezier(.3, .7, .2, 1);
+}
+#nbirths .nb-line { position: relative; display: grid; grid-template-columns: var(--namew) minmax(0, 1fr); column-gap: var(--gap); align-items: center; }
+#nbirths .nb-plot { position: relative; min-width: 0; grid-column: 2; }
+
+#nbirths .nb-row { height: var(--rowh); }
+#nbirths .nb-name {
+  min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; line-height: 1.2;
+  color: var(--muted); text-align: right; transition: color 300ms ease;
+}
+#nbirths .nb-row.is-born .nb-name { color: var(--ink); }
+#nbirths .nb-cells { display: grid; grid-template-columns: repeat(16, minmax(0, 1fr)); height: 100%; align-items: center; }
+#nbirths .nb-cell {
+  justify-self: center; width: var(--cellw); height: var(--cellh); border-radius: 3px; background: transparent;
+  transition: background-color 300ms ease, box-shadow 300ms ease;
+}
+#nbirths .nb-cell.is-off { box-shadow: inset 0 0 0 1px var(--rule); }
+#nbirths .nb-cell.is-pre { box-shadow: inset 0 0 0 2px var(--accent); }
+#nbirths .nb-cell.is-on { background: var(--accent); }
+#nbirths .nb-key.is-off { box-shadow: inset 0 0 0 1px var(--muted); }
+#nbirths .nb-key.is-pre { box-shadow: inset 0 0 0 2px var(--accent); }
+#nbirths .nb-key.is-on { background: var(--accent); }
+/* the chance level (added 2026-11-05): an ink tick above and below the square at the random groups' median birth
+   point, a gap where the square is, so the square's own state stays readable; the legend key has the same shape */
+#nbirths .nb-chance, #nbirths .nb-key.is-chance {
+  background: linear-gradient(var(--ink), var(--ink)) top / 100% 4px no-repeat,
+              linear-gradient(var(--ink), var(--ink)) bottom / 100% 4px no-repeat;
+}
+#nbirths .nb-chance {
+  position: absolute; top: 50%; width: 2px; height: calc(var(--cellh) + 10px); transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+#nbirths .nb-key.is-chance { width: 2px; height: 14px; border-radius: 0; }
+
+/* the training axis, as in the slider */
+#nbirths .nb-axis { margin-top: 6px; }
+#nbirths .nb-track { height: 40px; outline: none; cursor: inherit; }
+#nbirths .nb-track:focus-visible .nb-thumb { box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px var(--accent); }
+#nbirths .nb-rail { position: absolute; top: 19px; height: 2px; left: calc(100% / 32); right: calc(100% / 32); background: var(--rule); border-radius: 1px; }
+#nbirths .nb-tick { position: absolute; top: 18px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: var(--muted); }
+#nbirths .nb-thumb {
+  position: absolute; top: 9px; width: 22px; height: 22px; margin-left: -11px; border-radius: 50%;
+  background: var(--ink); box-shadow: 0 0 0 3px var(--bg); transition: left 260ms cubic-bezier(.3, .7, .2, 1);
+}
+#nbirths .nb-scrub.is-dragging .nb-thumb, #nbirths .nb-scrub.is-dragging .nb-band { transition: none; }
+#nbirths .nb-ticklabels { height: 18px; }
+#nbirths .nb-tl { position: absolute; top: 0; transform: translateX(-50%); font-size: 11px; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+#nbirths .nb-tl.is-cur { color: var(--ink); font-weight: 700; }
+#nbirths .nb-axisname { font-size: 13px; color: var(--muted); text-align: right; }
+
+/* the population strip: births of all groups at each point */
+#nbirths .nb-strip { margin-top: 14px; }
+#nbirths .nb-stripname { font-size: 13px; line-height: 1.3; color: var(--muted); text-align: right; }
+#nbirths .nb-bars { display: grid; grid-template-columns: repeat(16, minmax(0, 1fr)); height: 34px; }
+#nbirths .nb-barcol { position: relative; display: flex; height: 100%; align-items: flex-end; justify-content: center; }
+#nbirths .nb-barchance {
+  position: absolute; left: 50%; width: calc(var(--cellw) + 6px); height: 2px; margin-bottom: -1px;
+  transform: translateX(-50%); background: var(--ink); pointer-events: none;
+}
+#nbirths .nb-bar {
+  display: block; width: var(--cellw); min-height: 0; border-radius: 3px 3px 0 0; background: var(--bar);
+  transition: background-color 300ms ease;
+}
+#nbirths .nb-bar.is-past { background: var(--muted); }
+#nbirths .nb-bar.is-cur { background: var(--ink); }
+#nbirths .nb-base { height: 1px; background: var(--rule); }
+#nbirths .nb-pop { margin: 8px 0 0 calc(var(--namew) + var(--gap)); font-size: 14px; color: var(--muted); min-height: 3em; }
+#nbirths .nb-pop b { color: var(--ink); font-weight: 700; }
+
+#nbirths .nb-controls { display: flex; align-items: center; gap: 16px; margin: 14px 0 0 calc(var(--namew) + var(--gap)); flex-wrap: wrap; }
+#nbirths .nb-hint { font-size: 13px; color: var(--muted); }
+
+#nbirths .nb-tip {
+  position: absolute; z-index: 5; pointer-events: none; background: var(--ink); color: var(--bg);
+  font-size: 12px; line-height: 1.45; padding: 8px 10px; border-radius: 8px; white-space: pre-wrap; opacity: 0;
+  width: max-content; max-width: min(340px, 92vw); transform: translate(-50%, calc(-100% - 10px)); transition: opacity 120ms ease;
+}
+#nbirths .nb-tip.is-on { opacity: 1; }
+#nbirths .nb-tip b { font-weight: 700; }
+#nbirths .nb-tip .nb-mark { text-decoration: underline; text-underline-offset: 2px; font-weight: 700; }
+#nbirths .nb-tip .nb-ctx { display: block; margin-top: 4px; font-family: var(--font-mono); font-size: 11px; opacity: 0.85; }
+
+#nbirths details { margin: 18px 0 0 calc(var(--namew) + var(--gap)); font-size: 13px; color: var(--muted); }
+#nbirths summary { cursor: pointer; width: max-content; max-width: 100%; }
+#nbirths .nb-tablewrap { overflow-x: auto; margin: 10px 0 0; }
+#nbirths table { border-collapse: collapse; font-size: 13px; min-width: 100%; }
+#nbirths th, #nbirths td {
+  text-align: left; padding: 4px 12px 4px 0; border-bottom: 1px solid var(--rule); vertical-align: baseline;
+  font-family: var(--font-text); font-size: 13px; letter-spacing: 0; color: var(--ink);
+}
+#nbirths th { font-weight: 700; white-space: nowrap; }
+#nbirths th:first-child, #nbirths td:first-child { min-width: 11rem; }
+#nbirths td.nb-num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+#nbirths td.nb-ctxcell { font-family: var(--font-mono); font-size: 12px; color: var(--muted); white-space: pre; }
+#nbirths td.nb-ctxcell .nb-mark { color: var(--ink); font-weight: 500; }
+
+#nbirths .nb-caption { margin-top: 32px; padding-top: 14px; border-top: 1px solid var(--rule); font-size: 14px; color: var(--muted); max-width: 72ch; }
+#nbirths .nb-missing { margin: 24px 0 0; font-size: 16px; }
+
+@media (max-width: 640px) {
+  #nbirths .nb-readout { column-gap: 20px; }
+  #nbirths .nb-count b { font-size: 48px; }
+  #nbirths .nb-count { font-size: 19px; }
+  #nbirths .nb-value { font-size: 24px; }
+  #nbirths .nb-pctbar { width: 110px; }
+  #nbirths .nb-line { grid-template-columns: minmax(0, 1fr); }
+  #nbirths .nb-plot { grid-column: 1; }
+  #nbirths .nb-row { grid-template-rows: auto 1fr; align-items: stretch; }
+  #nbirths .nb-name { text-align: left; font-size: 13px; padding-top: 2px; }
+  #nbirths .nb-cells { height: auto; }
+  #nbirths .nb-axisname { display: none; }
+  #nbirths .nb-stripname { text-align: left; margin-bottom: 4px; }
+  #nbirths .nb-tl { display: none; }
+  #nbirths .nb-tl.is-first, #nbirths .nb-tl.is-last, #nbirths .nb-tl.is-cur { display: block; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #nbirths .nb-band, #nbirths .nb-thumb, #nbirths .nb-cell, #nbirths .nb-name, #nbirths .nb-bar, #nbirths .nb-pctbar i { transition: none; }
+}

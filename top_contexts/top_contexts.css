@@ -1,0 +1,175 @@
+/* "What a top context is": the picture's styles, shared by the walkthrough page and index.html.
+   Every rule is scoped under #topctx, so nothing reaches the host page. The host defines --bg, --ink,
+   --muted, --rule, --accent, --font-text and --font-mono, light and dark; the tokens below derive from
+   them. The context row, the picker and the buttons copy the look of "One neuron across training"
+   (../neuron_across_training/slider.css), so the two pictures read as one system. */
+#topctx {
+  --spike: color-mix(in srgb, var(--muted) 72%, var(--bg));
+  --pill: var(--rule);
+  --band: color-mix(in srgb, var(--ink) 6%, transparent);
+  --ph: 240px;
+  --gutter: 48px;
+  --rh: 30px;
+  font: 400 16px/1.5 var(--font-text);
+  color: var(--ink);
+}
+@media (max-width: 640px) {
+  #topctx { --ph: 190px; --gutter: 42px; --rh: 27px; }
+}
+
+#topctx, #topctx * { box-sizing: border-box; }
+#topctx button, #topctx select { font: inherit; color: inherit; }
+#topctx :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+#topctx .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+#topctx p { max-width: none; }
+
+/* picker */
+#topctx .pick { display: flex; gap: 8px; flex-wrap: wrap; min-width: 0; }
+#topctx .select-wrap { position: relative; min-width: 0; max-width: 100%; }
+#topctx select {
+  appearance: none; -webkit-appearance: none;
+  background: transparent; border: 1px solid var(--rule); border-radius: 8px;
+  padding: 8px 36px 8px 12px; font-size: 15px; font-family: var(--font-mono);
+  max-width: 100%; cursor: pointer;
+}
+#topctx .select-wrap::after {
+  content: ""; position: absolute; right: 14px; top: 50%; width: 7px; height: 7px; margin-top: -6px;
+  border-right: 1.5px solid var(--muted); border-bottom: 1.5px solid var(--muted); transform: rotate(45deg);
+  pointer-events: none;
+}
+#topctx select option, #topctx select optgroup { background: var(--bg); color: var(--ink); }
+#topctx .btn {
+  border: 1px solid var(--rule); background: transparent; border-radius: 8px; padding: 8px 14px;
+  font-size: 15px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;
+}
+#topctx .btn:hover { background: var(--band); }
+#topctx .btn:disabled { opacity: 0.4; cursor: default; background: transparent; }
+#topctx .btn svg { width: 12px; height: 12px; fill: currentColor; }
+#topctx .who { margin: 20px 0 0; font-size: 15px; color: var(--muted); max-width: 70ch; min-height: 3em; }
+#topctx .who .tk { white-space: pre; }
+#topctx .who b { font-weight: 500; color: var(--ink); font-family: var(--font-mono); }
+
+/* the figure: heading, legend, plot, axis */
+#topctx .fig { position: relative; margin-top: 28px; user-select: none; -webkit-user-select: none; }
+#topctx .fig-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 20px; margin-left: var(--gutter); }
+#topctx h3 { margin: 0; font-size: 14px; font-weight: 700; color: var(--ink); line-height: 1.4; }
+#topctx h3 .count { font-variant-numeric: tabular-nums; }
+#topctx .legend { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 13px; color: var(--muted); }
+#topctx .legend span { display: inline-flex; align-items: baseline; gap: 6px; }
+#topctx .key { display: inline-block; width: 3px; height: 11px; border-radius: 1px; flex: none; transform: translateY(1px); }
+#topctx .key.sel { background: var(--accent); }
+#topctx .key.line { width: 16px; height: 0; border-top: 1.5px dashed var(--ink); border-radius: 0; transform: translateY(-4px); }
+
+#topctx .plot { position: relative; height: var(--ph); margin: 14px 0 0 var(--gutter); cursor: pointer; outline: none; touch-action: manipulation; }
+#topctx .plot:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; border-radius: 4px; }
+#topctx .area { position: absolute; left: 0; right: 0; top: 12px; bottom: 0; }
+#topctx .grid { position: absolute; left: 0; right: 0; height: 1px; background: var(--rule); pointer-events: none; }
+#topctx .yl {
+  position: absolute; left: calc(-1 * var(--gutter)); width: calc(var(--gutter) - 8px); text-align: right;
+  font-size: 11px; line-height: 1; color: var(--muted); font-variant-numeric: tabular-nums; transform: translateY(50%);
+  white-space: nowrap;
+}
+#topctx .yl.q { color: var(--ink); font-weight: 700; }
+#topctx .qline { position: absolute; left: 0; right: 0; height: 0; border-top: 1.5px dashed var(--ink); opacity: 0.75; pointer-events: none; }
+
+#topctx .spike {
+  position: absolute; bottom: 0; width: 2px; margin-left: -1px; height: 0; border-radius: 1px 1px 0 0;
+  background: var(--spike); pointer-events: none;
+  transition: height 300ms cubic-bezier(.2, .8, .3, 1), background-color 200ms ease;
+}
+#topctx .spike.hover { background: var(--ink); z-index: 2; }
+#topctx .spike.sel { background: var(--accent); width: 3px; margin-left: -1.5px; z-index: 3; }
+#topctx .spike.sel::after {
+  content: ""; position: absolute; left: 50%; top: 0; width: 10px; height: 10px; margin: -5px 0 0 -5px;
+  border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 2px var(--bg);
+  transition: transform 260ms cubic-bezier(.2, .8, .3, 1);
+}
+/* during the intro the strongest tick looks like the rest; it opens when the line has been drawn */
+#topctx.pre .spike.sel { background: var(--spike); }
+#topctx.pre .spike.sel::after { transform: scale(0); }
+
+/* the stream of scored tokens: a pale track, and the drawn line over it */
+#topctx .strack, #topctx .drawn { position: absolute; left: 0; right: 0; bottom: -1.5px; height: 3px; border-radius: 1.5px; pointer-events: none; }
+#topctx .strack { background: var(--rule); }
+#topctx .drawn { background: var(--ink); transform-origin: 0 50%; transform: scaleX(0); z-index: 4; }
+#topctx .head-dot {
+  position: absolute; bottom: 0; width: 9px; height: 9px; margin: 0 0 -4.5px -4.5px; border-radius: 50%;
+  background: var(--ink); box-shadow: 0 0 0 2px var(--bg); z-index: 5; pointer-events: none; opacity: 0;
+}
+#topctx .head-dot.on { opacity: 1; }
+
+#topctx .xaxis { position: relative; height: 26px; margin-left: var(--gutter); }
+#topctx .xt { position: absolute; top: 0; width: 1px; height: 6px; background: var(--muted); }
+#topctx .xl { position: absolute; top: 9px; transform: translateX(-50%); font-size: 11px; line-height: 1; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+#topctx .xl.first { transform: none; }
+#topctx .xtitle { margin: 0 0 0 var(--gutter); font-size: 13px; color: var(--muted); }
+#topctx .ytitle { position: absolute; left: 0; top: -2px; font-size: 13px; color: var(--muted); }
+
+#topctx .tip {
+  position: absolute; z-index: 6; pointer-events: none; background: var(--ink); color: var(--bg);
+  font-size: 12px; line-height: 1.45; padding: 8px 10px; border-radius: 8px; white-space: pre; opacity: 0;
+  transform: translate(-50%, calc(-100% - 12px)); transition: opacity 120ms ease;
+}
+#topctx .tip.on { opacity: 1; }
+#topctx .tip b { font-weight: 700; }
+
+/* the opened context */
+#topctx .readout { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 16px 40px; align-items: flex-start; }
+#topctx .stat .label { font-size: 13px; color: var(--muted); }
+#topctx .stat .value { font-size: 30px; line-height: 1.15; white-space: nowrap; }
+#topctx .stat .value small { font-size: 18px; color: var(--muted); }
+#topctx .stat .note { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+#topctx .open { margin-top: 18px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 8px 0; transition: opacity 160ms ease; }
+#topctx .open.out { opacity: 0; }
+#topctx .ctx {
+  height: var(--rh);
+  display: grid; grid-template-columns: minmax(0, 1fr) 12ch minmax(0, .62fr) 6ch; align-items: center;
+  font-family: var(--font-mono); font-size: 13px; line-height: 1; white-space: pre;
+}
+#topctx .ctx .b { display: flex; justify-content: flex-end; overflow: hidden; color: var(--muted);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 56px); mask-image: linear-gradient(to right, transparent, #000 56px); }
+#topctx .ctx .t { display: flex; justify-content: center; min-width: 0; padding: 0 6px; }
+#topctx .ctx .a { overflow: hidden; color: var(--muted);
+  -webkit-mask-image: linear-gradient(to left, transparent, #000 40px); mask-image: linear-gradient(to left, transparent, #000 40px); }
+#topctx .ctx .v { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; font-size: 12px; }
+#topctx .nl { color: var(--muted); opacity: 0.7; }
+#topctx .pill {
+  display: block; max-width: 100%; overflow: hidden; text-overflow: ellipsis;
+  padding: 5px 7px 6px; border-radius: 6px; background: var(--accent); color: var(--bg); font-weight: 500;
+}
+
+#topctx .controls { display: flex; align-items: center; gap: 8px 12px; margin-top: 16px; flex-wrap: wrap; }
+#topctx .hint { font-size: 13px; color: var(--muted); }
+
+#topctx details { margin: 18px 0 0; font-size: 13px; color: var(--muted); }
+#topctx summary { cursor: pointer; width: max-content; max-width: 100%; }
+#topctx .tablewrap { overflow-x: auto; margin: 10px 0 0; }
+#topctx table { border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; min-width: 100%; }
+#topctx th, #topctx td { text-align: right; padding: 3px 10px; border-bottom: 1px solid var(--rule); white-space: pre; vertical-align: baseline; }
+#topctx th:first-child, #topctx td:first-child { text-align: left; padding-left: 0; }
+#topctx th:last-child, #topctx td:last-child { text-align: left; }
+#topctx th { font-family: inherit; font-size: 13px; font-weight: 700; color: var(--ink); letter-spacing: 0; }
+#topctx td:last-child { font-family: var(--font-mono); color: var(--ink); }
+#topctx tr.on td { background: var(--band); }
+#topctx td .rk { border: 0; background: transparent; padding: 0; font-size: 13px; color: var(--accent); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+
+#topctx .readout, #topctx .controls { transition: opacity 300ms ease; }
+#topctx.pre .readout, #topctx.pre .open, #topctx.pre .controls { opacity: 0; }
+
+#topctx .caption { margin: 36px 0 0; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 14px; color: var(--muted); max-width: 72ch; }
+#topctx .missing { margin: 24px 0 0; font-size: 16px; }
+
+@media (max-width: 640px) {
+  #topctx .fig-head, #topctx .xtitle { margin-left: 0; }
+  #topctx .readout { gap: 12px 28px; }
+  #topctx .stat .value { font-size: 24px; }
+  #topctx .stat .value small { font-size: 15px; }
+  #topctx .ctx { grid-template-columns: minmax(0, 1fr) 11ch minmax(0, .4fr) 5ch; font-size: 11.5px; }
+  #topctx .ctx .t { padding: 0 3px; }
+  #topctx .ctx .v { font-size: 11px; }
+  #topctx .pill { padding: 4px 5px 5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #topctx .spike, #topctx .open, #topctx .tip { transition: none; }
+}
