@@ -1,0 +1,41 @@
+{
+  "created_utc": "2026-07-19T06:12:37.190047+00:00",
+  "durability_contract": {
+    "archive_durable": false,
+    "archive_key": "parallax/results/parallax-pg1-primary-interface-s3-v2/artifacts.tar",
+    "archive_proof": null,
+    "bucket": "pg-lineage-769063704696",
+    "durable_provider": "amazon_s3",
+    "post_terminal_action": "destroy",
+    "pre_science": true,
+    "pre_science_report_complete": false,
+    "region": "us-east-1",
+    "terminal_key": "parallax/results/parallax-pg1-primary-interface-s3-v2/terminal.json",
+    "terminal_upload_failure_action": "stop",
+    "vast_persistent_storage": "FORBIDDEN"
+  },
+  "instance_id": 45288475,
+  "job": {
+    "log_tail": "Traceback (most recent call last):\n  File \"/opt/parallax/primary_interface_control_job.py\", line 375, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/opt/parallax/primary_interface_control_job.py\", line 369, in main\n    packet = run(args.input_contract.resolve(), args.artifact_post.resolve())\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/parallax/primary_interface_control_job.py\", line 358, in run\n    return legacy.run(input_contract_path, artifact_post_path)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/parallax/ephemeral_interface_control_job.py\", line 550, in run\n    source = _verify_source(contract)\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/parallax/ephemeral_interface_control_job.py\", line 255, in _verify_source\n    raise InterfaceJobError(\"interface source contract escaped its boundary\")\nephemeral_interface_control_job.InterfaceJobError: interface source contract escaped its boundary\n",
+    "result": {
+      "present": false
+    },
+    "result_error": null,
+    "returncode": 1,
+    "timed_out": false
+  },
+  "phase": {
+    "created_utc": "2026-07-19T06:12:34.547744+00:00",
+    "phase": "SOURCE_STAGING",
+    "run_id": "parallax-pg1-primary-interface-s3-v2",
+    "schema_version": 1,
+    "science_started": false
+  },
+  "provider": "vast.ai",
+  "run_id": "parallax-pg1-primary-interface-s3-v2",
+  "schema_version": 1,
+  "stage": "training_interface_control",
+  "started_utc": "2026-07-19T06:12:34.472690+00:00",
+  "status": "RED_JOB_TERMINAL",
+  "wall_seconds": 2.717370104044676
+}

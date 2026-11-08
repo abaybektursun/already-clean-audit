@@ -1,0 +1,7 @@
+[
+ {
+  "name": "probe",
+  "module": "infra.aws_pg.jobs.neurons_harvest",
+  "args": "--model-key G4 --repo google/gemma-3-4b-pt --tokname gemma3 --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus --max-tokens 131072 --poles s3://pg-lineage-769063704696/results/neurons/w2c/g4_probe/1/probe_poles.json --probe-texts s3://pg-lineage-769063704696/results/neurons/w2c/g4_probe/1/texts.jsonl"
+ }
+]

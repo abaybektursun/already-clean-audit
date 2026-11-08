@@ -1,0 +1,70 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "MdlObjectsOnly",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:GetObject",
+        "s3:AbortMultipartUpload"
+      ],
+      "Resource": "arn:aws:s3:::pg-lineage-769063704696/results/mdl/*"
+    },
+    {
+      "Sid": "ListMdlPrefixOnly",
+      "Effect": "Allow",
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::pg-lineage-769063704696",
+      "Condition": {
+        "StringLike": {
+          "s3:prefix": [
+            "results/mdl/*"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "N13ObjectsOnly",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:GetObject",
+        "s3:AbortMultipartUpload"
+      ],
+      "Resource": "arn:aws:s3:::pg-lineage-769063704696/results/next_n13/*"
+    },
+    {
+      "Sid": "ListN13PrefixOnly",
+      "Effect": "Allow",
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::pg-lineage-769063704696",
+      "Condition": {
+        "StringLike": {
+          "s3:prefix": [
+            "results/next_n13/*"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "WeightsCacheReadOnly",
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::pg-lineage-769063704696/weights/hf/*"
+    },
+    {
+      "Sid": "ListWeightsPrefixOnly",
+      "Effect": "Allow",
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::pg-lineage-769063704696",
+      "Condition": {
+        "StringLike": {
+          "s3:prefix": [
+            "weights/hf/*"
+          ]
+        }
+      }
+    }
+  ]
+}

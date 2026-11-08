@@ -1,0 +1,59 @@
+{
+ "n_banked_rows": 2465,
+ "n_banked_echo": 11,
+ "n_banked_non_echo": 2454,
+ "n_mine_sample0": 2454,
+ "keys_only_in_mine": [],
+ "keys_only_in_banked": [],
+ "n_common": 2454,
+ "ranks_equal": 2454,
+ "med_max_abs_diff": 0.0,
+ "present_pct_equal": 2454,
+ "present_raw_equal": 2454,
+ "birth_pct_equal": 2454,
+ "birth_raw_equal": 2454,
+ "is_main_equal": 2454,
+ "birth_pct_lower_median_equal": 2249,
+ "birth_pct_upper_median_equal": 2236,
+ "mismatches": [],
+ "n_banked_birth_raw_none": 6,
+ "failing_inputs": {
+  "true_input": 2454,
+  "a_checkpoints_shuffled": {
+   "perm": [
+    10,
+    8,
+    9,
+    12,
+    13,
+    0,
+    15,
+    1,
+    4,
+    14,
+    2,
+    7,
+    3,
+    6,
+    11,
+    5
+   ],
+   "match": 0
+  },
+  "b_pole_rows_shifted_by_2": {
+   "match": 298
+  },
+  "c_random_ranks_same_size": {
+   "match": 991
+  },
+  "d_threshold_from_T15": {
+   "match": 106
+  },
+  "e_max_instead_of_median": {
+   "match": 550
+  },
+  "f_one_point_rule": {
+   "match": 2299
+  }
+ }
+}

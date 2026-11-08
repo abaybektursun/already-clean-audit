@@ -1,0 +1,54 @@
+{
+  "schema": "pg1-vast-tracked-real-shaped-fixtures/v1",
+  "provenance": {
+    "normalizer": "infra/vast/parallax/guarded_launch.py:_show_instance",
+    "row_identity": "infra/vast/parallax/ephemeral_guardian.py:run",
+    "state_fields": [
+      "actual_status",
+      "cur_state"
+    ],
+    "destruction_proof": "infra/vast/parallax/ephemeral_s3_launch.py:_enforce_instances_destroyed"
+  },
+  "show_list_running": [
+    {
+      "id": 778899,
+      "machine_id": 771133,
+      "label": "parallax-worker-pg1-native-future-source-test-a",
+      "actual_status": "running",
+      "intended_status": "running"
+    }
+  ],
+  "show_nested_stopped": {
+    "instances": {
+      "id": 778899,
+      "machine_id": 771133,
+      "label": "parallax-worker-pg1-native-future-source-test-a",
+      "cur_state": "stopped",
+      "intended_status": "stopped"
+    }
+  },
+  "show_nested_list_loading": {
+    "instances": [
+      {
+        "id": 778899,
+        "machine_id": 771133,
+        "label": "parallax-worker-pg1-native-future-source-test-a",
+        "actual_status": "loading",
+        "intended_status": "running"
+      }
+    ]
+  },
+  "show_direct_wrong_row": {
+    "id": 991122,
+    "machine_id": 880044,
+    "actual_status": "running",
+    "intended_status": "running"
+  },
+  "destroy_absence_sequence": [
+    [],
+    {
+      "instances": []
+    },
+    []
+  ]
+}

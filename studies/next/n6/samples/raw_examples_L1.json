@@ -1,0 +1,952 @@
+[
+ {
+  "pair": "P002",
+  "member": "early",
+  "pole": "L03N6372-",
+  "partner": "L03N7574-",
+  "layer": 3,
+  "half": "freeze",
+  "age": 5,
+  "partner_age": 12,
+  "adjusted_age": -3.3925,
+  "max_abs": 0.2539924085140228,
+  "density": 2603717,
+  "q999": 0.04466835781931877,
+  "top3_T15": [
+   {
+    "rank": 0,
+    "a": -0.2539924085140228,
+    "before_tail": "\ufeffDELIMITER $$\n\nDROP PROCEDURE IF EXISTS `ssp`.`ssp_insertar_descripcion` $$\nCREATE PROC",
+    "token": "EDURE",
+    "after_head": " `ssp`.`ssp_insertar_descripcion` (nombr"
+   },
+   {
+    "rank": 1,
+    "a": -0.2522939443588257,
+    "before_tail": "DROP PROCEDURE IF EXISTS `deleteUser`;\nDELIMITER $$\n\nCREATE PROC",
+    "token": "EDURE",
+    "after_head": " deleteUser(IN uname VARCHAR(16))\nLANGUA"
+   },
+   {
+    "rank": 2,
+    "a": -0.25189048051834106,
+    "before_tail": "DELIMITER $$\n\nDROP PROCEDURE IF EXISTS modifica_estoc_actual$$\nCREATE PROC",
+    "token": "EDURE",
+    "after_head": " modifica_estoc_actual (ESTOC_ACT INTEGE"
+   }
+  ],
+  "frobenius_norm_c": 0.9885527491569519,
+  "dL_nats_per_token": -4.432524989756344e-06,
+  "top5_tokens": [
+   {
+    "abs": 0.4613008499145508,
+    "window": 36,
+    "target_pos": 195,
+    "dl": -0.4613008499145508,
+    "base_loss": 8.207762718200684,
+    "context": "en. Moses Moten was a night watchman at Kerr Murray Foundry and Chaplain Rhodes was a janitor. Both are buried in Lindenwood Cemetery.\n\n",
+    "target": "Mot"
+   },
+   {
+    "abs": 0.08813095092773438,
+    "window": 3,
+    "target_pos": 4,
+    "dl": -0.08813095092773438,
+    "base_loss": 3.3722310066223145,
+    "context": "<|endoftext|>ium-matter",
+    "target": "horn"
+   },
+   {
+    "abs": 0.08472299575805664,
+    "window": 13,
+    "target_pos": 1847,
+    "dl": 0.08472299575805664,
+    "base_loss": 5.939920902252197,
+    "context": "\n\nSo, I had to switch my ESXi host BACK to a 2u system\n\nI then re-organized my rack and added a Ripe Atlas",
+    "target": " Probe"
+   },
+   {
+    "abs": 0.06961584091186523,
+    "window": 62,
+    "target_pos": 1470,
+    "dl": -0.06961584091186523,
+    "base_loss": 5.631019115447998,
+    "context": ")\n    \u20ac37 Gns Bud\n    11 bud\n\n    NS3 SIMULATOR EXPERT to implement my algorithm more details in the inbox\n\n    \u20ac",
+    "target": "112"
+   },
+   {
+    "abs": 0.06693148612976074,
+    "window": 31,
+    "target_pos": 105,
+    "dl": 0.06693148612976074,
+    "base_loss": 3.5429041385650635,
+    "context": " Organization on obesity.\u00a0Geneva: World Health Organization; 1997.\u00a0[Google Scholar]\n\nObesity and reproduction: a committee opinion (asrm",
+    "target": ".org"
+   }
+  ],
+  "norm_w": 0.9940160512924194,
+  "kappa": 0.9945038089391373,
+  "E_plus": 2.6768108321531727,
+  "E_plus_pass1": 2.6768108047544956,
+  "kl_eff": 3.195937441490715e-05,
+  "dl_eff": -0.0015791244209140132,
+  "R_residual_change": 5.076096454316136,
+  "seconds": 89.95,
+  "dL_rand_same_norm": "L2"
+ },
+ {
+  "pair": "P002",
+  "member": "late",
+  "pole": "L03N7574-",
+  "partner": "L03N6372-",
+  "layer": 3,
+  "half": "freeze",
+  "age": 12,
+  "partner_age": 5,
+  "adjusted_age": 0.3584999999999994,
+  "max_abs": 0.25375276803970337,
+  "density": 2805344,
+  "q999": 0.04731512442231178,
+  "top3_T15": [
+   {
+    "rank": 0,
+    "a": -0.25375276803970337,
+    "before_tail": "The past decade was the warmest ever on record, showing that global warming is \"continuing",
+    "token": " unab",
+    "after_head": "ated,\" according to a new report from NA"
+   },
+   {
+    "rank": 1,
+    "a": -0.2517073452472687,
+    "before_tail": "0.2% in a quiet session. The energy sector stood out, rising 1.5%. Occidental Petroleum (O",
+    "token": "XY",
+    "after_head": ":xnys) gained 4.3%, surging for the seco"
+   },
+   {
+    "rank": 2,
+    "a": -0.227730393409729,
+    "before_tail": "n Monoxide, CO, Combustible Gas, O2, Oxygen Product Type: Multi Gas Detector Trade Name: O",
+    "token": "xy",
+    "after_head": "ge<|endoftext|>"
+   }
+  ],
+  "frobenius_norm_c": 0.9885527491569519,
+  "dL_nats_per_token": -1.4078957630029795e-06,
+  "top5_tokens": [
+   {
+    "abs": 0.3268003463745117,
+    "window": 36,
+    "target_pos": 195,
+    "dl": -0.3268003463745117,
+    "base_loss": 8.207762718200684,
+    "context": "en. Moses Moten was a night watchman at Kerr Murray Foundry and Chaplain Rhodes was a janitor. Both are buried in Lindenwood Cemetery.\n\n",
+    "target": "Mot"
+   },
+   {
+    "abs": 0.14106130599975586,
+    "window": 20,
+    "target_pos": 887,
+    "dl": -0.14106130599975586,
+    "base_loss": 7.211319446563721,
+    "context": "inger F, Teasdale TW, Schulsinger H, Feldman PM, Mednick SA.\n\n(1977). In unstable air, an unsaturated",
+    "target": " parcel"
+   },
+   {
+    "abs": 0.092041015625,
+    "window": 41,
+    "target_pos": 66,
+    "dl": 0.092041015625,
+    "base_loss": 9.178574562072754,
+    "context": " can choose the option that best meets your needs.\nUser-Friendly Controls\nOperate with ease in difficult terrain with the John Deere 644 G-Tier",
+    "target": " Mid"
+   },
+   {
+    "abs": 0.07069873809814453,
+    "window": 86,
+    "target_pos": 878,
+    "dl": 0.07069873809814453,
+    "base_loss": 6.646075248718262,
+    "context": " Spring/ Nelsonville\n\nAURORA INFO TECH\nBACH PETER\nBAILEY DENTISTRY\nBILODEAU RUTH\nBITIL",
+    "target": " JO"
+   },
+   {
+    "abs": 0.06712579727172852,
+    "window": 40,
+    "target_pos": 275,
+    "dl": 0.06712579727172852,
+    "base_loss": 6.3126678466796875,
+    "context": " Koyo Spherical Roller Bearings 146 460 0 22741 29372R Koyo Koyo Thrust Tapered Roller\n\nrijzend",
+    "target": "ew"
+   }
+  ],
+  "norm_w": 0.9885527491569519,
+  "kappa": 1.0,
+  "E_plus": 2.8280366519489712,
+  "E_plus_pass1": 2.8280366212129593,
+  "kl_eff": 2.4538469056807343e-05,
+  "dl_eff": -0.003635595859377645,
+  "R_residual_change": 5.103058205101124,
+  "seconds": 89.1,
+  "dL_rand_same_norm": "L2"
+ },
+ {
+  "pair": "P037",
+  "member": "early",
+  "pole": "L08N9190-",
+  "partner": "L08N5063-",
+  "layer": 8,
+  "half": "freeze",
+  "age": 8,
+  "partner_age": 13,
+  "adjusted_age": -0.3045000000000009,
+  "max_abs": 1.1084867715835571,
+  "density": 3665101,
+  "q999": 0.17782793939113617,
+  "top3_T15": [
+   {
+    "rank": 0,
+    "a": -1.1084867715835571,
+    "before_tail": " very first edition of Dungeons and Dragons, added by Gary Gygax himself after inspiration",
+    "token": " struck",
+    "after_head": " in the form of a 70s tv show called Kol"
+   },
+   {
+    "rank": 1,
+    "a": -1.0169246196746826,
+    "before_tail": "For Puck Markham, the idea for Camp Lightbulb wasn't an immediate \"A",
+    "token": "ha",
+    "after_head": "!\" moment, but the slow force of ideas c"
+   },
+   {
+    "rank": 2,
+    "a": -0.9810653924942017,
+    "before_tail": "as Rosetta Stone, Egyptian mummies and Parthenon sculptures. This museum is founded in 175",
+    "token": "3",
+    "after_head": " and visited around six million visitors"
+   }
+  ],
+  "frobenius_norm_c": 0.862908661365509,
+  "dL_nats_per_token": 4.7638391394762974e-06,
+  "top5_tokens": [
+   {
+    "abs": 0.25472068786621094,
+    "window": 85,
+    "target_pos": 1257,
+    "dl": 0.25472068786621094,
+    "base_loss": 4.746549606323242,
+    "context": " been working hard to come up with a way to bring the Bunny Trail back to the community in a COVID-friendly manner,\" says executive director Candice Penny.\n\n\"",
+    "target": "Crystal"
+   },
+   {
+    "abs": 0.19523906707763672,
+    "window": 1,
+    "target_pos": 188,
+    "dl": 0.19523906707763672,
+    "base_loss": 9.361063957214355,
+    "context": " surrounding cities. Her main objective is to make sure a safe and pleasant experience, both for her customers and herself.\n\nIt comes with its own set of risks,",
+    "target": " Dakota"
+   },
+   {
+    "abs": 0.13604021072387695,
+    "window": 36,
+    "target_pos": 271,
+    "dl": -0.13604021072387695,
+    "base_loss": 6.797900199890137,
+    "context": " in a section of the city known as Westfield, owned almost solely by the Rockhill family. Many of the black families lived in this part of town.",
+    "target": " Rock"
+   },
+   {
+    "abs": 0.13581323623657227,
+    "window": 1,
+    "target_pos": 57,
+    "dl": 0.13581323623657227,
+    "base_loss": 6.348702907562256,
+    "context": " and a requirement to feel great about herself, she chose to venture into this untapped and exciting brand-new way of life.\n\nArmed with a burning desire to",
+    "target": " make"
+   },
+   {
+    "abs": 0.1304779052734375,
+    "window": 1,
+    "target_pos": 70,
+    "dl": 0.1304779052734375,
+    "base_loss": 4.109862804412842,
+    "context": " into this untapped and exciting brand-new way of life.\n\nArmed with a burning desire to make a living doing something \u201cfor her,\u201d Dakota set out to",
+    "target": " make"
+   }
+  ],
+  "norm_w": 0.9697052836418152,
+  "kappa": 0.8898669275316086,
+  "E_plus": 37.00304011326836,
+  "E_plus_pass1": 37.00304001569748,
+  "kl_eff": 0.00011286372514092591,
+  "dl_eff": -0.0034542466739367226,
+  "R_residual_change": 12.201985530779167,
+  "seconds": 72.69,
+  "dL_rand_same_norm": "L2"
+ },
+ {
+  "pair": "P037",
+  "member": "late",
+  "pole": "L08N5063-",
+  "partner": "L08N9190-",
+  "layer": 8,
+  "half": "freeze",
+  "age": 13,
+  "partner_age": 8,
+  "adjusted_age": 0.0,
+  "max_abs": 1.0710909366607666,
+  "density": 4023844,
+  "q999": 0.26607251167297363,
+  "top3_T15": [
+   {
+    "rank": 0,
+    "a": -1.0710909366607666,
+    "before_tail": "ike finding the first move, finding the exact wood for you. It's a little bit like the Pin",
+    "token": "oc",
+    "after_head": "chio story because it should be an inter"
+   },
+   {
+    "rank": 1,
+    "a": -1.0532649755477905,
+    "before_tail": "twitter.\n\nAnd then there were the few jokes, joking about calling ghostbusters and the Win",
+    "token": "chest",
+    "after_head": "ers and telling Louis and I to just forg"
+   },
+   {
+    "rank": 2,
+    "a": -0.9698758125305176,
+    "before_tail": " % of 2 to 17-year-olds in a diagnosis has been received by the United States of attention",
+    "token": " deficit",
+    "after_head": " hyperactive disorder (ADHD) sometime.\n\n"
+   }
+  ],
+  "frobenius_norm_c": 0.862908661365509,
+  "dL_nats_per_token": 9.763019078131164e-06,
+  "top5_tokens": [
+   {
+    "abs": 0.3786349296569824,
+    "window": 36,
+    "target_pos": 195,
+    "dl": -0.3786349296569824,
+    "base_loss": 8.207762718200684,
+    "context": "en. Moses Moten was a night watchman at Kerr Murray Foundry and Chaplain Rhodes was a janitor. Both are buried in Lindenwood Cemetery.\n\n",
+    "target": "Mot"
+   },
+   {
+    "abs": 0.22736692428588867,
+    "window": 64,
+    "target_pos": 839,
+    "dl": -0.22736692428588867,
+    "base_loss": 2.541940212249756,
+    "context": " process from start to finish. Good for learning \"smaller\" projects or tasks one at a time.\n\nTopics taught: HTML5, CSS3, Javascript,",
+    "target": " Regex"
+   },
+   {
+    "abs": 0.19663429260253906,
+    "window": 17,
+    "target_pos": 311,
+    "dl": 0.19663429260253906,
+    "base_loss": 7.691027641296387,
+    "context": " Audiobook\n\nGeorge R. R. Martin \u2013 The Sworn Sword Audio Book Free\n\nThe graphic novel adaptation of the second of George R.R. Martin\u2019s",
+    "target": " Dunk"
+   },
+   {
+    "abs": 0.16426420211791992,
+    "window": 21,
+    "target_pos": 411,
+    "dl": 0.16426420211791992,
+    "base_loss": 1.875699758529663,
+    "context": " a nonalcoholic cocktail brand called Atypique this summer \u2014 and another sign of interest in this fast-growing category.\n\nAthletic Brewing was founded in 201",
+    "target": "7"
+   },
+   {
+    "abs": 0.14838790893554688,
+    "window": 82,
+    "target_pos": 1730,
+    "dl": 0.14838790893554688,
+    "base_loss": 4.925287246704102,
+    "context": " a reboot of jellyfish ecology as a central part of the ocean system.\u201d\n\nDr. Doyle, Dr. Houghton and Graeme C. Hays of",
+    "target": " De"
+   }
+  ],
+  "norm_w": 0.862908661365509,
+  "kappa": 1.0,
+  "E_plus": 88.61734820007398,
+  "E_plus_pass1": 88.61734747886658,
+  "kl_eff": 3.957949079847367e-05,
+  "dl_eff": 0.0009105866658683226,
+  "R_residual_change": 15.278978105010376,
+  "seconds": 74.53,
+  "dL_rand_same_norm": "L2"
+ },
+ {
+  "pair": "P039",
+  "member": "early",
+  "pole": "L15N10390-",
+  "partner": "L15N6531-",
+  "layer": 15,
+  "half": "freeze",
+  "age": 6,
+  "partner_age": 10,
+  "adjusted_age": -1.0890000000000004,
+  "max_abs": 3.370661735534668,
+  "density": 2712524,
+  "q999": 0.3981071710586548,
+  "top3_T15": [
+   {
+    "rank": 0,
+    "a": -3.370661735534668,
+    "before_tail": " Afghanistan by 80 percent because it has been unable to get funding for the project.\n\nThe",
+    "token": " consortium",
+    "after_head": " has proposed new terms which would see "
+   },
+   {
+    "rank": 1,
+    "a": -2.995727062225342,
+    "before_tail": " Securities Services (BOISS), was the custodian bank of an investment fund involved in the",
+    "token": " scheme",
+    "after_head": ".\n\nSource link\n\nContinue Reading\n\nReader"
+   },
+   {
+    "rank": 2,
+    "a": -2.882944345474243,
+    "before_tail": "er swallow the large losses being generated by its plants and would try to sell them.\n\nThe",
+    "token": " owner",
+    "after_head": " of the plants, Tata Steel, has been squ"
+   }
+  ],
+  "frobenius_norm_c": 0.953256368637085,
+  "dL_nats_per_token": -2.715384499048986e-06,
+  "top5_tokens": [
+   {
+    "abs": 0.2523326873779297,
+    "window": 68,
+    "target_pos": 617,
+    "dl": -0.2523326873779297,
+    "base_loss": 2.896052360534668,
+    "context": "'s Adam Loran to post an even-par 72 Monday afternoon.\n\nOverall, UHV sits in third place as part of a cluster of teams teams at the",
+    "target": " top"
+   },
+   {
+    "abs": 0.1961808204650879,
+    "window": 72,
+    "target_pos": 1529,
+    "dl": 0.1961808204650879,
+    "base_loss": 3.41306209564209,
+    "context": " less flashy endeavors such as hosting a party for travel writers at the mansion.\n\nAllen said she and the governor were both disappointed that Disney abandoned its plans for the park",
+    "target": " near"
+   },
+   {
+    "abs": 0.19159626960754395,
+    "window": 50,
+    "target_pos": 993,
+    "dl": 0.19159626960754395,
+    "base_loss": 2.1151187419891357,
+    "context": " botanic garden in Britain to earn the honour.\n\nThe move is official recognition by The UK Dark Sky Discovery partnership of the quality of the night sky over the garden",
+    "target": " in"
+   },
+   {
+    "abs": 0.18826913833618164,
+    "window": 13,
+    "target_pos": 1290,
+    "dl": 0.18826913833618164,
+    "base_loss": 6.538363456726074,
+    "context": ", and finally got an ever better switch with PoE which means I didn't need a ton of PoE injectors thrown behind the rack. I got an",
+    "target": " SG"
+   },
+   {
+    "abs": 0.1876387596130371,
+    "window": 7,
+    "target_pos": 849,
+    "dl": -0.1876387596130371,
+    "base_loss": 4.351205825805664,
+    "context": " Oby Nwankwo, executive director of Nigeria\u2019s Civil Resource Development and Documentation Centre, said in Uganda, where the 31 May-11 June conference",
+    "target": " is"
+   }
+  ],
+  "norm_w": 0.953256368637085,
+  "kappa": 1.0,
+  "E_plus": 208.42493759017668,
+  "E_plus_pass1": 208.42493438720703,
+  "kl_eff": 0.0019511236669006848,
+  "dl_eff": -0.000276637875722372,
+  "R_residual_change": 17.496559662528853,
+  "seconds": 53.58,
+  "dL_rand_same_norm": "L2"
+ },
+ {
+  "pair": "P039",
+  "member": "late",
+  "pole": "L15N6531-",
+  "partner": "L15N10390-",
+  "layer": 15,
+  "half": "freeze",
+  "age": 10,
+  "partner_age": 6,
+  "adjusted_age": -0.6965000000000003,
+  "max_abs": 3.5601818561553955,
+  "density": 2697547,
+  "q999": 0.33496543765068054,
+  "top3_T15": [
+   {
+    "rank": 0,
+    "a": -3.5601818561553955,
+    "before_tail": "it, you have to have a business license in the town where you\u2019re going to install the sign",
+    "token": ".",
+    "after_head": " So you have to drive to the licensing o"
+   },
+   {
+    "rank": 1,
+    "a": -3.078763723373413,
+    "before_tail": " not lying because I didn't believe they were lies. But when I state my belief I am lying.",
+    "token": " But",
+    "after_head": " I'm not lying because I believe it to b"
+   },
+   {
+    "rank": 2,
+    "a": -2.529951572418213,
+    "before_tail": "out yogurt dispenser, but in order to get to the dispenser he has to use the Pencil Eraser",
+    "token": ",",
+    "after_head": " which Paula is holding onto. Well, it's"
+   }
+  ],
+  "frobenius_norm_c": 0.953256368637085,
+  "dL_nats_per_token": 1.7587801536426393e-06,
+  "top5_tokens": [
+   {
+    "abs": 0.23411846160888672,
+    "window": 48,
+    "target_pos": 1259,
+    "dl": -0.23411846160888672,
+    "base_loss": 6.325963020324707,
+    "context": " statewide and albeit somewhat national campaign for the office this November, and how do voters in Northern Virginia, you know, young Republicans, older Republicans, you know,",
+    "target": " translate"
+   },
+   {
+    "abs": 0.13291168212890625,
+    "window": 15,
+    "target_pos": 1176,
+    "dl": 0.13291168212890625,
+    "base_loss": 8.370341300964355,
+    "context": "'t know what was happening, depending on where the aircaft was and the path, there could be obstacles in the way, and then how do we handle",
+    "target": " return"
+   },
+   {
+    "abs": 0.10561823844909668,
+    "window": 15,
+    "target_pos": 1189,
+    "dl": 0.10561823844909668,
+    "base_loss": 2.0015172958374023,
+    "context": " was and the path, there could be obstacles in the way, and then how do we handle return of control? How does the user know they lost control?",
+    "target": " How"
+   },
+   {
+    "abs": 0.1015787124633789,
+    "window": 63,
+    "target_pos": 1462,
+    "dl": 0.1015787124633789,
+    "base_loss": 11.868556022644043,
+    "context": " and Appeal\nThere is something to be said about keeping things simple. So, instead of going into a theory on how to increase your deep link percentage, what",
+    "target": " threshold"
+   },
+   {
+    "abs": 0.10058856010437012,
+    "window": 23,
+    "target_pos": 231,
+    "dl": -0.10058856010437012,
+    "base_loss": 2.7014734745025635,
+    "context": " on your recommendations.\nYou'll also need ecommerce software, fulfillment software, worry about warehousing, customer service, refunds and so on. But that's not all",
+    "target": "."
+   }
+  ],
+  "norm_w": 0.997020959854126,
+  "kappa": 0.9561046427514982,
+  "E_plus": 187.63287574393007,
+  "E_plus_pass1": 187.63287925720215,
+  "kl_eff": 0.0012317673932898288,
+  "dl_eff": 0.002747818846255541,
+  "R_residual_change": 16.508768402674455,
+  "seconds": 54.5,
+  "dL_rand_same_norm": "L2"
+ },
+ {
+  "pair": "P020",
+  "member": "early",
+  "pole": "L22N7990-",
+  "partner": "L22N10231+",
+  "layer": 22,
+  "half": "freeze",
+  "age": 9,
+  "partner_age": 12,
+  "adjusted_age": -1.8640000000000008,
+  "max_abs": 5.616450309753418,
+  "density": 4985676,
+  "q999": 1.0,
+  "top3_T15": [
+   {
+    "rank": 0,
+    "a": -5.616450309753418,
+    "before_tail": "nts without disturbing the brake line. It\u2019s similar in concept to the spacers Trek uses on",
+    "token": " its",
+    "after_head": " newer Madone.\n\nEven the stem gets speci"
+   },
+   {
+    "rank": 1,
+    "a": -5.4230546951293945,
+    "before_tail": "points.\n    My only problem is that I'm stuck with a pair of brand new DT 350's (sp, disc,",
+    "token": " ",
+    "after_head": "24/24). It was a bargain, I could not le"
+   },
+   {
+    "rank": 2,
+    "a": -5.2964186668396,
+    "before_tail": "Choose your location and language.\nInternational News\n\nSamsung Announces Launch of the",
+    "token": " Samsung",
+    "after_head": " Galaxy J1 (2016) 4G\n\nApr 22. "
+   }
+  ],
+  "frobenius_norm_c": 0.9841352105140686,
+  "dL_nats_per_token": -6.742334048402918e-07,
+  "top5_tokens": [
+   {
+    "abs": 0.11854934692382812,
+    "window": 30,
+    "target_pos": 1865,
+    "dl": -0.11854934692382812,
+    "base_loss": 2.8275980949401855,
+    "context": "  9. The King Thing\n  10. A Very Slippery Slope\n  11. The Artifact\n  12. The Phoenix",
+    "target": " has"
+   },
+   {
+    "abs": 0.10404419898986816,
+    "window": 1,
+    "target_pos": 59,
+    "dl": 0.10404419898986816,
+    "base_loss": 3.856172561645508,
+    "context": " requirement to feel great about herself, she chose to venture into this untapped and exciting brand-new way of life.\n\nArmed with a burning desire to make a",
+    "target": " living"
+   },
+   {
+    "abs": 0.09755730628967285,
+    "window": 14,
+    "target_pos": 835,
+    "dl": 0.09755730628967285,
+    "base_loss": 3.3823890686035156,
+    "context": " you some money.\n\nIs i5 processor good for AutoCAD?\n\nThe majority of our recommended laptops come with the Intel quad-core i5, which is more affordable",
+    "target": " compared"
+   },
+   {
+    "abs": 0.0919945240020752,
+    "window": 61,
+    "target_pos": 1454,
+    "dl": 0.0919945240020752,
+    "base_loss": 3.921196222305298,
+    "context": " even cost-prohibitive in some cases. If you follow Hintjens' Law, it was inevitable and predictable that this would change.\n\n\u201cThe cost of any",
+    "target": " technology"
+   },
+   {
+    "abs": 0.0873643159866333,
+    "window": 67,
+    "target_pos": 1775,
+    "dl": 0.0873643159866333,
+    "base_loss": 1.6704970598220825,
+    "context": "utably\n  12. Read a matrix as a spiral\n  13. Remove duplicates from a sorted list (state machine)\n  14.",
+    "target": " Merge"
+   }
+  ],
+  "norm_w": 0.9841352105140686,
+  "kappa": 1.0,
+  "E_plus": 1592.303340571728,
+  "E_plus_pass1": 1592.303367614746,
+  "kl_eff": 0.0004318088712296131,
+  "dl_eff": -0.0020231059193702096,
+  "R_residual_change": 23.84055173563069,
+  "seconds": 33.98,
+  "dL_rand_same_norm": "L2"
+ },
+ {
+  "pair": "P020",
+  "member": "late",
+  "pole": "L22N10231+",
+  "partner": "L22N7990-",
+  "layer": 22,
+  "half": "freeze",
+  "age": 12,
+  "partner_age": 9,
+  "adjusted_age": 0.3904999999999994,
+  "max_abs": 5.535652160644531,
+  "density": 5457933,
+  "q999": 1.0592536926269531,
+  "top3_T15": [
+   {
+    "rank": 0,
+    "a": 5.535652160644531,
+    "before_tail": " help predict compatibility and boost the likelihood of finding a compatible companion. By",
+    "token": " examining",
+    "after_head": " factors such as common passions, values"
+   },
+   {
+    "rank": 1,
+    "a": 5.266496181488037,
+    "before_tail": " There Any Safe Hookup Sites That Work\n\nAre There Any Safe Hookup Sites That Work \u2013 Ashley",
+    "token": " Madison",
+    "after_head": " is known as a fast hookup site for peop"
+   },
+   {
+    "rank": 2,
+    "a": 5.2625298500061035,
+    "before_tail": "\nIn their 1987 article, Hazan and Shaver initially developed self-report measures of three",
+    "token": " attachment",
+    "after_head": " styles (secure, avoidant and ambivalent"
+   }
+  ],
+  "frobenius_norm_c": 0.9841352105140686,
+  "dL_nats_per_token": 1.472104982044806e-06,
+  "top5_tokens": [
+   {
+    "abs": 0.3708171844482422,
+    "window": 1,
+    "target_pos": 70,
+    "dl": -0.3708171844482422,
+    "base_loss": 4.109862804412842,
+    "context": " into this untapped and exciting brand-new way of life.\n\nArmed with a burning desire to make a living doing something \u201cfor her,\u201d Dakota set out to",
+    "target": " make"
+   },
+   {
+    "abs": 0.21906042098999023,
+    "window": 50,
+    "target_pos": 863,
+    "dl": -0.21906042098999023,
+    "base_loss": 2.706561326980591,
+    "context": " and easy with many payment options to choose from. Learn more\nAdd Project to Favorites\n\nHelp raise money for this important cause by creating a personalized fundraising page for",
+    "target": " this"
+   },
+   {
+    "abs": 0.14573192596435547,
+    "window": 59,
+    "target_pos": 775,
+    "dl": 0.14573192596435547,
+    "base_loss": 1.6643651723861694,
+    "context": ". Nevertheless, if even more of your users originate from various other parts of the world, then you can alter your server area.\n\nBluehost Hosting Strategies and also",
+    "target": " Features"
+   },
+   {
+    "abs": 0.1182408332824707,
+    "window": 56,
+    "target_pos": 2013,
+    "dl": -0.1182408332824707,
+    "base_loss": 6.151987075805664,
+    "context": "AFLOODS to 90999 to make a $10 donation.<|endoftext|>s\u00f8k opp hvilket som helst ord, som swag:\nuh",
+    "target": "-no"
+   },
+   {
+    "abs": 0.1130526065826416,
+    "window": 1,
+    "target_pos": 71,
+    "dl": -0.1130526065826416,
+    "base_loss": 1.9336289167404175,
+    "context": " this untapped and exciting brand-new way of life.\n\nArmed with a burning desire to make a living doing something \u201cfor her,\u201d Dakota set out to make",
+    "target": " a"
+   }
+  ],
+  "norm_w": 1.0091793537139893,
+  "kappa": 0.9751836548104625,
+  "E_plus": 1710.936322287722,
+  "E_plus_pass1": 1710.9362907409668,
+  "kl_eff": 0.0007885169845553009,
+  "dl_eff": -0.007375045956655413,
+  "R_residual_change": 25.956982942386123,
+  "seconds": 34.05,
+  "dL_rand_same_norm": "L2"
+ },
+ {
+  "pair": "P069",
+  "member": "early",
+  "pole": "L30N6280+",
+  "partner": "L30N7717-",
+  "layer": 30,
+  "half": "freeze",
+  "age": 10,
+  "partner_age": 13,
+  "adjusted_age": -0.0389999999999997,
+  "max_abs": 18.86422348022461,
+  "density": 3398232,
+  "q999": 4.216965198516846,
+  "top3_T15": [
+   {
+    "rank": 0,
+    "a": 18.86422348022461,
+    "before_tail": "r Sr2IrO4 has been discovered. In this system, the strong spin-orbit (SO) coupling as well",
+    "token": " as",
+    "after_head": " the Coulomb interaction is crucial for "
+   },
+   {
+    "rank": 1,
+    "a": 18.125146865844727,
+    "before_tail": "he resonant inelastic scattering (RIXS) experiments have observed higher energy broad peak",
+    "token": " at",
+    "after_head": " ~0.5-0.8 eV, termed SO exciton["
+   },
+   {
+    "rank": 2,
+    "a": 17.28623390197754,
+    "before_tail": "tate. Its 5d5 shell splits into half filled Jeff=1/2 and fully-occupied Jeff=3/2 state due",
+    "token": " to",
+    "after_head": " strong SO coupling. The narrow half fil"
+   }
+  ],
+  "frobenius_norm_c": 0.9727811813354492,
+  "dL_nats_per_token": -4.868934518519746e-06,
+  "top5_tokens": [
+   {
+    "abs": 0.14380788803100586,
+    "window": 73,
+    "target_pos": 185,
+    "dl": -0.14380788803100586,
+    "base_loss": 3.846691131591797,
+    "context": " Oltrarno, San Marco, and Santa Croce. Outside the city center, check out Via Bolengese, Campo di Marte, and Nov",
+    "target": "oli"
+   },
+   {
+    "abs": 0.059174537658691406,
+    "window": 51,
+    "target_pos": 1294,
+    "dl": 0.059174537658691406,
+    "base_loss": 9.00119400024414,
+    "context": "indahl, T, Wood, RD\n\nScience 1999\n11937636 A quantitative model of human DNA base excision repair. I. Mechanistic",
+    "target": " insights"
+   },
+   {
+    "abs": 0.055603861808776855,
+    "window": 27,
+    "target_pos": 1002,
+    "dl": 0.055603861808776855,
+    "base_loss": 1.4269334077835083,
+    "context": " guys. Wot do 25 free spins casino ye take me red7 slots for. Yourself d any window curtain in addition,yet chose arranged of schok",
+    "target": "of"
+   },
+   {
+    "abs": 0.04564094543457031,
+    "window": 58,
+    "target_pos": 301,
+    "dl": 0.04564094543457031,
+    "base_loss": 9.193653106689453,
+    "context": " incoming message and suggests at least three basic responses that the user can send, or tweak and send.\n\nIt will be available in English first, followed by Spanish and",
+    "target": "\u00a0"
+   },
+   {
+    "abs": 0.044625043869018555,
+    "window": 35,
+    "target_pos": 1734,
+    "dl": -0.044625043869018555,
+    "base_loss": 1.398486852645874,
+    "context": " use his already weary corps to capture Mont St Quentin or P\u00e9ronne. He had been ordered to simply keep touch with the enemy. However, given Field Marshal",
+    "target": " Sir"
+   }
+  ],
+  "norm_w": 0.9727811813354492,
+  "kappa": 1.0,
+  "E_plus": 16599.41042950433,
+  "E_plus_pass1": 16599.410125732422,
+  "kl_eff": 0.00014645160931195278,
+  "dl_eff": -0.0015986921265721322,
+  "R_residual_change": 30.46774731788967,
+  "seconds": 11.45,
+  "dL_rand_same_norm": "L2"
+ },
+ {
+  "pair": "P069",
+  "member": "late",
+  "pole": "L30N7717-",
+  "partner": "L30N6280+",
+  "layer": 30,
+  "half": "freeze",
+  "age": 13,
+  "partner_age": 10,
+  "adjusted_age": 1.3094999999999999,
+  "max_abs": 17.229751586914062,
+  "density": 4221789,
+  "q999": 4.216965198516846,
+  "top3_T15": [
+   {
+    "rank": 0,
+    "a": -17.229751586914062,
+    "before_tail": "till just barely enough for skiing. Here's to hoping the temperatures stay warm enough for",
+    "token": " snow",
+    "after_head": " and maybe all we will need is a warm bo"
+   },
+   {
+    "rank": 1,
+    "a": -16.370067596435547,
+    "before_tail": "m that floods the market and has proven side effects published including increased risk of",
+    "token": " blood",
+    "after_head": " clotting and prostate cancer risk and t"
+   },
+   {
+    "rank": 2,
+    "a": -16.325979232788086,
+    "before_tail": " enjoy lots of outdoor activities like hiking, skiing, mountain biking, rafting, climbing,",
+    "token": " snow",
+    "after_head": "boarding, etc. You will find great hospi"
+   }
+  ],
+  "frobenius_norm_c": 0.9727811813354492,
+  "dL_nats_per_token": 1.1198187792249223e-06,
+  "top5_tokens": [
+   {
+    "abs": 0.09270429611206055,
+    "window": 61,
+    "target_pos": 1001,
+    "dl": 0.09270429611206055,
+    "base_loss": 2.156787395477295,
+    "context": "\n\nDo you know?\n\nGartner named SAP S/4HANA Cloud as a Leader in its 2022 Magic Quadrant\u2122 report for Cloud ERP for",
+    "target": " Service"
+   },
+   {
+    "abs": 0.08637285232543945,
+    "window": 33,
+    "target_pos": 1205,
+    "dl": 0.08637285232543945,
+    "base_loss": 0.593003511428833,
+    "context": " not all they have to offer:\n\n- Packed with antioxidants\n- Promote immune system health\n- May reduce inflammation\n- May enhance gut health\n\nSnow",
+    "target": " F"
+   },
+   {
+    "abs": 0.062207698822021484,
+    "window": 26,
+    "target_pos": 941,
+    "dl": -0.062207698822021484,
+    "base_loss": 3.935157299041748,
+    "context": " add the sifted flour and milk to the beetroot mixture, crush the garlic, salt and season with oil. Mix well.\n  4. Put a",
+    "target": " non"
+   },
+   {
+    "abs": 0.06050539016723633,
+    "window": 66,
+    "target_pos": 521,
+    "dl": 0.06050539016723633,
+    "base_loss": 2.871704578399658,
+    "context": " environment. GitOps is designed to automate the entire software delivery pipeline, from code to production, by using Git as the single source of truth for all operational and",
+    "target": " infrastructure"
+   },
+   {
+    "abs": 0.05775785446166992,
+    "window": 31,
+    "target_pos": 1009,
+    "dl": 0.05775785446166992,
+    "base_loss": 5.98966121673584,
+    "context": "ificial into stramash. Cholecystokinin, dime's, as soon as littering - unluxated astrally below indivertible subw",
+    "target": "aking"
+   }
+  ],
+  "norm_w": 1.00739586353302,
+  "kappa": 0.9656394437870984,
+  "E_plus": 15159.782135307783,
+  "E_plus_pass1": 15159.782165527344,
+  "kl_eff": 0.00020253212906482077,
+  "dl_eff": 0.0006685695168562233,
+  "R_residual_change": 33.29214926860541,
+  "seconds": 11.52,
+  "dL_rand_same_norm": "L2"
+ }
+]

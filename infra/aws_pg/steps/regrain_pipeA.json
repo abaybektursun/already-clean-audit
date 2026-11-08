@@ -1,0 +1,5 @@
+[
+  {"name": "harvest", "module": "infra.aws_pg.jobs.regrain_harvest", "args": ""},
+  {"name": "i_factorial", "module": "infra.aws_pg.jobs.regrain_i_factorial", "args": "--harvest-s3 /work/out/harvest"},
+  {"name": "i_frontier", "module": "infra.aws_pg.jobs.regrain_i_frontier", "args": "--harvest-s3 /work/out/harvest"}
+]

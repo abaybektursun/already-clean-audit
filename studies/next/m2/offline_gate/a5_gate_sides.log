@@ -1,0 +1,47 @@
+G0 (tolerance 0.01; u x 1.1 is the failing input from A5; the swap is reported)
+point | pass side: harvest max / score-05 max | u x1.1 harvest min-max (layers over tol) | bound within | act swap: harvest max / score-05 max
+T_15 | 0.00511 / 0.00607 | 0.0944-0.1044 (32/32) | 32/32 | 0.67612 / 0.63734
+T_14 | 0.00539 / 0.00503 | 0.0950-0.1042 (32/32) | 32/32 | 0.71205 / 0.57245
+T_13 | 0.00428 / 0.00476 | 0.0956-0.1038 (32/32) | 32/32 | 0.38101 / 0.45446
+T_12 | 0.00617 / 0.00521 | 0.0958-0.1046 (32/32) | 32/32 | 0.29941 / 0.36822
+T_11 | 0.00591 / 0.00465 | 0.0972-0.1047 (32/32) | 32/32 | 0.13885 / 0.12976
+T_10 | 0.00474 / 0.00501 | 0.0950-0.1052 (32/32) | 32/32 | 0.08044 / 0.06621
+T_9 | 0.00435 / 0.00425 | 0.0957-0.1037 (32/32) | 32/32 | 0.05192 / 0.05393
+T_8 | 0.00362 / 0.00371 | 0.0978-0.1036 (32/32) | 32/32 | 0.02669 / 0.03174
+T_7 | 0.00311 / 0.00347 | 0.0978-0.1026 (32/32) | 32/32 | 0.01769 / 0.01766
+T_6 | 0.00349 / 0.00352 | 0.0965-0.1035 (32/32) | 32/32 | 0.01126 / 0.00970
+T_5 | 0.00334 / nan | 0.0965-0.1032 (32/32) | 32/32 | 0.00622 / nan
+G-REV, G-CFG
+T_15 | registered = manifest = HF ref today: True | failing input fails: True | G-CFG pass True, failing input fails True | device NVIDIA L40S | run /workspace/out/grid_a/t15_step1413814
+T_14 | registered = manifest = HF ref today: True | failing input fails: True | G-CFG pass True, failing input fails True | device NVIDIA RTX PRO 5000 Blackwell | run /workspace/out/grid_b/t14_step1000000
+T_13 | registered = manifest = HF ref today: True | failing input fails: True | G-CFG pass True, failing input fails True | device NVIDIA RTX PRO 5000 Blackwell | run /workspace/out/grid_b/t13_step560000
+T_12 | registered = manifest = HF ref today: True | failing input fails: True | G-CFG pass True, failing input fails True | device NVIDIA RTX PRO 5000 Blackwell | run /workspace/out/grid_b/t12_step320000
+T_11 | registered = manifest = HF ref today: True | failing input fails: True | G-CFG pass True, failing input fails True | device NVIDIA RTX PRO 5000 Blackwell | run /workspace/out/grid_b/t11_step180000
+T_10 | registered = manifest = HF ref today: True | failing input fails: True | G-CFG pass True, failing input fails True | device NVIDIA RTX PRO 5000 Blackwell | run /workspace/out/grid_b/t10_step100000
+T_9 | registered = manifest = HF ref today: True | failing input fails: True | G-CFG pass True, failing input fails True | device NVIDIA RTX PRO 5000 Blackwell | run /workspace/out/grid_b/t09_step60000
+T_8 | registered = manifest = HF ref today: True | failing input fails: True | G-CFG pass True, failing input fails True | device NVIDIA RTX PRO 5000 Blackwell | run /workspace/out/grid_b/t08_step35000
+T_7 | registered = manifest = HF ref today: True | failing input fails: True | G-CFG pass True, failing input fails True | device NVIDIA RTX PRO 5000 Blackwell | run /workspace/out/grid_b/t07_step20000
+T_6 | registered = manifest = HF ref today: True | failing input fails: True | G-CFG pass True, failing input fails True | device NVIDIA L40S | run /workspace/out/grid_a/t06_step12000
+T_5 | registered = manifest = HF ref today: True | failing input fails: True | G-CFG pass True, failing input fails True | device NVIDIA L40S | run /workspace/out/grid_a/t05_step8000
+K0 failing input (T_14's values): p99 3.7936; jobs {'score-02': 0.0, 'score-03': 0.0, 'score-04': 0.0, 'score-05': 0.0}
+G-EX: point | gated | entries | failing p99 (x tol) | pass side (score-05 / repeat)
+T_15 | True | 2295 (2295 read) | 3.787 (179x) | 0.0 / None
+T_14 | False | 477 (477 read) | 1.046 (27x) | 0.028856990230285047 / 0.028856990230285047
+T_13 | False | 717 (694 read) | 1.935 (50x) | 0.05190747358048847 / None
+T_12 | False | 717 (692 read) | 1.874 (48x) | 0.032458340621252434 / None
+T_11 | False | 643 (610 read) | 2.559 (66x) | 0.06398077410259989 / None
+T_10 | False | 397 (391 read) | 10.428 (269x) | 0.042984597073402145 / None
+T_9 | False | 243 (239 read) | 14.301 (369x) | 0.09809898089585985 / None
+T_8 | False | 147 (145 read) | 7.943 (205x) | 0.02704541126987255 / None
+T_7 | False | 116 (115 read) | 3.902 (101x) | 0.08643128071103758 / None
+T_6 | True | 5 (5 read) | 1.211 (57x) | None / None
+T_5 | True | 10 (10 read) | 0.988 (47x) | None / None
+G-TOPK offline (aggregates):
+T_7 | {"tol": 0.044273286522651334, "n_layers": 5, "n_positions": 116, "n_entries": 10, "failing_lower_bound": {"median": 0.27291892223273484, "p99": 0.6195797887514813, "min": 0.0, "n_exact": 0, "n_above_tol": 7, "fails_for_certain": true}, "bank_abs_min": 25.185680389404297}
+T_6 | {"tol": 0.021158761373165365, "n_layers": 1, "n_positions": 5, "n_entries": 4, "failing_lower_bound": {"median": 0.37494507126239396, "p99": 0.6228581110032899, "min": 0.06136485535483198, "n_exact": 0, "n_above_tol": 4, "fails_for_certain": true}, "bank_abs_min": 74.55462646484375}
+T_5 | {"tol": 0.021158761373165365, "n_layers": 1, "n_positions": 10, "n_entries": 4, "failing_lower_bound": {"median": 0.09218792608454134, "p99": 0.2176187364992977, "min": 0.0, "n_exact": 0, "n_above_tol": 2, "fails_for_certain": true}, "bank_abs_min": 60.41276931762695}
+G-TOPK jobs (score-05): {7: (10, 0.0068107800350585695, 1.0156926502333725), 8: (62, 0.011322357503585513, 1.4031065534708684), 9: (86, 0.009773210572388436, 1.1184427880846892), 10: (108, 0.011485390847470694, 1.1114198597448282), 11: (268, 0.012950179049060035, 1.075185057161008), 12: (636, 0.015785358396101103, 1.1564786569603758), 13: (1366, 0.013150944397514136, 1.2184918736990242), 14: (934, 0.014174279882684142, 1.2178311140722078), 15: (5675, 0.0, 1.1284506353152992)}
+I-ID: {"score-04": {"n": 5415936, "p99": 0.0, "exact_share": 1.0, "carrier_top10_flips_B": 0, "pass": true, "failing_p99": 3.3811153885617857, "failing_pass": false}, "score-05": {"n": 5415936, "p99": 0.0, "exact_share": 1.0, "carrier_top10_flips_B": 0, "pass": true, "failing_p99": 3.3811153885617857, "failing_pass": false}}
+construction control under A, freeze half, T_15: {"n": 82, "n_layers": 26, "carrier_A_equals_size": 82, "precision_at_10": 1.0, "n_rank_1": 74, "n_rank_2_10": 8, "n_rank_above_10": 0, "max_rank": 10, "n_tied": 8, "misses": [], "opposite_precision_at_10": 0.0, "opposite_min_rank": 22016, "ctrl_min": 0.9, "pass": true, "failing_input_fails": true}
+usable: {"freeze": {"births": 82, "usable_if_nothing_parked": 82, "twins": 79, "n_min": 50}, "test": {"births": 71, "usable_if_nothing_parked": 71, "twins": 70, "n_min": 50}}
+A5_SIDES_DONE 717bde0d6edf6dd0

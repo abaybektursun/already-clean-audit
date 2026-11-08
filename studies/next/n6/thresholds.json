@@ -1,0 +1,50 @@
+{
+ "what": "N6 freeze 2: thresholds from the freeze half only (spec section 6.2)",
+ "F_eps": 3.3651250877300156e-09,
+ "tau_eps": 3.3651250877300156e-08,
+ "tau_s": 1.5096240466239023e-06,
+ "tau_s_rule": "median over freeze pairs of the window-bootstrap sd of D_col (1,000 resamples of the eval windows)",
+ "q10_abs_dL_col_freeze": 2.4379235846498267e-07,
+ "G_RES": {
+  "value": 3.3651250877300156e-09,
+  "bound": 4.875847169299653e-09,
+  "pass": true
+ },
+ "G_POWER": {
+  "value": 1.5096240466239023e-06,
+  "median_abs_D_col": 1.2725860535311037e-06,
+  "bound": 6.362930267655518e-07,
+  "ratio": 1.1862648049890838,
+  "pass": false,
+  "rule": "amendment A4: tau_s <= 0.5 x median |D_col| over the freeze pairs; if not, the verdict reads UNDECIDED_NO_POWER before the test half is read"
+ },
+ "discovery": {
+  "n": 21,
+  "p_col": 0.7619047619047619,
+  "p_col_ci": [
+   0.5490882631704924,
+   0.8937198697736354
+  ],
+  "p_rand": 0.38095238095238093,
+  "p_rand_ci": [
+   0.20751011368564493,
+   0.5912134622488425
+  ],
+  "R": 0.09523809523809523,
+  "median_D_col": 9.819021531805658e-07,
+  "parked": []
+ },
+ "room": {
+  "n_test": 24,
+  "wilson_at_half": [
+   0.3142742581957335,
+   0.6857257418042665
+  ],
+  "flat_band": [
+   0.3,
+   0.7
+  ],
+  "flat_reachable": true,
+  "wins_needed_for_lower_bound_above_half": 17
+ }
+}

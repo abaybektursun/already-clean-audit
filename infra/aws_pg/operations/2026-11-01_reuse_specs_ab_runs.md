@@ -1,0 +1,8 @@
+# REUSE Specs A and B runs, 2026-11-01: lifecycle, cost, reapers
+
+- **Sniper** `results/reuse/ab_sniper/1`: instance `i-0a7f1e6100a22d960`, g6e.2xlarge, launched 03:18:43Z, `STATUS exit=0` 03:28:23Z, 580 s, **0.161 GPU-h** (estimate 0.129); two loads (T_15, T_10), heads and output stages. Self-terminated; its reaper schedule stayed behind and was removed with `pg kill` after termination at 21:48 CST.
+- **Primary (heads only, h 10)** `results/reuse/ab_primary/1`: instance `i-097a247b244d8944b`, g6e.2xlarge, launched 03:31:06Z, `STATUS exit=0` 04:18:19Z, 2,833 s, **0.787 GPU-h** (estimate 0.72); nine loads, 76,200 readout forwards; units 103–186 s at the birth loads, 292 s at T_15. The output stage was dropped before the launch: its positive control failed at the sniper (`studies/reuse/JOURNAL.md`, 21:40 CST). Self-terminated; its reaper schedule stayed behind and was removed with `pg kill` after termination at 22:27 CST; `pg audit` then shows only another session's orphan.
+- Banks pulled with `aws s3 sync` excluding `job.log` (sniper 71 files; primary 1,522 files, 105 MB) under `studies/reuse/results/ab_sniper/1/` and `ab_primary/1/`; `metrics.json`, `run.json`, `launch.json`, `pipeline_status.json`, `steps.json`, `STATUS` committed; `falls/` and `samples/` local and in S3.
+- Program GPU total after these runs: 1.733 + 0.161 + 0.787 = **2.681 of 5.0 GPU-h**. API $0 for both.
+- `pg audit` during the runs showed an orphan reaper `pg-reap-i-04e129b4680bda2b0` and `pg ps` an instance `i-0af1d06ed9f69766b` (g6.xlarge, job `realizednull_pg1`) that belong to another session's study; neither was touched.
+- Open item, unchanged from the earlier records: the pipeline's self-termination leaves its reaper schedule in place every time.

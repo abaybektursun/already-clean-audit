@@ -1,0 +1,31 @@
+{
+ "scorer": "string",
+ "seed": 0,
+ "per_subject_true": {
+  "algebra": 0.4,
+  "counting_and_probability": 0.4,
+  "geometry": 0.4,
+  "intermediate_algebra": 0.4,
+  "number_theory": 0.4,
+  "prealgebra": 0.4,
+  "precalculus": 0.4
+ },
+ "per_subject_deranged": {
+  "algebra": 0.0,
+  "counting_and_probability": 0.0,
+  "geometry": 0.0,
+  "intermediate_algebra": 0.0,
+  "number_theory": 0.0,
+  "prealgebra": 0.0,
+  "precalculus": 0.0
+ },
+ "identity_macro": 0.4,
+ "deranged_macro": 0.0,
+ "identity_docs_equal": true,
+ "n_docs": 70,
+ "context_tokens": {
+  "over_1024": 0,
+  "n": 70,
+  "max": 15
+ }
+}

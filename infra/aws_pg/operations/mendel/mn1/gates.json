@@ -1,0 +1,8 @@
+{
+  "mn1_instrument_stable": {
+    "_required": false,
+    "note": "freeze A7: a hop losing >half its cells to the split-half gate is VOID",
+    "ok": true,
+    "void_hops": []
+  }
+}

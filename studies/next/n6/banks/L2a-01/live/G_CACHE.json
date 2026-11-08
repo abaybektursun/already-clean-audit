@@ -1,0 +1,147 @@
+{
+ "seen_utc": "2026-11-08T15:04:22Z",
+ "gate": "G_CACHE",
+ "record": {
+  "pass": true,
+  "failing_input": {
+   "pass": false,
+   "value_mean": 12.583670399139535,
+   "value_max_abs": 42.93356907367706
+  },
+  "value_mean": -2.710429700437402e-10,
+  "value_max_abs": 1.9073486328125e-06,
+  "value_mean_abs": 4.9492835291537374e-08,
+  "tol_mean": 1.2210622426951182e-07,
+  "tol_max": 1e-05,
+  "bitwise_equal": false,
+  "head_input_shapes": {
+   "base_pass1 (model forward)": [
+    [
+     4,
+     2049,
+     4096
+    ]
+   ],
+   "progression (head per window)": [
+    [
+     1,
+     2049,
+     4096
+    ]
+   ]
+  }
+ },
+ "metrics_at_sight": {
+  "stage": "L2",
+  "half": "freeze",
+  "pg_git_sha": "d5554e2ad921",
+  "started_utc": "2026-11-07T20:11:01Z",
+  "updated_utc": "2026-11-08T15:02:13Z",
+  "elapsed_s": 67871.9,
+  "w_eval": 1024,
+  "batch": 4,
+  "chunk": 96,
+  "pairs_sha256": "c837fe89a32aa9fd5dbdef837a7a79c6962112b39c176d113be798a35db5666b",
+  "eval_windows_sha256": "5822191728d49aba45817f8479058c266bcaaa057dc1037fa0d5509507d1b223",
+  "eval_tokens_sha256": "d7a854f506f2062e8098cb2f2a66efe7db06ac94bd0ca17fef0e7ae43f77705d",
+  "host_mem": {
+   "available_gib_at_start": 59.67,
+   "needed_gib": 40.02
+  },
+  "versions": {
+   "torch": "2.12.0+cu130",
+   "transformers": "5.9.0",
+   "device": "NVIDIA L40S"
+  },
+  "load_s": 188.7,
+  "n_done": 113,
+  "parked": [],
+  "complete": true
+ },
+ "measured_at_sight": {
+  "peak_mem_gib": {
+   "load_K1": 13.94,
+   "K2": 18.195,
+   "G_POLE": 15.384,
+   "bf16_probes": 16.672,
+   "cast": 27.96,
+   "K3": 31.023,
+   "pass1": 31.031,
+   "inst": 31.024,
+   "pass2": 31.031,
+   "progression": 34.859
+  },
+  "bf16_probe_dL": {
+   "P005_late_probe": -3.053711625396603e-06,
+   "P015_late_probe": 6.890726977818042e-06
+  },
+  "pass_s": 1213.5,
+  "base_mean_loss": 2.0989741734478016,
+  "sec_per_edit_layer_unit": 31.00227266633207,
+  "projection_remaining_s": 93.0,
+  "head_input_shapes": {
+   "bf16": [
+    [
+     2,
+     1,
+     4096
+    ],
+    [
+     4,
+     2049,
+     4096
+    ],
+    [
+     8,
+     1,
+     4096
+    ],
+    [
+     8,
+     2049,
+     4096
+    ],
+    [
+     12,
+     1,
+     4096
+    ]
+   ],
+   "K3": [
+    [
+     4,
+     2049,
+     4096
+    ]
+   ],
+   "pass1": [
+    [
+     4,
+     2049,
+     4096
+    ]
+   ],
+   "inst": [
+    [
+     4,
+     2049,
+     4096
+    ]
+   ],
+   "pass2": [
+    [
+     4,
+     2049,
+     4096
+    ]
+   ],
+   "progression": [
+    [
+     1,
+     2049,
+     4096
+    ]
+   ]
+  }
+ }
+}

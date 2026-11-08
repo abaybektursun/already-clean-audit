@@ -1,0 +1,16 @@
+{
+ "backend": "openai_compat",
+ "base_url": "https://api.deepinfra.com/v1/openai",
+ "key_env": "NEURONS_API_KEY_1",
+ "models": {
+  "explainer": "anthropic/claude-sonnet-5-5",
+  "second_reader": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "writer": "anthropic/claude-sonnet-5-5",
+  "writer_job": "anthropic/claude-sonnet-5-5",
+  "clusterer": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "judge": "deepseek-ai/DeepSeek-V4.1-Flash-1017"
+ },
+ "temperature": 1.0,
+ "response_format": "json_schema",
+ "notes": "W2-C under the SPEC_D1 \u00a72.2 model policy amendment (2026-10-20): explainer, writer, job writer on anthropic/claude-sonnet-5-5 (calibration round 6: 81/118 = 68.6%); second reader, clusterer, judge on deepseek-ai/DeepSeek-V4.1-Flash-1017. Key in ~/.config/interp_research/keys.env as NEURONS_API_KEY_1; never in this file."
+}

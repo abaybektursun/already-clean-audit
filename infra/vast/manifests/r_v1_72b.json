@@ -1,0 +1,29 @@
+{
+  "rental": "r_v1_72b",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:v1-72b",
+  "disk": 330,
+  "gpu_query": "gpu_ram>=88 num_gpus=2 cuda_vers>=12.8 compute_cap>=800",
+  "expected_gpu": "",
+  "bound": "overhead",
+  "_comment": "V1 final rung: Qwen2.5-72B (145GB bf16, sharded over 2 cards) cells (b)+(c), 80 layers. Scores the director's pre-registration (strongest corrected cells ~L68-79) on BOTH metrics (corrected + gamma-floor) per the E10 rider; the death branch is the live expectation.",
+  "cells": [
+    {
+      "id": "v1_72b_smoke",
+      "module": "infra.vast.cells.smoke_stats",
+      "model_dir": "/models/Qwen_Qwen2.5-72B",
+      "device_map": "auto",
+      "probe_text": "The capital of France is"
+    },
+    {
+      "id": "v1_72b_actstats",
+      "module": "infra.vast.cells.v1_actstats",
+      "model_dir": "/models/Qwen_Qwen2.5-72B",
+      "device_map": "auto",
+      "batch": 4
+    }
+  ],
+  "watch": {
+    "load_backstop_min": 300,
+    "max_billed_h": 3
+  }
+}

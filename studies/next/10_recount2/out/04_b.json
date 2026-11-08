@@ -1,0 +1,28 @@
+{
+ "n_poles_m_ge_2": 574,
+ "b": 0.47560975609756095,
+ "k": 273,
+ "b_ci95_bootstrap_poles": [
+  0.4355400696864111,
+  0.5156794425087108
+ ],
+ "b_strict_no_ties": 0.21951219512195122,
+ "b_strict_ci95": [
+  0.18641114982578397,
+  0.25435540069686413
+ ],
+ "n_poles_main_tied_at_earliest": 147,
+ "permutation_band": {
+  "mean_exact": 0.4143072713194665,
+  "mean_sim": 0.4142527874564459,
+  "p97_5": 0.44947735191637633,
+  "p_one_sided": 0.00029997000299970003
+ },
+ "n_boot": 10000,
+ "seed": 1105,
+ "interval": "percentile bootstrap over poles",
+ "b_median_convention_sensitivity": {
+  "birth_pct_lower": 0.47560975609756095,
+  "birth_pct_upper": 0.4529616724738676
+ }
+}

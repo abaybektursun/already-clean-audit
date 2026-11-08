@@ -1,0 +1,302 @@
+{
+ "inputs": {
+  "n12_freeze": "30f31cb1b96403aa1e0344d86fb607022d77786b7f333f7a5943556bcaadb391",
+  "n12_test": "877926da34620a121067788b3c4736b986cba7c94fdc5bbc4f98e40975599d12",
+  "n12_thresholds": "85726798fca3bb800757d1ef27c2a9023000c58252654876a91f3843ae450f6f",
+  "units": "c223dfee261c3f6019ad46d08cccc23859143e6f59698aa0ef24de769f95508a"
+ },
+ "plan": {
+  "points": {
+   "14": {
+    "units": 23,
+    "unit_windows": 107,
+    "plain_rows": 1070,
+    "jvp_rows": 428
+   },
+   "13": {
+    "units": 33,
+    "unit_windows": 187,
+    "plain_rows": 1870,
+    "jvp_rows": 748
+   },
+   "12": {
+    "units": 30,
+    "unit_windows": 203,
+    "plain_rows": 2030,
+    "jvp_rows": 812
+   },
+   "11": {
+    "units": 31,
+    "unit_windows": 198,
+    "plain_rows": 1980,
+    "jvp_rows": 792
+   },
+   "10": {
+    "units": 17,
+    "unit_windows": 122,
+    "plain_rows": 1220,
+    "jvp_rows": 488
+   },
+   "9": {
+    "units": 8,
+    "unit_windows": 60,
+    "plain_rows": 600,
+    "jvp_rows": 240
+   },
+   "8": {
+    "units": 4,
+    "unit_windows": 51,
+    "plain_rows": 510,
+    "jvp_rows": 204
+   },
+   "7": {
+    "units": 6,
+    "unit_windows": 54,
+    "plain_rows": 540,
+    "jvp_rows": 216
+   },
+   "5": {
+    "units": 1,
+    "unit_windows": 5,
+    "plain_rows": 50,
+    "jvp_rows": 20
+   }
+  },
+  "unit_windows": 987,
+  "units": 153,
+  "pairs": {
+   "freeze": 328,
+   "test": 284
+  }
+ },
+ "K_A": {
+  "units": [
+   "L00N9356-:c8",
+   "L02N1367-:c7",
+   "L02N4649+:c3",
+   "L02N7380+:c2",
+   "L03N6372+:c10",
+   "L03N7746+:c0",
+   "L04N7919-:c0",
+   "L05N8714-:c5",
+   "L06N2185+:c5",
+   "L06N9844+:c1"
+  ],
+  "equal_to_N12_K0_units": true,
+  "tol": 1e-06,
+  "failing_input_min_abs_diff": 0.0166015625,
+  "failing_input_fails": true,
+  "pass_side": "not banked: no second bf16 run of N12's ablation rows exists; N12's G-ABL-ID (a clean row in an ablation batch equal to the forward batch's value, 0.0 at 153 rows) is the evidence that a row's loss does not depend on its batch companions"
+ },
+ "reread_inputs": {
+  "records": 442,
+  "records_without_pull": 0,
+  "real_with_u_matched": 153,
+  "pb_dt_with_u_S": 289,
+  "floor_u_freeze_q025": 0.4457317073170731
+ },
+ "halves": {
+  "freeze": {
+   "G_VAL_on_N12_bf16_measurement": {
+    "rho": 0.09962690453185709,
+    "lo": -0.027612375522722023,
+    "shuffle_q975": 0.1102720447051468,
+    "pass": false,
+    "failing_input_rho": -0.09962690453185709
+   },
+   "G_VAL_planted_fp32_5pct": {
+    "rho": 0.9997823574900652,
+    "pass": true,
+    "above_ceiling": true,
+    "inspection": {
+     "n_equal": 0,
+     "median_rel_dev": 0.035079021880008984,
+     "rel_min": 0.001,
+     "cleared": true
+    },
+    "failing_input_rho": -0.9997823574900652,
+    "failing_input_pass": false
+   },
+   "G_VAL_planted_copy": {
+    "inspection": {
+     "n_equal": 328,
+     "median_rel_dev": 0.0,
+     "rel_min": 0.001,
+     "cleared": false
+    }
+   },
+   "G_FD_planted": {
+    "rho": 0.9989539556866248,
+    "pass": true,
+    "above_ceiling": false,
+    "max_rel_dev": 37.00018144216079,
+    "failing_input_pass": false
+   },
+   "G_FD_planted_copy": {
+    "above_ceiling": true
+   },
+   "G_ROOM_failing_input_bf16": {
+    "readout": "window",
+    "median_rho": 0.0633994331772882,
+    "q05": -0.029180776589283412,
+    "rho_min": 0.9,
+    "pass": false,
+    "median_abs_noise": 0.5711669921875,
+    "median_abs_pred": 0.021001121029257774,
+    "noise": "planted"
+   },
+   "G_ROOM_planted_1e-4": {
+    "readout": "window",
+    "median_rho": 0.9999765354168979,
+    "q05": 0.9999704142213058,
+    "rho_min": 0.9,
+    "pass": true,
+    "median_abs_noise": 0.0001,
+    "median_abs_pred": 0.021001121029257774,
+    "noise": "probe"
+   },
+   "G_ROOM_fd_planted_1e-4": {
+    "readout": "fd",
+    "median_rho": 0.9990051356831019,
+    "q05": 0.9988839020037396,
+    "rho_min": 0.9,
+    "pass": true,
+    "median_abs_noise": 0.0001,
+    "median_abs_pred": 0.0021001121029257767,
+    "noise": "probe"
+   },
+   "largest_floor_with_room_window": 0.016948530191479433,
+   "largest_floor_with_room_fd": 0.0016948530191479433,
+   "abs_pred_quantiles_10_50_90": [
+    0.0017023112624883654,
+    0.021001121029257774,
+    0.1213198184967041
+   ]
+  },
+  "test": {
+   "G_VAL_on_N12_bf16_measurement": {
+    "rho": 0.04253749180619706,
+    "lo": -0.059423176074529294,
+    "shuffle_q975": 0.11588243999774597,
+    "pass": false,
+    "failing_input_rho": -0.04253749180619706
+   },
+   "G_VAL_planted_fp32_5pct": {
+    "rho": 0.9997291541699518,
+    "pass": true,
+    "above_ceiling": true,
+    "inspection": {
+     "n_equal": 0,
+     "median_rel_dev": 0.03534715456231156,
+     "rel_min": 0.001,
+     "cleared": true
+    },
+    "failing_input_rho": -0.9997291541699518,
+    "failing_input_pass": false
+   },
+   "G_VAL_planted_copy": {
+    "inspection": {
+     "n_equal": 284,
+     "median_rel_dev": 0.0,
+     "rel_min": 0.001,
+     "cleared": false
+    }
+   },
+   "G_FD_planted": {
+    "rho": 0.9994420680676958,
+    "pass": true,
+    "above_ceiling": false,
+    "max_rel_dev": 5.266638189466741,
+    "failing_input_pass": false
+   },
+   "G_FD_planted_copy": {
+    "above_ceiling": true
+   },
+   "G_ROOM_failing_input_bf16": {
+    "readout": "window",
+    "median_rho": 0.07738987392833849,
+    "q05": -0.013216412104765471,
+    "rho_min": 0.9,
+    "pass": false,
+    "median_abs_noise": 0.69140625,
+    "median_abs_pred": 0.021910516545176506,
+    "noise": "planted"
+   },
+   "G_ROOM_planted_1e-4": {
+    "readout": "window",
+    "median_rho": 0.9999738060125678,
+    "q05": 0.9999654239365895,
+    "rho_min": 0.9,
+    "pass": true,
+    "median_abs_noise": 0.0001,
+    "median_abs_pred": 0.021910516545176506,
+    "noise": "probe"
+   },
+   "G_ROOM_fd_planted_1e-4": {
+    "readout": "fd",
+    "median_rho": 0.9991798662535001,
+    "q05": 0.999051227581221,
+    "rho_min": 0.9,
+    "pass": true,
+    "median_abs_noise": 0.0001,
+    "median_abs_pred": 0.00219105165451765,
+    "noise": "probe"
+   },
+   "largest_floor_with_room_window": 0.017412453830848763,
+   "largest_floor_with_room_fd": 0.0017412453830848763,
+   "abs_pred_quantiles_10_50_90": [
+    0.002165186405181885,
+    0.021910516545176506,
+    0.14029146581888202
+   ]
+  }
+ },
+ "reread": {
+  "planted_fp32_cleared": {
+   "headline": "H_cf OWN_RISE; H_away_sel_pb BELOW_SELECTION; H_signal REFUTED; H_bridge UNDECIDED; H_dt SUPPORTED",
+   "labels": {
+    "H_signal": {
+     "label": "REFUTED",
+     "n": 71,
+     "mean": 0.5267605633802817,
+     "lo": 0.4514084507042254,
+     "hi": 0.6,
+     "bar": 0.422520385470719
+    },
+    "H_sel_signal_pb": {
+     "label": "AT_SELECTION",
+     "n": 70,
+     "diff": -0.03857142857142856,
+     "lo": -0.13357142857142856,
+     "hi": 0.05714285714285714,
+     "x_only": 30,
+     "y_only": 34
+    },
+    "H_sel_signal_dt": {
+     "label": "AT_SELECTION",
+     "n": 67,
+     "diff": -0.020149253731343283,
+     "lo": -0.12388059701492536,
+     "hi": 0.08360074626865648,
+     "x_only": 30,
+     "y_only": 30
+    },
+    "H_bridge": {
+     "label": "UNDECIDED",
+     "n": 71,
+     "mean": -0.012589810468198745,
+     "lo": -0.07179758311973704,
+     "hi": 0.04589910889496183,
+     "n_undefined": 0
+    }
+   }
+  },
+  "planted_fp32_not_cleared": {
+   "headline": "H_cf OWN_RISE; H_away_sel_pb BELOW_SELECTION; H_signal DOES NOT COUNT; H_bridge DOES NOT COUNT; H_dt SUPPORTED"
+  },
+  "N12_bf16_measurement": {
+   "headline": "H_cf OWN_RISE; H_away_sel_pb BELOW_SELECTION; H_signal DOES NOT COUNT; H_bridge DOES NOT COUNT; H_dt SUPPORTED"
+  },
+  "n12_ceiling_restored": true
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "torch": "2.12.0",
+ "window_tokens": 2049,
+ "width_factor": 8,
+ "per_layer_full_width_GB": {
+  "bf16_math_bf16red": 0.64,
+  "fp32_math": 1.145
+ },
+ "peak_lowest_layer_0_GB": {
+  "bf16_math_bf16red": 36.92,
+  "fp32_math": 67.17
+ },
+ "l40s_GB": 48.31,
+ "fixed_GB": {
+  "bf16_math_bf16red": 17.09,
+  "fp32_math": 31.69
+ },
+ "fp32_math_real_units": {
+  "n": 153,
+  "fit_under_l40s_less_2GB": 48,
+  "lowest_layer_that_fits": 20,
+  "max_peak_GB": 68.33
+ },
+ "control": {
+  "n12_score02_measured_grad_max_mem_gb": 36.04,
+  "a1_estimate_math_bf16": 36.51,
+  "this_estimate_bf16_math_bf16red": 36.92
+ }
+}

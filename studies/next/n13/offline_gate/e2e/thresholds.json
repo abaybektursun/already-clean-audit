@@ -1,0 +1,115 @@
+{
+ "C": 256,
+ "pair": "pair1",
+ "sigma_base": 0.9695359714832659,
+ "sigma_rl": 0.9055385138137417,
+ "sigma": 0.9695359714832659,
+ "delta": 2.742261840160418,
+ "B": 29.599999999999998,
+ "L": 88.2,
+ "G": 58.60000000000001,
+ "B_prime": 30.599999999999998,
+ "L_prime": 89.60000000000001,
+ "G_prime": 59.000000000000014,
+ "H": 58.900000000000006,
+ "Q": 44.25,
+ "binomial_sd_at_half": 2.23606797749979,
+ "room": {
+  "G": 58.60000000000001,
+  "bound_2.5delta": 6.855654600401046,
+  "pass": true
+ },
+ "G-GATE": {
+  "G": 58.60000000000001,
+  "G_prime": 59.000000000000014,
+  "bound": 6.855654600401045,
+  "mcnemar_p": 1.256727927116218e-88,
+  "pass": true,
+  "failing_input": {
+   "what": "(rl-A, id-B) treated as the stage pair",
+   "value": -1.4000000000000057,
+   "failed": true
+  }
+ },
+ "G-ID": {
+  "L_minus_Lp": -1.4000000000000057,
+  "B_minus_Bp": -1.0,
+  "bound": 4.113392760240627,
+  "pass": true,
+  "failing_input": {
+   "what": "(base-A, rl-A) treated as an identity pair",
+   "value": -58.60000000000001,
+   "failed": true
+  }
+ },
+ "bank_sha256": {
+  "base": "887d322eada6645a4883a2624cdf1bd0824937e789268ea4478822328eb465e4",
+  "rl": "aa21102f076a5fc64adee5ed1ff5eb9c933c8274a4c63b217fcd25905d9ce3cf",
+  "zero": "34fad76e16955a7518e433317c6e0c4c40e0139b038dc981adda4131b416d27d",
+  "id": "a044a1cc3048f9af50f15732874084c5df14cd1502563129d4c7891b3dffc22b"
+ },
+ "n": 500,
+ "S-BAND": {
+  "value": 89.60000000000001,
+  "band": [
+   81.5,
+   96.7
+  ],
+  "pass": true,
+  "failing_input": {
+   "what": "the id-B generations scored against a derangement of the golds (seed 0)",
+   "value": 0.6,
+   "failed": true
+  }
+ },
+ "gsm8k": {
+  "sigma_base": 3.1180478223116177,
+  "sigma_rl": 2.8867513459481287,
+  "sigma": 3.1180478223116177,
+  "delta": 8.819171036881968,
+  "B": 35.0,
+  "L": 88.33333333333333,
+  "G": 53.33333333333333,
+  "B_prime": 33.33333333333333,
+  "L_prime": 91.66666666666666,
+  "G_prime": 58.33333333333333,
+  "H": 61.666666666666664,
+  "Q": 48.33333333333333,
+  "binomial_sd_at_half": 6.454972243679028,
+  "room": {
+   "G": 53.33333333333333,
+   "bound_2.5delta": 22.04792759220492,
+   "pass": true
+  },
+  "G-ID": {
+   "L_minus_Lp": -3.3333333333333286,
+   "B_minus_Bp": 1.6666666666666714,
+   "bound": 13.228756555322954,
+   "pass": true,
+   "failing_input": {
+    "what": "(base-A, rl-A) treated as an identity pair",
+    "value": -53.33333333333333,
+    "failed": true
+   }
+  },
+  "bank_sha256": {
+   "base": "72d58fdc6778b9a303189aa966ac67232965b8118b1a6c87b6b2b60f930d18b6",
+   "rl": "cfeb0dd07ed0c1c28b187caaf62361e15d149a93743e5b18806aea73291584d6",
+   "zero": "ce23c4d30aa53800c30a44d49c53f3174f45fd58ff402c5b239ceae92d66cc9e",
+   "id": "ff42950870b093e0f4cf0dbb40721461f704c03983f90a74f40c1b0f9c752dd3"
+  },
+  "n": 60,
+  "G-GATE-GSM": {
+   "G": 53.33333333333333,
+   "G_prime": 58.33333333333333,
+   "bound": 22.04792759220492,
+   "mcnemar_p": 4.656612873077393e-10,
+   "pass": true,
+   "failing_input": {
+    "what": "(rl-A, id-B) treated as the stage pair",
+    "value": -3.3333333333333286,
+    "failed": true
+   }
+  }
+ }
+}

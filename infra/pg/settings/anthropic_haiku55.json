@@ -1,0 +1,14 @@
+{
+ "backend": "anthropic",
+ "effort": "low",
+ "models": {
+  "explainer": "claude-haiku-5-5",
+  "second_reader": "claude-haiku-5-5",
+  "writer": "claude-haiku-5-5",
+  "writer_job": "claude-haiku-5-5",
+  "clusterer": "claude-haiku-5-5",
+  "judge": "claude-haiku-5-5"
+ },
+ "temperature": 1.0,
+ "notes": "Direct Anthropic API, every role on Haiku 5.5 (claude-haiku-5-5, the bare Anthropic id). Key ANTHROPIC_API_KEY in ~/.config/interp_research/keys.env (Console org fuelos), sourced only inside the command that needs it; never in this file. Effort low with adaptive thinking (disabled thinking is a 400 on Sonnet 5.5). run-batch / collect-batch send it through the Message Batches API. No Opus id is ever sent (SPEC_D1 §2.2 amendment 2026-10-20 17:15Z)."
+}

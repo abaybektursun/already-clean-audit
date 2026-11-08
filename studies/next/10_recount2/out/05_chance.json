@@ -1,0 +1,256 @@
+{
+ "design": "Chance reference for the dates and for b: what dates arise when a cluster is replaced by a random group of\nthe same pole's non-echo T_15 exemplars, of the same size, dated with the same rule.\n\nWritten before the run (2026-11-05):\n- Primary reference R1t (\"size and top rank\"): per pole (sample 0, m >= 2), the cluster labels of the pole's\n  non-echo ranks are shuffled, except that the pole's top non-echo rank keeps the main cluster's label. Every\n  random group has its real cluster's size; main's replacement holds the top exemplar, which is what makes a\n  cluster main (largest max|a| at T_15, SPEC line 291). Main of the random partition is chosen by the same rule.\n- Sensitivity R1 (\"size only\"): all labels shuffled; main = the group that receives the top rank.\n- Sensitivity R2 (\"size, top rank and rank composition\"): as R1t, but labels are shuffled only within rank\n  bins of five (ranks 0-4, 5-9, ..., 45-49), so each group keeps its count per bin.\n- 2,000 random partitions per pole (one partition of every pole = one replicate of b). Seed 20261105.\n- b reference value = mean of the replicate b's; interval = 2.5th and 97.5th percentiles of the replicate b's.\n  Paired gap = mean over poles of (real indicator - the pole's reference probability), percentile bootstrap\n  over poles, 10,000 resamples.\n- Per cluster: p_late = P(random date >= real date), p_early = P(random date <= real date), from the\n  cluster's own column of the partitions (never born counts as latest). Threshold alpha = 0.05 one-sided in\n  each direction. Expected count at chance = sum over clusters of P_ref(p(B) <= 0.05) for B drawn from the\n  same reference, which is exact for these discrete dates (it is below 0.05 per cluster when dates tie).\n- Calibration input (must give counts near the expected count, and b near the reference): one extra random\n  partition per pole from R1t, used in place of the real clusters.\n- Positive control (must give counts far above the expected count): every non-main cluster replaced by the\n  group of its size made of the pole's latest-dated single exemplars (late control) or earliest-dated single\n  exemplars (early control), top rank excluded; ties broken by rank.\nOutputs: out/05_chance.json, out/05_per_cluster.csv.\n",
+ "n_poles": 574,
+ "reps": 2000,
+ "alpha": 0.05,
+ "seed": 20261105,
+ "summary": {
+  "R1t": {
+   "b_real": 0.47560975609756095,
+   "b_ref_mean": 0.5300452961672475,
+   "b_ref_ci95_over_replicates": [
+    0.49477351916376305,
+    0.5679442508710801
+   ],
+   "share_replicates_b_ref_ge_b_real": 0.9985,
+   "paired_gap_b_minus_ref": -0.0544355400696864,
+   "paired_gap_ci95_bootstrap_poles": [
+    -0.09181480836236933,
+    -0.017157099303135893
+   ],
+   "calibration_b": 0.5313588850174216,
+   "b_strict_real": 0.21951219512195122,
+   "b_strict_ref_mean": 0.12345034843205575,
+   "b_strict_paired_gap": 0.09606184668989547,
+   "auc_real": 0.5595239980692943,
+   "auc_ref_mean": 0.5189580288795118,
+   "auc_ref_ci95_over_replicates": [
+    0.4950770938918802,
+    0.5441718233856738
+   ],
+   "auc_paired_gap": 0.04056596918978234,
+   "auc_paired_gap_ci95": [
+    0.014836023382468286,
+    0.0665131170492726
+   ],
+   "b_strict_paired_gap_ci95": [
+    0.06529529616724739,
+    0.12777314895470382
+   ],
+   "b_strict_ref_ci95_over_replicates": [
+    0.09930313588850175,
+    0.14982578397212543
+   ],
+   "n_clusters": 2428,
+   "n_main": 574,
+   "n_nonmain": 1854,
+   "all": {
+    "n": 2428,
+    "late_beat": 153,
+    "late_expected": 22.4,
+    "early_beat": 160,
+    "early_expected": 29.6,
+    "calibration_late_beat": 26,
+    "calibration_early_beat": 29,
+    "mean_real_date": 11.019769357495882,
+    "mean_ref_date": 10.939294069192751,
+    "n_real_equal_ref_median": 1102,
+    "naive_expected_alpha_times_n": 121.4
+   },
+   "main": {
+    "n": 574,
+    "late_beat": 21,
+    "late_expected": 4.3,
+    "early_beat": 46,
+    "early_expected": 5.0,
+    "calibration_late_beat": 8,
+    "calibration_early_beat": 5,
+    "mean_real_date": 10.574912891986063,
+    "mean_ref_date": 10.706231707317073,
+    "n_real_equal_ref_median": 322,
+    "naive_expected_alpha_times_n": 28.7
+   },
+   "nonmain": {
+    "n": 1854,
+    "late_beat": 132,
+    "late_expected": 18.2,
+    "early_beat": 114,
+    "early_expected": 24.6,
+    "calibration_late_beat": 18,
+    "calibration_early_beat": 24,
+    "mean_real_date": 11.157497303128372,
+    "mean_ref_date": 11.011450377562028,
+    "n_real_equal_ref_median": 780,
+    "naive_expected_alpha_times_n": 92.7
+   },
+   "ctrl_late": {
+    "n": 1854,
+    "beat": 1172,
+    "expected": 18.2
+   },
+   "ctrl_early": {
+    "n": 1854,
+    "beat": 1404,
+    "expected": 24.6
+   }
+  },
+  "R1": {
+   "b_real": 0.47560975609756095,
+   "b_ref_mean": 0.5300418118466899,
+   "b_ref_ci95_over_replicates": [
+    0.49477351916376305,
+    0.5696864111498258
+   ],
+   "share_replicates_b_ref_ge_b_real": 0.999,
+   "paired_gap_b_minus_ref": -0.05443205574912891,
+   "paired_gap_ci95_bootstrap_poles": [
+    -0.09185272212543553,
+    -0.016770383275261327
+   ],
+   "calibration_b": 0.5557491289198606,
+   "b_strict_real": 0.21951219512195122,
+   "b_strict_ref_mean": 0.1207883275261324,
+   "b_strict_paired_gap": 0.09872386759581882,
+   "auc_real": 0.5595239980692943,
+   "auc_ref_mean": 0.5177452713263799,
+   "auc_ref_ci95_over_replicates": [
+    0.49581571061536195,
+    0.539107163282904
+   ],
+   "auc_paired_gap": 0.04177872674291447,
+   "auc_paired_gap_ci95": [
+    0.015539432879535783,
+    0.06790785333031032
+   ],
+   "b_strict_paired_gap_ci95": [
+    0.06664623257839722,
+    0.13105185104529618
+   ],
+   "b_strict_ref_ci95_over_replicates": [
+    0.09581881533101046,
+    0.14634146341463414
+   ],
+   "n_clusters": 2428,
+   "n_main": 574,
+   "n_nonmain": 1854,
+   "all": {
+    "n": 2428,
+    "late_beat": 163,
+    "late_expected": 22.7,
+    "early_beat": 168,
+    "early_expected": 30.1,
+    "calibration_late_beat": 20,
+    "calibration_early_beat": 22,
+    "mean_real_date": 11.019769357495882,
+    "mean_ref_date": 10.938721787479407,
+    "n_real_equal_ref_median": 1069,
+    "naive_expected_alpha_times_n": 121.4
+   },
+   "main": {
+    "n": 574,
+    "late_beat": 23,
+    "late_expected": 3.9,
+    "early_beat": 55,
+    "early_expected": 5.4,
+    "calibration_late_beat": 5,
+    "calibration_early_beat": 2,
+    "mean_real_date": 10.574912891986063,
+    "mean_ref_date": 10.751852787456446,
+    "n_real_equal_ref_median": 302,
+    "naive_expected_alpha_times_n": 28.7
+   },
+   "nonmain": {
+    "n": 1854,
+    "late_beat": 140,
+    "late_expected": 18.8,
+    "early_beat": 113,
+    "early_expected": 24.7,
+    "calibration_late_beat": 15,
+    "calibration_early_beat": 20,
+    "mean_real_date": 11.157497303128372,
+    "mean_ref_date": 10.99657659115426,
+    "n_real_equal_ref_median": 767,
+    "naive_expected_alpha_times_n": 92.7
+   }
+  },
+  "R2": {
+   "b_real": 0.47560975609756095,
+   "b_ref_mean": 0.538006968641115,
+   "b_ref_ci95_over_replicates": [
+    0.5052264808362369,
+    0.5714285714285714
+   ],
+   "share_replicates_b_ref_ge_b_real": 1.0,
+   "paired_gap_b_minus_ref": -0.06239721254355401,
+   "paired_gap_ci95_bootstrap_poles": [
+    -0.09481302264808363,
+    -0.029447669860627183
+   ],
+   "calibration_b": 0.5418118466898955,
+   "b_strict_real": 0.21951219512195122,
+   "b_strict_ref_mean": 0.15660191637630663,
+   "b_strict_paired_gap": 0.0629102787456446,
+   "auc_real": 0.5595239980692943,
+   "auc_ref_mean": 0.5428302802477237,
+   "auc_ref_ci95_over_replicates": [
+    0.5234494993488896,
+    0.5630142287421254
+   ],
+   "auc_paired_gap": 0.01669371782157061,
+   "auc_paired_gap_ci95": [
+    -0.005006741944237046,
+    0.038824466972094636
+   ],
+   "b_strict_paired_gap_ci95": [
+    0.03487900696864112,
+    0.09087441202090589
+   ],
+   "b_strict_ref_ci95_over_replicates": [
+    0.13240418118466898,
+    0.18118466898954705
+   ],
+   "n_clusters": 2428,
+   "n_main": 574,
+   "n_nonmain": 1854,
+   "all": {
+    "n": 2428,
+    "late_beat": 77,
+    "late_expected": 15.6,
+    "early_beat": 90,
+    "early_expected": 20.0,
+    "calibration_late_beat": 14,
+    "calibration_early_beat": 28,
+    "mean_real_date": 11.019769357495882,
+    "mean_ref_date": 10.967593698517298,
+    "n_real_equal_ref_median": 1312,
+    "naive_expected_alpha_times_n": 121.4
+   },
+   "main": {
+    "n": 574,
+    "late_beat": 16,
+    "late_expected": 2.9,
+    "early_beat": 26,
+    "early_expected": 3.4,
+    "calibration_late_beat": 2,
+    "calibration_early_beat": 4,
+    "mean_real_date": 10.574912891986063,
+    "mean_ref_date": 10.654244773519164,
+    "n_real_equal_ref_median": 358,
+    "naive_expected_alpha_times_n": 28.7
+   },
+   "nonmain": {
+    "n": 1854,
+    "late_beat": 61,
+    "late_expected": 12.7,
+    "early_beat": 64,
+    "early_expected": 16.6,
+    "calibration_late_beat": 12,
+    "calibration_early_beat": 24,
+    "mean_real_date": 11.157497303128372,
+    "mean_ref_date": 11.064606796116506,
+    "n_real_equal_ref_median": 954,
+    "naive_expected_alpha_times_n": 92.7
+   }
+  }
+ }
+}

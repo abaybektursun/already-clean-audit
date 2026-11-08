@@ -1,0 +1,12 @@
+[
+ {
+  "name": "setup",
+  "module": "infra.aws_pg.jobs.n13_setup",
+  "args": "--pair pair1 --models base,rl"
+ },
+ {
+  "name": "id",
+  "module": "infra.aws_pg.jobs.n13_gen",
+  "args": "--arm id --bench math500,gsm8k --problems 0:500 --setup-dir /work/out/setup --cap 16384 --sets s3://pg-lineage-769063704696/results/next_n13/s3idpair-01v/inputs/sets.json --allowance-min 147 --proj-tok-s 500.0 --proj-mean-math 2500.0 --proj-mean-gsm 940.0 --proj-load-min 5.0"
+ }
+]

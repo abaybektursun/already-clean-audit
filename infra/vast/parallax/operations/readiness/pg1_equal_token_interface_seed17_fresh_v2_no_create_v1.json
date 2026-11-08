@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-07-19T05:00:55Z",
+  "status": "RED_NO_CREATE_CHEAPEST_ELIGIBLE_H100_ABOVE_FROZEN_CEILING",
+  "run_id": "parallax-pg1-primary-interface-s3-v2",
+  "launch_spec": {
+    "path": "infra/vast/parallax/operations/readiness/pg1_equal_token_interface_seed17_fresh_v2_spec.json",
+    "sha256": "287deb60b3cd577d3bb428090f797340013f973b56af20390098711d657d8516"
+  },
+  "invocation": {
+    "module": "infra.vast.parallax.primary_interface_control_no_create",
+    "exit_code": 1,
+    "failure_class": "OptimizerLaunchError",
+    "failure_message": "literal-cheapest eligible H100 exceeds the frozen price ceiling"
+  },
+  "completed_before_refusal": [
+    "fresh operational spec and exact scientific predecessor derivation",
+    "fresh local attempt-path absence",
+    "initial account zero",
+    "S3 safety",
+    "current source closure",
+    "unique primary_config compatibility alias",
+    "fresh claim absence",
+    "fresh artifact and terminal key absence",
+    "machine quarantine",
+    "exact model, overlay, and bundle identities",
+    "exact versioned S3 input HEADs",
+    "live all-region guardian selection"
+  ],
+  "current_market_evidence": {
+    "path": "infra/vast/parallax/operations/readiness/pg1_equal_token_interface_seed17_fresh_v2_current_gate_v1.json",
+    "sha256": "0df4fe823a8b466d685d00c34097a41b4850ae07c58f947110bfeea9e7d0b931",
+    "selected_dph_total": 2.8222222222222224,
+    "frozen_price_ceiling_dph": 2.25,
+    "at_or_below_frozen_ceiling": false
+  },
+  "mutation": {
+    "instances_created": 0,
+    "volumes_created": 0,
+    "claims_created": 0,
+    "s3_objects_written": 0,
+    "files_downloaded": 0,
+    "gpu_operations": 0
+  },
+  "paid_authorization": false,
+  "execution_freeze_created": false,
+  "paid_run_mechanically_eligible": false
+}

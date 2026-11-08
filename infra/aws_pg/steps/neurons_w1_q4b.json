@@ -1,0 +1,17 @@
+[
+ {
+  "name": "corpus",
+  "module": "infra.aws_pg.jobs.neurons_corpus",
+  "args": "--tokens-per-shard 1000000 --olmo-revision stage1-step1413814"
+ },
+ {
+  "name": "q4b",
+  "module": "infra.aws_pg.jobs.neurons_harvest",
+  "args": "--model-key Q4B --repo Qwen/Qwen3-4B-Base --corpus /work/out/corpus/corpus --tokname qwen3 --max-tokens all --sample-neurons 360 --seed 0 --snapshot-bands 1,2"
+ },
+ {
+  "name": "c0",
+  "module": "infra.aws_pg.jobs.neurons_harvest",
+  "args": "--model-key C0 --repo Qwen/Qwen3-4B-Instruct-2507 --corpus /work/out/corpus/corpus --tokname qwen3 --max-tokens 131072 --wikitext-parity 2.2444 --sample-neurons 10 --seed 0"
+ }
+]

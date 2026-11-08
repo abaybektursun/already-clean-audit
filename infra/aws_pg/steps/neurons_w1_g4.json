@@ -1,0 +1,7 @@
+[
+ {
+  "name": "g4",
+  "module": "infra.aws_pg.jobs.neurons_harvest",
+  "args": "--model-key G4 --repo google/gemma-3-4b-pt --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus --tokname gemma3 --max-tokens all --sample-neurons 300 --seed 0"
+ }
+]

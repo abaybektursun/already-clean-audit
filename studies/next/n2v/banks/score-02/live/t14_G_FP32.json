@@ -1,0 +1,13 @@
+{
+ "pass": true,
+ "dtypes": [
+  "torch.float32"
+ ],
+ "failing_input": {
+  "what": "the parameter dtypes before the cast",
+  "dtypes": [
+   "torch.bfloat16"
+  ],
+  "pass": false
+ }
+}

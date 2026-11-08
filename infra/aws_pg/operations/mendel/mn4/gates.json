@@ -1,0 +1,10 @@
+{
+  "mn4_map_not_mostly_censored": {
+    "_required": false,
+    "max_censored": 0.0908203125,
+    "mean_censored_fraction": 0.0022723485553075395,
+    "min_censored": 0.0,
+    "note": "RECORDED. A T*-map whose coordinates are mostly censored at T=24 is uninformative about the deep sink; the ranking test survives censoring because it only needs the ORDER of the resolved coordinates",
+    "ok": true
+  }
+}

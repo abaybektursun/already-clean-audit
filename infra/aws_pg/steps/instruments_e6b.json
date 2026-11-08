@@ -1,0 +1,17 @@
+[
+ {
+  "name": "harvest",
+  "module": "infra.aws_pg.jobs.neurons_harvest",
+  "args": "--model-key O2 --repo allenai/OLMo-2-1124-7B --revision 7df9a82518afdecae4e8c026b27adccc8c1f0032 --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus --tokname olmo3 --max-tokens all --sample-neurons 360 --seed 0 --snapshot-bands 1,2"
+ },
+ {
+  "name": "items",
+  "module": "infra.aws_pg.jobs.instruments_e6b",
+  "args": "--stage items --harvest /work/out/harvest"
+ },
+ {
+  "name": "e1b",
+  "module": "infra.aws_pg.jobs.instruments_e6b",
+  "args": "--stage e1b --items /work/out/items/e6b_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus"
+ }
+]

@@ -1,0 +1,38 @@
+{
+ "t": 14,
+ "units": 23,
+ "unit_windows": 107,
+ "plain_rows": 1070,
+ "changed_rows": 963,
+ "same_slot_parity": 428,
+ "other_slot_parity": 535,
+ "kind_same_parity": {
+  "zero0": [
+   false
+  ],
+  "zero1": [
+   true
+  ],
+  "zero2": [
+   false
+  ],
+  "zero3": [
+   true
+  ],
+  "fd0": [
+   false
+  ],
+  "fd1": [
+   true
+  ],
+  "fd2": [
+   false
+  ],
+  "fd3": [
+   true
+  ],
+  "probe0": [
+   false
+  ]
+ }
+}

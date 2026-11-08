@@ -1,0 +1,155 @@
+{
+ "prefix": "s4armsB2-02",
+ "step": "comp_k0.3",
+ "arm": "comp_k0.3",
+ "seed_set": "A",
+ "benches": [
+  "math500"
+ ],
+ "projection_min": 208.0,
+ "allowance_min": 1378.0,
+ "build": {
+  "build_seconds": 193.9,
+  "n_neurons_in_set": 1057,
+  "spec": {
+   "name": "comp_k0.3",
+   "kind": "complement",
+   "c": 1.0,
+   "non_mlp": "after"
+  },
+  "families": {
+   "mlp": {
+    "realized_sq": 11.123256193460723,
+    "changed": 1886435717,
+    "in_mask": 4315533312
+   },
+   "attn": {
+    "realized_sq": 5.2191720317751695,
+    "changed": 1127448251,
+    "in_mask": 2147483648
+   },
+   "norm": {
+    "realized_sq": 5.6833416099541056e-05,
+    "changed": 10130,
+    "in_mask": 528384
+   },
+   "embed": {
+    "realized_sq": 0.5507916420167854,
+    "changed": 134820049,
+    "in_mask": 821477376
+   }
+  },
+  "G-MASK": true,
+  "kept": 0,
+  "kept_expected": null,
+  "kept_rel_err": null,
+  "kept_sd_units": null,
+  "kept_pass": null,
+  "intended_mlp_energy": null,
+  "energy_rel_err": null,
+  "energy_flag": null,
+  "energy_passes": null,
+  "c_built": null,
+  "a31": null,
+  "hashes_vs_R1_stage6": {
+   "n_tensors": 355,
+   "n_equal": 355,
+   "same_names": true,
+   "all_equal": true
+  },
+  "R1_stage6_note": null
+ },
+ "bench": {
+  "math500": {
+   "status": "done",
+   "started_utc": "2026-11-07T22:35:32Z",
+   "finished_utc": "2026-11-08T00:59:51Z",
+   "wall_min": 144.3,
+   "template": {
+    "pass": true,
+    "first_id_is_bos": [
+     false
+    ],
+    "n": 500
+   },
+   "cap": 16384,
+   "park": {
+    "allowance_min": 1378.0,
+    "elapsed_min": 395.5099813222885,
+    "projected_min": 208.0410710028923,
+    "earlier_parked": false,
+    "parked": false
+   },
+   "condition": null,
+   "screen_fired": false,
+   "screen_cap_hits_0_19": 1,
+   "G-COMPLETE_job": {
+    "n": 500,
+    "distinct": 500,
+    "covers": true,
+    "seeded": true,
+    "generated": true,
+    "finish_reason": true,
+    "n_empty": 0,
+    "pass": true,
+    "expected_n": 500
+   },
+   "G-COMPLETE_recount": {
+    "n": 500,
+    "distinct": 500,
+    "covers": true,
+    "seeded": true,
+    "generated": true,
+    "finish_reason": true,
+    "n_empty": 0,
+    "pass": true
+   },
+   "G-COMPLETE_failing_input_failed": true,
+   "n_records": 500,
+   "cap_hits": 24,
+   "mean_new_tokens": 4570.394,
+   "modes": {
+    "answer_line": 1,
+    "boxed": 488,
+    "none": 11
+   },
+   "metrics_build": {
+    "arm": "comp_k0.3",
+    "from": null,
+    "G-HASH": null,
+    "kept_rel_err": null,
+    "kept_sd_units": null,
+    "energy_rel_err": null,
+    "energy_flag": null,
+    "energy_passes": null,
+    "c_built": null,
+    "a31": null,
+    "build_seconds": 193.9,
+    "G-MASK": true
+   },
+   "engine": {
+    "vllm": "0.32.0",
+    "max_num_seqs": 128,
+    "max_num_batched_tokens": 2048,
+    "num_gpu_blocks": 12817,
+    "attention_backend": "FLASH_ATTN",
+    "env": {
+     "VLLM_USE_FLASHINFER_SAMPLER": "0"
+    },
+    "load_s": 60.65735054016113
+   },
+   "throughput": {
+    "generation_seconds": 8399.222105026245,
+    "step_s": 8658.573033332825,
+    "r_sat": 277.6264134108425,
+    "mean_new_tokens": 4570.394,
+    "median_new_tokens": 2931.0,
+    "max_new_tokens": 16384,
+    "n_cap_hits": 24,
+    "mean_output_tokens": 4571.346,
+    "n_answers": 500,
+    "load_s": 60.65735054016113
+   }
+  }
+ }
+}

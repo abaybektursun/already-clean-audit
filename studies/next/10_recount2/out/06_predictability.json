@@ -1,0 +1,9 @@
+{
+ "n": 2428,
+ "pearson_real_vs_ref_mean": 0.7967142832677947,
+ "spearman_real_vs_ref_mean": 0.8167412854007826,
+ "share_real_equal_ref_median": 0.4538714991762768,
+ "share_within_chance_both_sides": 0.8710873146622735,
+ "mean_abs_real_minus_ref_mean": 0.9821939868204285,
+ "sd_real_dates": 2.5115098367612165
+}

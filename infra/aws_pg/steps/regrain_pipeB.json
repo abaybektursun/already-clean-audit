@@ -1,0 +1,22 @@
+[
+ {
+  "name": "h_stream",
+  "module": "infra.aws_pg.jobs.regrain_h_stream",
+  "args": "--harvest-s3 s3://pg-lineage-769063704696/results/regrain_pipeA/out/harvest --factorial-s3 s3://pg-lineage-769063704696/results/regrain_i_factorial/out"
+ },
+ {
+  "name": "b_blocks",
+  "module": "infra.aws_pg.jobs.regrain_b_blocks",
+  "args": "--factorial-s3 s3://pg-lineage-769063704696/results/regrain_i_factorial/out --cdisc-s3 s3://pg-lineage-769063704696/results/regrain_c_disc/out --harvest-s3 s3://pg-lineage-769063704696/results/regrain_pipeA/out/harvest"
+ },
+ {
+  "name": "f_steer",
+  "module": "infra.aws_pg.jobs.regrain_f_steer",
+  "args": "--cdisc-s3 s3://pg-lineage-769063704696/results/regrain_c_disc/out --csealed-s3 s3://pg-lineage-769063704696/results/regrain_c_sealed/out --harvest-s3 s3://pg-lineage-769063704696/results/regrain_pipeA/out/harvest"
+ },
+ {
+  "name": "gallery",
+  "module": "infra.aws_pg.jobs.regrain_gallery",
+  "args": "--cdisc-s3 s3://pg-lineage-769063704696/results/regrain_c_disc/out"
+ }
+]

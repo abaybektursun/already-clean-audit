@@ -1,0 +1,7 @@
+[
+  {
+    "name": "weights",
+    "module": "infra.aws_pg.jobs.n1_weights",
+    "args": "--inputs s3://pg-lineage-769063704696/results/next_n1/inputs --budget-min 120"
+  }
+]

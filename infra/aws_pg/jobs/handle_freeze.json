@@ -1,0 +1,47 @@
+{
+  "gate0": {
+    "tag": "handle-freeze-gate0-2026-07-13",
+    "spec_sha256": "501fe64c9f45f4ef172bcb78fd9b197ec25472576affde40673ff87ffc887c86",
+    "utc": "2026-07-13"
+  },
+  "h_disc": {
+    "tag": "handle-freeze-h_disc-2026-07-13",
+    "spec_sha256": "501fe64c9f45f4ef172bcb78fd9b197ec25472576affde40673ff87ffc887c86",
+    "utc": "2026-07-13"
+  },
+  "h_sealed": {
+    "tag": "handle-freeze-h_sealed-2026-07-13",
+    "spec_sha256": "501fe64c9f45f4ef172bcb78fd9b197ec25472576affde40673ff87ffc887c86",
+    "utc": "2026-07-13"
+  },
+  "h_adjudicate": {
+    "tag": "handle-freeze-h_adjudicate-2026-07-13",
+    "spec_sha256": "501fe64c9f45f4ef172bcb78fd9b197ec25472576affde40673ff87ffc887c86",
+    "utc": "2026-07-13"
+  },
+  "t": {
+    "tag": "handle-freeze-t-2026-07-13",
+    "spec_sha256": "501fe64c9f45f4ef172bcb78fd9b197ec25472576affde40673ff87ffc887c86",
+    "utc": "2026-07-13"
+  },
+  "q": {
+    "tag": "handle-freeze-q-2026-07-13",
+    "spec_sha256": "501fe64c9f45f4ef172bcb78fd9b197ec25472576affde40673ff87ffc887c86",
+    "utc": "2026-07-13"
+  },
+  "n": {
+    "tag": "handle-freeze-n-2026-07-13",
+    "spec_sha256": "501fe64c9f45f4ef172bcb78fd9b197ec25472576affde40673ff87ffc887c86",
+    "utc": "2026-07-13"
+  },
+  "b": {
+    "tag": "handle-freeze-b-2026-07-13",
+    "spec_sha256": "501fe64c9f45f4ef172bcb78fd9b197ec25472576affde40673ff87ffc887c86",
+    "utc": "2026-07-13"
+  },
+  "x": {
+    "tag": "handle-freeze-x-2026-07-13",
+    "spec_sha256": "501fe64c9f45f4ef172bcb78fd9b197ec25472576affde40673ff87ffc887c86",
+    "utc": "2026-07-13"
+  }
+}

@@ -1,0 +1,6 @@
+[
+  {"name": "w1_l", "module": "infra.aws_pg.jobs.darwin_w1_edit",
+   "args": "--arm W1-L --run-id darwin_w1_l --s3-prefix darwin/darwin_w1_l"},
+  {"name": "w1_v", "module": "infra.aws_pg.jobs.darwin_w1_optdata",
+   "args": "--arm W1-V --run-id darwin_w1_v --s3-prefix darwin/darwin_w1_v"}
+]

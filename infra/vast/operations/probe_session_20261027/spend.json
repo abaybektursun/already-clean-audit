@@ -1,0 +1,825 @@
+[
+  {
+    "rental": "mdl_S1_2_beh",
+    "session": "S1",
+    "instance_id": 49779937,
+    "offer_id": "48591365",
+    "machine_id": 148525,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": false,
+    "created_utc": "2026-09-03T18:46:45Z",
+    "status": "open",
+    "realized_usd": 1.454,
+    "load_min": 4.6,
+    "billing": {
+      "gpu": {
+        "usd": 1.44,
+        "hours": 0.568
+      },
+      "storage": {
+        "usd": 0.014,
+        "hours": 0.647
+      }
+    },
+    "unbilled_loading_hours": 0.079
+  },
+  {
+    "rental": "mdl_S1b_5c_beh_5c_graft",
+    "session": "S1b",
+    "instance_id": 49779952,
+    "offer_id": "24548919",
+    "machine_id": 29527,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": false,
+    "created_utc": "2026-09-03T18:46:54Z",
+    "status": "killed_infra",
+    "realized_usd": 0.137,
+    "host_verdict": "slow_net",
+    "billing": {
+      "gpu": {
+        "usd": 0.128,
+        "hours": 0.049
+      },
+      "storage": {
+        "usd": 0.009,
+        "hours": 0.209
+      }
+    },
+    "unbilled_loading_hours": 0.16
+  },
+  {
+    "rental": "mdl_S1b_5c_beh_5c_graft",
+    "session": "S1b",
+    "instance_id": 49780929,
+    "offer_id": 46368151,
+    "machine_id": 144600,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": true,
+    "created_utc": "2026-09-03T18:57:41Z",
+    "status": "open",
+    "realized_usd": 0.01,
+    "billing": {
+      "storage": {
+        "usd": 0.01,
+        "hours": 0.306
+      }
+    },
+    "unbilled_loading_hours": 0.306
+  },
+  {
+    "rental": "neurons_w2d_q4b_probe_r5r4",
+    "session": "W2-D",
+    "instance_id": 56919948,
+    "offer_id": "56664170",
+    "machine_id": 53018,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": false,
+    "created_utc": "2026-10-20T16:26:14Z",
+    "status": "done",
+    "realized_usd": 0.178,
+    "load_min": 2.2,
+    "host_verdict": "clean",
+    "billing": {
+      "gpu": {
+        "usd": 0.143,
+        "hours": 0.182
+      },
+      "storage": {
+        "usd": 0.004,
+        "hours": 0.246
+      },
+      "other": {
+        "usd": 0.031,
+        "hours": 10.96
+      }
+    },
+    "unbilled_loading_hours": 0.064
+  },
+  {
+    "rental": "neurons_w3_grid_a",
+    "session": "W3",
+    "instance_id": 56924269,
+    "offer_id": "56664170",
+    "machine_id": 53018,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": false,
+    "created_utc": "2026-10-20T17:03:28Z",
+    "status": "done",
+    "realized_usd": 13.161,
+    "load_min": 1.1,
+    "billing": {
+      "gpu": {
+        "usd": 12.223,
+        "hours": 15.537
+      },
+      "storage": {
+        "usd": 0.518,
+        "hours": 15.549
+      },
+      "other": {
+        "usd": 0.42,
+        "hours": 147.29
+      }
+    },
+    "unbilled_loading_hours": 0.012,
+    "host_verdict": "clean"
+  },
+  {
+    "rental": "neurons_w2d_q4b_probe_r6to9",
+    "session": "W2-D",
+    "instance_id": 56930774,
+    "offer_id": "56735564",
+    "machine_id": 98453,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": false,
+    "created_utc": "2026-10-20T17:58:37Z",
+    "status": "done",
+    "realized_usd": 0.377,
+    "load_min": 2.3,
+    "host_verdict": "clean",
+    "billing": {
+      "gpu": {
+        "usd": 0.354,
+        "hours": 0.483
+      },
+      "storage": {
+        "usd": 0.009,
+        "hours": 0.525
+      },
+      "other": {
+        "usd": 0.014,
+        "hours": 3.62
+      }
+    },
+    "unbilled_loading_hours": 0.042
+  },
+  {
+    "rental": "neurons_w3_grid_b",
+    "session": "W3",
+    "instance_id": 56937511,
+    "offer_id": "51838778",
+    "machine_id": 149412,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": false,
+    "created_utc": "2026-10-20T18:57:26Z",
+    "status": "killed_infra",
+    "realized_usd": 0.051,
+    "host_verdict": "slow_net",
+    "billing": {
+      "gpu": {
+        "usd": 0.048,
+        "hours": 0.066
+      },
+      "storage": {
+        "usd": 0.003,
+        "hours": 0.077
+      }
+    },
+    "unbilled_loading_hours": 0.011
+  },
+  {
+    "rental": "neurons_w3_grid_b",
+    "session": "W3",
+    "instance_id": 56937684,
+    "offer_id": 56821107,
+    "machine_id": 152030,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": true,
+    "created_utc": "2026-10-20T18:59:24Z",
+    "status": "done",
+    "realized_usd": 7.962,
+    "load_min": 2.3,
+    "billing": {
+      "gpu": {
+        "usd": 7.582,
+        "hours": 11.374
+      },
+      "storage": {
+        "usd": 0.38,
+        "hours": 11.411
+      }
+    },
+    "unbilled_loading_hours": 0.037,
+    "host_verdict": "clean"
+  },
+  {
+    "rental": "neurons_w2c_g4_probe",
+    "session": "W2-C",
+    "instance_id": 56978848,
+    "offer_id": "49063565",
+    "machine_id": 149162,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": false,
+    "created_utc": "2026-10-21T01:23:14Z",
+    "status": "killed_infra",
+    "realized_usd": 0.04,
+    "host_verdict": "slow_net",
+    "billing": {
+      "gpu": {
+        "usd": 0.038,
+        "hours": 0.056
+      },
+      "storage": {
+        "usd": 0.002,
+        "hours": 0.125
+      }
+    },
+    "unbilled_loading_hours": 0.069
+  },
+  {
+    "rental": "neurons_w2c_g4_probe",
+    "session": "W2-C",
+    "instance_id": 56979375,
+    "offer_id": 56821098,
+    "machine_id": 152030,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": true,
+    "created_utc": "2026-10-21T01:29:09Z",
+    "status": "done",
+    "realized_usd": 0.21,
+    "load_min": 0.0,
+    "host_verdict": "clean",
+    "billing": {
+      "gpu": {
+        "usd": 0.205,
+        "hours": 0.307
+      },
+      "storage": {
+        "usd": 0.005,
+        "hours": 0.307
+      }
+    },
+    "unbilled_loading_hours": 0.0
+  },
+  {
+    "rental": "neurons_w3_grid_c_t14",
+    "session": "W3",
+    "instance_id": 57088652,
+    "offer_id": "56669457",
+    "machine_id": 56722,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": false,
+    "created_utc": "2026-10-21T17:27:21Z",
+    "status": "done",
+    "realized_usd": 1.504,
+    "load_min": 2.2,
+    "host_verdict": "clean",
+    "billing": {
+      "gpu": {
+        "usd": 1.388,
+        "hours": 1.893
+      },
+      "storage": {
+        "usd": 0.064,
+        "hours": 1.929
+      },
+      "other": {
+        "usd": 0.052,
+        "hours": 18.35
+      }
+    },
+    "unbilled_loading_hours": 0.036
+  },
+  {
+    "rental": "neurons_w2d_q4b_probe_r13",
+    "session": "W2-D",
+    "instance_id": 57088816,
+    "offer_id": "24311380",
+    "machine_id": 39576,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": false,
+    "created_utc": "2026-10-21T17:29:00Z",
+    "status": "killed_infra",
+    "realized_usd": 0.062,
+    "host_verdict": "slow_net",
+    "billing": {
+      "gpu": {
+        "usd": 0.059,
+        "hours": 0.088
+      },
+      "storage": {
+        "usd": 0.003,
+        "hours": 0.165
+      }
+    },
+    "unbilled_loading_hours": 0.077
+  },
+  {
+    "rental": "neurons_w2d_q4b_probe_r13",
+    "session": "W2-D",
+    "instance_id": 57089465,
+    "offer_id": 32252209,
+    "machine_id": 56669,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": true,
+    "created_utc": "2026-10-21T17:35:03Z",
+    "status": "done",
+    "realized_usd": 0.45,
+    "load_min": 4.6,
+    "host_verdict": "clean",
+    "billing": {
+      "gpu": {
+        "usd": 0.444,
+        "hours": 0.278
+      },
+      "storage": {
+        "usd": 0.006,
+        "hours": 0.36
+      }
+    },
+    "unbilled_loading_hours": 0.082
+  },
+  {
+    "rental": "neurons_x_center_probe",
+    "session": "X",
+    "instance_id": 57420458,
+    "offer_id": "32252204",
+    "machine_id": 56669,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": false,
+    "created_utc": "2026-10-23T20:18:46Z",
+    "status": "killed_infra",
+    "realized_usd": null,
+    "host_verdict": "slow_net"
+  },
+  {
+    "rental": "neurons_x_center_probe",
+    "session": "X",
+    "instance_id": 57421023,
+    "offer_id": 36346704,
+    "machine_id": 57753,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": false,
+    "created_utc": "2026-10-23T20:24:55Z",
+    "status": "killed_manual",
+    "realized_usd": 0.0,
+    "unbilled_loading_hours": 0.03,
+    "note": "H100 SXM at $6.642/h picked by the respawn (only eligible offer); destroyed while loading at 2026-10-23T20:26Z, before any cell: the 16-step job would have crossed the credit and the program ceiling"
+  },
+  {
+    "rental": "neurons_x_center_probe",
+    "session": "X",
+    "instance_id": 57423819,
+    "offer_id": "55498888",
+    "machine_id": 149294,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": false,
+    "created_utc": "2026-10-23T20:54:02Z",
+    "status": "done",
+    "realized_usd": 4.67,
+    "load_min": 2.3,
+    "host_verdict": "clean",
+    "billing": {
+      "source": "vast credit delta 12.17 -> 7.50 read 2026-10-23T23:15Z",
+      "billed_h": 2.31,
+      "dph": 2.01
+    }
+  },
+  {
+    "rental": "neuronshow_smoke",
+    "session": "neuronshow",
+    "instance_id": 57915420,
+    "offer_id": "8936322",
+    "machine_id": 15489,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": false,
+    "created_utc": "2026-10-27T04:13:31Z",
+    "status": "complete",
+    "realized_usd": 0.002,
+    "host_verdict": "slow_net",
+    "billing": {
+      "gpu": {
+        "usd": 0.0,
+        "hours": 0.0
+      },
+      "storage": {
+        "usd": 0.002,
+        "hours": 0.149
+      }
+    },
+    "unbilled_loading_hours": 0.149,
+    "billing_source": "vastai invoices-v1 --charges"
+  },
+  {
+    "rental": "neuronshow_smoke",
+    "session": "neuronshow",
+    "instance_id": 57916157,
+    "offer_id": "56821105",
+    "machine_id": 152030,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": false,
+    "created_utc": "2026-10-27T04:20:23Z",
+    "status": "complete",
+    "realized_usd": 0.026,
+    "load_min": 0.0,
+    "host_verdict": "clean",
+    "billing": {
+      "gpu": {
+        "usd": 0.025,
+        "hours": 0.034
+      },
+      "storage": {
+        "usd": 0.001,
+        "hours": 0.034
+      }
+    },
+    "unbilled_loading_hours": 0.0,
+    "billing_source": "vastai invoices-v1 --charges"
+  },
+  {
+    "rental": "neuronshow_probe",
+    "session": "neuronshow",
+    "instance_id": 57917200,
+    "offer_id": "56249204",
+    "machine_id": 117959,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": false,
+    "created_utc": "2026-10-27T04:31:07Z",
+    "status": "complete",
+    "realized_usd": 0.367,
+    "load_min": 3.5,
+    "host_verdict": "clean",
+    "billing": {
+      "gpu": {
+        "usd": 0.317,
+        "hours": 0.541
+      },
+      "storage": {
+        "usd": 0.035,
+        "hours": 0.593
+      },
+      "other": {
+        "usd": 0.001,
+        "hours": 0.0
+      }
+    },
+    "unbilled_loading_hours": 0.052,
+    "billing_source": "vastai invoices-v1 --charges"
+  },
+  {
+    "rental": "neuronshow_probe",
+    "session": "neuronshow",
+    "instance_id": 57920512,
+    "offer_id": "57510883",
+    "machine_id": 137572,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": false,
+    "created_utc": "2026-10-27T05:12:00Z",
+    "status": "complete",
+    "realized_usd": 0.687,
+    "load_min": 4.6,
+    "host_verdict": "clean",
+    "billing_source": "vastai invoices-v1 --charges"
+  },
+  {
+    "rental": "neuronshow_manual_20261027_s2",
+    "session": "neuronshow",
+    "instance_id": 57939792,
+    "offer_id": "53243440",
+    "machine_id": 152478,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": false,
+    "created_utc": "2026-10-27T08:50:48Z",
+    "status": "done",
+    "realized_usd": 0.148,
+    "load_min": 3.3,
+    "host_verdict": "clean",
+    "billing_source": "invoices_final.json: instance-57939792",
+    "billing": {
+      "gpu": {
+        "usd": 0.108,
+        "description": "0.169 hours at $0.640/hour"
+      },
+      "disk": {
+        "usd": 0.005,
+        "description": "0.225 hours at $0.022/hour"
+      },
+      "bwd": {
+        "usd": 0.035,
+        "description": "8.9 GB Downloaded at $0.004/GB"
+      },
+      "bwu": {
+        "usd": 0.0,
+        "description": "Bandwidth (upload)"
+      }
+    }
+  },
+  {
+    "rental": "neuronshow_manual_20261027_s3",
+    "session": "neuronshow",
+    "instance_id": 57941003,
+    "offer_id": "56268716",
+    "machine_id": 149491,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": false,
+    "created_utc": "2026-10-27T09:04:16Z",
+    "status": "killed_infra",
+    "realized_usd": 0.065,
+    "host_verdict": "slow_net",
+    "billing_source": "invoices_final.json: instance-57941003",
+    "billing": {
+      "gpu": {
+        "usd": 0.062,
+        "description": "0.074 hours at $0.840/hour"
+      },
+      "disk": {
+        "usd": 0.003,
+        "description": "0.097 hours at $0.028/hour"
+      },
+      "bwd": {
+        "usd": 0.0,
+        "description": "Bandwidth (download)"
+      },
+      "bwu": {
+        "usd": 0.0,
+        "description": "Bandwidth (upload)"
+      }
+    }
+  },
+  {
+    "rental": "neuronshow_manual_20261027_s3",
+    "session": "neuronshow",
+    "instance_id": 57941270,
+    "offer_id": 56735568,
+    "machine_id": 98453,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": true,
+    "created_utc": "2026-10-27T09:07:16Z",
+    "status": "killed_infra",
+    "realized_usd": 0.001,
+    "billing_source": "invoices_final.json: instance-57941270",
+    "billing": {
+      "gpu": {
+        "usd": 0.0,
+        "description": "GPU"
+      },
+      "disk": {
+        "usd": 0.001,
+        "description": "0.048 hours at $0.022/hour"
+      },
+      "bwd": {
+        "usd": 0.0,
+        "description": "Bandwidth (download)"
+      },
+      "bwu": {
+        "usd": 0.0,
+        "description": "Bandwidth (upload)"
+      }
+    }
+  },
+  {
+    "rental": "neuronshow_manual_20261027_s4",
+    "session": "neuronshow",
+    "instance_id": 57941783,
+    "offer_id": "56735568",
+    "machine_id": 98453,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": false,
+    "created_utc": "2026-10-27T09:12:33Z",
+    "status": "done",
+    "realized_usd": 0.455,
+    "load_min": 0.0,
+    "host_verdict": "clean",
+    "billing_source": "invoices_final.json: instance-57941783",
+    "billing": {
+      "gpu": {
+        "usd": 0.441,
+        "description": "0.602 hours at $0.733/hour"
+      },
+      "disk": {
+        "usd": 0.013,
+        "description": "0.606 hours at $0.022/hour"
+      },
+      "bwd": {
+        "usd": 0.001,
+        "description": "41.9 GB Downloaded at $0.000/GB"
+      },
+      "bwu": {
+        "usd": 0.0,
+        "description": "0.2 GB Uploaded at $0.000/GB"
+      }
+    }
+  },
+  {
+    "rental": "neuronshow_manual_20261027_s3",
+    "session": "neuronshow",
+    "instance_id": 57941273,
+    "auto_respawn": true,
+    "created_utc": "2026-10-27T09:07:16Z",
+    "note": "Duplicate created by legacy watchdog in another worktree; recovered from invoice.",
+    "status": "killed_infra",
+    "realized_usd": 0.001,
+    "billing_source": "invoices_final.json: instance-57941273",
+    "billing": {
+      "gpu": {
+        "usd": 0.0,
+        "description": "GPU"
+      },
+      "disk": {
+        "usd": 0.001,
+        "description": "0.047 hours at $0.022/hour"
+      },
+      "bwd": {
+        "usd": 0.0,
+        "description": "Bandwidth (download)"
+      },
+      "bwu": {
+        "usd": 0.0,
+        "description": "Bandwidth (upload)"
+      }
+    }
+  },
+  {
+    "rental": "neuron_combo_20261027_a1",
+    "session": "neuronshow",
+    "instance_id": 58022910,
+    "offer_id": "56821109",
+    "machine_id": 152030,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": false,
+    "created_utc": "2026-10-27T23:06:04Z",
+    "status": "complete",
+    "realized_usd": 0.105,
+    "load_min": 0.0,
+    "host_verdict": "clean",
+    "billing_source": "infra/vast/operations/neuron_combo_20261027/invoices.json"
+  },
+  {
+    "rental": "realizednull_q14",
+    "session": null,
+    "instance_id": 58792723,
+    "offer_id": "58617054",
+    "machine_id": 149573,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:v1-14b",
+    "interruptible_bid": null,
+    "auto_respawn": false,
+    "created_utc": "2026-11-02T08:25:53Z",
+    "status": "killed_infra",
+    "realized_usd": 0.03,
+    "host_verdict": "slow_net",
+    "billing": {
+      "gpu": {
+        "usd": 0.005,
+        "hours": 0.01
+      },
+      "storage": {
+        "usd": 0.025,
+        "hours": 0.642
+      }
+    },
+    "unbilled_loading_hours": 0.632
+  },
+  {
+    "rental": "realizednull_q14",
+    "session": null,
+    "instance_id": 58796428,
+    "offer_id": 58337839,
+    "machine_id": 152047,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:v1-14b",
+    "interruptible_bid": null,
+    "auto_respawn": true,
+    "created_utc": "2026-11-02T09:04:48Z",
+    "status": "killed_operator",
+    "realized_usd": null,
+    "host_verdict": null,
+    "note": "watchdog auto-respawn onto CMP 170HX (base filter offers[0]); destroyed by the operator at 2026-11-02T09:05:04Z while loading: not an RTX A6000 or RTX PRO 6000 (studies/realizednull/JOURNAL.md S4c)"
+  },
+  {
+    "rental": "realizednull_q14",
+    "session": null,
+    "instance_id": 58796532,
+    "offer_id": "58796199",
+    "machine_id": 51579,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:v1-14b",
+    "interruptible_bid": null,
+    "auto_respawn": false,
+    "created_utc": "2026-11-02T09:05:58Z",
+    "status": "killed_operator",
+    "realized_usd": 1.135,
+    "load_min": 0.0,
+    "billing": {
+      "gpu": {
+        "usd": 1.091,
+        "hours": 2.045
+      },
+      "storage": {
+        "usd": 0.042,
+        "hours": 2.139
+      },
+      "other": {
+        "usd": 0.002,
+        "hours": 0.483
+      }
+    },
+    "unbilled_loading_hours": 0.094,
+    "host_verdict": "clean",
+    "note": "destroyed by the operator at 2026-11-02T11:12:42Z (smoke cutoff): smoke still in construct_all after 110 min; full cell projected above max_billed_h 4 (SPEC 6.6; studies/realizednull/JOURNAL.md S4c)"
+  },
+  {
+    "rental": "reuse_birth",
+    "session": null,
+    "instance_id": 58846849,
+    "offer_id": "56735573",
+    "machine_id": 98453,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+    "interruptible_bid": null,
+    "auto_respawn": false,
+    "created_utc": "2026-11-02T16:09:54Z",
+    "status": "done",
+    "realized_usd": 2.397,
+    "load_min": 0.0,
+    "host_verdict": "clean",
+    "billing": {
+      "gpu": {
+        "usd": 2.322,
+        "hours": 3.166
+      },
+      "storage": {
+        "usd": 0.071,
+        "hours": 3.186
+      },
+      "other": {
+        "usd": 0.004,
+        "hours": 149.0
+      }
+    },
+    "unbilled_loading_hours": 0.02
+  },
+  {
+    "rental": "realizednull_q14",
+    "session": null,
+    "instance_id": 58869906,
+    "offer_id": "57085859",
+    "machine_id": 154819,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:v1-14b",
+    "interruptible_bid": null,
+    "auto_respawn": false,
+    "created_utc": "2026-11-02T19:54:22Z",
+    "status": "done",
+    "realized_usd": 1.829,
+    "load_min": 14.7,
+    "host_verdict": "clean",
+    "billing": {
+      "gpu": {
+        "usd": 1.684,
+        "hours": 3.714
+      },
+      "storage": {
+        "usd": 0.102,
+        "hours": 3.945
+      },
+      "other": {
+        "usd": 0.043,
+        "hours": 11.35
+      }
+    },
+    "unbilled_loading_hours": 0.231
+  },
+  {
+    "rental": "n13_s2smoke-02v",
+    "session": "N13",
+    "instance_id": 59356681,
+    "offer_id": "57837726",
+    "machine_id": 54285,
+    "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:n13-v1",
+    "interruptible_bid": null,
+    "auto_respawn": false,
+    "created_utc": "2026-11-06T02:50:52Z",
+    "status": "killed_operator",
+    "realized_usd": 0.007,
+    "billing": {
+      "storage": {
+        "usd": 0.007,
+        "hours": 0.174
+      }
+    },
+    "unbilled_loading_hours": 0.174,
+    "closed_utc": "2026-11-06T03:00:54Z",
+    "note": "destroyed by controller.py kill while still loading (image pull, never running), on the head's stop order: N13 stays on AWS L40S. Vast credit 25.168172 (01:18Z) -> 25.161417 (03:01Z) = $0.0068 (storage while loading)."
+  }
+]

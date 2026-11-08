@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-07-19T04:57:37Z",
+  "status": "FROZEN_FRESH_OPERATIONAL_IDENTITY_BEFORE_NO_CREATE",
+  "run_id": "parallax-pg1-primary-interface-s3-v2",
+  "predecessor_spec": {
+    "path": "studies/lineage/cross-lineage/config/parallax_pg1_primary_interface_control_s3_launch_v5.json",
+    "sha256": "eb3e53611bde17192c8270f67fca1abcac84e65649cb7f99b0cc2a0c5b6554b8",
+    "run_id": "parallax-pg1-primary-interface-s3-v1"
+  },
+  "operational_identity": {
+    "artifact_key": "parallax/results/parallax-pg1-primary-interface-s3-v2/artifacts.tar",
+    "terminal_key": "parallax/results/parallax-pg1-primary-interface-s3-v2/terminal.json",
+    "claim_path": "infra/vast/parallax/operations/readiness/claims/pg1_equal_token_interface_seed17_fresh_v2.json",
+    "output_receipt_path": "infra/vast/parallax/operations/readiness/pg1_equal_token_interface_seed17_fresh_v2_attempt/receipt.json"
+  },
+  "implementation_overrides": {
+    "primary_launcher": {
+      "path": "infra/vast/parallax/primary_interface_control_launch.py",
+      "sha256": "5ed93f4c2d203b751f62ef830cfd4cc35d0366863e62214d4e4ca7d37fa494bc"
+    },
+    "primary_no_create": {
+      "path": "infra/vast/parallax/primary_interface_control_no_create.py",
+      "sha256": "757c9266f6c04b741f58c192b76fdcdafc7f3a725376d2a0a5dfb7a41f1d3dda"
+    },
+    "primary_job": {
+      "path": "infra/vast/parallax/primary_interface_control_job.py",
+      "sha256": "bc1d1f51d769fe0e8902bad2f286f8c3b98a2ccef1e923562ca6384fec6dd686"
+    },
+    "primary_worker": {
+      "path": "infra/vast/parallax/primary_interface_control_worker.py",
+      "sha256": "d5500f08257ab4907276409790389044d3dce79df0e700c3b06592f0f8a0a27e"
+    },
+    "primary_source_gate": {
+      "path": "infra/vast/parallax/primary_interface_control_source_gate.py",
+      "sha256": "203b1c0c27c67465e8ff2541e9831eba51af77842a463269040303933948fe04"
+    },
+    "primary_overlay_stage": {
+      "path": "infra/vast/parallax/primary_interface_control_overlay_stage.py",
+      "sha256": "31129924de4bcdb11a6a7ade448a7a491bb460bc5b1bb760fc19125510e19f66"
+    }
+  },
+  "independent_critic": {
+    "commit": "b1ad4f86b1926c7d0fda6020267672b57adf1c8f",
+    "path": "infra/vast/parallax/audit_primary_interface_independent.py",
+    "sha256": "d6b03945ed389a48b764fdeef509aa22818c0051654534f789559c4ba05ee8c4",
+    "freeze_path": "studies/lineage/cross-lineage/research/2026-07-19_parallax_primary_critic_freeze.md",
+    "freeze_sha256": "ff016face127f54a35a82170893d52872474c675b2978874cd6e247137cdf4af"
+  },
+  "preservation": {
+    "mode": "EXACT_PREDECESSOR_DERIVATION_OPERATIONAL_FIELDS_ONLY",
+    "scientific_change_count": 0,
+    "preserved_exact": [
+      "model_inputs",
+      "training_and_discovery_items",
+      "seed17",
+      "optimizer_and_step_schedule",
+      "primary_metric_and_thresholds",
+      "confirmation_firewall",
+      "frozen_science_specs_and_configs"
+    ]
+  },
+  "authorization": {
+    "paid_action": false,
+    "execution_freeze": false,
+    "no_create": true,
+    "current_source_and_market_reads": true
+  }
+}

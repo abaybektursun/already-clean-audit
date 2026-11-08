@@ -1,0 +1,27 @@
+{
+  "rental": "r_v1_32b",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:v1-32b",
+  "disk": 150,
+  "gpu_query": "gpu_ram>=80 num_gpus=1 cuda_vers>=12.8 compute_cap>=800",
+  "expected_gpu": "",
+  "bound": "overhead",
+  "_comment": "V1 rung 2 (\u00a73 order): Qwen2.5-32B cells (b)+(c), all 64 layers, same frozen corpus (family-shared tokenizer, hash-matched). Offline analysis includes the E8 gamma-corrected column before any cross-rung comparison.",
+  "cells": [
+    {
+      "id": "v1_32b_smoke",
+      "module": "infra.vast.cells.smoke_stats",
+      "model_dir": "/models/Qwen_Qwen2.5-32B",
+      "probe_text": "The capital of France is"
+    },
+    {
+      "id": "v1_32b_actstats",
+      "module": "infra.vast.cells.v1_actstats",
+      "model_dir": "/models/Qwen_Qwen2.5-32B",
+      "batch": 8
+    }
+  ],
+  "watch": {
+    "load_backstop_min": 150,
+    "max_billed_h": 2
+  }
+}

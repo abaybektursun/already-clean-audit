@@ -1,0 +1,62 @@
+{
+  "automatic_retry": false,
+  "cleanup": {
+    "action": "destroy",
+    "confirmation": {
+      "consecutive_absences": 3,
+      "instance_ids": [
+        45288435,
+        45288475
+      ],
+      "reissued_destroy_requests": 0,
+      "status": "GREEN_KNOWN_INSTANCES_CONFIRMED_ABSENT"
+    },
+    "reason": "S3_durable"
+  },
+  "failure": null,
+  "guardian_exact_worker_ID_acknowledged": true,
+  "guardian_instance_id": 45288435,
+  "guardian_offer": {
+    "cuda_max_good": 12.4,
+    "dph_total": 0.05251851851851852,
+    "geolocation": "Poland, PL",
+    "gpu_name": "RTX 3060",
+    "gpu_ram": 12288,
+    "id": 34534934,
+    "inet_down": 865.1,
+    "inet_up": 923.3,
+    "machine_id": 21103,
+    "reliability": 0.9907008,
+    "verification": "verified"
+  },
+  "job_released": true,
+  "phase": "TERMINAL_CLEANUP_CONFIRMED",
+  "run_id": "parallax-pg1-primary-interface-s3-v2",
+  "s3_durable": true,
+  "schema_version": 1,
+  "status": "CLEANED_AFTER_S3_DURABILITY",
+  "updated_utc": "2026-07-19T06:12:43.258781+00:00",
+  "worker_instance_id": 45288475,
+  "worker_offer": {
+    "cpu_cores_effective": 128.0,
+    "cpu_ram": 515452,
+    "cuda_max_good": 13.2,
+    "direct_port_count": 998,
+    "disk_bw": 6873.0,
+    "disk_space": 3521.0,
+    "dph_total": 2.0814814814814815,
+    "duration": 13918799.432989836,
+    "geolocation": ", CA",
+    "gpu_name": "H100 NVL",
+    "gpu_ram": 95830,
+    "id": 42823318,
+    "inet_down": 938.8,
+    "inet_up": 906.6,
+    "machine_id": 141791,
+    "num_gpus": 1,
+    "reliability": 0.9925933,
+    "static_ip": true,
+    "storage_cost": 0.1333333333333333,
+    "verification": "verified"
+  }
+}

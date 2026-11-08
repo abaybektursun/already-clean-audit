@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-07-19T06:05:58Z",
+  "status": "GREEN",
+  "run_id": "parallax-pg1-primary-interface-s3-v2",
+  "source_commit": "d5176479d7f72fa21a07c43b0d14b89364f13e6f",
+  "focused_command": "pytest -q infra/vast/parallax/tests/test_primary_interface_control_job.py infra/vast/parallax/tests/test_primary_interface_control_worker.py infra/vast/parallax/tests/test_primary_interface_control_source_gate.py infra/vast/parallax/tests/test_primary_interface_control_launch.py",
+  "focused_primary_tests_passed": 44,
+  "full_command": "pytest -q infra/vast/parallax/tests",
+  "tests_passed": 687,
+  "exit_code": 0,
+  "paid_action": false,
+  "confirmation_items_read": 0,
+  "vast_persistent_volumes_created": 0,
+  "automatic_retry": false
+}

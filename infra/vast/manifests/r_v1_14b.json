@@ -1,0 +1,26 @@
+{
+  "rental": "r_v1_14b",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:v1-14b",
+  "disk": 70,
+  "gpu_query": "gpu_ram>=48 num_gpus=1 cuda_vers>=12.8 compute_cap>=800",
+  "expected_gpu": "",
+  "_comment": "V1 MDE rung (\u00a73): Qwen2.5-14B cells (b) activation share + (c) position-0 share, all layers, all three humboldt sites. Smoke first (\u00a79.9). The cell banks per-coordinate/per-position energy sums; every share statistic, twin band, and gate is computed OFFLINE from them (\u00a76).",
+  "cells": [
+    {
+      "id": "v1_14b_smoke",
+      "module": "infra.vast.cells.smoke_stats",
+      "model_dir": "/models/Qwen_Qwen2.5-14B",
+      "probe_text": "The capital of France is"
+    },
+    {
+      "id": "v1_14b_actstats",
+      "module": "infra.vast.cells.v1_actstats",
+      "model_dir": "/models/Qwen_Qwen2.5-14B",
+      "batch": 8
+    }
+  ],
+  "watch": {
+    "load_backstop_min": 90,
+    "max_billed_h": 2
+  }
+}

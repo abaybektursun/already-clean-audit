@@ -1,0 +1,4 @@
+[
+  {"name": "w2_a", "module": "infra.aws_pg.jobs.darwin_w2_envelope",
+   "args": "--arm W2-A --run-id darwin_w2_a --s3-prefix darwin/darwin_w2_a"}
+]

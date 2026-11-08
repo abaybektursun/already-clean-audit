@@ -1,0 +1,17 @@
+{
+ "rndE_k1/gsm8k/generations.jsonl": {
+  "bytes": 5872948,
+  "sha256": "b382a9e4151b1724828dc7d6c7eacad2b991651f5e004116d01c1421a5563fd9",
+  "s3": "s3://pg-lineage-769063704696/results/next_n13/s4armsB1-02/out/rndE_k1/rndE_k1/gsm8k/generations.jsonl"
+ },
+ "rndE_k1/math500/generations.jsonl": {
+  "bytes": 5817603,
+  "sha256": "5c9d6714a732041f3ef1e24ba248f3f60880efaac8b0fdcd950d9b2b0577145a",
+  "s3": "s3://pg-lineage-769063704696/results/next_n13/s4armsB1-02/out/rndE_k1/rndE_k1/math500/generations.jsonl"
+ },
+ "steps.jsonl": {
+  "bytes": 3984564,
+  "sha256": "22543f66e23cc664e6f665b860f719121c8fcee0c4e624975f66dd4b621f6d38",
+  "s3": "s3://pg-lineage-769063704696/results/next_n13/s4armsB1-02/out/rndE_k1/steps.jsonl"
+ }
+}

@@ -1,0 +1,37 @@
+{
+  "rental": "neuronshow_manual_20261027_s2",
+  "session": "neuronshow",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+  "disk": 80,
+  "gpu_query": "gpu_ram>=40 num_gpus=1 compute_cap>=800 cuda_vers>=13.0 cpu_ram>=30",
+  "expected_gpu": "",
+  "bound": "overhead",
+  "weights_mode": "download",
+  "env": {
+    "HF_ONLINE": "1",
+    "HF_HOME": "/workspace/hf",
+    "HF_HUB_CACHE": "/workspace/hf/hub",
+    "HF_HUB_DISABLE_XET": "1"
+  },
+  "cells": [
+    {
+      "id": "station",
+      "module": "infra.vast.cells.probe_station",
+      "server": "python3 -m infra.pg.probe_session --requests /workspace/probe/requests --responses /workspace/probe/responses --corpus s3://pg-lineage-769063704696/results/mdl/neurons/show/inputs/q4b_corpus/",
+      "idle_min": 30
+    }
+  ],
+  "watch": {
+    "max_billed_h": 2,
+    "load_backstop_min": 30,
+    "progress_stall_min": 110
+  },
+  "_comment": "Manual session, fresh prefix, 2-hour billed cap, 30-minute idle shutdown. Frozen plan files ship with code. Known-number check precedes exploratory responses.",
+  "code_paths": [
+    "studies/neuronshow/plan/plan.json",
+    "studies/neuronrw/plan/arm0_Q4B.json",
+    "studies/neuronrw/plan/arm2_Q4B.json",
+    "tests/test_probe_server.py",
+    "tests/test_probe_session.py"
+  ]
+}

@@ -1,0 +1,329 @@
+diff --git a/studies/already-clean/walkthrough/index.html b/studies/already-clean/walkthrough/index.html
+index 88b9511e0..25b29a5de 100644
+--- a/studies/already-clean/walkthrough/index.html
++++ b/studies/already-clean/walkthrough/index.html
+@@ -3,7 +3,7 @@
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Already Clean Study</title>
+-<meta name="description" content="A plain-English walkthrough of an independent test of the essay Neural Networks Are Already Clean: the claim, the test, the calibration data, and where the runs stand.">
++<meta name="description" content="A plain-English walkthrough of an independent test of the essay Neural Networks Are Already Clean: the claim, the test, the calibration data, and the result.">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+@@ -218,6 +218,10 @@ figcaption { font-size: 0.875rem; color: var(--muted); margin-top: 0.75rem; }
+   .axisrow { grid-template-areas: "track ."; }
+   .row { row-gap: 0.1rem; margin-bottom: 0.35rem; }
+ }
++.bars.wide .row, .bars.wide .axisrow { grid-template-columns: 14rem minmax(0, 1fr) 7rem; }
++@media (max-width: 560px) {
++  .bars.wide .row, .bars.wide .axisrow { grid-template-columns: minmax(0, 1fr) 8.75rem; }
++}
+ 
+ /* tally (figure 4) */
+ .tally { display: grid; gap: 1rem; }
+@@ -274,7 +278,8 @@ sub { font-size: 0.7em; }
+   <p class="eyebrow">Interpretability study D1 · walkthrough</p>
+   <h1>Does “already clean” hold, and did it grow that way?</h1>
+   <p class="lede">An independent test of one essay’s claims about the neurons inside language models.</p>
+-  <p class="status"><strong>Status, 21 Oct 2026, 17:30Z.</strong> All 16 OLMo checkpoints are harvested. Clustering began on the 40 tuning poles at 16:57Z, and the clustering model is still being chosen there <span class="src">journal 21 Oct 17:15Z</span>. The audit and developmental results are not yet unblinded. Every number on this page comes from the discovery set or from the runs’ logs. A grey note such as <span class="src">journal 20 Oct 18:40Z</span> names the study record entry that a number comes from.</p>
++  <p class="status"><strong>Result, 24 Oct 2026.</strong> By the rule written before any data, the parent test labels the result packing. Among jobs born after a pole’s first job, the estimated share unrelated to the pole’s record just before their birth is p<sub>u</sub> = 0.265, with a 95% interval of 0.211–0.321, and the interval’s lower end is above 0.20 <span class="src">metrics.json, run 7</span>. Birth order points the other way: a pole’s main job is its oldest more often than random order gives. In the audit, 52–60% of poles have one job under explanations that pass, against the essay’s 90%. The record calls this combination, packing on the parent test beside an oldest main job, a mixed outcome, and reinterprets no rule <span class="src">spec §6.7</span>.</p>
++  <p class="record">A grey note such as <span class="src">journal 20 Oct 18:40Z</span> names the study record entry that a number comes from. “Run 7” is the final unblind run, 04:06Z on 24 Oct; its numbers are in the study folder’s results/RESULTS.md.</p>
+ </header>
+ 
+ <section id="claim">
+@@ -332,7 +337,7 @@ sub { font-size: 0.7em; }
+   </aside>
+ 
+   <p>A pole’s class is computed, not taken from the explainer. A pole counts as one job only if its explanation passes. A failed explanation makes it <em>UNK-F</em>: not understood, explanation failed.</p>
+-  <p>All tuning used a separate <em>discovery set</em> of 60 Qwen3-4B-Base neurons, so 120 poles <span class="src">journal 20 Oct 07:25Z</span>. Prompts, models and θ<sub>s</sub> were frozen there. The audit sets stay sealed until one planned first reading, called <em>unblinding</em>.</p>
++  <p>All tuning used a separate <em>discovery set</em> of 60 Qwen3-4B-Base neurons, so 120 poles <span class="src">journal 20 Oct 07:25Z</span>. Prompts, models and θ<sub>s</sub> were frozen there. The audit sets stayed sealed until one planned first reading, called <em>unblinding</em>.</p>
+ </section>
+ 
+ <section id="example">
+@@ -362,6 +367,7 @@ sub { font-size: 0.7em; }
+   </ul>
+   <p>Opus’s near misses dropped the paired words and kept the polished style, and all five fired. Together, the two rounds suggest the style drives this pole more than the word “and”. That is a reading, not a separate measurement.</p>
+   <p>So a failed test judges one explanation and one set of texts. It does not show that the neuron lacks a clear job <span class="src">spec §0b</span>.</p>
++  <p>Both examples are negative poles. Every negative pole’s explainer prompt listed the opposite pole’s vocabulary; see <a href="#problems">Known problems</a>.</p>
+ 
+   <figure class="fig" id="fig4">
+     <div class="figtitle">Figure 4. Strong texts per kind, for the two example poles</div>
+@@ -445,7 +451,7 @@ sub { font-size: 0.7em; }
+ 
+   <figure class="fig" id="fig1">
+     <div class="figtitle">Figure 1. Pass rate by model · same 120 discovery poles, prompt v3</div>
+-    <div class="bars" role="img" aria-label="At the frozen threshold: Opus 5.5 61.9 percent, interval 52.9 to 70.1, 0.17 dollars per pole. Sonnet 5.5 60.2 percent, 51.2 to 68.5, 0.084 dollars. Gemini 3.7 Flash 38.7 percent, 30.4 to 47.6, 0.04 dollars. DeepSeek-V4-Pro 14.3 percent, 9.1 to 21.7, about 0.05 dollars.">
++    <div class="bars" role="img" aria-label="At the frozen threshold: Opus 5.5 61.9 percent, interval 52.9 to 70.1, 0.17 dollars per pole. Sonnet 5.5 60.2 percent, 51.2 to 68.5, 0.084 dollars. Gemini 3.7 Flash 38.7 percent, 30.4 to 47.6, 0.04 dollars. DeepSeek-V4-Pro 14.3 percent, 9.1 to 21.7, about 0.05 dollars. Opus 5.5 explanations with a Sonnet 5.5 writer, the audit's mix: 68.1 percent, 59.2 to 75.8.">
+       <div class="row" title="Opus 5.5: 73 of 118 = 61.9%, 95% interval 52.9–70.1%, $0.17 per pole">
+         <span class="lab">Opus 5.5</span>
+         <span class="track"><span class="fill" style="width:61.9%"></span><span class="ci" style="left:52.9%;width:17.2%"></span></span>
+@@ -466,21 +472,28 @@ sub { font-size: 0.7em; }
+         <span class="track"><span class="fill" style="width:14.3%"></span><span class="ci" style="left:9.1%;width:12.6%"></span></span>
+         <span class="val">14.3% <span class="sub">≈$0.05</span></span>
+       </div>
++      <div class="row" title="Opus 5.5 explanations, Sonnet 5.5 writer (round 13, the audit's mix): 81 of 119 = 68.1%, 95% interval 59.2–75.8%">
++        <span class="lab">Opus + Sonnet writer</span>
++        <span class="track"><span class="fill" style="width:68.1%"></span><span class="ci" style="left:59.2%;width:16.6%"></span></span>
++        <span class="val">68.1% <span class="sub">audit mix</span></span>
++      </div>
+       <div class="axisrow"><span class="ticks"><i style="left:0">0</i><i style="left:25%">25</i><i style="left:50%">50</i><i style="left:75%">75</i><i style="left:100%">100%</i></span></div>
+     </div>
+-    <figcaption>Bars: share of scored poles whose explanation passed. Whiskers: Wilson 95% intervals, a standard range for a proportion. Right column: cost per pole for all four roles. Every round is scored at the frozen θ<sub>s</sub> = 0.3153 <span class="src">rescored 21 Oct</span>. The accent bar is the model chosen for the audit <span class="src">journal 20 Oct 18:40Z</span>.</figcaption>
++    <figcaption>Bars: share of scored poles whose explanation passed. Whiskers: Wilson 95% intervals, a standard range for a proportion. Right column: cost per pole for all four roles. Every round is scored at the frozen θ<sub>s</sub> = 0.3153 <span class="src">journal 21 Oct 17:53Z</span>. The accent bar is the model chosen for the audit <span class="src">journal 20 Oct 18:40Z</span>. The last bar reuses Opus’s frozen explanations with Sonnet writing the texts.</figcaption>
+   </figure>
+ 
+   <p>At the same threshold, Sonnet 5.5 passed 60.2% and Opus 61.9%. The two are level, and Sonnet costs half as much per pole.</p>
+   <p>The journal’s 68.6% for Sonnet scores its texts against that round’s own θ<sub>s</sub> of 0.267. Each round’s θ<sub>s</sub> comes from its own writer’s texts on shuffled poles, and Sonnet’s texts fired shuffled poles less. The choice stands either way: the rule written before scoring picked the best of the three cheaper models.</p>
+   <p>DeepSeek-V4-Pro failed on both sides of the test. It had no strong positive on 61 of 119 poles, and its near misses were strong 11.4% of the time. Price did not predict pass rate.</p>
+-  <p>The audit now mixes models. Opus wrote 1,344 audit explanations before the rule, and Sonnet wrote the other 496 <span class="src">journal 20 Oct 18:36Z</span>. Sonnet wrote every pole’s texts. This mix was never scored on the discovery set, so audit numbers will be split by explainer model.</p>
++  <p>The audit mixes models. Opus wrote 1,344 audit explanations before the rule, and Sonnet wrote the other 496 <span class="src">journal 20 Oct 18:36Z</span>. Sonnet wrote every pole’s texts.</p>
++  <p>A checker pointed out that this mix had never been scored on the discovery set <span class="src">journal 21 Oct 17:19Z</span>. Round 13 scored it: Opus’s frozen explanations with Sonnet writing the texts. It passed 81 of 119 poles, 68.1%, the best of the measured pairs <span class="src">journal 21 Oct 17:53Z</span>. Its own θ<sub>s</sub> came out at 0.3091, close to the frozen 0.3153, so the frozen threshold fits the audit’s main configuration.</p>
++  <p>Audit numbers are split by explainer model. Sonnet explained most of the deepest layers, so model and depth would otherwise be mixed up <span class="src">journal 21 Oct 17:19Z</span>.</p>
+ </section>
+ 
+ <section id="running">
+-  <h2>Where the runs stand</h2>
++  <h2>How the runs went</h2>
+   <p><strong>The audit.</strong> A harvest runs a model over the corpus and records every pole’s strongest tokens. The three audit harvests took 12.1 GPU-hours on L40S GPUs <span class="src">journal 20 Oct 07:35Z</span>. All 1,840 audit poles now have an explanation, a second independent reading to measure agreement, and texts. There are 9,714 texts for Qwen, 9,681 for Gemma and 10,404 for OLMo <span class="src">journal 21 Oct 01:25Z</span>.</p>
+-  <p>All three cells were scored by 01:50Z on 21 Oct, Qwen and OLMo on AWS and Gemma on a rented GPU <span class="src">journal 21 Oct 01:50Z</span>. Nobody reads the computed classes before unblinding.</p>
++  <p>All three cells were scored by 01:50Z on 21 Oct, Qwen and OLMo on AWS and Gemma on a rented GPU <span class="src">journal 21 Oct 01:50Z</span>. The jobs computed the classes, and nobody read them <span class="src">journal 21 Oct 01:35Z</span> until unblinding at 19:55Z on 23 Oct <span class="src">journal 23 Oct 20:02Z</span>. OLMo’s audit is read over its 600 audit poles only; the 40 tuning poles explained in the same run are left out by a recorded list <span class="src">journal 21 Oct 17:25Z</span>.</p>
+   <p><strong>The development grid.</strong> OLMo’s 600 audit poles are the development sample. A further 40 poles tune the judge <span class="src">journal 20 Oct 17:05Z</span>.</p>
+ 
+   <aside class="bg">
+@@ -553,12 +566,57 @@ sub { font-size: 0.7em; }
+     <figcaption>All 16 checkpoints harvested: job b finished at 06:23Z and job a at 08:37Z on 21 Oct <span class="src">journal 21 Oct 16:20Z</span>. Steps and token counts from spec §4.3. On a narrow screen this figure scrolls sideways.</figcaption>
+   </figure>
+ 
+-  <p>Spend so far: $21.98 of a $36 ceiling on rented GPUs, over seven rentals <span class="src">vast spend record, 21 Oct</span>. API calls had cost $176.48 of a $200 budget when Abay raised the provider limit to $250 <span class="src">journal 21 Oct 01:05Z</span>. The writer and second-reader steps that followed were projected at about $41 <span class="src">journal 21 Oct 01:05Z</span>.</p>
++  <h3>Does the GPU change move a birth?</h3>
++  <p>Job b ran on a different GPU model from job a. A checker measured activation differences between the two cards of 0.56% at the median and up to 63% at the extreme <span class="src">journal 21 Oct 17:19Z</span>. A birth that falls exactly at a device boundary, T<sub>7</sub> or T<sub>15</sub>, could then come from the hardware, not from training.</p>
++  <p>So T<sub>14</sub> was harvested a second time, on an L40S, with job b’s settings. Rule, written first: if more than 5% of presence readings change between the two cards, job b’s checkpoints are harvested again <span class="src">journal 21 Oct 17:19Z</span>.</p>
++  <ul>
++    <li>Poles: 0 of 640 changed presence under either reading. Exemplar activations differed by 0.43% at the median <span class="src">journal 21 Oct 19:31Z</span>.</li>
++    <li>Clusters of the development sample: 0 of 2,454 changed under the percentile reading and 5 (0.20%) under the raw-ratio reading <span class="src">journal 22 Oct 00:18Z</span>.</li>
++  </ul>
++  <p>Job b’s checkpoints stand. As a labelled sensitivity reading, the clusters born at T<sub>7</sub> or T<sub>15</sub> were also left out. The unrelated share is then 0.275 (0.220–0.332) and the birth-order share 0.486, against 0.265 and 0.476 with them; neither label moves <span class="src">metrics.json, run 7</span>.</p>
++
++  <p>Spend on vast.ai closed at $30.27 of the program’s $36 ceiling: $1.60 for three September rentals of an earlier program, $24.00 for this study’s ten rentals before the result, and $4.67 for one more run on 23 Oct that scored the writer’s texts at every checkpoint <span class="src">spec §12; vast spend record</span>. GPU hours on AWS are not costed in the record. The API provider’s $250 limit was reached at 19:48Z on 21 Oct, partway through clustering the development sample <span class="src">journal 21 Oct 19:50Z</span>. From 21:35Z, at Abay’s order, the rest of W4 ran on Claude Code subagents of the same Sonnet 5.5 model, with the same prompts and no further API spend <span class="src">journal 21 Oct 21:47Z</span>. That covers 883 of the 1,200 clustering answers and all of the judge’s lines <span class="src">spec §12</span>.</p>
++</section>
++
++<section id="audit">
++  <h2>What the audit found</h2>
++  <p>About half of all poles have one job under explanations that pass: 59.7% in Qwen3-4B-Base, 56.3% in Gemma-3-4B-pt and 51.8% in OLMo-3-1025-7B <span class="src">metrics.json, run 7</span>. The essay estimates 90% on Qwen3-32B under its own thresholds.</p>
++
++  <figure class="fig" id="fig6">
++    <div class="figtitle">Figure 6. Share of audit poles with one job, at the frozen θ<sub>s</sub></div>
++    <div class="bars" role="img" aria-label="One job: Qwen3-4B-Base 59.7 percent, interval 55.7 to 63.5; Gemma-3-4B-pt 56.3 percent, 52.3 to 60.2; OLMo-3-1025-7B 51.8 percent, 47.8 to 55.8. The essay's estimate is 90 percent.">
++      <div class="row" title="Qwen3-4B-Base: 358 of 600 = 59.7%, 95% interval 55.7–63.5%">
++        <span class="lab">Qwen3-4B-Base</span>
++        <span class="track"><span class="fill" style="width:59.7%"></span><span class="ci" style="left:55.7%;width:7.8%"></span><span class="ref" style="left:90%"></span></span>
++        <span class="val">59.7% <span class="sub">· essay 90</span></span>
++      </div>
++      <div class="row" title="Gemma-3-4B-pt: 338 of 600 = 56.3%, 95% interval 52.3–60.2%">
++        <span class="lab">Gemma-3-4B-pt</span>
++        <span class="track"><span class="fill" style="width:56.3%"></span><span class="ci" style="left:52.3%;width:7.9%"></span><span class="ref" style="left:90%"></span></span>
++        <span class="val">56.3% <span class="sub">· essay 90</span></span>
++      </div>
++      <div class="row" title="OLMo-3-1025-7B: 311 of 600 = 51.8%, 95% interval 47.8–55.8%">
++        <span class="lab">OLMo-3-1025-7B</span>
++        <span class="track"><span class="fill" style="width:51.8%"></span><span class="ci" style="left:47.8%;width:8%"></span><span class="ref" style="left:90%"></span></span>
++        <span class="val">51.8% <span class="sub">· essay 90</span></span>
++      </div>
++      <div class="axisrow"><span class="ticks"><i style="left:0">0</i><i style="left:25%">25</i><i style="left:50%">50</i><i style="left:75%">75</i><i style="left:100%">100%</i></span></div>
++    </div>
++    <figcaption>Bars: share of each model’s 600 audit poles classed one job. Whiskers: Wilson 95% intervals. Thin ticks: the essay’s 90%, its own estimate under its own thresholds on Qwen3-32B, so a reference, not a test <span class="src">spec §6.2</span>. Source: metrics.json of run 7.</figcaption>
++  </figure>
++
++  <p>The gap is not packed poles. Poles with two related jobs are 5.7–6.0%, and poles with unrelated jobs, the essay’s packing, are 0.7–1.3%. Almost all the rest are not understood, 32–42%, and nearly all of those are explanations that failed the test: 30–39% of poles <span class="src">metrics.json, run 7</span>. The study reads such a gap on the observer’s side first: the explainer, the context, the corpus and the model size, before anything is said about the model <span class="src">spec §14</span>.</p>
++  <p>Two splits show where the observer matters:</p>
++  <ul>
++    <li><strong>Depth.</strong> In the first third of the layers, 62–74% of poles have one job. In the other two thirds, 46–54% do.</li>
++    <li><strong>Explainer.</strong> Poles explained by Opus have one job more often than poles explained by Sonnet: 54.7% against 44.8% in OLMo, 62.0% against 38.6% in Gemma. Sonnet explained most poles in the deepest third, so the two splits overlap <span class="src">RESULTS.md footnotes</span>. On the discovery set, 33 of 117 poles passed under one of Opus and Sonnet and failed under the other <span class="src">checks/W1-W3.md</span>.</li>
++  </ul>
++  <p>A second model, DeepSeek-V4.1-Flash, read each pole again. Its label agreed with the explainer’s little beyond chance: Cohen’s kappa, a chance-corrected agreement score, was 0.07–0.18 <span class="src">metrics.json, run 7</span>.</p>
+ </section>
+ 
+ <section id="readout">
+   <h2>The decisive readout: did the late jobs grow from the early ones?</h2>
+-  <p>After the grid finishes, each development pole goes through four steps <span class="src">spec §2.4</span>.</p>
++  <p>After the grid finished, each development pole went through four steps <span class="src">spec §2.4</span>.</p>
+   <ol>
+     <li>A clustering model groups the pole’s 50 strongest final contexts into named clusters, one per candidate job.</li>
+     <li>A cluster is <em>born</em> at the first checkpoint where the median activation of its contexts is in the pole’s top 0.1% at that checkpoint. It must stay there at the next checkpoint. A cluster born after the pole’s first one is <em>late-born</em>.</li>
+@@ -575,43 +633,154 @@ sub { font-size: 0.7em; }
+     <li><strong>Mixed</strong> otherwise, reported with its point estimate.</li>
+   </ul>
+ 
+-  <h3>Pre-registered predictions</h3>
+-  <p>These were written before any audit or development artifact existed <span class="src">journal 20 Oct 02:58Z</span>.</p>
++  <h3>Settled on the 40 tuning poles</h3>
++  <p>The clustering and judge models and their prompts were tuned on the 40 tuning poles only, before any development pole was judged <span class="src">spec §4.4</span>.</p>
++  <ul>
++    <li><strong>The clustering model.</strong> Each pole is clustered twice, independently. The two clusterings should agree on the number of clusters within one for most poles. Sonnet 5.5 agreed on 29 of 39 poles (74%) and DeepSeek-V4.1-Flash on 16 of 37 (43%), so Sonnet clusters <span class="src">journal 21 Oct 17:29Z</span>.</li>
++    <li><strong>The clustering prompt.</strong> Both models often left a context out of every cluster or put it in two. The prompt implied, but never stated, that each of the 50 contexts belongs to exactly one cluster. Version 2 states it; what a cluster is did not change <span class="src">journal 21 Oct 17:45Z</span>.</li>
++    <li><strong>The judge.</strong> Its control score is called a<sub>ctrl</sub>. DeepSeek-V4.1-Flash as judge failed the 0.80 floor on both clusterings. Sonnet 5.5 passed with 0.910 (Figure 5).</li>
++    <li><strong>Random weights.</strong> An untrained model should show no clear jobs. At step 0, the explainer gave none of 40 poles a job with confidence above 0.5; the limit was 10% <span class="src">journal 21 Oct 17:35Z</span>.</li>
++  </ul>
++
++  <figure class="fig" id="fig5">
++    <div class="figtitle">Figure 5. Judge control accuracy a<sub>ctrl</sub> on the tuning poles</div>
++    <div class="bars wide" role="img" aria-label="Judge gate, floor 0.80. Flash judge on Sonnet clusters: 0.673 on 39 poles, fails. Flash judge on Flash clusters: 0.716 on 37 poles, fails. Sonnet judge on Sonnet clusters: 0.910 on 39 poles, passes.">
++      <div class="row" title="DeepSeek-V4.1-Flash judging Sonnet's clusters: a_ctrl 0.673 on 39 poles, fails the 0.80 floor">
++        <span class="lab">Flash judge, Sonnet clusters</span>
++        <span class="track"><span class="fill" style="width:67.3%"></span><span class="ref" style="left:80%"></span></span>
++        <span class="val">0.673 <span class="sub">fails</span></span>
++      </div>
++      <div class="row" title="DeepSeek-V4.1-Flash judging Flash's clusters: a_ctrl 0.716 on 37 poles, fails the 0.80 floor">
++        <span class="lab">Flash judge, Flash clusters</span>
++        <span class="track"><span class="fill" style="width:71.6%"></span><span class="ref" style="left:80%"></span></span>
++        <span class="val">0.716 <span class="sub">fails</span></span>
++      </div>
++      <div class="row hi" title="Sonnet 5.5 judging Sonnet's clusters: a_ctrl 0.910 on 39 poles, passes the 0.80 floor">
++        <span class="lab">Sonnet judge, Sonnet clusters</span>
++        <span class="track"><span class="fill" style="width:91%"></span><span class="ref" style="left:80%"></span></span>
++        <span class="val">0.910 <span class="sub">passes</span></span>
++      </div>
++      <div class="axisrow"><span class="ticks"><i style="left:0">0</i><i style="left:25%">0.25</i><i style="left:50%">0.50</i><i style="left:75%">0.75</i><i style="left:100%">1</i></span></div>
++    </div>
++    <figcaption>Bars: how often the judge picked the pole’s own earlier record over a random same-layer decoy, averaged over poles. Tick: the 0.80 floor <span class="src">spec §6.3</span>. Sources: the three judge_gate.json files <span class="src">journal 21 Oct 17:29Z, 17:37Z</span>. A second, harder decoy is the same-layer pole whose strongest tokens overlap most with the true pole’s <span class="src">spec §5</span>. Against it the Sonnet judge reached 0.692 here <span class="src">journal 21 Oct 17:37Z</span>, and 0.798 on the development sample’s own controls, still below 0.80 <span class="src">metrics.json, run 7</span>.</figcaption>
++  </figure>
++
++</section>
++
++<section id="q2result">
++  <h2>What the parent test found</h2>
++  <p>The judge’s final record holds 11,028 lines on the 600 development poles <span class="src">spec §12</span>. On the poles’ own controls it was right 92.4% of the time, so the test is valid. On the 1,238 late-born clusters, against random decoys, it was right 81.2% of the time. That gives p<sub>u</sub> = 0.265, with a 95% interval of 0.211–0.321 <span class="src">metrics.json, run 7</span>. The lower end is above 0.20, so the rule labels the result packing.</p>
++  <p>Birth order was the second readout. Among the 574 poles with at least two jobs, the main job was born first in 47.6% (43.6–51.7%). Across 10,000 shuffles of the birth order within each pole, 97.5% give a share of 44.9% or less. The main job is the oldest more often than chance, p = 0.0005 <span class="src">spec §11</span>. The essay expects this of a modern architecture; the spec counts it as support for recursive generalization, not as the claim itself <span class="src">spec §1, §6.4</span>.</p>
++
++  <figure class="fig" id="fig7">
++    <div class="figtitle">Figure 7. The two Q2 readouts, with the rules written before data</div>
++    <div class="scroll">
++      <svg viewBox="0 0 780 214" role="img" aria-labelledby="fig7t fig7d">
++        <title id="fig7t">Unrelated share and birth order on the 600 development poles</title>
++        <desc id="fig7d">Unrelated share p_u 0.265, interval 0.211 to 0.321, to the right of the 0.20 packing line; without clusters born at T7 or T15, 0.275, interval 0.220 to 0.332. Birth order b 0.476, interval 0.436 to 0.517, to the right of the random-order 97.5th percentile 0.449; null mean 0.414.</desc>
++        <text class="tl-t" x="60" y="14">unrelated share p_u</text>
++        <line class="tl-brace" x1="196" y1="22" x2="196" y2="78" stroke-dasharray="4 3"/>
++        <line class="tl-brace" x1="332" y1="22" x2="332" y2="78" stroke-dasharray="4 3"/>
++        <g class="tl-ax">
++          <text x="190" y="32" text-anchor="end">recursive generalization</text><text x="190" y="44" text-anchor="end">if the upper end is below</text>
++          <text x="338" y="32">packing</text><text x="338" y="44">if the lower end is above</text>
++        </g>
++        <line x1="346.8" y1="56" x2="496.3" y2="56" stroke="var(--accent)" stroke-width="2"/>
++        <circle class="tl-done" cx="420.4" cy="56" r="6"><title>p_u = 0.265, interval 0.211–0.321</title></circle>
++        <line x1="358.8" y1="68" x2="511.5" y2="68" stroke="var(--muted)" stroke-width="1.5"/>
++        <circle cx="434.0" cy="68" r="4" fill="var(--muted)"><title>Without clusters born at T7 or T15: 0.275, interval 0.220–0.332</title></circle>
++        <line class="tl-line" x1="60" y1="78" x2="740" y2="78"/>
++        <g class="tl-ax" text-anchor="middle">
++          <text x="60" y="94">0</text><text x="196" y="94">0.1</text><text x="332" y="94">0.2</text><text x="468" y="94">0.3</text><text x="604" y="94">0.4</text><text x="740" y="94">0.5</text>
++        </g>
++        <text class="tl-t" x="60" y="128">birth order b: share of poles whose main job was born first</text>
++        <rect x="60" y="138" width="338.8" height="46" fill="var(--grid)"/>
++        <text class="tl-ax" x="66" y="152">97.5% of random orderings</text>
++        <line class="tl-brace" x1="318.4" y1="138" x2="318.4" y2="184" stroke-dasharray="4 3"/>
++        <text class="tl-ax" x="312" y="178" text-anchor="end">null mean 0.414</text>
++        <line x1="367.2" y1="158" x2="552.9" y2="158" stroke="var(--accent)" stroke-width="2"/>
++        <circle class="tl-done" cx="458.9" cy="158" r="6"><title>b = 0.476, interval 0.436–0.517</title></circle>
++        <line x1="383.0" y1="171" x2="575.2" y2="171" stroke="var(--muted)" stroke-width="1.5"/>
++        <circle cx="481.6" cy="171" r="4" fill="var(--muted)"><title>Without clusters born at T7 or T15: 0.486, interval 0.443–0.527</title></circle>
++        <line x1="434.0" y1="164" x2="434.0" y2="178" stroke="var(--muted)" stroke-width="1.5"><title>The grey point’s own band ends at 0.465</title></line>
++        <line class="tl-line" x1="60" y1="184" x2="740" y2="184"/>
++        <g class="tl-ax" text-anchor="middle">
++          <text x="60" y="200">0.30</text><text x="173.3" y="200">0.35</text><text x="286.7" y="200">0.40</text><text x="400" y="200">0.45</text><text x="513.3" y="200">0.50</text><text x="626.7" y="200">0.55</text><text x="740" y="200">0.60</text>
++        </g>
++      </svg>
++    </div>
++    <figcaption>Accent points: the readouts of run 7, with 95% intervals from resampling poles. Grey points: the same readouts without the clusters born at a device boundary, T<sub>7</sub> or T<sub>15</sub>. Shaded band: birth-order shares that 97.5% of 10,000 within-pole shuffles stay at or below. The grey birth-order point has its own band, which ends at 0.465 (short grey tick) <span class="src">metrics.json, run 7</span>. On a narrow screen this figure scrolls sideways.</figcaption>
++  </figure>
++
++  <p>The other readouts:</p>
++  <ul>
++    <li><strong>Vestigial jobs.</strong> Extra jobs born no later than the main job and shrinking late in training are 3.5% of non-main clusters (2.6–4.4%). So extra jobs are not, in the main, leftovers from early training <span class="src">spec §11</span>.</li>
++    <li><strong>Replacement.</strong> In 17 poles, 2.8% of 600, the final main job is late-born and the judge was right on at most one of its four judgments <span class="src">spec §11</span>.</li>
++    <li><strong>The hard decoy.</strong> This check asks whether the judge reads more than the topic, using the same-layer pole with the most similar strongest tokens. Even on the controls, the judge beat it only 79.8% of the time, below the 0.80 floor, so the row is not measurable <span class="src">spec §11</span>. The study therefore cannot rule out that the judge partly matched records by topic.</li>
++  </ul>
++
++  <h3>Checks on the answering agents</h3>
++  <p>After the API limit, Claude Code subagents of Sonnet 5.5 answered every judge line, in chunks of up to 15, two agents at a time. Each answer was audited against the agent’s own transcript before it entered the data. A checker found that this audit gated imports only from 10:29Z on 22 Oct <span class="src">journal 24 Oct 00:12Z</span>. Four groups of answers were then answered again by fresh agents under the hardened audit:</p>
++  <ul>
++    <li>375 judge lines from 25 chunks whose agents read their input through the shell or edited answers by script; 24 answers changed <span class="src">journal 24 Oct 01:05Z</span>.</li>
++    <li>Nine judge answers that belonged to a neighbouring request; two changed <span class="src">journal 24 Oct 00:20Z</span>.</li>
++    <li>205 clustering answers: 200 whose agents read excerpts of the contexts, and five whose reading could not be audited. This moved 27 clusters into or out of the late-born set, and 78 new judge lines covered the 13 that entered <span class="src">journal 24 Oct 02:17Z</span>.</li>
++    <li>One judge line whose input never reached its agent whole, found by checking every one of the 12,370 imported requests line by line against the transcript that answered it; same verdict <span class="src">journal 24 Oct 01:50Z</span>.</li>
++  </ul>
++  <p>There were seven unblind runs: runs 4, 5 and 6 followed these corrections, and runs 2, 3 and 7 added a readout or the texts to the sample files. Across them p<sub>u</sub> stayed between 0.260 and 0.265, and no label changed <span class="src">spec §11</span>.</p>
++
++  <h3>When do the writer’s texts start to fire?</h3>
++  <p>An extra GPU run on 23 Oct scored the writer’s texts for OLMo’s audit poles at all 16 checkpoints <span class="src">journal 23 Oct 23:32Z</span>. For each pole, the reading asks when its blind maximum first reaches 0.3 of its final score. The median is T<sub>3</sub>, about 13 billion training tokens. The prediction was a curve that rises in most poles and reaches the line earlier for one-job poles <span class="src">journal 20 Oct 02:58Z</span>. Only 1.0% of per-pole curves never fall by more than 0.05, although the median curve over poles rises at every checkpoint but one. One-job poles reached the line at T<sub>4</sub> and not-understood poles at T<sub>1</sub>; but a pole whose blind maximum is weak at T<sub>15</sub> reaches 0.3 of it early, and most such poles are not understood, so this comparison is biased. Also, 111 of 598 poles were already above the line at T<sub>0</sub>, the untrained model, so for them this reading cannot separate a job forming from the random-weights floor <span class="src">RESULTS.md footnotes</span>. This reading is exploratory; no rule uses it.</p>
++
++  <h3>Predictions against the outcome</h3>
++  <p>The predictions were written before any audit or development artifact existed <span class="src">journal 20 Oct 02:58Z</span>.</p>
+   <div class="tablewrap">
+     <table>
+-      <thead><tr><th>readout</th><th>predicted</th><th>stated probability</th></tr></thead>
++      <thead><tr><th>readout</th><th>predicted</th><th>stated probability</th><th>observed</th></tr></thead>
+       <tbody>
+-        <tr><td>Unrelated share p<sub>u</sub></td><td>Recursive generalization: upper bound below 0.10</td><td class="num">0.65 (mixed 0.30, packing 0.05)</td></tr>
+-        <tr><td>Birth order: is the main job the oldest cluster?</td><td>Not reliably; inside the range random orderings give</td><td class="num">0.60</td></tr>
+-        <tr><td>Vestigial share: extra jobs born no later than the main job and shrinking after step 320,000</td><td>Below 0.30</td><td class="num">0.85</td></tr>
+-        <tr><td>Poles whose main job was replaced by an unrelated one</td><td>Fewer than 30 of 600</td><td class="num">none given</td></tr>
+-        <tr><td>OLMo audit: one job, and not understood</td><td>45–65%, and 20–40%</td><td class="num">none given</td></tr>
++        <tr><td>Unrelated share p<sub>u</sub></td><td>Recursive generalization: upper bound below 0.10</td><td class="num">0.65 (mixed 0.30, packing 0.05)</td><td>0.265 (0.211–0.321): packing</td></tr>
++        <tr><td>Birth order: is the main job the oldest cluster?</td><td>Not reliably; inside the range random orderings give</td><td class="num">0.60</td><td>0.476, above the range: the main job is oldest</td></tr>
++        <tr><td>Vestigial share: extra jobs born no later than the main job and shrinking after step 320,000</td><td>Below 0.30</td><td class="num">0.85</td><td>0.035</td></tr>
++        <tr><td>Poles whose main job was replaced by an unrelated one</td><td>Fewer than 30 of 600</td><td class="num">none given</td><td>17</td></tr>
++        <tr><td>Hard decoy: control accuracy</td><td>0.85 or more, so the row is measurable</td><td class="num">none given</td><td>0.798: not measurable</td></tr>
++        <tr><td>r(c), a late cluster’s strength at birth over the pole’s maximum</td><td>Median between 0.3 and 0.6</td><td class="num">none given</td><td>0.291</td></tr>
++        <tr><td>Center birth curve</td><td>Rises in most poles; earlier for one-job poles</td><td class="num">none given</td><td>1.0% of poles; one-job T<sub>4</sub> against not understood T<sub>1</sub></td></tr>
++        <tr><td>OLMo audit: one job, and not understood</td><td>45–65%, and 20–40%</td><td class="num">none given</td><td>51.8%, and 41.5%</td></tr>
+       </tbody>
+     </table>
+   </div>
+-  <p>The exploratory center birth curve will not be computed, because only the final checkpoint has text scores <span class="src">journal 21 Oct 01:40Z</span>.</p>
++  <p>The two headline predictions landed elsewhere, as did the hard-decoy, r(c) and center-curve predictions, and OLMo’s not-understood share sits 1.5 points above its predicted range. The study reports them as written. All of them were written for the first instrument, DeepSeek-V4.1-Flash in every agent role with prompt v2, before the change to Opus and Sonnet with prompt v3 <span class="src">journal 20 Oct 02:58Z; spec §11</span>.</p>
+ </section>
+ 
+ <section id="meaning">
+-  <h2>What each result would mean</h2>
++  <h2>What the result means</h2>
++  <p>By the rule, packing: of the jobs born after a pole’s first job, an estimated quarter, 21–32%, are unrelated to the pole’s top-20 record at the checkpoint before their birth, as far as this judge can tell. Recursive generalization, as the spec states it, allows fewer than one in ten <span class="src">spec §1</span>. In the same poles, extra jobs are rarely leftovers and wholesale replacement is rare. The two readouts do not contradict each other: by the estimate most late-born jobs have a parent in the pole, and the main job is born first more often than chance (47.6% of poles, against 41.4% under random order), but about a quarter of late-born jobs arrive without one.</p>
++  <p>The decision written before any data says: if Q2 lands for packing, the next five studies keep decomposition methods, and the neuron basis becomes one view among several <span class="src">spec §1</span>.</p>
++  <p>What the result does not settle:</p>
+   <ul>
+-    <li><strong>Recursive generalization holds.</strong> This would be the first independent, checkpoint-level evidence for the essay’s mechanism, on a 2025 open model. The next studies would use the network’s own neurons as the unit.</li>
+-    <li><strong>Packing holds.</strong> This would be the first evidence against the mechanism at this scale. The next studies would keep decomposition methods, with neurons as one view among several.</li>
+-    <li><strong>Mixed.</strong> It is reported with its point estimate. No rule is reinterpreted after unblinding <span class="src">spec §6.7</span>.</li>
+-    <li><strong>The judge fails its control.</strong> The parent test is reported as not valid. Birth order is still read.</li>
++    <li><strong>The hard-decoy row was not measurable</strong>: the judge’s control accuracy against that decoy was 0.798, below 0.80. So a judge that matches records partly by topic is not ruled out.</li>
++    <li><strong>One model and one corpus.</strong> The development test ran on OLMo-3-1025-7B only, over a 20.57M-token corpus at 16 checkpoints.</li>
++    <li><strong>The serving changed.</strong> The clusterer and judge were the gated Sonnet 5.5 with the gated prompts. The judge and 883 of the 1,200 clustering answers were served through Claude Code without constrained decoding, not through the API <span class="src">RESULTS.md footnotes</span>. The predictions had assumed a different model, DeepSeek-V4.1-Flash.</li>
+   </ul>
+-  <p>In the audit, a not-understood pole says something about the explainer and the test, never about packing <span class="src">spec §0b</span>. The models have 4 to 7 billion parameters, and the corpus is 200 times smaller than the essay’s 10 billion tokens. The study predicts it will not reach the essay’s 90 / 7 / 2–4, and it will examine any gap on the observer’s side first <span class="src">journal 20 Oct 02:58Z</span>.</p>
++  <p>In the audit, a not-understood pole says something about the explainer and the test, never about packing <span class="src">spec §0b</span>. The models have 4 to 7 billion parameters, and the corpus is 200 times smaller than the essay’s 10 billion tokens. The study predicted it would not reach the essay’s 90 / 7 / 2–4, and it did not.</p>
++</section>
++
++<section id="problems">
++  <h2>Known problems</h2>
++  <p><strong>The negative poles’ vocabulary.</strong> The explainer’s prompt shows a pole’s most promoted and most suppressed output tokens. The harvest already stores each pole in its own sign, and the explain code swaps the negative pole’s two lists a second time. So every negative pole’s prompt listed the opposite pole’s tokens. This held for all 300 negative poles of each audit model and all 60 of each discovery round, and the second reader’s prompts carry the same swap <span class="src">explain requests against vocab.json</span>. The last-layer single-token suppressor flag is computed from the swapped lists too; it flags 0 poles under either view. The error was found on 21 Oct while building the study’s data explorer (infra/pg/neurons_explore.py), and it is not in the study’s journal.</p>
++  <p>The pass rates show no clear sign of it. Over the 300 neurons of each audit model, negative poles passed 70.0%, 64.0% and 59.7% in Qwen, Gemma and OLMo, against 67.3%, 64.0% and 62.0% for positive poles; rare and declined poles count as not passing. Among neurons where only one pole passed, the positive pole was the one 47, 53 and 63 times, and the negative pole 55, 53 and 56 times. The two poles of a neuron are different objects, so this comparison neither bounds nor measures the effect; no run explained a negative pole with its own list. The prompts’ 30 top contexts and activation statistics were not affected.</p>
+ </section>
+ 
+ <section id="next">
+-  <h2>What happens next</h2>
++  <h2>Where things stand</h2>
+   <ol class="next">
+-    <li>All three audit cells are scored and wait, sealed.</li>
+-    <li>Clustering and judging run on the 40 tuning poles. The judge’s control gate is written before any of the 600 is judged.</li>
+-    <li>The 600 development poles are clustered and judged.</li>
+-    <li>Unblinding. The prediction grid is filled once, whatever the result, with audit tables per model split by explainer model.</li>
++    <li>Done: the audit, the clustering and the judge on the 600 development poles.</li>
++    <li>Done: unblinding, seven runs, every earlier one kept beside the final one <span class="src">spec §11</span>.</li>
++    <li>Done: two closeout checks by a read-only checker agent, and a re-runnable acceptance check: 15 pass, 2 pass in substance with disclosed gaps, 0 fail <span class="src">journal 24 Oct 04:20Z</span>.</li>
++    <li>Open: recording the vocabulary error, and deciding whether to explain the negative poles again with their own lists.</li>
++    <li>Open: acting on the decision rule for the next five studies.</li>
+   </ol>
+-  <p class="record">The full record, with the source artifact for every number, is the study folder’s JOURNAL.md.</p>
++  <p class="record">The full record, with the source artifact for every number, is the study folder’s JOURNAL.md; the results are in results/RESULTS.md and the instrument’s bank/w5/verdict/metrics.json.</p>
+ </section>
+ 
+ </main>

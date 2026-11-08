@@ -1,0 +1,421 @@
+{
+ "what": "N22 offline gate: both sides of every gate whose quantity a bank holds, at every one of the 16 points (the method of",
+ "items_sha256": "dbf0b2251516edeb869053c72f2c9e6fe4bab2c9250799f308fbda489bba6e69",
+ "gates": {
+  "K0": {
+   "banked": true,
+   "control_pairs": {
+    "T15_harvest_vs_m1_k0": {
+     "a": 2.675372037760417,
+     "b": 2.675372037760417,
+     "devices": [
+      "NVIDIA L40S",
+      "NVIDIA L40S"
+     ],
+     "branches": [
+      "stage1-step1413814",
+      "stage1-step1413814"
+     ],
+     "diff": 0.0
+    },
+    "t476838_start_a_vs_b": {
+     "a": 2.781479736328125,
+     "b": 2.781479736328125,
+     "devices": [
+      "NVIDIA L40S",
+      "NVIDIA L40S"
+     ],
+     "diff": 0.0
+    },
+    "T14_blackwell_vs_l40s": {
+     "a": 2.714761865234375,
+     "b": 2.714700182088216,
+     "devices": [
+      "NVIDIA RTX PRO 5000 Blackwell",
+      "NVIDIA L40S"
+     ],
+     "diff": 6.168314615884185e-05
+    }
+   },
+   "points": {
+    "0": {
+     "bank": 12.2233822265625,
+     "registered": 12.2233822265625,
+     "tol": 1e-06,
+     "gate_tier": "same",
+     "neighbour_gap": 7.6599791178385415,
+     "gap_over_tol": 7659979.117838542,
+     "fail_side_fails": true
+    },
+    "1": {
+     "bank": 4.563403108723958,
+     "registered": 4.563403108723958,
+     "tol": 1e-06,
+     "gate_tier": "same",
+     "neighbour_gap": 0.6277036783854162,
+     "gap_over_tol": 627703.6783854162,
+     "fail_side_fails": true
+    },
+    "2": {
+     "bank": 3.9356994303385417,
+     "registered": 3.9356994303385417,
+     "tol": 1e-06,
+     "gate_tier": "same",
+     "neighbour_gap": 0.2785428141276043,
+     "gap_over_tol": 278542.8141276043,
+     "fail_side_fails": true
+    },
+    "3": {
+     "bank": 3.6571566162109375,
+     "registered": 3.6571566162109375,
+     "tol": 1e-06,
+     "gate_tier": "same",
+     "neighbour_gap": 0.2146216878255207,
+     "gap_over_tol": 214621.68782552073,
+     "fail_side_fails": true
+    },
+    "4": {
+     "bank": 3.4425349283854167,
+     "registered": 3.4425349283854167,
+     "tol": 1e-06,
+     "gate_tier": "same",
+     "neighbour_gap": 0.15470209147135439,
+     "gap_over_tol": 154702.0914713544,
+     "fail_side_fails": true
+    },
+    "5": {
+     "bank": 3.2878328369140624,
+     "registered": 3.2878328369140624,
+     "tol": 1e-06,
+     "gate_tier": "same",
+     "neighbour_gap": 0.10018917643229175,
+     "gap_over_tol": 100189.17643229176,
+     "fail_side_fails": true
+    },
+    "6": {
+     "bank": 3.1876436604817706,
+     "registered": 3.1876436604817706,
+     "tol": 1e-06,
+     "gate_tier": "same",
+     "neighbour_gap": 0.09963319905598933,
+     "gap_over_tol": 99633.19905598933,
+     "fail_side_fails": true
+    },
+    "7": {
+     "bank": 3.0880104614257813,
+     "registered": 3.0880104614257813,
+     "tol": 0.01,
+     "gate_tier": "coarse",
+     "neighbour_gap": 0.07495472615559917,
+     "gap_over_tol": 7.495472615559917,
+     "fail_side_fails": true
+    },
+    "8": {
+     "bank": 3.013055735270182,
+     "registered": 3.013055735270182,
+     "tol": 0.01,
+     "gate_tier": "coarse",
+     "neighbour_gap": 0.07324323527018217,
+     "gap_over_tol": 7.324323527018217,
+     "fail_side_fails": true
+    },
+    "9": {
+     "bank": 2.9398125,
+     "registered": 2.9398125,
+     "tol": 0.01,
+     "gate_tier": "coarse",
+     "neighbour_gap": 0.043816670735676855,
+     "gap_over_tol": 4.3816670735676855,
+     "fail_side_fails": true
+    },
+    "10": {
+     "bank": 2.895995829264323,
+     "registered": 2.895995829264323,
+     "tol": 0.01,
+     "gate_tier": "coarse",
+     "neighbour_gap": 0.0456428141276044,
+     "gap_over_tol": 4.56428141276044,
+     "fail_side_fails": true
+    },
+    "11": {
+     "bank": 2.8503530151367187,
+     "registered": 2.8503530151367187,
+     "tol": 0.01,
+     "gate_tier": "coarse",
+     "neighbour_gap": 0.03392925821940107,
+     "gap_over_tol": 3.392925821940107,
+     "fail_side_fails": true
+    },
+    "12": {
+     "bank": 2.8164237569173176,
+     "registered": 2.8164237569173176,
+     "tol": 0.01,
+     "gate_tier": "coarse",
+     "neighbour_gap": 0.045618379720052005,
+     "gap_over_tol": 4.5618379720052005,
+     "fail_side_fails": true
+    },
+    "13": {
+     "bank": 2.7708053771972656,
+     "registered": 2.7708053771972656,
+     "tol": 0.01,
+     "gate_tier": "coarse",
+     "neighbour_gap": 0.05604351196289059,
+     "gap_over_tol": 5.604351196289059,
+     "fail_side_fails": true
+    },
+    "14": {
+     "bank": 2.714761865234375,
+     "registered": 2.714761865234375,
+     "tol": 0.01,
+     "gate_tier": "coarse",
+     "neighbour_gap": 0.03938982747395814,
+     "gap_over_tol": 3.938982747395814,
+     "fail_side_fails": true
+    },
+    "15": {
+     "bank": 2.675372037760417,
+     "registered": 2.675372037760417,
+     "tol": 1e-06,
+     "gate_tier": "same",
+     "neighbour_gap": 0.03938982747395814,
+     "gap_over_tol": 39389.82747395814,
+     "fail_side_fails": true
+    }
+   },
+   "pass_side_ok": true,
+   "fail_side_ok": true,
+   "summary": "pairs [0.0, 0.0, 6.1683e-05]; neighbour gap / tol min 3.4"
+  },
+  "G_REV": {
+   "banked": true,
+   "points": {
+    "0": {
+     "registered": "f129a5d178fd784d802a521d6f388c6df6988fd6",
+     "manifest": "f129a5d178fd784d802a521d6f388c6df6988fd6",
+     "hf_ref": "f129a5d178fd784d802a521d6f388c6df6988fd6"
+    },
+    "1": {
+     "registered": "d82e70ec28daa79d25405cd128e127c52bb10516",
+     "manifest": "d82e70ec28daa79d25405cd128e127c52bb10516",
+     "hf_ref": "d82e70ec28daa79d25405cd128e127c52bb10516"
+    },
+    "2": {
+     "registered": "6a238f66840f4db2deff7049b12fbc608267e14f",
+     "manifest": "6a238f66840f4db2deff7049b12fbc608267e14f",
+     "hf_ref": "6a238f66840f4db2deff7049b12fbc608267e14f"
+    },
+    "3": {
+     "registered": "9de48909b402a200848e5cba488dbfd04b6227a3",
+     "manifest": "9de48909b402a200848e5cba488dbfd04b6227a3",
+     "hf_ref": "9de48909b402a200848e5cba488dbfd04b6227a3"
+    },
+    "4": {
+     "registered": "825e84ed82eb78b1b395d0aa0164378f64544f92",
+     "manifest": "825e84ed82eb78b1b395d0aa0164378f64544f92",
+     "hf_ref": "825e84ed82eb78b1b395d0aa0164378f64544f92"
+    },
+    "5": {
+     "registered": "ebfe7b62b31bfadff464a8926a48a256c9431db7",
+     "manifest": "ebfe7b62b31bfadff464a8926a48a256c9431db7",
+     "hf_ref": "ebfe7b62b31bfadff464a8926a48a256c9431db7"
+    },
+    "6": {
+     "registered": "a1cbaea430374e12c8e7b463d33ecbf8da657dea",
+     "manifest": "a1cbaea430374e12c8e7b463d33ecbf8da657dea",
+     "hf_ref": "a1cbaea430374e12c8e7b463d33ecbf8da657dea"
+    },
+    "7": {
+     "registered": "04eeee4fa74f9f3d2cb11c31e155545dad32365e",
+     "manifest": "04eeee4fa74f9f3d2cb11c31e155545dad32365e",
+     "hf_ref": "04eeee4fa74f9f3d2cb11c31e155545dad32365e"
+    },
+    "8": {
+     "registered": "d1dbb0e2d4d3fbdc9c185a34c4e99f13ef6ae2a6",
+     "manifest": "d1dbb0e2d4d3fbdc9c185a34c4e99f13ef6ae2a6",
+     "hf_ref": "d1dbb0e2d4d3fbdc9c185a34c4e99f13ef6ae2a6"
+    },
+    "9": {
+     "registered": "08b5da69ff99e0858f18d9870ac87f43d7602cf0",
+     "manifest": "08b5da69ff99e0858f18d9870ac87f43d7602cf0",
+     "hf_ref": "08b5da69ff99e0858f18d9870ac87f43d7602cf0"
+    },
+    "10": {
+     "registered": "1d074dbc15d91544abe47d5508ac1670ef8c7129",
+     "manifest": "1d074dbc15d91544abe47d5508ac1670ef8c7129",
+     "hf_ref": "1d074dbc15d91544abe47d5508ac1670ef8c7129"
+    },
+    "11": {
+     "registered": "c515906cd0f5e30e9e2f56f5f28870c375d8bef0",
+     "manifest": "c515906cd0f5e30e9e2f56f5f28870c375d8bef0",
+     "hf_ref": "c515906cd0f5e30e9e2f56f5f28870c375d8bef0"
+    },
+    "12": {
+     "registered": "af83fc98693475b503de0a86407f0260a7281786",
+     "manifest": "af83fc98693475b503de0a86407f0260a7281786",
+     "hf_ref": "af83fc98693475b503de0a86407f0260a7281786"
+    },
+    "13": {
+     "registered": "db8c654b5cbe06311f92e86d68cd4f7d31642a5a",
+     "manifest": "db8c654b5cbe06311f92e86d68cd4f7d31642a5a",
+     "hf_ref": "db8c654b5cbe06311f92e86d68cd4f7d31642a5a"
+    },
+    "14": {
+     "registered": "cb286dcdaaf3f92b3c419dd77439078fdebffe53",
+     "manifest": "cb286dcdaaf3f92b3c419dd77439078fdebffe53",
+     "hf_ref": "cb286dcdaaf3f92b3c419dd77439078fdebffe53"
+    },
+    "15": {
+     "registered": "373bad25002f1624757a73235c5ca844c6375c25",
+     "manifest": "373bad25002f1624757a73235c5ca844c6375c25",
+     "hf_ref": "373bad25002f1624757a73235c5ca844c6375c25"
+    }
+   },
+   "hf_refs_sha256": "511db44420b34aa4e8482c4ab1a9cb5b79e832900e4ca2a5c5224b0b5ba12148",
+   "pass_side_ok": true,
+   "fail_side_ok": true,
+   "summary": "16 points"
+  },
+  "G_CFG": {
+   "banked": true,
+   "points": {
+    "0": {
+     "file": "studies/next/n22/offline_gate/hf/config_stage1-step0.json",
+     "pass": true,
+     "diff_keys": [],
+     "failing_pass": false
+    },
+    "1": {
+     "file": "studies/next/n22/offline_gate/hf/config_stage1-step1000.json",
+     "pass": true,
+     "diff_keys": [],
+     "failing_pass": false
+    },
+    "2": {
+     "file": "studies/next/n22/offline_gate/hf/config_stage1-step2000.json",
+     "pass": true,
+     "diff_keys": [],
+     "failing_pass": false
+    },
+    "3": {
+     "file": "studies/next/n22/offline_gate/hf/config_stage1-step3000.json",
+     "pass": true,
+     "diff_keys": [],
+     "failing_pass": false
+    },
+    "4": {
+     "file": "studies/next/n22/offline_gate/hf/config_stage1-step5000.json",
+     "pass": true,
+     "diff_keys": [],
+     "failing_pass": false
+    },
+    "5": {
+     "file": "studies/next/m2/offline_gate/hf/config_stage1-step8000.json",
+     "pass": true,
+     "diff_keys": [],
+     "failing_pass": false
+    },
+    "6": {
+     "file": "studies/next/m2/offline_gate/hf/config_stage1-step12000.json",
+     "pass": true,
+     "diff_keys": [],
+     "failing_pass": false
+    },
+    "7": {
+     "file": "studies/next/m2/offline_gate/hf/config_stage1-step20000.json",
+     "pass": true,
+     "diff_keys": [],
+     "failing_pass": false
+    },
+    "8": {
+     "file": "studies/next/m2/offline_gate/hf/config_stage1-step35000.json",
+     "pass": true,
+     "diff_keys": [],
+     "failing_pass": false
+    },
+    "9": {
+     "file": "studies/next/m2/offline_gate/hf/config_stage1-step60000.json",
+     "pass": true,
+     "diff_keys": [],
+     "failing_pass": false
+    },
+    "10": {
+     "file": "studies/next/m2/offline_gate/hf/config_stage1-step100000.json",
+     "pass": true,
+     "diff_keys": [],
+     "failing_pass": false
+    },
+    "11": {
+     "file": "studies/next/m2/offline_gate/hf/config_stage1-step180000.json",
+     "pass": true,
+     "diff_keys": [],
+     "failing_pass": false
+    },
+    "12": {
+     "file": "studies/next/m2/offline_gate/hf/config_stage1-step320000.json",
+     "pass": true,
+     "diff_keys": [],
+     "failing_pass": false
+    },
+    "13": {
+     "file": "studies/next/m2/offline_gate/hf/config_stage1-step560000.json",
+     "pass": true,
+     "diff_keys": [],
+     "failing_pass": false
+    },
+    "14": {
+     "file": "studies/next/m2/offline_gate/hf/config_stage1-step1000000.json",
+     "pass": true,
+     "diff_keys": [],
+     "failing_pass": false
+    },
+    "15": {
+     "file": "studies/next/m2/offline_gate/hf/config_stage1-step1413814.json",
+     "pass": true,
+     "diff_keys": [],
+     "failing_pass": false
+    }
+   },
+   "pass_side_ok": true,
+   "fail_side_ok": true,
+   "summary": "16 points"
+  },
+  "G_CORPUS": {
+   "banked": true,
+   "registered": "2aca80ca6537f46b8f60a550b4a3f2f13be2d18c5402be8f1af5c00caa86f531",
+   "corpus_record": "2aca80ca6537f46b8f60a550b4a3f2f13be2d18c5402be8f1af5c00caa86f531",
+   "pass_side_ok": true,
+   "fail_side_ok": true,
+   "summary": "16 manifests and the corpus record"
+  },
+  "G_TOK": {
+   "banked": true,
+   "tokenizer_json_sha256": [
+    "73fd5254624f39a88e3faac6a8e11300fc3c735ed37880d4f4f08db898eaecca",
+    "73fd5254624f39a88e3faac6a8e11300fc3c735ed37880d4f4f08db898eaecca"
+   ],
+   "vocab_sha256": "2f3c015ee8742712a402874d88560643d1071060e12647737928c6c1f80f2710",
+   "items_vocab_sha256": "2f3c015ee8742712a402874d88560643d1071060e12647737928c6c1f80f2710",
+   "corpus_vocab_sha256": "2f3c015ee8742712a402874d88560643d1071060e12647737928c6c1f80f2710",
+   "reencode": {
+    "items": true,
+    "ic": true,
+    "class": true
+   },
+   "pass_side_ok": true,
+   "fail_side_ok": true,
+   "summary": "all 1,200 items, 2,400 counterfactuals and every class prompt re-encode"
+  }
+ },
+ "not_banked": {
+  "I_GRAD": "no bank holds it; dry run only (tiny world)",
+  "LENS_FIDELITY": "no bank holds it; dry run only (tiny world)",
+  "I_FWD": "no bank holds it; dry run only (tiny world)",
+  "I_EDIT": "no bank holds it; dry run only (tiny world)",
+  "G_IC_ID": "no bank holds it; dry run only (tiny world)",
+  "IC (go/no-go)": "no bank holds it; dry run only (tiny world)",
+  "PC_ANS": "no bank holds it; dry run only (tiny world)",
+  "the floors RAND and SHUF": "no bank holds it; dry run only (tiny world)",
+  "DEGENERATE (bank_scan.py)": "N22 reads no pole statistic; the degenerate-pole scan has no quantity here"
+ }
+}

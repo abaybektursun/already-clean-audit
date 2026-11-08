@@ -1,0 +1,103 @@
+{
+ "points": {
+  "14": {
+   "windows": 737,
+   "grad_windows": 232,
+   "abl_rows": 451,
+   "s_center": 551,
+   "s_high": 715
+  },
+  "15": {
+   "windows": 1056,
+   "grad_windows": 0,
+   "abl_rows": 0,
+   "s_center": 366,
+   "s_high": 424
+  },
+  "13": {
+   "windows": 1081,
+   "grad_windows": 539,
+   "abl_rows": 781,
+   "s_center": 1518,
+   "s_high": 2086
+  },
+  "12": {
+   "windows": 1129,
+   "grad_windows": 594,
+   "abl_rows": 846,
+   "s_center": 972,
+   "s_high": 1309
+  },
+  "11": {
+   "windows": 948,
+   "grad_windows": 606,
+   "abl_rows": 823,
+   "s_center": 931,
+   "s_high": 1271
+  },
+  "10": {
+   "windows": 577,
+   "grad_windows": 388,
+   "abl_rows": 505,
+   "s_center": 628,
+   "s_high": 861
+  },
+  "9": {
+   "windows": 272,
+   "grad_windows": 194,
+   "abl_rows": 248,
+   "s_center": 366,
+   "s_high": 503
+  },
+  "8": {
+   "windows": 236,
+   "grad_windows": 86,
+   "abl_rows": 208,
+   "s_center": 278,
+   "s_high": 367
+  },
+  "7": {
+   "windows": 152,
+   "grad_windows": 152,
+   "abl_rows": 222,
+   "s_center": 304,
+   "s_high": 421
+  },
+  "6": {
+   "windows": 10,
+   "grad_windows": 0,
+   "abl_rows": 0,
+   "s_center": 120,
+   "s_high": 164
+  },
+  "5": {
+   "windows": 10,
+   "grad_windows": 10,
+   "abl_rows": 21,
+   "s_center": 132,
+   "s_high": 181
+  }
+ },
+ "gpu_h_center": 1.83,
+ "gpu_h_high": 2.42,
+ "window_forwards": 6208,
+ "grad_windows": 2801,
+ "abl_rows": 4105,
+ "usd_center_g6e2x": 4.1,
+ "usd_high_g6e2x": 5.42,
+ "budget_min_hard_kill": 189,
+ "rates": {
+  "per_window": [
+   0.2367,
+   0.25
+  ],
+  "grad_window": [
+   0.65,
+   1.1
+  ],
+  "fixed": [
+   116.5,
+   160.0
+  ]
+ }
+}

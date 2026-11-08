@@ -1,0 +1,17 @@
+[
+ {
+  "name": "t11",
+  "module": "infra.aws_pg.jobs.unite_route",
+  "args": "--stage route --t T_11 --revision stage1-step180000 --items s3://pg-lineage-769063704696/results/unite/inputs/7076e7e5407b/j4b_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus --window 256 --also-grad --grad-foreign"
+ },
+ {
+  "name": "t12",
+  "module": "infra.aws_pg.jobs.unite_route",
+  "args": "--stage route --t T_12 --revision stage1-step320000 --items s3://pg-lineage-769063704696/results/unite/inputs/7076e7e5407b/j4b_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus --window 256 --also-grad --grad-foreign"
+ },
+ {
+  "name": "t13",
+  "module": "infra.aws_pg.jobs.unite_route",
+  "args": "--stage route --t T_13 --revision stage1-step560000 --items s3://pg-lineage-769063704696/results/unite/inputs/7076e7e5407b/j4b_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus --window 256 --also-grad --grad-foreign"
+ }
+]

@@ -1,0 +1,27 @@
+{
+  "rental": "r_v1_7b",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:v1-7b",
+  "disk": 45,
+  "gpu_query": "gpu_ram>=24 num_gpus=1 cuda_vers>=12.8 compute_cap>=800",
+  "expected_gpu": "",
+  "bound": "overhead",
+  "_comment": "V1 ladder rung DOWN (queue: 7B -> 14B -> 32B -> 72B): Qwen2.5-7B cells (b)+(c), all 28 layers, same frozen corpus. Fourth ladder point, adjacent to the certified <=3B regime. Independent of the 72B and gemma-anchor tracks.",
+  "cells": [
+    {
+      "id": "v1_7b_smoke",
+      "module": "infra.vast.cells.smoke_stats",
+      "model_dir": "/models/Qwen_Qwen2.5-7B",
+      "probe_text": "The capital of France is"
+    },
+    {
+      "id": "v1_7b_actstats",
+      "module": "infra.vast.cells.v1_actstats",
+      "model_dir": "/models/Qwen_Qwen2.5-7B",
+      "batch": 8
+    }
+  ],
+  "watch": {
+    "load_backstop_min": 60,
+    "max_billed_h": 1
+  }
+}

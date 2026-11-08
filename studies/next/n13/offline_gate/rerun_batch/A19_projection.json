@@ -1,0 +1,40 @@
+{
+ "s2setup06": {
+  "rule": "park when projected_full_min > 0.85 x (allowance_min - elapsed_min)",
+  "path_check_wall_s": 3120.0,
+  "path_check_generations": 560,
+  "full_generations": 20000,
+  "projected_full_s": 111428.57142857142,
+  "projected_full_min": 1857.142857142857,
+  "allowance_min": 280.0,
+  "elapsed_min": 42.0,
+  "left_min": 238.0,
+  "fits_min": 202.29999999999998,
+  "parked": true
+ },
+ "batched_planted": {
+  "rule": "park when projected_full_min > 0.85 x (allowance_min - elapsed_min)",
+  "path_check_wall_s": 300.0,
+  "path_check_generations": 560,
+  "full_generations": 20000,
+  "projected_full_s": 10714.285714285714,
+  "projected_full_min": 178.57142857142856,
+  "allowance_min": 280.0,
+  "elapsed_min": 42.0,
+  "left_min": 238.0,
+  "fits_min": 202.29999999999998,
+  "parked": false
+ },
+ "subject_sizes": {
+  "algebra": 1187,
+  "counting_and_probability": 474,
+  "geometry": 479,
+  "intermediate_algebra": 903,
+  "number_theory": 540,
+  "prealgebra": 871,
+  "precalculus": 546
+ },
+ "repeats": 4,
+ "full_generations": 20000,
+ "largest_passing_wall_s_at_42_min_elapsed": 339.864
+}

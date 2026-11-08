@@ -1,0 +1,213 @@
+{
+ "arms": {
+  "s3gate1": [
+   "base",
+   "rl"
+  ],
+  "s3gate2": [
+   "zero",
+   "id"
+  ],
+  "s4armsA1": [
+   "top_k1",
+   "mlp",
+   "top_k0.3",
+   "dare_k3",
+   "dare_k0.1",
+   "comp_k3",
+   "top_k1_B"
+  ],
+  "s4armsA2": [
+   "dare_k1",
+   "top_k3",
+   "top_k0.1",
+   "dare_k0.3",
+   "comp_k1",
+   "rnd0_k1",
+   "dare_k1_d2"
+  ],
+  "s4armsB1": [
+   "rndE_k1",
+   "attn",
+   "rndT_k3",
+   "rndT_k0.3",
+   "rndT_k0.1",
+   "comp_k0.1",
+   "topF_k1"
+  ],
+  "s4armsB2": [
+   "rndT_k1",
+   "rndE_k3",
+   "rndE_k0.3",
+   "rndE_k0.1",
+   "comp_k0.3",
+   "rndT_k1_d2"
+  ]
+ },
+ "priorities": {
+  "s4armsA1": [
+   1,
+   2,
+   3,
+   4,
+   4,
+   5,
+   6
+  ],
+  "s4armsA2": [
+   1,
+   3,
+   3,
+   4,
+   5,
+   6,
+   6
+  ],
+  "s4armsB1": [
+   1,
+   2,
+   3,
+   4,
+   4,
+   5,
+   7
+  ],
+  "s4armsB2": [
+   1,
+   3,
+   4,
+   4,
+   5,
+   6
+  ]
+ },
+ "allowance": {
+  "s3gate1": [
+   241.0,
+   241.0
+  ],
+  "s3gate2": [
+   157.0,
+   157.0
+  ],
+  "s4armsA1": [
+   191.0,
+   191.0,
+   191.0,
+   191.0,
+   191.0,
+   191.0,
+   191.0
+  ],
+  "s4armsA2": [
+   191.0,
+   191.0,
+   191.0,
+   191.0,
+   191.0,
+   191.0,
+   191.0
+  ],
+  "s4armsB1": [
+   191.0,
+   191.0,
+   191.0,
+   191.0,
+   191.0,
+   191.0,
+   191.0
+  ],
+  "s4armsB2": [
+   125.0,
+   125.0,
+   125.0,
+   125.0,
+   125.0,
+   125.0
+  ]
+ },
+ "launches": {
+  "s3gate1": {
+   "min": 185.75024807863903,
+   "gpu_h": 3.0958374679773173,
+   "allowance_min": 241,
+   "arms": [
+    "base",
+    "rl"
+   ]
+  },
+  "s3gate2": {
+   "min": 120.75024807863903,
+   "gpu_h": 2.012504134643984,
+   "allowance_min": 157,
+   "arms": [
+    "zero",
+    "id"
+   ]
+  },
+  "s4armsA1": {
+   "min": 146.63450219695574,
+   "gpu_h": 2.4439083699492623,
+   "allowance_min": 191,
+   "arms": [
+    "top_k1",
+    "mlp",
+    "top_k0.3",
+    "dare_k3",
+    "dare_k0.1",
+    "comp_k3",
+    "top_k1_B"
+   ]
+  },
+  "s4armsA2": {
+   "min": 146.63450219695574,
+   "gpu_h": 2.4439083699492623,
+   "allowance_min": 191,
+   "arms": [
+    "dare_k1",
+    "top_k3",
+    "top_k0.1",
+    "dare_k0.3",
+    "comp_k1",
+    "rnd0_k1",
+    "dare_k1_d2"
+   ]
+  },
+  "s4armsB1": {
+   "min": 146.63450219695574,
+   "gpu_h": 2.4439083699492623,
+   "allowance_min": 191,
+   "arms": [
+    "rndE_k1",
+    "attn",
+    "rndT_k3",
+    "rndT_k0.3",
+    "rndT_k0.1",
+    "comp_k0.1",
+    "topF_k1"
+   ]
+  },
+  "s4armsB2": {
+   "min": 96.25937815763622,
+   "gpu_h": 1.604322969293937,
+   "allowance_min": 125,
+   "arms": [
+    "rndT_k1",
+    "rndE_k3",
+    "rndE_k0.3",
+    "rndE_k0.1",
+    "comp_k0.3",
+    "rndT_k1_d2"
+   ]
+  }
+ },
+ "s3gate2_hand_min": 120.75024807863903,
+ "setup_args": {
+  "s3gate1": "--pair pair1 --models base,rl,stage2",
+  "s3gate2": "--pair pair1 --models base,rl",
+  "s4armsA1": "--pair pair1 --models base,rl",
+  "s4armsA2": "--pair pair1 --models base,rl",
+  "s4armsB1": "--pair pair1 --models base,rl",
+  "s4armsB2": "--pair pair1 --models base,rl"
+ }
+}

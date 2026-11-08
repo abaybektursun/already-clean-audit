@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-07-19T00:38:52Z",
+  "status": "GREEN_PG1_EQUAL_TOKEN_CURRENT_GATE_AND_CRITIC_TESTS",
+  "cell_id": "pg1_equal_token_interface_seed17_discovery_v1",
+  "independent_critic_commit": "b1ad4f86b1926c7d0fda6020267672b57adf1c8f",
+  "independent_critic_sha256": "d6b03945ed389a48b764fdeef509aa22818c0051654534f789559c4ba05ee8c4",
+  "focused_current_gate_and_critic_tests_passed": 9,
+  "focused_current_gate_and_critic_tests_failed": 0,
+  "full_PARALLAX_tests_passed": 675,
+  "full_PARALLAX_tests_failed": 0,
+  "current_gate_tool": {
+    "path": "infra/vast/parallax/primary_interface_control_current_gate.py",
+    "sha256": "b261dc51f4693f1225ae242096c288348a01c3d994de98eabac6ce93a0c51f92"
+  },
+  "current_gate_tests": {
+    "path": "infra/vast/parallax/tests/test_primary_interface_control_current_gate.py",
+    "sha256": "88d35f390cdb81d5a2c0f56f2476a8422d39d89f6ebfa8a7fa711ca3f84950ac"
+  },
+  "paid_authorization": false,
+  "automatic_retry": false,
+  "claim_boundary": "TEST_AND_READ_ONLY_GATE_READINESS_ONLY_NO_MODEL_RESULT"
+}

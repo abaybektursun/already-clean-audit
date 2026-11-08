@@ -1,0 +1,42 @@
+{
+ "test_dt": {
+  "n_pairs": 67,
+  "n_real_without_twin": 4,
+  "same_layer": 67,
+  "same_k": 67,
+  "same_size": 67,
+  "same_d": 67,
+  "same_neuron": 0,
+  "same_sign": 34
+ },
+ "test_pb": {
+  "n_pairs": 70,
+  "n_real_without_twin": 1,
+  "same_layer": 70,
+  "same_k": 70,
+  "same_size": 70,
+  "same_d": 14,
+  "same_neuron": 0,
+  "same_sign": 44
+ },
+ "freeze_dt": {
+  "n_pairs": 73,
+  "n_real_without_twin": 9,
+  "same_layer": 73,
+  "same_k": 73,
+  "same_size": 73,
+  "same_d": 73,
+  "same_neuron": 0,
+  "same_sign": 38
+ },
+ "freeze_pb": {
+  "n_pairs": 79,
+  "n_real_without_twin": 3,
+  "same_layer": 79,
+  "same_k": 79,
+  "same_size": 79,
+  "same_d": 11,
+  "same_neuron": 0,
+  "same_sign": 36
+ }
+}

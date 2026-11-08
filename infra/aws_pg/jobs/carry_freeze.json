@@ -1,0 +1,57 @@
+{
+  "gate0": {
+    "tag": "carry-freeze-gate0-2026-07-13",
+    "spec_sha256": "e6b78a4a0f612bd695d859613e2443815ebe1d7f9e32da93eac955b2585098ad",
+    "utc": "2026-07-13"
+  },
+  "l": {
+    "tag": "carry-freeze-l-2026-07-13",
+    "spec_sha256": "e6b78a4a0f612bd695d859613e2443815ebe1d7f9e32da93eac955b2585098ad",
+    "utc": "2026-07-13"
+  },
+  "p": {
+    "tag": "carry-freeze-p-2026-07-13",
+    "spec_sha256": "e6b78a4a0f612bd695d859613e2443815ebe1d7f9e32da93eac955b2585098ad",
+    "utc": "2026-07-13"
+  },
+  "n": {
+    "tag": "carry-freeze-n-2026-07-13",
+    "spec_sha256": "e6b78a4a0f612bd695d859613e2443815ebe1d7f9e32da93eac955b2585098ad",
+    "utc": "2026-07-13"
+  },
+  "c_assign": {
+    "tag": "carry-freeze-c_assign-2026-07-13",
+    "spec_sha256": "e6b78a4a0f612bd695d859613e2443815ebe1d7f9e32da93eac955b2585098ad",
+    "utc": "2026-07-13"
+  },
+  "c_disc": {
+    "tag": "carry-freeze-c_disc-2026-07-13",
+    "spec_sha256": "e6b78a4a0f612bd695d859613e2443815ebe1d7f9e32da93eac955b2585098ad",
+    "utc": "2026-07-13"
+  },
+  "c_sealed": {
+    "tag": "carry-freeze-c_sealed-2026-07-13",
+    "spec_sha256": "e6b78a4a0f612bd695d859613e2443815ebe1d7f9e32da93eac955b2585098ad",
+    "utc": "2026-07-13"
+  },
+  "e": {
+    "tag": "carry-freeze-e-2026-07-13",
+    "spec_sha256": "e6b78a4a0f612bd695d859613e2443815ebe1d7f9e32da93eac955b2585098ad",
+    "utc": "2026-07-13"
+  },
+  "w2": {
+    "tag": "carry-freeze-w2-2026-07-13",
+    "spec_sha256": "e6b78a4a0f612bd695d859613e2443815ebe1d7f9e32da93eac955b2585098ad",
+    "utc": "2026-07-13"
+  },
+  "d2": {
+    "tag": "carry-freeze-d2-2026-07-13",
+    "spec_sha256": "e6b78a4a0f612bd695d859613e2443815ebe1d7f9e32da93eac955b2585098ad",
+    "utc": "2026-07-13"
+  },
+  "b2": {
+    "tag": "carry-freeze-b2-2026-07-13",
+    "spec_sha256": "e6b78a4a0f612bd695d859613e2443815ebe1d7f9e32da93eac955b2585098ad",
+    "utc": "2026-07-13"
+  }
+}

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/pg/repo/infra/aws_pg/jobs/mendel_mn13_arrangement.py", line 324, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/opt/pg/repo/infra/aws_pg/jobs/mendel_mn13_arrangement.py", line 272, in main
+    match_report["frac_matched"] >= 0.9, **match_report)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+KeyError: 'frac_matched'

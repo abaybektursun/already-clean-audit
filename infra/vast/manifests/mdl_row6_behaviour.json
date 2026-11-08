@@ -1,0 +1,36 @@
+{
+  "rental": "mdl_row6_behaviour",
+  "session": "S8",
+  "cell_id": "6:*",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+  "disk": 150,
+  "gpu_query": "gpu_name in [H100_SXM,H100_PCIE,H100_NVL] gpu_ram>=79 num_gpus=1 cuda_vers>=13.0",
+  "expected_gpu": "H100",
+  "bound": "overhead",
+  "weights_mode": "download",
+  "env": {
+    "HF_ONLINE": "1",
+    "HF_HUB_DISABLE_XET": "1"
+  },
+  "_comment": "MENDELEEV S8 row 6 (Gemma-4-31B, bf16 62.5 GB -> spec 11.2: Vast 1x H100 80 GB; one copy at a time). All behaviour columns for the row in one job (contract 5). Measurement job: rank offers by $/h (bound overhead). disk 150 = image + one 62.5 GB checkpoint in the hub cache with headroom.",
+  "cells": [
+    {
+      "id": "smoke",
+      "module": "infra.vast.cells.mdl_job",
+      "job": "infra.aws_pg.jobs.matrix_behaviour",
+      "args": "--row 6 --smoke"
+    },
+    {
+      "id": "behaviour",
+      "module": "infra.vast.cells.mdl_job",
+      "job": "infra.aws_pg.jobs.matrix_behaviour",
+      "args": "--row 6"
+    }
+  ],
+  "watch": {
+    "max_billed_h": 3,
+    "load_backstop_min": 30,
+    "progress_stall_min": 20,
+    "progress_kill_min": 45
+  }
+}

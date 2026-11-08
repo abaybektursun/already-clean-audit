@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "<stdin>", line 7, in <module>
+  File "/app/infra/pg/probe_server.py", line 446, in load
+    local, sha, rec = resolve_weights(spec, weights.get(key))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/infra/aws_pg/jobs/neuronshow.py", line 320, in resolve_weights
+    hf_online_setup()
+  File "/app/infra/pg/diff_harvest.py", line 43, in hf_online_setup
+    tok = subprocess.run(
+          ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['aws', 'ssm', 'get-parameter', '--name', '/pg-lineage/hf-token', '--with-decryption', '--query', 'Parameter.Value', '--output', 'text', '--region', 'us-east-1']' returned non-zero exit status 255.

@@ -1,0 +1,292 @@
+Source lines read for N13_SPEC.md A19 (the olmes batch size), 2026-11-05, by the third N13 executor.
+Each file was fetched raw from GitHub at the pinned commit or tag; sha256 of the fetched bytes, then the quoted lines (line number: text).
+
+== https://raw.githubusercontent.com/allenai/olmes/5a51f502d463b8cdc4a2dcad7d7096c41ff1197e/oe_eval/launch.py
+sha256 670ac38ee13e5b6bd7e96722855766d3df6f5ec8058b22aa2f2e5b5b54dbffa9
+109: _parser.add_argument("--batch-size", type=str, default=None, help="Override batch size")
+  ...
+339:     batch_size = args_dict.get("batch_size", 16)
+  ...
+349:     run_eval_args = {
+350:         "task": task_configs,
+351:         "batch-size": batch_size,
+352:         "output-dir": args_dict["output_dir"],
+  ...
+379:     run_eval_command = make_cli_command("python -m oe_eval.run_eval", run_eval_args)
+  ...
+391:     return subprocess.run(run_eval_command, shell=True).returncode
+  ...
+
+== https://raw.githubusercontent.com/allenai/olmes/5a51f502d463b8cdc4a2dcad7d7096c41ff1197e/oe_eval/utils.py
+sha256 46c5e63563f98bc35e9096bfce2d20f67a8460d07bab9839a1c82153aa98ede7
+257: def make_cli_command(command, args_dict):
+258:     # Create a command line command from a command and a dictionary of arguments
+259:     # If the value is a dictionary, it will be converted to a JSON string
+260:     output = [command]
+261:     for k, v in args_dict.items():
+262:         key = k.replace("_", "-")
+263:         if isinstance(v, bool):
+264:             if v:
+265:                 output.append(f"--{key}")
+266:         elif v is None:
+267:             continue
+  ...
+
+== https://raw.githubusercontent.com/allenai/olmes/5a51f502d463b8cdc4a2dcad7d7096c41ff1197e/oe_eval/run_eval.py
+sha256 1d90dd84e053e231732f52581ebe5b8bb62b3115be0df46e4e606b6957edb614
+138: _parser.add_argument(
+139:     "--batch-size",
+140:     type=str,
+141:     default=1,
+142:     help="batch size of requests for model processing (can be 'auto')",
+143: )
+144: _parser.add_argument(
+145:     "--max-batch-size", type=int, default=32, help="Max batch size of to try for auto batch-size"
+146: )
+  ...
+252:     if len(instances_types["generate_until"]) > 0:
+253:         requests_generate = [ins.request for ins in instances_types["generate_until"]]
+254:         output = model.generate_until_verbose(requests=requests_generate)
+  ...
+337:     compute_config["batch_size"] = args_dict.pop("batch_size")
+338:     compute_config["max_batch_size"] = args_dict.pop("max_batch_size")
+  ...
+650:         model_load_config = model_config.copy()
+651:         model_load_config["batch_size"] = compute_config["batch_size"]
+652:         model_load_config["max_batch_size"] = compute_config["max_batch_size"]
+  ...
+660:             eval_model = load_model(model_load_config)
+  ...
+
+== https://raw.githubusercontent.com/allenai/olmes/5a51f502d463b8cdc4a2dcad7d7096c41ff1197e/oe_eval/utilities/model_utils.py
+sha256 b4935966cb1050338853d4a67efed9ddd2df31ca7b3ed200f900e212a700d805
+89:     elif model_type == "vllm":
+90:         model_class = VLLM_Verbose
+  ...
+98:     model = model_class(
+99:         pretrained=pretrained,
+100:         **model_load_config_other,
+101:     )
+  ...
+
+== https://raw.githubusercontent.com/allenai/olmes/5a51f502d463b8cdc4a2dcad7d7096c41ff1197e/oe_eval/models/eleuther_vllm_causallms.py
+sha256 1f96bb3251dca8110b5de630345966357b0543fe6cfe8fdb1c0e638ce99c9b0d
+85:         super().__init__(pretrained, device=device, **kwargs)
+  ...
+152:         re_ords = Collator(requests_tup, _collate_gen, group_by="gen_kwargs")
+153:         chunks = re_ords.get_batched(
+154:             n=int(self.batch_size) if self.batch_size != "auto" else 0, batch_fn=None
+155:         )
+  ...
+186:             eos = self.tokenizer.decode(self.eot_token_id)
+187:             if not until:
+188:                 until = [eos]
+189:             else:
+190:                 until.append(eos)
+  ...
+196:             truncate_context = kwargs.pop("truncate_context", True)
+  ...
+200:                 # set the max length in tokens of inputs ("context_enc")
+201:                 # max len for inputs = max length, minus room to generate the max new tokens
+202:                 max_ctx_len = self.max_length - max_gen_toks
+  ...
+231:             context_encoding_trunc = [x[-max_ctx_len:] for x in context_encoding]
+  ...
+233:             kwargs["logprobs"] = 1  # oe-eval: always return logprobs
+  ...
+243:             cont = self._model_generate(
+244:                 requests=context_encoding_trunc,
+245:                 generate=True,
+246:                 max_tokens=max_gen_toks,
+247:                 stop=until,
+248:                 **kwargs,
+249:             )
+  ...
+
+== https://raw.githubusercontent.com/allenai/olmes/5a51f502d463b8cdc4a2dcad7d7096c41ff1197e/oe_eval/tasks/base_task.py
+sha256 73956e5aae4cfa747a816018e6edfb07b0f17fdb3defec1706d0e4b7a44946ad
+250:         # manage repeats outside the generation call (`num_return_sequences`) to control OOM errors
+251:         repeats = cast(int, generation_kwargs.pop("repeats", 1))
+252:         generation_seeds = generation_kwargs.pop("generation_seeds", None)
+  ...
+307:         for i in range(repeats):
+308:             if generation_seeds is not None:
+  ...
+
+== https://raw.githubusercontent.com/allenai/olmes/5a51f502d463b8cdc4a2dcad7d7096c41ff1197e/oe_eval/configs/tasks.py
+sha256 a2e63e044af9b9fc47949647839852aeb435292319d6e0ebb14dddaf21edcfe7
+4696:     TASK_CONFIGS[f"minerva_math_{task_type}::olmes:n4:v2"] = {
+4697:         "task_name": f"minerva_math_{task_type}",
+4698:         "split": "test",
+4699:         "primary_metric": "pass_at_1",
+4700:         "num_shots": 4,
+4701:         "fewshot_source": "Minerva:MATH:fixed",
+4702:         "generation_kwargs": {
+4703:             "max_gen_toks": 1024,
+4704:             "temperature": 0.6,
+4705:             "top_p": 0.6,
+4706:             "do_sample": True,
+4707:             "stop_sequences": ["Problem:", "\n\n"],
+4708:             "repeats": 4,
+4709:         },
+4710:         "metric_kwargs": {
+4711:             "pass_at_ks": [1, 2, 4],
+4712:             "maj_at_ks": [1, 2, 4],
+4713:         },
+4714:     }
+  ...
+
+== https://raw.githubusercontent.com/allenai/olmes/5a51f502d463b8cdc4a2dcad7d7096c41ff1197e/oe_eval/tasks/oe_eval_tasks/minerva_math.py
+sha256 ba5715b9ad37477337a097de7e7a479a7a6920f9fe0551fc4718dfe6f0e656ee
+80:         "generation_kwargs": {
+81:             "max_gen_toks": 1024,
+82:             "temperature": 0.0,
+83:             "do_sample": False,
+84:             "stop_sequences": ["Problem:", "\n\n"],
+85:         },
+  ...
+
+== https://raw.githubusercontent.com/EleutherAI/lm-evaluation-harness/v0.4.3/lm_eval/models/vllm_causallms.py
+sha256 70dbe2685bef0d52e361f72db54bd84ab1a988390dfb54e0c630222100f1e16e
+54:         batch_size: Union[str, int] = 1,
+55:         max_batch_size=None,
+  ...
+94:             "seed": int(seed),
+  ...
+97:         self.batch_size = (
+98:             "auto"
+99:             if isinstance(batch_size, str) and "auto" in batch_size
+100:             else batch_size
+101:         )
+  ...
+234:             kwargs = self.modify_gen_kwargs(kwargs)
+235:             sampling_params = SamplingParams(max_tokens=max_tokens, stop=stop, **kwargs)
+  ...
+267:             outputs = self.model.generate(
+268:                 prompt_token_ids=requests,
+269:                 sampling_params=sampling_params,
+270:                 use_tqdm=True if self.batch_size == "auto" else False,
+271:                 lora_request=self.lora_request,
+272:             )
+273:         else:
+274:             outputs = self.model.generate(
+275:                 prompt_token_ids=requests,
+276:                 sampling_params=sampling_params,
+277:                 use_tqdm=True if self.batch_size == "auto" else False,
+278:             )
+  ...
+527:     def modify_gen_kwargs(kwargs: dict) -> dict:
+528:         # sampling_params
+529:         do_sample = kwargs.pop("do_sample", None)
+530:         if do_sample is False and "temperature" not in kwargs:
+531:             eval_logger.debug(
+532:                 "Got `do_sample=False` and no temperature value, setting VLLM temperature to 0.0 ..."
+533:             )
+534:             kwargs["temperature"] = 0.0
+535:         # hf defaults
+536:         kwargs["skip_special_tokens"] = kwargs.get("skip_special_tokens", False)
+537:         kwargs["spaces_between_special_tokens"] = kwargs.get(
+538:             "spaces_between_special_tokens", False
+539:         )
+540:         return kwargs
+  ...
+
+== https://raw.githubusercontent.com/EleutherAI/lm-evaluation-harness/v0.4.3/lm_eval/models/utils.py
+sha256 83027950fcaf348a640aa054c5ec423b6e63675203214fbf57a261bee0d916a1
+398:     def get_batched(self, n: int = 1, batch_fn: Optional[Callable] = None) -> Iterator:
+  ...
+419:         if self._group_by == "gen_kwargs":
+420:             for (
+421:                 key,
+422:                 values,
+423:             ) in self._arr_with_indices.items():  # type: ignore
+424:                 values = self._reorder(values)
+425:                 batch = self.get_chunks(values, n=n, fn=batch_fn)
+426:                 yield from batch
+  ...
+612:         arr = []
+613:         _iter = tuple(_iter)
+614:         for i, x in enumerate(_iter):
+615:             arr.append(x)
+616:             if len(arr) == (fn(i, _iter) if fn else n):
+617:                 yield arr
+618:                 arr = []
+619: 
+620:         if arr:
+621:             yield arr
+  ...
+
+== https://raw.githubusercontent.com/vllm-project/vllm/v0.11.0/vllm/entrypoints/llm.py
+sha256 ee4a1ae908f6e04b822c8ef55bb1ecff89a781cee90944a3d989e85286b6489a
+335:     def generate(
+336:         self,
+337:         prompts: Union[PromptType, Sequence[PromptType]],
+338:         sampling_params: Optional[Union[SamplingParams,
+339:                                         Sequence[SamplingParams]]] = None,
+340:         *,
+341:         use_tqdm: Union[bool, Callable[..., tqdm]] = True,
+342:         lora_request: Optional[Union[list[LoRARequest], LoRARequest]] = None,
+343:         priority: Optional[list[int]] = None,
+344:     ) -> list[RequestOutput]:
+  ...
+393:         self._validate_and_add_requests(
+394:             prompts=prompts,
+395:             params=sampling_params,
+396:             use_tqdm=use_tqdm,
+397:             lora_request=lora_request,
+398:             priority=priority,
+399:         )
+400: 
+401:         outputs = self._run_engine(use_tqdm=use_tqdm)
+  ...
+1502:         for i, prompt in enumerate(it):
+1503: 
+1504:             if isinstance(prompt, dict):
+1505:                 self._validate_mm_data_and_uuids(
+1506:                     prompt.get("multi_modal_data"),
+1507:                     prompt.get("multi_modal_uuids"))
+1508: 
+1509:             param = params[i] if isinstance(params, Sequence) else params
+1510: 
+1511:             tokenization_kwargs: dict[str, Any] = {}
+1512:             _validate_truncation_size(model_config.max_model_len,
+1513:                                       param.truncate_prompt_tokens,
+1514:                                       tokenization_kwargs)
+1515: 
+1516:             self._add_request(
+1517:                 prompt,
+1518:                 params[i] if isinstance(params, Sequence) else params,
+1519:                 tokenization_kwargs=tokenization_kwargs,
+1520:                 lora_request=lora_request[i] if isinstance(
+1521:                     lora_request, Sequence) else lora_request,
+1522:                 priority=priority[i] if priority else 0,
+1523:             )
+  ...
+1599:         while self.llm_engine.has_unfinished_requests():
+1600:             step_outputs = self.llm_engine.step()
+  ...
+1626:         # Sort the outputs by request ID.
+1627:         # This is necessary because some requests may be finished earlier than
+1628:         # its previous requests.
+1629:         return sorted(outputs, key=lambda x: int(x.request_id))
+  ...
+
+== https://raw.githubusercontent.com/vllm-project/vllm/v0.11.0/vllm/engine/arg_utils.py
+sha256 2238ade872b5f7478330fa9ca1214389520e08991582090e3e03e2feabcf95ac
+1560:             if self.enable_prefix_caching is None:
+1561:                 self.enable_prefix_caching = True
+  ...
+1605:         if device_memory >= 70 * GiB_bytes and "a100" not in device_name:
+  ...
+1614:             }
+1615:         else:
+1616:             # TODO(woosuk): Tune the default values for other hardware.
+1617:             default_max_num_batched_tokens = {
+1618:                 UsageContext.LLM_CLASS: 8192,
+1619:                 UsageContext.OPENAI_API_SERVER: 2048,
+1620:             }
+1621:             default_max_num_seqs = {
+1622:                 UsageContext.LLM_CLASS: 256,
+1623:                 UsageContext.OPENAI_API_SERVER: 256,
+1624:             }
+  ...

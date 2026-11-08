@@ -1,0 +1,63 @@
+{
+ "n_checks": 100,
+ "n_failed": 0,
+ "failed": [],
+ "room": {
+  "0.25": 0.7,
+  "0.5": 1.0,
+  "1.0": 1.0
+ },
+ "projection": {
+  "center": {
+   "per_point_full_s": 3572,
+   "per_point_accuracy_s": 229,
+   "per_point_n25_s": 2450,
+   "forwards_full_point": 63056,
+   "L1_h": 1.05,
+   "L2_h": 1.01,
+   "L3_h": 5.39,
+   "total_h": 7.46
+  },
+  "high": {
+   "per_point_full_s": 6119,
+   "per_point_accuracy_s": 365,
+   "per_point_n25_s": 3747,
+   "forwards_full_point": 63056,
+   "L1_h": 1.76,
+   "L2_h": 1.58,
+   "L3_h": 8.94,
+   "total_h": 12.29
+  },
+  "L1_kill_min": 138,
+  "L2_kill_min": 124,
+  "L3_kill_min": 698,
+  "usd_per_h": 2.24,
+  "usd": {
+   "center": 16.71,
+   "high": 27.53
+  },
+  "assumptions": {
+   "n_answered_per_full_point": 400,
+   "class_prompts": 5056,
+   "rates": {
+    "center": {
+     "dl_s": 82,
+     "load_s": 60,
+     "k0_s": 15,
+     "lens_prompt_s": 78,
+     "fwd_s": 0.018,
+     "boot_s": 224
+    },
+    "high": {
+     "dl_s": 192,
+     "load_s": 60,
+     "k0_s": 15,
+     "lens_prompt_s": 120,
+     "fwd_s": 0.04,
+     "boot_s": 224
+    }
+   },
+   "sources": "download 76 MB/s (M1 K0) to 178-321 MB/s (M2 score-06); fixed and boot from N12 score-02; lens per prompt from N12's measured 0.5832 s per 2,049-token gradient window scaled by FLOPs (an estimate); fp32 forward of 63 tokens an estimate"
+  }
+ }
+}

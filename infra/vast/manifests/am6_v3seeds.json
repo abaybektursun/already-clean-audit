@@ -1,0 +1,45 @@
+{
+  "rental": "am6_v3seeds",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:v1-anchor-gemma2b",
+  "disk": 30,
+  "gpu_query": "gpu_ram>=88 num_gpus=1 cuda_vers>=12.8 compute_cap>=800",
+  "expected_gpu": "",
+  "bound": "compute",
+  "env": {
+    "HF_ONLINE": "1"
+  },
+  "_comment": "AM-6: two NEW minibatch seeds on the banked V3 batch ladder. The banked cell drew from default_rng(2026+B), so the seed was a function of the rung and 'another seed' was inexpressible; sample_seed makes it an argument (default reproduces the bank). Runs only if its $0 SINKFORM retrodiction pre-gate says RUN.",
+  "cells": [
+    {
+      "id": "am6_smoke",
+      "module": "infra.vast.cells.v3_batchdial",
+      "model_dir": "/models/google_gemma-2b",
+      "banks_s3": "s3://pg-lineage-769063704696/results/shackleton_census_g2b/out/banks/",
+      "batch_ladder": "2,4",
+      "n_steps": 4,
+      "sample_seed": 3001
+    },
+    {
+      "id": "am6_seed3001",
+      "module": "infra.vast.cells.v3_batchdial",
+      "model_dir": "/models/google_gemma-2b",
+      "banks_s3": "s3://pg-lineage-769063704696/results/shackleton_census_g2b/out/banks/",
+      "batch_ladder": "2,8,32",
+      "n_steps": 60,
+      "sample_seed": 3001
+    },
+    {
+      "id": "am6_seed3002",
+      "module": "infra.vast.cells.v3_batchdial",
+      "model_dir": "/models/google_gemma-2b",
+      "banks_s3": "s3://pg-lineage-769063704696/results/shackleton_census_g2b/out/banks/",
+      "batch_ladder": "2,8,32",
+      "n_steps": 60,
+      "sample_seed": 3002
+    }
+  ],
+  "watch": {
+    "load_backstop_min": 45,
+    "max_billed_h": 4
+  }
+}

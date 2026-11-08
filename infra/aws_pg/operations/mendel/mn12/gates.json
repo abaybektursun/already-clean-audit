@@ -1,0 +1,17 @@
+{
+  "mn12_colenergy_consensus_agrees_with_the_eigen_kernel": {
+    "_required": false,
+    "median_agreement": 0.3333333333333333,
+    "note": "RECORDED. The re-draw is over COLUMN ENERGY because per-fine-tune Grams are not banked; the banked kernel is an EIGENBASIS. How much the two constructions agree is reported before asking whether one is stable",
+    "ok": false
+  },
+  "mn12_kernel_stable_across_redraws": {
+    "_required": false,
+    "bar": 0.5,
+    "haar_floor": 0.0,
+    "median_agreement": 0.45454545454545453,
+    "n_cells": 108,
+    "n_stable": 38,
+    "ok": false
+  }
+}

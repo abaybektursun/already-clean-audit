@@ -1,0 +1,17 @@
+[
+ {
+  "name": "gen_P256",
+  "module": "studies.reproductions.instruments_e2.code.jobs.instruments_e2",
+  "args": "--stage gen --arm P256 --items s3://pg-lineage-769063704696/results/instruments/e2/inputs/e2_items.json --rankings-s3 s3://pg-lineage-769063704696/results/instruments/e2/1/out/rank/rankings.npz"
+ },
+ {
+  "name": "gen_R_norm",
+  "module": "studies.reproductions.instruments_e2.code.jobs.instruments_e2",
+  "args": "--stage gen --arm R_norm --items s3://pg-lineage-769063704696/results/instruments/e2/inputs/e2_items.json --rankings-s3 s3://pg-lineage-769063704696/results/instruments/e2/1/out/rank/rankings.npz"
+ },
+ {
+  "name": "gen_R_KL",
+  "module": "studies.reproductions.instruments_e2.code.jobs.instruments_e2",
+  "args": "--stage gen --arm R_KL --items s3://pg-lineage-769063704696/results/instruments/e2/inputs/e2_items.json --rankings-s3 s3://pg-lineage-769063704696/results/instruments/e2/1/out/rank/rankings.npz"
+ }
+]

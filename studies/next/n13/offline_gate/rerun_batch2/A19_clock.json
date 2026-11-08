@@ -1,0 +1,27 @@
+{
+ "pipeline_status": {
+  "started_utc": "2026-11-05T21:42:04Z",
+  "n_steps": 1,
+  "state": "complete",
+  "completed": 1,
+  "steps": [
+   {
+    "i": 0,
+    "name": "probe",
+    "module": "n13_clock_probe",
+    "args": "",
+    "state": "ok",
+    "returncode": 0
+   }
+  ]
+ },
+ "probe": {
+  "launch_t0": 1793914924.0,
+  "now": 1793914924.156812,
+  "steps_json_mtime": 1793911324.111203
+ },
+ "dryrun_time_before_launch": 1793914924.111265,
+ "elapsed_min_new_clock": 0.0026135325431823732,
+ "elapsed_min_old_clock": 60.00076014995575,
+ "launch_t0_minus_launch_s": -0.11126494407653809
+}

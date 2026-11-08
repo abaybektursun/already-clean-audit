@@ -1,0 +1,212 @@
+{
+ "base/gsm8k": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s3banks/base/base/gsm8k",
+  "status": "done",
+  "generations_sha256": "e35fa07001d9c246015ad8cccb98f84469bb189133e3e8c0ce7966f7b73f262a"
+ },
+ "base/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s3banks/base/base/math500",
+  "status": "done",
+  "generations_sha256": "d6a54809c0ca33e289e54accaddddb6ff270f69ae6e98d5262d99039c9d73913"
+ },
+ "rl/gsm8k": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s3banks/rl/rl/gsm8k",
+  "status": "done",
+  "generations_sha256": "3d8b9e0dd1caf01af3bf503c802dc235a456ede8cbb434af09450f711de13d23"
+ },
+ "rl/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s3banks/rl/rl/math500",
+  "status": "done",
+  "generations_sha256": "1e7c6bf90f93a1915388fbbf6c97928fbd7881068240b1bff798821586b88b6f"
+ },
+ "zero/gsm8k": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s3banks/zero/zero/gsm8k",
+  "status": "done",
+  "generations_sha256": "87e91124386b1f4e19cb43b5b900795f17387d0c87d226644e3edb26842e04ec"
+ },
+ "zero/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s3banks/zero/zero/math500",
+  "status": "done",
+  "generations_sha256": "aee78314216bddeffb18c5ce5933149fa1d952601bdfc48a7d1ef6450836a70a"
+ },
+ "id/gsm8k": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s3banks/id/id/gsm8k",
+  "status": "done",
+  "generations_sha256": "417eef6e37967fb82cae61e8596b4bd31b08f71810bc7ed5d47a8e3917736fce"
+ },
+ "id/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s3banks/id/id/math500",
+  "status": "done",
+  "generations_sha256": "326263fa6ea4f216d558d0e837904bcd7607bfe89c58f72bbb5d37db05c1cdcd"
+ },
+ "dare_k1/gsm8k": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsA2-01/dare_k1/dare_k1/gsm8k",
+  "status": "done",
+  "generations_sha256": "ed0c00d32d84895681cebf08f469b96026692327ce9121ebb23c98ad087dd390"
+ },
+ "dare_k1/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsA2-01/dare_k1/dare_k1/math500",
+  "status": "done",
+  "generations_sha256": "9e3bc08837b27be070c97986b8923e33797d76abc710fc0e253052f503405ae7"
+ },
+ "top_k3/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsA2-01/top_k3/top_k3/math500",
+  "status": "done",
+  "generations_sha256": "b67b345ac2526d54bf31572d4100a9df82d3bdca22228d1e0feb8a501483624d"
+ },
+ "top_k0.1/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsA2-01/top_k0.1/top_k0.1/math500",
+  "status": "done",
+  "generations_sha256": "225801748f17e10ae4b83c404924c182dd4c38c3632bc91f7538cc97b5eea932"
+ },
+ "dare_k0.3/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsA2-01/dare_k0.3/dare_k0.3/math500",
+  "status": "done",
+  "generations_sha256": "bb9603c400b88d8a7d43e7eb7e7b4fa3ee19e320ca1ff28c77cf447b874115ac"
+ },
+ "comp_k1/gsm8k": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsA2-01/comp_k1/comp_k1/gsm8k",
+  "status": "done",
+  "generations_sha256": "d5737f55a6d0988e888e7fb67825e933510d386a98d5abdbff345e32e0de9a7b"
+ },
+ "comp_k1/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsA2-01/comp_k1/comp_k1/math500",
+  "status": "done",
+  "generations_sha256": "0bf8055202195b438cfa3664e592599beceefe13c1af9e1f00db51420c94074f"
+ },
+ "rnd0_k1/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsA2-01/rnd0_k1/rnd0_k1/math500",
+  "status": "done",
+  "generations_sha256": "448bfb48655fdd3516f2775fdc130bccf9bd7c7dbe14ade51989e13dcb730974"
+ },
+ "dare_k1_d2/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsA2-01/dare_k1_d2/dare_k1_d2/math500",
+  "status": "done",
+  "generations_sha256": "a42240861bbdb82a24f08c943d50cdceeafda73e044144fe66c6eb1c959e8773"
+ },
+ "top_k1/gsm8k": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsA1-01/top_k1/top_k1/gsm8k",
+  "status": "done",
+  "generations_sha256": "6274b2208fea8073b58906da0ad79d9c80da2089e5fd5d4a6d7cbf2656feae0e"
+ },
+ "top_k1/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsA1-01/top_k1/top_k1/math500",
+  "status": "done",
+  "generations_sha256": "d9b2b9bee5c1e35a8c63f56a9453dd19b79edcafc7ec2f2dba833b5568b7e19c"
+ },
+ "mlp/gsm8k": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsA1-01/mlp/mlp/gsm8k",
+  "status": "done",
+  "generations_sha256": "dc7ae50b4363725766f3cec5699cf2c4dd31639dd461e8451c27d410a03f6a2d"
+ },
+ "mlp/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsA1-01/mlp/mlp/math500",
+  "status": "done",
+  "generations_sha256": "51c62e10e9b5600415e7f7ee5455d1119a30a844c3cd9a63bfc14f6c4023e12d"
+ },
+ "top_k0.3/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsA1-01/top_k0.3/top_k0.3/math500",
+  "status": "done",
+  "generations_sha256": "b4d61bb3840345fc44a416967ac5212aa94db8d62605cc2004f5fdc8ab5b7d8d"
+ },
+ "dare_k3/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsA1-01/dare_k3/dare_k3/math500",
+  "status": "done",
+  "generations_sha256": "8057373e4badcc846f7aa40e741ec00c58a608bd5c15198fda7e762a3e1e7760"
+ },
+ "dare_k0.1/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsA1-01/dare_k0.1/dare_k0.1/math500",
+  "status": "done",
+  "generations_sha256": "85fef08cf0fdcce49b2296fd2042ad05e7c7eaa46e0bec0b94b1b9a8675ac009"
+ },
+ "comp_k3/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsA1-01/comp_k3/comp_k3/math500",
+  "status": "done",
+  "generations_sha256": "ccd927ac4b3e7529b3a27fd303f7bbb01ec1bd9a9fed5863d0a14b315f66a54e"
+ },
+ "top_k1_B/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsA1-01/top_k1_B/top_k1_B/math500",
+  "status": "done",
+  "generations_sha256": "db238c80a08213326a4b194d0b5a1e5acd4bc987e9d8a095083dee8b8f761e0f"
+ },
+ "rndT_k1/gsm8k": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsB2-01/rndT_k1/rndT_k1/gsm8k",
+  "status": "done",
+  "generations_sha256": "eab11766393bb0e46418ab83c1db2dca47ae9059912cf5e6d5b6051f456b47f4"
+ },
+ "rndT_k1/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsB2-01/rndT_k1/rndT_k1/math500",
+  "status": "done",
+  "generations_sha256": "72d6ec5e67c7e8cf37c4e1f9516d08db35b42a9ab25b28d4be3cd95ff7cce3c3"
+ },
+ "rndE_k1/gsm8k": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsB1-02/rndE_k1/rndE_k1/gsm8k",
+  "status": "done",
+  "generations_sha256": "b382a9e4151b1724828dc7d6c7eacad2b991651f5e004116d01c1421a5563fd9"
+ },
+ "rndE_k1/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsB1-02/rndE_k1/rndE_k1/math500",
+  "status": "done",
+  "generations_sha256": "5c9d6714a732041f3ef1e24ba248f3f60880efaac8b0fdcd950d9b2b0577145a"
+ },
+ "attn/gsm8k": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsB1-02/attn/attn/gsm8k",
+  "status": "done",
+  "generations_sha256": "abd0cd705f3814d2040533de093410b44e5cb650033e78c101a7f9d40abf6716"
+ },
+ "attn/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsB1-02/attn/attn/math500",
+  "status": "done",
+  "generations_sha256": "f96b162f2ff9b9aa3004f765f606434f97812fbad6028d7193b31efcc182ea6f"
+ },
+ "rndT_k3/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsB1-02/rndT_k3/rndT_k3/math500",
+  "status": "done",
+  "generations_sha256": "74eb89c995e9600638bf4f5bd08b7e561e9270a1eba2cc6df83cc9189e3cdf97"
+ },
+ "rndT_k0.3/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsB1-02/rndT_k0.3/rndT_k0.3/math500",
+  "status": "done",
+  "generations_sha256": "06b037fc0a9f157a502659c389344414cd45ad05a0a92da557c83528cdc83ae6"
+ },
+ "rndT_k0.1/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsB1-02/rndT_k0.1/rndT_k0.1/math500",
+  "status": "done",
+  "generations_sha256": "ed8a5182d86a66f7c731158a4b90ca2c66880a392ffd19a89fe21c70419c04cc"
+ },
+ "comp_k0.1/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsB1-02/comp_k0.1/comp_k0.1/math500",
+  "status": "done",
+  "generations_sha256": "e5664f2f5988f3d1a064f8b8c951d12f29d64651d397473feb1d1f57b88b1fe2"
+ },
+ "topF_k1/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsB1-02/topF_k1/topF_k1/math500",
+  "status": "done",
+  "generations_sha256": "62cdaea203cfb2e6645cb766f3899efc0da3dbb892a1ef2519ed7e21ff7fdadb"
+ },
+ "rndE_k3/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsB2-02/rndE_k3/rndE_k3/math500",
+  "status": "done",
+  "generations_sha256": "27450cd9743182914d304a0d1fbb6d5f7decf491668289bcfaeacf6eafc45cc5"
+ },
+ "rndE_k0.3/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsB2-02/rndE_k0.3/rndE_k0.3/math500",
+  "status": "done",
+  "generations_sha256": "2b5c323e4a3f2e0445eeff22f0b1772f19127caf3d38d0f2f3b93f278ba4bc3e"
+ },
+ "rndE_k0.1/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsB2-02/rndE_k0.1/rndE_k0.1/math500",
+  "status": "done",
+  "generations_sha256": "9dc784601c2c91c4b58405496805c9b811cd692766380b8aaa77d5c06f49317a"
+ },
+ "comp_k0.3/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsB2-02/comp_k0.3/comp_k0.3/math500",
+  "status": "done",
+  "generations_sha256": "e9c27324edc516e22d8c70a9337765084fba582e3b2b6aab2face47224af4ad2"
+ },
+ "rndT_k1_d2/math500": {
+  "source": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/s4banks/s4armsB2-02/rndT_k1_d2/rndT_k1_d2/math500",
+  "status": "done",
+  "generations_sha256": "1e684c8dee70d3161f730b22e82be1935072034d69e0741f51f8da3f9bf53937"
+ }
+}

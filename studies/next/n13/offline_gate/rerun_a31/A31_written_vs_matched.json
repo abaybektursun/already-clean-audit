@@ -1,0 +1,39 @@
+{
+ "pre_A31": {
+  "matched_sq": 1.1252463099126716e-05,
+  "written_sq": 1.1252463099126724e-05,
+  "exact_equal": false,
+  "tensors_equal": true,
+  "reread_equal": true
+ },
+ "A31": {
+  "written_sq": 1.1252463099126724e-05,
+  "matched_sq": 1.1252463099126716e-05,
+  "rel_diff": 7.52753365900873e-16,
+  "tol": 1e-12,
+  "energy_pass": true,
+  "n_tensors": 355,
+  "n_tensors_differ": 0,
+  "tensors_differ": [],
+  "pass": true
+ },
+ "wrong_input_one_step": {
+  "tensor": "model.layers.0.mlp.gate_proj.weight",
+  "returncode": 1,
+  "last_stderr_line": "AssertionError: ('A31: the written arm differs from the matched build', {'written_sq': 1.1252463099126724e-05, 'matched_sq': 1.1252463099126716e-05, 'rel_diff': 7.52753365900873e-16, 'tol': 1e-12, 'energy_pass': True, 'n_tensors': 355, 'n_tensors_differ': 1, 'tensors_differ': ['model.layers.0.mlp.gate_proj.weight'], 'pass': False})",
+  "a31": {
+   "written_sq": 1.1252463099126724e-05,
+   "matched_sq": 1.1252463099126716e-05,
+   "rel_diff": 7.52753365900873e-16,
+   "tol": 1e-12,
+   "energy_pass": true,
+   "n_tensors": 355,
+   "n_tensors_differ": 1,
+   "tensors_differ": [
+    "model.layers.0.mlp.gate_proj.weight"
+   ],
+   "pass": false
+  },
+  "energy_part_alone_at_1e-6_fails": false
+ }
+}

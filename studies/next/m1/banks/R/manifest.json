@@ -1,0 +1,296 @@
+{
+ "model_key": "O7",
+ "repo": "allenai/Olmo-3-1025-7B",
+ "revision": "34e13d5fae4d1aacf4aa019c377a332ed09ff136",
+ "branch": "stage2-step47684-mix-round5-from-2T-ckpt",
+ "transformers": "5.9.0",
+ "torch": "2.12.0+cu130",
+ "act_fn": "SiLUActivation",
+ "act_fn_measured": "silu",
+ "model_type": "olmo3",
+ "model_class": "Olmo3ForCausalLM",
+ "n_layers": 32,
+ "width": 11008,
+ "hidden": 4096,
+ "dtype": "torch.bfloat16",
+ "attn": "sdpa",
+ "corpus_manifest_sha256": "0c99a8e86856f1d94f08535b252d541f2ab18c4cbcb486c9e4993d6eb70a305c",
+ "tokname": "olmo3",
+ "tokens_sha256": "2aca80ca6537f46b8f60a550b4a3f2f13be2d18c5402be8f1af5c00caa86f531",
+ "bos_id": 100257,
+ "n_tokens_scored": 20560068,
+ "n_tokens_windowed": 20570112,
+ "excluded_positions": "BOS and window position 0",
+ "probe_excluded_positions": null,
+ "probe_rule": null,
+ "max_tokens_arg": 20570743,
+ "n_windows": 10044,
+ "batch": 8,
+ "window": 2048,
+ "topk_K": 50,
+ "poles_K": 1000,
+ "hist_edges": {
+  "lo_log10": -6.0,
+  "hi_log10": 4.0,
+  "bins": 400,
+  "below_lo": "bin 0",
+  "at_or_above_hi": "bin B-1"
+ },
+ "density_rule": "every token in the bin holding 0.01*max_abs and above (bin resolution)",
+ "vocab_rule": "score = sign * W_U @ (gamma_final * W_down[:, i]) in fp32, sign = +1 for the + pole and -1 for the - pole (the direction the pole writes when it fires); gamma_final = final_norm(ones), which is the norm's effective gain for every RMSNorm form; the 1/rms factor is a positive scalar and does not change the ranking",
+ "sample_rule": "neuron i of n sits in layer floor(i * n_layers / n); neurons within a layer drawn without replacement by numpy default_rng(seed); both poles of each neuron",
+ "snapshot_bands": [
+  1
+ ],
+ "band_end_tok": {
+  "1": 10432539
+ },
+ "started_utc": "2026-11-05T21:05:11Z",
+ "args": {
+  "mode": "harvest",
+  "out": "/work/out/R",
+  "corpus": "s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus",
+  "branch": "stage2-step47684-mix-round5-from-2T-ckpt",
+  "inputs": "s3://pg-lineage-769063704696/results/next_m1/inputs",
+  "bank_exemplar": "t15_exemplar_a.npz",
+  "fail_exemplar": "t14_exemplar_a.npz",
+  "bank_contexts": "t15_contexts.jsonl",
+  "refs": null,
+  "registry": null,
+  "n_poles_grid": 640,
+  "device": "cuda"
+ },
+ "device_name": "NVIDIA L40S",
+ "pg_git_sha": "e76b318aa502",
+ "download": {
+  "branch": "stage2-step47684-mix-round5-from-2T-ckpt",
+  "commit": "34e13d5fae4d1aacf4aa019c377a332ed09ff136",
+  "allow_patterns": [
+   "config.json",
+   "generation_config.json",
+   "model.safetensors.index.json",
+   "special_tokens_map.json",
+   "tokenizer.json",
+   "tokenizer_config.json",
+   "vocab.json",
+   "merges.txt",
+   "model-00001-of-00006.safetensors",
+   "model-00002-of-00006.safetensors",
+   "model-00003-of-00006.safetensors",
+   "model-00004-of-00006.safetensors",
+   "model-00005-of-00006.safetensors",
+   "model-00006-of-00006.safetensors"
+  ],
+  "bytes": 29201786046,
+  "seconds": 508.1,
+  "MB_per_s": 57.5,
+  "xet_disabled": "1",
+  "sha256_s": 18.4,
+  "G_SHARD": {
+   "pass": true,
+   "files": [
+    "model-00001-of-00006.safetensors",
+    "model-00002-of-00006.safetensors",
+    "model-00003-of-00006.safetensors",
+    "model-00004-of-00006.safetensors",
+    "model-00005-of-00006.safetensors",
+    "model-00006-of-00006.safetensors"
+   ],
+   "index_files": [
+    "model-00001-of-00006.safetensors",
+    "model-00002-of-00006.safetensors",
+    "model-00003-of-00006.safetensors",
+    "model-00004-of-00006.safetensors",
+    "model-00005-of-00006.safetensors",
+    "model-00006-of-00006.safetensors"
+   ],
+   "mismatch": [],
+   "stale_present": [],
+   "failing_input": {
+    "pass": false,
+    "files": [
+     "model-00001-of-00003.safetensors",
+     "model-00002-of-00003.safetensors",
+     "model-00003-of-00003.safetensors"
+    ],
+    "index_files": [
+     "model-00001-of-00006.safetensors",
+     "model-00002-of-00006.safetensors",
+     "model-00003-of-00006.safetensors",
+     "model-00004-of-00006.safetensors",
+     "model-00005-of-00006.safetensors",
+     "model-00006-of-00006.safetensors"
+    ],
+    "mismatch": [
+     "model-00001-of-00006.safetensors",
+     "model-00002-of-00006.safetensors",
+     "model-00003-of-00006.safetensors",
+     "model-00004-of-00006.safetensors",
+     "model-00005-of-00006.safetensors",
+     "model-00006-of-00006.safetensors"
+    ],
+    "stale_present": [
+     "model-00001-of-00003.safetensors",
+     "model-00002-of-00003.safetensors",
+     "model-00003-of-00003.safetensors"
+    ]
+   }
+  }
+ },
+ "load_s": 5.5,
+ "m1": {
+  "config": {
+   "rewrite": true,
+   "as_released": {
+    "model_type": "olmo2-retrofit",
+    "architectures": [
+     "Olmo2RetrofitForCausalLM"
+    ],
+    "sliding_window": 4097,
+    "torch_dtype": "bfloat16"
+   },
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "architectures",
+     "model_type",
+     "sliding_window"
+    ],
+    "sliding_window": 4097
+   },
+   "G_CFG": {
+    "pass": true,
+    "diff_keys": [
+     "sliding_window"
+    ],
+    "sliding_window": 4097
+   },
+   "load_dir": "/work/m1/load/34e13d5fae4d1aacf4aa019c377a332ed09ff136"
+  },
+  "G_CAST": {
+   "pass": true,
+   "param_dtypes": [
+    "torch.bfloat16"
+   ],
+   "tensors": [
+    {
+     "name": "model.layers.0.mlp.gate_proj.weight",
+     "file_dtype": "torch.float32",
+     "shape": [
+      11008,
+      4096
+     ],
+     "equal_rne": true,
+     "trunc_mismatch_share": 0.49940571188926697
+    },
+    {
+     "name": "model.layers.0.mlp.up_proj.weight",
+     "file_dtype": "torch.float32",
+     "shape": [
+      11008,
+      4096
+     ],
+     "equal_rne": true,
+     "trunc_mismatch_share": 0.4992782175540924
+    },
+    {
+     "name": "model.layers.15.mlp.down_proj.weight",
+     "file_dtype": "torch.float32",
+     "shape": [
+      4096,
+      11008
+     ],
+     "equal_rne": true,
+     "trunc_mismatch_share": 0.4990973472595215
+    },
+    {
+     "name": "model.layers.31.mlp.down_proj.weight",
+     "file_dtype": "torch.float32",
+     "shape": [
+      4096,
+      11008
+     ],
+     "equal_rne": true,
+     "trunc_mismatch_share": 0.4991564154624939
+    },
+    {
+     "name": "model.layers.16.self_attn.q_proj.weight",
+     "file_dtype": "torch.float32",
+     "shape": [
+      4096,
+      4096
+     ],
+     "equal_rne": true,
+     "trunc_mismatch_share": 0.49913763999938965
+    },
+    {
+     "name": "model.layers.31.post_feedforward_layernorm.weight",
+     "file_dtype": "torch.float32",
+     "shape": [
+      4096
+     ],
+     "equal_rne": true,
+     "trunc_mismatch_share": 0.527587890625
+    },
+    {
+     "name": "model.norm.weight",
+     "file_dtype": "torch.float32",
+     "shape": [
+      4096
+     ],
+     "equal_rne": true,
+     "trunc_mismatch_share": 0.54296875
+    }
+   ],
+   "failing_input": {
+    "pass": false,
+    "tensors": [
+     {
+      "name": "model.layers.0.mlp.gate_proj.weight",
+      "against": "model.layers.1.mlp.gate_proj.weight",
+      "equal": false
+     },
+     {
+      "name": "model.layers.0.mlp.up_proj.weight",
+      "against": "model.layers.1.mlp.up_proj.weight",
+      "equal": false
+     },
+     {
+      "name": "model.layers.15.mlp.down_proj.weight",
+      "against": "model.layers.16.mlp.down_proj.weight",
+      "equal": false
+     },
+     {
+      "name": "model.layers.31.mlp.down_proj.weight",
+      "against": "model.layers.0.mlp.down_proj.weight",
+      "equal": false
+     },
+     {
+      "name": "model.layers.16.self_attn.q_proj.weight",
+      "against": "model.layers.17.self_attn.q_proj.weight",
+      "equal": false
+     },
+     {
+      "name": "model.layers.31.post_feedforward_layernorm.weight",
+      "against": "model.layers.0.post_feedforward_layernorm.weight",
+      "equal": false
+     },
+     {
+      "name": "model.norm.weight",
+      "against": "model.layers.0.post_feedforward_layernorm.weight",
+      "equal": false
+     }
+    ]
+   }
+  }
+ },
+ "tokens_per_second": 3339.2559935120266,
+ "timing_s": {
+  "harvest_loop_s": 6157.080511331558,
+  "snapshot_write_s": 158.37581849098206,
+  "metrics_write_s": 0.09971976280212402,
+  "final_write_s": 150.2547767162323
+ },
+ "wall_s": 6476.149659395218,
+ "finished_utc": "2026-11-05T22:53:07Z"
+}

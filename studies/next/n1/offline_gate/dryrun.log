@@ -1,0 +1,86 @@
+== REAL
+CHECK REAL n1 units.json is reproducible from N12's units and M2's ranks PASS {"real_freeze": 82, "real_test": 71, "dt_freeze": 73, "dt_test": 67, "pb_freeze": 79, "pb_test": 70}
+CHECK REAL units: real 82/71, dt 73/67, pb 79/70                       PASS 
+CHECK REAL every real unit has at least 98 matched neurons of its layer, none its own PASS 
+CHECK REAL onset pre-check: the dating rule reproduces k for all 442 units PASS 
+CHECK REAL onset pre-check: most births rise over several brackets (concentrated in fewer than half) PASS {'dt_freeze': 29, 'dt_test': 22, 'pb_freeze': 35, 'pb_test': 29, 'real_freeze': 34, 'real_test': 26}
+CHECK REAL every unit's window and reference brackets exist (k >= 6)   PASS 
+CHECK REAL K-B bank path reproducible: M2, N12 and N6 column norms bitwise equal (three L40S runs) PASS {'m2_vs_n12': 458, 'm2_vs_n6_t15': 184, 'n12_vs_n6_t15': 122}
+CHECK REAL K-B failing input (the neighbouring point) fails for every banked neuron, with room PASS min rel 0.00155 against 0.00013
+CHECK REAL kb_bank.json and the N6 array are the registered inputs     PASS 
+CHECK REAL room: every label and hypothesis branch reachable at 67 pairs PASS 
+== SCORE
+CHECK SCORE side_r: in combines gate and up; out divides by the column norm PASS 
+CHECK SCORE robust_z: median 0 and MAD 1/1.4826 per bracket and layer  PASS 
+CHECK SCORE excess: window mean minus reference mean (k = 12: window 10-12, reference 2-9) PASS 
+CHECK SCORE floor: replicate means of one matched neuron per unit      PASS 
+CHECK SCORE hypotheses from the two selection labels                   PASS 
+CHECK SCORE label_sign on paired intervals                             PASS 
+== JOB
+CHECK JOB n1_weights.main exits 0 and prints N1_JOB_OK                 PASS exit 0 
+CHECK JOB every gate passed                                            PASS ['G_SAME', 'INPUTS', 'I_ID', 't00_G_REV', 't00_G_SHAPE', 't01_G_REV']
+CHECK JOB every registered failing input failed                        PASS 49 failing inputs
+CHECK JOB K-B reported (not a gate) at every banked point: fp64 norms within the bound of the fp32 bank; the neighbour fails PASS {'t07_K_B': '7.7e-08', 't08_K_B': '9.5e-08', 't09_K_B': '4.3e-08'}
+CHECK JOB PC at brackets 2-15: planted q99-size changes land above q95; size 0 does not PASS 
+CHECK JOB I-ID at T_15: norms bitwise on a second read; self change 0; T_14 against T_15 is not PASS 
+CHECK JOB statistics equal an independent numpy recount from the safetensors (fp64) PASS max 0.0e+00
+CHECK JOB the planted neuron reads high on the input side and not on the output side PASS in 13.78, out -0.41, others max 1.07
+CHECK JOB records: one per unit, with the profile, matched neurons' excess and the ceiling PASS 
+CHECK JOB raw examples: the example births with the real unit and its twins PASS 
+CHECK JOB metrics.json carries no excess, z or label                   PASS 
+== FAIL
+CHECK FAIL versions: the job stops at G_SAME                           PASS AssertionError: G_SAME failed: {"pass": false, "versions": {"torch": "2.12.0"}, "registered": {"torch": "0"}, 
+CHECK FAIL units_sha: the job stops at INPUTS                          PASS AssertionError: INPUTS failed: {"pass": false, "mismatch": ["units"], "failing_input": {"pass": false}}
+CHECK FAIL revision: the job stops at t02_G_REV                        PASS AssertionError: t02_G_REV failed: {"pass": false, "commit": "8851ad885ba53e98e690a0a060f9fb8aef4d8a12", "regis
+CHECK FAIL transposed: the job stops at t03_G_SHAPE                    PASS AssertionError: t03_G_SHAPE failed: {"pass": false, "bad_layers": [0], "n_layers": 4, "failing_input": {"what"
+CHECK FAIL iid_second: the job stops at I_ID                           PASS AssertionError: I_ID failed: {"pass": false, "norms_bitwise": false, "self_change_zero": false, "failing_input
+CHECK FAIL kb_off: the bank moved by 0.1 %: K-B reports a failure at every banked point; the job completes (K-B is reported, not gated) PASS exit 0; 9 reports; min max_rel 1.0e-03
+== VERDICT
+CHECK VERDICT rows: ROWS_FIRST                                         PASS ROWS_FIRST: in ABOVE_SELECTION (ABOVE_FLOOR), out AT_SELECTION (NOT_ABOVE_FLOOR)
+CHECK VERDICT col: COLUMN_FIRST                                        PASS COLUMN_FIRST: in AT_SELECTION (NOT_ABOVE_FLOOR), out ABOVE_SELECTION (ABOVE_FLOOR)
+CHECK VERDICT both: TOGETHER                                           PASS TOGETHER: in ABOVE_SELECTION (ABOVE_FLOOR), out ABOVE_SELECTION (ABOVE_FLOOR)
+CHECK VERDICT none: NEITHER (H_0: both at selection)                   PASS NEITHER (H_0: both at selection): in AT_SELECTION (NOT_ABOVE_FLOOR), out AT_SELECTION (NOT_ABOVE_FLOOR)
+CHECK VERDICT below: NEITHER                                           PASS NEITHER: in BELOW_SELECTION (NOT_ABOVE_FLOOR), out AT_SELECTION (NOT_ABOVE_FLOOR)
+CHECK VERDICT the floor label reads the real mean against the matched floor's q975 PASS 
+CHECK VERDICT a side above its ceiling: DOES NOT COUNT until inspected PASS 
+CHECK VERDICT fewer than 50 dt pairs: no selection control, DOES NOT COUNT PASS 
+CHECK VERDICT freeze refuses when a job gate failed                    PASS 
+CHECK VERDICT the verdict refuses if the freeze records changed        PASS 
+== PROJECT
+CHECK PROJECT instance-hours of the CPU launch                         PASS {'instance_h_center': 0.82, 'instance_h_high': 1.71, 'budget_min_hard_kill': 134}
+{
+ "checks": 44,
+ "passed": 44,
+ "failed": [],
+ "projection": {
+  "checkpoints": 16,
+  "rates": {
+   "download_s": [
+    90.0,
+    150.0
+   ],
+   "compute_s": [
+    60.0,
+    180.0
+   ],
+   "start_s": [
+    300.0,
+    450.0
+   ],
+   "end_s": [
+    180.0,
+    300.0
+   ],
+   "identity_s": [
+    60.0,
+    120.0
+   ]
+  },
+  "instance_h_center": 0.82,
+  "instance_h_high": 1.71,
+  "budget_min_hard_kill": 134,
+  "gpu_h": 0.0,
+  "instance": "r7i.2xlarge (8 vCPU, 64 GB; the Standard family quota, not the G quota); price not banked"
+ }
+}
+N1_DRYRUN_OK

@@ -1,0 +1,17 @@
+[
+ {
+  "name": "setup",
+  "module": "infra.aws_pg.jobs.n13_setup",
+  "args": "--pair pair1 --models base,rl"
+ },
+ {
+  "name": "smoke_base",
+  "module": "infra.aws_pg.jobs.n13_gen",
+  "args": "--arm base --bench math500 --problems 0:300 --cap 16384 --smoke --setup-dir /work/out/setup --allowance-min 110 --proj-tok-s 500.0 --proj-mean-math 2500.0 --proj-mean-gsm 940.0 --proj-load-min 5.0"
+ },
+ {
+  "name": "smoke_rl",
+  "module": "infra.aws_pg.jobs.n13_gen",
+  "args": "--arm rl --bench math500 --problems 0:300 --cap 16384 --smoke --setup-dir /work/out/setup --allowance-min 110 --proj-tok-s 500.0 --proj-mean-math 2500.0 --proj-mean-gsm 940.0 --proj-load-min 5.0"
+ }
+]

@@ -1,0 +1,7 @@
+[
+ {
+  "name": "generic/t15",
+  "module": "infra.aws_pg.jobs.reuse_generic",
+  "args": "--stage generic --t T_15 --revision stage1-step1413814 --items s3://pg-lineage-769063704696/results/mdl/reuse_birth/inputs/birth_items.json --corpus s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus --primary-foreign s3://pg-lineage-769063704696/results/mdl/reuse_birth/inputs/primary_t15/foreign.json --spec4-bank s3://pg-lineage-769063704696/results/mdl/mendeleev_reuse_birth/cells/birth/t15 --t14-bank s3://pg-lineage-769063704696/results/reuse/dating/1/out/t14"
+ }
+]

@@ -1,0 +1,157 @@
+{
+ "prefix": "s4armsB2-02",
+ "step": "rndT_k1_d2",
+ "arm": "rndT_k1_d2",
+ "seed_set": "A",
+ "benches": [
+  "math500"
+ ],
+ "projection_min": 208.0,
+ "allowance_min": 1378.0,
+ "build": {
+  "build_seconds": 159.8,
+  "n_neurons_in_set": 5203,
+  "spec": {
+   "name": "rndT_k1_d2",
+   "kind": "neurons",
+   "c": 1.0,
+   "non_mlp": "before",
+   "intended_mlp_energy": 0.1647233841906732,
+   "energy_short": false
+  },
+  "families": {
+   "mlp": {
+    "realized_sq": 0.16474029181463623,
+    "changed": 27940393,
+    "in_mask": 63934464
+   },
+   "attn": {
+    "realized_sq": 0.0,
+    "changed": 0,
+    "in_mask": 0
+   },
+   "norm": {
+    "realized_sq": 0.0,
+    "changed": 0,
+    "in_mask": 0
+   },
+   "embed": {
+    "realized_sq": 0.0,
+    "changed": 0,
+    "in_mask": 0
+   }
+  },
+  "G-MASK": true,
+  "kept": 0,
+  "kept_expected": null,
+  "kept_rel_err": null,
+  "kept_sd_units": null,
+  "kept_pass": null,
+  "intended_mlp_energy": 0.1647233841906732,
+  "energy_rel_err": 0.00010264252429065811,
+  "energy_flag": false,
+  "energy_passes": null,
+  "c_built": null,
+  "a31": null,
+  "hashes_vs_R1_stage6": {
+   "n_tensors": 355,
+   "n_equal": 355,
+   "same_names": true,
+   "all_equal": true
+  },
+  "R1_stage6_note": null
+ },
+ "bench": {
+  "math500": {
+   "status": "done",
+   "started_utc": "2026-11-08T00:59:57Z",
+   "finished_utc": "2026-11-08T03:11:37Z",
+   "wall_min": 131.7,
+   "template": {
+    "pass": true,
+    "first_id_is_bos": [
+     false
+    ],
+    "n": 500
+   },
+   "cap": 16384,
+   "park": {
+    "allowance_min": 1378.0,
+    "elapsed_min": 539.9331722338994,
+    "projected_min": 208.0410710028923,
+    "earlier_parked": false,
+    "parked": false
+   },
+   "condition": null,
+   "screen_fired": false,
+   "screen_cap_hits_0_19": 3,
+   "G-COMPLETE_job": {
+    "n": 500,
+    "distinct": 500,
+    "covers": true,
+    "seeded": true,
+    "generated": true,
+    "finish_reason": true,
+    "n_empty": 8,
+    "pass": true,
+    "expected_n": 500
+   },
+   "G-COMPLETE_recount": {
+    "n": 500,
+    "distinct": 500,
+    "covers": true,
+    "seeded": true,
+    "generated": true,
+    "finish_reason": true,
+    "n_empty": 8,
+    "pass": true
+   },
+   "G-COMPLETE_failing_input_failed": true,
+   "n_records": 500,
+   "cap_hits": 69,
+   "mean_new_tokens": 3398.988,
+   "modes": {
+    "answer_line": 221,
+    "boxed": 147,
+    "none": 132
+   },
+   "metrics_build": {
+    "arm": "rndT_k1_d2",
+    "from": null,
+    "G-HASH": null,
+    "kept_rel_err": null,
+    "kept_sd_units": null,
+    "energy_rel_err": 0.00010264252429065811,
+    "energy_flag": false,
+    "energy_passes": null,
+    "c_built": null,
+    "a31": null,
+    "build_seconds": 159.8,
+    "G-MASK": true
+   },
+   "engine": {
+    "vllm": "0.32.0",
+    "max_num_seqs": 128,
+    "max_num_batched_tokens": 2048,
+    "num_gpu_blocks": 12817,
+    "attention_backend": "FLASH_ATTN",
+    "env": {
+     "VLLM_USE_FLASHINFER_SAMPLER": "0"
+    },
+    "load_s": 60.41839408874512
+   },
+   "throughput": {
+    "generation_seconds": 7675.287422657013,
+    "step_s": 7899.542716264725,
+    "r_sat": 228.87993165139363,
+    "mean_new_tokens": 3398.988,
+    "median_new_tokens": 828.0,
+    "max_new_tokens": 16384,
+    "n_cap_hits": 69,
+    "mean_output_tokens": 3399.85,
+    "n_answers": 500,
+    "load_s": 60.41839408874512
+   }
+  }
+ }
+}

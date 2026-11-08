@@ -1,0 +1,121 @@
+{
+ "what": "score-04 crashed at T_10 in m2.percentile (\"a pole with no token of its sign\"): which poles of the layers the plan",
+ "points": {
+  "5": {
+   "layers": [
+    3
+   ],
+   "first_scored_unit": [
+    "L03N9245+:c4",
+    "pre"
+   ],
+   "empty": {},
+   "dead": {}
+  },
+  "6": {
+   "layers": [
+    3
+   ],
+   "first_scored_unit": [
+    "L03N9245+:c4",
+    "birth"
+   ],
+   "empty": {},
+   "dead": {}
+  },
+  "7": {
+   "layers": [
+    3,
+    4,
+    7,
+    19,
+    24
+   ],
+   "first_scored_unit": [
+    "L03N9245+:c5",
+    "pre"
+   ],
+   "empty": {},
+   "dead": {}
+  },
+  "8": {
+   "layers": [
+    3,
+    4,
+    7,
+    11,
+    19,
+    22,
+    24,
+    26
+   ],
+   "first_scored_unit": [
+    "L03N9245+:c5",
+    "birth"
+   ],
+   "empty": {
+    "7": [
+     "L07N640-"
+    ]
+   },
+   "dead": {
+    "7": [
+     "L07N640-"
+    ]
+   }
+  },
+  "9": {
+   "layers": [
+    3,
+    4,
+    10,
+    11,
+    22,
+    26,
+    27,
+    28,
+    29
+   ],
+   "first_scored_unit": [
+    "L03N7155+:c0",
+    "pre"
+   ],
+   "empty": {},
+   "dead": {}
+  },
+  "10": {
+   "layers": [
+    1,
+    2,
+    3,
+    4,
+    7,
+    8,
+    10,
+    19,
+    20,
+    21,
+    23,
+    24,
+    26,
+    27,
+    28,
+    29
+   ],
+   "first_scored_unit": [
+    "L01N8975+:c2",
+    "pre"
+   ],
+   "empty": {
+    "24": [
+     "L24N9826+"
+    ]
+   },
+   "dead": {
+    "24": [
+     "L24N9826+"
+    ]
+   }
+  }
+ }
+}

@@ -1,0 +1,421 @@
+Source lines read for N13_SPEC.md A21 (the n13 engine's FlashInfer sampler JIT), 2026-11-05, by the sixth N13 executor.
+Each file was fetched raw from GitHub at tag v0.32.0 (the n13 venv's vllm==0.32.0, out/setup/pip_freeze_n13.txt of s2setup-07; flashinfer-python==0.7.0.post1).
+The fetched files match the instance's traceback at every line it names (sampler.py 154, 317, 339; topk_topp_sampler.py 124, 613; warmup.py 240, 381; utils/flashinfer.py 99; platforms/cuda.py 506).
+The 19 files of vllm/v1/worker/gpu/sample/ (16 at top level, 3 in logits_processor/) and vllm/v1/worker/gpu/warmup.py were fetched and grepped for 'flashinfer' (case-insensitive): only sampler.py matches (lines 15, 16, 88, 89, 314, 338, 339).
+sha256 of the fetched bytes, then the quoted lines (line number: text).
+
+== https://raw.githubusercontent.com/vllm-project/vllm/v0.32.0/vllm/envs.py
+sha256 e963af06cf6c775fe285147e0d811ea5b4d679e5cbd6958980ec2a0d1da70694
+50:     VLLM_USE_FLASHINFER_SAMPLER: bool = True
+  ...
+875:     # Whether to use the FlashInfer top-k / top-p sampler on CUDA. Enabled
+876:     # by default when the hardware supports it — set to 0 to opt out
+877:     # explicitly, which forces the PyTorch-native (Triton for bs>=8) path.
+878:     "VLLM_USE_FLASHINFER_SAMPLER": lambda: (
+879:         bool(int(os.environ["VLLM_USE_FLASHINFER_SAMPLER"]))
+880:         if "VLLM_USE_FLASHINFER_SAMPLER" in os.environ
+881:         else True
+882:     ),
+
+== https://raw.githubusercontent.com/vllm-project/vllm/v0.32.0/vllm/v1/sample/ops/topk_topp_sampler.py
+sha256 970afd0e8565ddfdcf50dc99892d893b20cb186214cc35e15aeb97d1dba90bd0
+77: def flashinfer_sampler_supported() -> bool:
+78:     """Decide whether FlashInfer's top-p/top-k sampler can be used.
+79: 
+80:     Returns False (with appropriate logging) when ``VLLM_USE_FLASHINFER_SAMPLER``
+81:     is 0, when the platform isn't CUDA, when the GPU's compute capability is
+82:     unsupported, when the GPU has 16 or fewer SMs, or when FlashInfer cannot
+83:     JIT-compile for the current GPU/CUDA toolchain. Raises ``RuntimeError`` if
+84:     the user explicitly opted in via the env var but FlashInfer is unavailable.
+85: 
+86:     Assumes flashinfer is installed, as guaranteed by ``requirements/cuda.txt``;
+87:     otherwise importing the FlashInfer backend below raises ``ImportError``.
+88: 
+89:     Note: callers must additionally ensure ``logprobs_mode`` doesn't require
+90:     post-top-k/top-p logits/logprobs for any request whose logprobs will be
+91:     returned in this step, since FlashInfer doesn't expose those.
+92:     """
+93:     if not current_platform.is_cuda():
+94:         return False
+95:     if not envs.VLLM_USE_FLASHINFER_SAMPLER:
+96:         logger.info_once(
+97:             "FlashInfer top-p/top-k sampling disabled via "
+98:             "VLLM_USE_FLASHINFER_SAMPLER=0."
+99:         )
+100:         return False
+101:     from vllm.v1.attention.backends.flashinfer import FlashInferBackend
+102: 
+103:     capability = current_platform.get_device_capability()
+104:     assert capability is not None
+105:     unsupported_reason: str | None = None
+106:     if not FlashInferBackend.supports_compute_capability(capability):
+107:         unsupported_reason = (
+108:             f"unsupported compute capability {capability.as_version_str()}"
+109:         )
+110:     elif (
+111:         num_sms := current_platform.num_compute_units(
+112:             torch.accelerator.current_device_index()
+113:         )
+114:     ) <= 16:
+115:         # FlashInfer 0.7+ rejects multi-CTA top-k masking on <=16 SMs because
+116:         # its cross-CTA software barrier cannot guarantee forward progress.
+117:         unsupported_reason = (
+118:             f"top-k masking requires more than 16 SMs; device has {num_sms}"
+119:         )
+120:     else:
+121:         unsupported_reason = _flashinfer_jit_unsupported_reason(capability)
+122: 
+123:     if unsupported_reason is None:
+124:         logger.info_once("Using FlashInfer for top-p & top-k sampling.", scope="global")
+125:         return True
+126:     if envs.is_set("VLLM_USE_FLASHINFER_SAMPLER"):
+127:         raise RuntimeError(
+128:             f"FlashInfer top-p/top-k sampling unavailable: {unsupported_reason}. "
+129:             "Unset VLLM_USE_FLASHINFER_SAMPLER=1."
+130:         )
+131:     logger.warning_once(
+132:         "FlashInfer top-p/top-k sampling unavailable: %s; falling back. "
+133:         "Set VLLM_USE_FLASHINFER_SAMPLER=0 to silence.",
+134:         unsupported_reason,
+135:     )
+136:     return False
+  ...
+460: def apply_top_k_top_p(
+461:     logits: torch.Tensor, k: torch.Tensor | None, p: torch.Tensor | None
+462: ) -> torch.Tensor:
+463:     if p is None and k is None:
+464:         return logits
+465: 
+466:     if HAS_TRITON:
+467:         return apply_top_k_top_p_triton(logits, k, p)
+468: 
+469:     is_cpu = current_platform.is_cpu()
+470:     return apply_top_k_top_p_pytorch(logits, k, p, allow_cpu_sync=is_cpu)
+  ...
+606:         # Top-k only.
+607:         probs = logits.softmax(dim=-1, dtype=torch.float32)
+608:         next_token_ids = flashinfer.sampling.top_k_sampling_from_probs(
+609:             probs, k, deterministic=True
+610:         )
+611:     else:
+612:         # Both top-k and top-p.
+613:         next_token_ids = flashinfer.sampling.top_k_top_p_sampling_from_logits(
+614:             logits, k, p, deterministic=True
+615:         )
+616: 
+617:     return next_token_ids.view(-1)
+618: 
+619: 
+620: def _to_tensor_scalar_tuple(x):
+621:     return (x, 0) if isinstance(x, torch.Tensor) else (None, x)
+
+== https://raw.githubusercontent.com/vllm-project/vllm/v0.32.0/vllm/v1/worker/gpu/sample/sampler.py
+sha256 620b0ff1bea504ebe61794b91ab07cdc243d3d05f8dea4c4044c374add76270b
+88:         self.use_flashinfer = (
+89:             not return_sampling_mask and flashinfer_sampler_supported()
+90:         )
+  ...
+301:         top_k, top_p = self.sampling_states.get_top_k_top_p(
+302:             expanded_idx_mapping, idx_mapping_np
+303:         )
+304:         # Don't use a fused sampler if no requests use top_k/top_p, if there are
+305:         # any greedy requests or per-request seeds, or if post-processed
+306:         # logprobs need to be returned for any requests.
+307:         fused_sampler_eligible = not (
+308:             (top_k is None and top_p is None)
+309:             or (return_logprobs and self.logprobs_mode in PROCESSED_LOGPROBS_MODES)
+310:             or self.sampling_states.any_greedy(idx_mapping_np)
+311:             or self.sampling_states.any_explicit_seed(idx_mapping_np)
+312:         )
+313:         use_fused_sampler = (
+314:             self.use_flashinfer or self.use_xpu_sampler
+315:         ) and fused_sampler_eligible
+316: 
+317:         return self._sample_random(
+318:             processed_logits,
+319:             expanded_idx_mapping,
+320:             idx_mapping_np,
+321:             pos,
+322:             top_k,
+323:             top_p,
+324:             use_fused_sampler,
+325:         )
+  ...
+327:     def _sample_random(
+328:         self,
+329:         processed_logits: torch.Tensor,
+330:         expanded_idx_mapping: torch.Tensor,
+331:         idx_mapping_np: np.ndarray,
+332:         pos: torch.Tensor,
+333:         top_k: torch.Tensor | None,
+334:         top_p: torch.Tensor | None,
+335:         use_fused_sampler: bool,
+336:     ) -> tuple[torch.Tensor, torch.Tensor]:
+337:         if use_fused_sampler:
+338:             if self.use_flashinfer:
+339:                 sampled = flashinfer_sample(processed_logits, top_k, top_p).to(
+340:                     torch.int64
+341:                 )
+342:             else:  # Use XPU sampler
+343:                 sampled, _ = xpu_sample(processed_logits, top_k, top_p)
+344:         else:
+345:             processed_logits = apply_top_k_top_p(processed_logits, top_k, top_p)
+346:             sampled = gumbel_sample(
+347:                 processed_logits,
+348:                 expanded_idx_mapping,
+349:                 self.sampling_states.temperature.gpu,
+350:                 self.sampling_states.seeds.gpu,
+351:                 pos,
+352:                 apply_temperature=False,
+353:                 is_drafting=False,
+354:                 use_fp64=self.use_fp64_gumbel,
+355:             )
+356:         return sampled, processed_logits
+
+== https://raw.githubusercontent.com/vllm-project/vllm/v0.32.0/vllm/v1/worker/gpu/warmup.py
+sha256 daeac5713fb5c7bbc9a2409e5111fba2dba446acddabb77fbaa7705fd5af87a4
+316:     if model_runner.is_pooling_model:
+317:         sampling_params = None
+318:         pooling_task = model_runner.model_config.get_pooling_task(
+319:             model_runner.get_supported_tasks()
+320:         )
+321:         pooling_params = PoolingParams(task=pooling_task)
+322:         pooling_params.verify(model_runner.model_config)
+323:     else:
+324:         sampling_params = SamplingParams.for_sampler_warmup()
+325:         pooling_params = None
+  ...
+366:         # Warm up sampler and perform a decode step for non-pooling models.
+367: 
+368:         grammar_output = None
+369:         if model_runner.is_last_pp_rank:
+370:             # Build a GrammarOutput to exercise the structured output bitmask
+371:             # kernel during the prefill step.
+372:             vocab_size = model_runner.model_config.get_vocab_size()
+373:             bitmask_width = (vocab_size + 31) // 32
+374:             grammar_bitmask = np.full(
+375:                 (len(req_ids), bitmask_width), fill_value=-1, dtype=np.int32
+376:             )
+377:             grammar_output = GrammarOutput(
+378:                 structured_output_request_ids=req_ids, grammar_bitmask=grammar_bitmask
+379:             )
+380: 
+381:         worker_sample_tokens(grammar_output)
+
+== https://raw.githubusercontent.com/vllm-project/vllm/v0.32.0/vllm/sampling_params.py
+sha256 88fb3ac6ac3a456be62f5ac2afa7262cec5e00e82c6b425bdefa121cb525cd8a
+1474:     def for_sampler_warmup() -> "SamplingParams":
+1475:         """Set parameters to exercise all sampler logic."""
+1476:         return SamplingParams(
+1477:             temperature=0.9,
+1478:             top_p=0.9,
+1479:             top_k=50,
+1480:             min_p=0.1,
+1481:             frequency_penalty=0.5,
+1482:             presence_penalty=0.5,
+1483:             repetition_penalty=1.2,
+1484:             min_tokens=2,
+1485:             logit_bias={0: -1.0, 1: 0.5},
+1486:             _bad_words_token_ids=[[0], [1, 2]],
+1487:             logprobs=5,
+1488:             prompt_logprobs=1,
+1489:             watermarking=True,
+1490:         )
+
+== https://raw.githubusercontent.com/vllm-project/vllm/v0.32.0/vllm/utils/flashinfer.py
+sha256 c0db917fb6525ccf616000b976d34028ff38f19f9f31bf445ad4cc4bc07fc5ab
+60: 
+61: def _flashinfer_nvcc_path() -> str | None:
+62:     """Return the nvcc FlashInfer's JIT would run, or None if it is missing.
+63: 
+64:     Mirrors ``flashinfer.jit.cpp_ext.get_cuda_path()`` without importing
+65:     FlashInfer, whose import initializes CUDA.
+66:     """
+67:     cuda_home = os.environ.get("CUDA_HOME") or os.environ.get("CUDA_PATH")
+68:     if not cuda_home:
+69:         nvcc = shutil.which("nvcc")
+70:         cuda_home = (
+71:             os.path.dirname(os.path.dirname(nvcc)) if nvcc else _DEFAULT_CUDA_HOME
+72:         )
+73:     return shutil.which(os.path.join(cuda_home, "bin", "nvcc"))
+74: 
+75: 
+76: @functools.cache
+77: def has_flashinfer_cubin() -> bool:
+78:     """Return `True` if flashinfer-cubin package is available."""
+79:     if envs.VLLM_HAS_FLASHINFER_CUBIN:
+80:         return True
+81:     if importlib.util.find_spec("flashinfer_cubin") is not None:
+82:         return True
+83:     logger.debug_once("flashinfer-cubin package was not found")
+84:     return False
+85: 
+86: 
+87: @functools.cache
+88: def has_flashinfer() -> bool:
+89:     """Return `True` if flashinfer-python package is available."""
+90:     # Use find_spec to check if the module exists without importing it
+91:     # This avoids potential CUDA initialization side effects
+92:     if importlib.util.find_spec("flashinfer") is None:
+93:         logger.debug_once("FlashInfer unavailable since package was not found")
+94:         return False
+95:     # FlashInfer's JIT runs nvcc and `ninja` (from PATH).
+96:     if not has_flashinfer_cubin() and (
+97:         _flashinfer_nvcc_path() is None or shutil.which("ninja") is None
+98:     ):
+99:         logger.warning_once(
+100:             "FlashInfer kernels are disabled: flashinfer-cubin is not installed "
+101:             "and nvcc (CUDA_HOME, CUDA_PATH, PATH or /usr/local/cuda) or ninja "
+102:             "(PATH) is missing. Set CUDA_HOME to a CUDA toolkit and put ninja on "
+103:             "PATH, or run `vllm download-kernels`."
+104:         )
+105:         return False
+106:     return True
+107: 
+108: 
+109: def _installed_version(distribution: str) -> str | None:
+110:     try:
+111:         return Version(importlib.metadata.version(distribution)).public
+112:     except importlib.metadata.PackageNotFoundError:
+113:         return None
+114: 
+115: 
+116: def has_flashinfer_jit_cache_wheels() -> bool:
+117:     """Return whether FlashInfer publishes flashinfer-jit-cache for the installed
+118:     PyTorch's CUDA version, which it does from CUDA 12.9."""
+119:     cuda_version = torch.version.cuda
+120:     return cuda_version is not None and Version(cuda_version) >= Version("12.9")
+121: 
+
+== https://raw.githubusercontent.com/vllm-project/vllm/v0.32.0/vllm/platforms/cuda.py
+sha256 18ae1dfc34848afcade72821892db50fd3a2e3a57b48829521cc263e3f877caa
+154:     else:
+155:         # SM100f defaults to FlashInfer for TRTLLM causal attention, but its non-causal
+156:         # cutlass path (used for dflash attention) is known to have problems.
+157:         # So prefer FlashAttention when non-causal on SM100f.
+158:         if device_capability.major == 10 and not use_non_causal:
+159:             return [
+160:                 *([AttentionBackendEnum.TRITON_FLASHINFER] if use_mm_prefix else []),
+161:                 AttentionBackendEnum.FLASHINFER,
+162:                 AttentionBackendEnum.FLASH_ATTN,
+163:                 AttentionBackendEnum.TRITON_ATTN,
+164:                 AttentionBackendEnum.FLEX_ATTENTION,
+165:                 AttentionBackendEnum.TURBOQUANT,
+166:             ]
+167:         else:
+168:             return [
+169:                 *(
+170:                     [AttentionBackendEnum.TRITON_FLASH_ATTN]
+171:                     if device_capability.major == 9 and use_mm_prefix
+172:                     else []
+173:                 ),
+174:                 AttentionBackendEnum.FLASH_ATTN,
+175:                 AttentionBackendEnum.FLASHINFER,
+176:                 AttentionBackendEnum.TRITON_ATTN,
+177:                 AttentionBackendEnum.FLEX_ATTENTION,
+178:                 AttentionBackendEnum.TURBOQUANT,
+179:             ]
+  ...
+418:     def get_attn_backend_cls(
+419:         cls,
+420:         selected_backend: AttentionBackendEnum | None,
+421:         attn_selector_config: AttentionSelectorConfig,
+422:         num_heads: int | None = None,
+423:     ) -> str:
+424:         device_capability = cls.get_device_capability()
+425:         assert device_capability is not None
+426: 
+427:         # First try checking just the selected backend, if there is one.
+428:         if selected_backend is not None:
+429:             try:
+430:                 backend_class = _get_attn_backend_class(selected_backend)
+431:                 invalid_reasons = backend_class.validate_configuration(
+432:                     device_capability=device_capability,
+433:                     **attn_selector_config._asdict(),
+434:                 )
+435:             except (ImportError, OSError) as e:
+436:                 raise ValueError(
+437:                     f"Selected backend {selected_backend} is not valid for "
+438:                     f"this configuration. Reason: [{type(e).__name__}: {e}]"
+439:                 ) from e
+440:             if invalid_reasons:
+441:                 raise ValueError(
+442:                     f"Selected backend {selected_backend} is not valid for "
+443:                     f"this configuration. Reason: {invalid_reasons}"
+444:                 )
+445:             else:
+446:                 logger.info("Using %s backend.", selected_backend)
+447:                 return _backend_cls_path(backend_class)
+  ...
+499:                     "performance. Consider removing --block-size to "
+500:                     "auto-select the optimal block size.",
+501:                     attn_selector_config.block_size,
+502:                     names,
+503:                     selected_backend.name,
+504:                 )
+505: 
+506:         logger.info_once(
+507:             "Using %s attention backend out of potential backends: %s.",
+508:             selected_backend.name,
+509:             "["
+510:             + ", ".join(
+511:                 f"'{candidate.backend.name}'" for candidate in valid_backends_priorities
+512:             )
+
+== https://raw.githubusercontent.com/vllm-project/vllm/v0.32.0/vllm/engine/arg_utils.py
+sha256 c10281277fd9a90dc8b22670db4f1af53708c5caa2aefee7aa861fa579329219
+791:     attention_backend: AttentionBackendEnum | None = AttentionConfig.backend
+  ...
+2684: 
+2685:         # Attention config overrides
+2686:         attention_config = copy.deepcopy(self.attention_config)
+2687:         if self.attention_backend is not None:
+2688:             if attention_config.backend is not None:
+2689:                 raise ValueError(
+2690:                     "attention_backend and attention_config.backend "
+2691:                     "are mutually exclusive"
+2692:                 )
+2693:             # Reuse the validator to handle "auto" and string-to-enum conversion
+2694:             attention_config.backend = AttentionConfig.validate_backend_before(
+2695:                 self.attention_backend
+
+== https://raw.githubusercontent.com/vllm-project/vllm/v0.32.0/vllm/config/attention.py
+sha256 b4edcdd256404813e4483b7669b2b946775f7ed12fed44360d1b46a0807286da
+38:     """Configuration for attention mechanisms in vLLM."""
+39: 
+40:     backend: AttentionBackendEnum | None = None
+41:     """Attention backend to use. Use "auto" or None for automatic selection."""
+  ...
+180: 
+181:     @field_validator("backend", mode="before")
+182:     @classmethod
+183:     def validate_backend_before(cls, value: Any) -> Any:
+184:         """Enable parsing of the `backend` enum type from string.
+185: 
+186:         The special value "auto" is treated as None, which triggers
+187:         automatic backend selection.
+188:         """
+189:         if isinstance(value, str):
+190:             if value.lower() == "auto":
+191:                 return None
+192:             return AttentionBackendEnum[value.upper()]
+193:         return value
+
+== https://raw.githubusercontent.com/vllm-project/vllm/v0.32.0/vllm/model_executor/models/registry.py
+sha256 16ed7ca91ec949ab88e5210d4fecb2cf3d08641c352b58a152fa48e785fc0243
+709: _TRANSFORMERS_SUPPORTED_MODELS = {
+710:     # Text generation models
+711:     "ArceeForCausalLM": ("transformers", "TransformersForCausalLM"),
+712:     "CwmForCausalLM": ("transformers", "TransformersForCausalLM"),
+713:     "FlexOlmoForCausalLM": ("transformers", "TransformersMoEForCausalLM"),
+714:     "GlmForCausalLM": ("transformers", "TransformersForCausalLM"),
+715:     "GPTBigCodeForCausalLM": ("transformers", "TransformersForCausalLM"),
+716:     "GPTNeoXForCausalLM": ("transformers", "TransformersForCausalLM"),
+717:     "HunYuanDenseV1ForCausalLM": ("transformers", "TransformersForCausalLM"),
+718:     "HunYuanMoEV1ForCausalLM": ("transformers", "TransformersMoEForCausalLM"),
+719:     "Jais2ForCausalLM": ("transformers", "TransformersForCausalLM"),
+720:     "MellumForCausalLM": ("transformers", "TransformersMoEForCausalLM"),
+721:     "NanbeigeForCausalLM": ("transformers", "TransformersForCausalLM"),
+722:     "OlmoForCausalLM": ("transformers", "TransformersForCausalLM"),
+723:     "Olmo2ForCausalLM": ("transformers", "TransformersForCausalLM"),
+724:     "Olmo3ForCausalLM": ("transformers", "TransformersForCausalLM"),

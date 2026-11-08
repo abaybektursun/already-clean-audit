@@ -1,0 +1,6 @@
+[
+  {"name": "w1_r_smoke", "module": "infra.aws_pg.jobs.darwin_w1_r",
+   "args": "--arm W1-R --smoke --run-id darwin_w1_r_smoke --s3-prefix darwin/darwin_w1_r_smoke"},
+  {"name": "w1_r", "module": "infra.aws_pg.jobs.darwin_w1_r",
+   "args": "--arm W1-R --run-id darwin_w1_r --s3-prefix darwin/darwin_w1_r"}
+]

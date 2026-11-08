@@ -1,0 +1,20 @@
+{
+  "rental": "drill_reap",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:v1-anchor-gemma2b",
+  "disk": 25,
+  "gpu_query": "gpu_ram>=8 num_gpus=1",
+  "bound": "overhead",
+  "_purpose": "infra drill ONLY: 1-min load backstop is an intentionally impossible contract so the kill->classify->respawn (watchdog) and reap (Lambda) paths get exercised for cents; never use for science",
+  "watch": {
+    "load_backstop_min": 1,
+    "max_billed_h": 1
+  },
+  "cells": [
+    {
+      "id": "drill_smoke",
+      "module": "infra.vast.cells.smoke_stats",
+      "model_dir": "/models/google_gemma-2b",
+      "probe_text": "The capital of France is"
+    }
+  ]
+}

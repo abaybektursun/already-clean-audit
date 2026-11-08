@@ -1,0 +1,12 @@
+[
+  {
+    "name": "start_b",
+    "module": "infra.aws_pg.jobs.m1_harvest",
+    "args": "--mode harvest --branch stage1-step476838 --corpus s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus --inputs s3://pg-lineage-769063704696/results/next_m1/inputs"
+  },
+  {
+    "name": "G",
+    "module": "infra.aws_pg.jobs.m1_harvest",
+    "args": "--mode harvest --branch stage2-step47684-mix-gen-mc-only-from-2T-ckpt --corpus s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus --inputs s3://pg-lineage-769063704696/results/next_m1/inputs"
+  }
+]

@@ -1,0 +1,110 @@
+{
+ "trainer_step": 60000,
+ "batch_index_0based": 59999,
+ "python": "3.12.12",
+ "numpy": "1.26.4",
+ "seed": 34521,
+ "epoch": 1,
+ "N": 723872890,
+ "batches_per_epoch": 1413814,
+ "fingerprint_recomputed": "ddc8c024ea19a0b8f2bbf62c4fd90ab2dd0231d379f8d4e1fb0f14de8ddb8a27",
+ "fingerprint_trainer_state": "ddc8c024ea19a0b8f2bbf62c4fd90ab2dd0231d379f8d4e1fb0f14de8ddb8a27",
+ "trainer_state": "https://huggingface.co/buckets/allenai/ai2-llm/resolve/checkpoints/OLMo25/step60000/train/rank0.pt",
+ "trainer_state_data_loader": {
+  "dataset_fingerprint_version": "v2.0",
+  "dataset_fingerprint": "ddc8c024ea19a0b8f2bbf62c4fd90ab2dd0231d379f8d4e1fb0f14de8ddb8a27",
+  "batches_processed": 60000,
+  "tokens_processed": 251658240000,
+  "seed": 34521,
+  "epoch": 1,
+  "dataset_type": "fsl",
+  "sequence_length": 8192,
+  "max_target_sequence_length": 8192
+ },
+ "tokenizer": "https://huggingface.co/allenai/Olmo-3-1025-7B/resolve/stage1-step60000/tokenizer.json",
+ "tokenizer_sha256": "73fd5254624f39a88e3faac6a8e11300fc3c735ed37880d4f4f08db898eaecca",
+ "range_requests": 512,
+ "bytes_fetched": 16777216,
+ "seconds": {
+  "head_1016_files": 3.7,
+  "permutation": 27.6,
+  "fetch": 7.5
+ },
+ "token_bytes_sha256": "0341b735786d493266a324e364619da45d22c188abf7b3947a55473459bda681",
+ "eos_total": 2555,
+ "instances_without_eos": 91,
+ "pad_tokens_total": 19257,
+ "instances_with_pad": 4,
+ "distinct_files": 309,
+ "instances_per_source": {
+  "common_crawl": {
+   "batch": 393,
+   "expected_from_corpus_share": 389.5
+  },
+  "dolma1_7-wiki-en": {
+   "batch": 0,
+   "expected_from_corpus_share": 0.2
+  },
+  "finemath-3plus": {
+   "batch": 13,
+   "expected_from_corpus_share": 13.1
+  },
+  "olmocr_science_pdfs": {
+   "batch": 64,
+   "expected_from_corpus_share": 69.5
+  },
+  "rpj-proofpile-arxiv": {
+   "batch": 8,
+   "expected_from_corpus_share": 4.4
+  },
+  "stack_edu": {
+   "batch": 34,
+   "expected_from_corpus_share": 35.3
+  }
+ },
+ "instances_per_source_subdir": {
+  "common_crawl/adult_content": 1,
+  "common_crawl/art_and_design": 3,
+  "common_crawl/crime_and_law": 7,
+  "common_crawl/education_and_jobs": 10,
+  "common_crawl/electronics_and_hardware": 14,
+  "common_crawl/entertainment": 51,
+  "common_crawl/finance_and_business": 17,
+  "common_crawl/food_and_dining": 5,
+  "common_crawl/games": 32,
+  "common_crawl/health": 39,
+  "common_crawl/history_and_geography": 9,
+  "common_crawl/home_and_hobbies": 1,
+  "common_crawl/industrial": 3,
+  "common_crawl/literature": 28,
+  "common_crawl/politics": 13,
+  "common_crawl/religion": 7,
+  "common_crawl/science_math_and_technology": 81,
+  "common_crawl/social_life": 4,
+  "common_crawl/software": 27,
+  "common_crawl/software_development": 38,
+  "common_crawl/transportation": 2,
+  "common_crawl/travel_and_tourism": 1,
+  "finemath-3plus": 13,
+  "olmocr_science_pdfs/crime_and_law": 1,
+  "olmocr_science_pdfs/finance_and_business": 1,
+  "olmocr_science_pdfs/health": 7,
+  "olmocr_science_pdfs/history_and_geography": 1,
+  "olmocr_science_pdfs/industrial": 1,
+  "olmocr_science_pdfs/politics": 1,
+  "olmocr_science_pdfs/religion": 1,
+  "olmocr_science_pdfs/science_math_and_technology": 46,
+  "olmocr_science_pdfs/software_development": 4,
+  "olmocr_science_pdfs/sports_and_fitness": 1,
+  "rpj-proofpile-arxiv": 8,
+  "stack_edu/C": 1,
+  "stack_edu/CSharp": 4,
+  "stack_edu/Cpp": 4,
+  "stack_edu/Java": 5,
+  "stack_edu/JavaScript": 1,
+  "stack_edu/Markdown": 9,
+  "stack_edu/Python": 8,
+  "stack_edu/Ruby": 1,
+  "stack_edu/Swift": 1
+ }
+}

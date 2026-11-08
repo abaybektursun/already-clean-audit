@@ -1,0 +1,22 @@
+{
+  "rental": "drill_dl",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:v1-anchor-gemma2b",
+  "disk": 25,
+  "gpu_query": "gpu_ram>=8 num_gpus=1",
+  "bound": "overhead",
+  "weights_mode": "download",
+  "weights_hf_repo": "Qwen/Qwen2.5-0.5B",
+  "weights_dir": "/workspace/model",
+  "watch": {
+    "load_backstop_min": 25,
+    "max_billed_h": 1
+  },
+  "cells": [
+    {
+      "id": "drill_smoke",
+      "module": "infra.vast.cells.smoke_stats",
+      "model_dir": "/workspace/model",
+      "probe_text": "The capital of France is"
+    }
+  ]
+}

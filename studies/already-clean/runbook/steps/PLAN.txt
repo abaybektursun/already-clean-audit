@@ -1,0 +1,7 @@
+W2-D after the w1/q4b pull lands at bank/neurons/w1/q4b/1/out/
+1. split:   python3 -I bin/split_sample.py <harvest out>/q4b 60 0 <explain>/bank/w1/q4b_split      (120 discovery poles, 600 audit poles)
+2. explain: set -a; . ~/.config/interp_research/keys.env; set +a; bin/q1_explain_wave.sh <harvest>/q4b <harvest>/corpus/corpus <explain>/bank/w1/q4b_disc d1 <split>/discovery_poles.json 0
+3. upload probe_poles.json + texts.jsonl to s3://pg-lineage-769063704696/results/neurons/w2d/q4b_probe/1/ ; harvest agent copies the draft manifest to infra/aws_pg/steps/neurons_w2d_q4b_probe.json, launches pipeline (fresh prefix, --type g6e.2xlarge,g6e.4xlarge, budget 90 min)
+4. theta:   bin/ne verdict theta --stats <harvest>/q4b --probe <probe pull> --explain <explain>/bank/w1/q4b_disc --out <explain>/bank/w1/q4b_disc/theta.json
+5. prompt iteration on the discovery set only (<=3 versions, SHA + pass rate in JOURNAL); then freeze tag before W2-C.
+Deadlines (registry): q4b 09:11:43Z, g4 09:05:38Z, o7_t15 09:26:12Z. Projected finish ~07:00Z / ~07:45Z / ~07:40Z at 04:17Z rates (q4b 3.9k, g4 3.4k tok/s).

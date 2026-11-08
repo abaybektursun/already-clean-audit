@@ -1,0 +1,24 @@
+{
+  "started_utc": "2026-11-06T01:10:17Z",
+  "n_steps": 3,
+  "state": "failed",
+  "completed": 1,
+  "steps": [
+    {
+      "i": 0,
+      "name": "setup",
+      "module": "infra.aws_pg.jobs.n13_setup",
+      "args": "--pair pair1 --models base,rl",
+      "state": "ok",
+      "returncode": 0
+    },
+    {
+      "i": 1,
+      "name": "smoke_base",
+      "module": "infra.aws_pg.jobs.n13_gen",
+      "args": "--arm base --bench math500 --problems 0:300 --cap 16384 --smoke --setup-dir /work/out/setup --allowance-min 110 --proj-tok-s 500.0 --proj-mean-math 2500.0 --proj-mean-gsm 940.0 --proj-load-min 5.0",
+      "state": "failed",
+      "returncode": 1
+    }
+  ]
+}

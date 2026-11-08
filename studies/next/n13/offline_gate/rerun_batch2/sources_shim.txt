@@ -1,0 +1,75 @@
+Source lines read for N13_SPEC.md A19 revision (the shim's token count), 2026-11-05, by the fourth N13 executor.
+Each file was fetched raw from GitHub at the pinned tag or commit; sha256 of the fetched bytes, then the quoted lines (line number: text).
+
+== https://raw.githubusercontent.com/vllm-project/vllm/v0.11.0/vllm/outputs.py
+sha256 ee60aa7563b7db029c5cc352fcdbd63015575e2d5f898933dba294fb69afd389
+21: @dataclass
+22: class CompletionOutput:
+23:     """The output data of one completion output of a request.
+24: 
+25:     Args:
+26:         index: The index of the output in the request.
+27:         text: The generated output text.
+28:         token_ids: The token IDs of the generated output text.
+29:         cumulative_logprob: The cumulative log probability of the generated
+30:             output text.
+31:         logprobs: The log probabilities of the top probability words at each
+32:             position if the logprobs are requested.
+33:         finish_reason: The reason why the sequence is finished.
+34:         stop_reason: The stop string or token id that caused the completion
+35:             to stop, None if the completion finished for some other reason
+36:             including encountering the EOS token.
+37:         lora_request: The LoRA request that was used to generate the output.
+38:     """
+39: 
+40:     index: int
+41:     text: str
+42:     token_ids: GenericSequence[int]
+43:     cumulative_logprob: Optional[float]
+44:     logprobs: Optional[SampleLogprobs]
+45:     finish_reason: Optional[str] = None
+46:     stop_reason: Union[int, str, None] = None
+  ...
+79: class RequestOutput:
+80:     """The output data of a completion request to the LLM.
+  ...
+91:         outputs: The output sequences of the request.
+  ...
+103:     def __init__(
+104:         self,
+105:         request_id: str,
+106:         prompt: Optional[str],
+107:         prompt_token_ids: Optional[list[int]],
+108:         prompt_logprobs: Optional[PromptLogprobs],
+109:         outputs: list[CompletionOutput],
+110:         finished: bool,
+111:         metrics: Optional[RequestMetrics] = None,
+  ...
+131:         self.outputs = outputs
+  ...
+
+== https://raw.githubusercontent.com/allenai/olmes/5a51f502d463b8cdc4a2dcad7d7096c41ff1197e/oe_eval/models/eleuther_vllm_causallms.py
+sha256 1f96bb3251dca8110b5de630345966357b0543fe6cfe8fdb1c0e638ce99c9b0d
+243:             cont = self._model_generate(
+244:                 requests=context_encoding_trunc,
+245:                 generate=True,
+246:                 max_tokens=max_gen_toks,
+247:                 stop=until,
+248:                 **kwargs,
+249:             )
+250: 
+251:             # cache generations
+252:             for output, context, context_length in zip(cont, context, context_lengths):
+253:                 completion_output = output.outputs[0]
+254:                 generated_text_raw = completion_output.text
+255:                 generated_text = cut_at_stop_sequence(
+256:                     generated_text_raw, until
+257:                 )  # oe_eval: catch stop sequence
+258:                 num_tokens = len(completion_output.token_ids)
+259:                 cumulative_logprob = completion_output.cumulative_logprob
+260:                 res1 = {
+261:                     "continuation": generated_text,
+262:                     "num_tokens": num_tokens,
+263:                     "context_tokens": context_length,
+264:                     # "tokens": completion_output.token_ids,
+  ...

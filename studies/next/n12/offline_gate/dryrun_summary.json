@@ -1,0 +1,469 @@
+{
+ "project": {
+  "points": {
+   "14": {
+    "windows": 737,
+    "grad_windows": 232,
+    "abl_rows": 451,
+    "s_center": 494,
+    "s_high": 692
+   },
+   "15": {
+    "windows": 1056,
+    "grad_windows": 0,
+    "abl_rows": 0,
+    "s_center": 338,
+    "s_high": 424
+   },
+   "13": {
+    "windows": 1081,
+    "grad_windows": 539,
+    "abl_rows": 781,
+    "s_center": 1330,
+    "s_high": 1978
+   },
+   "12": {
+    "windows": 1129,
+    "grad_windows": 594,
+    "abl_rows": 846,
+    "s_center": 859,
+    "s_high": 1250
+   },
+   "11": {
+    "windows": 948,
+    "grad_windows": 606,
+    "abl_rows": 823,
+    "s_center": 820,
+    "s_high": 1210
+   },
+   "10": {
+    "windows": 577,
+    "grad_windows": 388,
+    "abl_rows": 505,
+    "s_center": 556,
+    "s_high": 822
+   },
+   "9": {
+    "windows": 272,
+    "grad_windows": 194,
+    "abl_rows": 248,
+    "s_center": 327,
+    "s_high": 484
+   },
+   "8": {
+    "windows": 236,
+    "grad_windows": 86,
+    "abl_rows": 208,
+    "s_center": 253,
+    "s_high": 358
+   },
+   "7": {
+    "windows": 152,
+    "grad_windows": 152,
+    "abl_rows": 222,
+    "s_center": 273,
+    "s_high": 406
+   },
+   "6": {
+    "windows": 10,
+    "grad_windows": 0,
+    "abl_rows": 0,
+    "s_center": 113,
+    "s_high": 164
+   },
+   "5": {
+    "windows": 10,
+    "grad_windows": 10,
+    "abl_rows": 21,
+    "s_center": 124,
+    "s_high": 180
+   }
+  },
+  "gpu_h_center": 1.64,
+  "gpu_h_high": 2.33,
+  "window_forwards": 6208,
+  "grad_windows": 2801,
+  "abl_rows": 4105,
+  "usd_center_g6e2x": 3.67,
+  "usd_high_g6e2x": 5.22,
+  "budget_min_hard_kill": 182
+ },
+ "checks": [
+  [
+   "REAL units.json is reproducible from the laptop banks and births.json",
+   true
+  ],
+  [
+   "REAL units.json sha256 is the one n12_score registers",
+   true
+  ],
+  [
+   "REAL M2 ranks_freeze.jsonl sha256 registered",
+   true
+  ],
+  [
+   "REAL M2 ranks_test.jsonl sha256 registered",
+   true
+  ],
+  [
+   "REAL births.json sha256 recorded in units.json is M2's registered one",
+   true
+  ],
+  [
+   "REAL units: real 82/71, pb 79/70, dt at least 50 per half",
+   true
+  ],
+  [
+   "REAL every real unit is its birth (positions, pole, distinct-token count)",
+   true
+  ],
+  [
+   "REAL every pb unit is M2's twin",
+   true
+  ],
+  [
+   "REAL every dt twin re-dated k, same layer, other neuron, same size, same distinct count, non-echo ranks",
+   true
+  ],
+  [
+   "REAL the reader's distinct-token counts reproduce: births with a twin 78 of 149 below 0.67, twins 16",
+   true
+  ],
+  [
+   "REAL dt twins carry repeated tokens like the births: share below 0.67 among dt",
+   true
+  ],
+  [
+   "REAL plan: every (unit, role) exactly once; points in the registered order",
+   true
+  ],
+  [
+   "REAL plan: gradient windows are forward windows; K0 has 10 real pre-role carriers at T_14",
+   true
+  ],
+  [
+   "REAL every window keeps at least M_LM loss-matched candidates after the exclusions",
+   true
+  ],
+  [
+   "REAL raw examples: M2's top-10 under B recomputed from the vectors at the pre and birth roles (10 of 10)",
+   true
+  ],
+  [
+   "REAL raw examples: the rolled neuron axis does not reproduce the top-10 (failing input)",
+   true
+  ],
+  [
+   "REAL raw examples: the decomposition's identity on real arrays; 20 competitors with B > 0",
+   true
+  ],
+  [
+   "REAL sides G0: 11 points; harvest controls and score-06, u x 1.1 as the failing input",
+   true
+  ],
+  [
+   "REAL sides G_REV: 11 points; registered revision = banked manifest = HF ref",
+   true
+  ],
+  [
+   "REAL sides G_CFG: 11 points; committed branch configs",
+   true
+  ],
+  [
+   "REAL sides K0: T_14, the 10 carriers (L00N9356-:c8, L02N1367-:c7, L02N4649+:c3, L02N7380+:c2, L03N6372+:c10, L03N7746+:c0, L04N7919-:c0, L05N8714-:c5, L06N2185+:c5, L06N9844+:c1)",
+   true
+  ],
+  [
+   "REAL sides G_M2V: 11 points (pass side at T_7, T_8, T_9, T_10, T_11, T_12, T_13, T_14, T_15; T_5, T_6 assumed); up to 6 files per point, freeze half (test half at T_5, T_6, aggregate only)",
+   true
+  ],
+  [
+   "REAL sides G_EX: gated at T_5, T_6, T_15, reported at T_7-T_14 (A3); failing side on N12's entries",
+   true
+  ],
+  [
+   "REAL sides G_TOPK: 11 points; score-06 (M2's entries)",
+   true
+  ],
+  [
+   "REAL sides I_ID: T_13; score-04, score-05, score-06",
+   true
+  ],
+  [
+   "REAL sides DEGENERATE: 11 points, every layer the plan reads (bank_scan.json)",
+   true
+  ],
+  [
+   "REAL sides USABLE: both halves; real, pb, dt",
+   true
+  ],
+  [
+   "REAL sides MOVEMENT: freeze half (82); the test half is read only at the verdict",
+   true
+  ],
+  [
+   "REAL sides CONSTRUCTION_TWIN: T_15, freeze half, M2's twins under B (the dt operator)",
+   true
+  ],
+  [
+   "SCORE competitors: own neuron excluded, highest B first, stable",
+   true
+  ],
+  [
+   "SCORE layer rank: ties count against the pole",
+   true
+  ],
+  [
+   "SCORE counterfactual: only the pole rises -> r_c = r1 = 1, r_o = r0, F > 0",
+   true
+  ],
+  [
+   "SCORE counterfactual: only the others fall -> r_o = r1 = 1, r_c = r0, F < 0",
+   true
+  ],
+  [
+   "SCORE counterfactual identity: r_c = r_o = r0, F = 0",
+   true
+  ],
+  [
+   "SCORE pull sign: + pole pulled up by G < 0; - pole by G > 0; NaN q999 gives 0",
+   true
+  ],
+  [
+   "SCORE loss-matched: nearest losses, the excluded neighbourhood and index 0 left out, ties by index",
+   true
+  ],
+  [
+   "SCORE u_share: the share of competitors at or above the pole (ties count against)",
+   true
+  ],
+  [
+   "SCORE spearman: known values, ties averaged, constant input undefined",
+   true
+  ],
+  [
+   "SCORE validation passes on a faithful prediction; its sign-flipped input fails",
+   true
+  ],
+  [
+   "SCORE validation fails on an unrelated prediction",
+   true
+  ],
+  [
+   "SCORE validation flags its ceiling (prediction equal to the ablation)",
+   true
+  ],
+  [
+   "SCORE room: every label branch reachable at the test size",
+   true
+  ],
+  [
+   "SCORE bootstrap interval brackets the mean",
+   true
+  ],
+  [
+   "SCORE matched floor of a constant u is that constant",
+   true
+  ],
+  [
+   "INSTR grad_capture equals central finite differences (fp64 model, 8 largest-gradient neurons)",
+   true
+  ],
+  [
+   "INSTR the neighbouring neuron's gradient does not (failing input)",
+   true
+  ],
+  [
+   "INSTR zero ablation against -h*G on 24 (neuron, position) pairs: Spearman >= VAL_RHO_MIN",
+   true
+  ],
+  [
+   "INSTR loss-matched positions captured beside each exemplar",
+   true
+  ],
+  [
+   "JOB M2's tiny job writes the banks N12 reads (ranks, vectors)",
+   true
+  ],
+  [
+   "JOB n12_score.main exits 0 and prints N12_JOB_OK",
+   true
+  ],
+  [
+   "JOB metrics complete, nothing parked",
+   true
+  ],
+  [
+   "JOB every gate passed",
+   true
+  ],
+  [
+   "JOB every registered failing input failed",
+   true
+  ],
+  [
+   "JOB K0 at T_14 first: 10 carriers' B equal M2's banked pre-role B; birth-role B fails",
+   true
+  ],
+  [
+   "JOB G-M2V at every point: the forward equals M2's banked vectors (same device)",
+   true
+  ],
+  [
+   "JOB G-ABL-ID: clean rows equal the forward's loss; another window's loss fails",
+   true
+  ],
+  [
+   "JOB I-GRAD: the reversed gradient pass reproduces G; the rolled axis fails",
+   true
+  ],
+  [
+   "JOB I-ID: the reversed forward reproduces a, 0 flips; M2's birth-role vectors fail",
+   true
+  ],
+  [
+   "JOB metrics.json carries no rank, hit or label",
+   true
+  ],
+  [
+   "JOB one N12 record per unit",
+   true
+  ],
+  [
+   "JOB a real record has 20 competitors, pull, 4 ablation pairs, matched u, the identity, the drop",
+   true
+  ],
+  [
+   "JOB the carrier's r0 and r1 equal M2's banked ranks under B (every real unit)",
+   true
+  ],
+  [
+   "JOB the pull recomputes from the banked gradient rows and the grid q999",
+   true
+  ],
+  [
+   "JOB raw examples: the selected births, competitors' contexts, exemplars, loss-matched texts",
+   true
+  ],
+  [
+   "FAIL G_SAME on its planted input: exit non-zero, gate named",
+   true
+  ],
+  [
+   "FAIL INPUTS on its planted input: exit non-zero, gate named",
+   true
+  ],
+  [
+   "FAIL G_CORPUS on its planted input: exit non-zero, gate named",
+   true
+  ],
+  [
+   "FAIL t14_G_REV on its planted input: exit non-zero, gate named",
+   true
+  ],
+  [
+   "FAIL t14_G_CFG on its planted input: exit non-zero, gate named",
+   true
+  ],
+  [
+   "FAIL t14_G0 on its planted input: exit non-zero, gate named",
+   true
+  ],
+  [
+   "FAIL K0 on its planted input: exit non-zero, gate named",
+   true
+  ],
+  [
+   "FAIL t15_G_M2V on its planted input: exit non-zero, gate named",
+   true
+  ],
+  [
+   "FAIL t14_G_EX on its planted input: exit non-zero, gate named",
+   true
+  ],
+  [
+   "FAIL t14_G_ABL_ID on its planted input: exit non-zero, gate named",
+   true
+  ],
+  [
+   "FAIL I_GRAD on its planted input: exit non-zero, gate named",
+   true
+  ],
+  [
+   "FAIL I_ID on its planted input: exit non-zero, gate named",
+   true
+  ],
+  [
+   "FAIL stop rule: a tiny budget parks the later points and the job ends normally",
+   true
+  ],
+  [
+   "VERDICT base: OWN_RISE, H_away_sel ABOVE, H_signal SUPPORTED, FORETELLS, H_dt SUPPORTED",
+   true
+  ],
+  [
+   "VERDICT others fall: OTHERS_FALL, H_away_sel BELOW, H_signal REFUTED, CONTRARY, H_dt UNDECIDED",
+   true
+  ],
+  [
+   "VERDICT mixed: MIXED, H_away_sel AT, H_signal UNDECIDED, H_bridge UNDECIDED, H_dt UNDECIDED",
+   true
+  ],
+  [
+   "VERDICT dt twins hit more than the carriers: H_sel_dt BELOW_SELECTION, H_dt REFUTED",
+   true
+  ],
+  [
+   "VERDICT the pull above its ceiling (the realized gain): ABOVE_CEILING",
+   true
+  ],
+  [
+   "VERDICT G-VAL fails: every gradient label DOES NOT COUNT, the realized labels stand",
+   true
+  ],
+  [
+   "VERDICT G-VAL above its ceiling: the gradient labels DOES NOT COUNT until inspected",
+   true
+  ],
+  [
+   "VERDICT fewer than 50 dt twins: H_dt NOT_RUN, H_away_sel_dt NOT_RUN",
+   true
+  ],
+  [
+   "VERDICT the dt construction control missing: H_dt DOES NOT COUNT",
+   true
+  ],
+  [
+   "VERDICT 30 real test units: DOES NOT COUNT (missing)",
+   true
+  ],
+  [
+   "VERDICT no movement on the test half: DOES NOT COUNT",
+   true
+  ],
+  [
+   "VERDICT the decomposition's identity broken: DOES NOT COUNT",
+   true
+  ],
+  [
+   "VERDICT a failed gate: DOES NOT COUNT (gates)",
+   true
+  ],
+  [
+   "VERDICT the freeze records changed after the freeze: the verdict refuses",
+   true
+  ],
+  [
+   "VERDICT the tiny job's freeze refuses (20 real units < 50): the usable-units gate's failing input",
+   true
+  ],
+  [
+   "VERDICT the tiny job's freeze half summarizes under the frozen definitions",
+   true
+  ],
+  [
+   "PROJECT the launch's high case fits 0.9 of its hard kill (1.3 x the high projection)",
+   true
+  ]
+ ]
+}

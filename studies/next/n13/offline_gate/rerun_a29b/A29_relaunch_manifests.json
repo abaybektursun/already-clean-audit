@@ -1,0 +1,40 @@
+{
+ "returncode": 0,
+ "stderr": "",
+ "g3": [
+  {
+   "name": "setup",
+   "module": "infra.aws_pg.jobs.n13_setup",
+   "args": "--pair pair1 --models base,rl,stage2"
+  },
+  {
+   "name": "r1_rank",
+   "module": "infra.aws_pg.jobs.n13_rank",
+   "args": "--setup-dir /work/out/setup --delete-stage2"
+  },
+  {
+   "name": "base",
+   "module": "infra.aws_pg.jobs.n13_gen",
+   "args": "--arm base --bench math500,gsm8k --problems 0:500 --setup-dir /work/out/setup --cap 16384 --allowance-min 274 --proj-tok-s 457.1929824561403 --proj-mean-math 7.736666666666666 --proj-mean-gsm 940.0 --proj-load-min 0.0358333"
+  },
+  {
+   "name": "rl",
+   "module": "infra.aws_pg.jobs.n13_gen",
+   "args": "--arm rl --bench math500,gsm8k --problems 0:500 --setup-dir /work/out/setup --cap 16384 --allowance-min 274 --proj-tok-s 457.1929824561403 --proj-mean-math 7.736666666666666 --proj-mean-gsm 940.0 --proj-load-min 0.0358333"
+  }
+ ],
+ "g4": [
+  {
+   "name": "setup",
+   "module": "infra.aws_pg.jobs.n13_setup",
+   "args": "--pair pair1 --models base,rl"
+  },
+  {
+   "name": "id",
+   "module": "infra.aws_pg.jobs.n13_gen",
+   "args": "--arm id --bench math500,gsm8k --problems 0:500 --setup-dir /work/out/setup --cap 16384 --allowance-min 91 --proj-tok-s 457.1929824561403 --proj-mean-math 7.736666666666666 --proj-mean-gsm 940.0 --proj-load-min 5.0358333"
+  }
+ ],
+ "id_min_hand": 70.37512403931952,
+ "s3gate1_min_hand": 210.75024807863903
+}

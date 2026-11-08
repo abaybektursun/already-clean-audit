@@ -1,0 +1,665 @@
+{
+ "HuggingFaceH4/zephyr-7b-beta": {
+  "config": {
+   "architectures": [
+    "MistralForCausalLM"
+   ],
+   "auto_map": false,
+   "dtype": "bfloat16",
+   "hidden": 4096,
+   "model_type": "mistral",
+   "n_layers": 32,
+   "params_b_from_index": 7.2417,
+   "quantized": false,
+   "text_model_type": "mistral",
+   "tie": false,
+   "total_size": 14483464192,
+   "transformers_version": "4.35.0",
+   "vocab": 32000
+  },
+  "config_sha256": "e8781201ac85df8fba859aeb7a53f16725f3ec32c05de51999259376f75338b8",
+  "config_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--HuggingFaceH4--zephyr-7b-beta/snapshots/892b3d7a7b1cf10c7a701c60881cd93df615734c/config.json",
+  "index_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--HuggingFaceH4--zephyr-7b-beta/snapshots/892b3d7a7b1cf10c7a701c60881cd93df615734c/model.safetensors.index.json",
+  "revision": "892b3d7a7b1cf10c7a701c60881cd93df615734c"
+ },
+ "Qwen/Qwen3-4B-Base": {
+  "config": {
+   "architectures": [
+    "Qwen3ForCausalLM"
+   ],
+   "auto_map": false,
+   "dtype": "bfloat16",
+   "hidden": 2560,
+   "model_type": "qwen3",
+   "n_layers": 36,
+   "params_b_from_index": 4.0228,
+   "quantized": false,
+   "text_model_type": "qwen3",
+   "tie": true,
+   "total_size": 8045591552,
+   "transformers_version": "4.51.0",
+   "vocab": 151936
+  },
+  "config_sha256": "304b2545a258d35620f1d4bf46940c0471d9baa00715ff8e77f84c2fca5057c1",
+  "config_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--Qwen--Qwen3-4B-Base/snapshots/906bfd4b4dc7f14ee4320094d8b41684abff8539/config.json",
+  "index_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--Qwen--Qwen3-4B-Base/snapshots/906bfd4b4dc7f14ee4320094d8b41684abff8539/model.safetensors.index.json",
+  "revision": "906bfd4b4dc7f14ee4320094d8b41684abff8539"
+ },
+ "Qwen/Qwen3-4B-Instruct-2507": {
+  "config": {
+   "architectures": [
+    "Qwen3ForCausalLM"
+   ],
+   "auto_map": false,
+   "dtype": "bfloat16",
+   "hidden": 2560,
+   "model_type": "qwen3",
+   "n_layers": 36,
+   "params_b_from_index": 4.0228,
+   "quantized": false,
+   "text_model_type": "qwen3",
+   "tie": true,
+   "total_size": 8045591552,
+   "transformers_version": "4.51.0",
+   "vocab": 151936
+  },
+  "config_sha256": "5beea1a4a34c62782bfb2f911c606741a3bab8f92d80a118fa053c28af12e8ba",
+  "config_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--Qwen--Qwen3-4B-Instruct-2507/snapshots/cdbee75f17c01a7cc42f958dc650907174af0554/config.json",
+  "index_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--Qwen--Qwen3-4B-Instruct-2507/snapshots/cdbee75f17c01a7cc42f958dc650907174af0554/model.safetensors.index.json",
+  "revision": "cdbee75f17c01a7cc42f958dc650907174af0554"
+ },
+ "ScaleAI/mhj-llama3-8b-rmu": {
+  "config": {
+   "architectures": [
+    "LlamaForCausalLM"
+   ],
+   "auto_map": false,
+   "dtype": "bfloat16",
+   "hidden": 4096,
+   "model_type": "llama",
+   "n_layers": 32,
+   "params_b_from_index": 8.0303,
+   "quantized": false,
+   "text_model_type": "llama",
+   "tie": false,
+   "total_size": 16060522496,
+   "transformers_version": "4.41.2",
+   "vocab": 128256
+  },
+  "config_sha256": "60a921783601aed101cf54c627e356a532fcbbd19be1e05369194cd761e6c219",
+  "config_source": "https://huggingface.co/ScaleAI/mhj-llama3-8b-rmu/resolve/aa68f887c36072c057f19446d474ce5389b79fdf/config.json",
+  "index_source": "https://huggingface.co/ScaleAI/mhj-llama3-8b-rmu/resolve/aa68f887c36072c057f19446d474ce5389b79fdf/model.safetensors.index.json",
+  "revision": "aa68f887c36072c057f19446d474ce5389b79fdf"
+ },
+ "_meta": {
+  "bucket": "pg-lineage-769063704696",
+  "bucket_dirs": [
+   "models--HuggingFaceH4--zephyr-7b-beta",
+   "models--Qwen--Qwen3-4B",
+   "models--Qwen--Qwen3-4B-Base",
+   "models--Qwen--Qwen3-4B-Instruct-2507",
+   "models--allenai--Molmo2-4B",
+   "models--allenai--Molmo2-ER",
+   "models--allenai--MolmoAct-7B-D-0812",
+   "models--allenai--MolmoAct2",
+   "models--allenai--MolmoAct2-DROID",
+   "models--allenai--MolmoAct2-LIBERO",
+   "models--allenai--MolmoAct2-Pretrain",
+   "models--allenai--MolmoAct2-Think-LIBERO",
+   "models--cais--Zephyr_RMU",
+   "models--google--gemma-1.1-2b-it",
+   "models--google--gemma-2-2b",
+   "models--google--gemma-2-2b-it",
+   "models--google--gemma-2b",
+   "models--google--gemma-3-4b-it",
+   "models--google--gemma-3-4b-pt",
+   "models--google--gemma-scope-2-4b-pt",
+   "models--google--paligemma-3b-pt-224",
+   "models--google--paligemma2-3b-mix-224",
+   "models--google--paligemma2-3b-pt-224",
+   "models--google--siglip-so400m-patch14-224"
+  ],
+  "bucket_listed": "2026-09-08",
+  "by": "python -m infra.pg.matrix_models --refresh-facts",
+  "generated": "2026-09-04",
+  "sources": "each repo's own config.json + model.safetensors.index.json at the KNOWN-pinned revision: the S3 weight cache where the bucket holds the repo, the HF resolve endpoint otherwise. Nothing here is hand-typed.",
+  "bucket_dirs_note": "Re-listed from the bucket on 2026-09-08 (`aws s3 ls weights/hf/hub/`) after the DEPTHANCHOR seed added allenai/MolmoAct2-Think-LIBERO (full snapshot) and allenai/MolmoAct-7B-D-0812 (PARTIAL: only vae-final.pt, depth_anything_v2_vitb.pth and the text files \u2014 its seven safetensors shards were deliberately not seeded, so this dir will not load the MolmoAct v1 policy). Per-repo facts below are unchanged and still carry their 2026-09-04 generation date; nothing here is hand-typed."
+ },
+ "allenai/Molmo2-4B": {
+  "config": {
+   "architectures": [
+    "Molmo2ForConditionalGeneration"
+   ],
+   "auto_map": true,
+   "dtype": "float32",
+   "hidden": 2560,
+   "model_type": "molmo2",
+   "n_layers": 36,
+   "params_b_from_index": 4.8509,
+   "quantized": false,
+   "text_model_type": "molmo2",
+   "tie": false,
+   "total_size": 19403476800,
+   "transformers_version": "4.57.1",
+   "vocab": 151936
+  },
+  "config_sha256": "17e072e3c3b29d9be7a348c74b88658e67ccce094c31b21f87646f6cecd2a76f",
+  "config_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--allenai--Molmo2-4B/snapshots/042abfa7a38879a376cec03d949eff0aefaa0600/config.json",
+  "index_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--allenai--Molmo2-4B/snapshots/042abfa7a38879a376cec03d949eff0aefaa0600/model.safetensors.index.json",
+  "revision": "042abfa7a38879a376cec03d949eff0aefaa0600"
+ },
+ "allenai/Molmo2-ER": {
+  "config": {
+   "architectures": [
+    "Molmo2ForConditionalGeneration"
+   ],
+   "auto_map": true,
+   "dtype": "float32",
+   "hidden": 2560,
+   "model_type": "molmo2",
+   "n_layers": 36,
+   "params_b_from_index": 4.8509,
+   "quantized": false,
+   "text_model_type": "molmo2",
+   "tie": false,
+   "total_size": 19403476800,
+   "transformers_version": "4.56.2",
+   "vocab": 151936
+  },
+  "config_sha256": "0030efa549538d7eb29db139aba773417f330a0d2ecacc8dad2b85d72e963391",
+  "config_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--allenai--Molmo2-ER/snapshots/dab22564403d2607855bb1fffb0721285b445081/config.json",
+  "index_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--allenai--Molmo2-ER/snapshots/dab22564403d2607855bb1fffb0721285b445081/model.safetensors.index.json",
+  "revision": "dab22564403d2607855bb1fffb0721285b445081"
+ },
+ "allenai/MolmoAct2": {
+  "config": {
+   "architectures": [
+    "MolmoAct2ForConditionalGeneration"
+   ],
+   "auto_map": true,
+   "dtype": "float32",
+   "hidden": 2560,
+   "model_type": "molmoact2",
+   "n_layers": 36,
+   "params_b_from_index": 5.4422,
+   "quantized": false,
+   "text_model_type": "molmoact2",
+   "tie": false,
+   "total_size": 21768785088,
+   "transformers_version": "5.3.0",
+   "vocab": 154624
+  },
+  "config_sha256": "12bb27d584b3b91ebf86b6f85327a3f934f239b5fcdf5f89298e91d7c9516112",
+  "config_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--allenai--MolmoAct2/snapshots/e432d85f6e039edca44afb93c262f3084ab72a9c/config.json",
+  "index_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--allenai--MolmoAct2/snapshots/e432d85f6e039edca44afb93c262f3084ab72a9c/model.safetensors.index.json",
+  "revision": "e432d85f6e039edca44afb93c262f3084ab72a9c"
+ },
+ "allenai/MolmoAct2-LIBERO-LeRobot": {
+  "config": {
+   "architectures": null,
+   "auto_map": false,
+   "dtype": null,
+   "hidden": null,
+   "model_type": null,
+   "n_layers": null,
+   "params_b_from_index": null,
+   "quantized": false,
+   "text_model_type": null,
+   "tie": null,
+   "total_size": null,
+   "transformers_version": null,
+   "vocab": null
+  },
+  "config_sha256": "2d65a19d7cc3859fbb49709a34a2fbc1ea68893775195771bedea82aa267b5fe",
+  "config_source": "https://huggingface.co/allenai/MolmoAct2-LIBERO-LeRobot/resolve/f0c5a9567c2b72faadec901e16e055c8b098c2f5/config.json",
+  "index_source": "https://huggingface.co/allenai/MolmoAct2-LIBERO-LeRobot/resolve/f0c5a9567c2b72faadec901e16e055c8b098c2f5/model.safetensors.index.json -> HTTP 404",
+  "revision": "f0c5a9567c2b72faadec901e16e055c8b098c2f5"
+ },
+ "allenai/OLMo-2-1124-7B": {
+  "config": {
+   "architectures": [
+    "Olmo2ForCausalLM"
+   ],
+   "auto_map": false,
+   "dtype": "float32",
+   "hidden": 4096,
+   "model_type": "olmo2",
+   "n_layers": 32,
+   "params_b_from_index": 7.2986,
+   "quantized": false,
+   "text_model_type": "olmo2",
+   "tie": false,
+   "total_size": 29194469376,
+   "transformers_version": "4.47.0",
+   "vocab": 100352
+  },
+  "config_sha256": "f1e210de0ba704c579768c154bf57e36e170868ffecb060a6e0d3f2e6b0b9710",
+  "config_source": "https://huggingface.co/allenai/OLMo-2-1124-7B/resolve/7df9a82518afdecae4e8c026b27adccc8c1f0032/config.json",
+  "index_source": "https://huggingface.co/allenai/OLMo-2-1124-7B/resolve/7df9a82518afdecae4e8c026b27adccc8c1f0032/model.safetensors.index.json",
+  "revision": "7df9a82518afdecae4e8c026b27adccc8c1f0032"
+ },
+ "cais/Zephyr_RMU": {
+  "config": {
+   "architectures": [
+    "MistralForCausalLM"
+   ],
+   "auto_map": false,
+   "dtype": "bfloat16",
+   "hidden": 4096,
+   "model_type": "mistral",
+   "n_layers": 32,
+   "params_b_from_index": 7.2417,
+   "quantized": false,
+   "text_model_type": "mistral",
+   "tie": false,
+   "total_size": 14483464192,
+   "transformers_version": "4.38.2",
+   "vocab": 32000
+  },
+  "config_sha256": "62c5bee44fa16cd6609cef1e3928bbd806ed7e9af781755014232ebcf0fda3ba",
+  "config_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--cais--Zephyr_RMU/snapshots/70c55b3bf3141a8c24292dec0262b8aea03a0d4a/config.json",
+  "index_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--cais--Zephyr_RMU/snapshots/70c55b3bf3141a8c24292dec0262b8aea03a0d4a/model.safetensors.index.json",
+  "revision": "70c55b3bf3141a8c24292dec0262b8aea03a0d4a"
+ },
+ "deepseek-ai/DeepSeek-V4-Flash-0731": {
+  "config": {
+   "architectures": [
+    "DeepseekV4ForCausalLM"
+   ],
+   "auto_map": false,
+   "dtype": "bfloat16",
+   "hidden": 4096,
+   "model_type": "deepseek_v4",
+   "n_layers": 43,
+   "params_b_from_index": null,
+   "quantized": true,
+   "text_model_type": "deepseek_v4",
+   "tie": false,
+   "total_size": 166878536440,
+   "transformers_version": "4.57.1",
+   "vocab": 129280
+  },
+  "config_sha256": "6c8f3d2d3b48707541b88f32f22ef3f0f8a6b57d8523281e2b8d3cdb0ae9a023",
+  "config_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/resolve/7872f01b1d1fe23eabc4c98b48bffcef5a386062/config.json",
+  "index_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/resolve/7872f01b1d1fe23eabc4c98b48bffcef5a386062/model.safetensors.index.json",
+  "revision": "7872f01b1d1fe23eabc4c98b48bffcef5a386062"
+ },
+ "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp": {
+  "config": {
+   "architectures": [
+    "DeepseekV4ForCausalLM"
+   ],
+   "auto_map": false,
+   "dtype": "bfloat16",
+   "hidden": 4096,
+   "model_type": "deepseek_v4",
+   "n_layers": 43,
+   "params_b_from_index": null,
+   "quantized": true,
+   "text_model_type": "deepseek_v4",
+   "tie": false,
+   "total_size": 167811372792,
+   "transformers_version": "5.0.0",
+   "vocab": 129280
+  },
+  "config_sha256": "6cd841bdd6702f5e2ac34671bc78047ed80817102465525ae2a41c502abbcd75",
+  "config_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp/resolve/6821d6ad3681a4b137b066b76094fa82ebd0a380/config.json",
+  "index_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp/resolve/6821d6ad3681a4b137b066b76094fa82ebd0a380/model.safetensors.index.json",
+  "revision": "6821d6ad3681a4b137b066b76094fa82ebd0a380"
+ },
+ "google/gemma-1.1-2b-it": {
+  "config": {
+   "architectures": [
+    "GemmaForCausalLM"
+   ],
+   "auto_map": false,
+   "dtype": "bfloat16",
+   "hidden": 2048,
+   "model_type": "gemma",
+   "n_layers": 18,
+   "params_b_from_index": 2.5062,
+   "quantized": false,
+   "text_model_type": "gemma",
+   "tie": null,
+   "total_size": 5012344832,
+   "transformers_version": "4.38.1",
+   "vocab": 256000
+  },
+  "config_sha256": "3ec4303ddfc39dd9aacdb40fa3f9c4a33799266b56d18120d431b9e1e2d78829",
+  "config_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--google--gemma-1.1-2b-it/snapshots/d750f5eceb83e978c09e2b3597c2a8784e381022/config.json",
+  "index_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--google--gemma-1.1-2b-it/snapshots/d750f5eceb83e978c09e2b3597c2a8784e381022/model.safetensors.index.json",
+  "revision": "d750f5eceb83e978c09e2b3597c2a8784e381022"
+ },
+ "google/gemma-2-2b": {
+  "config": {
+   "architectures": [
+    "Gemma2ForCausalLM"
+   ],
+   "auto_map": false,
+   "dtype": "float32",
+   "hidden": 2304,
+   "model_type": "gemma2",
+   "n_layers": 26,
+   "params_b_from_index": 2.6143,
+   "quantized": false,
+   "text_model_type": "gemma2",
+   "tie": null,
+   "total_size": 10457367552,
+   "transformers_version": "4.42.4",
+   "vocab": 256000
+  },
+  "config_sha256": "56ee4e528fedfe70b2fabb0704eec9f2ef94461de936928220a3d6e7fac5ef98",
+  "config_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--google--gemma-2-2b/snapshots/c5ebcd40d208330abc697524c919956e692655cf/config.json",
+  "index_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--google--gemma-2-2b/snapshots/c5ebcd40d208330abc697524c919956e692655cf/model.safetensors.index.json",
+  "revision": "c5ebcd40d208330abc697524c919956e692655cf"
+ },
+ "google/gemma-2-2b-it": {
+  "config": {
+   "architectures": [
+    "Gemma2ForCausalLM"
+   ],
+   "auto_map": false,
+   "dtype": "bfloat16",
+   "hidden": 2304,
+   "model_type": "gemma2",
+   "n_layers": 26,
+   "params_b_from_index": 2.6143,
+   "quantized": false,
+   "text_model_type": "gemma2",
+   "tie": null,
+   "total_size": 5228683776,
+   "transformers_version": "4.42.4",
+   "vocab": 256000
+  },
+  "config_sha256": "eacec6c5ca317a87ed2c46789d9705b9274db5027e7ba59da739bfae23addb55",
+  "config_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--google--gemma-2-2b-it/snapshots/299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8/config.json",
+  "index_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--google--gemma-2-2b-it/snapshots/299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8/model.safetensors.index.json",
+  "revision": "299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8"
+ },
+ "google/gemma-2-9b": {
+  "config": {
+   "architectures": [
+    "Gemma2ForCausalLM"
+   ],
+   "auto_map": false,
+   "dtype": "float32",
+   "hidden": 3584,
+   "model_type": "gemma2",
+   "n_layers": 42,
+   "params_b_from_index": 9.2417,
+   "quantized": false,
+   "text_model_type": "gemma2",
+   "tie": null,
+   "total_size": 36966823936,
+   "transformers_version": "4.42.0.dev0",
+   "vocab": 256000
+  },
+  "config_sha256": "800e3f504f8e76ef4d6295db8616b92d039cf2e6a3de15b4db45e4eff4e9a4dc",
+  "config_source": "https://huggingface.co/google/gemma-2-9b/resolve/33c193028431c2fde6c6e51f29e6f17b60cbfac6/config.json",
+  "index_source": "https://huggingface.co/google/gemma-2-9b/resolve/33c193028431c2fde6c6e51f29e6f17b60cbfac6/model.safetensors.index.json",
+  "revision": "33c193028431c2fde6c6e51f29e6f17b60cbfac6"
+ },
+ "google/gemma-2b": {
+  "config": {
+   "architectures": [
+    "GemmaForCausalLM"
+   ],
+   "auto_map": false,
+   "dtype": "bfloat16",
+   "hidden": 2048,
+   "model_type": "gemma",
+   "n_layers": 18,
+   "params_b_from_index": 2.5062,
+   "quantized": false,
+   "text_model_type": "gemma",
+   "tie": null,
+   "total_size": 5012344832,
+   "transformers_version": "4.38.0.dev0",
+   "vocab": 256000
+  },
+  "config_sha256": "4d8c4b061fad0e3f51df4f8501873531a4d9fc5b70a7b09e2231d18a12ad7d27",
+  "config_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--google--gemma-2b/snapshots/9cf48e52b224239de00d483ec8eb84fb8d0f3a3a/config.json",
+  "index_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--google--gemma-2b/snapshots/9cf48e52b224239de00d483ec8eb84fb8d0f3a3a/model.safetensors.index.json",
+  "revision": "9cf48e52b224239de00d483ec8eb84fb8d0f3a3a"
+ },
+ "google/gemma-3-4b-it": {
+  "config": {
+   "architectures": [
+    "Gemma3ForConditionalGeneration"
+   ],
+   "auto_map": false,
+   "dtype": "bfloat16",
+   "hidden": 2560,
+   "model_type": "gemma3",
+   "n_layers": 34,
+   "params_b_from_index": 4.3001,
+   "quantized": false,
+   "text_model_type": "gemma3",
+   "tie": null,
+   "total_size": 8600158944,
+   "transformers_version": "4.50.0.dev0",
+   "vocab": null
+  },
+  "config_sha256": "9059f680f4dbd1957f35cb44b9fdd6948f4792db7a7a35ee353ea42e68adf7ff",
+  "config_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767/config.json",
+  "index_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767/model.safetensors.index.json",
+  "revision": "093f9f388b31de276ce2de164bdc2081324b9767"
+ },
+ "google/gemma-3-4b-pt": {
+  "config": {
+   "architectures": [
+    "Gemma3ForConditionalGeneration"
+   ],
+   "auto_map": false,
+   "dtype": "bfloat16",
+   "hidden": 2560,
+   "model_type": "gemma3",
+   "n_layers": 34,
+   "params_b_from_index": 4.3001,
+   "quantized": false,
+   "text_model_type": "gemma3",
+   "tie": null,
+   "total_size": 8600158944,
+   "transformers_version": "4.50.0.dev0",
+   "vocab": null
+  },
+  "config_sha256": "ae75620513f4a95fb36bcf6c09eeab02938e58051871cfe47ead2a7e79a43848",
+  "config_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--google--gemma-3-4b-pt/snapshots/cc012e0a6d0787b4adcc0fa2c4da74402494554d/config.json",
+  "index_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--google--gemma-3-4b-pt/snapshots/cc012e0a6d0787b4adcc0fa2c4da74402494554d/model.safetensors.index.json",
+  "revision": "cc012e0a6d0787b4adcc0fa2c4da74402494554d"
+ },
+ "google/gemma-4-31B": {
+  "config": {
+   "architectures": [
+    "Gemma4ForConditionalGeneration"
+   ],
+   "auto_map": false,
+   "dtype": "bfloat16",
+   "hidden": 5376,
+   "model_type": "gemma4",
+   "n_layers": 60,
+   "params_b_from_index": 31.2731,
+   "quantized": false,
+   "text_model_type": "gemma4",
+   "tie": true,
+   "total_size": 62546177752,
+   "transformers_version": "5.5.0.dev0",
+   "vocab": 262144
+  },
+  "config_sha256": "6a81841cad2b6ba06841e23c6afb5f0a27827bc12c64328ffa6338831a21267e",
+  "config_source": "https://huggingface.co/google/gemma-4-31B/resolve/5bbc2fb1c1b2c611d06e3d9f23c170ba21659d89/config.json",
+  "index_source": "https://huggingface.co/google/gemma-4-31B/resolve/5bbc2fb1c1b2c611d06e3d9f23c170ba21659d89/model.safetensors.index.json",
+  "revision": "5bbc2fb1c1b2c611d06e3d9f23c170ba21659d89"
+ },
+ "google/gemma-4-31B-it": {
+  "config": {
+   "architectures": [
+    "Gemma4ForConditionalGeneration"
+   ],
+   "auto_map": false,
+   "dtype": "bfloat16",
+   "hidden": 5376,
+   "model_type": "gemma4",
+   "n_layers": 60,
+   "params_b_from_index": 31.2731,
+   "quantized": false,
+   "text_model_type": "gemma4",
+   "tie": true,
+   "total_size": 62546177752,
+   "transformers_version": "5.5.0.dev0",
+   "vocab": 262144
+  },
+  "config_sha256": "e967dd38bc5cfd38bd09a995a7bf4a754075df2b46aba68f7fbb5a791e6d8dd1",
+  "config_source": "https://huggingface.co/google/gemma-4-31B-it/resolve/842da3794eaa0b77d5f08bae87a17459d91ff475/config.json",
+  "index_source": "https://huggingface.co/google/gemma-4-31B-it/resolve/842da3794eaa0b77d5f08bae87a17459d91ff475/model.safetensors.index.json",
+  "revision": "842da3794eaa0b77d5f08bae87a17459d91ff475"
+ },
+ "google/medgemma-4b-pt": {
+  "config": null,
+  "config_sha256": null,
+  "config_source": "https://huggingface.co/google/medgemma-4b-pt/resolve/1b7b4a7e462da7ab2bc40591ec86ca449edc388a/config.json -> HTTP 403",
+  "index_source": "https://huggingface.co/google/medgemma-4b-pt/resolve/1b7b4a7e462da7ab2bc40591ec86ca449edc388a/model.safetensors.index.json -> HTTP 403",
+  "revision": "1b7b4a7e462da7ab2bc40591ec86ca449edc388a"
+ },
+ "google/paligemma-3b-pt-224": {
+  "config": {
+   "architectures": [
+    "PaliGemmaForConditionalGeneration"
+   ],
+   "auto_map": false,
+   "dtype": "float32",
+   "hidden": 2048,
+   "model_type": "paligemma",
+   "n_layers": 18,
+   "params_b_from_index": 2.9235,
+   "quantized": false,
+   "text_model_type": "gemma",
+   "tie": null,
+   "total_size": 11693865920,
+   "transformers_version": "4.41.0.dev0",
+   "vocab": 257216
+  },
+  "config_sha256": "e00c72cdff16296bf1229c3267b99f5247d8c740cae84336866338d64fa7918f",
+  "config_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--google--paligemma-3b-pt-224/snapshots/35e4f46485b4d07967e7e9935bc3786aad50687c/config.json",
+  "index_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--google--paligemma-3b-pt-224/snapshots/35e4f46485b4d07967e7e9935bc3786aad50687c/model.safetensors.index.json",
+  "revision": "35e4f46485b4d07967e7e9935bc3786aad50687c"
+ },
+ "google/paligemma2-10b-pt-224": {
+  "config": {
+   "architectures": [
+    "PaliGemmaForConditionalGeneration"
+   ],
+   "auto_map": false,
+   "dtype": "bfloat16",
+   "hidden": 3584,
+   "model_type": "paligemma",
+   "n_layers": 42,
+   "params_b_from_index": 9.6626,
+   "quantized": false,
+   "text_model_type": "gemma2",
+   "tie": null,
+   "total_size": 19325277664,
+   "transformers_version": "4.47.0.dev0",
+   "vocab": 257216
+  },
+  "config_sha256": "146547c1a05fbf522354159f6962e395f844ff4cade7695755e22c64ce046216",
+  "config_source": "https://huggingface.co/google/paligemma2-10b-pt-224/resolve/86f23f048669c9479367fcbf06c76727c2f7dc6f/config.json",
+  "index_source": "https://huggingface.co/google/paligemma2-10b-pt-224/resolve/86f23f048669c9479367fcbf06c76727c2f7dc6f/model.safetensors.index.json",
+  "revision": "86f23f048669c9479367fcbf06c76727c2f7dc6f"
+ },
+ "google/paligemma2-3b-mix-224": {
+  "config": {
+   "architectures": [
+    "PaliGemmaForConditionalGeneration"
+   ],
+   "auto_map": false,
+   "dtype": "bfloat16",
+   "hidden": 2304,
+   "model_type": "paligemma",
+   "n_layers": 26,
+   "params_b_from_index": 3.0322,
+   "quantized": false,
+   "text_model_type": "gemma2",
+   "tie": null,
+   "total_size": 6064484832,
+   "transformers_version": "4.47.0.dev0",
+   "vocab": 257216
+  },
+  "config_sha256": "843da874e6cd12c4ce34772a1b6459b25c804eb0300651b9a0ec13a08224c640",
+  "config_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--google--paligemma2-3b-mix-224/snapshots/8e40ab4cc5df93dfb7fd2fff754bcdff8b62ee78/config.json",
+  "index_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--google--paligemma2-3b-mix-224/snapshots/8e40ab4cc5df93dfb7fd2fff754bcdff8b62ee78/model.safetensors.index.json",
+  "revision": "8e40ab4cc5df93dfb7fd2fff754bcdff8b62ee78"
+ },
+ "google/paligemma2-3b-pt-224": {
+  "config": {
+   "architectures": [
+    "PaliGemmaForConditionalGeneration"
+   ],
+   "auto_map": false,
+   "dtype": "bfloat16",
+   "hidden": 2304,
+   "model_type": "paligemma",
+   "n_layers": 26,
+   "params_b_from_index": 3.0322,
+   "quantized": false,
+   "text_model_type": "gemma2",
+   "tie": null,
+   "total_size": 6064484832,
+   "transformers_version": "4.47.0.dev0",
+   "vocab": 257216
+  },
+  "config_sha256": "843da874e6cd12c4ce34772a1b6459b25c804eb0300651b9a0ec13a08224c640",
+  "config_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--google--paligemma2-3b-pt-224/snapshots/96eeb174da13ca1a2b247e4d0867436296c36420/config.json",
+  "index_source": "s3://pg-lineage-769063704696/weights/hf/hub/models--google--paligemma2-3b-pt-224/snapshots/96eeb174da13ca1a2b247e4d0867436296c36420/model.safetensors.index.json",
+  "revision": "96eeb174da13ca1a2b247e4d0867436296c36420"
+ },
+ "lerobot/pi05_base": {
+  "config": {
+   "architectures": null,
+   "auto_map": false,
+   "dtype": "float32",
+   "hidden": null,
+   "model_type": null,
+   "n_layers": null,
+   "params_b_from_index": null,
+   "quantized": false,
+   "text_model_type": null,
+   "tie": null,
+   "total_size": null,
+   "transformers_version": null,
+   "vocab": null
+  },
+  "config_sha256": "367869712a2847c27e95c431ecb03f17bec4eee01a63995e2fb2d91940752b53",
+  "config_source": "https://huggingface.co/lerobot/pi05_base/resolve/b211f3d44c36b6acfcf7ae94a64e8e96f75a64ba/config.json",
+  "index_source": "https://huggingface.co/lerobot/pi05_base/resolve/b211f3d44c36b6acfcf7ae94a64e8e96f75a64ba/model.safetensors.index.json -> HTTP 404",
+  "revision": "b211f3d44c36b6acfcf7ae94a64e8e96f75a64ba"
+ },
+ "lerobot/pi0_base": {
+  "config": {
+   "architectures": null,
+   "auto_map": false,
+   "dtype": "float32",
+   "hidden": null,
+   "model_type": null,
+   "n_layers": null,
+   "params_b_from_index": null,
+   "quantized": false,
+   "text_model_type": null,
+   "tie": null,
+   "total_size": null,
+   "transformers_version": null,
+   "vocab": null
+  },
+  "config_sha256": "700c59d206885faff307d63272558fb9ad9a6b9feecdae55626ed9e3f594feb9",
+  "config_source": "https://huggingface.co/lerobot/pi0_base/resolve/25c379b52ba2ff8788cab921758a3cc3fe3f77f2/config.json",
+  "index_source": "https://huggingface.co/lerobot/pi0_base/resolve/25c379b52ba2ff8788cab921758a3cc3fe3f77f2/model.safetensors.index.json -> HTTP 404",
+  "revision": "25c379b52ba2ff8788cab921758a3cc3fe3f77f2"
+ },
+ "meta-llama/Meta-Llama-3-8B-Instruct": {
+  "config": null,
+  "config_sha256": null,
+  "config_source": "https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/resolve/8afb486c1db24fe5011ec46dfbe5b5dccdb575c2/config.json -> HTTP 403",
+  "index_source": "https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/resolve/8afb486c1db24fe5011ec46dfbe5b5dccdb575c2/model.safetensors.index.json -> HTTP 403",
+  "revision": "8afb486c1db24fe5011ec46dfbe5b5dccdb575c2"
+ }
+}

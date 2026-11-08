@@ -1,0 +1,173 @@
+{
+ "static_config": {
+  "suite_task_format": "minerva_math_{task_type}::olmes:n4:v2",
+  "suite_task_iter": "MATH_TASK_TYPES",
+  "suite_primary_metric": "macro",
+  "suite_line": 342,
+  "task": {
+   "split": "test",
+   "primary_metric": "pass_at_1",
+   "num_shots": 4,
+   "fewshot_source": "Minerva:MATH:fixed",
+   "generation_kwargs": {
+    "max_gen_toks": 1024,
+    "temperature": 0.6,
+    "top_p": 0.6,
+    "do_sample": true,
+    "stop_sequences": [
+     "Problem:",
+     "\n\n"
+    ],
+    "repeats": 4
+   },
+   "metric_kwargs": {
+    "pass_at_ks": [
+     1,
+     2,
+     4
+    ],
+    "maj_at_ks": [
+     1,
+     2,
+     4
+    ]
+   }
+  },
+  "task_line": 4696,
+  "math_task_types": [
+   "algebra",
+   "counting_and_probability",
+   "geometry",
+   "intermediate_algebra",
+   "number_theory",
+   "prealgebra",
+   "precalculus"
+  ],
+  "dataset_path": "EleutherAI/hendrycks_math",
+  "pins": {
+   "vllm": "0.11.0",
+   "lm_eval": "0.4.3",
+   "antlr4-python3-runtime": "4.11"
+  },
+  "model_defaults": {
+   "chat_model": false,
+   "max_length": 2048
+  },
+  "launch_flags": [
+   "--batch-size",
+   "--cached-output-dir",
+   "--dry-run",
+   "--gpus",
+   "--gsheet",
+   "--hf-save-dir",
+   "--inspect",
+   "--limit",
+   "--list-models",
+   "--list-task-suites",
+   "--list-tasks",
+   "--model",
+   "--model-args",
+   "--model-type",
+   "--num-shots",
+   "--num-workers",
+   "--output-dir",
+   "--random-subsample-seed",
+   "--recompute-metrics",
+   "--remote-output-dir",
+   "--revision",
+   "--save-raw-requests",
+   "--split",
+   "--task",
+   "--task-args",
+   "--use-chat-format",
+   "--vllm-for-mc",
+   "--wandb-run-path",
+   "--wandb-run-step"
+  ]
+ },
+ "check": {
+  "rows": {
+   "suite_tasks": true,
+   "suite_primary_metric": true,
+   "task.split": true,
+   "task.primary_metric": true,
+   "task.num_shots": true,
+   "task.fewshot_source": true,
+   "task.generation_kwargs": true,
+   "task.metric_kwargs": true,
+   "math_task_types": true,
+   "dataset_path": true,
+   "pins": true,
+   "model_defaults": true,
+   "command_flags_accepted": true
+  },
+  "pass": true,
+  "failed_rows": []
+ },
+ "failing_config_check": {
+  "rows": {
+   "suite_tasks": true,
+   "suite_primary_metric": true,
+   "task.split": true,
+   "task.primary_metric": true,
+   "task.num_shots": false,
+   "task.fewshot_source": true,
+   "task.generation_kwargs": true,
+   "task.metric_kwargs": true,
+   "math_task_types": true,
+   "dataset_path": true,
+   "pins": true,
+   "model_defaults": false,
+   "command_flags_accepted": true
+  },
+  "pass": false,
+  "failed_rows": [
+   "task.num_shots",
+   "model_defaults"
+  ]
+ },
+ "doc_lines": {
+  "93": true,
+  "96": true,
+  "97": true,
+  "98": true,
+  "100": true,
+  "101": true,
+  "102": true,
+  "104": true,
+  "105": true,
+  "82": true,
+  "84": true,
+  "285": true,
+  "286": true,
+  "288": true
+ },
+ "tolerance": {
+  "se_one_reading": 0.37421220512259656,
+  "se_difference": 0.5292159756899187,
+  "three_se_difference": 1.587647927069756,
+  "tol": 1.6
+ },
+ "command": [
+  "/opt/olmes-venv/bin/olmes",
+  "--model",
+  "allenai/Olmo-3-1025-7B",
+  "--revision",
+  "a81bae42db3975be1671e27b9c9a56da1a9f980f",
+  "--model-type",
+  "vllm",
+  "--model-args",
+  "{\"trust_remote_code\": false}",
+  "--task",
+  "minerva_math::olmes:n4:v2",
+  "--gpus",
+  "1",
+  "--batch-size",
+  "auto",
+  "--output-dir",
+  "out/r0_known/olmes"
+ ],
+ "spec_command_equal": true,
+ "target": 40.0,
+ "tol": 1.6
+}

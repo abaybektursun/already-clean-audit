@@ -1,0 +1,44 @@
+== 2026-11-05T21:55:12Z recompute.py on the b2 files (step 100,001 under the frozen rule; known number)
+$ python -I studies/next/pilot0/scripts/recompute.py studies/next/pilot0/batch_100000/loss_check_sdpa.json studies/next/pilot0/batch_100000/tokens.npy studies/next/pilot0/batch_100001/loss_check_sdpa.json studies/next/pilot0/batch_60001/loss_check_sdpa_rows32.json studies/next/pilot0/batch_60001/loss_check_sdpa.json
+neighbour studies/next/pilot0/batch_100000/loss_check_sdpa.json
+  rows_done 512  complete True  revision stage1-step100000  attn sdpa
+  N (file field) 1.9779166  N (recount from per-row sums) 1.9779166  |diff| 0.0e+00
+  non-pad targets 4,169,956  pad targets 23,836 (both equal tokens.npy)
+  every position mean_ce 2.0627823  top-1 0.56114
+target studies/next/pilot0/batch_100001/loss_check_sdpa.json: S 2.0355981 rows_done 512 complete True revision stage1-step100000
+W 2.0262222290039062  S - W +0.0093759  N - W -0.0483056  |S - W| 0.0093759  |N - W| 0.0483056
+step 100,001 under the frozen rule: pass branch
+known number studies/next/pilot0/batch_60001/loss_check_sdpa_rows32.json against studies/next/pilot0/batch_60001/loss_check_sdpa.json
+  rows 32  revision stage1-step60000  attn sdpa  complete True
+  per-row pad target counts equal on the 32 rows: True
+  max |diff| per_row_mean_ce 0.00e+00 at row 0 (2.8602122 vs 2.8602122); mean |diff| 0.00e+00
+  mean of per_row_mean_ce over rows 0-31: new 2.3794286  banked 2.3794286
+  registered gate (max |diff| <= 1e-4): holds;  prediction (<= 0.001 per row): holds
+  max |diff| per_row_top1 (top-1 hits per row) 0
+  pad-excluded per-row, 31 rows with no pad target: max |diff| 0.00e+00 at row 0; rows with pad targets [29] have no banked pad-excluded value
+stack neighbour: gpu NVIDIA L40S  instance g6e.4xlarge  torch 2.12.0+cu130  transformers 5.9.0  dtype torch.bfloat16  attn sdpa
+stack target: gpu NVIDIA L40S  instance g6e.2xlarge  torch 2.12.0+cu130  transformers 5.9.0  dtype torch.bfloat16  attn sdpa
+stack known new: gpu NVIDIA L40S  instance g6e.4xlarge  torch 2.12.0+cu130  transformers 5.9.0  dtype torch.bfloat16  attn sdpa
+stack known banked: gpu NVIDIA L40S  instance g6e.2xlarge  torch 2.12.0+cu130  transformers 5.9.0  dtype torch.bfloat16  attn sdpa
+== known_gate.py, the registered gate code, on the same pair
+$ python -I studies/next/pilot0/scripts/known_gate.py studies/next/pilot0/batch_60001/loss_check_sdpa_rows32.json studies/next/pilot0/batch_60001/loss_check_sdpa.json
+rows compared 32; max |diff| 0.00e+00 at row 0 (2.8602122 vs 2.8602122); mean |diff| 0.00e+00; tolerance 0.0001 -> holds
+== known_gate.py on b1's 320 rows against the first 320 rows of b2 (same batch, same checkpoint, g6e.2xlarge against g6e.4xlarge; exploratory, not a registered gate)
+$ python -I studies/next/pilot0/scripts/known_gate.py studies/next/pilot0/batch_100000/loss_check_sdpa_b1_320rows.json studies/next/pilot0/batch_100000/loss_check_sdpa.json
+rows compared 320; max |diff| 0.00e+00 at row 0 (2.1796517 vs 2.1796517); mean |diff| 0.00e+00; tolerance 0.0001 -> holds
+== three readings and per-row spread of batch_100000/ (b2 512 rows, b1 320 rows); code:
+    import json, numpy as np
+    for f in ("studies/next/pilot0/batch_100000/loss_check_sdpa.json", "studies/next/pilot0/batch_100000/loss_check_sdpa_b1_320rows.json"):
+        r = json.load(open(f))
+        pad, pm = np.array(r["pad"]["per_row_pad_target_positions"]), np.array(r["per_row_mean_ce"])
+        m = pad == 0
+        ex = r["per_row_mean_ce_excluding_pad_targets"]
+        h = np.histogram([x for x in ex if x is not None], bins=[0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 4.0, 6.0, 1e9])[0]
+        print(f"{f}: rows {r['rows_done']}  pad-excluded {r['pad']['mean_ce_excluding_pad_targets']:.7f}  every position {r['mean_ce']:.7f}"
+              f"  rows without pad {pm[m].mean():.7f} (n {m.sum()}, se {pm[m].std(ddof=1) / np.sqrt(m.sum()):.4f})"
+              f"  pad targets {r['pad']['pad_target_positions']:,}  top-1 {r['top1_accuracy']:.5f}")
+        print(f"  per-row pad-excluded bins [0,.5,1,1.5,2,2.5,3,4,6,inf): {list(map(int, h))}; rows with no non-pad target {sum(x is None for x in ex)}")
+studies/next/pilot0/batch_100000/loss_check_sdpa.json: rows 512  pad-excluded 1.9779166  every position 2.0627823  rows without pad 1.9806015 (n 506, se 0.0240)  pad targets 23,836  top-1 0.56114
+  per-row pad-excluded bins [0,.5,1,1.5,2,2.5,3,4,6,inf): [7, 28, 48, 145, 215, 65, 2, 0, 0]; rows with no non-pad target 2
+studies/next/pilot0/batch_100000/loss_check_sdpa_b1_320rows.json: rows 320  pad-excluded 1.9455010  every position 2.0572999  rows without pad 1.9486520 (n 316, se 0.0321)  pad targets 18,625  top-1 0.56798
+  per-row pad-excluded bins [0,.5,1,1.5,2,2.5,3,4,6,inf): [6, 22, 30, 96, 117, 45, 2, 0, 0]; rows with no non-pad target 2

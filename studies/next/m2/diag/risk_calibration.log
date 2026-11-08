@@ -1,0 +1,14 @@
+{
+ "what": "Calibration of the two risk models on the one out-of-sample value banked: score-02's T_13 G-EX under the",
+ "observed_t13_p99": 0.05433198292594636,
+ "n_t13": 717,
+ "bin_model": {
+  "p99_median": 0.03430425257014376,
+  "share_ge_observed": 0.06
+ },
+ "plan_pool": {
+  "n_pool": 477,
+  "p99_median": 0.03987132434219582,
+  "share_ge_observed": 0.0
+ }
+}

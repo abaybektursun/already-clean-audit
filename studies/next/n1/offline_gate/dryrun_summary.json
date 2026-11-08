@@ -1,0 +1,35 @@
+{
+ "checks": 44,
+ "passed": 44,
+ "failed": [],
+ "projection": {
+  "checkpoints": 16,
+  "rates": {
+   "download_s": [
+    90.0,
+    150.0
+   ],
+   "compute_s": [
+    60.0,
+    180.0
+   ],
+   "start_s": [
+    300.0,
+    450.0
+   ],
+   "end_s": [
+    180.0,
+    300.0
+   ],
+   "identity_s": [
+    60.0,
+    120.0
+   ]
+  },
+  "instance_h_center": 0.82,
+  "instance_h_high": 1.71,
+  "budget_min_hard_kill": 134,
+  "gpu_h": 0.0,
+  "instance": "r7i.2xlarge (8 vCPU, 64 GB; the Standard family quota, not the G quota); price not banked"
+ }
+}

@@ -1,0 +1,39 @@
+{
+  "rental": "am1b_spectral",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:v1-14b",
+  "disk": 70,
+  "gpu_query": "gpu_ram>=48 num_gpus=1 cuda_vers>=12.8 compute_cap>=800",
+  "expected_gpu": "",
+  "bound": "overhead",
+  "_comment": "AM-1b (EXPLORATORY, beyond the frozen spec): the control AM-1's own limitation names. Energy-matched is not SPECTRUM-matched \u2014 the energy-matched draw takes its energy from the leading eigendirections of the activation Gram, while core32 may spread the same energy differently. specmatched32 sign-randomises core32 IN THE EIGENBASIS: same removed energy, same per-eigendirection profile, different directions. Registered with its expectation in the journal BEFORE it ran.",
+  "cells": [
+    {
+      "id": "am1b_smoke",
+      "module": "infra.vast.cells.v1_ablation",
+      "model_dir": "/models/Qwen_Qwen2.5-14B",
+      "banks_s3": "s3://pg-lineage-769063704696/results/shackleton_census14b_banks/out/banks/",
+      "topenergy_s3": "s3://pg-lineage-769063704696/results/shackleton_r_v1_14b/topenergy_14b.npz",
+      "n_act_windows": 4,
+      "n_abl_windows": 4,
+      "n_extra_seeds": 1,
+      "spectral_control": true
+    },
+    {
+      "id": "am1b_full",
+      "module": "infra.vast.cells.v1_ablation",
+      "model_dir": "/models/Qwen_Qwen2.5-14B",
+      "banks_s3": "s3://pg-lineage-769063704696/results/shackleton_census14b_banks/out/banks/",
+      "topenergy_s3": "s3://pg-lineage-769063704696/results/shackleton_r_v1_14b/topenergy_14b.npz",
+      "n_act_windows": 32,
+      "n_abl_windows": 98,
+      "n_extra_seeds": 3,
+      "expect_rows_s3": "s3://pg-lineage-769063704696/results/shackleton_r_v1a_14b/cells/v1a_full/v1abl_rows.json",
+      "expect_tol": 0.001,
+      "spectral_control": true
+    }
+  ],
+  "watch": {
+    "load_backstop_min": 90,
+    "max_billed_h": 3
+  }
+}

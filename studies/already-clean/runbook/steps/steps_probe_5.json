@@ -1,0 +1,7 @@
+[
+ {
+  "name": "probe",
+  "module": "infra.aws_pg.jobs.neurons_harvest",
+  "args": "--model-key Q4B --repo Qwen/Qwen3-4B-Base --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus --tokname qwen3 --max-tokens 131072 --poles s3://pg-lineage-769063704696/results/neurons/w2d/q4b_probe/5/probe_poles.json --probe-texts s3://pg-lineage-769063704696/results/neurons/w2d/q4b_probe/5/texts.jsonl"
+ }
+]

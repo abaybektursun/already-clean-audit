@@ -1,0 +1,23 @@
+{
+  "bucket": "pg-lineage-769063704696",
+  "entries": {
+    "ftfam_vectors": {
+      "bytes": 21565440,
+      "kind": "prefix",
+      "local": "/work/hum_cache_mendel_mn12/ftfam_vectors",
+      "n_files": 2592,
+      "sha256": "10f6956ccfe5af6b47b8407731a1b4f7946ad17cd5615341149708c98ae843bd",
+      "uri": "s3://pg-lineage-769063704696/results/mendel_ftfam_v1/out/vectors"
+    }
+  },
+  "provenance": {
+    "branch": "science/mendel",
+    "commit_sha": "c162e228e5ed694f8a0c49339b024d567332417e",
+    "dirty": false,
+    "dirty_files": [],
+    "program": "mendel",
+    "source": "scripts/mendel_stamp.py",
+    "stamped_utc": "2026-08-19T20:50:50Z",
+    "tags_at_head": []
+  }
+}

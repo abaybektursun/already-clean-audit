@@ -1,0 +1,53 @@
+{
+  "rental": "am7_evals",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:v2-gauge",
+  "disk": 80,
+  "gpu_query": "gpu_ram>=88 num_gpus=1 cuda_vers>=12.8 compute_cap>=800",
+  "expected_gpu": "",
+  "bound": "compute",
+  "env": {
+    "HF_ONLINE": "1"
+  },
+  "_comment": "AM-7: benchmarks on the retuned pair. lrs are AM-2's best-of and come from AM-2's verdict (INTRINSIC-COST): unrotated 1e-05, hadamard 3e-06. Reference gauge first: it sets the wall-clock budget the rotated arm is also evaluated at.",
+  "cells": [
+    {
+      "id": "am7_smoke",
+      "module": "infra.vast.cells.desink_evals",
+      "gauges": "unrotated,hadamard",
+      "seeds": "2026",
+      "steps": 4,
+      "eval_steps": [
+        2,
+        4
+      ],
+      "lrs": {
+        "unrotated": 1e-05,
+        "hadamard": 3e-06
+      },
+      "n_train": 24,
+      "n_eval": 8,
+      "n_per_subject": 1,
+      "n_seq": 2
+    },
+    {
+      "id": "am7_full",
+      "module": "infra.vast.cells.desink_evals",
+      "gauges": "unrotated,hadamard",
+      "seeds": "2026,2027,2028",
+      "steps": 1200,
+      "eval_steps": [
+        120,
+        1200
+      ],
+      "lrs": {
+        "unrotated": 1e-05,
+        "hadamard": 3e-06
+      },
+      "n_per_subject": 8
+    }
+  ],
+  "watch": {
+    "load_backstop_min": 90,
+    "max_billed_h": 6
+  }
+}

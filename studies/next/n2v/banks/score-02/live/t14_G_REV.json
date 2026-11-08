@@ -1,0 +1,8 @@
+{
+ "pass": true,
+ "commit": "cb286dcdaaf3f92b3c419dd77439078fdebffe53",
+ "registered": "cb286dcdaaf3f92b3c419dd77439078fdebffe53",
+ "failing_input": {
+  "pass": false
+ }
+}

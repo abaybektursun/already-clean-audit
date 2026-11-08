@@ -1,0 +1,83 @@
+{
+ "step": "setup",
+ "status": "done",
+ "started_utc": "2026-11-05T16:07:31Z",
+ "pair": "pair1",
+ "models": "base,rl,stage2",
+ "stages": {
+  "data": {
+   "math500_rows": 500,
+   "gsm8k_rows": 60,
+   "math500_file_sha256": "35dc41080a3680858b27fa7e0533d2d547825316fc5dafe5d316f4ccc5a06132",
+   "gsm8k_file_sha256": "7e15224b22c3446b0ff956d61116e7fd0fe0dea1324c05ecba28946d2eb183f3"
+  },
+  "G-GRADER": {
+   "active_rule": "dollar_both",
+   "pass": true,
+   "registered": {
+    "pass": false,
+    "planted_eq_true": 12,
+    "planted_neq_false": 16,
+    "self_equal": 392,
+    "derangement_rate": 0.01,
+    "identical_normalised_rate": 0.006
+   },
+   "dollar_both": {
+    "pass": true,
+    "planted_eq_true": 24,
+    "planted_neq_false": 16,
+    "self_equal": 500,
+    "derangement_rate": 0.006,
+    "identical_normalised_rate": 0.006
+   },
+   "boxed": {
+    "pass": false,
+    "planted_eq_true": 23,
+    "planted_neq_false": 16,
+    "self_equal": 500,
+    "derangement_rate": 0.006,
+    "identical_normalised_rate": 0.006
+   }
+  },
+  "weights": {
+   "snapshots": {
+    "base": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_dry/e2e/weights/base",
+    "rl": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_dry/e2e/weights/rl",
+    "stage2": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_dry/e2e/weights/stage2"
+   },
+   "checks": {}
+  },
+  "G-INIT_a": {
+   "pass": true,
+   "per_shard": {
+    "model-00001-of-00003.safetensors": true,
+    "model-00002-of-00003.safetensors": true,
+    "model-00003-of-00003.safetensors": true
+   },
+   "failing_input": {
+    "what": "stage2-step47684's shard oids in place of base main's",
+    "failed": true
+   }
+  },
+  "G-TEMPLATE": {
+   "pass": true,
+   "n": 500,
+   "mismatched": [],
+   "n_mismatched": 0,
+   "first_id_is_bos": [
+    false
+   ],
+   "ids_sha256": "ff88a606d5689ed7d58db1563432d3289f9686ef513f9577b827d60d04fd0088",
+   "failing_input": {
+    "what": "the render with add_generation_prompt=False",
+    "failed": true,
+    "tail": "orm $(r,\\theta),$ where $r > 0$ and $0 \\le \\theta < 2 \\pi.$\n"
+   },
+   "chat_template_sha256": "4380e62276b7ce7e28e30be381840f7cef65f20f43173437cae5d2d6908a6155",
+   "transformers": "5.19.0",
+   "pass_all": true
+  }
+ },
+ "finished_utc": "2026-11-05T16:07:37Z",
+ "updated_utc": "2026-11-05T16:07:37Z"
+}

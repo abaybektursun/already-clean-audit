@@ -1,0 +1,38 @@
+{
+  "rental": "neuronshow_smoke",
+  "session": "neuronshow",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+  "disk": 60,
+  "gpu_query": "gpu_ram>=24 gpu_ram<=50 num_gpus=1 compute_cap>=800 cuda_vers>=13.0 cpu_ram>=30",
+  "expected_gpu": "",
+  "bound": "overhead",
+  "weights_mode": "download",
+  "env": {
+    "HF_ONLINE": "1",
+    "HF_HOME": "/workspace/hf",
+    "HF_HUB_CACHE": "/workspace/hf/hub",
+    "HF_HUB_DISABLE_XET": "1"
+  },
+  "cells": [
+    {
+      "id": "smoke",
+      "module": "infra.vast.cells.smoke_stats",
+      "model_dir": "Qwen/Qwen3-4B-Base",
+      "probe_text": "The capital of France is"
+    },
+    {
+      "id": "dryrun_gemma3",
+      "module": "infra.vast.cells.module_job",
+      "job": "infra.aws_pg.jobs.neuron_rw_dryrun",
+      "args": "--arch gemma3",
+      "s3_out": "s3://pg-lineage-769063704696/results/mdl/neurons/show/0/dryrun_gemma3/",
+      "pg_git_sha": "9acbf7fe"
+    }
+  ],
+  "watch": {
+    "max_billed_h": 0.5,
+    "load_backstop_min": 30,
+    "progress_stall_min": 20
+  },
+  "_comment": "NEURONSHOW vast path smoke (infra/vast/operations/2026-10-26_neuronshow_path.md). 24-50 GB single GPU (gpu_ram is in GB of 1000 MB: <=50 keeps the 48 GB L40S / A6000 / 6000Ada class, >=24 keeps the 4090 / 3090 / A5000 class); compute_cap>=800 is the bf16 floor (drops Turing); cuda_vers>=13.0 because mdl-v1 is torch 2.12.0+cu130; cpu_ram>=30 because a host with ~12 GB per slot starves a 7B load. Image shackleton:mdl-v1 = deps only (torch 2.12.0, transformers 5.9.0, awscli, vastai), pulled during unbilled loading. Weights from the Hub in-run (weights_mode download + HF_ONLINE=1, no weights_hf_repo, so lifecycle's own download block is skipped and the offer filter adds inet_down>=800); HF_TOKEN from SSM via controller.py. Cell 1: smoke_stats loads Qwen/Qwen3-4B-Base from the Hub on the GPU in bf16 and runs one forward. Cell 2: module_job runs the weight-free NEURONRW dry run (tiny random Gemma 3, all three stages, CPU) and syncs it to results/mdl/neurons/show/0/dryrun_gemma3/. pg_git_sha 9acbf7fe holds the shipped code; the commit that adds this manifest changes no code. max_billed_h 0.5 is about 5x the expected 6 billed minutes."
+}

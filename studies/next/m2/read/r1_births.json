@@ -1,0 +1,75 @@
+{
+ "inputs_sha256_match_registered": {
+  "arrays": true,
+  "clusters": true,
+  "births": true,
+  "per_cluster": true
+ },
+ "dating": {
+  "n_sample0_nonecho_clusters": 2454,
+  "agree_with_recount2_birth_pct": 2454,
+  "disagree": [],
+  "n_disagree": 0,
+  "n_undated": 0
+ },
+ "n_clusters_tested_csv": 2428,
+ "checks": {
+  "n_births": 153,
+  "passing_p_late_le_0.05": 153,
+  "births_json_eq_passing": true,
+  "k_mismatch": [],
+  "tok_or_row_mismatch": [],
+  "ranks_or_size_mismatch": [],
+  "half_mismatch": []
+ },
+ "halves": {
+  "freeze": 82,
+  "test": 71
+ },
+ "by_k": {
+  "freeze": {
+   "8": 2,
+   "10": 3,
+   "11": 5,
+   "12": 18,
+   "13": 18,
+   "14": 20,
+   "15": 16
+  },
+  "test": {
+   "6": 1,
+   "8": 4,
+   "9": 4,
+   "10": 5,
+   "11": 12,
+   "12": 13,
+   "13": 12,
+   "14": 13,
+   "15": 7
+  }
+ },
+ "n_carriers": 140,
+ "n_positions": 1234,
+ "carriers_by_half": {
+  "freeze": 73,
+  "test": 67
+ },
+ "halves_share_a_neuron": false,
+ "twins": {
+  "freeze": 79,
+  "test": 70
+ },
+ "twins_bad": [],
+ "no_twin": [
+  "L03N7746+:c0",
+  "L11N10245-:c1",
+  "L20N8272-:c4",
+  "L21N7258+:c3"
+ ],
+ "twin_draws_used_quantiles": [
+  1.0,
+  10.0,
+  722.6000000000004,
+  1896.0
+ ]
+}

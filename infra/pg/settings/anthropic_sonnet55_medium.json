@@ -1,0 +1,14 @@
+{
+ "backend": "anthropic",
+ "effort": "medium",
+ "models": {
+  "explainer": "claude-sonnet-5-5",
+  "second_reader": "claude-sonnet-5-5",
+  "writer": "claude-sonnet-5-5",
+  "writer_job": "claude-sonnet-5-5",
+  "clusterer": "claude-sonnet-5-5",
+  "judge": "claude-sonnet-5-5"
+ },
+ "temperature": 1.0,
+ "notes": "Direct Anthropic API, every role on Sonnet 5.5 (claude-sonnet-5-5, the bare Anthropic id). Key ANTHROPIC_API_KEY in ~/.config/interp_research/keys.env (Console org fuelos), sourced only inside the command that needs it; never in this file. Effort medium with adaptive thinking (disabled thinking is a 400 on Sonnet 5.5). run-batch / collect-batch send it through the Message Batches API. No Opus id is ever sent (SPEC_D1 §2.2 amendment 2026-10-20 17:15Z). Effort-medium copy of anthropic_sonnet55.json for the C4 clusterer effort sweep (2026-11-01_RUN.md)."
+}

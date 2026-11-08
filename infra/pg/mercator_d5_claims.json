@@ -1,0 +1,78 @@
+{
+  "arm": "M-D5",
+  "queue_item": "D5",
+  "source": {
+    "arxiv_id": "2605.16600",
+    "version": "v1",
+    "title": "Where Pretraining writes and Alignment reads: the asymmetry of Transformer weight space",
+    "authors": ["Valeria Ruscio", "Eli-Shaoul Khedouri", "Keiran Thompson"],
+    "affiliation": "Intuition Machines",
+    "dated": "15 May 2026",
+    "read_from": "arxiv PDF, full text, pages 1-12",
+    "read_utc": "2026-08-14"
+  },
+  "gate": "no MERCATOR result document may cite AGA except through a row in this table",
+  "claims": [
+    {
+      "id": "D5-C1",
+      "what_the_paper_says": "For any linear map W, the per-sample gradient has outer-product form grad_W L = sum_t delta_t a_t^T, and the accumulated delta is Delta_W = -eta sum_t delta_t a_t^T.",
+      "location": "§4 Anisotropic Gradient Accumulation, equation (8)",
+      "quote": "For any linear map W, the per-sample gradient has outer-product form ... where a_t is the activation feeding W and delta_t is the upstream gradient.",
+      "bearing_on_mercator": "This is the framework's ENTIRE mechanism, and it is PLAIN GRADIENT ACCUMULATION: the delta is -eta times the summed raw gradient. No preconditioner, no per-coordinate second moment, no optimizer state appears anywhere in the derivation.",
+      "tag": "scope-limit",
+      "consequence": "AGA cannot predict anything about the gradient sink. The sink is DEFINED by the gap between gradient magnitude in and realized motion out, and that gap exists only because Adam divides by sqrt(v). A framework whose delta IS the summed gradient has no such gap by construction."
+    },
+    {
+      "id": "D5-C2",
+      "what_the_paper_says": "Read-pathway matrices (W_Q, W_K) have row-space structure determined by the span and covariance of the residual-stream activations; since trained transformers have spiked residual-stream covariance, the principal activation subspace is a stable target for read-pathway concentration, and this is largely objective-agnostic.",
+      "location": "§4.1 Two Pathways, Two Conditions — 'Read pathway: input-side anisotropy'",
+      "quote": "Therefore Delta_W_Q and Delta_W_K have row-space structure determined by the span and covariance of {h_t}. Since trained transformers typically have spiked residual-stream covariance, the principal activation subspace provides a stable target for read-pathway concentration. This condition is largely objective-agnostic.",
+      "bearing_on_mercator": "This is about the SAME axis MERCATOR's input-side banks live on (the residual stream a q_proj reads), and it concerns q_proj/k_proj specifically — the types where the sink concentrates. It is the closest thing in the literature to our q_proj scoping.",
+      "tag": "consistent-with",
+      "consequence": "May be cited as an independent account of why READ-pathway matrices carry structured deltas at all. It does NOT predict which directions are avoided, and it is about concentration of mass, not its absence."
+    },
+    {
+      "id": "D5-C3",
+      "what_the_paper_says": "Containment is what the chain rule gives; concentration is empirical and is not derived from first principles.",
+      "location": "§4.3 Containment and Concentration",
+      "quote": "Containment only identifies the ambient subspace. It does not say where mass lies inside that subspace. Concentration depends on empirical spectral structure ... These quantities are measurable, but their magnitudes are not derived from first principles here. The framework predicts the qualitative pattern.",
+      "bearing_on_mercator": "The paper is explicit that its own framework is qualitative about WHERE mass sits. Any MERCATOR sentence of the form 'AGA predicts our bottom-subspace' would overstate the source by the source's own words.",
+      "tag": "scope-limit",
+      "consequence": "Citations must be qualitative-pattern citations only."
+    },
+    {
+      "id": "D5-C4",
+      "what_the_paper_says": "Nothing about directions that updates AVOID or SUPPRESS.",
+      "location": "absent throughout §1-§7 and the Limitations",
+      "quote": "ABSENT",
+      "bearing_on_mercator": "The paper's object is where deltas CONCENTRATE. The gradient sink is where deltas are SMALL despite large gradients. Searched §4 (mechanism), §4.3 (containment/concentration), §5 (results), §6 (limitations), §7 (conclusion): no statement about suppressed or avoided directions appears.",
+      "tag": "absent",
+      "consequence": "AGA is not a competing explanation of the sink, and must not be described as one in either direction."
+    },
+    {
+      "id": "D5-C5",
+      "what_the_paper_says": "Write-pathway (W_O, W_2) concentration is loss-dependent, arising only when the objective produces sharp per-sample upstream gradients; cross-entropy is the canonical sharp-gradient regime.",
+      "location": "§4.1 'Write pathway: gradient-side anisotropy' and §4.2 The Cross-Entropy Case",
+      "quote": "This condition is loss-specific. Objectives with sharp per-sample signals produce structured upstream gradients and can concentrate write-pathway weights in prediction-aligned directions. Objectives with diffuse per-sample signals need not do so.",
+      "bearing_on_mercator": "Directly relevant to M-A5 (the regime probe: does flow-matching imitation or PPO respect the sink?) and to M-B1 (the output-side census). It gives an independent reason to expect the WRITE side to behave differently across objectives.",
+      "tag": "consistent-with",
+      "consequence": "May be cited as prior reasoning that motivates M-A5's regime contrast. It predicts a difference in write-pathway CONCENTRATION across objectives; it does not predict anything about the sink's motion suppression."
+    },
+    {
+      "id": "D5-C6",
+      "what_the_paper_says": "A closed-form rank-1 edit on W_2 (and W_O) removes the component pointing toward a target unembedding direction, and is tested against matched random and bottom-spectrum directions at matched Frobenius magnitude.",
+      "location": "§3.3 Causal Probe: Rank-1 Commitment Edit, equations (6), (7); §4.5",
+      "quote": "If write-pathway prediction geometry is functionally involved in target-token commitment, this edit should reduce target probabilities more than matched random or bottom-spectrum directions.",
+      "bearing_on_mercator": "The control design — matched Frobenius magnitude, random AND bottom-spectrum comparators — is the same control trinity MERCATOR uses (haar plus bottomsigma). Methodologically convergent, independently arrived at.",
+      "tag": "consistent-with",
+      "consequence": "Citable as independent methodological precedent for the matched-magnitude twin design; carries no claim about our result."
+    }
+  ],
+  "verdict": {
+    "predicted_by_count": 0,
+    "consistent_with_count": 3,
+    "scope_limit_count": 2,
+    "absent_count": 1,
+    "summary": "No MERCATOR finding is PREDICTED BY this paper. The framework's mechanism is plain gradient accumulation (eq 8) with no optimizer preconditioner anywhere in the paper, while the gradient sink is defined by the mismatch between gradient magnitude and realized motion — a mismatch that requires a preconditioner to exist. Three claims are consistent-with and citable as such; two are scope limits that bound how the paper may be cited; one relevant statement is absent from the paper entirely."
+  }
+}

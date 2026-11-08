@@ -1,0 +1,83 @@
+{
+  "addendum_arms": [
+    "W1-N4"
+  ],
+  "addendum_events": [
+    {
+      "arms_added": [
+        "W1-N4"
+      ],
+      "commit_sha": "573382636a7a23f74f0ce35883d81a72746e08f3",
+      "utc": "2026-08-12T23:41:20Z"
+    },
+    {
+      "arms_added": [
+        "W1-N4"
+      ],
+      "commit_sha": "77b9432c99fb413e6ddad38999366ba9eab41202",
+      "utc": "2026-08-13T00:16:09Z"
+    },
+    {
+      "arms_added": [
+        "W1-N4"
+      ],
+      "commit_sha": "fa504b938ec17e555ab19e7d67ed3fe39cefe77b",
+      "utc": "2026-08-13T04:15:09Z"
+    }
+  ],
+  "branch": "science/darwin",
+  "commit_sha": "bc2d0efd08568f338c93ec81429562ae40043ada",
+  "compute_policy": {
+    "cpu_type": "r7i.2xlarge",
+    "forbidden": [
+      "p5",
+      "p4",
+      "p3"
+    ],
+    "gpu_types": [
+      "g6e.xlarge",
+      "g6e.2xlarge",
+      "g6e.4xlarge",
+      "g6e.8xlarge",
+      "g6e.12xlarge"
+    ],
+    "optimizer_mechanics_arms": [
+      "S2-A",
+      "S2-B",
+      "W1-Q",
+      "W1-S",
+      "W1-T",
+      "W1-U",
+      "W2-A",
+      "W2-B"
+    ]
+  },
+  "fork_check": {
+    "consequence": "",
+    "director_spec": "/Users/abaybektursun/projects/ntm-frozen-gemma/studies/lineage/paligemma1-pi0/research/2026-08-12_darwin_program_spec.md",
+    "gate": "G0_fork",
+    "passed": true,
+    "worktree_spec": "/Users/abaybektursun/projects/ntm-frozen-gemma-darwin/studies/lineage/paligemma1-pi0/research/2026-08-12_darwin_program_spec.md"
+  },
+  "frozen_utc": "2026-08-12T22:47:34Z",
+  "n_expectations": 53,
+  "n_expectations_logged_now": 1,
+  "program": "darwin",
+  "source": "scripts/darwin_freeze.py",
+  "spec": "2026-08-12_darwin_program_spec.md",
+  "tag": "darwin-freeze",
+  "totals": {
+    "ATLAS": 32,
+    "GRAD": 18,
+    "S2": 3,
+    "STAGE2": 3,
+    "W0": 18,
+    "W1": 25,
+    "W2": 6,
+    "WP": 1,
+    "n_addendum_arms": 1,
+    "n_arms": 53,
+    "n_with_dose": 21,
+    "n_with_incumbent": 21
+  }
+}

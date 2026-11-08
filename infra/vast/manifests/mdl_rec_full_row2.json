@@ -1,0 +1,36 @@
+{
+  "rental": "mdl_rec_full_row2",
+  "session": "S2",
+  "cell_id": "2:REC-full",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+  "disk": 120,
+  "gpu_query": "gpu_ram>=79 num_gpus=1 compute_cap>=800 compute_cap<1000 cuda_vers>=13.0",
+  "expected_gpu": "H100",
+  "bound": "compute",
+  "weights_mode": "download",
+  "env": {
+    "HF_ONLINE": "1",
+    "HF_HUB_DISABLE_XET": "1"
+  },
+  "_comment": "MENDELEEV S2 row 2 full-FT recovery (spec 11.2: exact fp32 Adam on a 3-4B model = 64 GB + activations -> the 1x80 GB class; Hopper ONLY: compute_cap in [800,1000) + expected_gpu H100 asserted at boot, so the Vast lane is one hardware class (spec confound 27)). weights_mode download = fast-pipe offer filter; WEIGHTS_HF_REPO is left empty on purpose \u2014 the job pulls its own models through the hub in-run (cells/mdl_job.py). Smoke first: 1 item/subject, n_boot 10, must bank metrics.json and exit 0 before the real cell runs. Image = pinned deps + code, no weights; rent-time code tar overrides /app. {BEH_METRICS_S3} is substituted at rent time with the row's behaviour-cell metrics.json S3 URL (dose-0 identity, spec 6.6); scripts/matrix_launch.py prints the filled manifest path.",
+  "cells": [
+    {
+      "id": "smoke",
+      "module": "infra.vast.cells.mdl_job",
+      "job": "infra.aws_pg.jobs.matrix_recovery",
+      "args": "--row 2 --recipe full --arm rec --smoke --behaviour-metrics {BEH_METRICS_S3}"
+    },
+    {
+      "id": "rec_full",
+      "module": "infra.vast.cells.mdl_job",
+      "job": "infra.aws_pg.jobs.matrix_recovery",
+      "args": "--row 2 --recipe full --arm rec --behaviour-metrics {BEH_METRICS_S3}"
+    }
+  ],
+  "watch": {
+    "max_billed_h": 5,
+    "load_backstop_min": 30,
+    "progress_stall_min": 20,
+    "progress_kill_min": 45
+  }
+}

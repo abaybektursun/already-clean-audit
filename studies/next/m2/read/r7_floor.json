@@ -1,0 +1,42 @@
+{
+ "freeze": {
+  "A": {
+   "p97.5": 0.012195121951219513,
+   "alt_choice": 0.012195121951219513,
+   "alt_seed_per_rep": 0.012195121951219513,
+   "n_births_with_any_matched_hit": 3,
+   "matched_hits_total": 3,
+   "n": 82
+  },
+  "B": {
+   "p97.5": 0.012195121951219513,
+   "alt_choice": 0.012195121951219513,
+   "alt_seed_per_rep": 0.012195121951219513,
+   "n_births_with_any_matched_hit": 6,
+   "matched_hits_total": 6,
+   "n": 82
+  }
+ },
+ "test": {
+  "A": {
+   "p97.5": 0.0,
+   "alt_choice": 0.0,
+   "alt_seed_per_rep": 0.0,
+   "n_births_with_any_matched_hit": 1,
+   "matched_hits_total": 1,
+   "n": 71
+  },
+  "B": {
+   "p97.5": 0.0,
+   "alt_choice": 0.0,
+   "alt_seed_per_rep": 0.0,
+   "n_births_with_any_matched_hit": 1,
+   "matched_hits_total": 1,
+   "n": 71
+  }
+ },
+ "bar": {
+  "A": 0.012195121951219513,
+  "B": 0.012195121951219513
+ }
+}

@@ -1,0 +1,5 @@
+{
+ "arm": "base",
+ "from": "HF snapshot",
+ "dir": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_dry/e2e/weights/base"
+}

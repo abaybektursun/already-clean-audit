@@ -1,0 +1,4 @@
+[
+  {"name": "b1_up", "module": "infra.aws_pg.jobs.mercator_b1",
+   "args": "--types up_proj --budget-gb 45"}
+]

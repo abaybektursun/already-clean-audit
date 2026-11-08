@@ -1,0 +1,10 @@
+[
+  {
+    "incident": "First request arrived before station requests directory existed",
+    "resolution": "No inference ran; reissued after station directory readiness."
+  },
+  {
+    "incident": "Server loaded weights then tried unrelated neuronshow plan.json absent from shipment",
+    "resolution": "Provide explicit empty poles plan; commit90ac8817; redeploy same live rental with cached weights. Queued baseline request retained."
+  }
+]

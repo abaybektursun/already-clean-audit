@@ -1,0 +1,44 @@
+{
+  "bucket": "pg-lineage-769063704696",
+  "entries": {
+    "g4b_vectors": {
+      "bytes": 454781952,
+      "kind": "prefix",
+      "local": "/work/hum_cache_mendel_mn13/g4b_vectors",
+      "n_files": 216,
+      "sha256": "8dd63fc14baeffb93ec863baa9249cc5e022952476e0244ee3728f57f55768f9",
+      "uri": "s3://pg-lineage-769063704696/results/mendel_g4b_v1/out/vectors"
+    },
+    "tessera_k1_caption": {
+      "bytes": 604744373,
+      "kind": "object",
+      "local": "/work/hum_cache_mendel_mn13/tessera_k1_caption",
+      "sha256": "7c77f087c0736a43c8f993bdb6d72a9174a3cd95d8dd40ea34c3cc13a6869af5",
+      "uri": "s3://pg-lineage-769063704696/results/tessera_k1_banks_caption2/out/tessera_k1_banks_caption.pt"
+    },
+    "tessera_k1_ocr": {
+      "bytes": 604743861,
+      "kind": "object",
+      "local": "/work/hum_cache_mendel_mn13/tessera_k1_ocr",
+      "sha256": "a4291d6f3714bc1c29f88ec1708b02b5f78bb60e937d0e3cc4eef890c3bc2c1c",
+      "uri": "s3://pg-lineage-769063704696/results/tessera_k1_banks_ocr3/out/tessera_k1_banks_ocr.pt"
+    },
+    "tessera_k1_vqa": {
+      "bytes": 604743861,
+      "kind": "object",
+      "local": "/work/hum_cache_mendel_mn13/tessera_k1_vqa",
+      "sha256": "07cc0736f2ee6597544686d630aa30aabb0bec19fd45815205e009f21d8218ef",
+      "uri": "s3://pg-lineage-769063704696/results/tessera_k1_banks_vqa/out/tessera_k1_banks_vqa.pt"
+    }
+  },
+  "provenance": {
+    "branch": "science/mendel",
+    "commit_sha": "875a6d60d36925e0b439b3fb259d5c7f0fc738ec",
+    "dirty": false,
+    "dirty_files": [],
+    "program": "mendel",
+    "source": "scripts/mendel_stamp.py",
+    "stamped_utc": "2026-08-19T20:39:29Z",
+    "tags_at_head": []
+  }
+}

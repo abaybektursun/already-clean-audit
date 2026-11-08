@@ -1,0 +1,30 @@
+{
+  "rental": "neurons_w3_grid_b",
+  "session": "W3",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+  "disk": 120,
+  "gpu_query": "gpu_ram>=40 num_gpus=1 compute_cap>=890 cuda_vers>=13.0",
+  "expected_gpu": "",
+  "bound": "compute",
+  "weights_mode": "download",
+  "env": {
+    "HF_ONLINE": "1",
+    "HF_HOME": "/workspace/hf",
+    "HF_HUB_CACHE": "/workspace/hf/hub",
+    "HF_HUB_DISABLE_XET": "1"
+  },
+  "cells": [
+    {
+      "id": "grid_b",
+      "module": "infra.vast.cells.pipeline_job",
+      "pg_git_sha": "17057bd0",
+      "steps_s3": "s3://pg-lineage-769063704696/results/mdl/neurons/w3/grid/1b/steps.json"
+    }
+  ],
+  "watch": {
+    "max_billed_h": 21,
+    "load_backstop_min": 30,
+    "progress_stall_min": 60
+  },
+  "_comment": "W3 development grid (SPEC_D1 \u00a79.2 W3), O7 allenai/Olmo-3-1025-7B on the W1 corpus at 20M olmo3 tokens (--max-tokens 20570743 = band-2 end; floor to 10,044 windows), --snapshot-bands 1, --poles S \u222a S_gate. Same job module and steps as the AWS lane (infra/aws_pg/steps/neurons_w3_grid_b.json) with every S3 path rewritten to results/mdl/neurons/... (the box user reads only results/mdl/*). Each checkpoint (14.6 GB) is downloaded in-run into HF_HUB_CACHE and deleted after its harvest; weights_mode download with no weights_hf_repo skips lifecycle's own download and requires inet_down>=800. Expected about 15.1 h per job (8 x 1.88 h + boot); max_billed_h 21 is 1.4x. pg_git_sha names 17057bd0, which holds the shipped code; the commit that adds this manifest changes no code. Job b = T_7..T_14, each with --positions <job a's T_15 poles/positions.npz on S3>; it must not start before that file exists at s3://pg-lineage-769063704696/results/mdl/neurons/w3/grid/1/out/t15_step1413814/poles/positions.npz (copy it there from job a's output, wherever job a ran). Its steps hold no local path. The mendeleev budget.json ceiling ($30) is below the user's vast credit; the coordinator raises it to the credit before any W3 rental."
+}

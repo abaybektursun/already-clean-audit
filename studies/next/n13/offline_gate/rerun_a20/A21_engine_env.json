@@ -1,0 +1,26 @@
+{
+ "ENGINE_ENV": {
+  "VLLM_USE_FLASHINFER_SAMPLER": "0"
+ },
+ "ATTENTION_BACKEND": "FLASH_ATTN",
+ "child_env_sample": {
+  "PATH": "/opt/n13/bin:/usr/bin",
+  "OTHER": "1",
+  "VLLM_USE_FLASHINFER_SAMPLER": "0"
+ },
+ "main_uses_child_env": true,
+ "probe": {
+  "set": {
+   "returncode": 1,
+   "last_line": "ModuleNotFoundError: No module named 'vllm'"
+  },
+  "unset": {
+   "returncode": 1,
+   "last_line": "AssertionError: A21: the engine environment differs from {'VLLM_USE_FLASHINFER_SAMPLER': '0'}: {'VLLM_USE_FLASHINFER_SAMPLER': None}"
+  },
+  "set_to_1": {
+   "returncode": 1,
+   "last_line": "AssertionError: A21: the engine environment differs from {'VLLM_USE_FLASHINFER_SAMPLER': '0'}: {'VLLM_USE_FLASHINFER_SAMPLER': '1'}"
+  }
+ }
+}

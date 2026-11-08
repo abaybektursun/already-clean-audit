@@ -1,0 +1,91 @@
+{
+  "rental": "am2_lrsweep",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:v2-gauge",
+  "disk": 80,
+  "gpu_query": "gpu_ram>=88 num_gpus=1 cuda_vers>=12.8 compute_cap>=800",
+  "expected_gpu": "",
+  "bound": "compute",
+  "env": {
+    "HF_ONLINE": "1"
+  },
+  "_comment": "AM-2: BOTH sides of the gauge contrast swept over the same lr grid (3e-6..1e-4, 33x span, >=4 values -> the coverage clause), at 120 and 1200 steps, 3 seeds. Cells ascend in lr so a divergence at the top rung costs only its own cell (per-cell banking); a diverged cell is a RECORDED outcome, never a silent retry. Cell ORDER matters: cells run sequentially in one rental and a NaN divergence raises (the job asserts motion > 0), which ends the rental. Both lr=1e-4 cells therefore run LAST, so a divergence at the top rung costs only itself and is recorded as the divergence it is.",
+  "cells": [
+    {
+      "id": "am2_smoke",
+      "module": "infra.vast.cells.v2_gauge",
+      "gauges": "unrotated",
+      "seeds": "2026,2027,2028",
+      "steps": 2,
+      "n_train": 24,
+      "n_eval": 8
+    },
+    {
+      "id": "am2_h120_lr3em06",
+      "module": "infra.vast.cells.v2_gauge",
+      "gauges": "unrotated,hadamard",
+      "seeds": "2026,2027,2028",
+      "steps": 120,
+      "lr": 3e-06
+    },
+    {
+      "id": "am2_h120_lr1em05",
+      "module": "infra.vast.cells.v2_gauge",
+      "gauges": "unrotated,hadamard",
+      "seeds": "2026,2027,2028",
+      "steps": 120,
+      "lr": 1e-05
+    },
+    {
+      "id": "am2_h120_lr3em05",
+      "module": "infra.vast.cells.v2_gauge",
+      "gauges": "unrotated,hadamard",
+      "seeds": "2026,2027,2028",
+      "steps": 120,
+      "lr": 3e-05
+    },
+    {
+      "id": "am2_h1200_lr3em06",
+      "module": "infra.vast.cells.v2_gauge",
+      "gauges": "unrotated,hadamard",
+      "seeds": "2026,2027,2028",
+      "steps": 1200,
+      "lr": 3e-06
+    },
+    {
+      "id": "am2_h1200_lr1em05",
+      "module": "infra.vast.cells.v2_gauge",
+      "gauges": "unrotated,hadamard",
+      "seeds": "2026,2027,2028",
+      "steps": 1200,
+      "lr": 1e-05
+    },
+    {
+      "id": "am2_h1200_lr3em05",
+      "module": "infra.vast.cells.v2_gauge",
+      "gauges": "unrotated,hadamard",
+      "seeds": "2026,2027,2028",
+      "steps": 1200,
+      "lr": 3e-05
+    },
+    {
+      "id": "am2_h120_lr0p0001",
+      "module": "infra.vast.cells.v2_gauge",
+      "gauges": "unrotated,hadamard",
+      "seeds": "2026,2027,2028",
+      "steps": 120,
+      "lr": 0.0001
+    },
+    {
+      "id": "am2_h1200_lr0p0001",
+      "module": "infra.vast.cells.v2_gauge",
+      "gauges": "unrotated,hadamard",
+      "seeds": "2026,2027,2028",
+      "steps": 1200,
+      "lr": 0.0001
+    }
+  ],
+  "watch": {
+    "load_backstop_min": 90,
+    "max_billed_h": 5
+  }
+}

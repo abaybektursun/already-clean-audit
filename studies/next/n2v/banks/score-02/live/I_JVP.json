@@ -1,0 +1,10 @@
+{
+ "pass": true,
+ "n": 32,
+ "n_bitwise": 32,
+ "max_abs_diff": 0.0,
+ "failing_input": {
+  "what": "pole 1's tangent against pole 0's",
+  "pass": false
+ }
+}

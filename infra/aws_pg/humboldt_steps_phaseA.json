@@ -1,0 +1,22 @@
+[
+  {
+    "name": "a2",
+    "module": "infra.aws_pg.jobs.humboldt_a2",
+    "args": "--run-id humboldt_a2"
+  },
+  {
+    "name": "a3",
+    "module": "infra.aws_pg.jobs.humboldt_a3",
+    "args": "--run-id humboldt_a3"
+  },
+  {
+    "name": "a4",
+    "module": "infra.aws_pg.jobs.humboldt_a4",
+    "args": "--run-id humboldt_a4"
+  },
+  {
+    "name": "a5",
+    "module": "infra.aws_pg.jobs.humboldt_a5",
+    "args": "--run-id humboldt_a5 --cap-min 30"
+  }
+]

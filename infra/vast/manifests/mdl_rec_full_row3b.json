@@ -1,0 +1,42 @@
+{
+  "rental": "mdl_rec_full_row3b",
+  "session": "S5",
+  "cell_id": "3b:REC-full,3b:REC-full-scratch",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+  "disk": 120,
+  "gpu_query": "gpu_ram>=79 num_gpus=1 compute_cap>=800 compute_cap<1000 cuda_vers>=13.0",
+  "expected_gpu": "H100",
+  "bound": "compute",
+  "weights_mode": "download",
+  "env": {
+    "HF_ONLINE": "1",
+    "HF_HUB_DISABLE_XET": "1"
+  },
+  "_comment": "MENDELEEV S5 row 3b full-FT recovery AND its fair-scratch twin in ONE rental (one 3b pair load), mirroring mdl_rec_r512_row2-10B. The twin is not optional: spec 6.6's 'dose too weak' VOID rule is defined only against a fair-scratch arm run under the IDENTICAL recipe and dose ladder, so without it row 3b's REC-full can be neither voided nor validated — and 3b:REC-full-scratch was named by no manifest at all (matrix_check --coverage: VAST-NO-MFST), i.e. it had no launch path on either lane. Spec 11.2: exact fp32 Adam 3-4B -> 1x80 GB class. Download-mode fast-pipe filter, in-job hub download, smoke cell first, no baked weights. {BEH_METRICS_S3} is substituted at rent time with the row's behaviour-cell metrics.json S3 URL (dose-0 identity, spec 6.6); scripts/matrix_launch.py prints the filled manifest path.",
+  "cells": [
+    {
+      "id": "smoke",
+      "module": "infra.vast.cells.mdl_job",
+      "job": "infra.aws_pg.jobs.matrix_recovery",
+      "args": "--row 3b --recipe full --arm rec --smoke --behaviour-metrics {BEH_METRICS_S3}"
+    },
+    {
+      "id": "rec_full",
+      "module": "infra.vast.cells.mdl_job",
+      "job": "infra.aws_pg.jobs.matrix_recovery",
+      "args": "--row 3b --recipe full --arm rec --behaviour-metrics {BEH_METRICS_S3}"
+    },
+    {
+      "id": "rec_full_scratch",
+      "module": "infra.vast.cells.mdl_job",
+      "job": "infra.aws_pg.jobs.matrix_recovery",
+      "args": "--row 3b --recipe full --arm scratch --behaviour-metrics {BEH_METRICS_S3}"
+    }
+  ],
+  "watch": {
+    "max_billed_h": 9,
+    "load_backstop_min": 30,
+    "progress_stall_min": 20,
+    "progress_kill_min": 45
+  }
+}

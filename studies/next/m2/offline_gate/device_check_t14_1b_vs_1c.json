@@ -1,0 +1,77 @@
+{
+ "a": "bank/neurons/w3/grid/1b/out/t14_step1000000",
+ "b": "bank/neurons/w3/grid/1c/out/t14_step1000000",
+ "n_poles": 640,
+ "unit": "pole (proxy; the verdict reads presence per cluster)",
+ "devices": {
+  "A": "NVIDIA RTX PRO 5000 Blackwell",
+  "B": "NVIDIA L40S"
+ },
+ "checks": {
+  "positions_identical": true,
+  "tokens_sha256": "2aca80ca6537f46b8f60a550b4a3f2f13be2d18c5402be8f1af5c00caa86f531",
+  "n_tokens_scored": 20560068,
+  "branch": [
+   "stage1-step1000000",
+   "stage1-step1000000"
+  ]
+ },
+ "definitions": {
+  "rel_diff": "|x_A - x_B| / max(|x_A|, |x_B|), 0 when both are 0",
+  "a_plus": "a+ = max(s*a, 0), s = +1 for the + pole and -1 for the - pole; median in float64",
+  "percentile": "median over filled exemplars of a+ = max(s*a, 0), and median > 0, and median >= stats q999[n, s] (verdict 6d26acff, copied)",
+  "raw_ratio": "median over filled exemplars of a+ = max(s*a, 0), and median > 0, and median >= 0.3 * stats max_abs[n, s] (verdict 6d26acff, copied)",
+  "topk_overlap": "|top-20 tok of A \u2229 top-20 tok of B| per pole"
+ },
+ "exemplar_a": {
+  "rel_diff": {
+   "n": 32000,
+   "median": 0.004310402304972054,
+   "p90": 0.011022610321374473,
+   "p99": 0.022160044065951408,
+   "max": 1.952766309595231
+  },
+  "n_entries": 32000,
+  "sign_differs_share": 6.25e-05
+ },
+ "presence": {
+  "percentile": {
+   "present_A": 639,
+   "present_B": 639,
+   "n_flipped": 0,
+   "flip_share": 0.0,
+   "flipped": [],
+   "detail": []
+  },
+  "raw_ratio": {
+   "present_A": 630,
+   "present_B": 630,
+   "n_flipped": 0,
+   "flip_share": 0.0,
+   "flipped": [],
+   "detail": []
+  }
+ },
+ "stats": {
+  "q999_rel_diff": {
+   "n": 640,
+   "median": 0.0,
+   "p90": 0.0,
+   "p99": 0.0,
+   "max": 0.05593914844171153
+  },
+  "max_abs_rel_diff": {
+   "n": 640,
+   "median": 0.0021214147972464783,
+   "p90": 0.007615742713490816,
+   "p99": 0.01327134410820056,
+   "max": 0.01889438375426539
+  }
+ },
+ "topk_top20": {
+  "overlap_median": 20.0,
+  "share_below_15": 0.0,
+  "below": []
+ },
+ "clusters": null
+}

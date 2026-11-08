@@ -1,0 +1,42 @@
+[
+ {
+  "name": "t15_step1413814",
+  "module": "infra.aws_pg.jobs.neurons_harvest",
+  "args": "--model-key O7 --repo allenai/Olmo-3-1025-7B --corpus s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus --tokname olmo3 --max-tokens 20570743 --snapshot-bands 1 --poles s3://pg-lineage-769063704696/results/mdl/neurons/w3/grid/1/poles.json --revision stage1-step1413814"
+ },
+ {
+  "name": "t00_step0",
+  "module": "infra.aws_pg.jobs.neurons_harvest",
+  "args": "--model-key O7 --repo allenai/Olmo-3-1025-7B --corpus s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus --tokname olmo3 --max-tokens 20570743 --snapshot-bands 1 --poles s3://pg-lineage-769063704696/results/mdl/neurons/w3/grid/1/poles.json --revision stage1-step0 --positions-from /workspace/out/grid_a/t15_step1413814"
+ },
+ {
+  "name": "t01_step1000",
+  "module": "infra.aws_pg.jobs.neurons_harvest",
+  "args": "--model-key O7 --repo allenai/Olmo-3-1025-7B --corpus s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus --tokname olmo3 --max-tokens 20570743 --snapshot-bands 1 --poles s3://pg-lineage-769063704696/results/mdl/neurons/w3/grid/1/poles.json --revision stage1-step1000 --positions-from /workspace/out/grid_a/t15_step1413814"
+ },
+ {
+  "name": "t02_step2000",
+  "module": "infra.aws_pg.jobs.neurons_harvest",
+  "args": "--model-key O7 --repo allenai/Olmo-3-1025-7B --corpus s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus --tokname olmo3 --max-tokens 20570743 --snapshot-bands 1 --poles s3://pg-lineage-769063704696/results/mdl/neurons/w3/grid/1/poles.json --revision stage1-step2000 --positions-from /workspace/out/grid_a/t15_step1413814"
+ },
+ {
+  "name": "t03_step3000",
+  "module": "infra.aws_pg.jobs.neurons_harvest",
+  "args": "--model-key O7 --repo allenai/Olmo-3-1025-7B --corpus s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus --tokname olmo3 --max-tokens 20570743 --snapshot-bands 1 --poles s3://pg-lineage-769063704696/results/mdl/neurons/w3/grid/1/poles.json --revision stage1-step3000 --positions-from /workspace/out/grid_a/t15_step1413814"
+ },
+ {
+  "name": "t04_step5000",
+  "module": "infra.aws_pg.jobs.neurons_harvest",
+  "args": "--model-key O7 --repo allenai/Olmo-3-1025-7B --corpus s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus --tokname olmo3 --max-tokens 20570743 --snapshot-bands 1 --poles s3://pg-lineage-769063704696/results/mdl/neurons/w3/grid/1/poles.json --revision stage1-step5000 --positions-from /workspace/out/grid_a/t15_step1413814"
+ },
+ {
+  "name": "t05_step8000",
+  "module": "infra.aws_pg.jobs.neurons_harvest",
+  "args": "--model-key O7 --repo allenai/Olmo-3-1025-7B --corpus s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus --tokname olmo3 --max-tokens 20570743 --snapshot-bands 1 --poles s3://pg-lineage-769063704696/results/mdl/neurons/w3/grid/1/poles.json --revision stage1-step8000 --positions-from /workspace/out/grid_a/t15_step1413814"
+ },
+ {
+  "name": "t06_step12000",
+  "module": "infra.aws_pg.jobs.neurons_harvest",
+  "args": "--model-key O7 --repo allenai/Olmo-3-1025-7B --corpus s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus --tokname olmo3 --max-tokens 20570743 --snapshot-bands 1 --poles s3://pg-lineage-769063704696/results/mdl/neurons/w3/grid/1/poles.json --revision stage1-step12000 --positions-from /workspace/out/grid_a/t15_step1413814"
+ }
+]

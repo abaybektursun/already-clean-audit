@@ -1,0 +1,200 @@
+{
+ "prefix": "s4armsB2-02",
+ "step": "rndE_k3",
+ "arm": "rndE_k3",
+ "seed_set": "A",
+ "benches": [
+  "math500"
+ ],
+ "projection_min": 208.0,
+ "allowance_min": 1378.0,
+ "build": {
+  "build_seconds": 423.5,
+  "n_neurons_in_set": 10568,
+  "spec": {
+   "name": "rndE_k3",
+   "kind": "neurons",
+   "c": 1.1134029467827455,
+   "non_mlp": "before",
+   "intended_mlp_energy": 0.4380626998314196,
+   "rounding": "stochastic",
+   "round_seed": 143
+  },
+  "families": {
+   "mlp": {
+    "realized_sq": 0.43451684513088845,
+    "changed": 56650588,
+    "in_mask": 129859584
+   },
+   "attn": {
+    "realized_sq": 0.0,
+    "changed": 0,
+    "in_mask": 0
+   },
+   "norm": {
+    "realized_sq": 0.0,
+    "changed": 0,
+    "in_mask": 0
+   },
+   "embed": {
+    "realized_sq": 0.0,
+    "changed": 0,
+    "in_mask": 0
+   }
+  },
+  "G-MASK": true,
+  "kept": 0,
+  "kept_expected": null,
+  "kept_rel_err": null,
+  "kept_sd_units": null,
+  "kept_pass": null,
+  "intended_mlp_energy": 0.4380626998314196,
+  "energy_rel_err": 0.008094399961228621,
+  "energy_flag": false,
+  "energy_passes": [
+   {
+    "c": 1.1477519300789671,
+    "realized": 0.465508490058654,
+    "ratio": 1.0626526527773226
+   },
+   {
+    "c": 1.1134029467827455,
+    "realized": 0.4345168451308886,
+    "ratio": 0.9919056000387717
+   }
+  ],
+  "c_built": 1.1134029467827455,
+  "a31": {
+   "written_sq": 0.43451684513088845,
+   "matched_sq": 0.4345168451308886,
+   "rel_diff": 3.8326121428873246e-16,
+   "tol": 1e-12,
+   "energy_pass": true,
+   "n_tensors": 355,
+   "n_tensors_differ": 0,
+   "tensors_differ": [],
+   "pass": true
+  },
+  "hashes_vs_R1_stage6": {
+   "n_tensors": 355,
+   "n_equal": 259,
+   "same_names": true,
+   "all_equal": false
+  },
+  "R1_stage6_note": "rndE hashes changed by A30 (stochastic rounding); R1 at s3gate-03 ran before A30"
+ },
+ "bench": {
+  "math500": {
+   "status": "done",
+   "started_utc": "2026-11-07T16:08:12Z",
+   "finished_utc": "2026-11-07T18:19:33Z",
+   "wall_min": 131.3,
+   "template": {
+    "pass": true,
+    "first_id_is_bos": [
+     false
+    ],
+    "n": 500
+   },
+   "cap": 16384,
+   "park": {
+    "allowance_min": 1378.0,
+    "elapsed_min": 8.173568101723989,
+    "projected_min": 208.0410710028923,
+    "earlier_parked": false,
+    "parked": false
+   },
+   "condition": null,
+   "screen_fired": false,
+   "screen_cap_hits_0_19": 3,
+   "G-COMPLETE_job": {
+    "n": 500,
+    "distinct": 500,
+    "covers": true,
+    "seeded": true,
+    "generated": true,
+    "finish_reason": true,
+    "n_empty": 7,
+    "pass": true,
+    "expected_n": 500
+   },
+   "G-COMPLETE_recount": {
+    "n": 500,
+    "distinct": 500,
+    "covers": true,
+    "seeded": true,
+    "generated": true,
+    "finish_reason": true,
+    "n_empty": 7,
+    "pass": true
+   },
+   "G-COMPLETE_failing_input_failed": true,
+   "n_records": 500,
+   "cap_hits": 64,
+   "mean_new_tokens": 3362.93,
+   "modes": {
+    "answer_line": 213,
+    "boxed": 167,
+    "none": 120
+   },
+   "metrics_build": {
+    "arm": "rndE_k3",
+    "from": null,
+    "G-HASH": null,
+    "kept_rel_err": null,
+    "kept_sd_units": null,
+    "energy_rel_err": 0.008094399961228621,
+    "energy_flag": false,
+    "energy_passes": [
+     {
+      "c": 1.1477519300789671,
+      "realized": 0.465508490058654,
+      "ratio": 1.0626526527773226
+     },
+     {
+      "c": 1.1134029467827455,
+      "realized": 0.4345168451308886,
+      "ratio": 0.9919056000387717
+     }
+    ],
+    "c_built": 1.1134029467827455,
+    "a31": {
+     "written_sq": 0.43451684513088845,
+     "matched_sq": 0.4345168451308886,
+     "rel_diff": 3.8326121428873246e-16,
+     "tol": 1e-12,
+     "energy_pass": true,
+     "n_tensors": 355,
+     "n_tensors_differ": 0,
+     "tensors_differ": [],
+     "pass": true
+    },
+    "build_seconds": 423.5,
+    "G-MASK": true
+   },
+   "engine": {
+    "vllm": "0.32.0",
+    "max_num_seqs": 128,
+    "max_num_batched_tokens": 2048,
+    "num_gpu_blocks": 12817,
+    "attention_backend": "FLASH_ATTN",
+    "env": {
+     "VLLM_USE_FLASHINFER_SAMPLER": "0"
+    },
+    "load_s": 76.08522915840149
+   },
+   "throughput": {
+    "generation_seconds": 7376.845854520798,
+    "step_s": 7880.625280618668,
+    "r_sat": 233.81626348162703,
+    "mean_new_tokens": 3362.93,
+    "median_new_tokens": 912.0,
+    "max_new_tokens": 16384,
+    "n_cap_hits": 64,
+    "mean_output_tokens": 3363.802,
+    "n_answers": 500,
+    "load_s": 76.08522915840149
+   }
+  }
+ }
+}

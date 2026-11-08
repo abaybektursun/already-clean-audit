@@ -1,0 +1,37 @@
+[
+ {
+  "name": "t07",
+  "module": "infra.aws_pg.jobs.reuse_sharedbirth",
+  "args": "--stage sharedbirth --t T_7 --revision stage1-step20000 --items s3://pg-lineage-769063704696/results/mdl/reuse_birth/inputs/birth_items.json --corpus s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus --birth-verdict s3://pg-lineage-769063704696/results/reuse/sharedinputs/inputs/verdict_birth.json --cases-t15 s3://pg-lineage-769063704696/results/reuse/sharedbirth/inputs/cases_t15.json --birth-bank s3://pg-lineage-769063704696/results/mdl/mendeleev_reuse_birth/cells/birth/t07"
+ },
+ {
+  "name": "t08",
+  "module": "infra.aws_pg.jobs.reuse_sharedbirth",
+  "args": "--stage sharedbirth --t T_8 --revision stage1-step35000 --items s3://pg-lineage-769063704696/results/mdl/reuse_birth/inputs/birth_items.json --corpus s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus --birth-verdict s3://pg-lineage-769063704696/results/reuse/sharedinputs/inputs/verdict_birth.json --cases-t15 s3://pg-lineage-769063704696/results/reuse/sharedbirth/inputs/cases_t15.json --birth-bank s3://pg-lineage-769063704696/results/mdl/mendeleev_reuse_birth/cells/birth/t08"
+ },
+ {
+  "name": "t09",
+  "module": "infra.aws_pg.jobs.reuse_sharedbirth",
+  "args": "--stage sharedbirth --t T_9 --revision stage1-step60000 --items s3://pg-lineage-769063704696/results/mdl/reuse_birth/inputs/birth_items.json --corpus s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus --birth-verdict s3://pg-lineage-769063704696/results/reuse/sharedinputs/inputs/verdict_birth.json --cases-t15 s3://pg-lineage-769063704696/results/reuse/sharedbirth/inputs/cases_t15.json --birth-bank s3://pg-lineage-769063704696/results/mdl/mendeleev_reuse_birth/cells/birth/t09"
+ },
+ {
+  "name": "t10",
+  "module": "infra.aws_pg.jobs.reuse_sharedbirth",
+  "args": "--stage sharedbirth --t T_10 --revision stage1-step100000 --items s3://pg-lineage-769063704696/results/mdl/reuse_birth/inputs/birth_items.json --corpus s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus --birth-verdict s3://pg-lineage-769063704696/results/reuse/sharedinputs/inputs/verdict_birth.json --cases-t15 s3://pg-lineage-769063704696/results/reuse/sharedbirth/inputs/cases_t15.json --birth-bank s3://pg-lineage-769063704696/results/mdl/mendeleev_reuse_birth/cells/birth/t10"
+ },
+ {
+  "name": "t11",
+  "module": "infra.aws_pg.jobs.reuse_sharedbirth",
+  "args": "--stage sharedbirth --t T_11 --revision stage1-step180000 --items s3://pg-lineage-769063704696/results/mdl/reuse_birth/inputs/birth_items.json --corpus s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus --birth-verdict s3://pg-lineage-769063704696/results/reuse/sharedinputs/inputs/verdict_birth.json --cases-t15 s3://pg-lineage-769063704696/results/reuse/sharedbirth/inputs/cases_t15.json --birth-bank s3://pg-lineage-769063704696/results/mdl/mendeleev_reuse_birth/cells/birth/t11"
+ },
+ {
+  "name": "t12",
+  "module": "infra.aws_pg.jobs.reuse_sharedbirth",
+  "args": "--stage sharedbirth --t T_12 --revision stage1-step320000 --items s3://pg-lineage-769063704696/results/mdl/reuse_birth/inputs/birth_items.json --corpus s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus --birth-verdict s3://pg-lineage-769063704696/results/reuse/sharedinputs/inputs/verdict_birth.json --cases-t15 s3://pg-lineage-769063704696/results/reuse/sharedbirth/inputs/cases_t15.json --birth-bank s3://pg-lineage-769063704696/results/mdl/mendeleev_reuse_birth/cells/birth/t12"
+ },
+ {
+  "name": "t13",
+  "module": "infra.aws_pg.jobs.reuse_sharedbirth",
+  "args": "--stage sharedbirth --t T_13 --revision stage1-step560000 --items s3://pg-lineage-769063704696/results/mdl/reuse_birth/inputs/birth_items.json --corpus s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus --birth-verdict s3://pg-lineage-769063704696/results/reuse/sharedinputs/inputs/verdict_birth.json --cases-t15 s3://pg-lineage-769063704696/results/reuse/sharedbirth/inputs/cases_t15.json --birth-bank s3://pg-lineage-769063704696/results/mdl/mendeleev_reuse_birth/cells/birth/t13"
+ }
+]

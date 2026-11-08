@@ -1,0 +1,195 @@
+{
+ "created_from": "studies/next/n2v/banks/score-02/n2v/n2v_freeze.jsonl",
+ "sha256_n2v_freeze": "58e85a6403bb6101ae358e709d285b5d0f7e48d00c4bb845a72aca469ec06747",
+ "sha256_job_metrics": "28019dab37d80b178d38f2ed3221cc50800a720c99b37a7117e8b5f3f410b7aa",
+ "gates": {
+  "pass": true,
+  "problems": [],
+  "complete": true
+ },
+ "freeze": {
+  "n_pairs": 328,
+  "n_units": 82,
+  "window": {
+   "room": {
+    "readout": "window",
+    "median_rho": 0.9998938992764069,
+    "q05": 0.9998775590848407,
+    "rho_min": 0.9,
+    "pass": true,
+    "median_abs_noise": 0.00016692424833308905,
+    "median_abs_pred": 0.021001121029257774,
+    "noise": "probe"
+   },
+   "validation": {
+    "n_pairs": 328,
+    "n_units": 82,
+    "rho": 0.9705852747158576,
+    "lo": 0.93902557313149,
+    "hi": 0.9930211454358575,
+    "shuffle_q975": 0.10396803953748242,
+    "slope_through_origin": 1.11032288785188,
+    "rho_min": 0.7,
+    "ceiling": 0.999,
+    "pass": true,
+    "above_ceiling": false,
+    "failing_input": {
+     "what": "the prediction with its sign flipped",
+     "rho": -0.9705852747158576,
+     "pass": false
+    },
+    "readout": "window",
+    "prediction": "pred_bf16",
+    "measurement": "dL",
+    "scale": 1.0,
+    "sign_agreement": 0.9695121951219512,
+    "median_abs_meas": 0.021805375354233547,
+    "median_abs_pred": 0.021001121029257774
+   },
+   "inspection": null
+  },
+  "fd": {
+   "room": {
+    "readout": "fd",
+    "median_rho": 0.9943469058376485,
+    "q05": 0.9933146342143548,
+    "rho_min": 0.9,
+    "pass": true,
+    "median_abs_noise": 0.00016692424833308905,
+    "median_abs_pred": 0.0021001121029257767,
+    "noise": "probe"
+   },
+   "validation": {
+    "n_pairs": 328,
+    "n_units": 82,
+    "rho": 0.9784748157010029,
+    "lo": 0.9518246917464025,
+    "hi": 0.9933251177796769,
+    "shuffle_q975": 0.10680277371776255,
+    "slope_through_origin": 1.0076047038745355,
+    "rho_min": 0.7,
+    "ceiling": 0.999,
+    "pass": true,
+    "above_ceiling": false,
+    "failing_input": {
+     "what": "the prediction with its sign flipped",
+     "rho": -0.9784748157010029,
+     "pass": false
+    },
+    "readout": "fd",
+    "prediction": "pred_bf16",
+    "measurement": "dL_fd",
+    "scale": 0.09999999999999998,
+    "ceiling_rule": "every |dL_fd - 0.1 pred| / |0.1 pred| < 1e-06",
+    "max_rel_dev": 29.661533772186882,
+    "sign_agreement": 0.9207317073170732,
+    "median_abs_meas": 0.002150527296180371,
+    "median_abs_pred": 0.0021001121029257767
+   },
+   "inspection": null
+  },
+  "own": {
+   "room": {
+    "readout": "own",
+    "median_rho": 0.9999962592693608,
+    "q05": 0.9999942188708301,
+    "rho_min": 0.9,
+    "pass": true,
+    "median_abs_noise": 4.3103937059640884e-06,
+    "median_abs_pred": 0.006730217221956991,
+    "noise": "probe"
+   },
+   "validation": {
+    "n_pairs": 328,
+    "n_units": 82,
+    "rho": 0.9846371593299605,
+    "lo": 0.9713104403234017,
+    "hi": 0.9945920937065794,
+    "shuffle_q975": 0.10639226253671868,
+    "slope_through_origin": 1.0342736041152742,
+    "rho_min": 0.7,
+    "ceiling": 0.999,
+    "pass": true,
+    "above_ceiling": false,
+    "failing_input": {
+     "what": "the prediction with its sign flipped",
+     "rho": -0.9846371593299605,
+     "pass": false
+    },
+    "readout": "own",
+    "prediction": "pred_jvp_own",
+    "measurement": "dL_own",
+    "scale": 1.0,
+    "sign_agreement": 0.9695121951219512,
+    "median_abs_meas": 0.006438991353206802,
+    "median_abs_pred": 0.006730217221956991
+   },
+   "inspection": null
+  },
+  "window_jvp": {
+   "room": {
+    "readout": "window_jvp",
+    "median_rho": 0.9998785962874271,
+    "q05": 0.9998561349002689,
+    "rho_min": 0.9,
+    "pass": true,
+    "median_abs_noise": 0.00016692424833308905,
+    "median_abs_pred": 0.020442129179031543,
+    "noise": "probe"
+   },
+   "validation": {
+    "n_pairs": 328,
+    "n_units": 82,
+    "rho": 0.9789471679608464,
+    "lo": 0.9483489554040736,
+    "hi": 0.9955969220297068,
+    "shuffle_q975": 0.11109929191369661,
+    "slope_through_origin": 1.089303199293002,
+    "rho_min": 0.7,
+    "ceiling": 0.999,
+    "pass": true,
+    "above_ceiling": false,
+    "failing_input": {
+     "what": "the prediction with its sign flipped",
+     "rho": -0.9789471679608464,
+     "pass": false
+    },
+    "readout": "window_jvp",
+    "prediction": "pred_jvp",
+    "measurement": "dL",
+    "scale": 1.0,
+    "sign_agreement": 0.9695121951219512,
+    "median_abs_meas": 0.021805375354233547,
+    "median_abs_pred": 0.020442129179031543
+   },
+   "inspection": null
+  },
+  "room_failing_input": {
+   "readout": "window",
+   "median_rho": 0.06407395492487594,
+   "q05": -0.02916081469032532,
+   "rho_min": 0.9,
+   "pass": false,
+   "median_abs_noise": 0.5711669921875,
+   "median_abs_pred": 0.021001121029257774,
+   "noise": "planted"
+  },
+  "bf16_vs_jvp_prediction": {
+   "spearman": 0.9868900993742099,
+   "median_rel_diff": 0.038023547424852686
+  },
+  "probe_median_abs": 0.00016692424833308905,
+  "probe_own_median_abs": 4.3103937059640884e-06
+ },
+ "labels_freeze": {
+  "window": "PASS",
+  "fd": "PASS",
+  "own": "PASS",
+  "window_jvp": "PASS"
+ },
+ "rules": {
+  "val_rho_min": 0.7,
+  "val_ceiling": 0.999,
+  "room_rho_min": 0.9
+ }
+}

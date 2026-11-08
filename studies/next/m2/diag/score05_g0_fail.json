@@ -1,0 +1,281 @@
+{
+ "what": "score-05 stopped at t06_G0: the gate passed, but its registered failing input (the activation swapped, silu ->\ngelu_tanh, `neurons_harvest.WRONG_ACT`) also passed, max ratio below G0_TOL = 0.01, so `Run.gate` asserted \"its failing\ninput passed\". This diagnostic puts that value beside (1) the same failing input at every point of the five M2\nattempts (banks/score-0N/metrics.json) and (2) the banked grid harvest's own G0 controls at T_5-T_15 (S3\nresults/neurons/w3/grid/<dir>/controls.json, 3 KB each), which also hold a second failing input (u scaled by 1.1) whose\npower does not depend on |g|. Reads metrics.json files and the 11 controls.json files only; no rank, example or vector\nfile of any attempt.",
+ "G0_TOL": 0.01,
+ "jobs": {
+  "score-01": {
+   "15": {
+    "G0_max": 0.006066504865884781,
+    "fail_act_max": 0.6373435258865356,
+    "fail_act_pass": false
+   },
+   "14": {
+    "G0_max": 0.005030064377933741,
+    "fail_act_max": 0.5724493861198425,
+    "fail_act_pass": false
+   }
+  },
+  "score-02": {
+   "15": {
+    "G0_max": 0.006066504865884781,
+    "fail_act_max": 0.6373435258865356,
+    "fail_act_pass": false
+   },
+   "14": {
+    "G0_max": 0.005030064377933741,
+    "fail_act_max": 0.5724493861198425,
+    "fail_act_pass": false
+   },
+   "13": {
+    "G0_max": 0.004761958960443735,
+    "fail_act_max": 0.454460471868515,
+    "fail_act_pass": false
+   }
+  },
+  "score-03": {
+   "15": {
+    "G0_max": 0.006066504865884781,
+    "fail_act_max": 0.6373435258865356,
+    "fail_act_pass": false
+   },
+   "14": {
+    "G0_max": 0.005030064377933741,
+    "fail_act_max": 0.5724493861198425,
+    "fail_act_pass": false
+   },
+   "13": {
+    "G0_max": 0.004761958960443735,
+    "fail_act_max": 0.454460471868515,
+    "fail_act_pass": false
+   }
+  },
+  "score-04": {
+   "15": {
+    "G0_max": 0.006066504865884781,
+    "fail_act_max": 0.6373435258865356,
+    "fail_act_pass": false
+   },
+   "14": {
+    "G0_max": 0.005030064377933741,
+    "fail_act_max": 0.5724493861198425,
+    "fail_act_pass": false
+   },
+   "13": {
+    "G0_max": 0.004761958960443735,
+    "fail_act_max": 0.454460471868515,
+    "fail_act_pass": false
+   },
+   "12": {
+    "G0_max": 0.0052130562253296375,
+    "fail_act_max": 0.36822378635406494,
+    "fail_act_pass": false
+   },
+   "11": {
+    "G0_max": 0.004645614419132471,
+    "fail_act_max": 0.1297554224729538,
+    "fail_act_pass": false
+   },
+   "10": {
+    "G0_max": 0.005007009953260422,
+    "fail_act_max": 0.06621091067790985,
+    "fail_act_pass": false
+   }
+  },
+  "score-05": {
+   "15": {
+    "G0_max": 0.006066504865884781,
+    "fail_act_max": 0.6373435258865356,
+    "fail_act_pass": false
+   },
+   "14": {
+    "G0_max": 0.005030064377933741,
+    "fail_act_max": 0.5724493861198425,
+    "fail_act_pass": false
+   },
+   "13": {
+    "G0_max": 0.004761958960443735,
+    "fail_act_max": 0.454460471868515,
+    "fail_act_pass": false
+   },
+   "12": {
+    "G0_max": 0.0052130562253296375,
+    "fail_act_max": 0.36822378635406494,
+    "fail_act_pass": false
+   },
+   "11": {
+    "G0_max": 0.004645614419132471,
+    "fail_act_max": 0.1297554224729538,
+    "fail_act_pass": false
+   },
+   "10": {
+    "G0_max": 0.005007009953260422,
+    "fail_act_max": 0.06621091067790985,
+    "fail_act_pass": false
+   },
+   "09": {
+    "G0_max": 0.00425277603790164,
+    "fail_act_max": 0.05392581224441528,
+    "fail_act_pass": false
+   },
+   "08": {
+    "G0_max": 0.003709492040798068,
+    "fail_act_max": 0.03174217790365219,
+    "fail_act_pass": false
+   },
+   "07": {
+    "G0_max": 0.0034661544486880302,
+    "fail_act_max": 0.01765698567032814,
+    "fail_act_pass": false
+   },
+   "06": {
+    "G0_max": 0.003521543461829424,
+    "fail_act_max": 0.00969648826867342,
+    "fail_act_pass": true
+   }
+  }
+ },
+ "banked_harvest": {
+  "05": {
+   "s3": "results/neurons/w3/grid/1/out/t05_step8000/controls.json",
+   "sha256": "9f888ff0bbfa124456841f019ab752273d4bc2b483092aceac2a0d9239d29c5f",
+   "tol": 0.01,
+   "n_windows": 8,
+   "G0_max": 0.003340517170727253,
+   "fail_act_max": 0.006220971699804068,
+   "fail_act_pass": true,
+   "fail_act_layers_over_tol": 0,
+   "fail_u1.1_max": 0.10320669412612915,
+   "fail_u1.1_min": 0.09651898592710495,
+   "fail_u1.1_pass": false
+  },
+  "06": {
+   "s3": "results/neurons/w3/grid/1/out/t06_step12000/controls.json",
+   "sha256": "951b2b289e634a133a660bf90819fbf90a95b3a619062e361abd5dfa643dcab5",
+   "tol": 0.01,
+   "n_windows": 8,
+   "G0_max": 0.0034936179872602224,
+   "fail_act_max": 0.01126493513584137,
+   "fail_act_pass": false,
+   "fail_act_layers_over_tol": 1,
+   "fail_u1.1_max": 0.10346821695566177,
+   "fail_u1.1_min": 0.09646788984537125,
+   "fail_u1.1_pass": false
+  },
+  "07": {
+   "s3": "results/neurons/w3/grid/1b/out/t07_step20000/controls.json",
+   "sha256": "230303373528a0aebb37700d8d483f5dffd6edf6eb4aeec39ed9e64fdcedc04c",
+   "tol": 0.01,
+   "n_windows": 8,
+   "G0_max": 0.0031132518779486418,
+   "fail_act_max": 0.017688702791929245,
+   "fail_act_pass": false,
+   "fail_act_layers_over_tol": 4,
+   "fail_u1.1_max": 0.10258737951517105,
+   "fail_u1.1_min": 0.09777047485113144,
+   "fail_u1.1_pass": false
+  },
+  "08": {
+   "s3": "results/neurons/w3/grid/1b/out/t08_step35000/controls.json",
+   "sha256": "b9f44df984a55d4d367f171d338f081d26ff1fa69f1d59fceffb5b214c3cc07c",
+   "tol": 0.01,
+   "n_windows": 8,
+   "G0_max": 0.003616898087784648,
+   "fail_act_max": 0.026689186692237854,
+   "fail_act_pass": false,
+   "fail_act_layers_over_tol": 11,
+   "fail_u1.1_max": 0.10356031358242035,
+   "fail_u1.1_min": 0.09777484834194183,
+   "fail_u1.1_pass": false
+  },
+  "09": {
+   "s3": "results/neurons/w3/grid/1b/out/t09_step60000/controls.json",
+   "sha256": "3c20327930a55c4cf703d647f3553148e3791aae16a0408d88365d8c41b7ba01",
+   "tol": 0.01,
+   "n_windows": 8,
+   "G0_max": 0.004354916978627443,
+   "fail_act_max": 0.05192186310887337,
+   "fail_act_pass": false,
+   "fail_act_layers_over_tol": 18,
+   "fail_u1.1_max": 0.10369279980659485,
+   "fail_u1.1_min": 0.09569891542196274,
+   "fail_u1.1_pass": false
+  },
+  "10": {
+   "s3": "results/neurons/w3/grid/1b/out/t10_step100000/controls.json",
+   "sha256": "caf8d014328765a92b6eb274f555b645fae5676b39c0e9cf31951be75f1192a3",
+   "tol": 0.01,
+   "n_windows": 8,
+   "G0_max": 0.00473586143925786,
+   "fail_act_max": 0.08044052124023438,
+   "fail_act_pass": false,
+   "fail_act_layers_over_tol": 28,
+   "fail_u1.1_max": 0.10520944744348526,
+   "fail_u1.1_min": 0.09498153626918793,
+   "fail_u1.1_pass": false
+  },
+  "11": {
+   "s3": "results/neurons/w3/grid/1b/out/t11_step180000/controls.json",
+   "sha256": "cf1bd92ed81694923281ac7cf0b142a6344e76d0089f1eaa1059694d605b095f",
+   "tol": 0.01,
+   "n_windows": 8,
+   "G0_max": 0.00590856745839119,
+   "fail_act_max": 0.13884656131267548,
+   "fail_act_pass": false,
+   "fail_act_layers_over_tol": 32,
+   "fail_u1.1_max": 0.104710653424263,
+   "fail_u1.1_min": 0.09724001586437225,
+   "fail_u1.1_pass": false
+  },
+  "12": {
+   "s3": "results/neurons/w3/grid/1b/out/t12_step320000/controls.json",
+   "sha256": "6060a6b330bef01bdb461852544fc806b88651f8419c12e278a37d291951f4ab",
+   "tol": 0.01,
+   "n_windows": 8,
+   "G0_max": 0.006173513829708099,
+   "fail_act_max": 0.2994143068790436,
+   "fail_act_pass": false,
+   "fail_act_layers_over_tol": 32,
+   "fail_u1.1_max": 0.10455738753080368,
+   "fail_u1.1_min": 0.09576768428087234,
+   "fail_u1.1_pass": false
+  },
+  "13": {
+   "s3": "results/neurons/w3/grid/1b/out/t13_step560000/controls.json",
+   "sha256": "a5959e2594a052f0c846488c0cbb80e47542fc47c2311d8fb940dd84ba5ed843",
+   "tol": 0.01,
+   "n_windows": 8,
+   "G0_max": 0.0042845262214541435,
+   "fail_act_max": 0.38101011514663696,
+   "fail_act_pass": false,
+   "fail_act_layers_over_tol": 32,
+   "fail_u1.1_max": 0.10375145822763443,
+   "fail_u1.1_min": 0.09564965963363647,
+   "fail_u1.1_pass": false
+  },
+  "14": {
+   "s3": "results/neurons/w3/grid/1b/out/t14_step1000000/controls.json",
+   "sha256": "5ddbef48c8e41c627e8c621447341df35693d7701c21106b468a5a5d3547abae",
+   "tol": 0.01,
+   "n_windows": 8,
+   "G0_max": 0.005387997254729271,
+   "fail_act_max": 0.7120450139045715,
+   "fail_act_pass": false,
+   "fail_act_layers_over_tol": 32,
+   "fail_u1.1_max": 0.10415591299533844,
+   "fail_u1.1_min": 0.09496808797121048,
+   "fail_u1.1_pass": false
+  },
+  "15": {
+   "s3": "results/neurons/w3/grid/1/out/t15_step1413814/controls.json",
+   "sha256": "b896a37e61ac00b882f1fc9a611f60e4a5c7e08d09399e9c9d171849ed082c1c",
+   "tol": 0.01,
+   "n_windows": 8,
+   "G0_max": 0.005106511991471052,
+   "fail_act_max": 0.6761196851730347,
+   "fail_act_pass": false,
+   "fail_act_layers_over_tol": 32,
+   "fail_u1.1_max": 0.10440012067556381,
+   "fail_u1.1_min": 0.09438280761241913,
+   "fail_u1.1_pass": false
+  }
+ }
+}

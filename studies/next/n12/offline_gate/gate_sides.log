@@ -1,0 +1,15 @@
+G0                 pass True fail True  pass max 0.00617; u x 1.1 min 0.0943
+G_REV              pass True fail True  11 of 11
+G_CFG              pass True fail True  11 of 11
+K0                 pass True fail True  10 of 10 bit-identical across two runs; failing min |dB| 8.995e-04 against 1e-06
+G_M2V              pass True fail True  exact share T_7 1.000, T_8 1.000, T_9 1.000, T_10 1.000, T_11 1.000, T_12 1.000, T_13 1.000, T_14 1.000, T_15 1.000; failing p99 min 1.199
+G_EX               pass True fail True  gated pass p99 [0.0, 0.0, 0.0]; failing 28-496 times the tolerance
+G_TOPK             pass True fail True  pass p99 max 0.0158; failing p99 min 0.998
+I_ID               pass True fail True  exact share 1.0, failing p99 3.381
+DEGENERATE         pass True fail True  T_8 ['L07N640-']; T_10 ['L24N9826+']; no own pole
+USABLE             pass True fail True  {"dt_freeze": 73, "dt_test": 67, "pb_freeze": 79, "pb_test": 70, "real_freeze": 82, "real_test": 71}
+MOVEMENT           pass True fail True  mean log10 r0 - log10 r1 1.056 [0.839, 1.285]; identity 0
+CONSTRUCTION_TWIN  pass True fail True  1.000 of 79; opposite pole 0.000
+G_ABL_ID           pass None fail None  no ablation banked; dry run only (tiny world: clean rows exact, the planted clean-row ablation stops the job)
+I_GRAD             pass None fail None  no gradient banked; dry run only (tiny world: the reversed pass and the planted noise)
+G_VAL              pass None fail None  no ablation or gradient banked; dry run only (fp32 finite differences, the tiny world, planted records)

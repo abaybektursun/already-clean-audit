@@ -1,0 +1,38 @@
+{
+  "rental": "am3_softread",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:v1-anchor-gemma2b",
+  "disk": 30,
+  "gpu_query": "gpu_ram>=24 num_gpus=1 cuda_vers>=12.8 compute_cap>=800",
+  "expected_gpu": "",
+  "bound": "overhead",
+  "_comment": "AM-3: the soft-read dose ladder on gemma-2b at the effective-gain surface (input_layernorm output). Twins matched on realized ||dh|| per rung per layer; nominal ladder banked alongside; topenergy32 is the positive control and s=1 the identity control.",
+  "cells": [
+    {
+      "id": "am3_smoke",
+      "module": "infra.vast.cells.softread",
+      "model_dir": "/models/google_gemma-2b",
+      "banks_s3": "s3://pg-lineage-769063704696/results/shackleton_census_g2b/out/banks/",
+      "n_cal_windows": 4,
+      "n_ppl_windows": 4,
+      "batch": 2,
+      "ladder": [
+        0.5,
+        1.0,
+        2.0
+      ]
+    },
+    {
+      "id": "am3_full",
+      "module": "infra.vast.cells.softread",
+      "model_dir": "/models/google_gemma-2b",
+      "banks_s3": "s3://pg-lineage-769063704696/results/shackleton_census_g2b/out/banks/",
+      "n_cal_windows": 32,
+      "n_ppl_windows": 98,
+      "batch": 2
+    }
+  ],
+  "watch": {
+    "load_backstop_min": 45,
+    "max_billed_h": 2
+  }
+}

@@ -1,0 +1,944 @@
+[
+ {
+  "birth": "L03N7574+:c6",
+  "real": {
+   "pole": "L03N7574+",
+   "k": 12,
+   "bracket": [
+    180000,
+    320000
+   ],
+   "r": {
+    "pre3": 0.30697514516742763,
+    "pre2": 0.0,
+    "pre": 0.1682542633911054,
+    "birth": 1.9714643742340898,
+    "post": 2.538131217726543
+   },
+   "concentrated": true,
+   "f_cross": 0.6645971224075183,
+   "transient": false,
+   "colnorm_pre": 2.309999942779541,
+   "colnorm_birth": 2.219465970993042,
+   "colnorm_rel_change": 0.03919219654939156,
+   "colnorm_rank_pre": 8772,
+   "colnorm_rank_birth": 4966,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "dt": {
+   "pole": "L03N9631-",
+   "k": 12,
+   "bracket": [
+    180000,
+    320000
+   ],
+   "r": {
+    "pre3": 0.1512739279834852,
+    "pre2": 0.3960330547226561,
+    "pre": 0.3362787655161926,
+    "birth": 1.0715144515924795,
+    "post": 1.7310508373539655
+   },
+   "concentrated": true,
+   "f_cross": 0.9229440151534721,
+   "transient": false,
+   "colnorm_pre": 2.276792049407959,
+   "colnorm_birth": 2.164947271347046,
+   "colnorm_rel_change": 0.049123844265881206,
+   "colnorm_rank_pre": 16684,
+   "colnorm_rank_birth": 16516,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "pb": {
+   "pole": "L03N4280-",
+   "k": 12,
+   "bracket": [
+    180000,
+    320000
+   ],
+   "r": {
+    "pre3": 0.0,
+    "pre2": 0.0010486260208765604,
+    "pre": 0.0,
+    "birth": 1.235784217155413,
+    "post": 2.011290432452006
+   },
+   "concentrated": true,
+   "f_cross": null,
+   "transient": false,
+   "colnorm_pre": 2.2817792892456055,
+   "colnorm_birth": 2.156430244445801,
+   "colnorm_rel_change": 0.05493478067339597,
+   "colnorm_rank_pre": 15612,
+   "colnorm_rank_birth": 18102,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "exemplar": [
+   0,
+   "ation using synthetic jets\n476 Kim, Kihwan 2005-12-01 THESIS\nThe Influence of Dust on the Absorptivity of Radiant Barriers\n477 Noboa, H. L. 1993-08-01 THESIS\nSt [[ochastic]]  generation of biologically accurate brain networks\n478 Aluri, Aravind "
+  ],
+  "matched_pole_context": {
+   "L03N2224-": [
+    0,
+    "�を聴いていたのだけれども自宅でしか聴かないのにそれだと重くね？っちゅうことでRaspberry Pi 3を用いた新たなソリューションを� [[�]] �討したのだがカンタンにはいかな"
+   ]
+  }
+ },
+ {
+  "birth": "L03N7746+:c0",
+  "real": {
+   "pole": "L03N7746+",
+   "k": 15,
+   "bracket": [
+    1000000,
+    1413814
+   ],
+   "r": {
+    "pre3": 0.4131535858536164,
+    "pre2": 0.7958195562410154,
+    "pre": 0.8783633435371007,
+    "birth": 3.2634422953194973,
+    "post": null
+   },
+   "concentrated": true,
+   "f_cross": 0.08412383263474767,
+   "transient": false,
+   "colnorm_pre": 1.3426295518875122,
+   "colnorm_birth": 0.9622079133987427,
+   "colnorm_rel_change": 0.28334073084713535,
+   "colnorm_rank_pre": 20684,
+   "colnorm_rank_birth": 20324,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "exemplar": [
+   1,
+   "s. While LLCs are most times taxed applying personal rates, some owners opt to be taxed as a separate entity. And this would result in an LLC being taxed as a C [[ corp]]  and subject to double taxation.\n\nS Corps, on the other hand, are generally"
+  ],
+  "matched_pole_context": {
+   "L03N463-": [
+    0,
+    "king the chain of fear. In life, we get many opportunities to get out of our comfort zone but to grab the right one becomes tough sometimes.\n\nSometimes, lack of [[ motivation]]  becomes the reason behind living in the comfort zone. For obvious reasons, people do"
+   ]
+  }
+ },
+ {
+  "birth": "L06N9844+:c1",
+  "real": {
+   "pole": "L06N9844+",
+   "k": 15,
+   "bracket": [
+    1000000,
+    1413814
+   ],
+   "r": {
+    "pre3": 0.20290017447646244,
+    "pre2": 0.07830413490018419,
+    "pre": 0.6948563256814729,
+    "birth": 3.058113609710201,
+    "post": null
+   },
+   "concentrated": true,
+   "f_cross": 0.21458439416848638,
+   "transient": true,
+   "colnorm_pre": 1.3556220531463623,
+   "colnorm_birth": 0.9785699844360352,
+   "colnorm_rel_change": 0.27813952114101376,
+   "colnorm_rank_pre": 15640,
+   "colnorm_rank_birth": 12510,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "dt": {
+   "pole": "L06N10970-",
+   "k": 15,
+   "bracket": [
+    1000000,
+    1413814
+   ],
+   "r": {
+    "pre3": 0.309415768210977,
+    "pre2": 0.18594241750906879,
+    "pre": 0.9963847842775355,
+    "birth": 3.2336370457129355,
+    "post": null
+   },
+   "concentrated": true,
+   "f_cross": 0.002575886875660327,
+   "transient": false,
+   "colnorm_pre": 1.3582541942596436,
+   "colnorm_birth": 0.9763947129249573,
+   "colnorm_rel_change": 0.2811399242855495,
+   "colnorm_rank_pre": 15036,
+   "colnorm_rank_birth": 13502,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "pb": {
+   "pole": "L06N10970-",
+   "k": 15,
+   "bracket": [
+    1000000,
+    1413814
+   ],
+   "r": {
+    "pre3": 0.309415768210977,
+    "pre2": 1.357096202605958,
+    "pre": 0.9898892110970561,
+    "birth": 3.0450038283348935,
+    "post": null
+   },
+   "concentrated": false,
+   "f_cross": 0.0075800058414887605,
+   "transient": true,
+   "colnorm_pre": 1.3582541942596436,
+   "colnorm_birth": 0.9763947129249573,
+   "colnorm_rel_change": 0.2811399242855495,
+   "colnorm_rank_pre": 15036,
+   "colnorm_rank_birth": 13502,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "exemplar": [
+   0,
+   "←2019-11-16 2019-11-17 2019-11-18→ ↑2019 ↑all\n00:17:14 -!- z [[zo]] 38 has joined.\n00:17:30 <zzo38> Now I internet"
+  ],
+  "matched_pole_context": {
+   "L06N7825+": [
+    0,
+    "l the while, it never occurs to Dick or his crew to shoot the damn dogs until LONG after the villain is a literal dog's dinner.\n  • In the final issue of Atomic [[ Rob]] o And the Dogs of War, the second half takes a time skip to the"
+   ]
+  }
+ },
+ {
+  "birth": "L16N1206+:c1",
+  "real": {
+   "pole": "L16N1206+",
+   "k": 14,
+   "bracket": [
+    560000,
+    1000000
+   ],
+   "r": {
+    "pre3": 0.044362856944931674,
+    "pre2": 0.40471285581588745,
+    "pre": 0.8373100451034612,
+    "birth": 2.653108523420157,
+    "post": 3.472160995003848
+   },
+   "concentrated": false,
+   "f_cross": 0.11884029205142843,
+   "transient": false,
+   "colnorm_pre": 1.8875062465667725,
+   "colnorm_birth": 1.3621578216552734,
+   "colnorm_rel_change": 0.2783293702296705,
+   "colnorm_rank_pre": 6670,
+   "colnorm_rank_birth": 9630,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "dt": {
+   "pole": "L16N5767-",
+   "k": 14,
+   "bracket": [
+    560000,
+    1000000
+   ],
+   "r": {
+    "pre3": 0.1760035432433871,
+    "pre2": 0.17753713478731228,
+    "pre": 0.7565984876799833,
+    "birth": 2.007770230798981,
+    "post": 3.2383908568042874
+   },
+   "concentrated": false,
+   "f_cross": 0.22938498900263354,
+   "transient": false,
+   "colnorm_pre": 1.7328404188156128,
+   "colnorm_birth": 1.2972089052200317,
+   "colnorm_rel_change": 0.2513973640419427,
+   "colnorm_rank_pre": 19728,
+   "colnorm_rank_birth": 19004,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "pb": {
+   "pole": "L16N7733-",
+   "k": 14,
+   "bracket": [
+    560000,
+    1000000
+   ],
+   "r": {
+    "pre3": 0.8628819818116487,
+    "pre2": 0.8494007478169054,
+    "pre": 0.8918306274636992,
+    "birth": 1.8188892763894124,
+    "post": 2.707771483610742
+   },
+   "concentrated": true,
+   "f_cross": 0.12422937429317549,
+   "transient": false,
+   "colnorm_pre": 1.6520090103149414,
+   "colnorm_birth": 1.2224047183990479,
+   "colnorm_rel_change": 0.26004960580329595,
+   "colnorm_rank_pre": 21628,
+   "colnorm_rank_birth": 21626,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "exemplar": [
+   0,
+   "\n/* Based on Java program below published by Lancs University\n *\tClass to take a numbered file after it has been stemmed and sort\n *\tit into pseudo groups where [[ identical]]  stems are adjacent\n *\tRob Hooper\n *\t02/11/"
+  ],
+  "matched_pole_context": {
+   "L16N4452+": [
+    1,
+    "ugh completely.\n\n    Gina noticed he’d stared at one for several minutes. “Does that one look like a good lead?” she asked.\n\n    He glanced at her with a mild f [[rown]] . “No...it’s just as inane as the rest of them.”\n\n"
+   ]
+  }
+ },
+ {
+  "birth": "L20N5782+:c1",
+  "real": {
+   "pole": "L20N5782+",
+   "k": 12,
+   "bracket": [
+    180000,
+    320000
+   ],
+   "r": {
+    "pre3": 1.1971326899904111,
+    "pre2": 0.8735766679253008,
+    "pre": 0.9096525366436935,
+    "birth": 2.729934723215616,
+    "post": 5.2629090310049
+   },
+   "concentrated": true,
+   "f_cross": 0.06534721239163607,
+   "transient": true,
+   "colnorm_pre": 2.253105878829956,
+   "colnorm_birth": 2.166687250137329,
+   "colnorm_rel_change": 0.038355334076667705,
+   "colnorm_rank_pre": 13928,
+   "colnorm_rank_birth": 12834,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "dt": {
+   "pole": "L20N978-",
+   "k": 12,
+   "bracket": [
+    180000,
+    320000
+   ],
+   "r": {
+    "pre3": 0.82274899959207,
+    "pre2": 0.9089187104345936,
+    "pre": 0.9055565151243099,
+    "birth": 1.083218940957969,
+    "post": 1.547879420029535
+   },
+   "concentrated": true,
+   "f_cross": 0.48244563297014353,
+   "transient": false,
+   "colnorm_pre": 2.2168638706207275,
+   "colnorm_birth": 2.100895881652832,
+   "colnorm_rel_change": 0.052311732129688315,
+   "colnorm_rank_pre": 17894,
+   "colnorm_rank_birth": 18876,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "pb": {
+   "pole": "L20N8272+",
+   "k": 12,
+   "bracket": [
+    180000,
+    320000
+   ],
+   "r": {
+    "pre3": 0.37079278043594077,
+    "pre2": 0.7580276290808258,
+    "pre": 0.8194322600562746,
+    "birth": 1.8869003917129925,
+    "post": 1.9616066819876654
+   },
+   "concentrated": true,
+   "f_cross": 0.18932934448250557,
+   "transient": false,
+   "colnorm_pre": 2.24465012550354,
+   "colnorm_birth": 2.1424949169158936,
+   "colnorm_rel_change": 0.04551052630740397,
+   "colnorm_rank_pre": 15010,
+   "colnorm_rank_birth": 15608,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "exemplar": [
+   0,
+   "s while trying to save her 9-year-old neighbor, and Mavy Stoddard, whose husband died shielding her from bullets, plan to address the court.\n\n\"He has to pay the [[ consequences]]  for what he did, and justice will be served,\" Hileman said.\n\n"
+  ],
+  "matched_pole_context": {
+   "L20N1330-": [
+    0,
+    "(stick with something that can erase…at least for the first draft) or a computer or a smartphone with your favorite itinerary app. Choose whichever method comes [[ naturally]]  to you. \n\nI love creating things digitally while at the same time having"
+   ]
+  }
+ },
+ {
+  "birth": "L07N8340+:c4",
+  "real": {
+   "pole": "L07N8340+",
+   "k": 14,
+   "bracket": [
+    560000,
+    1000000
+   ],
+   "r": {
+    "pre3": 0.0,
+    "pre2": 0.24495891619452145,
+    "pre": 0.37991248210494183,
+    "birth": 1.7978537756431896,
+    "post": 3.490225435132493
+   },
+   "concentrated": false,
+   "f_cross": 0.5533533942724499,
+   "transient": false,
+   "colnorm_pre": 1.879759669303894,
+   "colnorm_birth": 1.4064651727676392,
+   "colnorm_rel_change": 0.25178457877624516,
+   "colnorm_rank_pre": 6934,
+   "colnorm_rank_birth": 2240,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "dt": {
+   "pole": "L07N5613-",
+   "k": 14,
+   "bracket": [
+    560000,
+    1000000
+   ],
+   "r": {
+    "pre3": 0.6785621588770288,
+    "pre2": 0.6049136590290881,
+    "pre": 0.8606900079301144,
+    "birth": 2.18212782712422,
+    "post": 2.9342372612402436
+   },
+   "concentrated": true,
+   "f_cross": 0.12474051733080309,
+   "transient": false,
+   "colnorm_pre": 1.8248741626739502,
+   "colnorm_birth": 1.3483346700668335,
+   "colnorm_rel_change": 0.26113553600257744,
+   "colnorm_rank_pre": 14870,
+   "colnorm_rank_birth": 14964,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "pb": {
+   "pole": "L07N7004+",
+   "k": 14,
+   "bracket": [
+    560000,
+    1000000
+   ],
+   "r": {
+    "pre3": 0.19849847882933414,
+    "pre2": 0.26865644813743356,
+    "pre": 0.7800520927170289,
+    "birth": 3.065031543365378,
+    "post": 3.581907392932703
+   },
+   "concentrated": false,
+   "f_cross": 0.141251820964812,
+   "transient": false,
+   "colnorm_pre": 1.8673216104507446,
+   "colnorm_birth": 1.3673521280288696,
+   "colnorm_rel_change": 0.2677468517601473,
+   "colnorm_rank_pre": 8610,
+   "colnorm_rank_birth": 10158,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "exemplar": [
+   0,
+   ", Loeb M, Maccannell T, Malani PN, Mody L, Mylotte JM, Nicolle LE, Roghmann MC, Schweon SJ, Simor AE, Smith PW, Stevenson KB, Bradley SF, Society for Healthcare [[ Epidemi]] ology Long-Term Care Special Interest Group. Surveillance definitions of infections in long-term"
+  ],
+  "matched_pole_context": {
+   "L07N965-": [
+    0,
+    " [[NASA]] ’s James Webb Telescope captures a stunning image of a ‘lonely’ galaxy\n\n"
+   ]
+  }
+ },
+ {
+  "birth": "L10N9052+:c2",
+  "real": {
+   "pole": "L10N9052+",
+   "k": 14,
+   "bracket": [
+    560000,
+    1000000
+   ],
+   "r": {
+    "pre3": 0.0,
+    "pre2": 0.0,
+    "pre": 0.07015326424709119,
+    "birth": 1.4559750017361863,
+    "post": 4.651563778597733
+   },
+   "concentrated": false,
+   "f_cross": 0.8424881813555762,
+   "transient": false,
+   "colnorm_pre": 1.8591736555099487,
+   "colnorm_birth": 1.3509202003479004,
+   "colnorm_rel_change": 0.27337599887765224,
+   "colnorm_rank_pre": 7296,
+   "colnorm_rank_birth": 10034,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "dt": {
+   "pole": "L10N9794-",
+   "k": 14,
+   "bracket": [
+    560000,
+    1000000
+   ],
+   "r": {
+    "pre3": 0.2507721847685764,
+    "pre2": 0.6210210090088282,
+    "pre": 0.7357003267472302,
+    "birth": 1.250581719385041,
+    "post": 3.3763731109081223
+   },
+   "concentrated": false,
+   "f_cross": 0.5072537336879283,
+   "transient": false,
+   "colnorm_pre": 1.8418952226638794,
+   "colnorm_birth": 1.349273920059204,
+   "colnorm_rel_change": 0.2674534884195049,
+   "colnorm_rank_pre": 8952,
+   "colnorm_rank_birth": 10368,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "pb": {
+   "pole": "L10N9100+",
+   "k": 14,
+   "bracket": [
+    560000,
+    1000000
+   ],
+   "r": {
+    "pre3": 0.04489985819155462,
+    "pre2": 0.1860330490908367,
+    "pre": 0.7780806419238899,
+    "birth": 1.356248131886567,
+    "post": 2.0239931438488443
+   },
+   "concentrated": false,
+   "f_cross": 0.38095199402216956,
+   "transient": false,
+   "colnorm_pre": 1.7293455600738525,
+   "colnorm_birth": 1.2753119468688965,
+   "colnorm_rel_change": 0.26254649370688316,
+   "colnorm_rank_pre": 19768,
+   "colnorm_rank_birth": 20512,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "exemplar": [
+   0,
+   "s a new album out, \"AudioLust & HigherLove.\" Thank you so much for joining us.\n\nLEWIS: Thank you so much. Thanks for the great chat. Transcript provided by NPR, [[ Copyright]]  NPR.\n\nAyesha Rascoe is a White House correspondent for NPR. She"
+  ],
+  "matched_pole_context": {
+   "L10N4199+": [
+    0,
+    " that will pop up.\n\nTinyChat is an different selection to Omegle that, depending on your preferences, allows you to chat with random strangers by way of textual [[ content]] , audio, and video. It does not function in a one-on-one chat"
+   ]
+  }
+ },
+ {
+  "birth": "L10N9794+:c2",
+  "real": {
+   "pole": "L10N9794+",
+   "k": 10,
+   "bracket": [
+    60000,
+    100000
+   ],
+   "r": {
+    "pre3": 0.03998370834694809,
+    "pre2": 0.3365116670679866,
+    "pre": 0.8432860389589463,
+    "birth": 2.7987541824265185,
+    "post": 2.7229410776275995
+   },
+   "concentrated": false,
+   "f_cross": 0.11291969125188298,
+   "transient": false,
+   "colnorm_pre": 2.273209571838379,
+   "colnorm_birth": 2.276726722717285,
+   "colnorm_rel_change": 0.0015472180490872546,
+   "colnorm_rank_pre": 6380,
+   "colnorm_rank_birth": 8266,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "dt": {
+   "pole": "L10N9052+",
+   "k": 10,
+   "bracket": [
+    60000,
+    100000
+   ],
+   "r": {
+    "pre3": 0.0,
+    "pre2": 0.0,
+    "pre": 0.479418234643133,
+    "birth": 1.3930751077032555,
+    "post": 1.2940688111098384
+   },
+   "concentrated": false,
+   "f_cross": 0.6330086265619982,
+   "transient": false,
+   "colnorm_pre": 2.3758394718170166,
+   "colnorm_birth": 2.270871877670288,
+   "colnorm_rel_change": 0.04418126535563045,
+   "colnorm_rank_pre": 2726,
+   "colnorm_rank_birth": 8712,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "pb": {
+   "pole": "L10N9052-",
+   "k": 10,
+   "bracket": [
+    60000,
+    100000
+   ],
+   "r": {
+    "pre3": 0.251181001663208,
+    "pre2": 0.34359953802717774,
+    "pre": 0.9662454227925595,
+    "birth": 1.4617097060312634,
+    "post": 1.4897473049478247
+   },
+   "concentrated": false,
+   "f_cross": 0.06492674231210149,
+   "transient": false,
+   "colnorm_pre": 2.3758394718170166,
+   "colnorm_birth": 2.270871877670288,
+   "colnorm_rel_change": 0.04418126535563045,
+   "colnorm_rank_pre": 2726,
+   "colnorm_rank_birth": 8712,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "exemplar": [
+   0,
+   "sync function getAutorByAutorId (autorId) {\n  return await autorRepository.getAutorByAutorId(autorId)\n}\n\nexport default { createAutor, updateAutor, deleteAutor, [[ get]] Autores, getAutorByAutorId }\n<|endoftext|>"
+  ],
+  "matched_pole_context": {
+   "L10N10180+": [
+    0,
+    "You can skip this in seconds\n\nClick here to continue\n\nDownload Now!\n\nAllWebMenus WordPress Menu Addin 1.0.8\n\nAllWeb [[Menus]]  WordPress Menu Addin AllWebMenus WordPress Menu Addin 1.0."
+   ]
+  }
+ },
+ {
+  "birth": "L19N7374-:c1",
+  "real": {
+   "pole": "L19N7374-",
+   "k": 13,
+   "bracket": [
+    320000,
+    560000
+   ],
+   "r": {
+    "pre3": 0.04653121447857292,
+    "pre2": 0.0016144952668949112,
+    "pre": 0.8251348094389631,
+    "birth": 2.637396044000744,
+    "post": 3.4102710394294706
+   },
+   "concentrated": false,
+   "f_cross": 0.12931552062180732,
+   "transient": false,
+   "colnorm_pre": 2.1717264652252197,
+   "colnorm_birth": 1.874619722366333,
+   "colnorm_rel_change": 0.13680670545591714,
+   "colnorm_rank_pre": 11458,
+   "colnorm_rank_birth": 10228,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "dt": {
+   "pole": "L19N9036-",
+   "k": 13,
+   "bracket": [
+    320000,
+    560000
+   ],
+   "r": {
+    "pre3": 0.36874394371103253,
+    "pre2": 0.8450899451899858,
+    "pre": 0.7051839424700456,
+    "birth": 1.5403030882502373,
+    "post": 3.5541871786117554
+   },
+   "concentrated": true,
+   "f_cross": 0.37903573008460417,
+   "transient": false,
+   "colnorm_pre": 2.1820898056030273,
+   "colnorm_birth": 1.8651270866394043,
+   "colnorm_rel_change": 0.14525649592869502,
+   "colnorm_rank_pre": 10312,
+   "colnorm_rank_birth": 11452,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "pb": {
+   "pole": "L19N2718+",
+   "k": 13,
+   "bracket": [
+    320000,
+    560000
+   ],
+   "r": {
+    "pre3": 0.40798847959602047,
+    "pre2": 0.9465166232323268,
+    "pre": 0.8686516100219359,
+    "birth": 1.4027609172149176,
+    "post": 2.172894074241021
+   },
+   "concentrated": false,
+   "f_cross": 0.23828579782698847,
+   "transient": false,
+   "colnorm_pre": 2.1376655101776123,
+   "colnorm_birth": 1.8360984325408936,
+   "colnorm_rel_change": 0.14107308940567714,
+   "colnorm_rank_pre": 14926,
+   "colnorm_rank_birth": 14902,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "exemplar": [
+   1,
+   "You are [[ here]] \n\nDoepfer Dark Time\n\nStep Sequencer\nPublished August 2013"
+  ],
+  "matched_pole_context": {
+   "L19N3415+": [
+    0,
+    "e your children in for Martial Arts training!  PM me for details!  Scumbag!  I know about you and like a Bulldog, won't let GO!\n\nlast post\n2 years ago\ncan view\n [[can]]  comment\natom/rss\nofficial fubar blogs\n 2 years ago\nf"
+   ]
+  }
+ },
+ {
+  "birth": "L24N5066-:c1",
+  "real": {
+   "pole": "L24N5066-",
+   "k": 12,
+   "bracket": [
+    180000,
+    320000
+   ],
+   "r": {
+    "pre3": 0.959760851043046,
+    "pre2": 1.237539029569506,
+    "pre": 0.9602853500538092,
+    "birth": 2.0056039177236116,
+    "post": 4.268392016197167
+   },
+   "concentrated": true,
+   "f_cross": 0.04135671585137856,
+   "transient": true,
+   "colnorm_pre": 2.3144893646240234,
+   "colnorm_birth": 2.2033560276031494,
+   "colnorm_rel_change": 0.04801635242723487,
+   "colnorm_rank_pre": 6106,
+   "colnorm_rank_birth": 7140,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "dt": {
+   "pole": "L24N8193+",
+   "k": 12,
+   "bracket": [
+    180000,
+    320000
+   ],
+   "r": {
+    "pre3": 0.5478408291588477,
+    "pre2": 0.7937709718334189,
+    "pre": 0.9269769234053431,
+    "birth": 1.1809924494520108,
+    "post": 1.8039873250725704
+   },
+   "concentrated": false,
+   "f_cross": 0.25378889897608337,
+   "transient": false,
+   "colnorm_pre": 2.2527952194213867,
+   "colnorm_birth": 2.166099786758423,
+   "colnorm_rel_change": 0.038483494600645915,
+   "colnorm_rank_pre": 18446,
+   "colnorm_rank_birth": 15928,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "pb": {
+   "pole": "L24N3927-",
+   "k": 12,
+   "bracket": [
+    180000,
+    320000
+   ],
+   "r": {
+    "pre3": 0.353260175552545,
+    "pre2": 0.3254123490189731,
+    "pre": 0.9992151254895033,
+    "birth": 1.5959947506581516,
+    "post": 2.465052541548912
+   },
+   "concentrated": false,
+   "f_cross": 0.001240965347990901,
+   "transient": false,
+   "colnorm_pre": 2.353440284729004,
+   "colnorm_birth": 2.2643392086029053,
+   "colnorm_rel_change": 0.03785992646775761,
+   "colnorm_rank_pre": 2722,
+   "colnorm_rank_birth": 1970,
+   "PENDING": [
+    "r_in, r_out per bracket",
+    "z per bracket",
+    "e_window, e_k",
+    "cosines"
+   ]
+  },
+  "exemplar": [
+   0,
+   "                                  \n\nKey Companies Analysis:- Amphenol Industrial Products Group, Caledonian Cables Ltd, CMP Products, Copper Crouse-Hinds (Eaton [[),]]  Cortem Group, Elsewedy Electric, Emerson Industrial Automation, BARTEC"
+  ],
+  "matched_pole_context": {
+   "L24N228-": [
+    0,
+    "\npolitics. What can you expect from such people?\"\n\nHe said to me, \"Men outside politics are beginning to see what education\ninvolves. It involves the whole man, [[ body]] , mind, spirit. I do not think\nyou can frame an intelligent definition"
+   ]
+  }
+ }
+]

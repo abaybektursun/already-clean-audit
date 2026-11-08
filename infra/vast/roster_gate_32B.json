@@ -1,0 +1,21 @@
+{
+  "rung": "Qwen/Qwen2.5-32B",
+  "need": 12,
+  "checked": 13,
+  "aligned_count": 12,
+  "aligned": [
+    "Qwen/Qwen2.5-32B-Instruct",
+    "Qwen/QwQ-32B",
+    "Qwen/Qwen2.5-Coder-32B",
+    "BytedTsinghua-SIA/DAPO-Qwen-32B",
+    "baichuan-inc/Baichuan-M2-32B",
+    "nvidia/OpenReasoning-Nemotron-32B",
+    "deepcogito/cogito-v1-preview-qwen-32B",
+    "EVA-UNIT-01/EVA-Qwen2.5-32B-v0.2",
+    "nvidia/OpenMath-Nemotron-32B",
+    "IFM/K2-Think",
+    "MiniMaxAI/SynLogic-32B",
+    "MiniMaxAI/SynLogic-Mix-3-32B"
+  ],
+  "verdict": "PASS"
+}

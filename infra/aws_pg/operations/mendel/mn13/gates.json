@@ -1,0 +1,11 @@
+{
+  "mn13_instrument_detects_a_planted_colocation": {
+    "_required": false,
+    "abs_error": 9.992007221626409e-16,
+    "expected": 0.9,
+    "ok": true,
+    "recovered": 0.899999999999999,
+    "tol": 0.1,
+    "void": false
+  }
+}

@@ -1,0 +1,12 @@
+{
+ "steps.jsonl": {
+  "bytes": 2510372,
+  "sha256": "0ccba74b70d76ed40cf62ec310861778dbcb2c10af9752a94eb257a554a1251b",
+  "s3": "s3://pg-lineage-769063704696/results/next_n13/s4armsB1-02/out/topF_k1/steps.jsonl"
+ },
+ "topF_k1/math500/generations.jsonl": {
+  "bytes": 5810442,
+  "sha256": "62cdaea203cfb2e6645cb766f3899efc0da3dbb892a1ef2519ed7e21ff7fdadb",
+  "s3": "s3://pg-lineage-769063704696/results/next_n13/s4armsB1-02/out/topF_k1/topF_k1/math500/generations.jsonl"
+ }
+}

@@ -1,0 +1,97 @@
+{
+ "arm": "id",
+ "spec": {
+  "name": "id",
+  "kind": "all",
+  "non_mlp": "after"
+ },
+ "n_neurons_in_set": 0,
+ "sha256": {
+  "lm_head.weight": "e9ce9fdd86e58c10e7843ba76dda704ed33deae07d31dd1eec6b642d50f4718f",
+  "model.layers.0.mlp.gate_proj.weight": "72ed46e80508b94ab72b6dad5b2bad84297022c0c5fb6935c3422b5957847b1b",
+  "model.layers.0.post_feedforward_layernorm.weight": "d4e584d19b36a06692e40126aaddfa44b8fe83a19f5834035224a6175be8ad49",
+  "model.layers.0.self_attn.o_proj.weight": "efdcced1bcd918b9b82c25c8000c77207786cb4889ff2bf0fcbe8fcbfd9f1f07",
+  "model.layers.0.self_attn.v_proj.weight": "f6f4226f1945b2de7869becd9982f4a8bb22d128ff85c0c5ef98b37c8a012f6a",
+  "model.layers.1.mlp.up_proj.weight": "1b40cadf7dfb1f28906186da14fc5b872a2fa22b6c743bc987ca9413817fd1e2",
+  "model.layers.1.self_attn.k_norm.weight": "b6cc4a9040fa7265bf8e624515debd023f767cdc7c426585d966c1f53cc1fe58",
+  "model.layers.1.self_attn.q_norm.weight": "f7e1ac55573ef0a4d87e8b42ce4cbd2f3f44dd9d1dda7d194458825af97be733",
+  "model.layers.2.mlp.down_proj.weight": "6b3405c971583896b7b66c0845939c52bd123be3f703f04ea4b45cf836390772",
+  "model.layers.2.post_attention_layernorm.weight": "c7713a9335fcc3f378ab3b93ab4d196884e7f092a618b497eda913f4ad125221",
+  "model.layers.2.self_attn.k_proj.weight": "36c47d8fe286b5b2abeae6b04df92f998e177a613eebaed5f1481b239d43bdba",
+  "model.layers.2.self_attn.q_proj.weight": "b65f648f0f24f83c88e7664e5d422bdbab468155a85888ecc073582c9152a508",
+  "model.layers.3.mlp.gate_proj.weight": "45260ebd227ddc3934c7df12d0b1eef1823e4e7b1216050199e5333b4c15ffd8",
+  "model.layers.3.post_feedforward_layernorm.weight": "d37cf2a8921042bca9ea08c34f99a76e14116e8917fd1fe27081ed11510a4d30",
+  "model.layers.3.self_attn.o_proj.weight": "72085d9362695cd97f87c40be6a722c3c58bf744f12b5000e232f93c2e414edd",
+  "model.layers.3.self_attn.v_proj.weight": "4606431d692499468cac226302d92d2bc4da258b1e6259a3a36a2bea84215bf7",
+  "model.embed_tokens.weight": "46acea980759c50658a23e3dd9ef8056ffaffe8e989645bec8e8732a75c57058",
+  "model.layers.0.mlp.up_proj.weight": "f47c4bddda4df18625e8fefb29ba13f2170924a111a2bb52f3bf9da716983352",
+  "model.layers.0.self_attn.k_norm.weight": "bdd68ca646e5de3a24e39d98c4191e9ce172af2f1e4cb6e65b68ab0068cefec4",
+  "model.layers.0.self_attn.q_norm.weight": "88957a5a307f033e6fb277069c66954ed8da3b2d2b8ee1fea98f477a67128679",
+  "model.layers.1.mlp.down_proj.weight": "0d49bc4d3499ccf3ec5d2d0ba15ce52384aed73df4796ebd3ddf192a9918b8e5",
+  "model.layers.1.post_attention_layernorm.weight": "86d0f6133e9a6bbaa3fa2ace3d6ed36510586b12726f39118860e62c12938f54",
+  "model.layers.1.self_attn.k_proj.weight": "8530c72fa4edb4fb90035fa1da26516d31a8249f91b9d7ff0b9ee1abea87f94d",
+  "model.layers.1.self_attn.q_proj.weight": "f0a18554af46f81904afe8966803aa7de0772f3029aa1c838d84d3b3eafbd364",
+  "model.layers.2.mlp.gate_proj.weight": "2d3c6b4e93af493e88fb36225c456fee1d45b36b978d3e26618712bd731d271d",
+  "model.layers.2.post_feedforward_layernorm.weight": "d00d9d6382e8082ff63e9a61486ef46e44dfab1bbb7d260592f75c50f7404114",
+  "model.layers.2.self_attn.o_proj.weight": "705fbe8320fcf90e418b0d882de85297989dba2cbd610fbbb6d8536eb2c8c760",
+  "model.layers.2.self_attn.v_proj.weight": "d53d67ea2d25e894a382ce89595c39d703169ae2146bd582003fe41ffdc315dc",
+  "model.layers.3.mlp.up_proj.weight": "6a1b3a5c54703c34de7eb0fc48b8312c218086d1c95e693e25f31574e0c943e1",
+  "model.layers.3.self_attn.k_norm.weight": "f27a41e0755d079bf99c62da22fb6d2930c80ad385a853c48e5f40777f4394c6",
+  "model.layers.3.self_attn.q_norm.weight": "1d947870dd2b8a913dee96586e2cd863ff5d97c1d6b548ddf71308a45c3a599b",
+  "model.norm.weight": "9caf23b8c0f338d4787cbe14f7fd11a4266cfe973f92224c68b666881697ca61",
+  "model.layers.0.mlp.down_proj.weight": "12fa328b10c2dd605bcf0ef81ef08cdaef89537088921eb09d756a4e32653319",
+  "model.layers.0.post_attention_layernorm.weight": "832f4f687e80a4cf9defd7ed843ef8e7cf6c094d3ae5c2fce829659ef6d13333",
+  "model.layers.0.self_attn.k_proj.weight": "49086b73d2941da1f2831ae3710ce30dd16119276ac0271d4575db6e77b52d62",
+  "model.layers.0.self_attn.q_proj.weight": "85405f0cca38ee9e709aea6096f81c52a0156c77c1df95ed7ce8a18528488460",
+  "model.layers.1.mlp.gate_proj.weight": "16a8eba46c965059b384d09768e624a858127f5488289ba4022ca1d0eff67557",
+  "model.layers.1.post_feedforward_layernorm.weight": "29e2874a72cb1785c329b6bcdeacb7348cdbf44e1a33e9705bb5ac61bec5b89b",
+  "model.layers.1.self_attn.o_proj.weight": "dd999406262b670e4e5f9fc1f2d5ea881542bf48b56d28d0698f2ba88360f238",
+  "model.layers.1.self_attn.v_proj.weight": "46b06251687699cb456de75b35df91fb5b6987a5b75397fc550c5f96f4374662",
+  "model.layers.2.mlp.up_proj.weight": "2845b75ed4c1f2e7182fdbc01d14d67026cc431a075f4d4bc437171768e87d3d",
+  "model.layers.2.self_attn.k_norm.weight": "f1c19548950785f8d95ef89ed9025921b9f182795dae3085abaedfc97d7ff205",
+  "model.layers.2.self_attn.q_norm.weight": "62f6e00f97e18f8f4e46368376d44044b29614b6b6c0a8c06d36c0acf0cc54c3",
+  "model.layers.3.mlp.down_proj.weight": "3001be2999ad92d371843f61c97a72cfb029396f536018ea992337132dc7812c",
+  "model.layers.3.post_attention_layernorm.weight": "7ee24afaa4736d9b9160b1fc4c79fc06f107f23d8de8152e48d38c7c6ab3d5fa",
+  "model.layers.3.self_attn.k_proj.weight": "df2919e7c586e5841d9e1dc3141df9ad255126cc5b0a228389c617d8d5dd7fc3",
+  "model.layers.3.self_attn.q_proj.weight": "9d11a55c04557adf4cffe853e386298bece057b6a107f5aea7bc8db58ac2c061"
+ },
+ "families": {
+  "mlp": {
+   "realized_sq": 3.8956503974236707,
+   "changed": 23286,
+   "in_mask": 73728
+  },
+  "attn": {
+   "realized_sq": 0.2605042983623945,
+   "changed": 64370,
+   "in_mask": 65536
+  },
+  "norm": {
+   "realized_sq": 0.004364013671875,
+   "changed": 208,
+   "in_mask": 1088
+  },
+  "embed": {
+   "realized_sq": 0.0,
+   "changed": 0,
+   "in_mask": 65536
+  }
+ },
+ "mask": {
+  "gate_rows": {},
+  "up_rows": {},
+  "down_cols": {},
+  "expected": {}
+ },
+ "kept": 0,
+ "build_seconds": 0.2,
+ "G-HASH": {
+  "pass": true,
+  "mismatched": [],
+  "n_mismatched": 0,
+  "failing_input": {
+   "what": "neuron (0, 0) reverted (id) or added (zero)",
+   "failed": true
+  }
+ }
+}

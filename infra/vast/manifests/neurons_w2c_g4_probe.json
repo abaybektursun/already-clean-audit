@@ -1,0 +1,30 @@
+{
+  "rental": "neurons_w2c_g4_probe",
+  "session": "W2-C",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+  "disk": 60,
+  "gpu_query": "gpu_ram>=40 num_gpus=1 compute_cap>=890 cuda_vers>=13.0",
+  "expected_gpu": "",
+  "bound": "overhead",
+  "weights_mode": "s3",
+  "weights_s3_base": "s3://pg-lineage-769063704696/weights/hf/",
+  "weights_s3_models": "models--google--gemma-3-4b-pt",
+  "env": {
+    "HF_HUB_CACHE": "/workspace/hf/hub",
+    "HF_HUB_DISABLE_XET": "1"
+  },
+  "cells": [
+    {
+      "id": "probe",
+      "module": "infra.vast.cells.pipeline_job",
+      "pg_git_sha": "17057bd0",
+      "steps_s3": "s3://pg-lineage-769063704696/results/mdl/neurons/w2c/g4_probe/1/steps.json"
+    }
+  ],
+  "watch": {
+    "max_billed_h": 1.5,
+    "load_backstop_min": 30,
+    "progress_stall_min": 20
+  },
+  "_comment": "W2-C scoring of the G4 (600 poles) audit explain texts on vast.ai, prepared for the case that AWS g6e capacity is still absent (none since 2026-10-20 08:48 UTC). Same job module and step as the AWS lane (infra/aws_pg/steps/neurons_w2c_g4_probe.json, d5b8177e) with every S3 input rewritten to the mirror results/mdl/neurons/... because the box user reads only results/mdl/*; the coordinator mirrors the inputs server-side and uploads the rewritten steps.json, and copies the outputs back to results/neurons/w2c/g4_probe/1/out/. pg_git_sha names 17057bd0, which holds the shipped code (probe rule 62d865d3, pipeline_job e4278745); the commit that adds this manifest changes nothing else under infra/. Weights: the S3 cache (one snapshot, cc012e0a, checked 2026-10-20; local_snapshot asserts exactly one)."
+}

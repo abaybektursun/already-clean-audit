@@ -1,0 +1,94 @@
+== REAL
+CHECK REAL bank arrays.npz and births.jsonl sha256 registered    PASS load_bank asserted both
+CHECK REAL 16 exemplar_a.npz and 16 contexts.jsonl sha256 registered PASS 
+CHECK REAL arrays.npz a[t] equals exemplar_a.npz of point t (16 of 16) PASS 
+CHECK REAL the dating rule reproduces every banked date (sample 0) PASS 2454 of 2454
+CHECK REAL failing input: zeroing the birth-point exemplars moves every date later PASS 153 of 153
+CHECK REAL pre-check: at least 100 passing births                PASS 153
+CHECK REAL the count equals 10_RECOUNT2.md §8 (153 later than chance, R1t) PASS 
+CHECK REAL split: every birth's half is its neuron parity        PASS {'freeze': 82, 'test': 71}
+CHECK REAL both halves at or above N_MIN                         PASS {'freeze': 82, 'test': 71}
+CHECK REAL every pseudo-birth twin: same layer, other neuron, same size, dated k PASS 149 of 149
+CHECK REAL every exemplar position is the carrier's T_15 top-50 position PASS 
+CHECK REAL births.json reproduces from the banks (byte-identical JSON) PASS 
+CHECK REAL births.json sha256 is registered in m2_score.BIRTHS_SHA PASS fdca794bc98a78ec
+CHECK REAL examples: 10 freeze-half and 10 test-half ids         PASS 
+CHECK REAL examples: 5 with A_own >= 1 and 5 with A_own = 0      PASS 
+CHECK REAL G-CFG passes on the 11 branch configs T_5..T_15 (diff empty) PASS 11
+CHECK REAL G-CFG failing input (model_type renamed) fails on all 11 PASS 11
+CHECK REAL the 11 branch indexes name exactly 3 bf16 shards      PASS asserted
+CHECK REAL K0 offline: the T_15 bank against itself passes       PASS 63 entries, 10 poles
+CHECK REAL K0 offline: T_14's values at the same entries fail    PASS median 0.3354, p99 3.7936 against 0.0212
+CHECK REAL G-EX offline: the neighbour point's values fail at all 11 points PASS [(15, 2295, 0.264, 3.787), (14, 477, 0.343, 1.046), (13, 717, 0.414, 1.935), (12, 717, 0.384, 1.874), (11, 643, 0.409, 2.559), (10, 397, 0.446, 10.428), (9, 243, 1.157, 14.301), (8, 147, 1.825, 7.943), (7, 116, 0.857, 3.902), (6, 5, 1.019, 1.211), (5, 10, 0.651, 0.988)]
+CHECK REAL A1 the T_14 L40S repeat has its registered sha256     PASS e9cdf8658615bc7a
+CHECK REAL A1 control p99 recomputes to the registered tolerance PASS all 32000: p99 0.019737; |a_bank| < 1, 12231: p99 0.021159; < 0.5, 7424: p99 0.022137; < 0.25, 2726: p99 0.034947 (reported); same 0.021159, cross 0.044273
+CHECK REAL A2 control p99 over |a_bank| >= 0.1 recomputes to the registered tolerance PASS 31635 entries: median 0.004127, p99 0.019359; G-EX cross 0.038718
+CHECK REAL A2 pass side across devices: L40S repeat against the Blackwell bank, all 32,000 PASS gated 31635: median 0.00413, p99 0.01936, max 0.3852; below 0.1 365: p99 0.10821
+CHECK REAL A2 pass side across devices: the plan's entries at T_14 (score-01's 477) PASS 477 entries, 62 poles, gated 406: median 0.00438, p99 0.02886, max 0.3852; below 0.1 71: p99 0.04290
+CHECK REAL A2 failing input: T_13's values in T_14's place fail (plan's 477; all 32,000) PASS p99 7.5161 (gated 354); 2.5410 (gated 30661)
+== SCORE
+CHECK SCORE percentile: v at a bin's lower edge counts the bins below PASS 
+CHECK SCORE percentile: halfway through a bin counts half of it (log scale) PASS 0.12500006672829503
+CHECK SCORE percentile: above every token gives 1                PASS 
+CHECK SCORE percentile within one bin's share of the empirical fraction PASS max diff 0.00029
+CHECK SCORE ranks: ties count against (3, 3, 1, 0.5 -> 2, 2, 3, 4) PASS [[2, 2], [3, 4]]
+CHECK SCORE matched: K poles, the carrier's neuron excluded, nearest first PASS [[49, 1], [51, 0]]
+CHECK SCORE overlap counts exemplar positions, ignores -1 slots  PASS [[2.0, 0.0], [0.0, 0.0], [0.0, 1.0]]
+CHECK SCORE ratio uses a+ = max(a, 0) for + and max(-a, 0) for - PASS [[2.0, 0.0], [0.0, 1.5], [0.25, 0.0]]
+CHECK SCORE Wilson 0 of 71: upper bound 0.0513                   PASS (0.0, 0.0, 0.051327952965064906)
+CHECK SCORE paired interval excludes 0 for 30 of 71 against 0    PASS 
+== JOB
+CHECK JOB m2_score.main exits 0 and prints M2_JOB_OK             PASS exit 0
+CHECK JOB metrics complete, no checkpoint parked                 PASS 
+CHECK JOB every gate passed                                      PASS ['G_CORPUS', 'G_SAME', 'INPUTS', 'I_ID', 'K0', 't12_G0', 't12_G_CFG', 't12_G_EX', 't12_G_REV', 't12_G_TOPK', 't13_G0', 't13_G_CFG', 't13_G_EX', 't13_G_REV', 't13_G_TOPK', 't14_G0', 't14_G_CFG', 't14_G_EX', 't14_G_REV', 't14_G_TOPK', 't15_G0', 't15_G_CFG', 't15_G_EX', 't15_G_REV', 't15_G_TOPK']
+CHECK JOB every registered failing input failed                  PASS 25 failing inputs
+CHECK JOB K0: known number on >= 10 poles before any score       PASS poles 10, exact share 1.000, median 0.00e+00
+CHECK JOB K0 failing input (T_14's banked values) fails          PASS median 0.031, p99 0.085
+CHECK JOB G-TOPK compared banked top-50 entries at every point   PASS [1595, 873, 657, 343]
+CHECK JOB I-ID passes with 0 carrier flips; its failing input fails PASS median 0.00e+00; failing median 0.199, p99 2.348
+CHECK JOB metrics.json carries no hit rate or rank               PASS 
+CHECK JOB one record per planned (unit, role)                    PASS 184 records
+CHECK JOB records split by the unit's half                       PASS 
+CHECK JOB construction control: every carrier in the top 10 under A at T_15 PASS ranks [1, 2, 3] (a rank above 1 is a tie with a pole holding the same positions)
+CHECK JOB construction control under B: at least 0.9 of carriers in the top 10 PASS 1.0
+CHECK JOB construction failing input: the opposite pole is not in the top 10 under A PASS 
+CHECK JOB activations banked per (unit, role)                    PASS 184
+CHECK JOB raw examples: the selected ids, top-10 lists with decoded contexts PASS 
+CHECK JOB a record recomputes from the banked activations and the grid arrays PASS 
+CHECK JOB A2 cross-device G-EX path: exits 0; t14_G_EX gates |a_bank| >= 0.1 and passes; T_13, T_15 same tier PASS exit 0; gated 12 of 157, p99 0.0; failing input p99 1.393362476191569
+== FAIL
+CHECK FAIL G_SAME on its planted input: exit non-zero, gate named PASS AssertionError: G_SAME failed: {"pass": false, "versions": {"torch": "2.12.0", "transformers": "5.9.0"}, "registered": {"torch": "2.12.0", "transformers": "0.0.
+CHECK FAIL INPUTS on its planted input: exit non-zero, gate named PASS AssertionError: INPUTS failed: {"pass": false, "mismatch": ["births"], "paths": {"births": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-researc
+CHECK FAIL G_CORPUS on its planted input: exit non-zero, gate named PASS AssertionError: G_CORPUS failed: {"pass": false, "got": "c62abf9704662f723638337745c94b919ed8ab8aee85fc4e443a7e74892e1bf5", "failing_input": {"pass": false}}
+CHECK FAIL t15_G_REV on its planted input: exit non-zero, gate named PASS AssertionError: t15_G_REV failed: {"pass": false, "commit": "422b78f651b3f1b6e1034821f8543046047502b9", "registered": "1111111111111111111111111111111111111111"
+CHECK FAIL t15_G_CFG on its planted input: exit non-zero, gate named PASS AssertionError: t15_G_CFG failed: {"pass": false, "diff_keys": ["intermediate_size"], "sliding_window": 4096, "failing_input": {"pass": false, "diff_keys": ["in
+CHECK FAIL K0 on its planted input: exit non-zero, gate named    PASS AssertionError: K0 failed: {"pass": false, "n": 39, "n_gated": 39, "n_poles": 10, "statistic": "|new - bank| / (0.05 + |bank|)", "median": 0.03065821438945195, 
+CHECK FAIL t14_G_EX on its planted input: exit non-zero, gate named PASS AssertionError: t14_G_EX failed: {"pass": false, "n": 157, "n_gated": 157, "n_poles": 28, "statistic": "|new - bank| / (0.05 + |bank|)", "median": 0.28595827165
+CHECK FAIL K0 on its planted input: exit non-zero, gate named    PASS AssertionError: K0 failed: {"pass": false, "n": 39, "n_gated": 39, "n_poles": 10, "statistic": "|new - bank| / (0.05 + |bank|)", "median": 0.053328797166301165,
+CHECK FAIL A2 t14_G_EX on the cross-device path, T_13 in T_14's place: exit non-zero, gate named PASS AssertionError: t14_G_EX failed: {"pass": false, "n": 157, "n_gated": 13, "n_poles": 28, "; gated 13, p99 0.8214
+CHECK FAIL stop rule: a 0.6 s budget parks every point after T_15 PASS [14, 13, 12]
+CHECK FAIL stop rule: parked births have no pre record (not usable) PASS 30
+== VERDICT
+CHECK VERDICT satisfying case: H_A SUPPORTED, H_B SUPPORTED, H_AB LOSES, H_sel_B ABOVE PASS H_B SUPPORTED; H_sel_B ABOVE_SELECTION; H_A SUPPORTED; H_AB LOSES
+CHECK VERDICT the bar is the largest of chance and the two floors PASS {'B': 0.00045421511627906976, 'A': 0.00045421511627906976}
+CHECK VERDICT A never hits: H_A REFUTED                          PASS H_B SUPPORTED; H_sel_B ABOVE_SELECTION; H_A REFUTED; H_AB LOSES
+CHECK VERDICT A and B drawn alike: H_AB TIES                     PASS (-0.18309859154929578, 0.1267605633802817)
+CHECK VERDICT A above B: H_AB BEATS                              PASS 
+CHECK VERDICT twins drawn like the carriers: H_sel_B AT_SELECTION PASS (-0.22535211267605634, 0.07042253521126761)
+CHECK VERDICT twins above the carriers: H_sel_B BELOW_SELECTION  PASS 
+CHECK VERDICT fewer than N_MIN twins: H_sel NOT_RUN              PASS 
+CHECK VERDICT a floor above the carrier's value: H_A not SUPPORTED PASS ('REFUTED', 0.707)
+CHECK VERDICT pre above the birth point: DOES NOT COUNT until inspected PASS DOES NOT COUNT until inspected (ABOVE_CEILING)
+CHECK VERDICT construction control at 0.5: freeze refuses        PASS AssertionError: construction control B (0.4878048780487805, 0.38260895781765086, 0.5940922769229463, 40) below 0.9
+CHECK VERDICT construction control failing on the test half: DOES NOT COUNT PASS DOES NOT COUNT: construction control A 0.000 < 0.9
+CHECK VERDICT the construction failing input passing: DOES NOT COUNT PASS 
+CHECK VERDICT a failed gate: DOES NOT COUNT                      PASS DOES NOT COUNT: gates: ['I_ID failed']
+CHECK VERDICT a failing input that passed: freeze refuses        PASS AssertionError: freeze refused: gates {'pass': False, 'problems': ['I_ID: its failing input passed'], 'complete': True}
+CHECK VERDICT 30 usable test births: DOES NOT COUNT (missing)    PASS DOES NOT COUNT: missing: 30 usable test births < 50
+CHECK VERDICT freeze records changed after freeze: verdict refuses PASS AssertionError: freeze records changed
+CHECK VERDICT room: each label branch reachable at the test half's size PASS {'exist_all': 'SUPPORTED', 'exist_none': 'REFUTED', 'pair_x': 'BEATS', 'pair_y': 'LOSES', 'pair_equal': 'TIES'}
+CHECK VERDICT runs on the tiny job's records (N_MIN 5 for the tiny world) PASS H_B SUPPORTED; H_sel_B AT_SELECTION; H_A UNDECIDED; H_AB LOSES
+== PROJECT
+CHECK PROJECT the launch at the lowest banked rates fits 0.9 of a 150-minute budget PASS 1.72 GPU-h low, 1.56 measured
+86 checks, 0 failed: []
+M2_DRYRUN_OK

@@ -1,0 +1,24 @@
+$ /opt/n13/bin/python -m infra.aws_pg.jobs.n13_setup --part template --problems /work/out/setup/problems.json --tok-dir /opt/hf-cache/hf/hub/models--allenai--Olmo-3.1-7B-RL-Zero-Math/snapshots/364820b002fc8e81d11a81c7fc9dd6b49c83cd05 --pair pair1 --part-out /work/out/setup/template.json --ids-out /work/out/setup/prompt_ids.json
+[pipeline] step 1/4 OK setup
+[pipeline] step 2/4 START r1_rank: /opt/pg/venv/bin/python -m infra.aws_pg.jobs.n13_rank --setup-dir /work/out/setup --delete-stage2 --out /work/out/r1_rank
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/pg/repo/infra/aws_pg/jobs/n13_rank.py", line 234, in <module>
+    main()
+  File "/opt/pg/repo/infra/aws_pg/jobs/n13_rank.py", line 230, in main
+    run(parser().parse_args())
+  File "/opt/pg/repo/infra/aws_pg/jobs/n13_rank.py", line 185, in run
+    aud = A.build_arm(base, rl, cfg, A.arm_spec(arm, sets), kept_sd=a.kept_sd)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/pg/repo/infra/pg/n13_arms.py", line 594, in build_arm
+    produce(n)
+  File "/opt/pg/repo/infra/pg/n13_arms.py", line 568, in produce
+    T, M = build_tensor(n, b, a, spec, W, down_axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/pg/repo/infra/pg/n13_arms.py", line 546, in build_tensor
+    assert np.array_equal(bf16(f32(b16) + D)[nz], np.asarray(a16)[nz]), f"{name}: the formula does not return theta_a"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: model.layers.0.mlp.down_proj.weight: the formula does not return theta_a
+[pipeline] ABORT — step r1_rank failed rc=1 (fail-loud; 1/4 steps done before failure)
+Completed 30.2 KiB/30.2 KiB (477.8 KiB/s) with 1 file(s) remainingupload: ../../../var/log/pg-heartbeat.jsonl to s3://pg-lineage-769063704696/results/next_n13/s3gate-01/heartbeat.jsonl

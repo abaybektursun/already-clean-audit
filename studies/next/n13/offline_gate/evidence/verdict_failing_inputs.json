@@ -1,0 +1,71 @@
+{
+ "G-GRADER": {
+  "exit": 0,
+  "verdict": "CANCELLED (G-GRADER)",
+  "stamps": []
+ },
+ "G-TEMPLATE": {
+  "exit": 0,
+  "verdict": "CANCELLED (G-TEMPLATE)",
+  "stamps": []
+ },
+ "G-INIT": {
+  "exit": 0,
+  "verdict": "CANCELLED (G-INIT)",
+  "stamps": []
+ },
+ "G-PARTITION": {
+  "exit": 0,
+  "verdict": "CANCELLED (G-PARTITION)",
+  "stamps": []
+ },
+ "PC-RANK": {
+  "exit": 0,
+  "verdict": "CANCELLED (PC-RANK)",
+  "stamps": []
+ },
+ "G-KNOWN": {
+  "exit": 0,
+  "verdict": "CANCELLED (G-KNOWN)",
+  "stamps": []
+ },
+ "G-HASH": {
+  "exit": 0,
+  "verdict": "CANCELLED (G-HASH)",
+  "stamps": []
+ },
+ "G-MASK": {
+  "exit": 0,
+  "verdict": "CANCELLED (G-MASK)",
+  "stamps": []
+ },
+ "G-COMPLETE": {
+  "exit": 0,
+  "verdict": "CANCELLED (G-COMPLETE)",
+  "stamps": []
+ },
+ "G-GATE": {
+  "exit": 0,
+  "verdict": "CANCELLED (G-GATE: gain under the noise gate; pair 2 not in these banks)",
+  "stamps": []
+ },
+ "G-ID": {
+  "exit": 0,
+  "verdict": "CANCELLED (G-ID: identity transplant does not reproduce the released score)",
+  "stamps": []
+ },
+ "S-BAND": {
+  "exit": 0,
+  "verdict": "COMPLETE",
+  "stamps": [
+   "RL side outside the published 3.1 band under this harness"
+  ]
+ },
+ "G-GATE-GSM": {
+  "exit": 0,
+  "verdict": "COMPLETE",
+  "stamps": [
+   "GSM8K: no room"
+  ]
+ }
+}

@@ -1,0 +1,709 @@
+{
+ "n_fields": 81,
+ "n_equal": 62,
+ "max_abs_diff_numeric": 2.842170943040401e-14,
+ "not_equal": [
+  {
+   "field": "window.lo",
+   "mine": 0.9154658749444954,
+   "registered": 0.9154658749444953,
+   "abs_diff": 1.1102230246251565e-16,
+   "equal": false
+  },
+  {
+   "field": "window.hi",
+   "mine": 0.9902214770449353,
+   "registered": 0.9902214770449351,
+   "abs_diff": 2.220446049250313e-16,
+   "equal": false
+  },
+  {
+   "field": "window.room.median_rho (file order)",
+   "mine": 0.9999020344870039,
+   "registered": 0.9999020344870037,
+   "abs_diff": 2.220446049250313e-16,
+   "equal": false
+  },
+  {
+   "field": "fd.lo",
+   "mine": 0.9711686334925068,
+   "registered": 0.9711686334925069,
+   "abs_diff": 1.1102230246251565e-16,
+   "equal": false
+  },
+  {
+   "field": "fd.shuffle_q975",
+   "mine": 0.11629657618390268,
+   "registered": 0.11629657618390267,
+   "abs_diff": 1.3877787807814457e-17,
+   "equal": false
+  },
+  {
+   "field": "fd.slope_through_origin",
+   "mine": 0.9884224018434106,
+   "registered": 0.9884224018434107,
+   "abs_diff": 1.1102230246251565e-16,
+   "equal": false
+  },
+  {
+   "field": "fd.median_abs_pred",
+   "mine": 0.0021910516545176504,
+   "registered": 0.00219105165451765,
+   "abs_diff": 4.336808689942018e-19,
+   "equal": false
+  },
+  {
+   "field": "fd.room.q05 (file order)",
+   "mine": 0.9950896489219865,
+   "registered": 0.9950896489219864,
+   "abs_diff": 1.1102230246251565e-16,
+   "equal": false
+  },
+  {
+   "field": "fd.max_rel_dev",
+   "mine": 80.12309216607774,
+   "registered": 80.12309216607777,
+   "abs_diff": 2.842170943040401e-14,
+   "equal": false
+  },
+  {
+   "field": "own.lo",
+   "mine": 0.9692836183375797,
+   "registered": 0.9692836183375799,
+   "abs_diff": 2.220446049250313e-16,
+   "equal": false
+  },
+  {
+   "field": "own.hi",
+   "mine": 0.9963950275756941,
+   "registered": 0.9963950275756942,
+   "abs_diff": 1.1102230246251565e-16,
+   "equal": false
+  },
+  {
+   "field": "own.room.q05 (file order)",
+   "mine": 0.9999958089620109,
+   "registered": 0.9999958089620108,
+   "abs_diff": 1.1102230246251565e-16,
+   "equal": false
+  },
+  {
+   "field": "window_jvp.rho",
+   "mine": 0.9666058093025327,
+   "registered": 0.9666058093025326,
+   "abs_diff": 1.1102230246251565e-16,
+   "equal": false
+  },
+  {
+   "field": "window_jvp.lo",
+   "mine": 0.9231851981129572,
+   "registered": 0.9231851981129574,
+   "abs_diff": 2.220446049250313e-16,
+   "equal": false
+  },
+  {
+   "field": "window_jvp.hi",
+   "mine": 0.9941457287419985,
+   "registered": 0.9941457287419984,
+   "abs_diff": 1.1102230246251565e-16,
+   "equal": false
+  },
+  {
+   "field": "window_jvp.failing_input_rho",
+   "mine": -0.9666058093025327,
+   "registered": -0.9666058093025326,
+   "abs_diff": 1.1102230246251565e-16,
+   "equal": false
+  },
+  {
+   "field": "window_jvp.room.median_rho (file order)",
+   "mine": 0.9999167031199658,
+   "registered": 0.9999167031199657,
+   "abs_diff": 1.1102230246251565e-16,
+   "equal": false
+  },
+  {
+   "field": "window_jvp.room.q05 (file order)",
+   "mine": 0.9999009867275066,
+   "registered": 0.9999009867275065,
+   "abs_diff": 1.1102230246251565e-16,
+   "equal": false
+  },
+  {
+   "field": "bf16_vs_jvp.spearman",
+   "mine": 0.9950540512930662,
+   "registered": 0.9950540512930661,
+   "abs_diff": 1.1102230246251565e-16,
+   "equal": false
+  }
+ ],
+ "rows": [
+  {
+   "field": "window.rho",
+   "mine": 0.9599593469315053,
+   "registered": 0.9599593469315053,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "window.lo",
+   "mine": 0.9154658749444954,
+   "registered": 0.9154658749444953,
+   "abs_diff": 1.1102230246251565e-16,
+   "equal": false
+  },
+  {
+   "field": "window.hi",
+   "mine": 0.9902214770449353,
+   "registered": 0.9902214770449351,
+   "abs_diff": 2.220446049250313e-16,
+   "equal": false
+  },
+  {
+   "field": "window.shuffle_q975",
+   "mine": 0.1176192677732753,
+   "registered": 0.1176192677732753,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "window.slope_through_origin",
+   "mine": 0.8371010207569126,
+   "registered": 0.8371010207569126,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "window.sign_agreement",
+   "mine": 0.954225352112676,
+   "registered": 0.954225352112676,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "window.median_abs_meas",
+   "mine": 0.022396403559469036,
+   "registered": 0.022396403559469036,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "window.median_abs_pred",
+   "mine": 0.021910516545176506,
+   "registered": 0.021910516545176506,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "window.failing_input_rho",
+   "mine": -0.9599593469315053,
+   "registered": -0.9599593469315053,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "window.failing_input_pass",
+   "mine": false,
+   "registered": false,
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "window.pass",
+   "mine": true,
+   "registered": true,
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "window.above_ceiling",
+   "mine": false,
+   "registered": false,
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "window.room.median_rho (file order)",
+   "mine": 0.9999020344870039,
+   "registered": 0.9999020344870037,
+   "abs_diff": 2.220446049250313e-16,
+   "equal": false
+  },
+  {
+   "field": "window.room.q05 (file order)",
+   "mine": 0.9998784598983149,
+   "registered": 0.9998784598983149,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "window.room.pass",
+   "mine": true,
+   "registered": true,
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "window.room.median_abs_noise",
+   "mine": 0.00014701201871503145,
+   "registered": 0.00014701201871503145,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "window.label_test",
+   "mine": "PASS",
+   "registered": "PASS",
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "window.label_both",
+   "mine": "PASS",
+   "registered": "PASS",
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "fd.rho",
+   "mine": 0.9874693202922201,
+   "registered": 0.9874693202922201,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "fd.lo",
+   "mine": 0.9711686334925068,
+   "registered": 0.9711686334925069,
+   "abs_diff": 1.1102230246251565e-16,
+   "equal": false
+  },
+  {
+   "field": "fd.hi",
+   "mine": 0.9947460544951044,
+   "registered": 0.9947460544951044,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "fd.shuffle_q975",
+   "mine": 0.11629657618390268,
+   "registered": 0.11629657618390267,
+   "abs_diff": 1.3877787807814457e-17,
+   "equal": false
+  },
+  {
+   "field": "fd.slope_through_origin",
+   "mine": 0.9884224018434106,
+   "registered": 0.9884224018434107,
+   "abs_diff": 1.1102230246251565e-16,
+   "equal": false
+  },
+  {
+   "field": "fd.sign_agreement",
+   "mine": 0.954225352112676,
+   "registered": 0.954225352112676,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "fd.median_abs_meas",
+   "mine": 0.0022739987889508484,
+   "registered": 0.0022739987889508484,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "fd.median_abs_pred",
+   "mine": 0.0021910516545176504,
+   "registered": 0.00219105165451765,
+   "abs_diff": 4.336808689942018e-19,
+   "equal": false
+  },
+  {
+   "field": "fd.failing_input_rho",
+   "mine": -0.9874693202922201,
+   "registered": -0.9874693202922201,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "fd.failing_input_pass",
+   "mine": false,
+   "registered": false,
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "fd.pass",
+   "mine": true,
+   "registered": true,
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "fd.above_ceiling",
+   "mine": false,
+   "registered": false,
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "fd.room.median_rho (file order)",
+   "mine": 0.9957125681371097,
+   "registered": 0.9957125681371097,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "fd.room.q05 (file order)",
+   "mine": 0.9950896489219865,
+   "registered": 0.9950896489219864,
+   "abs_diff": 1.1102230246251565e-16,
+   "equal": false
+  },
+  {
+   "field": "fd.room.pass",
+   "mine": true,
+   "registered": true,
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "fd.room.median_abs_noise",
+   "mine": 0.00014701201871503145,
+   "registered": 0.00014701201871503145,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "fd.max_rel_dev",
+   "mine": 80.12309216607774,
+   "registered": 80.12309216607777,
+   "abs_diff": 2.842170943040401e-14,
+   "equal": false
+  },
+  {
+   "field": "fd.copy (above_ceiling)",
+   "mine": false,
+   "registered": false,
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "fd.label_test",
+   "mine": "PASS",
+   "registered": "PASS",
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "fd.label_both",
+   "mine": "PASS",
+   "registered": "PASS",
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "own.rho",
+   "mine": 0.9863571235858521,
+   "registered": 0.9863571235858521,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "own.lo",
+   "mine": 0.9692836183375797,
+   "registered": 0.9692836183375799,
+   "abs_diff": 2.220446049250313e-16,
+   "equal": false
+  },
+  {
+   "field": "own.hi",
+   "mine": 0.9963950275756941,
+   "registered": 0.9963950275756942,
+   "abs_diff": 1.1102230246251565e-16,
+   "equal": false
+  },
+  {
+   "field": "own.shuffle_q975",
+   "mine": 0.11789286397200383,
+   "registered": 0.11789286397200383,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "own.slope_through_origin",
+   "mine": 0.9762777850713442,
+   "registered": 0.9762777850713442,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "own.sign_agreement",
+   "mine": 0.9823943661971831,
+   "registered": 0.9823943661971831,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "own.median_abs_meas",
+   "mine": 0.01033356852713041,
+   "registered": 0.01033356852713041,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "own.median_abs_pred",
+   "mine": 0.009871653179288842,
+   "registered": 0.009871653179288842,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "own.failing_input_rho",
+   "mine": -0.9863571235858521,
+   "registered": -0.9863571235858521,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "own.failing_input_pass",
+   "mine": false,
+   "registered": false,
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "own.pass",
+   "mine": true,
+   "registered": true,
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "own.above_ceiling",
+   "mine": false,
+   "registered": false,
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "own.room.median_rho (file order)",
+   "mine": 0.9999973806012568,
+   "registered": 0.9999973806012568,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "own.room.q05 (file order)",
+   "mine": 0.9999958089620109,
+   "registered": 0.9999958089620108,
+   "abs_diff": 1.1102230246251565e-16,
+   "equal": false
+  },
+  {
+   "field": "own.room.pass",
+   "mine": true,
+   "registered": true,
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "own.room.median_abs_noise",
+   "mine": 2.6561319828033447e-06,
+   "registered": 2.6561319828033447e-06,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "own.label_test",
+   "mine": "PASS",
+   "registered": "PASS",
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "own.label_both",
+   "mine": "PASS",
+   "registered": "PASS",
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "window_jvp.rho",
+   "mine": 0.9666058093025327,
+   "registered": 0.9666058093025326,
+   "abs_diff": 1.1102230246251565e-16,
+   "equal": false
+  },
+  {
+   "field": "window_jvp.lo",
+   "mine": 0.9231851981129572,
+   "registered": 0.9231851981129574,
+   "abs_diff": 2.220446049250313e-16,
+   "equal": false
+  },
+  {
+   "field": "window_jvp.hi",
+   "mine": 0.9941457287419985,
+   "registered": 0.9941457287419984,
+   "abs_diff": 1.1102230246251565e-16,
+   "equal": false
+  },
+  {
+   "field": "window_jvp.shuffle_q975",
+   "mine": 0.11886205460398619,
+   "registered": 0.11886205460398619,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "window_jvp.slope_through_origin",
+   "mine": 0.8540898888757535,
+   "registered": 0.8540898888757535,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "window_jvp.sign_agreement",
+   "mine": 0.971830985915493,
+   "registered": 0.971830985915493,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "window_jvp.median_abs_meas",
+   "mine": 0.022396403559469036,
+   "registered": 0.022396403559469036,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "window_jvp.median_abs_pred",
+   "mine": 0.02209076727608661,
+   "registered": 0.02209076727608661,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "window_jvp.failing_input_rho",
+   "mine": -0.9666058093025327,
+   "registered": -0.9666058093025326,
+   "abs_diff": 1.1102230246251565e-16,
+   "equal": false
+  },
+  {
+   "field": "window_jvp.failing_input_pass",
+   "mine": false,
+   "registered": false,
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "window_jvp.pass",
+   "mine": true,
+   "registered": true,
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "window_jvp.above_ceiling",
+   "mine": false,
+   "registered": false,
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "window_jvp.room.median_rho (file order)",
+   "mine": 0.9999167031199658,
+   "registered": 0.9999167031199657,
+   "abs_diff": 1.1102230246251565e-16,
+   "equal": false
+  },
+  {
+   "field": "window_jvp.room.q05 (file order)",
+   "mine": 0.9999009867275066,
+   "registered": 0.9999009867275065,
+   "abs_diff": 1.1102230246251565e-16,
+   "equal": false
+  },
+  {
+   "field": "window_jvp.room.pass",
+   "mine": true,
+   "registered": true,
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "window_jvp.room.median_abs_noise",
+   "mine": 0.00014701201871503145,
+   "registered": 0.00014701201871503145,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "window_jvp.label_test",
+   "mine": "PASS",
+   "registered": "PASS",
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "window_jvp.label_both",
+   "mine": "PASS",
+   "registered": "PASS",
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "room_failing_input.median_rho (file order)",
+   "mine": 0.07619071318369582,
+   "registered": 0.07619071318369582,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "room_failing_input.pass",
+   "mine": false,
+   "registered": false,
+   "abs_diff": null,
+   "equal": true
+  },
+  {
+   "field": "bf16_vs_jvp.spearman",
+   "mine": 0.9950540512930662,
+   "registered": 0.9950540512930661,
+   "abs_diff": 1.1102230246251565e-16,
+   "equal": false
+  },
+  {
+   "field": "bf16_vs_jvp.median_rel_diff",
+   "mine": 0.026347674367160463,
+   "registered": 0.026347674367160463,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "probe_median_abs",
+   "mine": 0.00014701201871503145,
+   "registered": 0.00014701201871503145,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "probe_own_median_abs",
+   "mine": 2.6561319828033447e-06,
+   "registered": 2.6561319828033447e-06,
+   "abs_diff": 0.0,
+   "equal": true
+  },
+  {
+   "field": "branch",
+   "mine": "A",
+   "registered": "A",
+   "abs_diff": null,
+   "equal": true
+  }
+ ]
+}

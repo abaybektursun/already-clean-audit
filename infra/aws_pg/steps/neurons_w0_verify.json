@@ -1,0 +1,37 @@
+[
+ {
+  "name": "corpus",
+  "module": "infra.aws_pg.jobs.neurons_corpus",
+  "args": "--tokens-per-shard 60000 --olmo-revision stage1-step1413814"
+ },
+ {
+  "name": "q4",
+  "module": "infra.aws_pg.jobs.neurons_harvest",
+  "args": "--model-key Q4 --repo Qwen/Qwen3-4B --corpus /work/out/corpus/corpus --tokname qwen3 --max-tokens 2000000 --wikitext-parity 2.2444 --sample-neurons 10 --seed 0 --snapshot-bands 1,2"
+ },
+ {
+  "name": "q4b",
+  "module": "infra.aws_pg.jobs.neurons_harvest",
+  "args": "--model-key Q4B --repo Qwen/Qwen3-4B-Base --corpus /work/out/corpus/corpus --tokname qwen3 --max-tokens 2000000 --sample-neurons 10 --seed 0 --snapshot-bands 1,2"
+ },
+ {
+  "name": "g4",
+  "module": "infra.aws_pg.jobs.neurons_harvest",
+  "args": "--model-key G4 --repo google/gemma-3-4b-pt --corpus /work/out/corpus/corpus --tokname gemma3 --max-tokens 1000000 --sample-neurons 10 --seed 0"
+ },
+ {
+  "name": "o7_s1000",
+  "module": "infra.aws_pg.jobs.neurons_harvest",
+  "args": "--model-key O7 --repo allenai/Olmo-3-1025-7B --revision stage1-step1000 --corpus /work/out/corpus/corpus --tokname olmo3 --max-tokens 1000000 --sample-neurons 10 --seed 0"
+ },
+ {
+  "name": "o7_final",
+  "module": "infra.aws_pg.jobs.neurons_harvest",
+  "args": "--model-key O7 --repo allenai/Olmo-3-1025-7B --revision stage1-step1413814 --corpus /work/out/corpus/corpus --tokname olmo3 --max-tokens 1000000 --poles /work/out/o7_s1000/samples/sample_draw.json --positions-from /work/out/o7_s1000 --probe-texts s3://pg-lineage-769063704696/results/neurons/w0/verify/3/probe_smoke.jsonl"
+ },
+ {
+  "name": "c0",
+  "module": "infra.aws_pg.jobs.neurons_harvest",
+  "args": "--model-key C0 --repo Qwen/Qwen3-4B-Instruct-2507 --corpus /work/out/corpus/corpus --tokname qwen3 --max-tokens 131072 --wikitext-parity 2.2444 --sample-neurons 10 --seed 0"
+ }
+]

@@ -1,0 +1,37 @@
+[m2] gate G_SAME
+[m2] gate INPUTS
+[m2] gate G_CORPUS
+[m2] gate t15_G_REV
+[m2] gate t15_G_CFG
+[m2] gate t15_G0
+[m2] gate K0
+[m2] gate t15_G_EX
+[m2] gate t15_G_TOPK
+[m2] done T_15
+[m2] gate t14_G_REV
+[m2] gate t14_G_CFG
+[m2] gate t14_G0
+[m2] gate t14_G_EX
+[m2] gate t14_G_TOPK
+[m2] done T_14
+[m2] gate t13_G_REV
+[m2] gate t13_G_CFG
+[m2] gate t13_G0
+[m2] gate t13_G_EX
+[m2] gate t13_G_TOPK
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/m2f/old1e/infra/aws_pg/jobs/m2_dryrun.py", line 329, in child
+    J.main(spec["argv"])
+  File "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/m2f/old1e/infra/aws_pg/jobs/m2_score.py", line 435, in main
+    run(a, reg, out)
+  File "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/m2f/old1e/infra/aws_pg/jobs/m2_score.py", line 334, in run
+    sc = m2.scores(am, tk["tok"], st, colnorm[u["layer"]], u["tok"])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/m2f/old1e/infra/pg/m2.py", line 369, in scores
+    "B": percentile(v, stats["hist"], stats["hist_edges"]),
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/m2f/old1e/infra/pg/m2.py", line 346, in percentile
+    assert (n > 0).all(), "a pole with no token of its sign"
+           ^^^^^^^^^^^^^
+AssertionError: a pole with no token of its sign

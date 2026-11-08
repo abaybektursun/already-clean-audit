@@ -1,0 +1,61 @@
+{
+ "empty_record": {
+  "text": "",
+  "n_new": 0,
+  "n_generated": 1,
+  "finish_reason": "stop",
+  "mode": "none",
+  "score": 0
+ },
+ "bank": {
+  "n": 16,
+  "distinct": 16,
+  "covers": true,
+  "seeded": true,
+  "generated": true,
+  "finish_reason": true,
+  "n_empty": 1,
+  "pass": true,
+  "expected_n": 16
+ },
+ "missing_record": {
+  "n": 15,
+  "distinct": 15,
+  "covers": false,
+  "seeded": true,
+  "generated": true,
+  "finish_reason": true,
+  "n_empty": 1,
+  "pass": false
+ },
+ "n_generated_0": {
+  "n": 16,
+  "distinct": 16,
+  "covers": true,
+  "seeded": true,
+  "generated": false,
+  "finish_reason": true,
+  "n_empty": 1,
+  "pass": false
+ },
+ "finish_reason_none": {
+  "n": 16,
+  "distinct": 16,
+  "covers": true,
+  "seeded": true,
+  "generated": true,
+  "finish_reason": false,
+  "n_empty": 1,
+  "pass": false
+ },
+ "last_removed": {
+  "n": 15,
+  "distinct": 15,
+  "covers": false,
+  "seeded": true,
+  "generated": true,
+  "finish_reason": true,
+  "n_empty": 0,
+  "pass": false
+ }
+}

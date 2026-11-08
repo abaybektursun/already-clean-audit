@@ -1,0 +1,31 @@
+== REAL
+CHECK REAL n1 units.json is reproducible from N12's units and M2's ranks PASS {"real_freeze": 82, "real_test": 71, "dt_freeze": 73, "dt_test": 67, "pb_freeze": 79, "pb_test": 70}
+CHECK REAL units: real 82/71, dt 73/67, pb 79/70                       PASS 
+CHECK REAL every real unit has at least 98 matched neurons of its layer, none its own PASS 
+CHECK REAL onset pre-check: the dating rule reproduces k for all 442 units PASS 
+CHECK REAL onset pre-check: most births rise over several brackets (concentrated in fewer than half) PASS {'dt_freeze': 29, 'dt_test': 22, 'pb_freeze': 35, 'pb_test': 29, 'real_freeze': 34, 'real_test': 26}
+CHECK REAL every unit's window and reference brackets exist (k >= 6)   PASS 
+CHECK REAL K-B bank path reproducible: M2, N12 and N6 column norms bitwise equal (three L40S runs) PASS {'m2_vs_n12': 458, 'm2_vs_n6_t15': 184, 'n12_vs_n6_t15': 122}
+CHECK REAL K-B failing input (the neighbouring point) fails for every banked neuron, with room PASS min rel 0.00155 against 0.00013
+CHECK REAL kb_bank.json and the N6 array are the registered inputs     PASS 
+CHECK REAL room: every label and hypothesis branch reachable at 67 pairs PASS 
+== SCORE
+CHECK SCORE side_r: in combines gate and up; out divides by the column norm PASS 
+CHECK SCORE robust_z: median 0 and MAD 1/1.4826 per bracket and layer  PASS 
+CHECK SCORE excess: window mean minus reference mean (k = 12: window 10-12, reference 2-9) PASS 
+CHECK SCORE floor: replicate means of one matched neuron per unit      PASS 
+CHECK SCORE hypotheses from the two selection labels                   PASS 
+CHECK SCORE label_sign on paired intervals                             PASS 
+== JOB
+CHECK JOB n1_weights.main exits 0 and prints N1_JOB_OK                 FAIL exit 1 KeyError: 'examples'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/abaybektursun/projects/interp_research-bio2/infra/aws_pg/jobs/n1_dryrun.py", line 215, in child
+    J.main(spec["argv"])
+  File "/Users/abaybektursun/projects/interp_research-bio2/infra/aws_pg/jobs/n1_weights.py", line 267, in main
+    run(a, registry(a.registry), out)
+  File "/Users/abaybektursun/projects/interp_research-bio2/infra/aws_pg/jobs/n1_weights.py", line 230, in run
+    for b in uj["examples"][h]:
+             ~~^^^^^^^^^^^^
+KeyError: 'examples'
+

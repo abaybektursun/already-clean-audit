@@ -1,0 +1,12 @@
+{
+ "dare_k1_d2/math500/generations.jsonl": {
+  "bytes": 7632377,
+  "sha256": "a42240861bbdb82a24f08c943d50cdceeafda73e044144fe66c6eb1c959e8773",
+  "s3": "s3://pg-lineage-769063704696/results/next_n13/s4armsA2-01/out/dare_k1_d2/dare_k1_d2/math500/generations.jsonl"
+ },
+ "steps.jsonl": {
+  "bytes": 2934925,
+  "sha256": "a7b820658ab9219c78c786d9e52ba49a83ec6d0ddf304697cbeed7ecf130c2e3",
+  "s3": "s3://pg-lineage-769063704696/results/next_n13/s4armsA2-01/out/dare_k1_d2/steps.jsonl"
+ }
+}

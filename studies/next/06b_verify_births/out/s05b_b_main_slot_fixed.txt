@@ -1,0 +1,2 @@
+main slot fixed (top position in the real main's slot, sizes fixed): b mean 0.5306, 2.5th 0.4930, 97.5th 0.5679, draws <= real 0.4756: 1/300; poles 574; real main holds the pole's top non-echo position in 574 of 574 poles
+size only (real main's slot, random content, top position not forced): b mean 0.5120, 2.5th 0.4739, 97.5th 0.5462, draws <= real 0.4756: 10/300

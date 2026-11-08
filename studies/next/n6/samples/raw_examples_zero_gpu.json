@@ -1,0 +1,402 @@
+[
+ {
+  "pair": "P002",
+  "member": "early",
+  "pole": "L03N6372-",
+  "partner": "L03N7574-",
+  "layer": 3,
+  "half": "freeze",
+  "age": 5,
+  "partner_age": 12,
+  "adjusted_age": -3.3925,
+  "max_abs": 0.2539924085140228,
+  "density": 2603717,
+  "q999": 0.04466835781931877,
+  "top3_T15": [
+   {
+    "rank": 0,
+    "a": -0.2539924085140228,
+    "before_tail": "\ufeffDELIMITER $$\n\nDROP PROCEDURE IF EXISTS `ssp`.`ssp_insertar_descripcion` $$\nCREATE PROC",
+    "token": "EDURE",
+    "after_head": " `ssp`.`ssp_insertar_descripcion` (nombr"
+   },
+   {
+    "rank": 1,
+    "a": -0.2522939443588257,
+    "before_tail": "DROP PROCEDURE IF EXISTS `deleteUser`;\nDELIMITER $$\n\nCREATE PROC",
+    "token": "EDURE",
+    "after_head": " deleteUser(IN uname VARCHAR(16))\nLANGUA"
+   },
+   {
+    "rank": 2,
+    "a": -0.25189048051834106,
+    "before_tail": "DELIMITER $$\n\nDROP PROCEDURE IF EXISTS modifica_estoc_actual$$\nCREATE PROC",
+    "token": "EDURE",
+    "after_head": " modifica_estoc_actual (ESTOC_ACT INTEGE"
+   }
+  ],
+  "frobenius_norm_c": "PENDING (L1)",
+  "dL_nats_per_token": "PENDING (L1)",
+  "top5_tokens": "PENDING (L1)"
+ },
+ {
+  "pair": "P002",
+  "member": "late",
+  "pole": "L03N7574-",
+  "partner": "L03N6372-",
+  "layer": 3,
+  "half": "freeze",
+  "age": 12,
+  "partner_age": 5,
+  "adjusted_age": 0.3584999999999994,
+  "max_abs": 0.25375276803970337,
+  "density": 2805344,
+  "q999": 0.04731512442231178,
+  "top3_T15": [
+   {
+    "rank": 0,
+    "a": -0.25375276803970337,
+    "before_tail": "The past decade was the warmest ever on record, showing that global warming is \"continuing",
+    "token": " unab",
+    "after_head": "ated,\" according to a new report from NA"
+   },
+   {
+    "rank": 1,
+    "a": -0.2517073452472687,
+    "before_tail": "0.2% in a quiet session. The energy sector stood out, rising 1.5%. Occidental Petroleum (O",
+    "token": "XY",
+    "after_head": ":xnys) gained 4.3%, surging for the seco"
+   },
+   {
+    "rank": 2,
+    "a": -0.227730393409729,
+    "before_tail": "n Monoxide, CO, Combustible Gas, O2, Oxygen Product Type: Multi Gas Detector Trade Name: O",
+    "token": "xy",
+    "after_head": "ge<|endoftext|>"
+   }
+  ],
+  "frobenius_norm_c": "PENDING (L1)",
+  "dL_nats_per_token": "PENDING (L1)",
+  "top5_tokens": "PENDING (L1)"
+ },
+ {
+  "pair": "P037",
+  "member": "early",
+  "pole": "L08N9190-",
+  "partner": "L08N5063-",
+  "layer": 8,
+  "half": "freeze",
+  "age": 8,
+  "partner_age": 13,
+  "adjusted_age": -0.3045000000000009,
+  "max_abs": 1.1084867715835571,
+  "density": 3665101,
+  "q999": 0.17782793939113617,
+  "top3_T15": [
+   {
+    "rank": 0,
+    "a": -1.1084867715835571,
+    "before_tail": " very first edition of Dungeons and Dragons, added by Gary Gygax himself after inspiration",
+    "token": " struck",
+    "after_head": " in the form of a 70s tv show called Kol"
+   },
+   {
+    "rank": 1,
+    "a": -1.0169246196746826,
+    "before_tail": "For Puck Markham, the idea for Camp Lightbulb wasn't an immediate \"A",
+    "token": "ha",
+    "after_head": "!\" moment, but the slow force of ideas c"
+   },
+   {
+    "rank": 2,
+    "a": -0.9810653924942017,
+    "before_tail": "as Rosetta Stone, Egyptian mummies and Parthenon sculptures. This museum is founded in 175",
+    "token": "3",
+    "after_head": " and visited around six million visitors"
+   }
+  ],
+  "frobenius_norm_c": "PENDING (L1)",
+  "dL_nats_per_token": "PENDING (L1)",
+  "top5_tokens": "PENDING (L1)"
+ },
+ {
+  "pair": "P037",
+  "member": "late",
+  "pole": "L08N5063-",
+  "partner": "L08N9190-",
+  "layer": 8,
+  "half": "freeze",
+  "age": 13,
+  "partner_age": 8,
+  "adjusted_age": 0.0,
+  "max_abs": 1.0710909366607666,
+  "density": 4023844,
+  "q999": 0.26607251167297363,
+  "top3_T15": [
+   {
+    "rank": 0,
+    "a": -1.0710909366607666,
+    "before_tail": "ike finding the first move, finding the exact wood for you. It's a little bit like the Pin",
+    "token": "oc",
+    "after_head": "chio story because it should be an inter"
+   },
+   {
+    "rank": 1,
+    "a": -1.0532649755477905,
+    "before_tail": "twitter.\n\nAnd then there were the few jokes, joking about calling ghostbusters and the Win",
+    "token": "chest",
+    "after_head": "ers and telling Louis and I to just forg"
+   },
+   {
+    "rank": 2,
+    "a": -0.9698758125305176,
+    "before_tail": " % of 2 to 17-year-olds in a diagnosis has been received by the United States of attention",
+    "token": " deficit",
+    "after_head": " hyperactive disorder (ADHD) sometime.\n\n"
+   }
+  ],
+  "frobenius_norm_c": "PENDING (L1)",
+  "dL_nats_per_token": "PENDING (L1)",
+  "top5_tokens": "PENDING (L1)"
+ },
+ {
+  "pair": "P039",
+  "member": "early",
+  "pole": "L15N10390-",
+  "partner": "L15N6531-",
+  "layer": 15,
+  "half": "freeze",
+  "age": 6,
+  "partner_age": 10,
+  "adjusted_age": -1.0890000000000004,
+  "max_abs": 3.370661735534668,
+  "density": 2712524,
+  "q999": 0.3981071710586548,
+  "top3_T15": [
+   {
+    "rank": 0,
+    "a": -3.370661735534668,
+    "before_tail": " Afghanistan by 80 percent because it has been unable to get funding for the project.\n\nThe",
+    "token": " consortium",
+    "after_head": " has proposed new terms which would see "
+   },
+   {
+    "rank": 1,
+    "a": -2.995727062225342,
+    "before_tail": " Securities Services (BOISS), was the custodian bank of an investment fund involved in the",
+    "token": " scheme",
+    "after_head": ".\n\nSource link\n\nContinue Reading\n\nReader"
+   },
+   {
+    "rank": 2,
+    "a": -2.882944345474243,
+    "before_tail": "er swallow the large losses being generated by its plants and would try to sell them.\n\nThe",
+    "token": " owner",
+    "after_head": " of the plants, Tata Steel, has been squ"
+   }
+  ],
+  "frobenius_norm_c": "PENDING (L1)",
+  "dL_nats_per_token": "PENDING (L1)",
+  "top5_tokens": "PENDING (L1)"
+ },
+ {
+  "pair": "P039",
+  "member": "late",
+  "pole": "L15N6531-",
+  "partner": "L15N10390-",
+  "layer": 15,
+  "half": "freeze",
+  "age": 10,
+  "partner_age": 6,
+  "adjusted_age": -0.6965000000000003,
+  "max_abs": 3.5601818561553955,
+  "density": 2697547,
+  "q999": 0.33496543765068054,
+  "top3_T15": [
+   {
+    "rank": 0,
+    "a": -3.5601818561553955,
+    "before_tail": "it, you have to have a business license in the town where you\u2019re going to install the sign",
+    "token": ".",
+    "after_head": " So you have to drive to the licensing o"
+   },
+   {
+    "rank": 1,
+    "a": -3.078763723373413,
+    "before_tail": " not lying because I didn't believe they were lies. But when I state my belief I am lying.",
+    "token": " But",
+    "after_head": " I'm not lying because I believe it to b"
+   },
+   {
+    "rank": 2,
+    "a": -2.529951572418213,
+    "before_tail": "out yogurt dispenser, but in order to get to the dispenser he has to use the Pencil Eraser",
+    "token": ",",
+    "after_head": " which Paula is holding onto. Well, it's"
+   }
+  ],
+  "frobenius_norm_c": "PENDING (L1)",
+  "dL_nats_per_token": "PENDING (L1)",
+  "top5_tokens": "PENDING (L1)"
+ },
+ {
+  "pair": "P020",
+  "member": "early",
+  "pole": "L22N7990-",
+  "partner": "L22N10231+",
+  "layer": 22,
+  "half": "freeze",
+  "age": 9,
+  "partner_age": 12,
+  "adjusted_age": -1.8640000000000008,
+  "max_abs": 5.616450309753418,
+  "density": 4985676,
+  "q999": 1.0,
+  "top3_T15": [
+   {
+    "rank": 0,
+    "a": -5.616450309753418,
+    "before_tail": "nts without disturbing the brake line. It\u2019s similar in concept to the spacers Trek uses on",
+    "token": " its",
+    "after_head": " newer Madone.\n\nEven the stem gets speci"
+   },
+   {
+    "rank": 1,
+    "a": -5.4230546951293945,
+    "before_tail": "points.\n    My only problem is that I'm stuck with a pair of brand new DT 350's (sp, disc,",
+    "token": " ",
+    "after_head": "24/24). It was a bargain, I could not le"
+   },
+   {
+    "rank": 2,
+    "a": -5.2964186668396,
+    "before_tail": "Choose your location and language.\nInternational News\n\nSamsung Announces Launch of the",
+    "token": " Samsung",
+    "after_head": " Galaxy J1 (2016) 4G\n\nApr 22. "
+   }
+  ],
+  "frobenius_norm_c": "PENDING (L1)",
+  "dL_nats_per_token": "PENDING (L1)",
+  "top5_tokens": "PENDING (L1)"
+ },
+ {
+  "pair": "P020",
+  "member": "late",
+  "pole": "L22N10231+",
+  "partner": "L22N7990-",
+  "layer": 22,
+  "half": "freeze",
+  "age": 12,
+  "partner_age": 9,
+  "adjusted_age": 0.3904999999999994,
+  "max_abs": 5.535652160644531,
+  "density": 5457933,
+  "q999": 1.0592536926269531,
+  "top3_T15": [
+   {
+    "rank": 0,
+    "a": 5.535652160644531,
+    "before_tail": " help predict compatibility and boost the likelihood of finding a compatible companion. By",
+    "token": " examining",
+    "after_head": " factors such as common passions, values"
+   },
+   {
+    "rank": 1,
+    "a": 5.266496181488037,
+    "before_tail": " There Any Safe Hookup Sites That Work\n\nAre There Any Safe Hookup Sites That Work \u2013 Ashley",
+    "token": " Madison",
+    "after_head": " is known as a fast hookup site for peop"
+   },
+   {
+    "rank": 2,
+    "a": 5.2625298500061035,
+    "before_tail": "\nIn their 1987 article, Hazan and Shaver initially developed self-report measures of three",
+    "token": " attachment",
+    "after_head": " styles (secure, avoidant and ambivalent"
+   }
+  ],
+  "frobenius_norm_c": "PENDING (L1)",
+  "dL_nats_per_token": "PENDING (L1)",
+  "top5_tokens": "PENDING (L1)"
+ },
+ {
+  "pair": "P069",
+  "member": "early",
+  "pole": "L30N6280+",
+  "partner": "L30N7717-",
+  "layer": 30,
+  "half": "freeze",
+  "age": 10,
+  "partner_age": 13,
+  "adjusted_age": -0.0389999999999997,
+  "max_abs": 18.86422348022461,
+  "density": 3398232,
+  "q999": 4.216965198516846,
+  "top3_T15": [
+   {
+    "rank": 0,
+    "a": 18.86422348022461,
+    "before_tail": "r Sr2IrO4 has been discovered. In this system, the strong spin-orbit (SO) coupling as well",
+    "token": " as",
+    "after_head": " the Coulomb interaction is crucial for "
+   },
+   {
+    "rank": 1,
+    "a": 18.125146865844727,
+    "before_tail": "he resonant inelastic scattering (RIXS) experiments have observed higher energy broad peak",
+    "token": " at",
+    "after_head": " ~0.5-0.8 eV, termed SO exciton["
+   },
+   {
+    "rank": 2,
+    "a": 17.28623390197754,
+    "before_tail": "tate. Its 5d5 shell splits into half filled Jeff=1/2 and fully-occupied Jeff=3/2 state due",
+    "token": " to",
+    "after_head": " strong SO coupling. The narrow half fil"
+   }
+  ],
+  "frobenius_norm_c": "PENDING (L1)",
+  "dL_nats_per_token": "PENDING (L1)",
+  "top5_tokens": "PENDING (L1)"
+ },
+ {
+  "pair": "P069",
+  "member": "late",
+  "pole": "L30N7717-",
+  "partner": "L30N6280+",
+  "layer": 30,
+  "half": "freeze",
+  "age": 13,
+  "partner_age": 10,
+  "adjusted_age": 1.3094999999999999,
+  "max_abs": 17.229751586914062,
+  "density": 4221789,
+  "q999": 4.216965198516846,
+  "top3_T15": [
+   {
+    "rank": 0,
+    "a": -17.229751586914062,
+    "before_tail": "till just barely enough for skiing. Here's to hoping the temperatures stay warm enough for",
+    "token": " snow",
+    "after_head": " and maybe all we will need is a warm bo"
+   },
+   {
+    "rank": 1,
+    "a": -16.370067596435547,
+    "before_tail": "m that floods the market and has proven side effects published including increased risk of",
+    "token": " blood",
+    "after_head": " clotting and prostate cancer risk and t"
+   },
+   {
+    "rank": 2,
+    "a": -16.325979232788086,
+    "before_tail": " enjoy lots of outdoor activities like hiking, skiing, mountain biking, rafting, climbing,",
+    "token": " snow",
+    "after_head": "boarding, etc. You will find great hospi"
+   }
+  ],
+  "frobenius_norm_c": "PENDING (L1)",
+  "dL_nats_per_token": "PENDING (L1)",
+  "top5_tokens": "PENDING (L1)"
+ }
+]

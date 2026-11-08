@@ -1,0 +1,109 @@
+== REAL
+CHECK REAL units.json is reproducible from the laptop banks and births.json PASS c223dfee261c
+CHECK REAL units.json sha256 is the one n12_score registers            PASS c223dfee261c3f6019ad46d08cccc23859143e6f59698aa0ef24de769f95508a
+CHECK REAL M2 ranks_freeze.jsonl sha256 registered                     PASS 864fd0dd7cf8
+CHECK REAL M2 ranks_test.jsonl sha256 registered                       PASS dc247ea35089
+CHECK REAL births.json sha256 recorded in units.json is M2's registered one PASS 
+CHECK REAL units: real 82/71, pb 79/70, dt at least 50 per half        PASS {'dt_freeze': 73, 'dt_test': 67, 'pb_freeze': 79, 'pb_test': 70, 'real_freeze': 82, 'real_test': 71}
+CHECK REAL every real unit is its birth (positions, pole, distinct-token count) PASS 153
+CHECK REAL every pb unit is M2's twin                                  PASS 149
+CHECK REAL every dt twin re-dated k, same layer, other neuron, same size, same distinct count, non-echo ranks PASS 140 of 140
+CHECK REAL the reader's distinct-token counts reproduce: births with a twin 78 of 149 below 0.67, twins 16 PASS 78, 16
+CHECK REAL dt twins carry repeated tokens like the births: share below 0.67 among dt PASS 70
+CHECK REAL plan: every (unit, role) exactly once; points in the registered order PASS [14, 15, 13, 12, 11, 10, 9, 8, 7, 6, 5]
+CHECK REAL plan: gradient windows are forward windows; K0 has 10 real pre-role carriers at T_14 PASS 
+CHECK REAL every window keeps at least M_LM loss-matched candidates after the exclusions PASS min 1826 of 2047 over 2337 windows
+CHECK REAL raw examples: M2's top-10 under B recomputed from the vectors at the pre and birth roles (10 of 10) PASS {'top10_pre': 10, 'top10_birth': 10, 'top10_fail': 0}
+CHECK REAL raw examples: the rolled neuron axis does not reproduce the top-10 (failing input) PASS 
+CHECK REAL raw examples: the decomposition's identity on real arrays; 20 competitors with B > 0 PASS 
+CHECK REAL sides G0: 11 points; harvest controls and score-06, u x 1.1 as the failing input PASS pass max 0.00617; u x 1.1 min 0.0943
+CHECK REAL sides G_REV: 11 points; registered revision = banked manifest = HF ref PASS 11 of 11
+CHECK REAL sides G_CFG: 11 points; committed branch configs            PASS 11 of 11
+CHECK REAL sides K0: T_14, the 10 carriers (L00N9356-:c8, L02N1367-:c7, L02N4649+:c3, L02N7380+:c2, L03N6372+:c10, L03N7746+:c0, L04N7919-:c0, L05N8714-:c5, L06N2185+:c5, L06N9844+:c1) PASS 10 of 10 bit-identical across two runs; failing min |dB| 8.995e-04 against 1e-06
+CHECK REAL sides G_M2V: 11 points (pass side at T_7, T_8, T_9, T_10, T_11, T_12, T_13, T_14, T_15; T_5, T_6 assumed); up to 6 files per point, freeze half (test half at T_5, T_6, aggregate only) PASS exact share T_7 1.000, T_8 1.000, T_9 1.000, T_10 1.000, T_11 1.000, T_12 1.000, T_13 1.000, T_14 1.000, T_15 1.000; failing p99 min 1.199
+CHECK REAL sides G_EX: gated at T_5, T_6, T_15, reported at T_7-T_14 (A3); failing side on N12's entries PASS gated pass p99 [0.0, 0.0, 0.0]; failing 28-496 times the tolerance
+CHECK REAL sides G_TOPK: 11 points; score-06 (M2's entries)            PASS pass p99 max 0.0158; failing p99 min 0.998
+CHECK REAL sides I_ID: T_13; score-04, score-05, score-06              PASS exact share 1.0, failing p99 3.381
+CHECK REAL sides DEGENERATE: 11 points, every layer the plan reads (bank_scan.json) PASS T_8 ['L07N640-']; T_10 ['L24N9826+']; no own pole
+CHECK REAL sides USABLE: both halves; real, pb, dt                     PASS {"dt_freeze": 73, "dt_test": 67, "pb_freeze": 79, "pb_test": 70, "real_freeze": 82, "real_test": 71}
+CHECK REAL sides MOVEMENT: freeze half (82); the test half is read only at the verdict PASS mean log10 r0 - log10 r1 1.056 [0.839, 1.285]; identity 0
+CHECK REAL sides CONSTRUCTION_TWIN: T_15, freeze half, M2's twins under B (the dt operator) PASS 1.000 of 79; opposite pole 0.000
+== SCORE
+CHECK SCORE competitors: own neuron excluded, highest B first, stable  PASS [[4, 1], [1, 1], [0, 0]]
+CHECK SCORE layer rank: ties count against the pole                    PASS 
+CHECK SCORE counterfactual: only the pole rises -> r_c = r1 = 1, r_o = r0, F > 0 PASS {'r0': 35, 'r1': 1, 'r_c': 1, 'r_o': 35, 'F': 1.5440680443502757, 'move': 1.5440680443502757}
+CHECK SCORE counterfactual: only the others fall -> r_o = r1 = 1, r_c = r0, F < 0 PASS {'r0': 35, 'r1': 1, 'r_c': 35, 'r_o': 1, 'F': -1.5440680443502757, 'move': 1.5440680443502757}
+CHECK SCORE counterfactual identity: r_c = r_o = r0, F = 0             PASS 
+CHECK SCORE pull sign: + pole pulled up by G < 0; - pole by G > 0; NaN q999 gives 0 PASS [[0.5, -0.25], [-2.0, 0.0]]
+CHECK SCORE loss-matched: nearest losses, the excluded neighbourhood and index 0 left out, ties by index PASS [8, 6, 4]
+CHECK SCORE u_share: the share of competitors at or above the pole (ties count against) PASS 0.3333333333333333
+CHECK SCORE spearman: known values, ties averaged, constant input undefined PASS 
+CHECK SCORE validation passes on a faithful prediction; its sign-flipped input fails PASS rho 0.992
+CHECK SCORE validation fails on an unrelated prediction                PASS rho -0.015
+CHECK SCORE validation flags its ceiling (prediction equal to the ablation) PASS 
+CHECK SCORE room: every label branch reachable at the test size        PASS {'F_up': 'OWN_RISE', 'F_down': 'OTHERS_FALL', 'F_mixed': 'MIXED', 'u_low': 'SUPPORTED', 'u_high': 'REFUTED', 'pair_above': 'ABOVE_SELECTION', 'pair_below': 'BELOW_SELECTION', 'pair_at': 'AT_SELECTION'}
+CHECK SCORE bootstrap interval brackets the mean                       PASS {'n': 100, 'mean': 0.5, 'lo': 0.4, 'hi': 0.6}
+CHECK SCORE matched floor of a constant u is that constant             PASS 
+CHECK SCORE A1 grad_mode: deterministic and bf16 math inside, off after; refuses without CUBLAS_WORKSPACE_CONFIG PASS AssertionError: CUBLAS_WORKSPACE_CONFIG not set before CUDA started
+CHECK SCORE A1 u_S resolution: noise 0 counts exact ties only; a larger noise counts every gap below it PASS ({'noise_max_abs_dS': 0.0, 'n_real': 2, 'n_within_noise': 1, 'min_gap': 0.0, 'median_gap': 0.09999999999999998}, {'noise_max_abs_dS': 0.25, 'n_real': 2, 'n_within_noise': 2, 'min_gap': 0.0, 'median_gap': 0.09999999999999998})
+== INSTR
+CHECK INSTR grad_capture equals central finite differences (fp64 model, 8 largest-gradient neurons) PASS max relative error 1.28e-03
+CHECK INSTR the neighbouring neuron's gradient does not (failing input) PASS min relative error 2.56e-01
+CHECK INSTR zero ablation against -h*G on 24 (neuron, position) pairs: Spearman >= VAL_RHO_MIN PASS rho 0.990
+CHECK INSTR loss-matched positions captured beside each exemplar       PASS [20, 40, 59, 55, 46]
+CHECK INSTR A1: the gradient pass dispatches the math kernel; without grad_mode the fused kernel (failing input) PASS {'a1': ['aten._log_softmax.default', 'aten._log_softmax_backward_data.default', 'aten._safe_softmax.default', 'aten._softmax_backward_data.default'], 'default': ['aten._log_softmax.default', 'aten._log_softmax_backward_data.default', 'aten._scaled_dot_product_flash_attention_for_cpu.default', 'aten._scaled_dot_product_flash_attention_for_cpu_backward.default']}
+== JOB
+CHECK JOB M2's tiny job writes the banks N12 reads (ranks, vectors)    PASS exit 0
+CHECK JOB n12_score.main exits 0 and prints N12_JOB_OK                 PASS exit 0
+CHECK JOB metrics complete, nothing parked                             PASS 
+CHECK JOB every gate passed                                            PASS ['G_CORPUS', 'G_SAME', 'INPUTS', 'I_GRAD', 'I_ID', 'K0', 't12_G0', 't12_G_ABL_ID', 't12_G_CFG', 't12_G_EX', 't12_G_M2V', 't12_G_REV', 't12_G_TOPK', 't13_G0', 't13_G_ABL_ID', 't13_G_CFG', 't13_G_EX', 't13_G_M2V', 't13_G_REV', 't13_G_TOPK', 't14_G0', 't14_G_ABL_ID', 't14_G_CFG', 't14_G_EX', 't14_G_M2V', 't14_G_REV', 't14_G_TOPK', 't15_G0', 't15_G_CFG', 't15_G_EX', 't15_G_M2V', 't15_G_REV', 't15_G_TOPK']
+CHECK JOB every registered failing input failed                        PASS 33 failing inputs
+CHECK JOB K0 at T_14 first: 10 carriers' B equal M2's banked pre-role B; birth-role B fails PASS max |dB| 0.0e+00; failing min |dB| 1.936e-03
+CHECK JOB G-M2V at every point: the forward equals M2's banked vectors (same device) PASS {'t14_G_M2V': (37, 1.0), 't15_G_M2V': (24, 1.0), 't13_G_M2V': (37, 1.0), 't12_G_M2V': (25, 1.0)}
+CHECK JOB G-ABL-ID: clean rows equal the forward's loss; another window's loss fails PASS {'t14_G_ABL_ID': (0.0, 0.85), 't13_G_ABL_ID': (0.0, 0.222), 't12_G_ABL_ID': (0.0, 0.541)}
+CHECK JOB I-GRAD: the reversed gradient pass reproduces G; the rolled axis fails PASS rho 1.000000, exact 1.000, failing rho -0.006
+CHECK JOB A1: settings recorded; I-GRAD writes |dG|, |dS| (0 here) and empty changed-unit files PASS n_units 36, n 9984
+CHECK JOB I-ID: the reversed forward reproduces a, 0 flips; M2's birth-role vectors fail PASS 
+CHECK JOB metrics.json carries no rank, hit or label                   PASS 
+CHECK JOB one N12 record per unit                                      PASS 112 records
+CHECK JOB a real record has 20 competitors, pull, 4 ablation pairs, matched u, the identity, the drop PASS 
+CHECK JOB the carrier's r0 and r1 equal M2's banked ranks under B (every real unit) PASS 
+CHECK JOB the pull recomputes from the banked gradient rows and the grid q999 PASS 
+CHECK JOB raw examples: the selected births, competitors' contexts, exemplars, loss-matched texts PASS 
+== FAIL
+CHECK FAIL G_SAME on its planted input: exit non-zero, gate named      PASS AssertionError: G_SAME failed: {"pass": false, "versions": {"torch": "2.12.0", "transformers": "5.9.0"}, "registered": {"torch": "2.12.0", "transformers": "0.0.
+CHECK FAIL INPUTS on its planted input: exit non-zero, gate named      PASS AssertionError: INPUTS failed: {"pass": false, "mismatch": ["units"], "failing_input": {"pass": false}}
+CHECK FAIL G_CORPUS on its planted input: exit non-zero, gate named    PASS AssertionError: G_CORPUS failed: {"pass": false, "got": "c62abf9704662f723638337745c94b919ed8ab8aee85fc4e443a7e74892e1bf5", "failing_input": {"pass": false}}
+CHECK FAIL t14_G_REV on its planted input: exit non-zero, gate named   PASS AssertionError: t14_G_REV failed: {"pass": false, "commit": "a89a43b2dbd89aed4bb5e09f3a4d2d532760df3d", "registered": "1111111111111111111111111111111111111111"
+CHECK FAIL t14_G_CFG on its planted input: exit non-zero, gate named   PASS AssertionError: t14_G_CFG failed: {"pass": false, "diff_keys": ["intermediate_size"], "sliding_window": 4096, "failing_input": {"pass": false, "diff_keys": ["in
+CHECK FAIL t14_G0 on its planted input: exit non-zero, gate named      PASS AssertionError: t14_G0: its failing input passed
+CHECK FAIL K0 on its planted input: exit non-zero, gate named          PASS AssertionError: K0 failed: {"pass": false, "units": ["L00N17+:c0", "L00N40-:c0", "L00N90+:c0", "L01N3-:c0", "L01N40+:c0", "L01N63-:c0", "L02N17-:c0", "L02N3+:c0
+CHECK FAIL t15_G_M2V on its planted input: exit non-zero, gate named   PASS AssertionError: t15_G_M2V failed: {"pass": false, "n": 11520, "n_gated": 11520, "n_poles": null, "statistic": "|new - bank| / (0.05 + |bank|)", "median": 0.0090
+CHECK FAIL t14_G_EX on its planted input: exit non-zero, gate named    PASS AssertionError: t14_G_EX failed: {"pass": false, "n": 224, "n_gated": 224, "n_poles": 34, "statistic": "|new - bank| / (0.05 + |bank|)", "median": 0.25572695487
+CHECK FAIL t14_G_ABL_ID on its planted input: exit non-zero, gate named PASS AssertionError: t14_G_ABL_ID failed: {"pass": false, "max_abs": 3.84130859375, "n": 13, "tol": 0.001, "failing_input": {"what": "another window's loss", "pass":
+CHECK FAIL I_GRAD on its planted input: exit non-zero, gate named      PASS AssertionError: I_GRAD failed: {"pass": false, "rho": 0.6956874642957875, "exact_share": 0.0, "u_S_flips": 29, "n": 9984, "n_units": 36, "changed_units": {"free
+CHECK FAIL I_ID on its planted input: exit non-zero, gate named        PASS AssertionError: I_ID failed: {"pass": false, "n": 13824, "n_gated": 13824, "n_poles": null, "statistic": "|new - bank| / (0.05 + |bank|)", "median": 0.011496580
+CHECK FAIL A1 I_GRAD, one perturbed entry: rho >= 0.999, u_S changes only where the entry is read, gate fails PASS rho 0.999995 over 9984 entries, 1 flips ['L00N3-:c0'], 1 units read the entry, max |dG| 1000000
+CHECK FAIL stop rule: a tiny budget parks the later points and the job ends normally PASS [15, 13, 12]
+== VERDICT
+CHECK VERDICT A1: the u_S resolution is reported per half (noise from I-GRAD's |dS|) PASS {'noise_max_abs_dS': 0.0, 'n_real': 71, 'n_within_noise': 0, 'min_gap': 0.1, 'median_gap': 0.1}
+CHECK VERDICT base: OWN_RISE, H_away_sel ABOVE, H_signal SUPPORTED, FORETELLS, H_dt SUPPORTED PASS H_cf OWN_RISE; H_away_sel_pb ABOVE_SELECTION; H_signal SUPPORTED; H_bridge FORETELLS; H_dt SUPPORTED
+CHECK VERDICT others fall: OTHERS_FALL, H_away_sel BELOW, H_signal REFUTED, CONTRARY, H_dt UNDECIDED PASS H_cf OTHERS_FALL; H_away_sel_pb BELOW_SELECTION; H_signal REFUTED; H_bridge CONTRARY; H_dt UNDECIDED
+CHECK VERDICT mixed: MIXED, H_away_sel AT, H_signal UNDECIDED, H_bridge UNDECIDED, H_dt UNDECIDED PASS H_cf MIXED; H_away_sel_pb AT_SELECTION; H_signal UNDECIDED; H_bridge UNDECIDED; H_dt UNDECIDED
+CHECK VERDICT dt twins hit more than the carriers: H_sel_dt BELOW_SELECTION, H_dt REFUTED PASS 
+CHECK VERDICT the pull above its ceiling (the realized gain): ABOVE_CEILING PASS 
+CHECK VERDICT G-VAL fails: every gradient label DOES NOT COUNT, the realized labels stand PASS G-VAL failed (freeze rho 0.023, test rho 0.101)
+CHECK VERDICT G-VAL above its ceiling: the gradient labels DOES NOT COUNT until inspected PASS 
+CHECK VERDICT fewer than 50 dt twins: H_dt NOT_RUN, H_away_sel_dt NOT_RUN PASS 
+CHECK VERDICT the dt construction control missing: H_dt DOES NOT COUNT PASS 
+CHECK VERDICT 30 real test units: DOES NOT COUNT (missing)             PASS DOES NOT COUNT: missing: 30 real test units < 50
+CHECK VERDICT no movement on the test half: DOES NOT COUNT             PASS DOES NOT COUNT: no movement to decompose: {'n': 71, 'mean': -0.19999999999999993
+CHECK VERDICT the decomposition's identity broken: DOES NOT COUNT      PASS 
+CHECK VERDICT a failed gate: DOES NOT COUNT (gates)                    PASS 
+CHECK VERDICT the freeze records changed after the freeze: the verdict refuses PASS 
+CHECK VERDICT the tiny job's freeze refuses (20 real units < 50): the usable-units gate's failing input PASS AssertionError: freeze half has 16 real units, needs 50
+CHECK VERDICT the tiny job's freeze half summarizes under the frozen definitions PASS F +0.755, u_S 0.559, val rho 0.917
+== PROJECT
+CHECK PROJECT the launch's high case fits 0.9 of its hard kill (1.3 x the high projection) PASS 1.64-2.33 GPU-h, kill 182 min
+100 checks, 0 failed: []
+N12_DRYRUN_OK

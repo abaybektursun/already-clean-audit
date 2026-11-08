@@ -1,0 +1,16 @@
+{
+ "uri": "s3://pg-lineage-769063704696/results/neurons/w3/grid/1b/out/t13_step560000",
+ "branch": "stage1-step560000",
+ "revision": "db8c654b5cbe06311f92e86d68cd4f7d31642a5a",
+ "device_name": "NVIDIA RTX PRO 5000 Blackwell",
+ "nll_first_120k": 2.7708053771972656,
+ "n_dirs": 50,
+ "cm_dirs": [
+  "data/finemath-3plus",
+  "data/stack_edu-CSharp",
+  "data/stack_edu-JavaScript",
+  "data/stack_edu-Python",
+  "data/stack_edu-SQL"
+ ],
+ "min_filled": 50
+}

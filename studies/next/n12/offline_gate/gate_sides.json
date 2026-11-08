@@ -1,0 +1,555 @@
+{
+ "what": "N12 offline gate: both sides of every gate the job runs, at every point where it is applied, from banked files only",
+ "gates": {
+  "G0": {
+   "scope": "11 points; harvest controls and score-06, u x 1.1 as the failing input",
+   "banked": true,
+   "points": {
+    "5": {
+     "harvest_max": 0.003340517170727253,
+     "score06_max": 0.003351984778419137,
+     "u11_min_harvest": 0.09651898592710495,
+     "u11_min_score06": 0.09800152480602264
+    },
+    "6": {
+     "harvest_max": 0.0034936179872602224,
+     "score06_max": 0.003521543461829424,
+     "u11_min_harvest": 0.09646788984537125,
+     "u11_min_score06": 0.09711167216300964
+    },
+    "7": {
+     "harvest_max": 0.0031132518779486418,
+     "score06_max": 0.0034661544486880302,
+     "u11_min_harvest": 0.09777047485113144,
+     "u11_min_score06": 0.0961872786283493
+    },
+    "8": {
+     "harvest_max": 0.003616898087784648,
+     "score06_max": 0.003709492040798068,
+     "u11_min_harvest": 0.09777484834194183,
+     "u11_min_score06": 0.09704598784446716
+    },
+    "9": {
+     "harvest_max": 0.004354916978627443,
+     "score06_max": 0.00425277603790164,
+     "u11_min_harvest": 0.09569891542196274,
+     "u11_min_score06": 0.09532200545072556
+    },
+    "10": {
+     "harvest_max": 0.00473586143925786,
+     "score06_max": 0.005007009953260422,
+     "u11_min_harvest": 0.09498153626918793,
+     "u11_min_score06": 0.0964040756225586
+    },
+    "11": {
+     "harvest_max": 0.00590856745839119,
+     "score06_max": 0.004645614419132471,
+     "u11_min_harvest": 0.09724001586437225,
+     "u11_min_score06": 0.09642046689987183
+    },
+    "12": {
+     "harvest_max": 0.006173513829708099,
+     "score06_max": 0.0052130562253296375,
+     "u11_min_harvest": 0.09576768428087234,
+     "u11_min_score06": 0.09426569938659668
+    },
+    "13": {
+     "harvest_max": 0.0042845262214541435,
+     "score06_max": 0.004761958960443735,
+     "u11_min_harvest": 0.09564965963363647,
+     "u11_min_score06": 0.09476194530725479
+    },
+    "14": {
+     "harvest_max": 0.005387997254729271,
+     "score06_max": 0.005030064377933741,
+     "u11_min_harvest": 0.09496808797121048,
+     "u11_min_score06": 0.09646514058113098
+    },
+    "15": {
+     "harvest_max": 0.005106511991471052,
+     "score06_max": 0.006066504865884781,
+     "u11_min_harvest": 0.09438280761241913,
+     "u11_min_score06": 0.09601574391126633
+    }
+   },
+   "pass_side_ok": true,
+   "fail_side_ok": true,
+   "summary": "pass max 0.00617; u x 1.1 min 0.0943"
+  },
+  "G_REV": {
+   "scope": "11 points; registered revision = banked manifest = HF ref",
+   "banked": true,
+   "pass_side_ok": true,
+   "fail_side_ok": true,
+   "summary": "11 of 11"
+  },
+  "G_CFG": {
+   "scope": "11 points; committed branch configs",
+   "banked": true,
+   "pass_side_ok": true,
+   "fail_side_ok": true,
+   "summary": "11 of 11"
+  },
+  "K0": {
+   "scope": "T_14, the 10 carriers (L00N9356-:c8, L02N1367-:c7, L02N4649+:c3, L02N7380+:c2, L03N6372+:c10, L03N7746+:c0, L04N7919-:c0, L05N8714-:c5, L06N2185+:c5, L06N9844+:c1)",
+   "banked": true,
+   "units": [
+    "L00N9356-:c8",
+    "L02N1367-:c7",
+    "L02N4649+:c3",
+    "L02N7380+:c2",
+    "L03N6372+:c10",
+    "L03N7746+:c0",
+    "L04N7919-:c0",
+    "L05N8714-:c5",
+    "L06N2185+:c5",
+    "L06N9844+:c1"
+   ],
+   "score05_eq_score06": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "failing_abs_dB": [
+    0.005348614157729248,
+    0.007960853411996371,
+    0.0008995481344270528,
+    0.0009206999776812941,
+    0.0012772990106949544,
+    0.00156475952968671,
+    0.0021312726172203478,
+    0.0010403634351400237,
+    0.001009502253650929,
+    0.0033393700133249604
+   ],
+   "pass_side_ok": true,
+   "fail_side_ok": true,
+   "summary": "10 of 10 bit-identical across two runs; failing min |dB| 8.995e-04 against 1e-06"
+  },
+  "G_M2V": {
+   "scope": "11 points (pass side at T_7, T_8, T_9, T_10, T_11, T_12, T_13, T_14, T_15; T_5, T_6 assumed); up to 6 files per point, freeze half (test half at T_5, T_6, aggregate only)",
+   "banked": true,
+   "points": {
+    "5": {
+     "n_files": 2,
+     "half": "test",
+     "failing_p99": 101.03872568586006
+    },
+    "6": {
+     "n_files": 1,
+     "half": "test",
+     "failing_p99": 62.64976476541616
+    },
+    "7": {
+     "n_files": 4,
+     "half": "freeze",
+     "failing_p99": 3061.637900586575,
+     "score-05": {
+      "p99": 0.0,
+      "exact_share": 1.0,
+      "n": 286208
+     }
+    },
+    "8": {
+     "n_files": 2,
+     "half": "freeze",
+     "failing_p99": 1411.5853609078413,
+     "score-05": {
+      "p99": 0.0,
+      "exact_share": 1.0,
+      "n": 143104
+     }
+    },
+    "9": {
+     "n_files": 6,
+     "half": "freeze",
+     "failing_p99": 475.3543407351036,
+     "score-05": {
+      "p99": 0.0,
+      "exact_share": 1.0,
+      "n": 880640
+     }
+    },
+    "10": {
+     "n_files": 6,
+     "half": "freeze",
+     "failing_p99": 6.495028716319098,
+     "score-05": {
+      "p99": 0.0,
+      "exact_share": 1.0,
+      "n": 352256
+     },
+     "score-04": {
+      "p99": 0.0,
+      "exact_share": 1.0,
+      "n": 352256
+     }
+    },
+    "11": {
+     "n_files": 6,
+     "half": "freeze",
+     "failing_p99": 2.848320962374908,
+     "score-05": {
+      "p99": 0.0,
+      "exact_share": 1.0,
+      "n": 418304
+     },
+     "score-04": {
+      "p99": 0.0,
+      "exact_share": 1.0,
+      "n": 418304
+     }
+    },
+    "12": {
+     "n_files": 6,
+     "half": "freeze",
+     "failing_p99": 2.893580167197965,
+     "score-05": {
+      "p99": 0.0,
+      "exact_share": 1.0,
+      "n": 352256
+     },
+     "score-04": {
+      "p99": 0.0,
+      "exact_share": 1.0,
+      "n": 352256
+     }
+    },
+    "13": {
+     "n_files": 6,
+     "half": "freeze",
+     "failing_p99": 3.4800391773337513,
+     "score-05": {
+      "p99": 0.0,
+      "exact_share": 1.0,
+      "n": 616448
+     },
+     "score-04": {
+      "p99": 0.0,
+      "exact_share": 1.0,
+      "n": 616448
+     }
+    },
+    "14": {
+     "n_files": 6,
+     "half": "freeze",
+     "failing_p99": 2.438840702173017,
+     "score-05": {
+      "p99": 0.0,
+      "exact_share": 1.0,
+      "n": 528384
+     },
+     "score-04": {
+      "p99": 0.0,
+      "exact_share": 1.0,
+      "n": 528384
+     }
+    },
+    "15": {
+     "n_files": 6,
+     "half": "freeze",
+     "failing_p99": 1.1992727567561356,
+     "score-05": {
+      "p99": 0.0,
+      "exact_share": 1.0,
+      "n": 154112
+     },
+     "score-04": {
+      "p99": 0.0,
+      "exact_share": 1.0,
+      "n": 154112
+     }
+    }
+   },
+   "pass_side_ok": true,
+   "fail_side_ok": true,
+   "summary": "exact share T_7 1.000, T_8 1.000, T_9 1.000, T_10 1.000, T_11 1.000, T_12 1.000, T_13 1.000, T_14 1.000, T_15 1.000; failing p99 min 1.199"
+  },
+  "G_EX": {
+   "scope": "gated at T_5, T_6, T_15, reported at T_7-T_14 (A3); failing side on N12's entries",
+   "banked": true,
+   "points": {
+    "5": {
+     "n_entries_n12": 10,
+     "n_entries_m2": 10,
+     "gated": true,
+     "failing_p99": 10.503754670872983,
+     "failing_times_tol": 496.4257824748847,
+     "score06_p99": 0.0,
+     "score06_exact_share": 1.0
+    },
+    "6": {
+     "n_entries_n12": 10,
+     "n_entries_m2": 5,
+     "gated": true,
+     "failing_p99": 0.593958327603211,
+     "failing_times_tol": 28.071507453952368,
+     "score06_p99": 0.0,
+     "score06_exact_share": 1.0
+    },
+    "7": {
+     "n_entries_n12": 174,
+     "n_entries_m2": 116,
+     "gated": false,
+     "failing_p99": 16.771783259351615,
+     "failing_times_tol": 433.1756855913755,
+     "score06_p99": 0.08643128071103758,
+     "score06_exact_share": 0.2413793103448276
+    },
+    "8": {
+     "n_entries_n12": 287,
+     "n_entries_m2": 147,
+     "gated": false,
+     "failing_p99": 2.8877123250865644,
+     "failing_times_tol": 74.58281250519784,
+     "score06_p99": 0.02704541126987255,
+     "score06_exact_share": 0.24489795918367346
+    },
+    "9": {
+     "n_entries_n12": 370,
+     "n_entries_m2": 243,
+     "gated": false,
+     "failing_p99": 6.233178953596375,
+     "failing_times_tol": 160.98834124465216,
+     "score06_p99": 0.09809898089585985,
+     "score06_exact_share": 0.2222222222222222
+    },
+    "10": {
+     "n_entries_n12": 713,
+     "n_entries_m2": 397,
+     "gated": false,
+     "failing_p99": 8.551486709873522,
+     "failing_times_tol": 220.86477395357207,
+     "score06_p99": 0.042984597073402145,
+     "score06_exact_share": 0.2795969773299748
+    },
+    "11": {
+     "n_entries_n12": 1152,
+     "n_entries_m2": 643,
+     "gated": false,
+     "failing_p99": 9.203411838489863,
+     "failing_times_tol": 237.7024655797842,
+     "score06_p99": 0.06398077410259989,
+     "score06_exact_share": 0.2737169517884914
+    },
+    "12": {
+     "n_entries_n12": 1378,
+     "n_entries_m2": 717,
+     "gated": false,
+     "failing_p99": 6.6488353647758425,
+     "failing_times_tol": 171.72376800869185,
+     "score06_p99": 0.032458340621252434,
+     "score06_exact_share": 0.2412831241283124
+    },
+    "13": {
+     "n_entries_n12": 1345,
+     "n_entries_m2": 717,
+     "gated": false,
+     "failing_p99": 5.387551154757739,
+     "failing_times_tol": 139.1477655674768,
+     "score06_p99": 0.05190747358048847,
+     "score06_exact_share": 0.30962343096234307
+    },
+    "14": {
+     "n_entries_n12": 921,
+     "n_entries_m2": 477,
+     "gated": false,
+     "failing_p99": 2.4937492902211464,
+     "failing_times_tol": 64.407674591325,
+     "score06_p99": 0.028856990230285047,
+     "score06_exact_share": 0.32914046121593293
+    },
+    "15": {
+     "n_entries_n12": 1285,
+     "n_entries_m2": 2295,
+     "gated": true,
+     "failing_p99": 1.31885810571936,
+     "failing_times_tol": 62.33153644768659,
+     "score06_p99": 0.0,
+     "score06_exact_share": 1.0
+    }
+   },
+   "pass_side_ok": true,
+   "fail_side_ok": true,
+   "summary": "gated pass p99 [0.0, 0.0, 0.0]; failing 28-496 times the tolerance"
+  },
+  "G_TOPK": {
+   "scope": "11 points; score-06 (M2's entries)",
+   "banked": true,
+   "points": {
+    "5": {
+     "p99": 0.0,
+     "n": 4,
+     "failing_p99": 1.0174438357354811,
+     "tol": 0.021158761373165365
+    },
+    "6": {
+     "p99": 0.0,
+     "n": 4,
+     "failing_p99": 0.9976326931795155,
+     "tol": 0.021158761373165365
+    },
+    "7": {
+     "p99": 0.0068107800350585695,
+     "n": 10,
+     "failing_p99": 1.0156926502333725,
+     "tol": 0.044273286522651334
+    },
+    "8": {
+     "p99": 0.011322357503585513,
+     "n": 62,
+     "failing_p99": 1.4031065534708684,
+     "tol": 0.044273286522651334
+    },
+    "9": {
+     "p99": 0.009773210572388436,
+     "n": 86,
+     "failing_p99": 1.1184427880846892,
+     "tol": 0.044273286522651334
+    },
+    "10": {
+     "p99": 0.011485390847470694,
+     "n": 108,
+     "failing_p99": 1.1114198597448282,
+     "tol": 0.044273286522651334
+    },
+    "11": {
+     "p99": 0.012950179049060035,
+     "n": 268,
+     "failing_p99": 1.075185057161008,
+     "tol": 0.044273286522651334
+    },
+    "12": {
+     "p99": 0.015785358396101103,
+     "n": 636,
+     "failing_p99": 1.1564786569603758,
+     "tol": 0.044273286522651334
+    },
+    "13": {
+     "p99": 0.013150944397514136,
+     "n": 1366,
+     "failing_p99": 1.2184918736990242,
+     "tol": 0.044273286522651334
+    },
+    "14": {
+     "p99": 0.014174279882684142,
+     "n": 934,
+     "failing_p99": 1.2178311140722078,
+     "tol": 0.044273286522651334
+    },
+    "15": {
+     "p99": 0.0,
+     "n": 5675,
+     "failing_p99": 1.1284506353152992,
+     "tol": 0.021158761373165365
+    }
+   },
+   "pass_side_ok": true,
+   "fail_side_ok": true,
+   "summary": "pass p99 max 0.0158; failing p99 min 0.998"
+  },
+  "I_ID": {
+   "scope": "T_13; score-04, score-05, score-06",
+   "banked": true,
+   "pass_side_ok": true,
+   "fail_side_ok": true,
+   "summary": "exact share 1.0, failing p99 3.381"
+  },
+  "DEGENERATE": {
+   "scope": "11 points, every layer the plan reads (bank_scan.json)",
+   "banked": true,
+   "in_plan_layers": {
+    "5": [],
+    "6": [],
+    "7": [],
+    "8": [
+     "L07N640-"
+    ],
+    "9": [],
+    "10": [
+     "L24N9826+"
+    ],
+    "11": [],
+    "12": [],
+    "13": [],
+    "14": [],
+    "15": []
+   },
+   "own_pole_degenerate": [],
+   "pass_side_ok": true,
+   "fail_side_ok": true,
+   "summary": "T_8 ['L07N640-']; T_10 ['L24N9826+']; no own pole"
+  },
+  "USABLE": {
+   "scope": "both halves; real, pb, dt",
+   "banked": true,
+   "counts": {
+    "dt_freeze": 73,
+    "dt_test": 67,
+    "pb_freeze": 79,
+    "pb_test": 70,
+    "real_freeze": 82,
+    "real_test": 71
+   },
+   "pass_side_ok": true,
+   "fail_side_ok": true,
+   "summary": "{\"dt_freeze\": 73, \"dt_test\": 67, \"pb_freeze\": 79, \"pb_test\": 70, \"real_freeze\": 82, \"real_test\": 71}"
+  },
+  "MOVEMENT": {
+   "scope": "freeze half (82); the test half is read only at the verdict",
+   "banked": true,
+   "move": {
+    "n": 82,
+    "mean": 1.0562142171712985,
+    "lo": 0.839335677301536,
+    "hi": 1.2848361893744107
+   },
+   "identity": {
+    "n": 82,
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0
+   },
+   "pass_side_ok": true,
+   "fail_side_ok": true,
+   "summary": "mean log10 r0 - log10 r1 1.056 [0.839, 1.285]; identity 0"
+  },
+  "CONSTRUCTION_TWIN": {
+   "scope": "T_15, freeze half, M2's twins under B (the dt operator)",
+   "banked": true,
+   "n": 79,
+   "hits": 1.0,
+   "opposite": 0.0,
+   "pass_side_ok": true,
+   "fail_side_ok": true,
+   "summary": "1.000 of 79; opposite pole 0.000"
+  }
+ },
+ "not_banked": {
+  "G_ABL_ID": {
+   "scope": "no ablation banked; dry run only (tiny world: clean rows exact, the planted clean-row ablation stops the job)",
+   "banked": false,
+   "pass_side_ok": null,
+   "fail_side_ok": null
+  },
+  "I_GRAD": {
+   "scope": "no gradient banked; dry run only (tiny world: the reversed pass and the planted noise)",
+   "banked": false,
+   "pass_side_ok": null,
+   "fail_side_ok": null
+  },
+  "G_VAL": {
+   "scope": "no ablation or gradient banked; dry run only (fp32 finite differences, the tiny world, planted records)",
+   "banked": false,
+   "pass_side_ok": null,
+   "fail_side_ok": null
+  }
+ }
+}

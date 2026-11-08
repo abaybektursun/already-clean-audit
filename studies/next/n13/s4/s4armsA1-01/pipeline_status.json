@@ -1,0 +1,72 @@
+{
+  "started_utc": "2026-11-06T23:01:25Z",
+  "n_steps": 8,
+  "state": "complete",
+  "completed": 8,
+  "steps": [
+    {
+      "i": 0,
+      "name": "setup",
+      "module": "infra.aws_pg.jobs.n13_setup",
+      "args": "--pair pair1 --models base,rl",
+      "state": "ok",
+      "returncode": 0
+    },
+    {
+      "i": 1,
+      "name": "top_k1",
+      "module": "infra.aws_pg.jobs.n13_gen",
+      "args": "--arm top_k1 --bench math500,gsm8k --problems 0:500 --sets s3://pg-lineage-769063704696/results/next_n13/s4armsA1-01/inputs/sets.json --setup-dir /work/out/setup --cap-from s3://pg-lineage-769063704696/results/next_n13/s4armsA1-01/inputs/thresholds.json --allowance-min 2146 --proj-tok-s 236.5774019149508 --proj-mean-math 5498.672839506173 --proj-mean-gsm 940.0 --proj-load-min 14.352775791059367",
+      "state": "ok",
+      "returncode": 0
+    },
+    {
+      "i": 2,
+      "name": "mlp",
+      "module": "infra.aws_pg.jobs.n13_gen",
+      "args": "--arm mlp --bench math500,gsm8k --problems 0:500 --sets s3://pg-lineage-769063704696/results/next_n13/s4armsA1-01/inputs/sets.json --setup-dir /work/out/setup --cap-from s3://pg-lineage-769063704696/results/next_n13/s4armsA1-01/inputs/thresholds.json --allowance-min 2146 --proj-tok-s 236.5774019149508 --proj-mean-math 5498.672839506173 --proj-mean-gsm 940.0 --proj-load-min 14.352775791059367",
+      "state": "ok",
+      "returncode": 0
+    },
+    {
+      "i": 3,
+      "name": "top_k0.3",
+      "module": "infra.aws_pg.jobs.n13_gen",
+      "args": "--arm top_k0.3 --bench math500 --problems 0:500 --sets s3://pg-lineage-769063704696/results/next_n13/s4armsA1-01/inputs/sets.json --setup-dir /work/out/setup --cap-from s3://pg-lineage-769063704696/results/next_n13/s4armsA1-01/inputs/thresholds.json --allowance-min 2146 --proj-tok-s 236.5774019149508 --proj-mean-math 5498.672839506173 --proj-mean-gsm 940.0 --proj-load-min 14.352775791059367",
+      "state": "ok",
+      "returncode": 0
+    },
+    {
+      "i": 4,
+      "name": "dare_k3",
+      "module": "infra.aws_pg.jobs.n13_gen",
+      "args": "--arm dare_k3 --bench math500 --problems 0:500 --sets s3://pg-lineage-769063704696/results/next_n13/s4armsA1-01/inputs/sets.json --setup-dir /work/out/setup --cap-from s3://pg-lineage-769063704696/results/next_n13/s4armsA1-01/inputs/thresholds.json --allowance-min 2146 --proj-tok-s 236.5774019149508 --proj-mean-math 5498.672839506173 --proj-mean-gsm 940.0 --proj-load-min 14.352775791059367",
+      "state": "ok",
+      "returncode": 0
+    },
+    {
+      "i": 5,
+      "name": "dare_k0.1",
+      "module": "infra.aws_pg.jobs.n13_gen",
+      "args": "--arm dare_k0.1 --bench math500 --problems 0:500 --sets s3://pg-lineage-769063704696/results/next_n13/s4armsA1-01/inputs/sets.json --setup-dir /work/out/setup --cap-from s3://pg-lineage-769063704696/results/next_n13/s4armsA1-01/inputs/thresholds.json --allowance-min 2146 --proj-tok-s 236.5774019149508 --proj-mean-math 5498.672839506173 --proj-mean-gsm 940.0 --proj-load-min 14.352775791059367",
+      "state": "ok",
+      "returncode": 0
+    },
+    {
+      "i": 6,
+      "name": "comp_k3",
+      "module": "infra.aws_pg.jobs.n13_gen",
+      "args": "--arm comp_k3 --bench math500 --problems 0:500 --sets s3://pg-lineage-769063704696/results/next_n13/s4armsA1-01/inputs/sets.json --setup-dir /work/out/setup --cap-from s3://pg-lineage-769063704696/results/next_n13/s4armsA1-01/inputs/thresholds.json --allowance-min 2146 --proj-tok-s 236.5774019149508 --proj-mean-math 5498.672839506173 --proj-mean-gsm 940.0 --proj-load-min 14.352775791059367",
+      "state": "ok",
+      "returncode": 0
+    },
+    {
+      "i": 7,
+      "name": "top_k1_B",
+      "module": "infra.aws_pg.jobs.n13_gen",
+      "args": "--arm top_k1_B --bench math500 --problems 0:500 --sets s3://pg-lineage-769063704696/results/next_n13/s4armsA1-01/inputs/sets.json --setup-dir /work/out/setup --cap-from s3://pg-lineage-769063704696/results/next_n13/s4armsA1-01/inputs/thresholds.json --allowance-min 2146 --proj-tok-s 236.5774019149508 --proj-mean-math 5498.672839506173 --proj-mean-gsm 940.0 --proj-load-min 14.352775791059367",
+      "state": "ok",
+      "returncode": 0
+    }
+  ]
+}

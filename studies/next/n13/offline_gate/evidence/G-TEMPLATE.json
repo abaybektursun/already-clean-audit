@@ -1,0 +1,37 @@
+{
+ "pair1": {
+  "pass": true,
+  "n": 500,
+  "mismatched": [],
+  "n_mismatched": 0,
+  "first_id_is_bos": [
+   false
+  ],
+  "ids_sha256": "ff88a606d5689ed7d58db1563432d3289f9686ef513f9577b827d60d04fd0088",
+  "failing_input": {
+   "what": "the render with add_generation_prompt=False",
+   "failed": true,
+   "tail": "orm $(r,\\theta),$ where $r > 0$ and $0 \\le \\theta < 2 \\pi.$\n"
+  },
+  "chat_template_sha256": "4380e62276b7ce7e28e30be381840f7cef65f20f43173437cae5d2d6908a6155"
+ },
+ "pair1b": {
+  "pass": true,
+  "n": 500,
+  "mismatched": [],
+  "n_mismatched": 0,
+  "first_id_is_bos": [
+   false
+  ],
+  "ids_sha256": "d2b630789d074079f7c3cf8d6941922ecd8c958b46ee804e6abc769a51ad0d20",
+  "failing_input": {
+   "what": "the render with add_generation_prompt=False",
+   "failed": true,
+   "tail": "orm $(r,\\theta),$ where $r > 0$ and $0 \\le \\theta < 2 \\pi.$\n"
+  },
+  "chat_template_sha256": "bbff3bab94f2df1534d5971cb5ef47bfa3b06f1fb56965cc70dbcf261e72d3fa"
+ },
+ "chat_template_sha256_pair1": "4380e62276b7ce7e28e30be381840f7cef65f20f43173437cae5d2d6908a6155",
+ "max_prompt_tokens": 811,
+ "min_prompt_tokens": 62
+}

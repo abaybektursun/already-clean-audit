@@ -1,0 +1,8 @@
+[
+ {"name": "know_5m",  "module": "infra.aws_pg.jobs.helmholtz2_arm",
+  "args": "--arm know --dose-tokens 5000000 --lr 2e-4 --seed 0 --bind-s3 s3://pg-lineage-769063704696/results/h2_seed/out/metrics.json"},
+ {"name": "know_20m", "module": "infra.aws_pg.jobs.helmholtz2_arm",
+  "args": "--arm know --dose-tokens 20000000 --lr 2e-4 --seed 0 --bind-s3 s3://pg-lineage-769063704696/results/h2_seed/out/metrics.json"},
+ {"name": "know_80m", "module": "infra.aws_pg.jobs.helmholtz2_arm",
+  "args": "--arm know --dose-tokens 80000000 --lr 2e-4 --seed 0 --bind-s3 s3://pg-lineage-769063704696/results/h2_seed/out/metrics.json"}
+]

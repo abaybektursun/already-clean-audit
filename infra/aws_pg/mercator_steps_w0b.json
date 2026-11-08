@@ -1,0 +1,7 @@
+[
+  {"name": "M-A7", "module": "infra.aws_pg.jobs.mercator_w0_audit",  "args": "--arm M-A7"},
+  {"name": "M-D1", "module": "infra.aws_pg.jobs.mercator_w0_audit",  "args": "--arm M-D1"},
+  {"name": "M-V",  "module": "infra.aws_pg.jobs.mercator_w0_roster", "args": "--arm M-V"},
+  {"name": "M-D4", "module": "infra.aws_pg.jobs.mercator_w0_roster", "args": "--arm M-D4"},
+  {"name": "M-D3", "module": "infra.aws_pg.jobs.mercator_w0_roster", "args": "--arm M-D3"}
+]

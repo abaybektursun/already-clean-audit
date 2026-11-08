@@ -1,0 +1,58 @@
+{
+ "pass": {
+  "n_names": 355,
+  "n_expected": 355,
+  "missing": [],
+  "extra": [],
+  "per_family": {
+   "mlp": 4328521728,
+   "attn": 2147483648,
+   "norm": 528384,
+   "embed": 821477376
+  },
+  "sum": 7298011136,
+  "total": 7298011136,
+  "pass": true
+ },
+ "failing_input": {
+  "n_names": 354,
+  "n_expected": 355,
+  "missing": [
+   "model.layers.0.mlp.down_proj.weight"
+  ],
+  "extra": [],
+  "per_family": {
+   "mlp": 4283432960,
+   "attn": 2147483648,
+   "norm": 528384,
+   "embed": 821477376
+  },
+  "sum": 7252922368,
+  "total": 7298011136,
+  "pass": false
+ },
+ "index_total_parameters": 7298011136,
+ "base_names_equal": true,
+ "config_shape_fields_equal": {
+  "num_hidden_layers": true,
+  "hidden_size": true,
+  "intermediate_size": true,
+  "num_attention_heads": true,
+  "num_key_value_heads": true,
+  "vocab_size": true,
+  "tie_word_embeddings": true,
+  "sliding_window": true,
+  "layer_types": true,
+  "rope_scaling": true
+ },
+ "config_differences": {
+  "use_cache": [
+   false,
+   true
+  ],
+  "transformers_version": [
+   "4.57.1",
+   "4.57.0"
+  ]
+ }
+}

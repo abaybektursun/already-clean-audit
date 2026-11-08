@@ -1,0 +1,33 @@
+{
+  "rental": "r_v4",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:v1-anchor-gemma2b",
+  "disk": 30,
+  "gpu_query": "gpu_ram>=16 num_gpus=1 cuda_vers>=12.8 compute_cap>=800",
+  "expected_gpu": "",
+  "bound": "compute",
+  "watch": {
+    "max_billed_h": 4,
+    "load_backstop_min": 45
+  },
+  "_comment": "V4 substrate ladder (LAST by construction, spec 0.2.3): 4 doubling rungs from 4x256, one seed each, byte-level frozen text (sha aca2f46735043bcf), checkpoints banked per rung, stop-on-fire. Smoke = 1 tiny rung x few steps.",
+  "cells": [
+    {
+      "id": "v4_smoke",
+      "module": "infra.vast.cells.v4_substrate",
+      "rungs": "[[2,128]]",
+      "steps": 60,
+      "ckpt_every": 20,
+      "batch": 8,
+      "text_s3": "s3://pg-lineage-769063704696/code/shackleton/v4_text.bin"
+    },
+    {
+      "id": "v4_ladder",
+      "module": "infra.vast.cells.v4_substrate",
+      "rungs": "[[4,256],[4,512],[8,512],[8,1024]]",
+      "steps": 3000,
+      "ckpt_every": 300,
+      "batch": 32,
+      "text_s3": "s3://pg-lineage-769063704696/code/shackleton/v4_text.bin"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+late_primary jobs: 1238
+p < 0.05 (= born later than > 95% of 300 random same-size groups; ties count against): 150 (0.121)
+same count against set B instead of A: 152; against A and B together (600 draws): 152
+mid-p version (ties count half): 210; strict share-earlier > 0.95: 150
+share born later than the median random group: 0.532
+chance level of that share (leave-one-draw-out, same selection B3+B4): 0.432 [0.386028220421971, 0.4727920608802962]
+failing jobs only: share later than the median random group 0.468; chance level 0.418 [0.3741862620178385, 0.4596377416214713]
+all late-born by the percentile reading (n 1535): 163 pass
+chance (i) 0.05 x 1238 = 61.9
+chance (ii) leave-one-draw-out in A, same selection (B3+B4): {'mean_selected': np.float64(471.58666666666664), 'mean_passing': np.float64(10.776666666666667), 'pass_share': np.float64(0.02285193248324804), 'expected_among_real_n': np.float64(28.290692414261073), 'passing_ci95': [6.0, 17.524999999999977]}
+chance (ii) leave-one-draw-out in A, percentile late only: {'mean_selected': np.float64(1282.1433333333334), 'mean_passing': np.float64(20.7), 'pass_share': np.float64(0.016144840800430528), 'expected_among_real_n': np.float64(19.987312910932992), 'passing_ci95': [13.0, 29.0]}
+chance (ii) for the mid-p version, B3+B4: {'mean_selected': np.float64(471.58666666666664), 'mean_passing': np.float64(25.416666666666668), 'pass_share': np.float64(0.0538960671774718), 'expected_among_real_n': np.float64(66.72333116571009), 'passing_ci95': [17.0, 34.0]}
+chance (iii) set B pseudo-real vs A, B3+B4: {'mean_selected': np.float64(468.45), 'mean_passing': np.float64(11.636666666666667), 'pass_share': np.float64(0.024840786992564128), 'expected_among_real_n': np.float64(30.75289429679439), 'passing_ci95': [5.0, 19.0]}
+chance (iii) set B pseudo-real vs A, percentile late only: {'mean_selected': np.float64(1282.8333333333333), 'mean_passing': np.float64(22.836666666666666), 'pass_share': np.float64(0.017801740938027805), 'expected_among_real_n': np.float64(22.038555281278423), 'passing_ci95': [13.475000000000001, 32.52499999999998]}
+late_primary [n, passing] by birth point: {'T_0': [0, 0], 'T_1': [0, 0], 'T_2': [0, 0], 'T_3': [0, 0], 'T_4': [2, 0], 'T_5': [10, 0], 'T_6': [14, 1], 'T_7': [27, 0], 'T_8': [67, 7], 'T_9': [76, 3], 'T_10': [114, 9], 'T_11': [164, 19], 'T_12': [247, 30], 'T_13': [271, 27], 'T_14': [212, 33], 'T_15': [34, 21]}

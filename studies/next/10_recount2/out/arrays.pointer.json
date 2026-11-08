@@ -1,0 +1,120 @@
+{
+ "path": "/Users/abaybektursun/projects/interp_research_banks/neurons/next/recount2/arrays.npz",
+ "sha256": "80e5ffac44ea44b3d7794f3e57bd51aa67ba5b6b8508985d60d1b12d6c6ddba4",
+ "bytes": 4543036,
+ "inputs": [
+  {
+   "t": 0,
+   "exemplar_a": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1/out/t00_step0/poles/exemplar_a.npz",
+   "sha256_npz": "30c424c37f2e16b00648fa9e710dd991c682990eab9859b71be05ba9d015de74",
+   "contexts": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1/out/t00_step0/samples/contexts.jsonl",
+   "sha256_ctx": "37749b6b33bfa2a6599f1db69575a94b519c6e6a696d0e0eb9b11c4947a93ddc"
+  },
+  {
+   "t": 1,
+   "exemplar_a": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1/out/t01_step1000/poles/exemplar_a.npz",
+   "sha256_npz": "1b25209ebad148c4df0eefbc579affd7e6133591fe889193d78e90732a43cfe2",
+   "contexts": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1/out/t01_step1000/samples/contexts.jsonl",
+   "sha256_ctx": "650bf599c70ea8b6abcb1acc0fcb32dad4ff8850308a9a67134d7eb003ddf700"
+  },
+  {
+   "t": 2,
+   "exemplar_a": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1/out/t02_step2000/poles/exemplar_a.npz",
+   "sha256_npz": "9fb744bd4b06161056eff98b0b871efab587a65d4d50b03515121cb6cbdc2211",
+   "contexts": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1/out/t02_step2000/samples/contexts.jsonl",
+   "sha256_ctx": "0467369a31c17b072e0c24756cd0404f97aa04d23cd4d299e0640df025f71693"
+  },
+  {
+   "t": 3,
+   "exemplar_a": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1/out/t03_step3000/poles/exemplar_a.npz",
+   "sha256_npz": "7dea0b22fde45a486208a96fa6220474c84fc4d4c7df162593b59636200a1b40",
+   "contexts": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1/out/t03_step3000/samples/contexts.jsonl",
+   "sha256_ctx": "abb702c715275eca838c7289cffce583c1952d5de70188dfc2e50e02611fba34"
+  },
+  {
+   "t": 4,
+   "exemplar_a": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1/out/t04_step5000/poles/exemplar_a.npz",
+   "sha256_npz": "e75de996b2dcb85bc81aec805ed57c57d9c16081e86b344d5e75d256f481cd59",
+   "contexts": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1/out/t04_step5000/samples/contexts.jsonl",
+   "sha256_ctx": "277f222642b5575bf1061630fdd0e9d2402ad2257edd574f0999befd7c5113f8"
+  },
+  {
+   "t": 5,
+   "exemplar_a": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1/out/t05_step8000/poles/exemplar_a.npz",
+   "sha256_npz": "267fcec9cf28dc754156297bd1788a7c7704e7e53b6f836dac197d016bccdf3d",
+   "contexts": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1/out/t05_step8000/samples/contexts.jsonl",
+   "sha256_ctx": "6388809179817850bb67713ad170f837ed70bd723a57744c121527eb0487f99e"
+  },
+  {
+   "t": 6,
+   "exemplar_a": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1/out/t06_step12000/poles/exemplar_a.npz",
+   "sha256_npz": "ec9743010cce40da2a94bc165629d165e3084a58aaae6da2dea402035b047bb2",
+   "contexts": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1/out/t06_step12000/samples/contexts.jsonl",
+   "sha256_ctx": "d816a227a7dd127c364489a838bd49f074affade276bf05e5504b8cbf8fc1c3d"
+  },
+  {
+   "t": 7,
+   "exemplar_a": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1b/out/t07_step20000/poles/exemplar_a.npz",
+   "sha256_npz": "ab9d78e05307d32c0e7315ab1f848986f9b90203e82de5af2c8e3282e45e70fe",
+   "contexts": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1b/out/t07_step20000/samples/contexts.jsonl",
+   "sha256_ctx": "c115b531d2637d4f3f6f853d00094d248ceada879193be24ce162cc12f015b24"
+  },
+  {
+   "t": 8,
+   "exemplar_a": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1b/out/t08_step35000/poles/exemplar_a.npz",
+   "sha256_npz": "de72e1de5977f37ecb7e439e51397b5a6781fde8709fd38e0bc1ab35be86f7a3",
+   "contexts": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1b/out/t08_step35000/samples/contexts.jsonl",
+   "sha256_ctx": "e9fb602d42417d89c45ffdaed1c802f8445f92378c36a6fac5e15a5a175c35b3"
+  },
+  {
+   "t": 9,
+   "exemplar_a": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1b/out/t09_step60000/poles/exemplar_a.npz",
+   "sha256_npz": "8b1bad79aa8e635eb2ab54f4c5210193b00f11044784854e4e507e14db2096f2",
+   "contexts": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1b/out/t09_step60000/samples/contexts.jsonl",
+   "sha256_ctx": "15b0dad7350df871dd1d5ee3471a58b4781b2db24796d1dd02a498a109fa21cd"
+  },
+  {
+   "t": 10,
+   "exemplar_a": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1b/out/t10_step100000/poles/exemplar_a.npz",
+   "sha256_npz": "9e79b4209c37e84c362602aecb50a8eef3016a3d73224dddfbe70ff601293989",
+   "contexts": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1b/out/t10_step100000/samples/contexts.jsonl",
+   "sha256_ctx": "c700f2e882bccdae862e20f4c605cf1b2b8b5a4a2e78749f810d3dc7d85b12b2"
+  },
+  {
+   "t": 11,
+   "exemplar_a": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1b/out/t11_step180000/poles/exemplar_a.npz",
+   "sha256_npz": "27569b4b8210973491a9b59cd075eca7da8ed77049f112cc28d0a45142174b3a",
+   "contexts": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1b/out/t11_step180000/samples/contexts.jsonl",
+   "sha256_ctx": "cb579d3707983a75133f56040bad8c828efa01ffefaa454f2c951e78d924d5a8"
+  },
+  {
+   "t": 12,
+   "exemplar_a": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1b/out/t12_step320000/poles/exemplar_a.npz",
+   "sha256_npz": "6e015a60d7e6719d7a3e6825a36c710bdfe11838a0a5cd7ae9896116b1b7d6bc",
+   "contexts": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1b/out/t12_step320000/samples/contexts.jsonl",
+   "sha256_ctx": "ee7de41e40f3151a59470e2615a6c8edb98f3adce5df7c1dca7d5c25434824d5"
+  },
+  {
+   "t": 13,
+   "exemplar_a": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1b/out/t13_step560000/poles/exemplar_a.npz",
+   "sha256_npz": "7976ca719702c6cdb1dc7db5ea95c296e43893be76438c3f9c2173c257e35d8d",
+   "contexts": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1b/out/t13_step560000/samples/contexts.jsonl",
+   "sha256_ctx": "4338fb3238130ac860145406dfada723bc953bf8292f1b2b48165dd782069a65"
+  },
+  {
+   "t": 14,
+   "exemplar_a": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1b/out/t14_step1000000/poles/exemplar_a.npz",
+   "sha256_npz": "9fabd78be6d81b5c4cecbc52e9ca883ec9a0ea3db5f2a8067c86e8e25c37e09e",
+   "contexts": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1b/out/t14_step1000000/samples/contexts.jsonl",
+   "sha256_ctx": "692e85854bebb5446522b6c3cb16138bee0d57c581de5d1ecd48595f645ddc9a"
+  },
+  {
+   "t": 15,
+   "exemplar_a": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1/out/t15_step1413814/poles/exemplar_a.npz",
+   "sha256_npz": "84bd59fdaf6b45727778b86ae82602b6815d4b8cda591a1237f022aa09ace300",
+   "contexts": "/Users/abaybektursun/projects/interp_research_banks/neurons/w3/grid/1/out/t15_step1413814/samples/contexts.jsonl",
+   "sha256_ctx": "a4d46cd837f7a7532c300cac7372df1908e37f25b5acf57b6ea1ea37493e3269"
+  }
+ ],
+ "written_by": "studies/next/10_recount2/01_load.py"
+}

@@ -1,0 +1,21 @@
+{
+  "rung": "Qwen/Qwen2.5-14B",
+  "need": 12,
+  "checked": 12,
+  "aligned_count": 12,
+  "aligned": [
+    "Qwen/Qwen2.5-14B-Instruct",
+    "Qwen/Qwen2.5-Coder-14B",
+    "Qwen/Qwen2.5-14B-Instruct-1M",
+    "deepcogito/cogito-v1-preview-qwen-14B",
+    "arcee-ai/Virtuoso-Small-v2",
+    "EVA-UNIT-01/EVA-Qwen2.5-14B-v0.2",
+    "arcee-ai/Virtuoso-Small",
+    "nvidia/OpenReasoning-Nemotron-14B",
+    "unsloth/Qwen2.5-14B",
+    "dec0dedd/Qwen2.5-14B-Instruct-heretic",
+    "dennis19319/Qwen2.5-14B-Merged-670train",
+    "Gaurav1872/Qwen2.5-14B-Instruct"
+  ],
+  "verdict": "PASS"
+}

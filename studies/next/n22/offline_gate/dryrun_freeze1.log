@@ -1,0 +1,103 @@
+CHECK REAL items.json sha256 equals n22_score.ITEMS_SHA                  PASS dbf0b2251516edeb
+CHECK REAL items.json reproduces byte for byte from the frozen rule      PASS 
+CHECK REAL pool: 1,200 items, 600 per half, the arithmetic, 7 distinct numbers, no exemplar copy PASS 
+CHECK REAL pool: five v per item, targets single tokens, distinct from every number of the item PASS 
+CHECK REAL counterfactuals: slot-1 sum = v (same c, d), slot-2 product = v (same d) PASS 
+CHECK REAL partners: same half, other (c, d), shuffled targets single tokens PASS 
+CHECK REAL class prompts: 16 per value, the slot's intermediate equals the value PASS 316 values
+CHECK REAL gate_sides.json was computed on this items.json               PASS 
+CHECK REAL bank-side gate K0: pass side passes, failing input fails at every point PASS pairs [0.0, 0.0, 6.1683e-05]; neighbour gap / tol min 3.4
+CHECK REAL bank-side gate G_REV: pass side passes, failing input fails at every point PASS 16 points
+CHECK REAL bank-side gate G_CFG: pass side passes, failing input fails at every point PASS 16 points
+CHECK REAL bank-side gate G_CORPUS: pass side passes, failing input fails at every point PASS 16 manifests and the corpus record
+CHECK REAL bank-side gate G_TOK: pass side passes, failing input fails at every point PASS all 1,200 items, 2,400 counterfactuals and every class prompt re-encode
+CHECK REAL K0: every failing input (the neighbour's bank) exceeds its tier by >= 3 x PASS 3.39
+CHECK REAL the real registry has no dry-run key and the registered revisions PASS 
+CHECK REAL the real registry: target block 30, sources 0-29, upper half 16-29, 24 lens prompts PASS 
+CHECK SCORE interaction: [(-1)-(-6)] + [(-2)-(-5)] = 8                   PASS 
+CHECK SCORE interaction is unchanged by a log-partition shift per edit   PASS 
+CHECK SCORE lens swap: the coordinates exchange; the orthogonal part is unchanged PASS 
+CHECK SCORE lens swap with sigma the identity is exactly zero            PASS 
+CHECK SCORE random lens edit: the same norm per position, another direction PASS 
+CHECK SCORE mean-difference patch: one position; its random floor has the same norm PASS 
+CHECK SCORE ranks: 1 + strictly larger (a tie shares the rank)           PASS 
+CHECK SCORE linear CKA: 1 on itself, 1 under rotation, lower on unrelated PASS [1.0, 1.0, 0.15]
+CHECK SCORE the job's centred-Gram CKA equals linear_cka                 PASS 
+CHECK SCORE cka_block: block-diagonal > 0, constant = 0                  PASS 
+CHECK SCORE excess kurtosis: Gaussian about 0, Laplace about 3           PASS [0.003, 2.989]
+CHECK SCORE bootstrap of a constant: interval is the point               PASS 
+CHECK SCORE band rule: l1 the first maximum (tie: lower layer), l2, the matched layer and its band PASS {'l1': 1, 'l2': 3, 'lm': 2, 'band_m': [1, 2, 3], 'matched': 0.4}
+CHECK SCORE readout PRESENT and NOT_PRESENT                              PASS 
+CHECK SCORE factorizations of 63: (31? no) 21x3, 9x7, 7x9                PASS
+CHECK JOB L1 (15:full) exits 0 and prints N22_JOB_OK                     PASS exit 0
+CHECK JOB L1 metrics complete, nothing parked                            PASS 
+CHECK JOB L1 every gate passed                                           PASS ['G_CORPUS', 'G_SAME', 'INPUTS', 't15_G_CFG', 't15_G_IC_ID_freeze', 't15_G_IC_ID_test', 't15_G_REV', 't15_G_TOK', 't15_I_EDIT', 't15_I_FWD', 't15_I_GRAD', 't15_K0', 't15_LENS_FIDELITY']
+CHECK JOB L1 every registered failing input failed                       PASS 13 failing inputs
+CHECK JOB L1 K0 equals the bank written by neurons_harvest.run, bit for bit PASS 11.535791015625
+CHECK JOB L1 I-GRAD: the repeated pass is bit-identical; prompt 1 differs PASS min rel of the failing input 0.544
+CHECK JOB L1 I_FWD passes; its failing input fails                       PASS {"max_abs": 0.0}
+CHECK JOB L1 I_EDIT passes; its failing input fails                      PASS {"max_abs": 0.0}
+CHECK JOB L1 G_IC_ID_freeze passes; its failing input fails              PASS {"max_abs": 0.0, "n": 64}
+CHECK JOB L1 G_IC_ID_test passes; its failing input fails                PASS {"max_abs": 0.0, "n": 64}
+CHECK JOB L1 LENS_FIDELITY passes; its failing input fails               PASS {"cos_lens": 0.9055010676383972, "cos_rotated": 0.09680161625146866}
+CHECK JOB L1 G_TOK passes; its failing input fails                       PASS {"n": 20}
+CHECK JOB L1 metrics.json carries no interaction, share or label         PASS 
+CHECK JOB L1 every record file written                                   PASS []
+CHECK JOB L1 bands within the source layers; tiny constants (target 6, upper 4-5) PASS {'l1': 0, 'l2': 0, 'lm': 0, 'band_m': [0, 1], 'matched': 0.0}
+CHECK JOB L1 one edit row per (item, v, arm, slot) in the test half      PASS 4800 of 4800
+CHECK JOB L1 the edit rows split by half                                 PASS 
+CHECK JOB L1 interchange control: the freeze half at every site, both kinds PASS [-1, 0, 4]
+CHECK JOB L1 an item's interaction recomputes from the records           PASS I(first v) -0.0661
+CHECK JOB L1 the scored tokens are the item's f1, f2 (number ids) and the clean table has 1,000 columns PASS 
+CHECK JOB L1 raw examples: >= 10, the prompt, top-10 readouts, every arm PASS 10 examples
+CHECK JOB L1 probes: linear and MLP, real and permuted, at the probe layers PASS 
+CHECK JOB L1 N25 statistics for the four lens variants                   PASS 
+CHECK JOB L2 (accuracy at three points) exits 0; K0 and the accuracy counts at each PASS exit 0
+CHECK JOB L2 plan-lens from the scan (T_13, T_14 answered in the tiny world) PASS {'n22_points': [13, 14], 'n25_points': [0, 12], 'order': [0, 14, 13, 12], 'rule': 'SPEC §9.5; park from the end of `order`'}
+CHECK JOB L3 (n25, full, full) exits 0, complete                         PASS exit 0
+CHECK JOB L3 the n25 point has the lens, the readout and N25 but no edits PASS 
+CHECK FAIL G_SAME: the job exits non-zero naming it                      PASS AssertionError: G_SAME failed: {"pass": false, "versions": {"torch": "2.12.0", "transformers": "5.9.0"}, "registered": {"torch": "0", "transformers": "0.0.0"}, "failing_i
+CHECK FAIL INPUTS: the job exits non-zero naming it                      PASS AssertionError: INPUTS failed: {"pass": false, "got": "b222e005da24d36e43a61126db88903b3f889482e82208f0ef216c0e935ad307", "failing_input": {"pass": false}}
+CHECK FAIL G_CORPUS: the job exits non-zero naming it                    PASS AssertionError: G_CORPUS failed: {"pass": false, "got": "c62abf9704662f723638337745c94b919ed8ab8aee85fc4e443a7e74892e1bf5", "failing_input": {"pass": false}}
+CHECK FAIL G_REV: the job exits non-zero naming it                       PASS AssertionError: t15_G_REV failed: {"pass": false, "commit": "422b78f651b3f1b6e1034821f8543046047502b9", "registered": "1111111111111111111111111111111111111111", "failing
+CHECK FAIL G_CFG: the job exits non-zero naming it                       PASS AssertionError: t15_G_CFG failed: {"pass": false, "diff_keys": ["hidden_size"], "sliding_window": 4096, "failing_input": {"pass": false, "diff_keys": ["hidden_size", "mod
+CHECK FAIL K0: the job exits non-zero naming it                          PASS AssertionError: t15_K0 failed: {"pass": false, "nll": 11.535791015625, "bank": 11.536791015624999, "diff": -0.0009999999999994458, "tol": 1e-06, "same_device": true, "fai
+CHECK FAIL K0 without power: the job exits non-zero naming it            PASS AssertionError: t15_K0: its failing input passed
+CHECK FAIL I_GRAD: the job exits non-zero naming it                      PASS AssertionError: t15_I_GRAD failed: {"pass": false, "max_rel": 0.007282330188900232, "bit_identical": false, "tol": 1e-06, "failing_input": {"pass": false, "what": "prompt
+CHECK FAIL LENS_FIDELITY: the job exits non-zero naming it               PASS AssertionError: t15_LENS_FIDELITY failed: {"pass": false, "cos_lens": -0.09128832817077637, "cos_rotated": 0.03355903550982475, "cos_identity": 0.8926700353622437, "lens_
+CHECK FAIL I_FWD: the job exits non-zero naming it                       PASS AssertionError: t15_I_FWD failed: {"pass": false, "max_abs": 0.010000228881835938, "tol": 0.0001, "failing_input": {"pass": false, "what": "the partner's forward", "max_a
+CHECK FAIL I_EDIT: the job exits non-zero naming it                      PASS AssertionError: t15_I_EDIT failed: {"pass": false, "max_abs": 0.27401065826416016, "tol": 0.0001, "failing_input": {"pass": false, "max_abs": 0.014248847961425781, "what"
+CHECK FAIL G_IC_ID: the job exits non-zero naming it                     PASS AssertionError: t15_G_IC_ID_freeze failed: {"pass": false, "max_abs": 0.1436023712158203, "tol": 0.0001, "n": 64, "failing_input": {"pass": true, "what": "the item's clea
+CHECK FAIL G_TOK (a registered prompt that the tokenizer does not produce) PASS AssertionError: t15_G_TOK failed: {"pass": false, "n": 20, "failing_input": {"pass": false, "what": "item 0's ids against item 1's"}}
+CHECK FAIL stop rule: the projection parks the remaining points; the job ends normally PASS {'at': 14, 'elapsed_s': 25, 'remaining_s': 36000, 'budget_s': 1800.0}
+CHECK VERDICT freeze on the tiny L1 banks: delta_read, bands, matched, DoM guard, PC, IC, go/no-go, test sha256 PASS ['DISCOVERY_freeze_interactions', 'bands', 'delta_read', 'dom_guard_answer_readable', 'go_nogo', 'ic', 'matched', 'n_answered', 'n_swap', 'pc_ans', 'pc_ans_fires', 't', 'test_sha256']
+CHECK VERDICT point verdict on the tiny banks: three arms labelled, readout, reports PASS {'LENS_M': 'DOES NOT COUNT: no matched layer', 'LENS_U': 'DOES NOT COUNT: the lens-swap positive control did not fire', 'DOM_M': 'DOES NOT COUNT: no matched layer'}
+CHECK VERDICT refuses a test file changed after freeze                   PASS 
+CHECK VERDICT slot label ABOVE_FLOORS on planted interactions (60 items) PASS ABOVE_FLOORS
+CHECK VERDICT slot label AT_FLOOR on planted interactions (60 items)     PASS AT_FLOOR
+CHECK VERDICT slot label BELOW_FLOOR on planted interactions (60 items)  PASS BELOW_FLOOR
+CHECK VERDICT slot label: above the random floor but at the shuffle -> AT_FLOOR PASS AT_FLOOR
+CHECK VERDICT slot label above the ceiling -> DOES NOT COUNT             PASS DOES NOT COUNT: above the ceiling (inspect)
+CHECK VERDICT slot label with 30 items -> DOES NOT COUNT                 PASS DOES NOT COUNT: fewer than N_MIN items
+CHECK VERDICT room at 50 items (SD 1 nat per edit): an interaction of 1 nat reaches ABOVE in >= 0.9 of draws PASS {0.25: 0.7, 0.5: 1.0, 1.0: 1.0}
+CHECK VERDICT interchange control fires on a planted effect              PASS {'n': 60, 'mean': 3.0, 'lo': 3.0, 'hi': 3.0}
+CHECK VERDICT interchange control does not fire on no effect             PASS 
+CHECK VERDICT go/no-go: GO at 100 answered with the control; NO-GO at 99; NO-GO without the control PASS 
+CHECK VERDICT H_order SUPPORTED                                          PASS SUPPORTED
+CHECK VERDICT H_order CENSORED                                           PASS CENSORED
+CHECK VERDICT H_order REFUTED_SAME                                       PASS REFUTED_SAME
+CHECK VERDICT H_order REFUTED_CONTRARY                                   PASS REFUTED_CONTRARY
+CHECK VERDICT H_order NOT_RUN                                            PASS NOT_RUN
+CHECK VERDICT H_order NOT_RUN without a dating arm                       PASS 
+CHECK VERDICT the dating arm: LENS_M first, then LENS_U, then DOM_M      PASS 
+CHECK VERDICT N25: LEARNED, FORMS_BETWEEN (T_0, T_8), SINK_DEPENDENT at T_15, SURVIVES at T_8 PASS 
+CHECK VERDICT N25: ARCHITECTURAL within split-half noise; NO_CHANGE      PASS 
+CHECK VERDICT N25: SMOOTH when no interval exceeds the noise but the total does PASS 
+CHECK VERDICT massive formation: the first point at 10 x the step-0 ratio PASS 
+CHECK VERDICT plan-lens with six candidates: first, last, two at the thirds; T_0 and the point before PASS {'n22_points': [9, 11, 12, 14], 'n25_points': [0, 8], 'order': [0, 14, 12, 11, 9, 8], 'rule': 'SPEC §9.5; park from the end of `order`'}
+CHECK VERDICT plan-lens with two candidates                              PASS {'n22_points': [13, 14], 'n25_points': [0, 12], 'order': [0, 14, 13, 12], 'rule': 'SPEC §9.5; park from the end of `order`'}
+CHECK VERDICT plan-lens with none: T_0 only                              PASS {'n22_points': [], 'n25_points': [0], 'order': [0], 'rule': 'SPEC §9.5; park from the end of `order`'}
+CHECK PROJECT L1, L2, L3 GPU-hours and hard kills at 1.3 x the high projection PASS {'L1_h': 1.05, 'L2_h': 1.01, 'L3_h': 5.39, 'total_h': 7.46, 'high': 12.29}
+100 checks, 0 failed
+N22_DRYRUN_OK
+exit 0

@@ -1,0 +1,30 @@
+{
+  "rental": "mdl_s9pre_row4",
+  "session": "S9-pre",
+  "cell_id": "4:S9-pre",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+  "disk": 800,
+  "gpu_query": "gpu_ram>=180 compute_cap>=1000 num_gpus=1 cuda_vers>=13.0",
+  "expected_gpu": "",
+  "bound": "overhead",
+  "weights_mode": "download",
+  "env": {
+    "HF_ONLINE": "1",
+    "HF_HUB_DISABLE_XET": "1"
+  },
+  "_comment": "MENDELEEV S9-pre: row 4 (DeepSeek-V4-Flash 0731 -> Vision-Exp; FP4 experts, hc_mult 4) load test on one Blackwell GPU (spec 0.3 B2 (i)): the pinned transformers must load the HF class at >= 180 GB resident. --load-test-only is defined by the MODELS agent (matrix_behaviour). GATE: no row-4 budget line until this banks green. disk 800 = two ~170 GB checkpoints + image + headroom. NOTE (plan 2026-09-03): every B200 offer in the pool charges bandwidth (inet_down_cost > 0) and storage > $0.30/GB/mo, so the harness base filter returns 0 offers — renting this needs a deliberate filter relaxation by the lead (a 340 GB pull at $0.04/GB is ~$13 of bandwidth on top of GPU time).",
+  "cells": [
+    {
+      "id": "load_test",
+      "module": "infra.vast.cells.mdl_job",
+      "job": "infra.aws_pg.jobs.matrix_behaviour",
+      "args": "--row 4 --load-test-only"
+    }
+  ],
+  "watch": {
+    "max_billed_h": 2,
+    "load_backstop_min": 60,
+    "progress_stall_min": 20,
+    "progress_kill_min": 45
+  }
+}

@@ -1,0 +1,12 @@
+studies/already-clean/walkthrough/neuron_across_training/data.js filter=lfs diff=lfs merge=lfs -text
+studies/already-clean/walkthrough/one_job/data.js filter=lfs diff=lfs merge=lfs -text
+studies/next/**/*.npy filter=lfs diff=lfs merge=lfs -text
+studies/next/**/*.npz filter=lfs diff=lfs merge=lfs -text
+studies/next/m1/banks/**/samples/*.jsonl filter=lfs diff=lfs merge=lfs -text
+studies/next/n12/banks/**/n12_*.jsonl filter=lfs diff=lfs merge=lfs -text
+studies/next/n1/banks/**/n1_*.jsonl filter=lfs diff=lfs merge=lfs -text
+studies/next/n6/banks/L2*/edits.jsonl filter=lfs diff=lfs merge=lfs -text
+studies/already-clean/**/*.png filter=lfs diff=lfs merge=lfs -text
+studies/already-clean/**/*.pdf filter=lfs diff=lfs merge=lfs -text
+studies/next/**/*.png filter=lfs diff=lfs merge=lfs -text
+studies/next/**/*.pdf filter=lfs diff=lfs merge=lfs -text

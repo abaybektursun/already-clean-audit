@@ -1,0 +1,17 @@
+[
+ {
+  "name": "setup",
+  "module": "infra.aws_pg.jobs.n13_setup",
+  "args": "--pair pair1 --models base,rl"
+ },
+ {
+  "name": "zero",
+  "module": "infra.aws_pg.jobs.n13_gen",
+  "args": "--arm zero --bench math500,gsm8k --problems 0:500 --setup-dir /work/out/setup --cap 16384 --allowance-min 794 --proj-tok-s 236.5774019149508 --proj-mean-math 5498.672839506173 --proj-mean-gsm 940.0 --proj-load-min 14.352775791059367"
+ },
+ {
+  "name": "id",
+  "module": "infra.aws_pg.jobs.n13_gen",
+  "args": "--arm id --bench math500,gsm8k --problems 0:500 --setup-dir /work/out/setup --cap 16384 --allowance-min 794 --proj-tok-s 236.5774019149508 --proj-mean-math 5498.672839506173 --proj-mean-gsm 940.0 --proj-load-min 14.352775791059367"
+ }
+]

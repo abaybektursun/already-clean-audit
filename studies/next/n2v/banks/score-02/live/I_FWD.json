@@ -1,0 +1,10 @@
+{
+ "pass": true,
+ "n": 187,
+ "n_bitwise": 187,
+ "max_abs_diff": 0.0,
+ "failing_input": {
+  "what": "each clean row against its window's first zero row",
+  "pass": false
+ }
+}

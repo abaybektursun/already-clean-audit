@@ -1,0 +1,3280 @@
+{
+ "what": "N12, the ten raw examples at zero GPU (N12_SPEC.md section 10), from banked files only.",
+ "births": [
+  "L03N7574+:c6",
+  "L03N7746+:c0",
+  "L06N9844+:c1",
+  "L16N1206+:c1",
+  "L20N5782+:c1",
+  "L07N8340+:c4",
+  "L10N9052+:c2",
+  "L10N9794+:c2",
+  "L19N7374-:c1",
+  "L24N5066-:c1"
+ ],
+ "checks": {
+  "top10_pre": [
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "top10_birth": [
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "top10_fail": [
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false
+  ],
+  "identity": [
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "n_comp": [
+   20,
+   20,
+   20,
+   20,
+   20,
+   20,
+   20,
+   20,
+   20,
+   20
+  ]
+ },
+ "checks_pass": {
+  "top10_pre": true,
+  "top10_birth": true,
+  "top10_fail_fails": true,
+  "identity": true,
+  "n_comp_20": true
+ },
+ "stats_reads": [
+  [
+   3,
+   11
+  ],
+  [
+   3,
+   12
+  ],
+  [
+   3,
+   14
+  ],
+  [
+   3,
+   15
+  ],
+  [
+   6,
+   14
+  ],
+  [
+   6,
+   15
+  ],
+  [
+   7,
+   13
+  ],
+  [
+   7,
+   14
+  ],
+  [
+   10,
+   9
+  ],
+  [
+   10,
+   10
+  ],
+  [
+   10,
+   13
+  ],
+  [
+   10,
+   14
+  ],
+  [
+   16,
+   13
+  ],
+  [
+   16,
+   14
+  ],
+  [
+   19,
+   12
+  ],
+  [
+   19,
+   13
+  ],
+  [
+   20,
+   11
+  ],
+  [
+   20,
+   12
+  ],
+  [
+   24,
+   11
+  ],
+  [
+   24,
+   12
+  ]
+ ],
+ "examples": [
+  {
+   "birth": "L03N7574+:c6",
+   "name": "miscellaneous code/text subword tokens",
+   "layer": 3,
+   "k": 12,
+   "t_pre": 11,
+   "size": 5,
+   "d": 5,
+   "carrier": {
+    "pole": "L03N7574+",
+    "B_pre": 0.8775867131552583,
+    "B_birth": 0.9999044739236238,
+    "r0": 1668,
+    "r1": 1,
+    "r_c": 1,
+    "r_o": 1831,
+    "F": 3.2626883443016963,
+    "move": 3.22219604630172,
+    "bar_pre": 0.994435273041115
+   },
+   "exemplars": [
+    "an 2005-12-01 THESIS\nThe Influence of Dust on the Absorptivity of Radiant Barriers\n477 Noboa, H. L. 1993-08-01 THESIS\nSt [[ochastic]]  generation of biologically accurate brain networks\n478 Aluri, Aravind ",
+    "import numpy as np\nimport glob\nimport os\nimport yaml\n\nfrom [[ shutil]]  import copy, rmtree\n\nfrom ..qtim_preprocessing.motion_correction import motion",
+    "go, Limpidon and Paxor. Patti Scialfa also provided backing vocals on where to purchase sibutramine online india both. B [[àng]]  National Park, has discovered 1,320 additional species in this park, of",
+    "d their interaction with electromagnetic fields. A few decades ago, a lot of work was done to understand how to cool bos [[onic]]  atoms to within billionths of absolute zero (this is known as a Bose-E",
+    "g seamless technical support inside the NEVONEX system, adds Saik.\n\nWake up with RealAgriculture\n\nSubscribe to our daily [[ newsletters]]  to keep you up-to-date with our latest coverage every morning.\n\nWake up with"
+   ],
+   "competitors": [
+    {
+     "j": 1,
+     "pole": "L03N3745+",
+     "B_pre": 0.9984356599370664,
+     "rank_pre": 1,
+     "B_birth": 0.9783368566051133,
+     "rank_birth": 128,
+     "top3": [
+      {
+       "rank": 0,
+       "a": 2.3143937587738037,
+       "text": "Creation Wizard when we set up the SageMaker Domain. If you would like to enable SageMaker Canvas, you can select this option.\n\nYou will also need to set up a V [[PC]]  with a public and private subnet to operate in a private cloud and also connect to"
+      },
+      {
+       "rank": 1,
+       "a": 2.1057119369506836,
+       "text": "ubnetId']})\n                sec_groups.extend(i['SecurityGroups'])\n                lb_json['SecurityGroups'] = sec_groups            \n                lb_json['V [[pc]] Id'] = i['VpcId']\n                all_lb_info['Details']"
+      },
+      {
+       "rank": 2,
+       "a": 1.9034864902496338,
+       "text": ". There are two ways to establish AD integration: You can use WorkSpace Connect to link WorkSpaces with AD, or you can configure Amazon Virtual Private Cloud (V [[PC]] ) with a hardware virtual private network connection back to your data center.\n\nOnce you"
+      }
+     ]
+    },
+    {
+     "j": 2,
+     "pole": "L03N8204-",
+     "B_pre": 0.9973603596644093,
+     "rank_pre": 2,
+     "B_birth": 0.9869384547750444,
+     "rank_birth": 55,
+     "top3": [
+      {
+       "rank": 0,
+       "a": -2.8980746269226074,
+       "text": "gG profiling of CRC samples is mainly associated with cell death, survival, and proliferation pathways, especially proteins involved in EIF2 and mTOR signaling. [[ Rib]] osomal proteins (e.g., RPL7, RPL22, and R"
+      },
+      {
+       "rank": 1,
+       "a": -2.643582820892334,
+       "text": "likely to be involved. We envisage that changes in expression and the occurrence of ribosomal protein gene mutations play important roles in cancer development. [[ Rib]] osome biology constitutes a re-emerging vital area of basic and translational cancer research"
+      },
+      {
+       "rank": 2,
+       "a": -2.5929229259490967,
+       "text": "S\nRole of ribosomal protein mutations in tumor development (Review).\nInt J Oncol. 2016; 48(4):1313-24 [PubMed] Free Access to Full Article Related Publications\n [[Rib]] osomes are cellular machines essential for protein synthesis. The biogenesis of ribosomes is"
+      }
+     ]
+    },
+    {
+     "j": 3,
+     "pole": "L03N1651-",
+     "B_pre": 0.9969039937675842,
+     "rank_pre": 3,
+     "B_birth": 0.887456054678783,
+     "rank_birth": 1631,
+     "top3": [
+      {
+       "rank": 0,
+       "a": -2.759084939956665,
+       "text": "lia\nPhylum: Arthropoda\nClass: Insecta\nOrder: Hemiptera\nInfraorder: Nepomorpha\nClade: Tripartita\nSuperfamily: Notonectoidea\nFamily: Notonectidae\nLeach, 1815\nSubf [[amilies]] , Genera\n\n2 subfamilies:\n\nNotonectidae is a"
+      },
+      {
+       "rank": 1,
+       "a": -2.573084592819214,
+       "text": "on, search\nChalcolestes viridis\nChalcolestes viridis LC0171.jpg\nScientific classification\nKingdom: Animalia\nPhylum: Arthropoda\nClass: Insecta\nOrder: Odonata\nSub [[order]] : Zygoptera\nFamily: Lestidae\nGenus:"
+      },
+      {
+       "rank": 2,
+       "a": -2.3827402591705322,
+       "text": "lestes viridis\nChalcolestes viridis LC0171.jpg\nScientific classification\nKingdom: Animalia\nPhylum: Arthropoda\nClass: Insecta\nOrder: Odonata\nSuborder: Zygoptera\n [[Family]] : Lestidae\nGenus: Chalcolestes\nSpecies"
+      }
+     ]
+    },
+    {
+     "j": 4,
+     "pole": "L03N6607+",
+     "B_pre": 0.9960209434496853,
+     "rank_pre": 4,
+     "B_birth": 0.9284091916706927,
+     "rank_birth": 871,
+     "top3": null
+    },
+    {
+     "j": 5,
+     "pole": "L03N7725+",
+     "B_pre": 0.9954751407174783,
+     "rank_pre": 5,
+     "B_birth": 0.0,
+     "rank_birth": 22016,
+     "top3": null
+    },
+    {
+     "j": 6,
+     "pole": "L03N3991-",
+     "B_pre": 0.9953686254190716,
+     "rank_pre": 6,
+     "B_birth": 0.0,
+     "rank_birth": 22016,
+     "top3": null
+    },
+    {
+     "j": 7,
+     "pole": "L03N2218-",
+     "B_pre": 0.9949182473168333,
+     "rank_pre": 7,
+     "B_birth": 0.0,
+     "rank_birth": 22016,
+     "top3": null
+    },
+    {
+     "j": 8,
+     "pole": "L03N3996+",
+     "B_pre": 0.9946997177780141,
+     "rank_pre": 8,
+     "B_birth": 0.0,
+     "rank_birth": 22016,
+     "top3": null
+    },
+    {
+     "j": 9,
+     "pole": "L03N10523+",
+     "B_pre": 0.9946374938056494,
+     "rank_pre": 9,
+     "B_birth": 0.0,
+     "rank_birth": 22016,
+     "top3": null
+    },
+    {
+     "j": 10,
+     "pole": "L03N1474+",
+     "B_pre": 0.994435273041115,
+     "rank_pre": 10,
+     "B_birth": 0.9524436875029834,
+     "rank_birth": 449,
+     "top3": null
+    },
+    {
+     "j": 11,
+     "pole": "L03N8086+",
+     "B_pre": 0.9936915787823222,
+     "rank_pre": 11,
+     "B_birth": 0.8825654823452302,
+     "rank_birth": 1739,
+     "top3": null
+    },
+    {
+     "j": 12,
+     "pole": "L03N2315-",
+     "B_pre": 0.9936215680238482,
+     "rank_pre": 12,
+     "B_birth": 0.9505010707443767,
+     "rank_birth": 475,
+     "top3": null
+    },
+    {
+     "j": 13,
+     "pole": "L03N8021-",
+     "B_pre": 0.9935394887467125,
+     "rank_pre": 13,
+     "B_birth": 0.9564991253462469,
+     "rank_birth": 397,
+     "top3": null
+    },
+    {
+     "j": 14,
+     "pole": "L03N3476+",
+     "B_pre": 0.9933600119105958,
+     "rank_pre": 14,
+     "B_birth": 0.9825641330061281,
+     "rank_birth": 93,
+     "top3": null
+    },
+    {
+     "j": 15,
+     "pole": "L03N1769+",
+     "B_pre": 0.9930671470974943,
+     "rank_pre": 15,
+     "B_birth": 0.0,
+     "rank_birth": 22016,
+     "top3": null
+    },
+    {
+     "j": 16,
+     "pole": "L03N8830+",
+     "B_pre": 0.9926656231668132,
+     "rank_pre": 16,
+     "B_birth": 0.7958371047604292,
+     "rank_birth": 3534,
+     "top3": null
+    },
+    {
+     "j": 17,
+     "pole": "L03N9062-",
+     "B_pre": 0.99253747680574,
+     "rank_pre": 17,
+     "B_birth": 0.581015314458416,
+     "rank_birth": 6961,
+     "top3": null
+    },
+    {
+     "j": 18,
+     "pole": "L03N2950-",
+     "B_pre": 0.9924264933680191,
+     "rank_pre": 18,
+     "B_birth": 0.9852113923990141,
+     "rank_birth": 73,
+     "top3": null
+    },
+    {
+     "j": 19,
+     "pole": "L03N1655-",
+     "B_pre": 0.991840049123182,
+     "rank_pre": 19,
+     "B_birth": 0.0,
+     "rank_birth": 22016,
+     "top3": null
+    },
+    {
+     "j": 20,
+     "pole": "L03N9534-",
+     "B_pre": 0.9916308603756723,
+     "rank_pre": 20,
+     "B_birth": 0.9875636084097333,
+     "rank_birth": 50,
+     "top3": null
+    }
+   ],
+   "drop": 2.341052363097261,
+   "median_dB": -0.11028701776294658,
+   "n_comp_up": 0,
+   "n_comp_down": 20,
+   "n_leaders_pre": 20,
+   "n_leaders_birth": 0,
+   "matched_first": {
+    "pole": "L03N2224-",
+    "rank": {
+     "B": 4543,
+     "A": 22016,
+     "ratio": 5332
+    },
+    "top3": [
+     {
+      "rank": 0,
+      "a": -1.3534996509552002,
+      "text": "�を聴いていたのだけれども自宅でしか聴かないのにそれだと重くね？っちゅうことでRaspberry Pi 3を用いた新たなソリューションを� [[�]] �討したのだがカンタンにはいかな"
+     },
+     {
+      "rank": 1,
+      "a": -1.28148353099823,
+      "text": " growth, and success; can’t wait to see you in class!\n\nライブ1対1レッスン\n共有\n\nセッションごとに\nオンデマンドでクラスを開催\n70 分\n7 人がクラスを [[�]] �けました\nオンラインライブ授業\n"
+     },
+     {
+      "rank": 2,
+      "a": -1.2778449058532715,
+      "text": "った、 skyrim seにSexLab Frameworkとその他add onを導入してエロイリムにしている先輩ドヴァキンの皆様、私を導いてください。 SexLab Framework SE BETA 5を [[�]] �入後、Sexlab Aroused Redux ver28bを導"
+     }
+    ]
+   },
+   "pb": {
+    "pole": "L03N4280-",
+    "d": 4,
+    "rank_pre_B": 22016
+   },
+   "dt": {
+    "pole": "L03N9631-",
+    "d": 5,
+    "exemplars": [
+     "eresting briefing — representatives of the 14 armed groups visited Rome at various times — both those who had joined the [[ DDR]] R process and those who opted out, in particular the Front populaire pour la",
+     "portant celebration.\n\nLadies and Gentlemen,\n\nFruits and vegetables make a substantial contribution to food and nutrition [[ security]] , to poverty alleviation as well as to enhancing small farmer income across the region",
+     "ts on taxation and different provisions and the bill now must endure amendments earlier than it's handed by the Assembly [[ Appropri]] ations Committee. What Does the longer term Hold for California Online Poker?\n\nThis recreation",
+     "ous realisation of freedom and democracy.\n\nThe rise of liberalism began in the sixteenth century as a counterreaction to [[ absolut]] ism. Its proponents considered the sovereign state as an independent legal entity separate from the",
+     " Coasting Trade of British Columbia as a basis for renewed negotiations with the United States for a relaxation of their [[ prohib]] itory system, such a measure demanding, as he conceives, \"careful"
+    ]
+   }
+  },
+  {
+   "birth": "L03N7746+:c0",
+   "name": "C corp / C-corporation completion",
+   "layer": 3,
+   "k": 15,
+   "t_pre": 14,
+   "size": 5,
+   "d": 2,
+   "carrier": {
+    "pole": "L03N7746+",
+    "B_pre": 0.9984338837671785,
+    "B_birth": 0.9999986432968652,
+    "r0": 193,
+    "r1": 1,
+    "r_c": 1,
+    "r_o": 316,
+    "F": 2.499687082618404,
+    "move": 2.285557309007774,
+    "bar_pre": 0.9999170259153048
+   },
+   "exemplars": [
+    "purposes, LLCs and S Corps are both treated as pass-through entities – avoiding the headache of double taxation like a C [[ corp]] . Yet, the amount of tax a business pays varies depending on the way it",
+    "ing personal rates, some owners opt to be taxed as a separate entity. And this would result in an LLC being taxed as a C [[ corp]]  and subject to double taxation.\n\nS Corps, on the other hand, are generally",
+    " to comply with Section 1202 of the tax code (which is set to expire in 2011, so this matter may become moot).  If a C-c [[orpor]] ation is required by your investors, it is easy enough to transition from an",
+    "said, if you anticipate raising outside capital from venture capitalists, many of them will require you to form as a C-c [[orpor]] ation for them to comply with Section 1202 of the tax code (which",
+    " imminent, the tax savings you will realize from the LLC is typically greater than the legal costs of switching to a C-c [[orpor]] ation down the road.  So, more often than not, it is best"
+   ],
+   "competitors": [
+    {
+     "j": 1,
+     "pole": "L03N5771-",
+     "B_pre": 0.9999968049059607,
+     "rank_pre": 1,
+     "B_birth": 0.9999932761585636,
+     "rank_birth": 4,
+     "top3": [
+      {
+       "rank": 0,
+       "a": -0.5952236652374268,
+       "text": "lanning Act, R.S.O. 1990, c.P. 13, as amended.\n\nENACTED AND PASSED this 7th day of February, A.D. 2003.\n\nCASE OOTES, ULLI S. WATKISS\nDeputy Mayor City Clerk\n\n(C [[orpor]] ate Seal)\nPART ONE - PREAMBLE\n\n1.1 PURPOSE/LOCATION"
+      },
+      {
+       "rank": 1,
+       "a": -0.5591925978660583,
+       "text": "connect with USM faculty, students and staff, and information about academic and professional resources for workforce development. Learn more at usm.maine.edu/c [[orpor]] atepartners.\n\n**BAXTER MEMORIAL LIBRARY**\n\n**SATUR"
+      },
+      {
+       "rank": 2,
+       "a": -0.5578931570053101,
+       "text": "a community centre.\nENACTED AND PASSED this ~ day of ~, A.D. 20~.\n\nROB FORD,                      ULLI S. WATKISS,\n    Mayor                      City Clerk\n\n(C [[orpor]] ate Seal)<|endoftext|>"
+      }
+     ]
+    },
+    {
+     "j": 2,
+     "pole": "L03N8235+",
+     "B_pre": 0.9999941000655256,
+     "rank_pre": 2,
+     "B_birth": 0.9999938460141544,
+     "rank_birth": 2,
+     "top3": [
+      {
+       "rank": 0,
+       "a": 3.44234037399292,
+       "text": "https://elearningindustry.com/6-killer-examples-gamification-in-elearning\n\nhttp://www.learntech.in/types-of-gamification-games-vs-gamification/\n\nhttps://www.cor [[por]] aterewards.co.uk/news-ideas/how-incentivised-learning-can-b"
+      },
+      {
+       "rank": 1,
+       "a": 3.232165575027466,
+       "text": ". “Yeah, so what, backpage escorts Bear Lake PA are cute.\n\nwaynesboro mi hookers\n\nHow To Start A Online Dating Business\n\nBear Lake online escorts backpage\n\n“Cor [[por]] al I’m now going to think I denied myself and Dave this pleasure, I"
+      },
+      {
+       "rank": 2,
+       "a": 3.0906636714935303,
+       "text": "ered on the Memorial\n\nMajor General Ken Taylor, AO (Retd)\nWarrant Officer Class Two Ramon Leahy\nWarrant Officer Class Two Peter Rokay\nSergeant Tony Moriarty\nCor [[por]] al Cory Bentley\nPatrolman David Clune\nPatrolman David How"
+      }
+     ]
+    },
+    {
+     "j": 3,
+     "pole": "L03N1326-",
+     "B_pre": 0.999980144690326,
+     "rank_pre": 3,
+     "B_birth": 0.9999860566765341,
+     "rank_birth": 7,
+     "top3": [
+      {
+       "rank": 0,
+       "a": -3.211461305618286,
+       "text": "eement or other organizational documents that may have been created when registering with the state.\n\nSeveral other factors should be considered when forming an [[ LLC]]  in North Dakota, such as insurance requirements, zoning regulations, etc., so it"
+      },
+      {
+       "rank": 1,
+       "a": -3.145070791244507,
+       "text": "post or fax along with the price.\n\nRegistering Your Business Name\n\nBefore submitting your Articles of Organization with the Secretary of State, ensure that your [[ LLC]] ’s name meets state requirements. All words must end in either “Limited Liability Company"
+      },
+      {
+       "rank": 2,
+       "a": -3.0975749492645264,
+       "text": "LLC).  Without such knowledge, it is difficult to ensure compliance with state and federal laws.  In this article, I will review the requirements for forming an [[ LLC]]  in North Dakota, helping you have a straightforward setup process.\n\nHow To Start An"
+      }
+     ]
+    },
+    {
+     "j": 4,
+     "pole": "L03N6707+",
+     "B_pre": 0.9999745783430445,
+     "rank_pre": 4,
+     "B_birth": 0.9987247241177902,
+     "rank_birth": 262,
+     "top3": null
+    },
+    {
+     "j": 5,
+     "pole": "L03N10663-",
+     "B_pre": 0.9999732842721136,
+     "rank_pre": 5,
+     "B_birth": 0.9999400666532383,
+     "rank_birth": 17,
+     "top3": null
+    },
+    {
+     "j": 6,
+     "pole": "L03N8324+",
+     "B_pre": 0.9999453606397682,
+     "rank_pre": 6,
+     "B_birth": 0.9999718169960319,
+     "rank_birth": 12,
+     "top3": null
+    },
+    {
+     "j": 7,
+     "pole": "L03N6743-",
+     "B_pre": 0.9999441304787356,
+     "rank_pre": 7,
+     "B_birth": 0.9996882743829855,
+     "rank_birth": 69,
+     "top3": null
+    },
+    {
+     "j": 8,
+     "pole": "L03N6864+",
+     "B_pre": 0.9999392600647454,
+     "rank_pre": 8,
+     "B_birth": 0.9997595831637552,
+     "rank_birth": 50,
+     "top3": null
+    },
+    {
+     "j": 9,
+     "pole": "L03N2689+",
+     "B_pre": 0.999930999722348,
+     "rank_pre": 9,
+     "B_birth": 0.9998199745957845,
+     "rank_birth": 39,
+     "top3": null
+    },
+    {
+     "j": 10,
+     "pole": "L03N6568+",
+     "B_pre": 0.9999170259153048,
+     "rank_pre": 10,
+     "B_birth": 0.9992957777457835,
+     "rank_birth": 143,
+     "top3": null
+    },
+    {
+     "j": 11,
+     "pole": "L03N1309+",
+     "B_pre": 0.9999068495902182,
+     "rank_pre": 11,
+     "B_birth": 0.9981010544894654,
+     "rank_birth": 370,
+     "top3": null
+    },
+    {
+     "j": 12,
+     "pole": "L03N7221+",
+     "B_pre": 0.9998919825495404,
+     "rank_pre": 12,
+     "B_birth": 0.9994142804829667,
+     "rank_birth": 125,
+     "top3": null
+    },
+    {
+     "j": 13,
+     "pole": "L03N2100+",
+     "B_pre": 0.9998896452345608,
+     "rank_pre": 13,
+     "B_birth": 0.9998139574849709,
+     "rank_birth": 42,
+     "top3": null
+    },
+    {
+     "j": 14,
+     "pole": "L03N4757-",
+     "B_pre": 0.9998718961150538,
+     "rank_pre": 14,
+     "B_birth": 0.9999808502669937,
+     "rank_birth": 8,
+     "top3": null
+    },
+    {
+     "j": 15,
+     "pole": "L03N5486-",
+     "B_pre": 0.9998622638428017,
+     "rank_pre": 15,
+     "B_birth": 0.999992298459592,
+     "rank_birth": 5,
+     "top3": null
+    },
+    {
+     "j": 16,
+     "pole": "L03N10755+",
+     "B_pre": 0.9998542238991057,
+     "rank_pre": 16,
+     "B_birth": 0.0,
+     "rank_birth": 22016,
+     "top3": null
+    },
+    {
+     "j": 17,
+     "pole": "L03N8516-",
+     "B_pre": 0.9998528454339769,
+     "rank_pre": 17,
+     "B_birth": 0.9997753486374216,
+     "rank_birth": 49,
+     "top3": null
+    },
+    {
+     "j": 18,
+     "pole": "L03N9447-",
+     "B_pre": 0.9998520582448642,
+     "rank_pre": 18,
+     "B_birth": 0.9411897562150444,
+     "rank_birth": 3820,
+     "top3": null
+    },
+    {
+     "j": 19,
+     "pole": "L03N4296+",
+     "B_pre": 0.9998496236385521,
+     "rank_pre": 19,
+     "B_birth": 0.9990289192168501,
+     "rank_birth": 195,
+     "top3": null
+    },
+    {
+     "j": 20,
+     "pole": "L03N5710-",
+     "B_pre": 0.9998395669508442,
+     "rank_pre": 20,
+     "B_birth": 0.9999509393668062,
+     "rank_birth": 14,
+     "top3": null
+    }
+   ],
+   "drop": 0.6194410444575683,
+   "median_dB": -9.426096155940034e-05,
+   "n_comp_up": 3,
+   "n_comp_down": 16,
+   "n_leaders_pre": 20,
+   "n_leaders_birth": 0,
+   "matched_first": {
+    "pole": "L03N463-",
+    "rank": {
+     "B": 5419,
+     "A": 22016,
+     "ratio": 5409
+    },
+    "top3": [
+     {
+      "rank": 0,
+      "a": -0.4714567959308624,
+      "text": "king the chain of fear. In life, we get many opportunities to get out of our comfort zone but to grab the right one becomes tough sometimes.\n\nSometimes, lack of [[ motivation]]  becomes the reason behind living in the comfort zone. For obvious reasons, people do"
+     },
+     {
+      "rank": 1,
+      "a": -0.41898614168167114,
+      "text": "s and desires. Below is a brief extract of how Chantal describes herself in the relationship, highlighting her strong sense of an individuated self:\n\n…I am very [[ organised]] . I am very much like: these are the lines, and these are how"
+     },
+     {
+      "rank": 2,
+      "a": -0.40585410594940186,
+      "text": "are caused by physical illness, mental imbalances, stress, unresolved anger, perpetual fear, chronic worry, dissatisfaction, depression, PTSD, lack of movement, [[ motivation]] , physical activity, habitual intake of consumer based broadcasting, and the type of music"
+     }
+    ]
+   },
+   "pb": null,
+   "dt": null
+  },
+  {
+   "birth": "L06N9844+:c1",
+   "name": "IRC logs: zzo38 and backslash tokens",
+   "layer": 6,
+   "k": 15,
+   "t_pre": 14,
+   "size": 7,
+   "d": 2,
+   "carrier": {
+    "pole": "L06N9844+",
+    "B_pre": 0.9966594613234065,
+    "B_birth": 0.9999988313367315,
+    "r0": 80,
+    "r1": 1,
+    "r_c": 1,
+    "r_o": 86,
+    "F": 1.9344984512435677,
+    "move": 1.9030899869919435,
+    "bar_pre": 0.9996030990812128
+   },
+   "exemplars": [
+    "←2019-11-16 2019-11-17 2019-11-18→ ↑2019 ↑all\n00:17:14 -!- z [[zo]] 38 has joined.\n00:17:30 <zzo38> Now I internet",
+    "d covers and rolls\n22:03:05 <b_jonas> kingoffrance: no, but geordi, which used to be a bot that evaluated C++, used back [[slash]]  to represent newlines in code you give in irc\n22:03:06",
+    " <fungot> fizzie: think about the data\n19:06:40 <kspalaiologos> is it?\n19:06:44 <kspalaiologos> well\n19:06:46 <fizzie> z [[zo]] 38: CologneBlue should be back, if you want to check.\n19:",
+    "outside of a string/character literal\n22:15:50 -!- arseniiv has quit (Ping timeout: 276 seconds).\n22:33:56 <ais523> back [[slash]] -space makes a good way to represent newlines without worrying about parsing\n22:",
+    "f the tokenization to recognize character literals correctly\n22:38:53 <b_jonas> oh wait\n22:38:57 <b_jonas> you said back [[slash]] -space\n22:38:57 <b_jonas> hmm\n22:",
+    "te command makes them active.\n07:35:19 <esowiki> [[EsoPost]] https://esolangs.org/w/index.php?diff=67135&oldid=67072 * Z [[zo]] 38 * (+1141) EsoPost II variant, and some more explanations",
+    " https://esolangs.org/w/index.php?diff=67126&oldid=67124 * Quadril-Is * (-43) /* How to write quines */\n05:17:03 <kmc> z [[zo]] 38: I don't know\n05:17:06 <kmc>"
+   ],
+   "competitors": [
+    {
+     "j": 1,
+     "pole": "L06N6402+",
+     "B_pre": 0.9999660274153503,
+     "rank_pre": 1,
+     "B_birth": 0.702614681473951,
+     "rank_birth": 4655,
+     "top3": [
+      {
+       "rank": 0,
+       "a": 0.9894708395004272,
+       "text": "Welcome to Webmaster [[World]]  Guest from 54.147.44.93\n\nMessage Too Old, No"
+      },
+      {
+       "rank": 1,
+       "a": 0.5647323727607727,
+       "text": "needs a sophisticated research paper, our university writers can apply the applicable wisdom and experience to produce nearly any authentic draft.\n\nOne of Essay [[Town]] 's 210+ premium, research specialists (impressively having earned at least"
+      },
+      {
+       "rank": 2,
+       "a": 0.5639582276344299,
+       "text": "\n[Date Prev][Date Next] [ [[Chron]] ological] [Thread] [Top]\n\nRe: Using OpenLDAP schema syntax rules"
+      }
+     ]
+    },
+    {
+     "j": 2,
+     "pole": "L06N5288-",
+     "B_pre": 0.999921186087457,
+     "rank_pre": 2,
+     "B_birth": 0.9912158687545928,
+     "rank_birth": 234,
+     "top3": [
+      {
+       "rank": 0,
+       "a": -0.6870917677879333,
+       "text": "number recently, including Macquarie Infrastructure MIC -0.026191723415400735% Macquarie Infrastructure Corp. U.S.: NYSE USD76.34 -0.02 -0.026191723415400735% / [[Date]] (1488305790172-0600)/ Volume (Delayed 15m"
+      },
+      {
+       "rank": 1,
+       "a": -0.6816313862800598,
+       "text": "06/19/2009 05:12 am ET [[ Updated]]  May 25, 2011\n\nWhat Is There About Glass Houses?\n\nThere"
+      },
+      {
+       "rank": 2,
+       "a": -0.6750560402870178,
+       "text": "n that it adds a \"motivation\" for the illusory existence of the perceptual world (for a further discussion, see Wapnick, Kenneth: The Message of A Course in Mir [[acles]] , 1997, ISBN 0-933291-25-6).\n\n"
+      }
+     ]
+    },
+    {
+     "j": 3,
+     "pole": "L06N363-",
+     "B_pre": 0.999894039103823,
+     "rank_pre": 3,
+     "B_birth": 0.9999119325614075,
+     "rank_birth": 4,
+     "top3": [
+      {
+       "rank": 0,
+       "a": -0.8940750956535339,
+       "text": "s of youtube would still pull me into time-wasting rabit hole. Follolwing my friend Zelfy’s advice I tried different YT clients like Invidious (particularly yew [[tu]] .be), which cut my watchtime down to under 20 mins. PROGRESS"
+      },
+      {
+       "rank": 1,
+       "a": -0.8850916028022766,
+       "text": "4. https://vitalik.ca/general/2022/03/14/trustedsetup.html \n\n  155. https://medium.com/starkware/stark-math-the-journey-begins-51bd2b063c71 \n\n  156. https://yew [[tu]] .be/watch?v=8qSA29vWWds \n\n  157"
+      },
+      {
+       "rank": 2,
+       "a": -0.8385528326034546,
+       "text": "ttps://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-February/019976.html \n\n  130. https://lightco.in/2022/06/15/miners-can-steal-2/ \n\n  131. https://yew [[tu]] .be/watch?v=vAE5fOZ2Luw (fast forward to"
+      }
+     ]
+    },
+    {
+     "j": 4,
+     "pole": "L06N9114-",
+     "B_pre": 0.9998306568009032,
+     "rank_pre": 4,
+     "B_birth": 0.9985581852324509,
+     "rank_birth": 37,
+     "top3": null
+    },
+    {
+     "j": 5,
+     "pole": "L06N9619+",
+     "B_pre": 0.999813164744918,
+     "rank_pre": 5,
+     "B_birth": 0.9983328404673529,
+     "rank_birth": 47,
+     "top3": null
+    },
+    {
+     "j": 6,
+     "pole": "L06N10362-",
+     "B_pre": 0.9997887773302675,
+     "rank_pre": 6,
+     "B_birth": 0.9998145768528341,
+     "rank_birth": 6,
+     "top3": null
+    },
+    {
+     "j": 7,
+     "pole": "L06N1757-",
+     "B_pre": 0.9997861114490374,
+     "rank_pre": 7,
+     "B_birth": 0.9996725615783065,
+     "rank_birth": 13,
+     "top3": null
+    },
+    {
+     "j": 8,
+     "pole": "L06N5737+",
+     "B_pre": 0.9997204258687865,
+     "rank_pre": 8,
+     "B_birth": 0.9953824752860195,
+     "rank_birth": 118,
+     "top3": null
+    },
+    {
+     "j": 9,
+     "pole": "L06N10103+",
+     "B_pre": 0.9997116542588856,
+     "rank_pre": 9,
+     "B_birth": 0.9975685153435151,
+     "rank_birth": 65,
+     "top3": null
+    },
+    {
+     "j": 10,
+     "pole": "L06N4533+",
+     "B_pre": 0.9996030990812128,
+     "rank_pre": 10,
+     "B_birth": 0.9744394203931878,
+     "rank_birth": 618,
+     "top3": null
+    },
+    {
+     "j": 11,
+     "pole": "L06N369-",
+     "B_pre": 0.9995632915555024,
+     "rank_pre": 11,
+     "B_birth": 0.9996972970876498,
+     "rank_birth": 11,
+     "top3": null
+    },
+    {
+     "j": 12,
+     "pole": "L06N2661+",
+     "B_pre": 0.9995006704644827,
+     "rank_pre": 12,
+     "B_birth": 0.9980900412550245,
+     "rank_birth": 52,
+     "top3": null
+    },
+    {
+     "j": 13,
+     "pole": "L06N10946+",
+     "B_pre": 0.9994862767244242,
+     "rank_pre": 13,
+     "B_birth": 0.6168853612746032,
+     "rank_birth": 5661,
+     "top3": null
+    },
+    {
+     "j": 14,
+     "pole": "L06N9946-",
+     "B_pre": 0.9994389121740985,
+     "rank_pre": 14,
+     "B_birth": 0.9957657458485889,
+     "rank_birth": 107,
+     "top3": null
+    },
+    {
+     "j": 15,
+     "pole": "L06N2689+",
+     "B_pre": 0.9994362965766536,
+     "rank_pre": 15,
+     "B_birth": 0.9972308439765409,
+     "rank_birth": 74,
+     "top3": null
+    },
+    {
+     "j": 16,
+     "pole": "L06N1246+",
+     "B_pre": 0.9994355168590117,
+     "rank_pre": 16,
+     "B_birth": 0.8955072235327669,
+     "rank_birth": 2087,
+     "top3": null
+    },
+    {
+     "j": 17,
+     "pole": "L06N5199+",
+     "B_pre": 0.9994232556791178,
+     "rank_pre": 17,
+     "B_birth": 0.998422916623087,
+     "rank_birth": 42,
+     "top3": null
+    },
+    {
+     "j": 18,
+     "pole": "L06N5310-",
+     "B_pre": 0.9994194869783541,
+     "rank_pre": 18,
+     "B_birth": 0.9962273114824879,
+     "rank_birth": 96,
+     "top3": null
+    },
+    {
+     "j": 19,
+     "pole": "L06N9857-",
+     "B_pre": 0.9994182135637756,
+     "rank_pre": 19,
+     "B_birth": 0.9985533036212318,
+     "rank_birth": 38,
+     "top3": null
+    },
+    {
+     "j": 20,
+     "pole": "L06N477+",
+     "B_pre": 0.9992114335391803,
+     "rank_pre": 20,
+     "B_birth": 0.9783710726633092,
+     "rank_birth": 539,
+     "top3": null
+    }
+   ],
+   "drop": 0.8709632946052512,
+   "median_dB": -0.0021742957577415845,
+   "n_comp_up": 0,
+   "n_comp_down": 18,
+   "n_leaders_pre": 20,
+   "n_leaders_birth": 0,
+   "matched_first": {
+    "pole": "L06N7825+",
+    "rank": {
+     "B": 3768,
+     "A": 22016,
+     "ratio": 3471
+    },
+    "top3": [
+     {
+      "rank": 0,
+      "a": 0.5424988865852356,
+      "text": "l the while, it never occurs to Dick or his crew to shoot the damn dogs until LONG after the villain is a literal dog's dinner.\n  • In the final issue of Atomic [[ Rob]] o And the Dogs of War, the second half takes a time skip to the"
+     },
+     {
+      "rank": 1,
+      "a": 0.5148972868919373,
+      "text": "ore than my fair share of glory. Poets through the ages extol my battle: Homer, Hesiod, Aeschylus, Colophon, Sophocles, Antimachus, Appolodorus, Virgil, Ovid, P [[aus]] anias, Dante, Marlowe, even the loutish William Shakespeare"
+     },
+     {
+      "rank": 2,
+      "a": 0.5085084438323975,
+      "text": "erve forms and formulæ almost for what we may call magic reasons, there was also a sentiment about the matter which gave popular support to the tendency. Thus P [[aus]] anias probably expresses a common feeling when he says that the images made by D"
+     }
+    ]
+   },
+   "pb": {
+    "pole": "L06N10970-",
+    "d": 5,
+    "rank_pre_B": 1
+   },
+   "dt": {
+    "pole": "L06N10970-",
+    "d": 2,
+    "exemplars": [
+     "ry, agriculture, and small scale (Class B) pits and accessory uses. Limited low density residential development, bed and [[ breakfast]]  establishments, and home businesses shall also be permitted. Small scale community facilities, rural",
+     "r, for every student in Germany from the fifth grade on must take English.\n\n\"In our travels, we stay in a lot of bed and [[ breakfast]]  places,\" Ruth said. \"Plant City is our favorite.\"\n\nThe German guests agree",
+     " Josiassen, and Assaf 2016)</strong></td>\n<td></td>\n<td></td>\n<td>.96</td>\n</tr>\n<tr>\n<td>1. I intend to stay at bed and [[ breakfast]]  on my next holiday to a foreign destination.</td>\n<td>.92</td",
+     "omes a material bank that can be accessed at any time to build new structures. \n\nReclaimed timber\n\n*see: 1)  https://www [[.um]] weltbundesamt.de/sites/default/files/medien/479/pub",
+     " Lyme Regis Lifeboat week.\n\nIf you’re looking for a peaceful unspoilt patch of coastline, that offers a range of bed and [[ breakfast]] s, country house hotels, and student accommodation to visitors who want to use it",
+     "n a field into a campsite for tourists.Farm snails as an export crop.Use a field for a weekend swap meet.Start a bed and [[ breakfast]] .Rent your barn for gatherings or meetings.Rent your field to metal detecting clubs",
+     "nt opportunities that Maun offers. It was noted, for example, that it is much easier to set up a craft shop or a bed and [[ breakfast]]  establishment in Maun as a major tourist destination than some other places outside the village"
+    ]
+   }
+  },
+  {
+   "birth": "L16N1206+:c1",
+   "name": "Source code and SQL, mid-expression tokens",
+   "layer": 16,
+   "k": 14,
+   "t_pre": 13,
+   "size": 9,
+   "d": 9,
+   "carrier": {
+    "pole": "L16N1206+",
+    "B_pre": 0.9983782723099903,
+    "B_birth": 0.9999869156148907,
+    "r0": 1,
+    "r1": 1,
+    "r_c": 1,
+    "r_o": 1,
+    "F": 0.0,
+    "move": 0.0,
+    "bar_pre": 0.9279730450300271
+   },
+   "exemplars": [
+    "d by Lancs University\n *\tClass to take a numbered file after it has been stemmed and sort\n *\tit into pseudo groups where [[ identical]]  stems are adjacent\n *\tRob Hooper\n *\t02/11/",
+    "\t\t\t\tindel_length[length] = 1\r\n\t\treturn indel_length\r\n\r\n\r\n\tdef stat_func(self, vcf):\r\n\t\t\"\"\"stat the num of snp or indel m [[uation]]  that functional\r\n\t\treturn a dict:\r\n\t\tfunc = {\r\n\t\t\t'inter",
+    "r (int _i = 0; _i < i; ret += CCalculator.arr[_i++]) ;\n            return ret;\n        }\n    }\n    abstract class IModa\n [[   ]]  {\n        protected List<int> moda = new List<int>();\n        ulong max =",
+    "s.first\nhaving count(*) >= 7 and count(*) <= 8\norder by teachers.last;\n\n\nUSE `STUDENTS`;\n-- STUDENTS-2\n-- For each grade [[,]]  report the number of classrooms in which it is taught and the total number of students",
+    "drop_missing_values_in_dataframe(labs_df)\r\n    list_of_labs = labs_df['lab_name'].to_list()\r\n    for lab_name in list_of [[_l]] abs:\r\n        df = tests_dataframe.loc[tests_dataframe['lab_name'] ==",
+    "       //originalMalicious.Sort((a, b) => -a.CompareTo(b, conditionNumber));\n                //originalBenign.Sort((a, b [[)]]  => -a.CompareTo(b, conditionNumber));\n                //Queue<Trial> malicious",
+    "us\norder by Campus\n;\n\n\nUSE `MARATHON`;\n-- MARATHON-1\n-- For each gender/age group, report total number of runners in the [[ group]] , the overall place of the best runner in the group and the overall place of",
+    "   yield put({ type: 'GET_USER_ADMIN', payload: elementResponse.data })\n}\n// GET to DB to get all Gender \"other\" and add [[ them]]  to reduxStore\nfunction* fetchOther() {\n    const elementResponse = yield",
+    " method \n            //  to avoid creating duplicate seed data. E.g.\n            //\n            //    context.People.Add [[OrUpdate]] (\n            //      p => p.FullName,\n            //      new Person { FullName"
+   ],
+   "competitors": [
+    {
+     "j": 1,
+     "pole": "L16N2324-",
+     "B_pre": 0.9730746396475157,
+     "rank_pre": 2,
+     "B_birth": 0.9517819079756629,
+     "rank_birth": 7,
+     "top3": [
+      {
+       "rank": 0,
+       "a": -4.667314052581787,
+       "text": "t that any of them could be considered the greatest movie ever made and some of them probably have seriously bad reviews and it will probably be animation heavy [[ because]]  I like animation a lot. They will have every have something that made me feel"
+      },
+      {
+       "rank": 1,
+       "a": -4.020840167999268,
+       "text": "ll to reducing other crimes, and would we expect these results to replicate and generalize in other communities? Pilot programs (that we hear about; publication [[ bias]] ) are often the best case scenario for program effectiveness, rather than results we can"
+      },
+      {
+       "rank": 2,
+       "a": -3.7407708168029785,
+       "text": "ional step for your action. Since forms should be as short and easy as possible, double opt in sounds like a step back. But the double opt-in increases the list [[ quality]] .\n\nThen, it's a decision between list size and list quality. Do you"
+      }
+     ]
+    },
+    {
+     "j": 2,
+     "pole": "L16N7534-",
+     "B_pre": 0.9660143367318766,
+     "rank_pre": 3,
+     "B_birth": 0.6878644731527735,
+     "rank_birth": 636,
+     "top3": [
+      {
+       "rank": 0,
+       "a": -3.2797341346740723,
+       "text": "amples associated with swapunik.website.\n\nQuerying database, please wait...\n\nNote: if the roller icon stops rolling, this means there is a significant number of [[ results]]  being returned. Patience my friend.\n\nUser comments about swapunik.website.\nNOT"
+      },
+      {
+       "rank": 1,
+       "a": -3.230968713760376,
+       "text": "Search [[ Results]] \n\nShowing 451 - 500 of 3761 results for query Texas A"
+      },
+      {
+       "rank": 2,
+       "a": -3.1960954666137695,
+       "text": "rier interrupted her logistics supply role only for brief returns to Guam for replenishment.\n\nOn 18 April 1945, Admiralty Islands suffered her first operational [[ casualty]]  near Okinawa. After sounding flight quarters at 1217, she began"
+      }
+     ]
+    },
+    {
+     "j": 3,
+     "pole": "L16N1542+",
+     "B_pre": 0.9572393470749759,
+     "rank_pre": 4,
+     "B_birth": 0.16660137816740267,
+     "rank_birth": 7786,
+     "top3": [
+      {
+       "rank": 0,
+       "a": 6.445122718811035,
+       "text": "str,\n                                 help_msg='Specify the records to include via a comma-separated '\n                                          'list of record [[ numbers]]  and colon-separated pairs of '\n                                          'record start & stop ranges.  Default"
+      },
+      {
+       "rank": 1,
+       "a": 4.944478988647461,
+       "text": "/li>'\n    html += '</ul>'\n    return html\n\n#http://127.0.0.1:5000/view-product-detail?id=1\n@app.route('/view-product-detail')\ndef viewProduct():\n    productId = [[ int]] (request.args.get('id', -1))\n    if productId < 1 or"
+      },
+      {
+       "rank": 2,
+       "a": 4.726048469543457,
+       "text": "xios';\n\nclass BookingConfirmation extends Component {\n\n  constructor(props){\n    super(props);\n\n    this.state = {\n      name: '',\n      email: '',\n      flight [[Number]] : '',\n      date: '',\n      destination: '',\n      origin: '',\n      seat"
+      }
+     ]
+    },
+    {
+     "j": 4,
+     "pole": "L16N9191-",
+     "B_pre": 0.9513596350041936,
+     "rank_pre": 5,
+     "B_birth": 0.9959280500226528,
+     "rank_birth": 2,
+     "top3": null
+    },
+    {
+     "j": 5,
+     "pole": "L16N2473+",
+     "B_pre": 0.9466049067839277,
+     "rank_pre": 6,
+     "B_birth": 0.9294671251265758,
+     "rank_birth": 17,
+     "top3": null
+    },
+    {
+     "j": 6,
+     "pole": "L16N7543+",
+     "B_pre": 0.9417874254850169,
+     "rank_pre": 7,
+     "B_birth": 0.9486173479444266,
+     "rank_birth": 8,
+     "top3": null
+    },
+    {
+     "j": 7,
+     "pole": "L16N4760-",
+     "B_pre": 0.9412446996436971,
+     "rank_pre": 8,
+     "B_birth": 0.665079466186498,
+     "rank_birth": 785,
+     "top3": null
+    },
+    {
+     "j": 8,
+     "pole": "L16N4657-",
+     "B_pre": 0.9365694692458814,
+     "rank_pre": 9,
+     "B_birth": 0.0,
+     "rank_birth": 22016,
+     "top3": null
+    },
+    {
+     "j": 9,
+     "pole": "L16N3937+",
+     "B_pre": 0.9336094377081704,
+     "rank_pre": 10,
+     "B_birth": 0.605222885970134,
+     "rank_birth": 1235,
+     "top3": null
+    },
+    {
+     "j": 10,
+     "pole": "L16N10925+",
+     "B_pre": 0.9279730450300271,
+     "rank_pre": 11,
+     "B_birth": 0.5565068328288446,
+     "rank_birth": 1711,
+     "top3": null
+    },
+    {
+     "j": 11,
+     "pole": "L16N2296+",
+     "B_pre": 0.9164765357869038,
+     "rank_pre": 12,
+     "B_birth": 0.0,
+     "rank_birth": 22016,
+     "top3": null
+    },
+    {
+     "j": 12,
+     "pole": "L16N1050+",
+     "B_pre": 0.9102849913418749,
+     "rank_pre": 13,
+     "B_birth": 0.7244521949952555,
+     "rank_birth": 442,
+     "top3": null
+    },
+    {
+     "j": 13,
+     "pole": "L16N1464+",
+     "B_pre": 0.9098971565782729,
+     "rank_pre": 14,
+     "B_birth": 0.03970077549482373,
+     "rank_birth": 10297,
+     "top3": null
+    },
+    {
+     "j": 14,
+     "pole": "L16N10274+",
+     "B_pre": 0.9098323760604234,
+     "rank_pre": 15,
+     "B_birth": 0.9884288244036828,
+     "rank_birth": 4,
+     "top3": null
+    },
+    {
+     "j": 15,
+     "pole": "L16N5325-",
+     "B_pre": 0.9071157840085116,
+     "rank_pre": 16,
+     "B_birth": 0.9950151985394289,
+     "rank_birth": 3,
+     "top3": null
+    },
+    {
+     "j": 16,
+     "pole": "L16N1514-",
+     "B_pre": 0.9063325257702289,
+     "rank_pre": 17,
+     "B_birth": 0.8033242122586544,
+     "rank_birth": 178,
+     "top3": null
+    },
+    {
+     "j": 17,
+     "pole": "L16N1531+",
+     "B_pre": 0.9063188275039054,
+     "rank_pre": 18,
+     "B_birth": 0.944435261307984,
+     "rank_birth": 10,
+     "top3": null
+    },
+    {
+     "j": 18,
+     "pole": "L16N4808+",
+     "B_pre": 0.9047497354219467,
+     "rank_pre": 19,
+     "B_birth": 0.7970662050947391,
+     "rank_birth": 197,
+     "top3": null
+    },
+    {
+     "j": 19,
+     "pole": "L16N4360-",
+     "B_pre": 0.9037711348262606,
+     "rank_pre": 20,
+     "B_birth": 0.8852509034514053,
+     "rank_birth": 45,
+     "top3": null
+    },
+    {
+     "j": 20,
+     "pole": "L16N9270-",
+     "B_pre": 0.9014846744602647,
+     "rank_pre": 21,
+     "B_birth": 0.8881255618128151,
+     "rank_birth": 39,
+     "top3": null
+    }
+   ],
+   "drop": 1.017841853069692,
+   "median_dB": -0.10534592191939107,
+   "n_comp_up": 4,
+   "n_comp_down": 16,
+   "n_leaders_pre": 0,
+   "n_leaders_birth": 0,
+   "matched_first": {
+    "pole": "L16N4452+",
+    "rank": {
+     "B": 22016,
+     "A": 22016,
+     "ratio": 22016
+    },
+    "top3": [
+     {
+      "rank": 0,
+      "a": 3.436617612838745,
+      "text": "at Raven. “For a merchant of his caliber, he has only three ledgers?”\n\n“He has tiny writing,” Raven said dryly. “I believe you will need a magnifying glass.”\n\nF [[rowning]]  to himself, Master Yadrow bowed his head to Raven and then withdrew from the"
+     },
+     {
+      "rank": 1,
+      "a": 3.1275031566619873,
+      "text": "ugh completely.\n\n    Gina noticed he’d stared at one for several minutes. “Does that one look like a good lead?” she asked.\n\n    He glanced at her with a mild f [[rown]] . “No...it’s just as inane as the rest of them.”\n\n"
+     },
+     {
+      "rank": 2,
+      "a": 2.9390320777893066,
+      "text": "h when they get off the court, and they are not in a hu,,\"Mister's words are mine. If my husband wants to get the Copa del Rey, I want to get the Copa dMourinho [[ stared]]  at the situation on the court, his eyes began to think.\n\n:China's"
+     }
+    ]
+   },
+   "pb": {
+    "pole": "L16N7733-",
+    "d": 8,
+    "rank_pre_B": 1
+   },
+   "dt": {
+    "pole": "L16N5767-",
+    "d": 9,
+    "exemplars": [
+     "ish census criteria to identify when and what numbers of procedures are allowable based on a healthcare facility’s COVID [[-]] 19 census, admissions and discharges and ensure that if an increase in COVID-",
+     "asn’t banned new garnishments, but the issuance of new writs has largely stopped because courts have ceased nonemergency [[ activity]] . Attorney David Likavec of the Legal Aid Society of Eastern Virginia is representing a",
+     "n Liverpool John Lewis & Partners, was just the boost I needed as emails came flooding in from the local makers markets; [[ postponed]] , cancelled, cancelled due to Covid-19 etc…\n\nAll artists are offered shifts",
+     "e you go beyond three days and need to find alternate sources of water.\n- Portable radio\n- Flashlight and/or light stick [[\n]] - Charger for cell phones and devices, powered by batteries, along with a cell",
+     "ing*\n\nHealth experts agreed that the wildly popular butt-bumping phenomenon sweeping the nation almost as quickly as the [[ cor]] ona virus is at least as likely related to hygiene as a cool dance move not",
+     "e face of the COVID-19 coronavirus outbreak.\n\nBritish consumers doubled the number of IT monitors bought during the week [[ ending]]  14 March compared to the week before, according to market research company Gf",
+     "24 is 9 from now using our current calendar. 9 days is equivalent to:\n\n9 days is also 216 hours. Sunday June 16, 2024 is [[ ]] 46% of the year completed.\n\n## Within 9 days there are 216",
+     "g\n\nLearn new instruments together or develop the one that you have in common. For those who've gone back to their family [[ homes]] , perhaps you've got yourselves some instruments in storage closets? Or in the basement",
+     "e $2.86, or 8.3%, to settle at $37.22 a barrel, while benchmark U.S. crude rose $3.23, or 10.4%, to $34.36 a barrel. Oil [[ prices]]  plunged 25% on Monday amid a price war between producers, who are pulling"
+    ]
+   }
+  },
+  {
+   "birth": "L20N5782+:c1",
+   "name": "responsibility and consequences words themselves",
+   "layer": 20,
+   "k": 12,
+   "t_pre": 11,
+   "size": 15,
+   "d": 7,
+   "carrier": {
+    "pole": "L20N5782+",
+    "B_pre": 0.9988524053010104,
+    "B_birth": 0.9999802705020576,
+    "r0": 3,
+    "r1": 1,
+    "r_c": 1,
+    "r_o": 4,
+    "F": 0.6020599913279624,
+    "move": 0.47712125471966244,
+    "bar_pre": 0.993546673850866
+   },
+   "exemplars": [
+    "ighbor, and Mavy Stoddard, whose husband died shielding her from bullets, plan to address the court.\n\n\"He has to pay the [[ consequences]]  for what he did, and justice will be served,\" Hileman said.\n\n",
+    "gardless that the lie could be considered minor (HIPAA violation), it is still wrong. We all make mistakes and should be [[ accountable]]  when asked about them. Ethically, I had to do the right thing even",
+    "onvenient. It can put you in a stressful situation, forcing yourself, those you love, and colleagues you work with to be [[ accountable]] . However, doing the right thing is always the right thing to do.\n\nProvide",
+    " wants to see Groening declared guilty, but rather than having him sent to jail at his age 93, feels that he must accept [[ responsibility]]  over his complicity, rather than just claim he was a “cog in",
+    "oes carry a significant amount of power. We begin to control our own destinies, make choices, and learn to deal with the [[ consequences]] —good or bad—of those actions. More important, the responsibilities that we",
+    "nsidering how many airplanes, ships and armored vehicles the Alone have destroyed. And yet she never faces any real cons [[quences]]  for her actions.\n    • The fact that Showing Rei compassion was a critical part",
+    "e feel about the teen years of a teenager. Teens should be free to do what they please...although there are some consequ [[enses]] .\n\n45. \"Happy Birthday to You.....\" 24th B-day for",
+    "r community, than good….I can assure you of this.\n\nMy opinion is that parliament members will very soon have to face the [[ consequences]]  of not addressing these laws and bringing them to a legitimate voting process. Thus their",
+    "arly diabolical against young people, seducing them to believe that there is no God or absolute morality, and no eternal [[ consequences]] . Anything goes! The devil lies hidden before our secular eyes. This makes the",
+    "ff the hook.\n\n\"I'm down for accountability culture. I'm cool with that. Even for myself,\" he said. \"Everyone needs to be [[ accountable]] . I don't mind if someone got something to say about me or what I",
+    "nerability consisted of his jealous nature. It is if he is scared to live his life that way or does not want to face the [[ consequences]]  he brings forth onto others. Othello wants Desdemona, and by",
+    "riving offences and irresponsible behaviour can be indicative of a personality that can be callous and fails to consider [[ consequences]] . Thus they concur with Solnick & Hemenway (1994)",
+    "ge W Bush should be tried for war crimes. Is that a correct inference?\n\nA My goal in the book is that somebody should be [[ accountable]] . I am not talking personalities—George Bush or (Tony) Blair. I",
+    "ay is you are violating my privacy I don’t agree with your policies or how you allow this to happen and you will be held [[ responsible]]  for these actions .\n\n- steal money\n\n\n- Banned or Glitched\n\nI",
+    "l blows my mind as it could have ended up a lot worse and is the moment in time where I really started thinking about my [[ actions]]  having consequences. When I was in 7th grade, I came home from"
+   ],
+   "competitors": [
+    {
+     "j": 1,
+     "pole": "L20N1814+",
+     "B_pre": 0.9999433143478992,
+     "rank_pre": 1,
+     "B_birth": 0.9998538943043214,
+     "rank_birth": 2,
+     "top3": [
+      {
+       "rank": 0,
+       "a": 46.92876052856445,
+       "text": "ad any money, nearly all doctoring was done with patent medicines. The salesmen would pose the question, “What would you like to have cured?” They had bottled c [[ures]]  for everything from bad sex to diarrhea. The McNess man, who was the"
+      },
+      {
+       "rank": 1,
+       "a": 44.66349792480469,
+       "text": "Your Guide to Cable TV Cord-Cutting.\n\n1. Find the channel access code by searching on such sites asRokuGuide orRokuChannels.com. For example, the channel access [[ code]]  for NoWhere TV (a streaming TV channel) is H9DWC.\n\n"
+      },
+      {
+       "rank": 2,
+       "a": 44.61684799194336,
+       "text": "s while trying to save her 9-year-old neighbor, and Mavy Stoddard, whose husband died shielding her from bullets, plan to address the court.\n\n\"He has to pay the [[ consequences]]  for what he did, and justice will be served,\" Hileman said.\n\n"
+      }
+     ]
+    },
+    {
+     "j": 2,
+     "pole": "L20N7103+",
+     "B_pre": 0.999716409825584,
+     "rank_pre": 2,
+     "B_birth": 0.9988450907870987,
+     "rank_birth": 5,
+     "top3": [
+      {
+       "rank": 0,
+       "a": 22.88457679748535,
+       "text": "l which explains how she got access to the serum.Thus, when the GRE said that if the \"cure\" in the stolen files was used at its current state, it would have bad [[ consequences]] , they were right. Indeed, the file that Rais stole, had the"
+      },
+      {
+       "rank": 1,
+       "a": 22.03282928466797,
+       "text": "arly, catch up on jobs, and some are only workaholics who want to be working as much as possible.\n\nHowever, it has been demonstrated that too much work could be [[ detrimental]]  as creativity and productivity declines without enough rest. There’s a good reason why there"
+      },
+      {
+       "rank": 2,
+       "a": 21.162742614746094,
+       "text": " tasks early, catch up on jobs, and some are only workaholics who want to be working as much as possible.\n\nHowever, it’s been proven that too much work could be [[ detrimental]]  as productivity and creativity declines without enough rest. There is a good reason why there"
+      }
+     ]
+    },
+    {
+     "j": 3,
+     "pole": "L20N4687-",
+     "B_pre": 0.9971849248639737,
+     "rank_pre": 4,
+     "B_birth": 0.9970485443783126,
+     "rank_birth": 7,
+     "top3": [
+      {
+       "rank": 0,
+       "a": -38.20664596557617,
+       "text": "he behaviour or asking the perpetrator to stop. They either feared the negative consequences of responding in other ways, believed their complaints would not be [[ taken]]  seriously, or were too surprised to take any other action. As a result,"
+      },
+      {
+       "rank": 1,
+       "a": -37.59431457519531,
+       "text": "he behaviour or asking the perpetrator to stop. They either feared the negative consequences of responding in other ways, believed their complaints would not be [[ taken]]  seriously, or were too surprised to take any other action. As a result,"
+      },
+      {
+       "rank": 2,
+       "a": -33.86067199707031,
+       "text": "ed as a problem; many do not know what sexual harassment really means; it is considered by most union leaders as very hard to prove; complaints by women are not [[ taken]]  seriously. The trivialization of sexual harassment is directly rooted in the lack of understanding"
+      }
+     ]
+    },
+    {
+     "j": 4,
+     "pole": "L20N6775-",
+     "B_pre": 0.9961126764289351,
+     "rank_pre": 5,
+     "B_birth": 0.99244595346535,
+     "rank_birth": 14,
+     "top3": null
+    },
+    {
+     "j": 5,
+     "pole": "L20N10506-",
+     "B_pre": 0.9952266239242884,
+     "rank_pre": 6,
+     "B_birth": 0.9270004395884808,
+     "rank_birth": 161,
+     "top3": null
+    },
+    {
+     "j": 6,
+     "pole": "L20N9079+",
+     "B_pre": 0.9952074831800323,
+     "rank_pre": 7,
+     "B_birth": 0.9988757809406127,
+     "rank_birth": 4,
+     "top3": null
+    },
+    {
+     "j": 7,
+     "pole": "L20N4044+",
+     "B_pre": 0.9941147683991389,
+     "rank_pre": 8,
+     "B_birth": 0.9982892499806538,
+     "rank_birth": 6,
+     "top3": null
+    },
+    {
+     "j": 8,
+     "pole": "L20N5055+",
+     "B_pre": 0.9937847186307203,
+     "rank_pre": 9,
+     "B_birth": 0.9996341814098948,
+     "rank_birth": 3,
+     "top3": null
+    },
+    {
+     "j": 9,
+     "pole": "L20N2001-",
+     "B_pre": 0.9937563797886085,
+     "rank_pre": 10,
+     "B_birth": 0.8569646628768611,
+     "rank_birth": 443,
+     "top3": null
+    },
+    {
+     "j": 10,
+     "pole": "L20N6461-",
+     "B_pre": 0.993546673850866,
+     "rank_pre": 11,
+     "B_birth": 0.22631334577305345,
+     "rank_birth": 7535,
+     "top3": null
+    },
+    {
+     "j": 11,
+     "pole": "L20N7913+",
+     "B_pre": 0.993136331219234,
+     "rank_pre": 12,
+     "B_birth": 0.9703279445097512,
+     "rank_birth": 61,
+     "top3": null
+    },
+    {
+     "j": 12,
+     "pole": "L20N3852-",
+     "B_pre": 0.9927598381070707,
+     "rank_pre": 13,
+     "B_birth": 0.9645076095591069,
+     "rank_birth": 75,
+     "top3": null
+    },
+    {
+     "j": 13,
+     "pole": "L20N5548-",
+     "B_pre": 0.9927083956607744,
+     "rank_pre": 14,
+     "B_birth": 0.9905850585305594,
+     "rank_birth": 17,
+     "top3": null
+    },
+    {
+     "j": 14,
+     "pole": "L20N9857-",
+     "B_pre": 0.9918650985118392,
+     "rank_pre": 15,
+     "B_birth": 0.9869293085435112,
+     "rank_birth": 23,
+     "top3": null
+    },
+    {
+     "j": 15,
+     "pole": "L20N4751+",
+     "B_pre": 0.9918212963437251,
+     "rank_pre": 16,
+     "B_birth": 0.9597637372676053,
+     "rank_birth": 81,
+     "top3": null
+    },
+    {
+     "j": 16,
+     "pole": "L20N4127-",
+     "B_pre": 0.9917284065235978,
+     "rank_pre": 17,
+     "B_birth": 0.993339948119606,
+     "rank_birth": 10,
+     "top3": null
+    },
+    {
+     "j": 17,
+     "pole": "L20N564+",
+     "B_pre": 0.9909848881763892,
+     "rank_pre": 18,
+     "B_birth": 0.9859877368462117,
+     "rank_birth": 25,
+     "top3": null
+    },
+    {
+     "j": 18,
+     "pole": "L20N5500-",
+     "B_pre": 0.9899251449713979,
+     "rank_pre": 19,
+     "B_birth": 0.993117513734137,
+     "rank_birth": 12,
+     "top3": null
+    },
+    {
+     "j": 19,
+     "pole": "L20N4814+",
+     "B_pre": 0.989821090481384,
+     "rank_pre": 20,
+     "B_birth": 0.9784170860654696,
+     "rank_birth": 40,
+     "top3": null
+    },
+    {
+     "j": 20,
+     "pole": "L20N3804-",
+     "B_pre": 0.989281267941803,
+     "rank_pre": 21,
+     "B_birth": 0.9874334835291911,
+     "rank_birth": 21,
+     "top3": null
+    }
+   ],
+   "drop": 0.2720340221751377,
+   "median_dB": -0.0028950300469000045,
+   "n_comp_up": 5,
+   "n_comp_down": 14,
+   "n_leaders_pre": 2,
+   "n_leaders_birth": 0,
+   "matched_first": {
+    "pole": "L20N1330-",
+    "rank": {
+     "B": 346,
+     "A": 22016,
+     "ratio": 546
+    },
+    "top3": [
+     {
+      "rank": 0,
+      "a": -19.45865821838379,
+      "text": "(stick with something that can erase…at least for the first draft) or a computer or a smartphone with your favorite itinerary app. Choose whichever method comes [[ naturally]]  to you. \n\nI love creating things digitally while at the same time having"
+     },
+     {
+      "rank": 1,
+      "a": -18.572681427001953,
+      "text": "we can with people.\nPracticing Spontaneity\n    Is it possible to practice spontaneity? Practice, repetition, and spontaneity, at least on the surface seem to be [[ strange]]  bedfellows, but looking deeper, spontaneity requires several things: flexibility"
+     },
+     {
+      "rank": 2,
+      "a": -18.34261703491211,
+      "text": "ith ACU and McMurry, along with various booster club sponsorships with Cooper High School,\" Merced said in a news release. \"We’re looking forward to becoming an [[ integral]]  part of the community and can’t wait to get even more involved with schools and"
+     }
+    ]
+   },
+   "pb": {
+    "pole": "L20N8272+",
+    "d": 8,
+    "rank_pre_B": 1
+   },
+   "dt": {
+    "pole": "L20N978-",
+    "d": 7,
+    "exemplars": [
+     "connection, and the emotional bond – cannot be entirely captured by equations alone. That’s where “HIS Secret Obsession” [[ enters]]  the picture, presenting a distinctive approach to understanding and nurturing the psychological and emotional aspects",
+     "ion.\n> > And we want, for sure, the distribution to be uniform, represent one\nclass only as the best.\n> > Where deviance [[ come]]  from at all? I look at a formula and see that the\nonly difference",
+     "m or thanatourism are conjured up within an office inside university walls to define something that is already a reality [[ in]]  the tourist world. Such labels, moreover, \"seem to exist without the",
+     "nto somebody other's house without ringing the bell first (at least - you should not)! And that's where the dependencies [[ come]]  in.\n\nExpressing Dependencies\n\nLet's introduce a slightly modified rakefile:\n\ntask",
+     "ractivity. Therefore, the real development of social media took place only later, and more precisely it should be placed [[ in]]  the phase that goes from the early years of the new century up to the present",
+     "cid.\n\nIn addition to being a music selector and DJ as a hobby, he and his work have always had a strong union with music [[ in]]  all aspects, from cover designs for different artists to collaborations and art design at festivals",
+     "ver-through-history.277902/ 277902 invalid@example.com (Kresh170) Kresh170 What are the best server that has been online [[ since]]  Tibia has existed?\nAnd why was the server so good?]]>\n[",
+     "Justicieros (PC). It adapts an arcade named Zorton Brothers, which I never played. But the game itself was quite popular [[ in]]  Spain, and people still remembers it fondly.\n\n2009-02-23",
+     "origin and history behind a surname can have a profound impact on the way we see ourselves and how we perceive our place [[ in]]  the world.\n\nSimilar surnames to Beybutyan\n\n  1.",
+     " maintain and do any modification.\n\nWhat is the major disadvantage of a 3 tier architecture?\n\nThe main disadvantages are [[ given]]  as follows: The Three-tier nature makes it difficult for developers to change an application",
+     "people will stop using container virtualization. It means that people will start using containers properly and put VALUE [[ on]]  the top.\n\nFew days ago I watched the awesome talk about frameworks survival in messy",
+     "ntenance of a healthy financial balance. The same positive trend is expected for year 2024 and the following years, also [[ in]]  relation to the favorable competitive position consolidated by GDS over the years, supported by",
+     " do strange things such as a sculpture, because they are strange, really strange; they are not the most practical things [[ in]]  your life. And to make other communications, other signs like performances, drawings,",
+     " fw installed on my board as per former instructions (I commment this just fyi to get the picture the board is ok) . the [[ point]]  is when I connect the arduino+ambe300 setup to the RPI",
+     "on. Intersecting a part of both plausible and probable futures, a Preferable area delineates where SD should be deployed [[ in]]  order to collectively define a preferable future. This area requires new design methods, roles"
+    ]
+   }
+  },
+  {
+   "birth": "L07N8340+:c4",
+   "name": "mid-word fragments of rare proper names/terms (Templi, Epidemiology, Desulfovibrio, clerical)",
+   "layer": 7,
+   "k": 14,
+   "t_pre": 13,
+   "size": 5,
+   "d": 4,
+   "carrier": {
+    "pole": "L07N8340+",
+    "B_pre": 0.9807308236500807,
+    "B_birth": 0.9999102106314137,
+    "r0": 265,
+    "r1": 1,
+    "r_c": 2,
+    "r_o": 258,
+    "F": 2.110589710299249,
+    "move": 2.423245873936808,
+    "bar_pre": 0.9980179276174842
+   },
+   "exemplars": [
+    "L, Mylotte JM, Nicolle LE, Roghmann MC, Schweon SJ, Simor AE, Smith PW, Stevenson KB, Bradley SF, Society for Healthcare [[ Epidemi]] ology Long-Term Care Special Interest Group. Surveillance definitions of infections in long-term",
+    " Beast,\" was a showman, drug fiend, and Satanist of the early twentieth century. He attracted many followers to the Ordo [[ Templ]] i Orientis, seduced (and abused) scores of women, and claimed",
+    "sh government observations about it that accused the Vatican of undermining “the Irish church’s own efforts to deal with [[ cler]] ical child sexual abuse.”\n\nThe text said:\n\nAt the outset, the Holy See",
+    "Changes in metabolic pathways of Desul [[fov]] ibrio alaskensis G20 cells induced by molybdate excess\n\n",
+    "en from Masonry (and thus the Templars). Spearheaded by orders including the Theosophists, the Golden Dawn, and the Ordo [[ Templ]] i Orientis, occultism rose to a crescendo in the modern era.\n\n"
+   ],
+   "competitors": [
+    {
+     "j": 1,
+     "pole": "L07N6238+",
+     "B_pre": 0.9999210530907455,
+     "rank_pre": 1,
+     "B_birth": 0.9961152633912879,
+     "rank_birth": 29,
+     "top3": [
+      {
+       "rank": 0,
+       "a": 1.7811906337738037,
+       "text": "PERSONA 5 the Animation: BREAK IN TO BREAK OUT by Lyn\n  4. Steins;Gate 0: Fatima by Kanako Itou\n  5. Otaku ni Koi wa Muzukashii: Fiction by sumika\n  6. Tokyo Gh [[oul]] :re: asphyxia by Cö shu Nie\n  7"
+      },
+      {
+       "rank": 1,
+       "a": 1.5575554370880127,
+       "text": "tical Art, or Art of Grammar) is the oldest surviving text on Greek grammar and language usage Language and the Ancient Greeks and On the Decipherment of Linear [[ B]]  (A Pair of Essays) read epub. A common Greek language arose among the"
+      },
+      {
+       "rank": 2,
+       "a": 1.5445241928100586,
+       "text": "storage area. The bales are stored in stacks, usually under a cover (barn, shed or plastic) to protect them from rain. Wet hay can easily spoil or spontaneously [[ combust]]  from the heat of the decaying process. Hay may be processed for commercial use"
+      }
+     ]
+    },
+    {
+     "j": 2,
+     "pole": "L07N5607-",
+     "B_pre": 0.9992312010533447,
+     "rank_pre": 2,
+     "B_birth": 0.553120933474945,
+     "rank_birth": 6148,
+     "top3": [
+      {
+       "rank": 0,
+       "a": -1.0646977424621582,
+       "text": "re pills seemed to have a deep hatred with the Lyndia Fetzer Three words are inseparable from sending troops to destroy the black. The prevalence of primary ald [[oster]] onism is high and largely unrecognized, the study authors wrote in the Annals"
+      },
+      {
+       "rank": 1,
+       "a": -0.9695246815681458,
+       "text": "FBI at http://tips.fbi.gov or email the FBI at levinsonfbireward@ic.fbi.gov.\n\nInformation will be kept confidential and can be provided anonymously.\n\nDEA’s John [[ ‘]] Jack’ Riley Named ticklethewire.com’s Fed of The Year For "
+      },
+      {
+       "rank": 2,
+       "a": -0.8576818704605103,
+       "text": "and federal prosecutorial\nauthorities who have obtained racketeering and\nconspiracy indictments against Bruno's successor\nas crime family boss, Nicodemo (Little [[ Nick]] y)\nScarfo; the mob's underboss (and Scarfo\nn"
+      }
+     ]
+    },
+    {
+     "j": 3,
+     "pole": "L07N952+",
+     "B_pre": 0.9991751951998257,
+     "rank_pre": 3,
+     "B_birth": 0.9151110948043556,
+     "rank_birth": 1386,
+     "top3": [
+      {
+       "rank": 0,
+       "a": 1.9559051990509033,
+       "text": "tion 5.\n\nEEG Artifact Rejection and Preprocessing.\n\nTo ensure that the analyzed EEG data reflected only attentive and movement-free neural activity, a two-stage [[ artifact]]  rejection procedure was applied. First, session videos were manually reviewed to select only periods"
+      },
+      {
+       "rank": 1,
+       "a": 1.6970759630203247,
+       "text": "ght the primary purpose of SDR was to deal with wide(er) band digital signals, and most of them are well above HF. If you really need HF, there are plenty of up [[convert]] ers that bring HF up to 100MHz+ so most SDR devices can"
+      },
+      {
+       "rank": 2,
+       "a": 1.380457878112793,
+       "text": "pled to 200 Hz, low-pass filtered <45 Hz to suppress electrical line noise, and segmented into 1.0-s epochs for connectivity analysis.\n\nEEG Analyses: Speech Art [[ifacts]] , Power Spectrum, and GPDC Network Connectivity.\n\nSpeech production artifacts were present in"
+      }
+     ]
+    },
+    {
+     "j": 4,
+     "pole": "L07N8559+",
+     "B_pre": 0.9989250807549714,
+     "rank_pre": 4,
+     "B_birth": 0.9960647999975212,
+     "rank_birth": 31,
+     "top3": null
+    },
+    {
+     "j": 5,
+     "pole": "L07N6560+",
+     "B_pre": 0.9989003839730166,
+     "rank_pre": 5,
+     "B_birth": 0.9942919193526635,
+     "rank_birth": 49,
+     "top3": null
+    },
+    {
+     "j": 6,
+     "pole": "L07N1552-",
+     "B_pre": 0.9986343588290794,
+     "rank_pre": 6,
+     "B_birth": 0.9980281133525003,
+     "rank_birth": 15,
+     "top3": null
+    },
+    {
+     "j": 7,
+     "pole": "L07N3087+",
+     "B_pre": 0.9985351349758987,
+     "rank_pre": 7,
+     "B_birth": 0.9987861526530705,
+     "rank_birth": 10,
+     "top3": null
+    },
+    {
+     "j": 8,
+     "pole": "L07N2705-",
+     "B_pre": 0.9985348808046757,
+     "rank_pre": 8,
+     "B_birth": 0.8607644136432777,
+     "rank_birth": 2245,
+     "top3": null
+    },
+    {
+     "j": 9,
+     "pole": "L07N198+",
+     "B_pre": 0.9980719348070366,
+     "rank_pre": 9,
+     "B_birth": 0.8146181195223616,
+     "rank_birth": 2936,
+     "top3": null
+    },
+    {
+     "j": 10,
+     "pole": "L07N9178-",
+     "B_pre": 0.9980179276174842,
+     "rank_pre": 10,
+     "B_birth": 0.21264048162338717,
+     "rank_birth": 9378,
+     "top3": null
+    },
+    {
+     "j": 11,
+     "pole": "L07N8818-",
+     "B_pre": 0.9979532896252676,
+     "rank_pre": 11,
+     "B_birth": 0.4849023586401622,
+     "rank_birth": 6843,
+     "top3": null
+    },
+    {
+     "j": 12,
+     "pole": "L07N6430+",
+     "B_pre": 0.9976876241764163,
+     "rank_pre": 12,
+     "B_birth": 0.0,
+     "rank_birth": 22016,
+     "top3": null
+    },
+    {
+     "j": 13,
+     "pole": "L07N10603-",
+     "B_pre": 0.9975795097485485,
+     "rank_pre": 13,
+     "B_birth": 0.0,
+     "rank_birth": 22016,
+     "top3": null
+    },
+    {
+     "j": 14,
+     "pole": "L07N5012+",
+     "B_pre": 0.997532417722039,
+     "rank_pre": 14,
+     "B_birth": 0.0,
+     "rank_birth": 22016,
+     "top3": null
+    },
+    {
+     "j": 15,
+     "pole": "L07N2023+",
+     "B_pre": 0.9975208339013255,
+     "rank_pre": 15,
+     "B_birth": 0.9864547431527854,
+     "rank_birth": 165,
+     "top3": null
+    },
+    {
+     "j": 16,
+     "pole": "L07N8410-",
+     "B_pre": 0.997475473432046,
+     "rank_pre": 16,
+     "B_birth": 0.9890219603390779,
+     "rank_birth": 128,
+     "top3": null
+    },
+    {
+     "j": 17,
+     "pole": "L07N8974+",
+     "B_pre": 0.9972797598369831,
+     "rank_pre": 17,
+     "B_birth": 0.9412995558456974,
+     "rank_birth": 945,
+     "top3": null
+    },
+    {
+     "j": 18,
+     "pole": "L07N9415-",
+     "B_pre": 0.9972313230727505,
+     "rank_pre": 18,
+     "B_birth": 0.8533267140166432,
+     "rank_birth": 2350,
+     "top3": null
+    },
+    {
+     "j": 19,
+     "pole": "L07N4716-",
+     "B_pre": 0.9970982138343655,
+     "rank_pre": 19,
+     "B_birth": 0.997937024463536,
+     "rank_birth": 16,
+     "top3": null
+    },
+    {
+     "j": 20,
+     "pole": "L07N1677-",
+     "B_pre": 0.9970593143670395,
+     "rank_pre": 20,
+     "B_birth": 0.9980687408255314,
+     "rank_birth": 13,
+     "top3": null
+    }
+   ],
+   "drop": 1.9303891221497098,
+   "median_dB": -0.07002215219337793,
+   "n_comp_up": 2,
+   "n_comp_down": 18,
+   "n_leaders_pre": 20,
+   "n_leaders_birth": 0,
+   "matched_first": {
+    "pole": "L07N965-",
+    "rank": {
+     "B": 22016,
+     "A": 22016,
+     "ratio": 22016
+    },
+    "top3": [
+     {
+      "rank": 0,
+      "a": -1.0166112184524536,
+      "text": " [[NASA]] ’s James Webb Telescope captures a stunning image of a ‘lonely’ galaxy\n\n"
+     },
+     {
+      "rank": 1,
+      "a": -0.9421693086624146,
+      "text": " [[NASA]]  astronaut and Pittsburgh native Warren 'Woody' Hoburg takes Terrible Towel"
+     },
+     {
+      "rank": 2,
+      "a": -0.9332300424575806,
+      "text": "ce of j, and then declare a detection whenever Dj exceeds some threshold chosen to balance the two types of errors, false positives and false negatives. Several [[ telesc]] opes are now employed here for synoptic and research work.\n\n0 100 "
+     }
+    ]
+   },
+   "pb": {
+    "pole": "L07N7004+",
+    "d": 5,
+    "rank_pre_B": 2
+   },
+   "dt": {
+    "pole": "L07N5613-",
+    "d": 4,
+    "exemplars": [
+     "\nWorks Cited\n\n“Yes, China has Fully Arrived as a Superpower.” Forbes. Forbes Magazine, n.d. Web. 15 Feb. 2016.\n\nKamrany, [[ N]] ake M. “China’s Rise to Global Economic Superpower.” The Huffington Post",
+     "ly measured with the help of TF specifications. 9, 600607. A tissue marker of the severity of nocturnal desaturation. Et [[ al]] . 47 OSTEOMYELITIS: ROLE OF VASCULAR",
+     " di Paludo (Venezia), Firenze: All’Insegna del Giglio, 2014 (in corso di stampa).\n\nBAUDO F. – MAZZOCCHIN G.A. – CAIRNS W [[.]]  2007, A pilgrim’s ampulla from San Giacomo in",
+     "ened with so much of the past, has to do.\n\nDr. C. Stuart Chapman is author of Shelby Foote: A Writer's Life.\n\nChapman, C [[.]]  Stuart, review of Shelby Foote and the Art of History: Two Gates to",
+     "restee off at the jail. An officer who took part in James Q. Wilson’s study of\n\n\\textsuperscript{204} ERIC J. FRITSCH ET [[ AL]] ., POLICE PATROL ALLOCATION AND DEPLOYMENT 7 (2009"
+    ]
+   }
+  },
+  {
+   "birth": "L10N9052+:c2",
+   "name": "NPR 'Transcript provided by NPR, Copyright'",
+   "layer": 10,
+   "k": 14,
+   "t_pre": 13,
+   "size": 5,
+   "d": 1,
+   "carrier": {
+    "pole": "L10N9052+",
+    "B_pre": 0.584915755938497,
+    "B_birth": 0.9996569417837395,
+    "r0": 7175,
+    "r1": 52,
+    "r_c": 59,
+    "r_o": 7175,
+    "F": 2.0849698937638856,
+    "move": 2.1398185617712304,
+    "bar_pre": 0.9999579620266859
+   },
+   "exemplars": [
+    "ve.\" Thank you so much for joining us.\n\nLEWIS: Thank you so much. Thanks for the great chat. Transcript provided by NPR, [[ Copyright]]  NPR.\n\nAyesha Rascoe is a White House correspondent for NPR. She",
+    "t Berkeley School of Journalism. Thanks so much for talking with us.\n\nHAY: Thank you, ma'am. Transcript provided by NPR, [[ Copyright]]  NPR.\n\nMore On This Topic<|endoftext|>",
+    "ng with us.\n\nELEUTERI: Thank you so much for having me.\n\n(SOUNDBITE OF FETE'S \"THE ISLANDS\") Transcript provided by NPR, [[ Copyright]]  NPR.\n\nNPR transcripts are created on a rush deadline by an NPR contractor.",
+    "ing about the phenomenon of Tim Tebow. You can also hear Howard on WEEKEND EDITION SATURDAY. Transcript provided by NPR, [[ Copyright]]  NPR.<|endoftext|>",
+    "au from doing much to help.\n\nChris Arnold, NPR News.\n\n(SOUNDBITE OF I/O'S \"BAIT AND SWITCH\") Transcript provided by NPR, [[ Copyright]]  NPR.\n\nNPR correspondent Chris Arnold is based in Boston. His reports are heard"
+   ],
+   "competitors": [
+    {
+     "j": 1,
+     "pole": "L10N3510+",
+     "B_pre": 0.9999992985177756,
+     "rank_pre": 1,
+     "B_birth": 0.9184778656972716,
+     "rank_birth": 3154,
+     "top3": [
+      {
+       "rank": 0,
+       "a": 1.2033675909042358,
+       "text": "o VPC-T850) it shuts off even though the battery is charged all the way!\n\n... Olympus Camedia C-765 Digital Camera\n\nMy Sanyo VPC-S1085 Digital Camera Only Turns [[ On]]  And Shows The Blue Sanyo Screen And Shuts Off HELP!\n\n... S"
+      },
+      {
+       "rank": 1,
+       "a": 1.1153010129928589,
+       "text": "ta.csv')\n#Lists to store data\ncandidate=[]\ntotal=0\nkhan=0\ncorrey=0\nli=0\notooley=0\n\nwith open(csvpath,newline=\"\") as csvfile:\n    csvreader = csv.reader(csvfile, [[ delimiter]] =\",\")\n    csvheader = next(csvfile)\n#Read through each row of"
+      },
+      {
+       "rank": 2,
+       "a": 1.0984585285186768,
+       "text": "or ESPN.com and ESPN, the magazine, talking about the phenomenon of Tim Tebow. You can also hear Howard on WEEKEND EDITION SATURDAY. Transcript provided by NPR, [[ Copyright]]  NPR.<|endoftext|>"
+      }
+     ]
+    },
+    {
+     "j": 2,
+     "pole": "L10N3950-",
+     "B_pre": 0.999992527287165,
+     "rank_pre": 2,
+     "B_birth": 0.9999727883415738,
+     "rank_birth": 7,
+     "top3": [
+      {
+       "rank": 0,
+       "a": -2.9429128170013428,
+       "text": "t he didn't rapid weight loss pills GNC more brutally than he expected.\n\nThen, he took out a poison crystal and rapid loss weight loss pills the poison crystal, [[ Gay]] lene Redner and the others were so frightened that they scattered.\n\nAfter she finished"
+      },
+      {
+       "rank": 1,
+       "a": -2.4544177055358887,
+       "text": "ag.\n\nUsing the water displacement method, I removed the air from the bag and sealed it tight.\n\nOnce the water oven reached 165 F, I dropped in the sealed bag…\n\n [[…and]]  set the timer for 10 minutes. After the buzzer went off, I"
+      },
+      {
+       "rank": 2,
+       "a": -2.3135318756103516,
+       "text": " head against her entrance, and slowly pushed in.\n\n\"Oh, man...! Oh!\" he moaned as he entered her. Amber gasped at his width. Greg slowly buried his cock in her; [[ Amber]]  groaned every inch of the way. After it was in halfway, he thrust"
+      }
+     ]
+    },
+    {
+     "j": 3,
+     "pole": "L10N9744+",
+     "B_pre": 0.9999896102999013,
+     "rank_pre": 3,
+     "B_birth": 0.9990209520232023,
+     "rank_birth": 160,
+     "top3": [
+      {
+       "rank": 0,
+       "a": 2.9675188064575195,
+       "text": "nnel Variables\n\nSet these channel variables to control the behavior of mod_conference for the current session.  conference_auto_outcall_ variables are described [[ above]]  in the Outbound Conference section\n\nVariableDescriptionExampleMin. Version\nconference_controls"
+      },
+      {
+       "rank": 1,
+       "a": 2.507150173187256,
+       "text": "opinion) insufferable living conditions, so they can get their cheap glory. Let us re- examine the lesbian dating apps canada of\" Britney\" from the introductory [[ paragraph]] . Obviously, she likes to travel- - that doesn't? It's among"
+      },
+      {
+       "rank": 2,
+       "a": 2.5011441707611084,
+       "text": ") = 28.1 ). The original configuration of the spring was Ans. (b)    33 3 1.168 4 1 4(5.17)(5.17 1) 32 32(13. [[25]] )1.168 297 10 psi 297 kpsi . i i"
+      }
+     ]
+    },
+    {
+     "j": 4,
+     "pole": "L10N9347+",
+     "B_pre": 0.9999835359687781,
+     "rank_pre": 4,
+     "B_birth": 0.9999992202018012,
+     "rank_birth": 1,
+     "top3": null
+    },
+    {
+     "j": 5,
+     "pole": "L10N10395-",
+     "B_pre": 0.999978854870215,
+     "rank_pre": 5,
+     "B_birth": 0.8560039956277316,
+     "rank_birth": 4225,
+     "top3": null
+    },
+    {
+     "j": 6,
+     "pole": "L10N5101+",
+     "B_pre": 0.9999695741126587,
+     "rank_pre": 6,
+     "B_birth": 0.999987454548648,
+     "rank_birth": 3,
+     "top3": null
+    },
+    {
+     "j": 7,
+     "pole": "L10N10366-",
+     "B_pre": 0.9999684624367167,
+     "rank_pre": 7,
+     "B_birth": 0.0,
+     "rank_birth": 22016,
+     "top3": null
+    },
+    {
+     "j": 8,
+     "pole": "L10N7495+",
+     "B_pre": 0.9999659419237957,
+     "rank_pre": 8,
+     "B_birth": 0.8402850517940463,
+     "rank_birth": 4467,
+     "top3": null
+    },
+    {
+     "j": 9,
+     "pole": "L10N3558+",
+     "B_pre": 0.9999600511212772,
+     "rank_pre": 9,
+     "B_birth": 0.9997463837044002,
+     "rank_birth": 41,
+     "top3": null
+    },
+    {
+     "j": 10,
+     "pole": "L10N1434+",
+     "B_pre": 0.9999579620266859,
+     "rank_pre": 10,
+     "B_birth": 0.9770580069860607,
+     "rank_birth": 1539,
+     "top3": null
+    },
+    {
+     "j": 11,
+     "pole": "L10N316+",
+     "B_pre": 0.9999559773572074,
+     "rank_pre": 11,
+     "B_birth": 0.9997538856522341,
+     "rank_birth": 38,
+     "top3": null
+    },
+    {
+     "j": 12,
+     "pole": "L10N5978+",
+     "B_pre": 0.9999543166575384,
+     "rank_pre": 12,
+     "B_birth": 0.0,
+     "rank_birth": 22016,
+     "top3": null
+    },
+    {
+     "j": 13,
+     "pole": "L10N8329-",
+     "B_pre": 0.9999534749529739,
+     "rank_pre": 13,
+     "B_birth": 0.8410911767772778,
+     "rank_birth": 4454,
+     "top3": null
+    },
+    {
+     "j": 14,
+     "pole": "L10N7556-",
+     "B_pre": 0.9999500805783568,
+     "rank_pre": 14,
+     "B_birth": 0.9762398912149743,
+     "rank_birth": 1577,
+     "top3": null
+    },
+    {
+     "j": 15,
+     "pole": "L10N8085+",
+     "B_pre": 0.999948721798511,
+     "rank_pre": 15,
+     "B_birth": 0.9892741725749754,
+     "rank_birth": 946,
+     "top3": null
+    },
+    {
+     "j": 16,
+     "pole": "L10N3874+",
+     "B_pre": 0.9999484966404005,
+     "rank_pre": 16,
+     "B_birth": 0.8000622232229315,
+     "rank_birth": 5013,
+     "top3": null
+    },
+    {
+     "j": 17,
+     "pole": "L10N7584-",
+     "B_pre": 0.9999395308625525,
+     "rank_pre": 17,
+     "B_birth": 0.9999980554463536,
+     "rank_birth": 2,
+     "top3": null
+    },
+    {
+     "j": 18,
+     "pole": "L10N3398-",
+     "B_pre": 0.9999257552299093,
+     "rank_pre": 18,
+     "B_birth": 0.9951045109743237,
+     "rank_birth": 526,
+     "top3": null
+    },
+    {
+     "j": 19,
+     "pole": "L10N4512+",
+     "B_pre": 0.9998909110116029,
+     "rank_pre": 19,
+     "B_birth": 0.0,
+     "rank_birth": 22016,
+     "top3": null
+    },
+    {
+     "j": 20,
+     "pole": "L10N2707-",
+     "B_pre": 0.9998891522516345,
+     "rank_pre": 20,
+     "B_birth": 0.0,
+     "rank_birth": 22016,
+     "top3": null
+    }
+   ],
+   "drop": 2.119471138741072,
+   "median_dB": -0.023305072202003785,
+   "n_comp_up": 3,
+   "n_comp_down": 17,
+   "n_leaders_pre": 20,
+   "n_leaders_birth": 6,
+   "matched_first": {
+    "pole": "L10N4199+",
+    "rank": {
+     "B": 4320,
+     "A": 22016,
+     "ratio": 2803
+    },
+    "top3": [
+     {
+      "rank": 0,
+      "a": 1.723524570465088,
+      "text": " that will pop up.\n\nTinyChat is an different selection to Omegle that, depending on your preferences, allows you to chat with random strangers by way of textual [[ content]] , audio, and video. It does not function in a one-on-one chat"
+     },
+     {
+      "rank": 1,
+      "a": 1.6348549127578735,
+      "text": "to move up to the Pro tier. Which offers you entry to premium features like watching limitless videos with out adverts. People who like to speak through textual [[ content]]  can use the text chat characteristic. The website would then put you in touch with"
+     },
+     {
+      "rank": 2,
+      "a": 1.3251574039459229,
+      "text": "Total ERP\n\nGreatest Video Chat Apps In 2022\n\nGay chatting rooms and apps are one of the only ways to fulfill gay people online. High-quality video chat and [[ text]]  chat permits you to keep safe and comfy from the consolation of your individual residence."
+     }
+    ]
+   },
+   "pb": {
+    "pole": "L10N9100+",
+    "d": 5,
+    "rank_pre_B": 1
+   },
+   "dt": {
+    "pole": "L10N9794-",
+    "d": 1,
+    "exemplars": [
+     "﻿using Edura.Entity.Models [[;\n]] using Edura.Entity.ViewModels;\nusing Edura.Repository.Abstract;\nusing System;\nusing",
+     "﻿using MVVM.Commands;\nusing MVVM.Items [[;\n]] using System;\nusing System.Collections.Generic;\nusing System.ComponentModel;\n\nnamespace MVVM.ViewModels",
+     "﻿using Project0.StoreApplication.Domain.Models [[;\n]] using Project0.StoreApplication.Storage.Interfaces;\n\n\n\nnamespace Project0.StoreApplication.Storage.Models.Mapping",
+     "using System.Collections.Generic;\nusing System.Linq;\nusing AspnetCoreService.Entities [[;\n]] using AspnetCoreService.Infra;\n\nnamespace AspnetCoreService.Services",
+     "﻿using BigSchool.Models [[;\n]] using System;\nusing System.Collections.Generic;\nusing System.ComponentModel.DataAnnotations;\nusing System.Globalization"
+    ]
+   }
+  },
+  {
+   "birth": "L10N9794+:c2",
+   "name": "get/delete/add/list verb inside identifiers, CLI args and function names",
+   "layer": 10,
+   "k": 10,
+   "t_pre": 9,
+   "size": 12,
+   "d": 9,
+   "carrier": {
+    "pole": "L10N9794+",
+    "B_pre": 0.9986395439867582,
+    "B_birth": 0.9999203742939237,
+    "r0": 1,
+    "r1": 1,
+    "r_c": 1,
+    "r_o": 1,
+    "F": 0.0,
+    "move": 0.0,
+    "bar_pre": 0.9919758426283983
+   },
+   "exemplars": [
+    ") {\n  return await autorRepository.getAutorByAutorId(autorId)\n}\n\nexport default { createAutor, updateAutor, deleteAutor, [[ get]] Autores, getAutorByAutorId }\n<|endoftext|>",
+    "const db = require('./db');\nconst helper = require('../helper');\nconst config = require('../config');\n\n\n\n\n// [[ get]]  top 10 messages\nasync function getMultiple(page = 1){\n  const",
+    "t;\n    if (error) {\n      const {\n        details: [{ message }]\n      } = error;\n      return message;\n    }\n  };\n\n  // [[ get]]  methods\n\n  couseRouter.get('/', (req, res) => {\n   ",
+    "orId (autorId) {\n  return await autorRepository.getAutorByAutorId(autorId)\n}\n\nexport default { createAutor, updateAutor, [[ delete]] Autor, getAutores, getAutorByAutorId }\n<|endoftext|>",
+    "on = this.action(arg);\n    }\n\n\n    action(arg = {}) {\n        if(arg.list || arg.l) {return 'list';}\n        else if(arg [[.add]]  || arg.a) {return 'add';}\n        // add delete func\n",
+    "nst cors = require('cors');\nconst path =require(\"path\");\nconst{uploadImage, updateContact, createContact, deleteContact, [[ getAll]] Contacts} = require(\"./controller/contactController\");\n\n\n// Middleware\napp.use(express.json",
+    "arg.l) {return 'list';}\n        else if(arg.add || arg.a) {return 'add';}\n        // add delete func\n        else if(arg [[.delete]]  || arg.d) {return 'delete';}\n        else {return 'Enter",
+    "     else if(arg.add || arg.a) {return 'add';}\n        // add delete func\n        else if(arg.delete || arg.d) {return ' [[delete]] ';}\n        else {return 'Enter a command';}\n    }\n    note",
+    "ory(arg);\n        this.action = this.action(arg);\n    }\n\n\n    action(arg = {}) {\n        if(arg.list || arg.l) {return ' [[list]] ';}\n        else if(arg.add || arg.a) {return 'add';",
+    "lete';}\n        else {return 'Enter a command';}\n    }\n    note(arg = {}) {\n        if(arg.list || arg.l) {return 'Notes [[ list]] ';}\n        else if(arg.add || arg.a) {return `${arg.add",
+    "ms) {\n    return super.request('access-tokens/refresh', 'POST', params)\n  }\n}\n\nexport class Ideas extends API {\n  static [[ get]]  URL () {\n    return 'ideas'\n  }\n  static get () {\n   ",
+    "ecode(\"utf-8\"))\n    res = service.get_relation_id_by_relation(params['relation'])\n    return jsonify({'relation_id': res [[})\n\n\n]] if __name__ == \"__main__\":\n    app.run(host='0.0"
+   ],
+   "competitors": [
+    {
+     "j": 1,
+     "pole": "L10N5132-",
+     "B_pre": 0.9974447280991038,
+     "rank_pre": 2,
+     "B_birth": 0.9982888985407433,
+     "rank_birth": 2,
+     "top3": [
+      {
+       "rank": 0,
+       "a": -25.45160675048828,
+       "text": "// Action Types\nexport const actionTypes = {\n  [[ GET]] _ALL_BRANDS: \"GET_ALL_BRANDS\",\n  GET_ALL_BR"
+      },
+      {
+       "rank": 1,
+       "a": -23.240034103393555,
+       "text": "ror(\"ClientGmsImpl.join()\", \"view installation failed, \" +\n\t\t\t\t\t\t\t\t\t\t\"retrying to join group\");\n\t\t\t\t\t\t\t\tcontinue;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tgms.passUp(new Event(Event.BEC [[OME]] _SERVER));\n\t\t\t\t\t\t\tgms.passDown(new Event(Event.BECOME_SERVER));\n\t\t\t\t\t\t"
+      },
+      {
+       "rank": 2,
+       "a": -22.854734420776367,
+       "text": "ber of \" + mems + \", will not install view\");\n\t\t\t\treturn false;\n\t\t\t}\n\t\t\tgms.installView(new_view);\n\t\t\tgms.becomeParticipant();\n\t\t\tgms.passUp(new Event(Event.BEC [[OME]] _SERVER));\n\t\t\tgms.passDown(new Event(Event.BECOME_SERVER));\n\t\t"
+      }
+     ]
+    },
+    {
+     "j": 2,
+     "pole": "L10N4370+",
+     "B_pre": 0.9947656844207986,
+     "rank_pre": 3,
+     "B_birth": 0.880388624251425,
+     "rank_birth": 358,
+     "top3": [
+      {
+       "rank": 0,
+       "a": 37.7038459777832,
+       "text": "use cast to get another type\nSELECT CAST('[1,2,3]'::json->>2 AS INTEGER);\n\n-- -> gets it as json\nSELECT '{\"a\":1,\"b\":2}'::json->'b';\n\n-- JSON object at specified [[ path]]  as json\nSELECT '{\"a\":[1,2,3],\"b\":[4"
+      },
+      {
+       "rank": 1,
+       "a": 34.87044906616211,
+       "text": "  containerWorkouts.addEventListener('click', this._moveToPopup.bind(this));\n  }\n\n  _getPosition() {\n    // Get geolocation API\n    //Navigator.geolocation read [[-only]]  property returns a Geolocation object that gives Web content access to the location of the"
+      },
+      {
+       "rank": 2,
+       "a": 33.865543365478516,
+       "text": "script/top/.json?limit=5')\n.then(res => console.log(res));\n\nIf you inspect the response in your browser’s console, you should see a Response object with several [[ properties]] :\n\n  body: ReadableStream\n  bodyUsed: false\n  headers"
+      }
+     ]
+    },
+    {
+     "j": 3,
+     "pole": "L10N7197+",
+     "B_pre": 0.9947180174464114,
+     "rank_pre": 4,
+     "B_birth": 0.6819431402371996,
+     "rank_birth": 1849,
+     "top3": [
+      {
+       "rank": 0,
+       "a": 26.912687301635742,
+       "text": "Ocean Sunset Repainting Old Flag from Purple to Black\n\nAI Art Image Prompt\n\nan old flag that is in the process of being rep [[ainted]]  from purple to black with the sea and sunset in the background\n\nAI Art Prompt"
+      },
+      {
+       "rank": 1,
+       "a": 24.589191436767578,
+       "text": " to black with the sea and sunset in the background\n\nAI Art Prompt Analyze\n\n  • Subject: The primary focus of the image is the old flag, which is undergoing rep [[ainting]]  from purple to black. This suggests a narrative of renewal or transformation. Background:"
+      },
+      {
+       "rank": 2,
+       "a": 18.89290428161621,
+       "text": "per is too thin and ends up tearing long before the grit wears out. So I apply duct tape to the back of the sandpaper. The sandpaper is still flexible enough to [[ sand]]  a tight radius and it’s far more durable. You can use this super-strong"
+      }
+     ]
+    },
+    {
+     "j": 4,
+     "pole": "L10N5895+",
+     "B_pre": 0.994706723872975,
+     "rank_pre": 5,
+     "B_birth": 0.951909659773665,
+     "rank_birth": 96,
+     "top3": null
+    },
+    {
+     "j": 5,
+     "pole": "L10N17-",
+     "B_pre": 0.993897878000932,
+     "rank_pre": 6,
+     "B_birth": 0.982038986942959,
+     "rank_birth": 23,
+     "top3": null
+    },
+    {
+     "j": 6,
+     "pole": "L10N8510+",
+     "B_pre": 0.9938009780463469,
+     "rank_pre": 7,
+     "B_birth": 0.9768659271729982,
+     "rank_birth": 36,
+     "top3": null
+    },
+    {
+     "j": 7,
+     "pole": "L10N6006+",
+     "B_pre": 0.9924590934951386,
+     "rank_pre": 8,
+     "B_birth": 0.9172756509583884,
+     "rank_birth": 197,
+     "top3": null
+    },
+    {
+     "j": 8,
+     "pole": "L10N1787-",
+     "B_pre": 0.992382534211775,
+     "rank_pre": 9,
+     "B_birth": 0.9926384535893279,
+     "rank_birth": 7,
+     "top3": null
+    },
+    {
+     "j": 9,
+     "pole": "L10N1699+",
+     "B_pre": 0.9921916598205792,
+     "rank_pre": 10,
+     "B_birth": 0.0,
+     "rank_birth": 22016,
+     "top3": null
+    },
+    {
+     "j": 10,
+     "pole": "L10N10252+",
+     "B_pre": 0.9919758426283983,
+     "rank_pre": 11,
+     "B_birth": 0.9344306767192088,
+     "rank_birth": 139,
+     "top3": null
+    },
+    {
+     "j": 11,
+     "pole": "L10N416-",
+     "B_pre": 0.9908653166511493,
+     "rank_pre": 12,
+     "B_birth": 0.8944671351353569,
+     "rank_birth": 278,
+     "top3": null
+    },
+    {
+     "j": 12,
+     "pole": "L10N4328+",
+     "B_pre": 0.9902833822053654,
+     "rank_pre": 13,
+     "B_birth": 0.9961396479408642,
+     "rank_birth": 3,
+     "top3": null
+    },
+    {
+     "j": 13,
+     "pole": "L10N1436+",
+     "B_pre": 0.9899391732691362,
+     "rank_pre": 14,
+     "B_birth": 0.6113822409874425,
+     "rank_birth": 2570,
+     "top3": null
+    },
+    {
+     "j": 14,
+     "pole": "L10N8655+",
+     "B_pre": 0.9894206267218751,
+     "rank_pre": 15,
+     "B_birth": 0.9716039474400296,
+     "rank_birth": 48,
+     "top3": null
+    },
+    {
+     "j": 15,
+     "pole": "L10N9609-",
+     "B_pre": 0.9891857111489168,
+     "rank_pre": 16,
+     "B_birth": 0.9368761686427208,
+     "rank_birth": 130,
+     "top3": null
+    },
+    {
+     "j": 16,
+     "pole": "L10N10462+",
+     "B_pre": 0.9891828134128972,
+     "rank_pre": 17,
+     "B_birth": 0.9885652892735649,
+     "rank_birth": 17,
+     "top3": null
+    },
+    {
+     "j": 17,
+     "pole": "L10N5925-",
+     "B_pre": 0.9890315712999028,
+     "rank_pre": 18,
+     "B_birth": 0.9465751674669735,
+     "rank_birth": 106,
+     "top3": null
+    },
+    {
+     "j": 18,
+     "pole": "L10N7713-",
+     "B_pre": 0.9888414053618845,
+     "rank_pre": 19,
+     "B_birth": 0.9858320205037688,
+     "rank_birth": 19,
+     "top3": null
+    },
+    {
+     "j": 19,
+     "pole": "L10N2061+",
+     "B_pre": 0.9879099610567565,
+     "rank_pre": 20,
+     "B_birth": 0.9748431933588467,
+     "rank_birth": 38,
+     "top3": null
+    },
+    {
+     "j": 20,
+     "pole": "L10N2658+",
+     "B_pre": 0.9879067083778162,
+     "rank_pre": 21,
+     "B_birth": 0.8857879902334802,
+     "rank_birth": 330,
+     "top3": null
+    }
+   ],
+   "drop": 0.8399283649061883,
+   "median_dB": -0.042626733966119656,
+   "n_comp_up": 2,
+   "n_comp_down": 15,
+   "n_leaders_pre": 0,
+   "n_leaders_birth": 0,
+   "matched_first": {
+    "pole": "L10N10180+",
+    "rank": {
+     "B": 22016,
+     "A": 22016,
+     "ratio": 22016
+    },
+    "top3": [
+     {
+      "rank": 0,
+      "a": 34.37496566772461,
+      "text": "You can skip this in seconds\n\nClick here to continue\n\nDownload Now!\n\nAllWebMenus WordPress Menu Addin 1.0.8\n\nAllWeb [[Menus]]  WordPress Menu Addin AllWebMenus WordPress Menu Addin 1.0."
+     },
+     {
+      "rank": 1,
+      "a": 33.83676528930664,
+      "text": "s THE AMES ROOM, ELWOOD & GUTHRIE & THE SOMMES ENSEMBLE. His music has been released on labels such as Gaffer Records, Erstwhile, Clean Feed, 23five, Editions M [[ego]] , Ipecac and his own label Antboy Music.\n\nRegular collaborators past and"
+     },
+     {
+      "rank": 2,
+      "a": 31.61564826965332,
+      "text": "maintenance services for our aeration solutions. We provide a comprehensive service that cements our company's reputation on a daily basis.\n\n    WOMA GmbH | Kär [[cher]]  Group WATER AS A TOOL. WOMA is one of the leading suppliers of high"
+     }
+    ]
+   },
+   "pb": {
+    "pole": "L10N9052-",
+    "d": 10,
+    "rank_pre_B": 1
+   },
+   "dt": {
+    "pole": "L10N9052+",
+    "d": 9,
+    "exemplars": [
+     "r called and it was fixed immediately.\n\nThe response to the alley light, she said, \"is very disappointing.\"\n\nThe Problem [[ Solver]]  called the city's Department of Streets and Sanitation on Thursday. By Friday night",
+     "ey’re concerned that decriminalization could perpetuate the city’s reputation as “a drug-friendly city,” Jackson Barnett [[ reported]]  for the Denver Post. Critics also point out psilocybin does have some",
+     "ve.\" Thank you so much for joining us.\n\nLEWIS: Thank you so much. Thanks for the great chat. Transcript provided by NPR, [[ Copyright]]  NPR.\n\nAyesha Rascoe is a White House correspondent for NPR. She",
+     " keeping a Chicago woman up all night.\n\nTo make sure the universal balance of light and dark remains intact, the Problem [[ Solver]]  this month got the city to turn a light back on -- helping a woman in",
+     "ng with us.\n\nELEUTERI: Thank you so much for having me.\n\n(SOUNDBITE OF FETE'S \"THE ISLANDS\") Transcript provided by NPR, [[ Copyright]]  NPR.\n\nNPR transcripts are created on a rush deadline by an NPR contractor.",
+     "ing about the phenomenon of Tim Tebow. You can also hear Howard on WEEKEND EDITION SATURDAY. Transcript provided by NPR, [[ Copyright]]  NPR.<|endoftext|>",
+     "sbook\n\nThe new homeowners of Rivers Casino Des Plaines are organizing major improvement at the property, The Chicago-Sun [[ Times]]  documented Thursday.\n\nNews flash about the challenge at Illinois’ highest grossing casino be",
+     "ts and experiment with unique, fresh vegetables. Guest blogger KyLynn Hull explains her experience.\n12/30/2010\nEditorial [[ assistant]]  Susan Melgren shares her healthy living goals for the next year.\n3/6",
+     "Barrood, the CEO and president of the New Jersey Tech Council, and Jay Bhatti, partner with BrandProject LP.\n\nSharing is [[ caring]] !\n\n726 More posts in Around New Jersey category\nRecommended for you\nScre",
+     "”\n\nBaker praised the T for its plan to hire the new capital workers to help improve the system.\n\nMatt Stout of the Globe [[ staff]]  contributed to this report.<|endoftext|>",
+     "ll pay big dividends for us if we have to work together in the future.”\n\n31st Fighter Wing Public Affairs\nStory by Staff [[ Sgt]] . Evelyn Chavez\n\n{igallery id=7071|cid=39|",
+     "any marks its 14th anniversary with a double bill exploring the challenges young Maori face dealing with city life. Raew [[yn]]  Whyte reports\n\nAtamira Dance Company 2012: Mark Bonning"
+    ]
+   }
+  },
+  {
+   "birth": "L19N7374-:c1",
+   "name": "web boilerplate: Skip to Content, You are here, http",
+   "layer": 19,
+   "k": 13,
+   "t_pre": 12,
+   "size": 10,
+   "d": 4,
+   "carrier": {
+    "pole": "L19N7374-",
+    "B_pre": 0.9985718458697805,
+    "B_birth": 0.9999566719328404,
+    "r0": 31,
+    "r1": 3,
+    "r_c": 2,
+    "r_o": 55,
+    "F": 1.4393326938302626,
+    "move": 1.0142404391146103,
+    "bar_pre": 0.9993162495244285
+   },
+   "exemplars": [
+    "Fairfield Ledger\n [[http]] ://fairfield-ia.villagesoup.com/p/1060541\n\n",
+    "You are [[ here]] \n\nDoepfer Dark Time\n\nStep Sequencer\nPublished August 2013",
+    "Skip to [[ Content]] \nDark Mode\n\nBest Wondrous Physick Combinations in Elden Ring\n\n",
+    "You are [[ here]] \n\nIN AND AROUND CAR ACTIVITIES (Education only - no car seat",
+    "Skip to [[ Content]] \n\nRWBY: Amity Arena Launches Today on iOS and Android\n\nThe",
+    "You are [[ here]] \n\nThis ATEM (mini) Tips” series of short video tutorials for",
+    "Skip to [[ Content]] \n\nWoW Insider has the latest on the Mists of Pandaria!\n\nTot",
+    "Skip to [[ Content]] \n\nWoW Insider has the latest on the Mists of Pandaria!\n\nThe",
+    "hrow a wrench in your gaming \"game,\" and shipping your console back to the factory for fixes can be a super slow ordeal. [[ What]] 's a gamer to do? Instead of shipping off your precious Sony or Nintendo console",
+    "Skip to [[ Content]] \n\nWoW Insider has the latest on the Mists of Pandaria!\n\nPosts"
+   ],
+   "competitors": [
+    {
+     "j": 1,
+     "pole": "L19N7298+",
+     "B_pre": 0.9999885388995345,
+     "rank_pre": 1,
+     "B_birth": 0.9998950485035168,
+     "rank_birth": 7,
+     "top3": [
+      {
+       "rank": 0,
+       "a": 21.317419052124023,
+       "text": "Skip to [[ content]] \n\nInternational Journal for Equity in Health\n\nOpen Access\n\nPersonal and social determinants"
+      },
+      {
+       "rank": 1,
+       "a": 20.979047775268555,
+       "text": "Skip to [[ content]] \n\nHeart Disease Health Center\n\nYour Arterial Lifeline\n\nAre you at"
+      },
+      {
+       "rank": 2,
+       "a": 20.650157928466797,
+       "text": "Skip to [[ content]] \n\nSure Signs You May Have Post-Acute COVID Syndrome, Says MD\n\n"
+      }
+     ]
+    },
+    {
+     "j": 2,
+     "pole": "L19N9178+",
+     "B_pre": 0.9999555573901671,
+     "rank_pre": 2,
+     "B_birth": 0.9997957822865893,
+     "rank_birth": 12,
+     "top3": [
+      {
+       "rank": 0,
+       "a": 12.9990234375,
+       "text": " with Jonjo Shelvey on for Jay Spearing after a challenge by Nigel Reo-Coker had left the latter limping heavily. Fabian Delph, meanwhile, had given way to Marc [[ Alb]] righton and it was the Villa youngster who supplied the cross from which Downing scored"
+      },
+      {
+       "rank": 1,
+       "a": 9.37088394165039,
+       "text": "Hide [[ this]] \n\nWomen's Natural Scent More Seductive Than Perfume\n\nMarch 02"
+      },
+      {
+       "rank": 2,
+       "a": 9.270939826965332,
+       "text": "listar, Karthus, Shyvana, Cho'GathSinged, Galio, Anivia, Tristana, Annie, Irelia, Maokai, Brand, Ashe, Gragas, Amumu, Sivir, Tryndamere, Kassadin, Corki, Mal [[z]] ahar, Pantheon, Olaf, Varus, Gangplank,\n\n"
+      }
+     ]
+    },
+    {
+     "j": 3,
+     "pole": "L19N2397+",
+     "B_pre": 0.9999484584063806,
+     "rank_pre": 3,
+     "B_birth": 0.9998319815845645,
+     "rank_birth": 9,
+     "top3": [
+      {
+       "rank": 0,
+       "a": 11.89609432220459,
+       "text": "king of checking out 'the island'\n\nok, so this is the room i stayed in.\nand slept like a boss\n\nthis was my sweet balcony\nwhere i would drink black coffee and sc [[owl]]  at the boats.\n\ni used to do a lot of work for a magazine called"
+      },
+      {
+       "rank": 1,
+       "a": 10.131686210632324,
+       "text": "Skip to [[ Content]] \n\n2021 Festival of the Arts Scavenger Hunt: All Figment Paint"
+      },
+      {
+       "rank": 2,
+       "a": 9.911664962768555,
+       "text": "C count (4-10) 103/ L\n\n  • Differential white blood cell\n\n    Differential count %\n\n    Neutrophils 55 - 70\n\n    Lymphocyte 20 - 40\n\n    Monocyte 2 - 8\n\n    Eos [[in]] ophil 1 - 4\n\n    Basophil 0.5 1"
+      }
+     ]
+    },
+    {
+     "j": 4,
+     "pole": "L19N5325-",
+     "B_pre": 0.9999293572832753,
+     "rank_pre": 4,
+     "B_birth": 0.9723843960265879,
+     "rank_birth": 942,
+     "top3": null
+    },
+    {
+     "j": 5,
+     "pole": "L19N10113+",
+     "B_pre": 0.9997349495376502,
+     "rank_pre": 5,
+     "B_birth": 0.9936730024235219,
+     "rank_birth": 261,
+     "top3": null
+    },
+    {
+     "j": 6,
+     "pole": "L19N8266-",
+     "B_pre": 0.9996657542615284,
+     "rank_pre": 6,
+     "B_birth": 0.9745004100023429,
+     "rank_birth": 890,
+     "top3": null
+    },
+    {
+     "j": 7,
+     "pole": "L19N3623+",
+     "B_pre": 0.999652074660645,
+     "rank_pre": 7,
+     "B_birth": 0.985492899497501,
+     "rank_birth": 551,
+     "top3": null
+    },
+    {
+     "j": 8,
+     "pole": "L19N10594-",
+     "B_pre": 0.9996168119023534,
+     "rank_pre": 8,
+     "B_birth": 0.9999717146305394,
+     "rank_birth": 2,
+     "top3": null
+    },
+    {
+     "j": 9,
+     "pole": "L19N10570-",
+     "B_pre": 0.9995530762917585,
+     "rank_pre": 9,
+     "B_birth": 0.9439537656313267,
+     "rank_birth": 1622,
+     "top3": null
+    },
+    {
+     "j": 10,
+     "pole": "L19N10377+",
+     "B_pre": 0.9993162495244285,
+     "rank_pre": 10,
+     "B_birth": 0.21024470261363043,
+     "rank_birth": 10001,
+     "top3": null
+    },
+    {
+     "j": 11,
+     "pole": "L19N9224-",
+     "B_pre": 0.999292032121142,
+     "rank_pre": 11,
+     "B_birth": 0.08329324035306689,
+     "rank_birth": 11312,
+     "top3": null
+    },
+    {
+     "j": 12,
+     "pole": "L19N2336-",
+     "B_pre": 0.9992731852369543,
+     "rank_pre": 12,
+     "B_birth": 0.9944224891953204,
+     "rank_birth": 225,
+     "top3": null
+    },
+    {
+     "j": 13,
+     "pole": "L19N6735-",
+     "B_pre": 0.9992207316221742,
+     "rank_pre": 13,
+     "B_birth": 0.9994478967183535,
+     "rank_birth": 24,
+     "top3": null
+    },
+    {
+     "j": 14,
+     "pole": "L19N685+",
+     "B_pre": 0.9992137930982581,
+     "rank_pre": 14,
+     "B_birth": 0.9986280520821849,
+     "rank_birth": 53,
+     "top3": null
+    },
+    {
+     "j": 15,
+     "pole": "L19N2124+",
+     "B_pre": 0.9991691446677284,
+     "rank_pre": 15,
+     "B_birth": 0.9980217216236694,
+     "rank_birth": 76,
+     "top3": null
+    },
+    {
+     "j": 16,
+     "pole": "L19N509-",
+     "B_pre": 0.9990994722634461,
+     "rank_pre": 16,
+     "B_birth": 0.999075694292846,
+     "rank_birth": 41,
+     "top3": null
+    },
+    {
+     "j": 17,
+     "pole": "L19N3951+",
+     "B_pre": 0.9990825338885819,
+     "rank_pre": 17,
+     "B_birth": 0.9975434181396434,
+     "rank_birth": 103,
+     "top3": null
+    },
+    {
+     "j": 18,
+     "pole": "L19N6774+",
+     "B_pre": 0.9990230568314219,
+     "rank_pre": 18,
+     "B_birth": 0.9929317043167847,
+     "rank_birth": 291,
+     "top3": null
+    },
+    {
+     "j": 19,
+     "pole": "L19N2509-",
+     "B_pre": 0.998995746416826,
+     "rank_pre": 19,
+     "B_birth": 0.9850362960121795,
+     "rank_birth": 567,
+     "top3": null
+    },
+    {
+     "j": 20,
+     "pole": "L19N3444+",
+     "B_pre": 0.9989753487422678,
+     "rank_pre": 20,
+     "B_birth": 0.9937017200297387,
+     "rank_birth": 260,
+     "top3": null
+    }
+   ],
+   "drop": 1.161281918094719,
+   "median_dB": -0.005062162377081514,
+   "n_comp_up": 1,
+   "n_comp_down": 19,
+   "n_leaders_pre": 20,
+   "n_leaders_birth": 1,
+   "matched_first": {
+    "pole": "L19N3415+",
+    "rank": {
+     "B": 4705,
+     "A": 22016,
+     "ratio": 3623
+    },
+    "top3": [
+     {
+      "rank": 0,
+      "a": 15.84606647491455,
+      "text": "e your children in for Martial Arts training!  PM me for details!  Scumbag!  I know about you and like a Bulldog, won't let GO!\n\nlast post\n2 years ago\ncan view\n [[can]]  comment\natom/rss\nofficial fubar blogs\n 2 years ago\nf"
+     },
+     {
+      "rank": 1,
+      "a": 13.290656089782715,
+      "text": "te eggs and dairy products but nothing that would involve killing an animal to furnish the food on my plate.\nTell me, I forget, show me, I remember, involve me, [[ I]]  understand.\nCarl Orff\nThe recent controversy over the portrayal of Ken Taylor and"
+     },
+     {
+      "rank": 2,
+      "a": 11.811545372009277,
+      "text": "eel it is really unsafe to drive, pull over in a safe spot and wait it out.\n\nTest your skills, take our driving quiz by clicking here.\n\nWe encourage all readers [[ to]]  share their views on our articles using Facebook commenting Visit our FAQ page for more information"
+     }
+    ]
+   },
+   "pb": {
+    "pole": "L19N2718+",
+    "d": 10,
+    "rank_pre_B": 1
+   },
+   "dt": {
+    "pole": "L19N9036-",
+    "d": 4,
+    "exemplars": [
+     "Gianluca Mauro: How To Educate Future Managers To The AI Era\n\n34:54\n分享\n\n [[Manage]]  episode 329330721 series 2512650\n由Player FM以及",
+     "Troy Casey (Certified Health Nut)- How Breath, Meditation, Fasting & Cold Improve Mental Health - PC45\n\n1:11:46\n\n [[Manage]]  episode 270782527 series 2478543\nبواسطة",
+     "Only three Louisiana commits in LSU football's 2023 class – should fans worry about in-state recruiting?\n\n35:38\n\n [[Manage]]  episode 335595621 series 2444183\nAv Locked On Podcast Network",
+     "Popaganda: The Fight for the Middle Ages\n\n36:38\n\n [[Manage]]  episode 221271942 series 32540\nBy Discovered by Player FM",
+     "includes:\n\n- Old Master Drawings from the Collection of the Earl of Leicester.\n- Picasso Lithographs 1945-47.\n- Eric Rav [[il]] ious Memorial Exhibition.\n- Design for a University Theatre (from Oxford) and History",
+     "laintiff and defendant can make a case for recovery, each against the other, upon a single assumed version of the facts, [[ provided]]  both parties suffer personal injuries.\n\nA number of perplexing questions concerning the true humanitarian",
+     "h Paintings from Mr. Peto's Collection\n*Pictures for Schools,\nA Prospect of Wales (Kenneth Rowntree exhibition)\nEric Rav [[il]] ious\nSir Joshua Reynolds\nRowlandson Drawings: A Tour through Wales",
+     "3, Retired, Nederland\n\nMAJ Pike Albert Ward III, Retired, Austin\n\nMSG Charles A. Wheeler, Life Member #3526, Retired, Ab [[il]] ene\nCW4 Raymond L. Whitaker, Life Member #38, Ret",
+     "ENT Specialists of Ab [[il]] ene\n\nBetter hearing helps people feel younger and optimize health\n\nENT Specialists of Ab",
+     ". Nilpotent matrix\n\nSolution 90355\n\nSubmitted on 20 May 2012\nThis solution is locked. To view this solution, you need to [[ provide]]  a solution of the same size or smaller.\n\n### Test Suite\n\nTest Status Code"
+    ]
+   }
+  },
+  {
+   "birth": "L24N5066-:c1",
+   "name": "commas separating company names in the cable glands market report list",
+   "layer": 24,
+   "k": 12,
+   "t_pre": 11,
+   "size": 15,
+   "d": 3,
+   "carrier": {
+    "pole": "L24N5066-",
+    "B_pre": 0.9988622379618807,
+    "B_birth": 0.9999379636159411,
+    "r0": 19,
+    "r1": 4,
+    "r_c": 3,
+    "r_o": 37,
+    "F": 1.0910804693473326,
+    "move": 0.6766936096248665,
+    "bar_pre": 0.9995734187377103
+   },
+   "exemplars": [
+    "Companies Analysis:- Amphenol Industrial Products Group, Caledonian Cables Ltd, CMP Products, Copper Crouse-Hinds (Eaton [[),]]  Cortem Group, Elsewedy Electric, Emerson Industrial Automation, BARTEC",
+    "                      \n\nKey Companies Analysis:- Amphenol Industrial Products Group, Caledonian Cables Ltd, CMP Products [[,]]  Copper Crouse-Hinds (Eaton), Cortem Group, Elsew",
+    "sis:- Amphenol Industrial Products Group, Caledonian Cables Ltd, CMP Products, Copper Crouse-Hinds (Eaton), Cortem Group [[,]]  Elsewedy Electric, Emerson Industrial Automation, BARTEC FEAM, BAR",
+    " this news                                                 \n\nKey Companies Analysis:- Amphenol Industrial Products Group [[,]]  Caledonian Cables Ltd, CMP Products, Copper Crouse-Hinds",
+    "                                    \n\nKey Companies Analysis:- Amphenol Industrial Products Group, Caledonian Cables Ltd [[,]]  CMP Products, Copper Crouse-Hinds (Eaton), Cortem Group",
+    "use-Hinds (Eaton), Cortem Group, Elsewedy Electric, Emerson Industrial Automation, BARTEC FEAM, BARTEC Group, Jacob GmbH [[,]]  Metal Craft Industries, R.Stahl AG, Sealcon, TE Connectivity, Hub",
+    ", Copper Crouse-Hinds (Eaton), Cortem Group, Elsewedy Electric, Emerson Industrial Automation, BARTEC FEAM, BARTEC Group [[,]]  Jacob GmbH, Metal Craft Industries, R.Stahl AG, Sealcon, TE",
+    ", CMP Products, Copper Crouse-Hinds (Eaton), Cortem Group, Elsewedy Electric, Emerson Industrial Automation, BARTEC FEAM [[,]]  BARTEC Group, Jacob GmbH, Metal Craft Industries, R.Stahl AG",
+    "mation, BARTEC FEAM, BARTEC Group, Jacob GmbH, Metal Craft Industries, R.Stahl AG, Sealcon, TE Connectivity, Hubbell Inc [[ and]]  Warom Group\n\n The Cable Glands Market Make an Inquiry about this news",
+    "strial Products Group, Caledonian Cables Ltd, CMP Products, Copper Crouse-Hinds (Eaton), Cortem Group, Elsewedy Electric [[,]]  Emerson Industrial Automation, BARTEC FEAM, BARTEC Group, Jacob",
+    "ewedy Electric, Emerson Industrial Automation, BARTEC FEAM, BARTEC Group, Jacob GmbH, Metal Craft Industries, R.Stahl AG [[,]]  Sealcon, TE Connectivity, Hubbell Inc and Warom Group\n\n The",
+    "an Cables Ltd, CMP Products, Copper Crouse-Hinds (Eaton), Cortem Group, Elsewedy Electric, Emerson Industrial Automation [[,]]  BARTEC FEAM, BARTEC Group, Jacob GmbH, Metal Craft",
+    "m Group, Elsewedy Electric, Emerson Industrial Automation, BARTEC FEAM, BARTEC Group, Jacob GmbH, Metal Craft Industries [[,]]  R.Stahl AG, Sealcon, TE Connectivity, Hubbell Inc and War",
+    "dustrial Automation, BARTEC FEAM, BARTEC Group, Jacob GmbH, Metal Craft Industries, R.Stahl AG, Sealcon, TE Connectivity [[,]]  Hubbell Inc and Warom Group\n\n The Cable Glands Market Make an",
+    "ctric, Emerson Industrial Automation, BARTEC FEAM, BARTEC Group, Jacob GmbH, Metal Craft Industries, R.Stahl AG, Sealcon [[,]]  TE Connectivity, Hubbell Inc and Warom Group\n\n The Cable Glands"
+   ],
+   "competitors": [
+    {
+     "j": 1,
+     "pole": "L24N3879-",
+     "B_pre": 0.9999963287273308,
+     "rank_pre": 1,
+     "B_birth": 0.9998229506366199,
+     "rank_birth": 7,
+     "top3": [
+      {
+       "rank": 0,
+       "a": -25.65864372253418,
+       "text": "al time. 001 (part 1 of 4) 10 points An air-filled capacitor consists of two parallel plates, each with an area of 6 . 6 cm 2 , sepa- rated by a distance 3 mm . [[ A]]  23 V potential difference is applied to these plates. The permittivity of"
+      },
+      {
+       "rank": 1,
+       "a": -24.443225860595703,
+       "text": "n a statement.\n\n\"I am incredibly proud of what our team has achieved together, including the recent sale of our former distribution business and the acquisition [[ of]]  Bal Seal Engineering, and I believe that the company is strategically positioned for long-term"
+      },
+      {
+       "rank": 2,
+       "a": -21.50138282775879,
+       "text": "tennas to the cable assemblies, clamps, and hardware that bring it all together, DX Engineering products are made without compromise. DX Engineering always uses [[ superior]]  materials and expert engineering.\n\nRF Adapter Guy\n\nSupplier of amateur radio, GMRS"
+      }
+     ]
+    },
+    {
+     "j": 2,
+     "pole": "L24N3071+",
+     "B_pre": 0.9999836395074745,
+     "rank_pre": 2,
+     "B_birth": 0.9999931724743746,
+     "rank_birth": 2,
+     "top3": [
+      {
+       "rank": 0,
+       "a": 45.04081344604492,
+       "text": "//market.us\n\nMore Updated Reports Here:\n\n[2020 Global News] Blood Pressure Monitoring Devices and Accessories Market Expected to Witness the Highest Growth 2029 [[ |]]  AP Newsroom\n\nEnterprise Network Firewall Market Price and Sales Revenue Analysis (2020"
+      },
+      {
+       "rank": 1,
+       "a": 44.454498291015625,
+       "text": "ne, VIC 3000\n\nMediGroup EBI is a rapidly growing company. MediGroup EBI represents its principals such as Advanced Biotechnologies, Canica, Microlab Elettronica [[,]]  Soering, and Pioneer to provide sales, marketing and distribution for medical and surgical"
+      },
+      {
+       "rank": 2,
+       "a": 42.8841552734375,
+       "text": " the lowest share in antifungal treatment market, in 2016.\n\nKey Players:\n\nSome of key the players in the global mucormycosis market are Abbott Laboratories (U.S [[.),]]  Biocon Limited (India), Cadila Pharmaceuticals Limited (India), Novartis"
+      }
+     ]
+    },
+    {
+     "j": 3,
+     "pole": "L24N234+",
+     "B_pre": 0.9999204421372433,
+     "rank_pre": 3,
+     "B_birth": 0.9999957808885195,
+     "rank_birth": 1,
+     "top3": [
+      {
+       "rank": 0,
+       "a": 62.230682373046875,
+       "text": "– Flame King 30#. Amazon $44 each (3)\n\nHour Meter – tracks running time for maintenance. Runleader Hour Meter. Amazon $11\n\nHose – from regulator to generator 12 [[’.]]  Amazon $25\n\nCable – Generator to inside the house. Cable Matters "
+      },
+      {
+       "rank": 1,
+       "a": 52.93749237060547,
+       "text": "to Changeover. Amazon $44\n\nTanks – Flame King 30#. Amazon $44 each (3)\n\nHour Meter – tracks running time for maintenance. Runleader Hour Meter. Amazon $11\n\nHose [[ –]]  from regulator to generator 12’. Amazon $25\n\nCable – Generator to"
+      },
+      {
+       "rank": 2,
+       "a": 52.066829681396484,
+       "text": "hole system is not new! 5. All the hot and cold water lines for drinkable water are mostly pex pipes.6. All the hoses connected to the thruhulls under waterline [[ are]]  double clamped with 316 stainless steel clamps.\n\n1. New Seldon"
+      }
+     ]
+    },
+    {
+     "j": 4,
+     "pole": "L24N2762-",
+     "B_pre": 0.9998867453933312,
+     "rank_pre": 4,
+     "B_birth": 0.9998008441602981,
+     "rank_birth": 10,
+     "top3": null
+    },
+    {
+     "j": 5,
+     "pole": "L24N6537+",
+     "B_pre": 0.9998104745488678,
+     "rank_pre": 5,
+     "B_birth": 0.9995930346605408,
+     "rank_birth": 18,
+     "top3": null
+    },
+    {
+     "j": 6,
+     "pole": "L24N3026-",
+     "B_pre": 0.9998016649853105,
+     "rank_pre": 6,
+     "B_birth": 0.9992255036411182,
+     "rank_birth": 27,
+     "top3": null
+    },
+    {
+     "j": 7,
+     "pole": "L24N6075-",
+     "B_pre": 0.9997906283924487,
+     "rank_pre": 7,
+     "B_birth": 0.999583705319672,
+     "rank_birth": 19,
+     "top3": null
+    },
+    {
+     "j": 8,
+     "pole": "L24N10708+",
+     "B_pre": 0.9996318028689709,
+     "rank_pre": 8,
+     "B_birth": 0.9996330944255631,
+     "rank_birth": 16,
+     "top3": null
+    },
+    {
+     "j": 9,
+     "pole": "L24N3791-",
+     "B_pre": 0.9996145773268829,
+     "rank_pre": 9,
+     "B_birth": 0.999787788334861,
+     "rank_birth": 11,
+     "top3": null
+    },
+    {
+     "j": 10,
+     "pole": "L24N7069-",
+     "B_pre": 0.9995734187377103,
+     "rank_pre": 10,
+     "B_birth": 0.9996353531210517,
+     "rank_birth": 15,
+     "top3": null
+    },
+    {
+     "j": 11,
+     "pole": "L24N4836-",
+     "B_pre": 0.9995300566287026,
+     "rank_pre": 11,
+     "B_birth": 0.9996626737692142,
+     "rank_birth": 14,
+     "top3": null
+    },
+    {
+     "j": 12,
+     "pole": "L24N10529+",
+     "B_pre": 0.9995120810895923,
+     "rank_pre": 12,
+     "B_birth": 0.9998115467312263,
+     "rank_birth": 9,
+     "top3": null
+    },
+    {
+     "j": 13,
+     "pole": "L24N10306-",
+     "B_pre": 0.999375363664038,
+     "rank_pre": 13,
+     "B_birth": 0.9997494747822047,
+     "rank_birth": 12,
+     "top3": null
+    },
+    {
+     "j": 14,
+     "pole": "L24N909-",
+     "B_pre": 0.9991476845011428,
+     "rank_pre": 14,
+     "B_birth": 0.9971734324974283,
+     "rank_birth": 68,
+     "top3": null
+    },
+    {
+     "j": 15,
+     "pole": "L24N10536-",
+     "B_pre": 0.9991259952949737,
+     "rank_pre": 15,
+     "B_birth": 0.9992274285517697,
+     "rank_birth": 26,
+     "top3": null
+    },
+    {
+     "j": 16,
+     "pole": "L24N9849-",
+     "B_pre": 0.9991182687686015,
+     "rank_pre": 16,
+     "B_birth": 0.993156145767754,
+     "rank_birth": 124,
+     "top3": null
+    },
+    {
+     "j": 17,
+     "pole": "L24N547-",
+     "B_pre": 0.9989180342581342,
+     "rank_pre": 17,
+     "B_birth": 0.9985120383431894,
+     "rank_birth": 41,
+     "top3": null
+    },
+    {
+     "j": 18,
+     "pole": "L24N7420+",
+     "B_pre": 0.9989090347539509,
+     "rank_pre": 18,
+     "B_birth": 0.999958141533407,
+     "rank_birth": 3,
+     "top3": null
+    },
+    {
+     "j": 19,
+     "pole": "L24N5398+",
+     "B_pre": 0.9988375960544121,
+     "rank_pre": 20,
+     "B_birth": 0.9984085488054395,
+     "rank_birth": 47,
+     "top3": null
+    },
+    {
+     "j": 20,
+     "pole": "L24N8548+",
+     "B_pre": 0.9988285197309096,
+     "rank_pre": 21,
+     "B_birth": 0.9942578018984131,
+     "rank_birth": 116,
+     "top3": null
+    }
+   ],
+   "drop": 0.33604892896785876,
+   "median_dB": -4.230483822043052e-05,
+   "n_comp_up": 4,
+   "n_comp_down": 15,
+   "n_leaders_pre": 18,
+   "n_leaders_birth": 3,
+   "matched_first": {
+    "pole": "L24N228-",
+    "rank": {
+     "B": 22016,
+     "A": 22016,
+     "ratio": 22016
+    },
+    "top3": [
+     {
+      "rank": 0,
+      "a": -43.2255859375,
+      "text": "\npolitics. What can you expect from such people?\"\n\nHe said to me, \"Men outside politics are beginning to see what education\ninvolves. It involves the whole man, [[ body]] , mind, spirit. I do not think\nyou can frame an intelligent definition"
+     },
+     {
+      "rank": 1,
+      "a": -40.311153411865234,
+      "text": "teractions and training sessions, young people and students will be equipped with knowledge and skills needed to lead a healthy lifestyle and take care of their [[ physical]]  and mental wellbeing.\n\nRoing ZPM Komji Linggi said that the tribal"
+     },
+     {
+      "rank": 2,
+      "a": -38.17921829223633,
+      "text": "d training sessions, young people and students will be equipped with knowledge and skills needed to lead a healthy lifestyle and take care of their physical and [[ mental]]  wellbeing.\n\nRoing ZPM Komji Linggi said that the tribal communities in"
+     }
+    ]
+   },
+   "pb": {
+    "pole": "L24N3927-",
+    "d": 12,
+    "rank_pre_B": 1
+   },
+   "dt": {
+    "pole": "L24N8193+",
+    "d": 3,
+    "exemplars": [
+     "hich each set was packaged became part of the story – they transported the six Toa heroes onto the beaches of the island [[ of]]  Mata Nui. Viewers witness each Toa being built,",
+     "endees connected and engaged. That’s why our event attendee apps are constantly iterating previous successes and pushing [[ the]]  boundaries on how technology can be integrated into our product.\n\nJust like we are passionate",
+     "gh, but… Well, it was a great idea – let’s put a bunch of old-school action stars together and let them go to town – but [[ the]]  execution was flawed at best. As I wrote at the time, “If it",
+     "nister in which each set was packaged became part of the story – they transported the six Toa heroes onto the beaches of [[ the]]  island of Mata Nui. Viewers witness each Toa being",
+     "ar Zone, in a scene where the cops are careful and diligent about arresting and restraining a captured mobster, only for [[ the]]  Punisher to unceremoniously execute him half a second later.\n  •",
+     "5 lbs (120 kg), brilliant handling, looks cool, can travel long distances, flies uphill, enough power to scare you. What [['s]]  not to like?\n\n  • Fantastic Brakes\n  • Brilliant Suspension\n ",
+     "uld eat here every day if I could. Jambalaya benedict, shrimp & grits, collard greens, and whiskey-based cocktails. What [['s]]  not to love?\"\n    Dined on 3/2/2014\n",
+     "the Lenz Lunchbox was a game changer. Devin Lenz went on to make a 7\" travel bike dubbed the \"PBJ\" and it further pushed [[ the]]  boundaries of 29\"ers. Now everyone is being taken aback by all",
+     "ories that we'll have doled out to us a piece at a time, but I'm not sure the show needs any of this either. We get what [['s]]  up with Hanks almost as soon as we meet him, and we probably don",
+     "penalty save; however Joe Willock scored from the rebound.\n\nDespite the number of changes made, Guardiola was happy with [[ the]]  performance of his side.\n\nSpeaking to the BBC, he said “We play against",
+     "a I'd contact Chris Germain. Amazing varnish coupled with soloist tone-- Gregg Alf. A composite, advanced violin to push [[ the]]  edge of acoustics-- Joseph Curtin or Martin Schleske. A",
+     "other than a win for Argyle at home. Everyone is coming into full fitness and confidence and I expect Adams’ men to pile [[ the]]  pressure of League Two football onto Ardley’s boys. 2-0.",
+     " canister in which each set was packaged became part of the story – they transported the six Toa heroes onto the beaches [[ of]]  the island of Mata Nui. Viewers witness each Toa",
+     "e value.\n  \n  – Buyers with uncertain employment may seek out basic shelter\n\n  – Sellers facing foreclosure may discount [[ the]]  property’s natural amenity\n4 tests of the null hypothesis: market valuation of",
+     "rocks.\n\nPhantoka (2008)\n\nIn this 2008 BIONICLE commercial, the Toa heroes take to the skies with brand new jetpacks. But [[ the]]  evil Makuta lurks in the shadows, ready to take flight with their monstrous"
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,266 @@
+{
+ "model_key": "O7",
+ "repo": "allenai/Olmo-3-1025-7B",
+ "revision": "373bad25002f1624757a73235c5ca844c6375c25",
+ "branch": "stage1-step1413814",
+ "transformers": "5.9.0",
+ "torch": "2.12.0+cu130",
+ "act_fn": "SiLUActivation",
+ "act_fn_measured": "silu",
+ "model_type": "olmo3",
+ "model_class": "Olmo3ForCausalLM",
+ "n_layers": 32,
+ "width": 11008,
+ "hidden": 4096,
+ "dtype": "torch.bfloat16",
+ "attn": "sdpa",
+ "corpus_manifest_sha256": "0c99a8e86856f1d94f08535b252d541f2ab18c4cbcb486c9e4993d6eb70a305c",
+ "tokname": "olmo3",
+ "tokens_sha256": "2aca80ca6537f46b8f60a550b4a3f2f13be2d18c5402be8f1af5c00caa86f531",
+ "bos_id": 100257,
+ "n_tokens_scored": 1048064,
+ "n_tokens_windowed": 1048576,
+ "excluded_positions": "BOS and window position 0",
+ "probe_excluded_positions": null,
+ "probe_rule": null,
+ "max_tokens_arg": 1048576,
+ "n_windows": 512,
+ "batch": 8,
+ "window": 2048,
+ "topk_K": 50,
+ "poles_K": 1000,
+ "hist_edges": {
+  "lo_log10": -6.0,
+  "hi_log10": 4.0,
+  "bins": 400,
+  "below_lo": "bin 0",
+  "at_or_above_hi": "bin B-1"
+ },
+ "density_rule": "every token in the bin holding 0.01*max_abs and above (bin resolution)",
+ "vocab_rule": "score = sign * W_U @ (gamma_final * W_down[:, i]) in fp32, sign = +1 for the + pole and -1 for the - pole (the direction the pole writes when it fires); gamma_final = final_norm(ones), which is the norm's effective gain for every RMSNorm form; the 1/rms factor is a positive scalar and does not change the ranking",
+ "sample_rule": "neuron i of n sits in layer floor(i * n_layers / n); neurons within a layer drawn without replacement by numpy default_rng(seed); both poles of each neuron",
+ "snapshot_bands": [],
+ "band_end_tok": {},
+ "started_utc": "2026-11-05T16:23:49Z",
+ "args": {
+  "mode": "known",
+  "out": "/work/out/k0",
+  "corpus": "s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus",
+  "branch": "stage1-step1413814",
+  "inputs": "s3://pg-lineage-769063704696/results/next_m1/inputs",
+  "bank_exemplar": "t15_exemplar_a.npz",
+  "fail_exemplar": "t14_exemplar_a.npz",
+  "bank_contexts": "t15_contexts.jsonl",
+  "refs": null,
+  "registry": null,
+  "n_poles_grid": 640,
+  "device": "cuda"
+ },
+ "device_name": "NVIDIA L40S",
+ "pg_git_sha": "8f34b66297a6",
+ "download": {
+  "branch": "stage1-step1413814",
+  "commit": "373bad25002f1624757a73235c5ca844c6375c25",
+  "allow_patterns": [
+   "config.json",
+   "generation_config.json",
+   "model.safetensors.index.json",
+   "special_tokens_map.json",
+   "tokenizer.json",
+   "tokenizer_config.json",
+   "vocab.json",
+   "merges.txt",
+   "model-00001-of-00003.safetensors",
+   "model-00002-of-00003.safetensors",
+   "model-00003-of-00003.safetensors"
+  ],
+  "bytes": 14605764269,
+  "seconds": 192.2,
+  "MB_per_s": 76.0,
+  "xet_disabled": "1",
+  "sha256_s": 9.2,
+  "G_SHARD": {
+   "pass": true,
+   "files": [
+    "model-00001-of-00003.safetensors",
+    "model-00002-of-00003.safetensors",
+    "model-00003-of-00003.safetensors"
+   ],
+   "index_files": [
+    "model-00001-of-00003.safetensors",
+    "model-00002-of-00003.safetensors",
+    "model-00003-of-00003.safetensors"
+   ],
+   "mismatch": [],
+   "stale_present": [],
+   "failing_input": {
+    "pass": false,
+    "files": [
+     "model-00001-of-00003.safetensors",
+     "model-00002-of-00003.safetensors",
+     "model-00003-of-00003.safetensors"
+    ],
+    "index_files": [
+     "model-00001-of-00003.safetensors",
+     "model-00002-of-00003.safetensors",
+     "model-00003-of-00003.safetensors"
+    ],
+    "mismatch": [
+     "model-00001-of-00003.safetensors",
+     "model-00002-of-00003.safetensors",
+     "model-00003-of-00003.safetensors"
+    ],
+    "stale_present": [
+     "model-00001-of-00003.safetensors",
+     "model-00002-of-00003.safetensors",
+     "model-00003-of-00003.safetensors"
+    ]
+   }
+  }
+ },
+ "load_s": 51.5,
+ "m1": {
+  "config": {
+   "rewrite": false,
+   "as_released": {
+    "model_type": "olmo3",
+    "architectures": [
+     "Olmo3ForCausalLM"
+    ],
+    "sliding_window": 4096,
+    "torch_dtype": "bfloat16"
+   },
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "architectures",
+     "model_type"
+    ],
+    "sliding_window": 4096
+   },
+   "G_CFG": {
+    "pass": true,
+    "diff_keys": [],
+    "sliding_window": 4096
+   }
+  },
+  "G_CAST": {
+   "pass": true,
+   "param_dtypes": [
+    "torch.bfloat16"
+   ],
+   "tensors": [
+    {
+     "name": "model.layers.0.mlp.gate_proj.weight",
+     "file_dtype": "torch.bfloat16",
+     "shape": [
+      11008,
+      4096
+     ],
+     "equal_rne": true
+    },
+    {
+     "name": "model.layers.0.mlp.up_proj.weight",
+     "file_dtype": "torch.bfloat16",
+     "shape": [
+      11008,
+      4096
+     ],
+     "equal_rne": true
+    },
+    {
+     "name": "model.layers.15.mlp.down_proj.weight",
+     "file_dtype": "torch.bfloat16",
+     "shape": [
+      4096,
+      11008
+     ],
+     "equal_rne": true
+    },
+    {
+     "name": "model.layers.31.mlp.down_proj.weight",
+     "file_dtype": "torch.bfloat16",
+     "shape": [
+      4096,
+      11008
+     ],
+     "equal_rne": true
+    },
+    {
+     "name": "model.layers.16.self_attn.q_proj.weight",
+     "file_dtype": "torch.bfloat16",
+     "shape": [
+      4096,
+      4096
+     ],
+     "equal_rne": true
+    },
+    {
+     "name": "model.layers.31.post_feedforward_layernorm.weight",
+     "file_dtype": "torch.bfloat16",
+     "shape": [
+      4096
+     ],
+     "equal_rne": true
+    },
+    {
+     "name": "model.norm.weight",
+     "file_dtype": "torch.bfloat16",
+     "shape": [
+      4096
+     ],
+     "equal_rne": true
+    }
+   ],
+   "failing_input": {
+    "pass": false,
+    "tensors": [
+     {
+      "name": "model.layers.0.mlp.gate_proj.weight",
+      "against": "model.layers.1.mlp.gate_proj.weight",
+      "equal": false
+     },
+     {
+      "name": "model.layers.0.mlp.up_proj.weight",
+      "against": "model.layers.1.mlp.up_proj.weight",
+      "equal": false
+     },
+     {
+      "name": "model.layers.15.mlp.down_proj.weight",
+      "against": "model.layers.16.mlp.down_proj.weight",
+      "equal": false
+     },
+     {
+      "name": "model.layers.31.mlp.down_proj.weight",
+      "against": "model.layers.0.mlp.down_proj.weight",
+      "equal": false
+     },
+     {
+      "name": "model.layers.16.self_attn.q_proj.weight",
+      "against": "model.layers.17.self_attn.q_proj.weight",
+      "equal": false
+     },
+     {
+      "name": "model.layers.31.post_feedforward_layernorm.weight",
+      "against": "model.layers.0.post_feedforward_layernorm.weight",
+      "equal": false
+     },
+     {
+      "name": "model.norm.weight",
+      "against": "model.layers.0.post_feedforward_layernorm.weight",
+      "equal": false
+     }
+    ]
+   }
+  }
+ },
+ "tokens_per_second": 3337.75367367731,
+ "timing_s": {
+  "harvest_loop_s": 314.00280022621155,
+  "snapshot_write_s": 0.0,
+  "metrics_write_s": 0.007412433624267578,
+  "final_write_s": 137.07168865203857
+ },
+ "wall_s": 466.9323287010193,
+ "finished_utc": "2026-11-05T16:31:36Z"
+}

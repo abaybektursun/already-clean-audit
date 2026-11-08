@@ -1,0 +1,35 @@
+{
+ "15": {
+  "t": 15,
+  "n_answered": {
+   "freeze": 2,
+   "test": 5
+  },
+  "readout": {
+   "s1": {
+    "n": 5,
+    "share": 0.0,
+    "shuffled": 0.0,
+    "net": 0.0,
+    "delta": 0.5,
+    "label": "NOT_PRESENT",
+    "net_proj": 0.0,
+    "sink": "READOUT_SURVIVES",
+    "layer": 0
+   },
+   "s2": {
+    "n": 5,
+    "share": 0.2,
+    "shuffled": 0.0,
+    "net": 0.2,
+    "delta": 0.5,
+    "label": "NOT_PRESENT",
+    "net_proj": 0.2,
+    "sink": "READOUT_SURVIVES",
+    "layer": 25
+   }
+  },
+  "readout_both": "NOT_PRESENT",
+  "slot": "NOT_RUN: no edits at this point"
+ }
+}

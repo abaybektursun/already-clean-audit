@@ -1,0 +1,32 @@
+[
+ {
+  "name": "rank",
+  "module": "studies.reproductions.instruments_e2.code.jobs.instruments_e2",
+  "args": "--stage rank --items s3://pg-lineage-769063704696/results/instruments/e2/inputs/e2_items.json --a0 s3://pg-lineage-769063704696/results/instruments/e2/inputs/A0.jsonl --abar s3://pg-lineage-769063704696/results/instruments/e2/inputs/abar.npz --edit s3://pg-lineage-769063704696/results/instruments/e2/inputs/edit_edit.npz --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus/docs.jsonl.gz"
+ },
+ {
+  "name": "collateral",
+  "module": "studies.reproductions.instruments_e2.code.jobs.instruments_e2",
+  "args": "--stage collateral --items s3://pg-lineage-769063704696/results/instruments/e2/inputs/e2_items.json --rankings-s3 /work/out/rank/rankings.npz"
+ },
+ {
+  "name": "pilot",
+  "module": "studies.reproductions.instruments_e2.code.jobs.instruments_e2",
+  "args": "--stage pilot --items s3://pg-lineage-769063704696/results/instruments/e2/inputs/e2_items.json --rankings-s3 /work/out/rank/rankings.npz"
+ },
+ {
+  "name": "gen_base",
+  "module": "studies.reproductions.instruments_e2.code.jobs.instruments_e2",
+  "args": "--stage gen --arm base --items s3://pg-lineage-769063704696/results/instruments/e2/inputs/e2_items.json --rankings-s3 /work/out/rank/rankings.npz"
+ },
+ {
+  "name": "gen_E",
+  "module": "studies.reproductions.instruments_e2.code.jobs.instruments_e2",
+  "args": "--stage gen --arm E --items s3://pg-lineage-769063704696/results/instruments/e2/inputs/e2_items.json --rankings-s3 /work/out/rank/rankings.npz"
+ },
+ {
+  "name": "gen_D",
+  "module": "studies.reproductions.instruments_e2.code.jobs.instruments_e2",
+  "args": "--stage gen --arm D --items s3://pg-lineage-769063704696/results/instruments/e2/inputs/e2_items.json --rankings-s3 /work/out/rank/rankings.npz"
+ }
+]

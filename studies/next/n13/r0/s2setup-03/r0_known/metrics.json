@@ -1,0 +1,39 @@
+{
+ "step": "r0_known",
+ "status": "running",
+ "suite": "minerva_math::olmes:n4:v2",
+ "target": 40.0,
+ "tol": 1.6,
+ "tolerance": {
+  "se_one_reading": 0.37421220512259656,
+  "se_difference": 0.5292159756899187,
+  "three_se_difference": 1.587647927069756,
+  "tol": 1.6
+ },
+ "park": {
+  "allowance_min": 280.0,
+  "elapsed_min": 24.800027855237325,
+  "projected_min": 171.66666666666666,
+  "earlier_parked": false,
+  "parked": false
+ },
+ "command": [
+  "/opt/olmes-venv/bin/olmes",
+  "--model",
+  "allenai/Olmo-3-1025-7B",
+  "--revision",
+  "a81bae42db3975be1671e27b9c9a56da1a9f980f",
+  "--model-type",
+  "vllm",
+  "--task",
+  "minerva_math::olmes:n4:v2",
+  "--gpus",
+  "1",
+  "--output-dir",
+  "/work/out/r0_known/olmes"
+ ],
+ "updated_utc": "2026-11-05T17:41:10Z",
+ "elapsed_s": 60.0,
+ "olmes_files": [],
+ "olmes_returncode": 127
+}

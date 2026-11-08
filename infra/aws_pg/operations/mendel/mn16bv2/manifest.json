@@ -1,0 +1,14 @@
+{
+  "bucket": "pg-lineage-769063704696",
+  "entries": {},
+  "provenance": {
+    "branch": "science/mendel",
+    "commit_sha": "c0dba50e08f5fcc7dc9dcfcbbadf342e6013538a",
+    "dirty": false,
+    "dirty_files": [],
+    "program": "mendel",
+    "source": "scripts/mendel_stamp.py",
+    "stamped_utc": "2026-08-19T20:28:30Z",
+    "tags_at_head": []
+  }
+}

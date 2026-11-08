@@ -1,0 +1,73 @@
+{
+ "before": {
+  "intact": {
+   "base": true,
+   "stage2": true,
+   "rl": true
+  },
+  "stage2_snapshot_exists": true,
+  "refs": [
+   "main",
+   "stage2-step47684"
+  ],
+  "base_repo_blobs": 8,
+  "scan_cache_dir": {
+   "allenai/Olmo-3-1025-7B": [
+    "a81bae42db3975be1671e27b9c9a56da1a9f980f",
+    "c3c800dc900f3fecc112e8cd6b2a13edabc096e1"
+   ],
+   "allenai/Olmo-3.1-7B-RL-Zero-Math": [
+    "364820b002fc8e81d11a81c7fc9dd6b49c83cd05"
+   ]
+  }
+ },
+ "delete_snapshot": {
+  "snapshot": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_dry_a23b/e2e/a23/hub_fixed/hub/models--allenai--Olmo-3-1025-7B/snapshots/c3c800dc900f3fecc112e8cd6b2a13edabc096e1",
+  "refs_removed": [
+   "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_dry_a23b/e2e/a23/hub_fixed/hub/models--allenai--Olmo-3-1025-7B/refs/stage2-step47684"
+  ],
+  "blobs_removed": 3,
+  "blobs_shared_kept": 2,
+  "bytes_freed": 42,
+  "other_snapshots": [
+   "a81bae42db3975be1671e27b9c9a56da1a9f980f"
+  ],
+  "amendment": "N13_SPEC.md A23"
+ },
+ "after": {
+  "intact": {
+   "base": true,
+   "stage2": false,
+   "rl": true
+  },
+  "stage2_snapshot_exists": false,
+  "refs": [
+   "main"
+  ],
+  "base_repo_blobs": 5,
+  "scan_cache_dir": {
+   "allenai/Olmo-3-1025-7B": [
+    "a81bae42db3975be1671e27b9c9a56da1a9f980f"
+   ],
+   "allenai/Olmo-3.1-7B-RL-Zero-Math": [
+    "364820b002fc8e81d11a81c7fc9dd6b49c83cd05"
+   ]
+  }
+ },
+ "old_code_path": {
+  "intact": {
+   "base": false,
+   "stage2": false,
+   "rl": true
+  },
+  "stage2_snapshot_exists": false,
+  "refs": null,
+  "base_repo_blobs": 0,
+  "scan_cache_dir": {
+   "allenai/Olmo-3.1-7B-RL-Zero-Math": [
+    "364820b002fc8e81d11a81c7fc9dd6b49c83cd05"
+   ]
+  }
+ },
+ "run_calls_delete_snapshot": true
+}

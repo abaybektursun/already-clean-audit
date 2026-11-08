@@ -1,0 +1,104 @@
+{
+ "per_type": {
+  "k_proj": {
+   "rho": -0.16202270381836945,
+   "threshold": 0.8,
+   "gate": "b1_row_side_is_distinct_from_input_side",
+   "path": "mercator_b1d5/b1d_attn/gates.json"
+  },
+  "o_proj": {
+   "rho": 0.5768833849329206,
+   "threshold": 0.8,
+   "gate": "b1_row_side_is_distinct_from_input_side",
+   "path": "mercator_b1d5/b1d_attn/gates.json"
+  },
+  "q_proj": {
+   "rho": 0.4406604747162023,
+   "threshold": 0.8,
+   "gate": "b1_row_side_is_distinct_from_input_side",
+   "path": "mercator_b1d5/b1d_attn/gates.json"
+  },
+  "v_proj": {
+   "rho": 0.9484004127966976,
+   "threshold": 0.8,
+   "gate": "b1_row_side_is_distinct_from_input_side",
+   "path": "mercator_b1d5/b1d_attn/gates.json"
+  },
+  "down_proj": {
+   "rho": 0.977296181630547,
+   "threshold": 0.8,
+   "gate": "b1_row_side_is_distinct_from_input_side",
+   "path": "mercator_b1d5/b1d_down/gates.json"
+  },
+  "gate_proj": {
+   "rho": -0.005159958720330237,
+   "threshold": 0.8,
+   "gate": "b1_row_side_is_distinct_from_input_side__gate",
+   "path": "mercator_b1dgate/gates.json"
+  },
+  "up_proj": {
+   "rho": 0.45717234262125905,
+   "threshold": 0.8,
+   "gate": "b1_row_side_is_distinct_from_input_side",
+   "path": "mercator_b1dup/gates.json"
+  }
+ },
+ "arm_level_rows": [
+  {
+   "gate": "b1_row_side_is_distinct_from_input_side",
+   "prefix": "mercator_b1d4",
+   "ok": true,
+   "spearman": -0.6425493600874654,
+   "n_cells": 72,
+   "types": [
+    "k_proj",
+    "o_proj",
+    "q_proj",
+    "v_proj"
+   ]
+  },
+  {
+   "gate": "b1_row_side_is_distinct_from_input_side",
+   "prefix": "mercator_b1d5",
+   "ok": true,
+   "spearman": -0.6425493600874654,
+   "n_cells": 72,
+   "types": [
+    "k_proj",
+    "o_proj",
+    "q_proj",
+    "v_proj"
+   ]
+  },
+  {
+   "gate": "b1_row_side_is_distinct_from_input_side",
+   "prefix": "mercator_b1d5",
+   "ok": false,
+   "spearman": 0.977296181630547,
+   "n_cells": 18,
+   "types": [
+    "down_proj"
+   ]
+  },
+  {
+   "gate": "b1_row_side_is_distinct_from_input_side__gate",
+   "prefix": "mercator_b1dgate",
+   "ok": true,
+   "spearman": -0.005159958720330237,
+   "n_cells": 18,
+   "types": [
+    "gate_proj"
+   ]
+  },
+  {
+   "gate": "b1_row_side_is_distinct_from_input_side",
+   "prefix": "mercator_b1dup",
+   "ok": true,
+   "spearman": 0.45717234262125905,
+   "n_cells": 18,
+   "types": [
+    "up_proj"
+   ]
+  }
+ ]
+}

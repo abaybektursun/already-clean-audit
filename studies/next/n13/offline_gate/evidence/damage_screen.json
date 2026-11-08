@@ -1,0 +1,22 @@
+{
+ "dare_k0.1": {
+  "status": "screened",
+  "screen": {
+   "ready": true,
+   "cap_hits": 16,
+   "correct": 0,
+   "fired": true
+  },
+  "finished": 20
+ },
+ "base": {
+  "status": "done",
+  "screen": {
+   "ready": true,
+   "cap_hits": 16,
+   "correct": 0,
+   "fired": true
+  },
+  "finished": 40
+ }
+}

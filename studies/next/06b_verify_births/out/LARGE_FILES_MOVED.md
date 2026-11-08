@@ -1,0 +1,1 @@
+Large outputs moved 2026-11-05 to /Users/abaybektursun/projects/interp_research_banks/neurons/next/verify_births (random_groups.npz 29.7 MB, inputs.npz 4.3 MB, q2_banked.json 2.1 MB); scripts under ../ read them from there if re-run.

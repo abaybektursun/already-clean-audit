@@ -1,0 +1,47 @@
+{
+  "rental": "gb3_am1b_harden",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:v1-14b",
+  "disk": 70,
+  "gpu_query": "gpu_ram>=48 num_gpus=1 cuda_vers>=12.8 compute_cap>=800",
+  "expected_gpu": "",
+  "bound": "overhead",
+  "_comment": "GUTENBERG GB-3 (spec AM-0.5.5): AM-1b hardening on ITS OWN environment (same cell, same shackleton:v1-14b image — the replication's whole point). Fresh independent draws at seed slots s3-s5; the banked v1a arms are REPRODUCED from the banked artifact before any new arm bills time (expect_rows_s3); qk_rider adds the FUNC-instrument bridge rows (AM-0.5.6); extended_shares + bank_vectors produce the energies and bank bases GB-2/GB-4 need (verified missing 2026-08-19).",
+  "cells": [
+    {
+      "id": "gb3_smoke",
+      "module": "infra.vast.cells.v1_ablation",
+      "model_dir": "/models/Qwen_Qwen2.5-14B",
+      "banks_s3": "s3://pg-lineage-769063704696/results/shackleton_census14b_banks/out/banks/",
+      "topenergy_s3": "s3://pg-lineage-769063704696/results/shackleton_r_v1_14b/topenergy_14b.npz",
+      "n_act_windows": 4,
+      "n_abl_windows": 4,
+      "n_extra_seeds": 1,
+      "seed_offset": 3,
+      "spectral_control": true,
+      "qk_rider": true,
+      "extended_shares": true,
+      "bank_vectors": true
+    },
+    {
+      "id": "gb3_full",
+      "module": "infra.vast.cells.v1_ablation",
+      "model_dir": "/models/Qwen_Qwen2.5-14B",
+      "banks_s3": "s3://pg-lineage-769063704696/results/shackleton_census14b_banks/out/banks/",
+      "topenergy_s3": "s3://pg-lineage-769063704696/results/shackleton_r_v1_14b/topenergy_14b.npz",
+      "n_act_windows": 32,
+      "n_abl_windows": 98,
+      "n_extra_seeds": 3,
+      "seed_offset": 3,
+      "spectral_control": true,
+      "qk_rider": true,
+      "extended_shares": true,
+      "bank_vectors": true,
+      "expect_rows_s3": "s3://pg-lineage-769063704696/results/shackleton_r_v1a_14b/cells/v1a_full/v1abl_rows.json",
+      "expect_tol": 0.001
+    }
+  ],
+  "watch": {
+    "load_backstop_min": 90,
+    "max_billed_h": 3
+  }
+}

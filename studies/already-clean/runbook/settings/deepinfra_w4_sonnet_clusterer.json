@@ -1,0 +1,16 @@
+{
+ "backend": "openai_compat",
+ "base_url": "https://api.deepinfra.com/v1/openai",
+ "key_env": "NEURONS_API_KEY_1",
+ "models": {
+  "explainer": "anthropic/claude-sonnet-5-5",
+  "second_reader": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "writer": "anthropic/claude-sonnet-5-5",
+  "writer_job": "anthropic/claude-sonnet-5-5",
+  "clusterer": "anthropic/claude-sonnet-5-5",
+  "judge": "deepseek-ai/DeepSeek-V4.1-Flash-1017"
+ },
+ "temperature": 1.0,
+ "response_format": "json_schema",
+ "notes": "W4 clusterer trial on S_gate (2026-10-21): clusterer on anthropic/claude-sonnet-5-5 after DeepSeek-V4.1-Flash failed B4 (10 of 21 poles within one cluster) and declined 24 of 80 samples at cap 3; judge stays on Flash; other roles as deepinfra_w2c_mixed.json. Key in ~/.config/interp_research/keys.env as NEURONS_API_KEY_1."
+}

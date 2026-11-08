@@ -1,0 +1,14 @@
+{
+  "session_usd": 0.67,
+  "program_realized_usd": 32.018,
+  "program_ceiling_usd": 36,
+  "instances_after": [],
+  "billing_source": "invoices_final.json",
+  "rental_ids": [
+    57939792,
+    57941003,
+    57941270,
+    57941273,
+    57941783
+  ]
+}

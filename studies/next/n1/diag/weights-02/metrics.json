@@ -1,0 +1,127 @@
+{
+ "started_utc": "2026-11-07T15:25:51Z",
+ "complete": false,
+ "gates": {
+  "G_SAME": {
+   "pass": true,
+   "versions": {
+    "torch": "2.12.0"
+   },
+   "registered": {
+    "torch": "2.12.0"
+   },
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "INPUTS": {
+   "pass": true,
+   "mismatch": [],
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t00_G_REV": {
+   "pass": true,
+   "commit": "f129a5d178fd784d802a521d6f388c6df6988fd6",
+   "registered": "f129a5d178fd784d802a521d6f388c6df6988fd6",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t00_G_SHAPE": {
+   "pass": true,
+   "bad_layers": [],
+   "n_layers": 32,
+   "failing_input": {
+    "what": "the down tensor transposed",
+    "pass": false
+   }
+  },
+  "t01_G_REV": {
+   "pass": true,
+   "commit": "d82e70ec28daa79d25405cd128e127c52bb10516",
+   "registered": "d82e70ec28daa79d25405cd128e127c52bb10516",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t01_G_SHAPE": {
+   "pass": true,
+   "bad_layers": [],
+   "n_layers": 32,
+   "failing_input": {
+    "what": "the down tensor transposed",
+    "pass": false
+   }
+  },
+  "t02_G_REV": {
+   "pass": true,
+   "commit": "6a238f66840f4db2deff7049b12fbc608267e14f",
+   "registered": "6a238f66840f4db2deff7049b12fbc608267e14f",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t02_G_SHAPE": {
+   "pass": true,
+   "bad_layers": [],
+   "n_layers": 32,
+   "failing_input": {
+    "what": "the down tensor transposed",
+    "pass": false
+   }
+  },
+  "t02_PC": {
+   "pass": true,
+   "in": 1.0,
+   "out": 1.0,
+   "in_size0": 0.044921875,
+   "out_size0": 0.044921875,
+   "min": 0.9,
+   "failing_input": {
+    "what": "planted size 0",
+    "pass": false
+   }
+  }
+ },
+ "points": {
+  "0": {
+   "t": 0,
+   "download": {
+    "branch": "stage1-step0",
+    "commit": "f129a5d178fd784d802a521d6f388c6df6988fd6",
+    "bytes": 14605764269,
+    "seconds": 406.5,
+    "MB_per_s": 35.9
+   },
+   "seconds": 421.7
+  },
+  "1": {
+   "t": 1,
+   "download": {
+    "branch": "stage1-step1000",
+    "commit": "d82e70ec28daa79d25405cd128e127c52bb10516",
+    "bytes": 14605764269,
+    "seconds": 504.8,
+    "MB_per_s": 28.9
+   },
+   "seconds": 532.0
+  },
+  "2": {
+   "t": 2,
+   "download": {
+    "branch": "stage1-step2000",
+    "commit": "6a238f66840f4db2deff7049b12fbc608267e14f",
+    "bytes": 14605764269,
+    "seconds": 602.8,
+    "MB_per_s": 24.2
+   },
+   "seconds": 643.9
+  }
+ },
+ "parked": [],
+ "phase": "done T_2",
+ "updated_utc": "2026-11-07T15:52:33Z",
+ "elapsed_s": 1601.8
+}

@@ -1,0 +1,7 @@
+{
+ "venv_n13_calls_python_headers_first": true,
+ "python_headers_installs_and_asserts": true,
+ "venv_olmes_no_longer_installs": true,
+ "run_order_n13_before_olmes": true,
+ "failing_input": "studies/next/n13/r0/s2smoke-08/smoke_base/job_log_lines_900-1414.txt"
+}

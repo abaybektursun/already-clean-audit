@@ -1,0 +1,56 @@
+{
+ "what": "N6 amendment A4 previewed on L1-02 (not the gates; they read L2's freeze half at freeze 2)",
+ "source": {
+  "metrics.json": "d80b65d9049c9c9979ea516d76ce9cef8eee4a815e7093c83f9fdfbab6d6a090",
+  "edits.jsonl": "8a526c79cbe9cf97e05f8d4394eec722a614a0380c6c8d4cade1764497aa5438"
+ },
+ "G_RES_factor_50": {
+  "rule": "F_eps <= min(1e-6, 0.02 x q10)",
+  "q10": 1.0752602417864593e-06,
+  "bound": 2.1505204835729185e-08,
+  "F_eps": 1.2210622426951182e-08,
+  "F_eps_over_bound": 0.56779847112473,
+  "q10_over_F_eps": 88.0594128775249,
+  "pass": true,
+  "planted_failing_floor_0.05_q10": {
+   "F_eps": 5.3763012089322966e-08,
+   "pass": false
+  }
+ },
+ "G_POWER": {
+  "rule": "tau_s <= 0.5 x median |D_col| over the pairs (n6.freeze)",
+  "w_eval": 96,
+  "pairs_stage1": [
+   "P002",
+   "P020",
+   "P037",
+   "P039",
+   "P069"
+  ],
+  "D_col": [
+   -3.0246292267533644e-06,
+   -2.146338386885098e-06,
+   -4.999179938654867e-06,
+   -4.474164652691626e-06,
+   -5.988753297744669e-06
+  ],
+  "boot_sd_D_col": [
+   5.592676146335223e-06,
+   6.355619104058932e-06,
+   1.1529464960231657e-05,
+   6.795441384275461e-06,
+   3.5367532119789972e-06
+  ],
+  "tau_s": 6.355619104058932e-06,
+  "median_abs_D_col": 4.474164652691626e-06,
+  "ratio": 1.4205152464014565,
+  "pass_at_96_windows": false,
+  "at_1024_windows_if_independent": {
+   "sd_scale": 0.30618621784789724,
+   "tau_s": 1.9460029755536457e-06,
+   "ratio": 0.4349421906909358,
+   "pass": true,
+   "assumes": "windows independent; |D_col| equal to its 96-window value"
+  }
+ }
+}

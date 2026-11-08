@@ -1,0 +1,7 @@
+[
+  {
+    "name": "score",
+    "module": "infra.aws_pg.jobs.m2_score",
+    "args": "--inputs s3://pg-lineage-769063704696/results/next_m2/inputs --corpus s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus --grid s3://pg-lineage-769063704696/results/neurons/w3/grid --budget-min 150"
+  }
+]

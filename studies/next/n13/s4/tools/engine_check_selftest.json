@@ -1,0 +1,19 @@
+{
+ "what": "engine_check.py self-test, 2026-11-06: the reference replaced by S3 copies; target s3gate-02 zero (S3)",
+ "identity_pair": {
+  "reference": "s3gate-03 base engine block and setup pip freeze, unchanged",
+  "result": [],
+  "exit": 0
+ },
+ "planted": {
+  "reference": "the same with num_gpu_blocks 12816, engine_args.seed \"1\", torch 2.13.1",
+  "result": [
+   "lib torch: 2.13.1 -> 2.13.0",
+   "math500 num_gpu_blocks: 12816 -> 12817",
+   "math500 engine_args.seed: 1 -> 0",
+   "gsm8k num_gpu_blocks: 12816 -> 12817",
+   "gsm8k engine_args.seed: 1 -> 0"
+  ],
+  "exit": 1
+ }
+}

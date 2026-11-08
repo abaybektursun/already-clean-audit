@@ -1,0 +1,123 @@
+{
+ "what": "N6 stage 2 record (spec section 2.3): the final pairs from L1's banked arrays, balance, halves, failing input",
+ "inputs": {
+  "pairs_L2.json": "7e3a99480b3a2b939ca6eb0a8ae6fe43ee0e8bad22bee302c1a37ca1e4e1755b",
+  "colnorms.npy": "dff570e3d32059eeb5edb6036fa4abf40a60a6dfeffecc92cf9e8036ffe5beb1",
+  "energies.npy": "453a29257ded7e34c528bdf73376d65c197fbcb9a093febdeff150202afd80f5",
+  "pairs.json (stage 1)": "adeca76494aa60f70747e64ce981c2119a874f80147c25474d38e79f75b52617"
+ },
+ "chosen_calipers": {
+  "ln_density": 0.5,
+  "ln_max_abs": 0.1,
+  "ln_E_plus": 0.25,
+  "ln_colnorm": 0.1
+ },
+ "n_pairs": 45,
+ "n_freeze": 21,
+ "n_test": 24,
+ "n_layers": 25,
+ "min_pairs_L2": 40,
+ "at_least_40": true,
+ "balanced": true,
+ "bounds": {
+  "rho_pair": 0.1,
+  "smd": 0.1,
+  "rho_pair_on": [
+   "ln_max_abs",
+   "ln_density"
+  ],
+  "smd_on": [
+   "ln_max_abs",
+   "ln_density",
+   "ln_colnorm",
+   "ln_E_plus"
+  ]
+ },
+ "balance": {
+  "ln_max_abs": {
+   "rho_pair": 0.022222222222222223,
+   "smd": 0.0016434011636210777,
+   "pooled_within_layer": -0.2546014882286024,
+   "mean_abs_diff": 0.049172837666249136
+  },
+  "ln_density": {
+   "rho_pair": -0.06666666666666667,
+   "smd": 0.01540338632273695,
+   "pooled_within_layer": 0.22662330270897577,
+   "mean_abs_diff": 0.0928362614426648
+  },
+  "ln_colnorm": {
+   "rho_pair": 0.1111111111111111,
+   "smd": 0.061208851635456085,
+   "pooled_within_layer": -0.10141851056742199,
+   "mean_abs_diff": 0.019335109740495682
+  },
+  "ln_E_plus": {
+   "rho_pair": 0.022222222222222223,
+   "smd": -0.03356679426814081,
+   "pooled_within_layer": 0.08113673800691726,
+   "mean_abs_diff": 0.11256725451952623
+  }
+ },
+ "unmatched_all_600_within_layer_spearman": {
+  "ln_max_abs": -0.5915283299521876,
+  "ln_density": 0.5018415090637923,
+  "ln_colnorm": -0.17961694232204592,
+  "ln_E_plus": -0.3651595920060407
+ },
+ "failing_input_unmatched_pairs": {
+  "n_pairs": 176,
+  "balanced": false,
+  "ln_max_abs": {
+   "rho_pair": -0.7386363636363636,
+   "smd": 1.4883994866804906
+  },
+  "ln_density": {
+   "rho_pair": 0.6590909090909091,
+   "smd": -1.134952740673635
+  },
+  "ln_colnorm": {
+   "rho_pair": -0.26136363636363635,
+   "smd": 0.46082422137260437
+  },
+  "ln_E_plus": {
+   "rho_pair": -0.5227272727272727,
+   "smd": 0.6321522109317994
+  }
+ },
+ "failing_input_planted_age_colnorm": {
+  "rule": "column norm of every dated pole set to exp(-0.2 age) (dry run A14), real E+",
+  "stopped": true,
+  "message": "no instance grid point gives a balanced matched set: L2 does not launch",
+  "balanced_grid_points": 0,
+  "largest_grid_point": {
+   "cal": {
+    "ln_density": 0.5,
+    "ln_max_abs": 0.1,
+    "ln_E_plus": 1.0,
+    "ln_colnorm": 0.3
+   },
+   "n_pairs": 19,
+   "balanced": false,
+   "ln_max_abs_rho_pair": 0.3684210526315789,
+   "ln_max_abs_smd": -0.007974227671453237,
+   "ln_density_rho_pair": -0.3684210526315789,
+   "ln_density_smd": 0.07101150527816164,
+   "ln_colnorm_rho_pair": -0.24525573579398632,
+   "ln_colnorm_smd": 0.09023477137088776,
+   "ln_E_plus_rho_pair": -0.05263157894736842,
+   "ln_E_plus_smd": 0.020962934925020625
+  }
+ },
+ "overlap_with_stage1": {
+  "pairs_kept": 27,
+  "stage1_pairs": 74
+ },
+ "grid_points_balanced": 2,
+ "grid_points": 20,
+ "age_gap_mean": 4.8,
+ "n_concordant_adj": {
+  "all": 31,
+  "test": 16
+ }
+}

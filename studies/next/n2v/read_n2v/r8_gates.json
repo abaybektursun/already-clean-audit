@@ -1,0 +1,924 @@
+{
+ "complete": true,
+ "parked": [],
+ "parts": [
+  "core",
+  "fd",
+  "jvp"
+ ],
+ "n_gates": 42,
+ "n_pass": 42,
+ "n_failing_inputs": 42,
+ "n_failing_inputs_fail": 42,
+ "gates": [
+  {
+   "gate": "G_SAME",
+   "pass": true,
+   "rule": "torch 2.12.0+cu130, transformers 5.9.0, NVIDIA L40S",
+   "value": {
+    "versions": {
+     "torch": "2.12.0+cu130",
+     "transformers": "5.9.0"
+    },
+    "device": "NVIDIA L40S",
+    "registered": [
+     {
+      "torch": "2.12.0+cu130",
+      "transformers": "5.9.0"
+     },
+     "NVIDIA L40S"
+    ]
+   },
+   "failing_input": {
+    "pass": false
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "INPUTS",
+   "pass": true,
+   "rule": "units.json and N12's two record files at their registered sha256",
+   "value": {
+    "mismatch": []
+   },
+   "failing_input": {
+    "pass": false
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "G_CORPUS",
+   "pass": true,
+   "rule": "tokens sha256 2aca80ca...",
+   "value": {
+    "got": "2aca80ca6537f46b8f60a550b4a3f2f13be2d18c5402be8f1af5c00caa86f531"
+   },
+   "failing_input": {
+    "pass": false
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t14_G_REV",
+   "pass": true,
+   "rule": "the downloaded commit equals the registered one",
+   "value": {
+    "commit": "cb286dcdaaf3f92b3c419dd77439078fdebffe53",
+    "registered": "cb286dcdaaf3f92b3c419dd77439078fdebffe53"
+   },
+   "failing_input": {
+    "pass": false
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t14_G_CFG",
+   "pass": true,
+   "rule": "config equal to the reference, no differing key",
+   "value": {
+    "diff_keys": [],
+    "sliding_window": 4096
+   },
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "model_type"
+    ],
+    "sliding_window": 4096
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "K_A",
+   "pass": true,
+   "rule": "every one of 40 pairs' bf16 dL within 1e-6 nats of N12's banked abl[i][2]",
+   "value": {
+    "units": [
+     "L00N9356-:c8",
+     "L02N1367-:c7",
+     "L02N4649+:c3",
+     "L02N7380+:c2",
+     "L03N6372+:c10",
+     "L03N7746+:c0",
+     "L04N7919-:c0",
+     "L05N8714-:c5",
+     "L06N2185+:c5",
+     "L06N9844+:c1"
+    ],
+    "n_pairs": 40,
+    "max_abs_diff": 0.0,
+    "n_exact": 40,
+    "tol": 1e-06
+   },
+   "failing_input": {
+    "what": "N12's banked dL with the poles rolled inside each unit",
+    "pass": false,
+    "min_abs_diff": 0.0166015625
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t14_G_FP32",
+   "pass": true,
+   "rule": "every parameter fp32, matmul precision 'highest', TF32 off",
+   "value": {
+    "dtypes": [
+     "torch.float32"
+    ]
+   },
+   "failing_input": {
+    "what": "the parameter dtypes before the cast",
+    "dtypes": [
+     "torch.bfloat16"
+    ],
+    "pass": false
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t14_G_CAUSAL",
+   "pass": true,
+   "rule": "every changed row (zero, fd, probe) bitwise equal to its clean row at j < i0",
+   "value": {
+    "n_rows": 963,
+    "n_bitwise_before_i0": 963,
+    "tol": 0.0,
+    "max_abs_before_i0": 0.0,
+    "n_over_tol": 0,
+    "n_over_tol_by_slot_parity": {
+     "same_as_clean": 0,
+     "other": 0
+    }
+   },
+   "failing_input": {
+    "what": "zero rows compared through j = i0",
+    "pass": false,
+    "n_equal": 10
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t13_G_REV",
+   "pass": true,
+   "rule": "the downloaded commit equals the registered one",
+   "value": {
+    "commit": "db8c654b5cbe06311f92e86d68cd4f7d31642a5a",
+    "registered": "db8c654b5cbe06311f92e86d68cd4f7d31642a5a"
+   },
+   "failing_input": {
+    "pass": false
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t13_G_CFG",
+   "pass": true,
+   "rule": "config equal to the reference, no differing key",
+   "value": {
+    "diff_keys": [],
+    "sliding_window": 4096
+   },
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "model_type"
+    ],
+    "sliding_window": 4096
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t13_G_FP32",
+   "pass": true,
+   "rule": "every parameter fp32, matmul precision 'highest', TF32 off",
+   "value": {
+    "dtypes": [
+     "torch.float32"
+    ]
+   },
+   "failing_input": {
+    "what": "the parameter dtypes before the cast",
+    "dtypes": [
+     "torch.bfloat16"
+    ],
+    "pass": false
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t13_G_CAUSAL",
+   "pass": true,
+   "rule": "every changed row (zero, fd, probe) bitwise equal to its clean row at j < i0",
+   "value": {
+    "n_rows": 1683,
+    "n_bitwise_before_i0": 1683,
+    "tol": 0.0,
+    "max_abs_before_i0": 0.0,
+    "n_over_tol": 0,
+    "n_over_tol_by_slot_parity": {
+     "same_as_clean": 0,
+     "other": 0
+    }
+   },
+   "failing_input": {
+    "what": "zero rows compared through j = i0",
+    "pass": false,
+    "n_equal": 20
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "I_FWD",
+   "pass": true,
+   "rule": "the T_13 clean rows again, reversed, clean-only batches: bitwise",
+   "value": {
+    "n": 187,
+    "n_bitwise": 187,
+    "max_abs_diff": 0.0
+   },
+   "failing_input": {
+    "what": "each clean row against its window's first zero row",
+    "pass": false
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "I_JVP",
+   "pass": true,
+   "rule": "the first 16 T_13 unit windows' forward-mode rows of poles 0 and 1 again, reversed: bitwise",
+   "value": {
+    "n": 32,
+    "n_bitwise": 32,
+    "max_abs_diff": 0.0
+   },
+   "failing_input": {
+    "what": "pole 1's tangent against pole 0's",
+    "pass": false
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t12_G_REV",
+   "pass": true,
+   "rule": "the downloaded commit equals the registered one",
+   "value": {
+    "commit": "af83fc98693475b503de0a86407f0260a7281786",
+    "registered": "af83fc98693475b503de0a86407f0260a7281786"
+   },
+   "failing_input": {
+    "pass": false
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t12_G_CFG",
+   "pass": true,
+   "rule": "config equal to the reference, no differing key",
+   "value": {
+    "diff_keys": [],
+    "sliding_window": 4096
+   },
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "model_type"
+    ],
+    "sliding_window": 4096
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t12_G_FP32",
+   "pass": true,
+   "rule": "every parameter fp32, matmul precision 'highest', TF32 off",
+   "value": {
+    "dtypes": [
+     "torch.float32"
+    ]
+   },
+   "failing_input": {
+    "what": "the parameter dtypes before the cast",
+    "dtypes": [
+     "torch.bfloat16"
+    ],
+    "pass": false
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t12_G_CAUSAL",
+   "pass": true,
+   "rule": "every changed row (zero, fd, probe) bitwise equal to its clean row at j < i0",
+   "value": {
+    "n_rows": 1827,
+    "n_bitwise_before_i0": 1827,
+    "tol": 0.0,
+    "max_abs_before_i0": 0.0,
+    "n_over_tol": 0,
+    "n_over_tol_by_slot_parity": {
+     "same_as_clean": 0,
+     "other": 0
+    }
+   },
+   "failing_input": {
+    "what": "zero rows compared through j = i0",
+    "pass": false,
+    "n_equal": 6
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t11_G_REV",
+   "pass": true,
+   "rule": "the downloaded commit equals the registered one",
+   "value": {
+    "commit": "c515906cd0f5e30e9e2f56f5f28870c375d8bef0",
+    "registered": "c515906cd0f5e30e9e2f56f5f28870c375d8bef0"
+   },
+   "failing_input": {
+    "pass": false
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t11_G_CFG",
+   "pass": true,
+   "rule": "config equal to the reference, no differing key",
+   "value": {
+    "diff_keys": [],
+    "sliding_window": 4096
+   },
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "model_type"
+    ],
+    "sliding_window": 4096
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t11_G_FP32",
+   "pass": true,
+   "rule": "every parameter fp32, matmul precision 'highest', TF32 off",
+   "value": {
+    "dtypes": [
+     "torch.float32"
+    ]
+   },
+   "failing_input": {
+    "what": "the parameter dtypes before the cast",
+    "dtypes": [
+     "torch.bfloat16"
+    ],
+    "pass": false
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t11_G_CAUSAL",
+   "pass": true,
+   "rule": "every changed row (zero, fd, probe) bitwise equal to its clean row at j < i0",
+   "value": {
+    "n_rows": 1782,
+    "n_bitwise_before_i0": 1782,
+    "tol": 0.0,
+    "max_abs_before_i0": 0.0,
+    "n_over_tol": 0,
+    "n_over_tol_by_slot_parity": {
+     "same_as_clean": 0,
+     "other": 0
+    }
+   },
+   "failing_input": {
+    "what": "zero rows compared through j = i0",
+    "pass": false,
+    "n_equal": 8
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t10_G_REV",
+   "pass": true,
+   "rule": "the downloaded commit equals the registered one",
+   "value": {
+    "commit": "1d074dbc15d91544abe47d5508ac1670ef8c7129",
+    "registered": "1d074dbc15d91544abe47d5508ac1670ef8c7129"
+   },
+   "failing_input": {
+    "pass": false
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t10_G_CFG",
+   "pass": true,
+   "rule": "config equal to the reference, no differing key",
+   "value": {
+    "diff_keys": [],
+    "sliding_window": 4096
+   },
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "model_type"
+    ],
+    "sliding_window": 4096
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t10_G_FP32",
+   "pass": true,
+   "rule": "every parameter fp32, matmul precision 'highest', TF32 off",
+   "value": {
+    "dtypes": [
+     "torch.float32"
+    ]
+   },
+   "failing_input": {
+    "what": "the parameter dtypes before the cast",
+    "dtypes": [
+     "torch.bfloat16"
+    ],
+    "pass": false
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t10_G_CAUSAL",
+   "pass": true,
+   "rule": "every changed row (zero, fd, probe) bitwise equal to its clean row at j < i0",
+   "value": {
+    "n_rows": 1098,
+    "n_bitwise_before_i0": 1098,
+    "tol": 0.0,
+    "max_abs_before_i0": 0.0,
+    "n_over_tol": 0,
+    "n_over_tol_by_slot_parity": {
+     "same_as_clean": 0,
+     "other": 0
+    }
+   },
+   "failing_input": {
+    "what": "zero rows compared through j = i0",
+    "pass": false,
+    "n_equal": 5
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t09_G_REV",
+   "pass": true,
+   "rule": "the downloaded commit equals the registered one",
+   "value": {
+    "commit": "08b5da69ff99e0858f18d9870ac87f43d7602cf0",
+    "registered": "08b5da69ff99e0858f18d9870ac87f43d7602cf0"
+   },
+   "failing_input": {
+    "pass": false
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t09_G_CFG",
+   "pass": true,
+   "rule": "config equal to the reference, no differing key",
+   "value": {
+    "diff_keys": [],
+    "sliding_window": 4096
+   },
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "model_type"
+    ],
+    "sliding_window": 4096
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t09_G_FP32",
+   "pass": true,
+   "rule": "every parameter fp32, matmul precision 'highest', TF32 off",
+   "value": {
+    "dtypes": [
+     "torch.float32"
+    ]
+   },
+   "failing_input": {
+    "what": "the parameter dtypes before the cast",
+    "dtypes": [
+     "torch.bfloat16"
+    ],
+    "pass": false
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t09_G_CAUSAL",
+   "pass": true,
+   "rule": "every changed row (zero, fd, probe) bitwise equal to its clean row at j < i0",
+   "value": {
+    "n_rows": 540,
+    "n_bitwise_before_i0": 540,
+    "tol": 0.0,
+    "max_abs_before_i0": 0.0,
+    "n_over_tol": 0,
+    "n_over_tol_by_slot_parity": {
+     "same_as_clean": 0,
+     "other": 0
+    }
+   },
+   "failing_input": {
+    "what": "zero rows compared through j = i0",
+    "pass": false,
+    "n_equal": 0
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t08_G_REV",
+   "pass": true,
+   "rule": "the downloaded commit equals the registered one",
+   "value": {
+    "commit": "d1dbb0e2d4d3fbdc9c185a34c4e99f13ef6ae2a6",
+    "registered": "d1dbb0e2d4d3fbdc9c185a34c4e99f13ef6ae2a6"
+   },
+   "failing_input": {
+    "pass": false
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t08_G_CFG",
+   "pass": true,
+   "rule": "config equal to the reference, no differing key",
+   "value": {
+    "diff_keys": [],
+    "sliding_window": 4096
+   },
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "model_type"
+    ],
+    "sliding_window": 4096
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t08_G_FP32",
+   "pass": true,
+   "rule": "every parameter fp32, matmul precision 'highest', TF32 off",
+   "value": {
+    "dtypes": [
+     "torch.float32"
+    ]
+   },
+   "failing_input": {
+    "what": "the parameter dtypes before the cast",
+    "dtypes": [
+     "torch.bfloat16"
+    ],
+    "pass": false
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t08_G_CAUSAL",
+   "pass": true,
+   "rule": "every changed row (zero, fd, probe) bitwise equal to its clean row at j < i0",
+   "value": {
+    "n_rows": 459,
+    "n_bitwise_before_i0": 459,
+    "tol": 0.0,
+    "max_abs_before_i0": 0.0,
+    "n_over_tol": 0,
+    "n_over_tol_by_slot_parity": {
+     "same_as_clean": 0,
+     "other": 0
+    }
+   },
+   "failing_input": {
+    "what": "zero rows compared through j = i0",
+    "pass": false,
+    "n_equal": 0
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t07_G_REV",
+   "pass": true,
+   "rule": "the downloaded commit equals the registered one",
+   "value": {
+    "commit": "04eeee4fa74f9f3d2cb11c31e155545dad32365e",
+    "registered": "04eeee4fa74f9f3d2cb11c31e155545dad32365e"
+   },
+   "failing_input": {
+    "pass": false
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t07_G_CFG",
+   "pass": true,
+   "rule": "config equal to the reference, no differing key",
+   "value": {
+    "diff_keys": [],
+    "sliding_window": 4096
+   },
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "model_type"
+    ],
+    "sliding_window": 4096
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t07_G_FP32",
+   "pass": true,
+   "rule": "every parameter fp32, matmul precision 'highest', TF32 off",
+   "value": {
+    "dtypes": [
+     "torch.float32"
+    ]
+   },
+   "failing_input": {
+    "what": "the parameter dtypes before the cast",
+    "dtypes": [
+     "torch.bfloat16"
+    ],
+    "pass": false
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t07_G_CAUSAL",
+   "pass": true,
+   "rule": "every changed row (zero, fd, probe) bitwise equal to its clean row at j < i0",
+   "value": {
+    "n_rows": 486,
+    "n_bitwise_before_i0": 486,
+    "tol": 0.0,
+    "max_abs_before_i0": 0.0,
+    "n_over_tol": 0,
+    "n_over_tol_by_slot_parity": {
+     "same_as_clean": 0,
+     "other": 0
+    }
+   },
+   "failing_input": {
+    "what": "zero rows compared through j = i0",
+    "pass": false,
+    "n_equal": 3
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t05_G_REV",
+   "pass": true,
+   "rule": "the downloaded commit equals the registered one",
+   "value": {
+    "commit": "ebfe7b62b31bfadff464a8926a48a256c9431db7",
+    "registered": "ebfe7b62b31bfadff464a8926a48a256c9431db7"
+   },
+   "failing_input": {
+    "pass": false
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t05_G_CFG",
+   "pass": true,
+   "rule": "config equal to the reference, no differing key",
+   "value": {
+    "diff_keys": [],
+    "sliding_window": 4096
+   },
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "model_type"
+    ],
+    "sliding_window": 4096
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t05_G_FP32",
+   "pass": true,
+   "rule": "every parameter fp32, matmul precision 'highest', TF32 off",
+   "value": {
+    "dtypes": [
+     "torch.float32"
+    ]
+   },
+   "failing_input": {
+    "what": "the parameter dtypes before the cast",
+    "dtypes": [
+     "torch.bfloat16"
+    ],
+    "pass": false
+   },
+   "failing_input_fails": true
+  },
+  {
+   "gate": "t05_G_CAUSAL",
+   "pass": true,
+   "rule": "every changed row (zero, fd, probe) bitwise equal to its clean row at j < i0",
+   "value": {
+    "n_rows": 45,
+    "n_bitwise_before_i0": 45,
+    "tol": 0.0,
+    "max_abs_before_i0": 0.0,
+    "n_over_tol": 0,
+    "n_over_tol_by_slot_parity": {
+     "same_as_clean": 0,
+     "other": 0
+    }
+   },
+   "failing_input": {
+    "what": "zero rows compared through j = i0",
+    "pass": false,
+    "n_equal": 0
+   },
+   "failing_input_fails": true
+  }
+ ],
+ "cross_checks": {
+  "G_SAME_versions_registered": true,
+  "G_CORPUS_sha_registered": true,
+  "G_REV_commits_equal_m2_POINTS": {
+   "5": true,
+   "7": true,
+   "8": true,
+   "9": true,
+   "10": true,
+   "11": true,
+   "12": true,
+   "13": true,
+   "14": true
+  },
+  "inputs_in_worktree_sha": {
+   "units.json": true,
+   "n12_freeze.jsonl": true,
+   "n12_test.jsonl": true
+  },
+  "K_A_failing_input_min_gap_from_N12_records": 0.0166015625,
+  "K_A_failing_input_min_gap_in_metrics": 0.0166015625,
+  "K_A_units_are_first_10_real_T14": true,
+  "G_CAUSAL_rows_per_point_npz_vs_metrics": {
+   "5": [
+    45,
+    45
+   ],
+   "7": [
+    486,
+    486
+   ],
+   "8": [
+    459,
+    459
+   ],
+   "9": [
+    540,
+    540
+   ],
+   "10": [
+    1098,
+    1098
+   ],
+   "11": [
+    1782,
+    1782
+   ],
+   "12": [
+    1827,
+    1827
+   ],
+   "13": [
+    1683,
+    1683
+   ],
+   "14": [
+    963,
+    963
+   ]
+  },
+  "G_CAUSAL_failing_input_n_equal_npz_vs_metrics": {
+   "5": [
+    0,
+    0
+   ],
+   "7": [
+    3,
+    3
+   ],
+   "8": [
+    0,
+    0
+   ],
+   "9": [
+    0,
+    0
+   ],
+   "10": [
+    5,
+    5
+   ],
+   "11": [
+    8,
+    8
+   ],
+   "12": [
+    6,
+    6
+   ],
+   "13": [
+    20,
+    20
+   ],
+   "14": [
+    10,
+    10
+   ]
+  },
+  "G_CAUSAL_npz_all_points": {
+   "rows": 8883,
+   "bitwise_before_i0": 8883,
+   "differ_at_or_after_i0": 8859,
+   "differ_at_i0": 8414,
+   "equal_everywhere": 24
+  },
+  "I_FWD_n_vs_T13_unit_windows": [
+   187,
+   187
+  ],
+  "I_FWD_failing_input_from_npz": {
+   "n": 187,
+   "equal": 0
+  },
+  "I_JVP_n": [
+   32,
+   32
+  ],
+  "I_JVP_failing_input_from_npz": {
+   "n": 16,
+   "equal": 0
+  },
+  "identity_clean_same_window_other_unit_npz": {
+   "pairs": 10,
+   "bitwise": 10,
+   "max_abs": 0.0
+  },
+  "jvp_tangent_exactly_0_before_i0_npz": {
+   "rows": 3948,
+   "exact_zero_before_i0": 3948,
+   "max_abs_before_i0": 0.0,
+   "nonzero_at_or_after_i0": 3948
+  },
+  "slot_control": {
+   "window": 4441,
+   "dtype": "torch.float32",
+   "vocab": 100278,
+   "view_offset_mod16_bytes": [
+    0,
+    8,
+    0,
+    8
+   ],
+   "logits_max_abs_vs_slot0": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "copy_max_abs_vs_slot0": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "view_max_abs_vs_slot0": [
+    0.0,
+    9.5367431640625e-07,
+    0.0,
+    9.5367431640625e-07
+   ]
+  },
+  "jvp_max_mem_gb": {
+   "14": 36.62,
+   "13": 36.62,
+   "12": 36.62,
+   "11": 36.62,
+   "10": 36.62,
+   "9": 36.62,
+   "8": 36.62,
+   "7": 36.62,
+   "5": 36.62
+  }
+ }
+}

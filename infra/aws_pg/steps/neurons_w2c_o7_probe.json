@@ -1,0 +1,7 @@
+[
+ {
+  "name": "probe",
+  "module": "infra.aws_pg.jobs.neurons_harvest",
+  "args": "--model-key O7 --repo allenai/Olmo-3-1025-7B --revision stage1-step1413814 --tokname olmo3 --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus --max-tokens 131072 --poles s3://pg-lineage-769063704696/results/neurons/w2c/o7_probe/1/probe_poles.json --probe-texts s3://pg-lineage-769063704696/results/neurons/w2c/o7_probe/1/texts.jsonl"
+ }
+]

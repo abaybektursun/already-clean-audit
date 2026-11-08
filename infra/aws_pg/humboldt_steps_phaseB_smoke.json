@@ -1,0 +1,6 @@
+[
+  {"name": "ogs", "module": "infra.aws_pg.jobs.humboldt_offline_gate", "args": "--n-tokens 4000 --window 256 --long-doc-tokens 1024 --run-id humboldt_offline_smoke"},
+  {"name": "b1s", "module": "infra.aws_pg.jobs.humboldt_b1", "args": "--smoke --run-id humboldt_b1_smoke"},
+  {"name": "b3s", "module": "infra.aws_pg.jobs.humboldt_b3", "args": "--smoke --run-id humboldt_b3_smoke"},
+  {"name": "b4s", "module": "infra.aws_pg.jobs.humboldt_b4", "args": "--smoke --run-id humboldt_b4_smoke"}
+]

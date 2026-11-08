@@ -1,0 +1,132 @@
+{
+ "what": "Amendment A2 (2026-11-06), exploratory, not a rule: how likely the A2 G-EX gate is to stop score-03 at the",
+ "tol": {
+  "p99": 0.038718200991485985,
+  "abs_min": 0.1
+ },
+ "pool": [
+  {
+   "bin": [
+    0.1,
+    0.3
+   ],
+   "n": 3459,
+   "p99": 0.021266976145797666
+  },
+  {
+   "bin": [
+    0.3,
+    1.0
+   ],
+   "n": 8407,
+   "p99": 0.019110279446758645
+  },
+  {
+   "bin": [
+    1.0,
+    3.0
+   ],
+   "n": 5977,
+   "p99": 0.020834769656031163
+  },
+  {
+   "bin": [
+    3.0,
+    Infinity
+   ],
+   "n": 13792,
+   "p99": 0.018282282378485386
+  }
+ ],
+ "points": {
+  "7": {
+   "entries": 116,
+   "gated": 114,
+   "below": 2,
+   "p99_model_median": 0.016610617550073745,
+   "p99_model_q90": 0.02097914615484691,
+   "share_above_tol": 0.002,
+   "plan_pool_p99_median": 0.02663762572978958,
+   "plan_pool_share_above_tol": 0.214
+  },
+  "8": {
+   "entries": 147,
+   "gated": 137,
+   "below": 10,
+   "p99_model_median": 0.01711616936534669,
+   "p99_model_q90": 0.02172636726110028,
+   "share_above_tol": 0.0005,
+   "plan_pool_p99_median": 0.02714663368077813,
+   "plan_pool_share_above_tol": 0.25
+  },
+  "9": {
+   "entries": 243,
+   "gated": 240,
+   "below": 3,
+   "p99_model_median": 0.017643917699799658,
+   "p99_model_q90": 0.021431993559092907,
+   "share_above_tol": 0.0,
+   "plan_pool_p99_median": 0.02854176609080698,
+   "plan_pool_share_above_tol": 0.269
+  },
+  "10": {
+   "entries": 397,
+   "gated": 378,
+   "below": 19,
+   "p99_model_median": 0.01810633816871918,
+   "p99_model_q90": 0.021269591189160938,
+   "share_above_tol": 0.0,
+   "plan_pool_p99_median": 0.02893770528253742,
+   "plan_pool_share_above_tol": 0.3085
+  },
+  "11": {
+   "entries": 643,
+   "gated": 538,
+   "below": 105,
+   "p99_model_median": 0.01861464614258658,
+   "p99_model_q90": 0.021481308845140747,
+   "share_above_tol": 0.0,
+   "plan_pool_p99_median": 0.02890334672138477,
+   "plan_pool_share_above_tol": 0.3225
+  },
+  "12": {
+   "entries": 717,
+   "gated": 650,
+   "below": 67,
+   "p99_model_median": 0.019017891156100024,
+   "p99_model_q90": 0.02154063003251001,
+   "share_above_tol": 0.0,
+   "plan_pool_p99_median": 0.02890334672138477,
+   "plan_pool_share_above_tol": 0.327
+  },
+  "13": {
+   "entries": 717,
+   "gated": 591,
+   "below": 126,
+   "p99_model_median": 0.019353845064493093,
+   "p99_model_q90": 0.022520505941619876,
+   "share_above_tol": 0.0,
+   "plan_pool_p99_median": 0.030000144483466124,
+   "plan_pool_share_above_tol": 0.386
+  },
+  "14": {
+   "entries": 477,
+   "gated": 406,
+   "below": 71,
+   "p99_model_median": 0.019205123662893685,
+   "p99_model_q90": 0.023155182919596173,
+   "share_above_tol": 0.001,
+   "plan_pool_p99_median": 0.028856990230285047,
+   "plan_pool_share_above_tol": 0.3725,
+   "p99_actual_repeat": 0.028856990230285047
+  }
+ },
+ "plan_pool": {
+  "n": 406,
+  "above_tol": 4,
+  "share_above_tol": 0.009852216748768473,
+  "pair_share_above_tol": 0.001106369527422159
+ },
+ "share_draws_pass_all_T7_to_T13": 0.9975,
+ "plan_pool_share_draws_pass_all_T7_to_T13": 0.0845
+}

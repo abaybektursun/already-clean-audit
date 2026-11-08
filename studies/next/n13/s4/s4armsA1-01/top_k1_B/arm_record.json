@@ -1,0 +1,154 @@
+{
+ "prefix": "s4armsA1-01",
+ "step": "top_k1_B",
+ "arm": "top_k1_B",
+ "seed_set": "B",
+ "benches": [
+  "math500"
+ ],
+ "projection_min": 208.0,
+ "allowance_min": 2146.0,
+ "build": {
+  "build_seconds": 158.9,
+  "n_neurons_in_set": 3523,
+  "spec": {
+   "name": "top_k1_B",
+   "kind": "neurons",
+   "c": 1.0,
+   "non_mlp": "before"
+  },
+  "families": {
+   "mlp": {
+    "realized_sq": 0.1647233841906714,
+    "changed": 21637742,
+    "in_mask": 43290624
+   },
+   "attn": {
+    "realized_sq": 0.0,
+    "changed": 0,
+    "in_mask": 0
+   },
+   "norm": {
+    "realized_sq": 0.0,
+    "changed": 0,
+    "in_mask": 0
+   },
+   "embed": {
+    "realized_sq": 0.0,
+    "changed": 0,
+    "in_mask": 0
+   }
+  },
+  "G-MASK": true,
+  "kept": 0,
+  "kept_expected": null,
+  "kept_rel_err": null,
+  "kept_sd_units": null,
+  "kept_pass": null,
+  "intended_mlp_energy": null,
+  "energy_rel_err": null,
+  "energy_flag": null,
+  "energy_passes": null,
+  "c_built": null,
+  "a31": null,
+  "hashes_vs_R1_stage6": {
+   "n_tensors": 355,
+   "n_equal": 355,
+   "same_names": true,
+   "all_equal": true
+  },
+  "R1_stage6_note": null
+ },
+ "bench": {
+  "math500": {
+   "status": "done",
+   "started_utc": "2026-11-07T17:16:53Z",
+   "finished_utc": "2026-11-07T19:38:47Z",
+   "wall_min": 141.9,
+   "template": {
+    "pass": true,
+    "first_id_is_bos": [
+     false
+    ],
+    "n": 500
+   },
+   "cap": 16384,
+   "park": {
+    "allowance_min": 2146.0,
+    "elapsed_min": 1095.482856663068,
+    "projected_min": 208.0410710028923,
+    "earlier_parked": false,
+    "parked": false
+   },
+   "condition": null,
+   "screen_fired": false,
+   "screen_cap_hits_0_19": 1,
+   "G-COMPLETE_job": {
+    "n": 500,
+    "distinct": 500,
+    "covers": true,
+    "seeded": true,
+    "generated": true,
+    "finish_reason": true,
+    "n_empty": 11,
+    "pass": true,
+    "expected_n": 500
+   },
+   "G-COMPLETE_recount": {
+    "n": 500,
+    "distinct": 500,
+    "covers": true,
+    "seeded": true,
+    "generated": true,
+    "finish_reason": true,
+    "n_empty": 11,
+    "pass": true
+   },
+   "G-COMPLETE_failing_input_failed": true,
+   "n_records": 500,
+   "cap_hits": 76,
+   "mean_new_tokens": 3652.904,
+   "modes": {
+    "answer_line": 207,
+    "boxed": 146,
+    "none": 147
+   },
+   "metrics_build": {
+    "arm": "top_k1_B",
+    "from": null,
+    "G-HASH": null,
+    "kept_rel_err": null,
+    "kept_sd_units": null,
+    "energy_rel_err": null,
+    "energy_flag": null,
+    "energy_passes": null,
+    "c_built": null,
+    "build_seconds": 158.9,
+    "G-MASK": true
+   },
+   "engine": {
+    "vllm": "0.32.0",
+    "max_num_seqs": 128,
+    "max_num_batched_tokens": 2048,
+    "num_gpu_blocks": 12817,
+    "attention_backend": "FLASH_ATTN",
+    "env": {
+     "VLLM_USE_FLASHINFER_SAMPLER": "0"
+    },
+    "load_s": 60.35504221916199
+   },
+   "throughput": {
+    "generation_seconds": 8289.788781166077,
+    "step_s": 8513.141818761826,
+    "r_sat": 226.36426196834478,
+    "mean_new_tokens": 3652.904,
+    "median_new_tokens": 971.0,
+    "max_new_tokens": 16384,
+    "n_cap_hits": 76,
+    "mean_output_tokens": 3653.752,
+    "n_answers": 500,
+    "load_s": 60.35504221916199
+   }
+  }
+ }
+}

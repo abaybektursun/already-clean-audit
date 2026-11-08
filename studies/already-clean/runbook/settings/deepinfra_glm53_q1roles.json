@@ -1,0 +1,16 @@
+{
+ "backend": "openai_compat",
+ "base_url": "https://api.deepinfra.com/v1/openai",
+ "key_env": "NEURONS_API_KEY_1",
+ "models": {
+  "explainer": "zai-org/GLM-5.3",
+  "second_reader": "zai-org/GLM-5.3",
+  "writer": "zai-org/GLM-5.3",
+  "writer_job": "zai-org/GLM-5.3",
+  "clusterer": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "judge": "deepseek-ai/DeepSeek-V4.1-Flash-1017"
+ },
+ "temperature": 1.0,
+ "response_format": "json_schema",
+ "notes": "Key in ~/.config/interp_research/keys.env as NEURONS_API_KEY_1 (mode 600); export it into the environment, never into this file. Calibration candidate glm53: the four Q1 roles on zai-org/GLM-5.3 (DeepInfra listing 2026-10-20)."
+}

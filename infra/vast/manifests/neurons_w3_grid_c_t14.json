@@ -1,0 +1,30 @@
+{
+  "rental": "neurons_w3_grid_c_t14",
+  "session": "W3",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+  "disk": 120,
+  "gpu_query": "gpu_name=L40S num_gpus=1 cuda_vers>=13.0",
+  "expected_gpu": "L40S",
+  "bound": "compute",
+  "weights_mode": "download",
+  "env": {
+    "HF_ONLINE": "1",
+    "HF_HOME": "/workspace/hf",
+    "HF_HUB_CACHE": "/workspace/hf/hub",
+    "HF_HUB_DISABLE_XET": "1"
+  },
+  "cells": [
+    {
+      "id": "grid_c",
+      "module": "infra.vast.cells.pipeline_job",
+      "pg_git_sha": "17057bd0",
+      "steps_s3": "s3://pg-lineage-769063704696/results/mdl/neurons/w3/grid/1c/steps.json"
+    }
+  ],
+  "watch": {
+    "max_billed_h": 3.5,
+    "load_backstop_min": 30,
+    "progress_stall_min": 60
+  },
+  "_comment": "Device check for the W3 birth readings: job b's T_7..T_14 ran on an RTX PRO 5000 (Blackwell) while T_15 and T_0..T_6 ran on an L40S, and the W1-W3 checker measured probe-activation differences between the two (median 0.56%, p99 5.2%, max 63%). This re-harvests t14_step1000000 exactly as job b did (same step, infra/aws_pg/steps/neurons_w3_grid_c_t14.json, positions from job a's T_15 positions.npz by S3 URI) and MUST run on an L40S: gpu_query pins gpu_name=L40S (vastai query syntax; controller.py appends disk_space>=120 and, in download mode, inet_down>=800). On 2026-10-21 no L40S offer passed the controller's base filters (all unverified, transfer costs above 0.0001, two below reliability 0.98); the AWS fallback is g6e.2xlarge (L40S). The mirrored steps.json needs only the S3 rewrite results/neurons/ -> results/mdl/neurons/ (no local path), and job a's T_15 positions.npz must exist under results/mdl/neurons/w3/grid/1/out/t15_step1413814/poles/. Expected about 1.9 h on an L40S (job a measured 15.5 GPU-h for 8 checkpoints); max_billed_h 3.5. pg_git_sha names 17057bd0, which holds the shipped code; since then only manifests, steps files and budget.json changed under infra/."
+}

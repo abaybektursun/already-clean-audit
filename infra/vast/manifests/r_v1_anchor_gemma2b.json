@@ -1,0 +1,27 @@
+{
+  "rental": "r_v1_anchor_gemma2b",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:v1-anchor-gemma2b",
+  "disk": 25,
+  "gpu_query": "gpu_ram>=16 num_gpus=1 cuda_vers>=12.8 compute_cap>=800",
+  "expected_gpu": "",
+  "bound": "overhead",
+  "_comment": "Cross-family anchor for cell (c): gemma-2b is a BOS-family model, corpus windows carry BOS at position 0 (prepare_corpus auto rule). Same statistic, same frozen text, wired for cross-family comparison of the position-0 share against the Qwen (no-BOS) rungs. Independent of the 72B track.",
+  "cells": [
+    {
+      "id": "anchor_gemma2b_smoke",
+      "module": "infra.vast.cells.smoke_stats",
+      "model_dir": "/models/google_gemma-2b",
+      "probe_text": "The capital of France is"
+    },
+    {
+      "id": "anchor_gemma2b_actstats",
+      "module": "infra.vast.cells.v1_actstats",
+      "model_dir": "/models/google_gemma-2b",
+      "batch": 8
+    }
+  ],
+  "watch": {
+    "load_backstop_min": 40,
+    "max_billed_h": 1
+  }
+}

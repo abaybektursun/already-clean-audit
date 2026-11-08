@@ -1,0 +1,5 @@
+{
+ "arm": "base",
+ "from": "HF snapshot",
+ "dir": "/opt/hf-cache/hf/hub/models--allenai--Olmo-3-1025-7B/snapshots/a81bae42db3975be1671e27b9c9a56da1a9f980f"
+}

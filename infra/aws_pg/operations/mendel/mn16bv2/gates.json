@@ -1,0 +1,30 @@
+{
+  "mn16b_epsilon_is_negligible_against_the_equilibrium_second_moment": {
+    "_required": false,
+    "note": "Adam's update is m/(sqrt(v)+eps); if this margin is small the measurement is of eps rather than of seeding and the suppression law does not apply",
+    "ok": true,
+    "required": 100.0,
+    "sqrt_v_eq_over_eps": 11617.630287082373,
+    "v_eq": {
+      "q_proj_L0": 6.396564344868239e-08,
+      "q_proj_L17": 1.3496933348733364e-08,
+      "q_proj_L8": 2.1329517707613377e-08,
+      "v_proj_L0": 2.6238915324938716e-06,
+      "v_proj_L17": 7.439214186888421e-07,
+      "v_proj_L8": 6.65959817069961e-07
+    }
+  },
+  "mn16b_realized_horizons_match_predicted": {
+    "_required": false,
+    "by_dose": {
+      "10": 0.09169078988818066,
+      "100": 0.04688366929215778,
+      "4": 0.21203258207673986
+    },
+    "n_cells": 18,
+    "n_censored": 0,
+    "n_within_tol": 15,
+    "ok": false,
+    "tol": 0.25
+  }
+}

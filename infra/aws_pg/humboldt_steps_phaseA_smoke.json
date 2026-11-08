@@ -1,0 +1,5 @@
+[
+  {"name": "a2s", "module": "infra.aws_pg.jobs.humboldt_a2", "args": "--smoke --run-id humboldt_a2_smoke"},
+  {"name": "a3s", "module": "infra.aws_pg.jobs.humboldt_a3", "args": "--smoke --run-id humboldt_a3_smoke"},
+  {"name": "a4s", "module": "infra.aws_pg.jobs.humboldt_a4", "args": "--smoke --n-accept 1 --run-id humboldt_a4_smoke"}
+]

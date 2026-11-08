@@ -1,0 +1,42 @@
+{
+  "gate0": {
+    "tag": "atlas-freeze-gate0-2026-07-10",
+    "spec_sha256": "0e2a439ce0de86fb7b8523784b6def736a37d90a7d448ae8ddb1724e49622def",
+    "utc": "2026-07-10T22:08:00Z"
+  },
+  "d0": {
+    "tag": "atlas-freeze-d0-2026-07-10",
+    "spec_sha256": "0e2a439ce0de86fb7b8523784b6def736a37d90a7d448ae8ddb1724e49622def",
+    "utc": "2026-07-10T22:08:00Z"
+  },
+  "t": {
+    "tag": "atlas-freeze-t-2026-07-10",
+    "spec_sha256": "0e2a439ce0de86fb7b8523784b6def736a37d90a7d448ae8ddb1724e49622def",
+    "utc": "2026-07-10T22:33:00Z"
+  },
+  "b": {
+    "tag": "atlas-freeze-b-2026-07-10",
+    "spec_sha256": "0e2a439ce0de86fb7b8523784b6def736a37d90a7d448ae8ddb1724e49622def",
+    "utc": "2026-07-10T22:33:00Z"
+  },
+  "w": {
+    "tag": "atlas-freeze-w-2026-07-10",
+    "spec_sha256": "0e2a439ce0de86fb7b8523784b6def736a37d90a7d448ae8ddb1724e49622def",
+    "utc": "2026-07-10T22:33:00Z"
+  },
+  "x": {
+    "tag": "atlas-freeze-x-2026-07-10",
+    "spec_sha256": "0e2a439ce0de86fb7b8523784b6def736a37d90a7d448ae8ddb1724e49622def",
+    "utc": "2026-07-10T22:33:00Z"
+  },
+  "m_fit": {
+    "tag": "atlas-freeze-m-fit-2026-07-10",
+    "spec_sha256": "0e2a439ce0de86fb7b8523784b6def736a37d90a7d448ae8ddb1724e49622def",
+    "utc": "2026-07-10T22:33:00Z"
+  },
+  "m_sealed": {
+    "tag": "atlas-freeze-m-sealed-2026-07-10",
+    "spec_sha256": "0e2a439ce0de86fb7b8523784b6def736a37d90a7d448ae8ddb1724e49622def",
+    "utc": "2026-07-10T22:33:00Z"
+  }
+}

@@ -1,0 +1,32 @@
+{
+ "what": "N22 freeze 2 (freeze halves only)",
+ "points": {
+  "15": {
+   "t": 15,
+   "bands": {
+    "l1": 0,
+    "l2": 25,
+    "lm": 0,
+    "band_m": [
+     0,
+     1
+    ],
+    "matched": 0.0
+   },
+   "delta_read": 0.5,
+   "n_answered": {
+    "freeze": 2,
+    "test": 5
+   },
+   "n_swap": {},
+   "matched": false,
+   "dom_guard_answer_readable": false,
+   "go_nogo": {
+    "go": false,
+    "n_answered": 7,
+    "rule": "no edits ran (fewer than N_MIN answered in a half)"
+   }
+  }
+ },
+ "metrics_sha256": "95262d5774302a08bdc6aeb55b17cfa6fb2fc7803f235ee36f1ee6a5ff58ec8e"
+}

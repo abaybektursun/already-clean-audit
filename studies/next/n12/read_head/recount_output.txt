@@ -1,0 +1,15 @@
+
+== test: real 71 pb 70 dt 67
+  H_cf: mean F 0.9507 [0.7309, 1.1785] -> OWN_RISE; F>0 in 51/71
+    twins pb F: 0.7651 [0.5591, 0.9851]
+  H_away_sel_pb: drop real 0.938 twin 1.164; paired -0.2257 [-0.4006, -0.0514] -> BELOW
+    twins dt F: 0.9422 [0.6784, 1.2213]
+  H_away_sel_dt: drop real 0.949 twin 1.062; paired -0.1129 [-0.2956, +0.0649] -> AT
+  hits at pre: real 42/71 pb 53/70 dt 41/67
+  H_sel_dt real-dt: -0.0299 [-0.1493, +0.0896] -> AT
+  H_dt_pb dt-pb: -0.1343 [-0.2537, -0.0149] -> LOWER
+Traceback (most recent call last):
+  File "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n12_head/recount.py", line 26, in <module>
+    pairs=[(a["dL_hat"] if "dL_hat" in a else a.get("pred"), a["dL"] if "dL" in a else a.get("meas")) for r in real.values() for a in r["abl"]]
+                                              ^^^^^
+AttributeError: 'list' object has no attribute 'get'

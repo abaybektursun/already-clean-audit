@@ -1,0 +1,31 @@
+{
+  "rental": "realizednull_q14",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:v1-14b",
+  "disk": 70,
+  "gpu_query": "gpu_ram>=48 num_gpus=1 cuda_vers>=12.8 compute_cap>=800",
+  "expected_gpu": "RTX A6000",
+  "bound": "overhead",
+  "_comment": "REALIZEDNULL session 2 (studies/realizednull/SPEC.md §3.8, §9.2 N8, §9.6): the Qwen2.5-14B census core on GB-3's own environment (same image, same forward as infra/vast/cells/v1_ablation.py). Weights are the hub weights baked into shackleton:v1-14b (weights_mode baked, never the bucket). The cell reads every input from results/mdl/realizednull_q14_inputs/ (the four GB-3 prefixes copied server-side, plus N9's corpus196.npy) and asserts each sha256 against infra/vast/cells/realizednull_q14_inputs.json. q14_smoke scores windows 0-7 (C = 0-3, D = 4-7; batches [0-3], [4-7] as GB-3's, SPEC §0.4 U5); q14_full scores windows 0-195 with C = 0-63 and D = 64-97 (§0.4 P7). G14-PRE reproduces GB-3's banked rows before any new number. Pick an RTX A6000 offer with at least 56 GiB host memory (the cell asserts it); expected_gpu holds auto-respawns to RTX A6000 offers (controller.py search_offers) and the box asserts it at boot (lifecycle.sh).",
+  "cells": [
+    {
+      "id": "q14_smoke",
+      "module": "infra.vast.cells.realizednull_q14",
+      "model_dir": "/models/Qwen_Qwen2.5-14B",
+      "smoke": true,
+      "n_windows": 8,
+      "n_construct": 4
+    },
+    {
+      "id": "q14_full",
+      "module": "infra.vast.cells.realizednull_q14",
+      "model_dir": "/models/Qwen_Qwen2.5-14B",
+      "smoke": false,
+      "n_windows": 196,
+      "n_construct": 64
+    }
+  ],
+  "watch": {
+    "load_backstop_min": 90,
+    "max_billed_h": 7
+  }
+}

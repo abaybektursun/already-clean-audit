@@ -1,0 +1,16 @@
+{
+ "uri": "s3://pg-lineage-769063704696/results/neurons/w3/grid/1/out/t15_step1413814",
+ "branch": "stage1-step1413814",
+ "revision": "373bad25002f1624757a73235c5ca844c6375c25",
+ "device_name": "NVIDIA L40S",
+ "nll_first_120k": 2.675372037760417,
+ "n_dirs": 50,
+ "cm_dirs": [
+  "data/finemath-3plus",
+  "data/stack_edu-CSharp",
+  "data/stack_edu-JavaScript",
+  "data/stack_edu-Python",
+  "data/stack_edu-SQL"
+ ],
+ "min_filled": 2
+}

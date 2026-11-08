@@ -1,0 +1,32 @@
+$ /usr/bin/time -l /private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/venvs/np1/bin/python -I /Users/abaybektursun/projects/interp_research/studies/next/pilot0/reconstruct_batch.py --in-dir /private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/pilot0_in 60000 60001
+python 3.12.12  numpy 1.26.4  (training pinned numpy<2.0)
+trainer state data_loader: {'dataset_fingerprint_version': 'v2.0', 'dataset_fingerprint': 'ddc8c024ea19a0b8f2bbf62c4fd90ab2dd0231d379f8d4e1fb0f14de8ddb8a27', 'batches_processed': 60000, 'tokens_processed': 251658240000, 'seed': 34521, 'epoch': 1, 'dataset_type': 'fsl', 'sequence_length': 8192, 'max_target_sequence_length': 8192}
+official mix sha256: d770716a78fe0e9fa074c89f010574fd34ec0ee750cb79188120c62047c1a270
+directory map, training -> public: {'all-dressed-snazzy2': 'common_crawl', 'arxiv': 'rpj-proofpile-arxiv', 'finemath-3plus': 'finemath-3plus', 's2pdf': 'olmocr_science_pdfs', 'stack-edu': 'stack_edu', 'wikipedia': 'dolma1_7-wiki-en'}
+HEAD on 1016 files: 3.7 s; total bytes 23,719,883,626,704; instances N = 723,872,890
+fingerprint recomputed from public sizes: ddc8c024ea19a0b8f2bbf62c4fd90ab2dd0231d379f8d4e1fb0f14de8ddb8a27
+fingerprint in trainer state step 60000:  ddc8c024ea19a0b8f2bbf62c4fd90ab2dd0231d379f8d4e1fb0f14de8ddb8a27
+permutation PCG64(34521 + 1) over 723,872,890 uint32: 27.6 s
+step 60000 -> batch index 59999: 512 ranges, 16,777,216 bytes in 7.5 s; 309 files; EOS 2555; pad 19257; token bytes sha256 0341b735786d493266a324e364619da45d22c188abf7b3947a55473459bda681
+  instances per source (batch, expected): {'common_crawl': (393, 389.5), 'dolma1_7-wiki-en': (0, 0.2), 'finemath-3plus': (13, 13.1), 'olmocr_science_pdfs': (64, 69.5), 'rpj-proofpile-arxiv': (8, 4.4), 'stack_edu': (34, 35.3)}
+step 60001 -> batch index 60000: 512 ranges, 16,777,216 bytes in 6.5 s; 302 files; EOS 2622; pad 41868; token bytes sha256 c389cebef0c517cbfb35479e9fda820f4616e00d536383dda2be6be64b81b80e
+  instances per source (batch, expected): {'common_crawl': (384, 389.5), 'dolma1_7-wiki-en': (1, 0.2), 'finemath-3plus': (15, 13.1), 'olmocr_science_pdfs': (79, 69.5), 'rpj-proofpile-arxiv': (8, 4.4), 'stack_edu': (25, 35.3)}
+total 48.7 s
+       48.95 real        55.53 user         4.99 sys
+          2944303104  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              449402  page reclaims
+                1180  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+               18395  messages sent
+               86662  messages received
+                   0  signals received
+                4525  voluntary context switches
+              125691  involuntary context switches
+        183939900828  instructions retired
+        216465283744  cycles elapsed
+          3039316776  peak memory footprint

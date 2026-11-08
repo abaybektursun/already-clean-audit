@@ -1,0 +1,15 @@
+# PARALLAX π sidecar. This is deliberately isolated from requirements.lock:
+# the pinned LeRobot source requires torch <2.12 while the PaliGemma core
+# runtime uses torch 2.13. No package from this sidecar may enter the PG2 rail.
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.11.0
+torchvision==0.26.0
+transformers==5.5.4
+accelerate==1.14.0
+safetensors==0.8.0
+huggingface-hub==1.23.0
+numpy==2.2.6
+scipy==1.18.0
+einops==0.8.2
+pillow==12.3.0
+lerobot[pi] @ git+https://github.com/huggingface/lerobot.git@3f2179f3b69708b6ad009b2e7685dd9d05269ee1

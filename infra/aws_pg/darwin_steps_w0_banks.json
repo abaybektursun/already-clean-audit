@@ -1,0 +1,6 @@
+[
+  {"name": "w0_1a", "module": "infra.aws_pg.jobs.darwin_w0",
+   "args": "--arm W0-1a --run-id darwin_w0_1a --s3-prefix darwin/darwin_w0_1a"},
+  {"name": "w0_2", "module": "infra.aws_pg.jobs.darwin_w0",
+   "args": "--arm W0-2 --run-id darwin_w0_2 --s3-prefix darwin/darwin_w0_2"}
+]

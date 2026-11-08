@@ -1,0 +1,42 @@
+{
+ "shimmed": {
+  "prompts": [
+   {
+    "prompt_token_ids": [
+     100257,
+     5,
+     6
+    ]
+   },
+   {
+    "prompt_token_ids": [
+     7
+    ]
+   }
+  ],
+  "sp_same": true,
+  "use_tqdm": false,
+  "lora": null,
+  "new_signature": [
+   [
+    {
+     "prompt_token_ids": [
+      1
+     ]
+    }
+   ],
+   true
+  ]
+ },
+ "calls": [
+  {
+   "pid": 61370,
+   "n_prompts": 2
+  }
+ ],
+ "stderr": "N13 vLLM shim installed: __main__.LLM.generate converts prompt_token_ids (pid 61370)\n",
+ "unshimmed_returncode": 1,
+ "unshimmed_error": "TypeError: LLM.generate() got an unexpected keyword argument 'prompt_token_ids'",
+ "shim": "/Users/abaybektursun/projects/interp_research-n13/infra/aws_pg/jobs/n13_olmes_shim/sitecustomize.py",
+ "shim_sha256": "f39d888a3c4e688464cc6df26dd17bc42d46d00008dc25a5e17bd4011415d148"
+}

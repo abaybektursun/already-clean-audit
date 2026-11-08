@@ -1,0 +1,28 @@
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]
+Fetching 10 files:  80%|████████  | 8/10 [00:02<00:00,  3.69it/s]
+Fetching 10 files:  80%|████████  | 8/10 [00:20<00:05,  2.50s/it]
+Fetching 10 files:  90%|█████████ | 9/10 [00:34<00:03,  3.82s/it]
+Fetching 10 files: 100%|██████████| 10/10 [00:35<00:00,  3.53s/it]
+Fetching 10 files: 100%|██████████| 10/10 [00:35<00:00,  3.53s/it]
+[download] Qwen/Qwen3-4B-Base@906bfd4b4dc7f14ee4320094d8b41684abff8539: 8.06 GB in 36 s = 226.8 MB/s
+
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]
+Loading weights:   8%|▊         | 31/398 [00:00<00:01, 296.69it/s]
+Loading weights:  22%|██▏       | 87/398 [00:00<00:00, 445.59it/s]
+Loading weights:  36%|███▌      | 142/398 [00:00<00:00, 492.60it/s]
+Loading weights:  50%|█████     | 199/398 [00:00<00:00, 522.25it/s]
+Loading weights:  64%|██████▍   | 254/398 [00:00<00:00, 528.52it/s]
+Loading weights:  78%|███████▊  | 310/398 [00:00<00:00, 526.22it/s]
+Loading weights:  94%|█████████▎| 373/398 [00:00<00:00, 548.02it/s]
+Loading weights: 100%|██████████| 398/398 [00:00<00:00, 526.46it/s]
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/app/infra/pg/probe_session.py", line 120, in <module>
+    main()
+  File "/app/infra/pg/probe_session.py", line 92, in main
+    assert known["pass"] and not known["failing_input"]["pass"], known
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'a': {'median_rel_err': 0.004987562189054717, 'max_rel_err': 0.021621621621621623, 'n_contexts': 100, 'n_exact': 35, 'n_sign_mismatch': 0, 'a_rel_tol': 0.01, 'pass': True}, 'own_clean_nll_mean': {'ours': 1.3222833396191709, 'banked': 1.3216137015563436, 'abs_diff': 0.0006696380628272713, 'pass': True}, 'own_dnll_mean': {'ours': 0.3149409272358753, 'banked': 0.3082006178121082, 'abs_diff': 0.006740309423767077, 'pass': False}, 'nll_corpus_first_120k': None, 'ours': {'own_clean_nll_mean': 1.3222833396191709, 'own_dnll_mean': 0.3149409272358753}, 'nll_abs_tol': 0.002, 'windows': [[312, 1007], [1102, 1020], [1179, 887], [2086, 1152], [3987, 1210], [3988, 1391], [3990, 23], [3991, 934], [3992, 1009], [4027, 1122], [4029, 113], [4815, 1871], [4817, 674], [5548, 931], [5610, 1816], [5673, 1198], [6258, 758], [6279, 1967], [6281, 1702], [6282, 1506], [6283, 1862], [6319, 1275], [6347, 451], [9417, 1414], [9440, 1431], [9447, 718], [9543, 1090], [9879, 1789], [9880, 128], [11231, 554], [11236, 861], [11284, 1130], [11286, 1690], [11357, 226], [11375, 1022], [11381, 1499], [11383, 477], [12716, 554], [13410, 376], [13526, 42], [13538, 767], [13767, 1656], [13845, 1249], [13870, 805], [19419, 748], [19744, 880], [21152, 2026], [21480, 1881], [21481, 739], [21610, 1773], [22344, 586], [22385, 129], [22394, 229], [22397, 359], [22416, 826], [22437, 733], [22463, 1243], [22466, 1269], [22510, 306], [22511, 25], [22516, 479], [22518, 923], [22520, 767], [22521, 1592], [23219, 216], [23290, 170], [23363, 2047], [23365, 1695], [23477, 851], [23559, 1586], [24136, 1249], [24137, 805]], 'pass': False, 'failing_input': {'rule': "MLP outputs of layers 0..9 (n_layers // 4) zeroed on the mask domain (A24; the plan's text: 'layer 0 whole-MLP output zeroed on the mask domain')", 'layers_zeroed': [0, 9], 'readout': 'own_clean_nll_mean', 'own_clean_nll_mean': 17.440824303627014, 'shift': 16.118540964007842, 'min_shift_nats': 0.5, 'pass': False, 'layer0_only': {'own_clean_nll_mean': 4.675740486010909, 'shift': 3.3534571463917384, 'reported': True, 'inside_tolerance': False}}, 'known_block': "the Arm 0 plan's known block (--known-plan, A26)", 'truncated_windows_reading': {'a': {'median_rel_err': 0.004434786028949034, 'max_rel_err': 0.014218009478673022, 'n_contexts': 20, 'n_exact': 9, 'n_sign_mismatch': 0, 'a_rel_tol': 0.01, 'pass': True}, 'own_clean_nll_mean': {'ours': 1.4837491405080072, 'banked': 1.481773544929456, 'abs_diff': 0.0019755955785512036, 'pass': True}, 'own_dnll_mean': {'ours': 0.637529009685386, 'banked': 0.6311796990339644, 'abs_diff': 0.006349310651421525, 'pass': False}, 'nll_corpus_first_120k': None, 'ours': {'own_clean_nll_mean': 1.4837491405080072, 'own_dnll_mean': 0.637529009685386}, 'nll_abs_tol': 0.002, 'windows': [[2086, 1152], [3987, 174], [3992, 1009], [4027, 1122], [6283, 1862], [9417, 1414], [9440, 1431], [11286, 1690], [13410, 376], [13767, 1656], [19419, 748], [22394, 229], [22437, 733], [22518, 923], [22521, 1592], [23219, 216], [23365, 1695]], 'pass': False, 'reported': True, 'rule': "this plan's known contexts, each window cut at its last context (the pre-A26 gate; reported, not gating)"}}

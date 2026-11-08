@@ -1,0 +1,17 @@
+{
+ "rndT_k3/build.json": {
+  "bytes": 1060918,
+  "sha256": "c8fe7d3087d28f4c2d005f5f4040a166f480a9c9366c4e26219d09ab71f2fc88",
+  "s3": "s3://pg-lineage-769063704696/results/next_n13/s4armsB1-02/out/rndT_k3/rndT_k3/build.json"
+ },
+ "rndT_k3/math500/generations.jsonl": {
+  "bytes": 5764682,
+  "sha256": "74eb89c995e9600638bf4f5bd08b7e561e9270a1eba2cc6df83cc9189e3cdf97",
+  "s3": "s3://pg-lineage-769063704696/results/next_n13/s4armsB1-02/out/rndT_k3/rndT_k3/math500/generations.jsonl"
+ },
+ "steps.jsonl": {
+  "bytes": 2412776,
+  "sha256": "683605033bfa584fa0b9fc1636bdc8c2f69897445fac0a796a8077512d165500",
+  "s3": "s3://pg-lineage-769063704696/results/next_n13/s4armsB1-02/out/rndT_k3/steps.jsonl"
+ }
+}

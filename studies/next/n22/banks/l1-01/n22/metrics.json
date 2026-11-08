@@ -1,0 +1,140 @@
+{
+ "started_utc": "2026-11-06T17:21:27Z",
+ "complete": true,
+ "gates": {
+  "G_SAME": {
+   "pass": true,
+   "versions": {
+    "torch": "2.12.0+cu130",
+    "transformers": "5.9.0"
+   },
+   "registered": {
+    "torch": "2.12.0+cu130",
+    "transformers": "5.9.0"
+   },
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "INPUTS": {
+   "pass": true,
+   "got": "dbf0b2251516edeb869053c72f2c9e6fe4bab2c9250799f308fbda489bba6e69",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "G_CORPUS": {
+   "pass": true,
+   "got": "2aca80ca6537f46b8f60a550b4a3f2f13be2d18c5402be8f1af5c00caa86f531",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t15_G_REV": {
+   "pass": true,
+   "commit": "373bad25002f1624757a73235c5ca844c6375c25",
+   "registered": "373bad25002f1624757a73235c5ca844c6375c25",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t15_G_CFG": {
+   "pass": true,
+   "diff_keys": [],
+   "sliding_window": 4096,
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "model_type"
+    ],
+    "sliding_window": 4096
+   }
+  },
+  "t15_G_TOK": {
+   "pass": true,
+   "n": 20,
+   "failing_input": {
+    "pass": false,
+    "what": "item 0's ids against item 1's"
+   }
+  },
+  "t15_K0": {
+   "pass": true,
+   "nll": 2.675372037760417,
+   "bank": 2.675372037760417,
+   "diff": 0.0,
+   "tol": 1e-06,
+   "same_device": true,
+   "failing_input": {
+    "pass": false,
+    "neighbour": 2.714761865234375,
+    "diff": -0.03938982747395814
+   }
+  },
+  "t15_I_GRAD": {
+   "pass": true,
+   "max_rel": 0.0,
+   "bit_identical": true,
+   "tol": 1e-06,
+   "failing_input": {
+    "pass": false,
+    "what": "prompt 1's Jacobian",
+    "min_rel": 0.26851460337638855
+   }
+  },
+  "t15_LENS_FIDELITY": {
+   "pass": true,
+   "cos_lens": 0.9440814256668091,
+   "cos_rotated": 0.005264149513095617,
+   "cos_identity": 0.9309266209602356,
+   "lens_minus_rotated": {
+    "n": 1200,
+    "mean": 0.9388172856966654,
+    "lo": 0.9379036226247748,
+    "hi": 0.9397546850343546
+   },
+   "failing_input": {
+    "pass": false,
+    "what": "the rotated residual in place of the residual"
+   }
+  }
+ },
+ "points": {
+  "15": {
+   "t": 15,
+   "kind": "full",
+   "branch": "stage1-step1413814",
+   "download": {
+    "branch": "stage1-step1413814",
+    "commit": "373bad25002f1624757a73235c5ca844c6375c25",
+    "bytes": 14605764269,
+    "seconds": 226.2,
+    "MB_per_s": 64.6
+   },
+   "load_s": 5.7,
+   "massive_max_ratio": 204.8000030517578,
+   "fixed_s": 293.1,
+   "lens_s": 1553.0,
+   "lens_prompt_s": 61.881,
+   "pool_forward_s": 39.3,
+   "answered": {
+    "freeze": 2,
+    "test": 5
+   },
+   "class_s": 165.5,
+   "edits": "NOT_RUN",
+   "wall_s": 2107.0
+  }
+ },
+ "parked": [],
+ "phase": "done",
+ "updated_utc": "2026-11-06T17:56:39Z",
+ "elapsed_s": 2111.5,
+ "measured": {
+  "wall_s_by_kind": {
+   "full": 2107.0
+  },
+  "lens_prompt_s": 61.881,
+  "per_pool_forward_s": 0.03275
+ }
+}

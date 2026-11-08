@@ -1,0 +1,16 @@
+{
+  "started_utc": "2026-11-06T19:27:08Z",
+  "n_steps": 1,
+  "state": "failed",
+  "completed": 0,
+  "steps": [
+    {
+      "i": 0,
+      "name": "weights",
+      "module": "infra.aws_pg.jobs.n1_weights",
+      "args": "--inputs s3://pg-lineage-769063704696/results/next_n1/inputs --budget-min 120",
+      "state": "failed",
+      "returncode": 1
+    }
+  ]
+}

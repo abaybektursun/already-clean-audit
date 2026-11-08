@@ -1,0 +1,30 @@
+{
+ "seed": 7001,
+ "reps": 2000,
+ "selection_matched_pass_share_late_born": 0.017637038992441435,
+ "all": {
+  "n": 2428,
+  "R1_beat_frac_le_005": 162,
+  "R1_beat_plus1_lt_005": 162,
+  "R1_expected_unselected": 22.6,
+  "R1t_beat_frac_le_005": 153,
+  "R1t_expected_unselected": 22.4
+ },
+ "late_born_pct": {
+  "n": 1535,
+  "R1_beat_frac_le_005": 162,
+  "R1_beat_plus1_lt_005": 162,
+  "R1_expected_unselected": 14.6,
+  "R1t_beat_frac_le_005": 153,
+  "R1t_expected_unselected": 14.9,
+  "R1_expected_selection_matched": 27.1
+ },
+ "late_primary": {
+  "n": 1238,
+  "R1_beat_frac_le_005": 150,
+  "R1_beat_plus1_lt_005": 150,
+  "R1_expected_unselected": 12.2,
+  "R1t_beat_frac_le_005": 142,
+  "R1t_expected_unselected": 12.2
+ }
+}

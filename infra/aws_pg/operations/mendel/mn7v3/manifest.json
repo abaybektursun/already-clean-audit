@@ -1,0 +1,30 @@
+{
+  "bucket": "pg-lineage-769063704696",
+  "entries": {
+    "g4b_metrics": {
+      "bytes": 29833,
+      "kind": "object",
+      "local": "/work/hum_cache_mendel_mn7/g4b_metrics",
+      "sha256": "270713690d5141c8fb2b175b1ab91413b530204bf1e9d1f99d8c6ee72441aa20",
+      "uri": "s3://pg-lineage-769063704696/results/mendel_g4b_v1/out/metrics.json"
+    },
+    "g4b_vectors": {
+      "bytes": 454781952,
+      "kind": "prefix",
+      "local": "/work/hum_cache_mendel_mn7/g4b_vectors",
+      "n_files": 216,
+      "sha256": "8dd63fc14baeffb93ec863baa9249cc5e022952476e0244ee3728f57f55768f9",
+      "uri": "s3://pg-lineage-769063704696/results/mendel_g4b_v1/out/vectors"
+    }
+  },
+  "provenance": {
+    "branch": "science/mendel",
+    "commit_sha": "875a6d60d36925e0b439b3fb259d5c7f0fc738ec",
+    "dirty": false,
+    "dirty_files": [],
+    "program": "mendel",
+    "source": "scripts/mendel_stamp.py",
+    "stamped_utc": "2026-08-19T20:39:29Z",
+    "tags_at_head": []
+  }
+}

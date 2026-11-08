@@ -1,0 +1,81 @@
+{
+ "torch": "2.12.0",
+ "window_tokens": 2049,
+ "width_factor": 8,
+ "saved_bytes": {
+  "2": {
+   "default": 68811380,
+   "math_fp32": 140149364,
+   "math_bf16": 100267628
+  },
+  "3": {
+   "default": 117299924,
+   "math_fp32": 259975892,
+   "math_bf16": 180212420
+  }
+ },
+ "grad": {
+  "2": {
+   "math_fp32_vs_default": {
+    "exact_share": 0.1905335932970047,
+    "rel_l2": 0.008755112066864967
+   },
+   "math_bf16_vs_default": {
+    "exact_share": 0.1689784824848175,
+    "rel_l2": 0.009831283241510391
+   },
+   "math_bf16_vs_math_fp32": {
+    "exact_share": 0.17084376513957977,
+    "rel_l2": 0.009740275330841541
+   },
+   "max_abs_G": 9.0
+  },
+  "3": {
+   "math_fp32_vs_default": {
+    "exact_share": 0.15137453377246857,
+    "rel_l2": 0.011219087988138199
+   },
+   "math_bf16_vs_default": {
+    "exact_share": 0.13649986684322357,
+    "rel_l2": 0.012437570840120316
+   },
+   "math_bf16_vs_math_fp32": {
+    "exact_share": 0.1379178911447525,
+    "rel_l2": 0.012309455312788486
+   },
+   "max_abs_G": 8.9375
+  }
+ },
+ "sdpa_call": {
+  "attn_mask": null,
+  "is_causal": true,
+  "q": [
+   1,
+   4,
+   2049,
+   128
+  ],
+  "dtype": "torch.bfloat16"
+ },
+ "sdpa_call_forms": [
+  "{\"attn_mask\": null, \"is_causal\": true, \"dtype\": \"torch.bfloat16\"}"
+ ],
+ "per_layer_full_width_GB": {
+  "default": 0.387908352,
+  "math_fp32": 0.958612224,
+  "math_bf16": 0.639558336
+ },
+ "fixed_GB": {
+  "weights": 14.596,
+  "log_softmax_fp32": 0.821477376,
+  "logits_bf16": 0.410939244,
+  "final_norm_fp32": 0.033570816,
+  "backward_logit_grad_fp32": 0.821477376
+ },
+ "peak_estimate_GB_lowest_layer_0": {
+  "default": 28.71,
+  "math_fp32": 46.4,
+  "math_bf16": 36.51
+ },
+ "l40s_total_GB": "46,068 MiB = 48.3 GB as nvidia-smi reports it on g6e; less the CUDA context"
+}

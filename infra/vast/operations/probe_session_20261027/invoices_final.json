@@ -1,0 +1,485 @@
+{
+  "count": 9,
+  "next_token": null,
+  "results": [
+    {
+      "amount": 0.002,
+      "description": "Instance 57915420 Charges - 1 day",
+      "end": 1793059200,
+      "items": [
+        {
+          "amount": 0.0,
+          "description": "GPU",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "gpu"
+        },
+        {
+          "amount": 0.002,
+          "description": "0.149 hours at $0.012/hour",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "disk"
+        },
+        {
+          "amount": 0.0,
+          "description": "Bandwidth (download)",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "bwd"
+        },
+        {
+          "amount": 0.0,
+          "description": "Bandwidth (upload)",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "bwu"
+        }
+      ],
+      "metadata": {
+        "label": "mendeleev_neuronshow_smoke"
+      },
+      "source": "instance-57915420",
+      "start": 1793059200,
+      "type": "instance"
+    },
+    {
+      "amount": 0.026,
+      "description": "Instance 57916157 Charges - 1 day",
+      "end": 1793059200,
+      "items": [
+        {
+          "amount": 0.025,
+          "description": "0.034 hours at $0.733/hour",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "gpu"
+        },
+        {
+          "amount": 0.001,
+          "description": "0.034 hours at $0.017/hour",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "disk"
+        },
+        {
+          "amount": 0.0,
+          "description": "0.8 GB Downloaded at $0.000/GB",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "bwd"
+        },
+        {
+          "amount": 0.0,
+          "description": "Bandwidth (upload)",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "bwu"
+        }
+      ],
+      "metadata": {
+        "label": "mendeleev_neuronshow_smoke"
+      },
+      "source": "instance-57916157",
+      "start": 1793059200,
+      "type": "instance"
+    },
+    {
+      "amount": 0.367,
+      "description": "Instance 57917200 Charges - 1 day",
+      "end": 1793059200,
+      "items": [
+        {
+          "amount": 0.33,
+          "description": "0.562 hours at $0.587/hour",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "gpu"
+        },
+        {
+          "amount": 0.036,
+          "description": "0.614 hours at $0.059/hour",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "disk"
+        },
+        {
+          "amount": 0.001,
+          "description": "0.1 GB Downloaded at $0.015/GB",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "bwd"
+        },
+        {
+          "amount": 0.0,
+          "description": "Bandwidth (upload)",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "bwu"
+        }
+      ],
+      "metadata": {
+        "label": "mendeleev_neuronshow_probe"
+      },
+      "source": "instance-57917200",
+      "start": 1793059200,
+      "type": "instance"
+    },
+    {
+      "amount": 0.687,
+      "description": "Instance 57920512 Charges - 1 day",
+      "end": 1793059200,
+      "items": [
+        {
+          "amount": 0.336,
+          "description": "0.524 hours at $0.640/hour",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "gpu"
+        },
+        {
+          "amount": 0.035,
+          "description": "0.594 hours at $0.059/hour",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "disk"
+        },
+        {
+          "amount": 0.315,
+          "description": "31.5 GB Downloaded at $0.010/GB",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "bwd"
+        },
+        {
+          "amount": 0.001,
+          "description": "0.1 GB Uploaded at $0.020/GB",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "bwu"
+        }
+      ],
+      "metadata": {
+        "label": "mendeleev_neuronshow_probe"
+      },
+      "source": "instance-57920512",
+      "start": 1793059200,
+      "type": "instance"
+    },
+    {
+      "amount": 0.148,
+      "description": "Instance 57939792 Charges - 1 day",
+      "end": 1793059200,
+      "items": [
+        {
+          "amount": 0.108,
+          "description": "0.169 hours at $0.640/hour",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "gpu"
+        },
+        {
+          "amount": 0.005,
+          "description": "0.225 hours at $0.022/hour",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "disk"
+        },
+        {
+          "amount": 0.035,
+          "description": "8.9 GB Downloaded at $0.004/GB",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "bwd"
+        },
+        {
+          "amount": 0.0,
+          "description": "Bandwidth (upload)",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "bwu"
+        }
+      ],
+      "metadata": {
+        "label": "mendeleev_neuronshow_manual_20261027_s2"
+      },
+      "source": "instance-57939792",
+      "start": 1793059200,
+      "type": "instance"
+    },
+    {
+      "amount": 0.065,
+      "description": "Instance 57941003 Charges - 1 day",
+      "end": 1793059200,
+      "items": [
+        {
+          "amount": 0.062,
+          "description": "0.074 hours at $0.840/hour",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "gpu"
+        },
+        {
+          "amount": 0.003,
+          "description": "0.097 hours at $0.028/hour",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "disk"
+        },
+        {
+          "amount": 0.0,
+          "description": "Bandwidth (download)",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "bwd"
+        },
+        {
+          "amount": 0.0,
+          "description": "Bandwidth (upload)",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "bwu"
+        }
+      ],
+      "metadata": {
+        "label": "mendeleev_neuronshow_manual_20261027_s3"
+      },
+      "source": "instance-57941003",
+      "start": 1793059200,
+      "type": "instance"
+    },
+    {
+      "amount": 0.001,
+      "description": "Instance 57941270 Charges - 1 day",
+      "end": 1793059200,
+      "items": [
+        {
+          "amount": 0.0,
+          "description": "GPU",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "gpu"
+        },
+        {
+          "amount": 0.001,
+          "description": "0.048 hours at $0.022/hour",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "disk"
+        },
+        {
+          "amount": 0.0,
+          "description": "Bandwidth (download)",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "bwd"
+        },
+        {
+          "amount": 0.0,
+          "description": "Bandwidth (upload)",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "bwu"
+        }
+      ],
+      "metadata": {
+        "label": "mendeleev_neuronshow_manual_20261027_s3"
+      },
+      "source": "instance-57941270",
+      "start": 1793059200,
+      "type": "instance"
+    },
+    {
+      "amount": 0.001,
+      "description": "Instance 57941273 Charges - 1 day",
+      "end": 1793059200,
+      "items": [
+        {
+          "amount": 0.0,
+          "description": "GPU",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "gpu"
+        },
+        {
+          "amount": 0.001,
+          "description": "0.047 hours at $0.022/hour",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "disk"
+        },
+        {
+          "amount": 0.0,
+          "description": "Bandwidth (download)",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "bwd"
+        },
+        {
+          "amount": 0.0,
+          "description": "Bandwidth (upload)",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "bwu"
+        }
+      ],
+      "metadata": {
+        "label": "mendeleev_neuronshow_manual_20261027_s3"
+      },
+      "source": "instance-57941273",
+      "start": 1793059200,
+      "type": "instance"
+    },
+    {
+      "amount": 0.455,
+      "description": "Instance 57941783 Charges - 1 day",
+      "end": 1793059200,
+      "items": [
+        {
+          "amount": 0.441,
+          "description": "0.602 hours at $0.733/hour",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "gpu"
+        },
+        {
+          "amount": 0.013,
+          "description": "0.606 hours at $0.022/hour",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "disk"
+        },
+        {
+          "amount": 0.001,
+          "description": "41.9 GB Downloaded at $0.000/GB",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "bwd"
+        },
+        {
+          "amount": 0.0,
+          "description": "0.2 GB Uploaded at $0.000/GB",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "bwu"
+        }
+      ],
+      "metadata": {
+        "label": "mendeleev_neuronshow_manual_20261027_s4"
+      },
+      "source": "instance-57941783",
+      "start": 1793059200,
+      "type": "instance"
+    }
+  ],
+  "success": true,
+  "total": 9
+}

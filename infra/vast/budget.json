@@ -1,0 +1,5 @@
+{
+  "program_ceiling_usd": 62.68,
+  "soft_frac": 0.8,
+  "_why": "ceiling = the user's vast credit as read on 2026-10-20 ($35.99) for the already-clean W2-C scoring and W3 grid rentals, authorized by the user for this study; raised only on the user's top-up. 2026-11-02: limit raised 36 \u2192 42 by the coordinator under the user's full-control grant of 2026-11-02 for the session-2 relaunch; spent to date $33.29. 2026-11-05 (N13 Vast lane): the user said \"You may use vast as much as needed if its faster and more efficeint\" and \"If it keeps running out of quota, just go to vast AI, get the GPU there.\" The Vast credit read through the API (vastai show user, field credit) on 2026-11-05 is $25.17; the spend record (operations/probe_session_20261027/spend.json) holds $37.51 realized. The watchdog compares realized + open estimate with this ceiling, so the ceiling is set to realized + credit = $62.68 (was $42.00): the room equals the credit."
+}

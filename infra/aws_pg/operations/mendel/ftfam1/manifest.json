@@ -1,0 +1,30 @@
+{
+  "bucket": "pg-lineage-769063704696",
+  "entries": {
+    "g4_vectors": {
+      "bytes": 12434688,
+      "kind": "prefix",
+      "local": "/work/hum_cache_mendel_ftfam/g4_vectors",
+      "n_files": 378,
+      "sha256": "e5edd365503a80ca166238e4773100bc6c6826dedc89470cb330472292ee24ff",
+      "uri": "s3://pg-lineage-769063704696/results/mendel_g4_v1/out/vectors"
+    },
+    "plenum_metrics": {
+      "bytes": 375833,
+      "kind": "object",
+      "local": "/work/hum_cache_mendel_ftfam/plenum_metrics",
+      "sha256": "142bc525d5a36fc3ceeeed9ea6a1a1273548a9f7ff112e79339157b50dfc2762",
+      "uri": "s3://pg-lineage-769063704696/results/plenum_agg_final2/out/metrics.json"
+    }
+  },
+  "provenance": {
+    "branch": "science/mendel",
+    "commit_sha": "0f15effa801e6c718e55852c3e7e07c36162dd78",
+    "dirty": false,
+    "dirty_files": [],
+    "program": "mendel",
+    "source": "scripts/mendel_stamp.py",
+    "stamped_utc": "2026-08-19T18:30:00Z",
+    "tags_at_head": []
+  }
+}

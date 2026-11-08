@@ -1,0 +1,92 @@
+[
+  {
+    "local": "studies/neuronshow/probes/2026-10-27_combo/01_baseline.response.json",
+    "remote": "20261027T230728Z_80292_01_baseline_request.json",
+    "canonical_sha256": "f6a3cd85521651b2982af2b2138dd660cf4bd870cc5441f30c24dbd9a5fd6532",
+    "match": true
+  },
+  {
+    "local": "studies/neuronshow/probes/2026-10-27_combo/02_student.response.json",
+    "remote": "20261027T230831Z_80651_02_student_request.json",
+    "canonical_sha256": "77b994450055c18e105ebf3fbadf1ac97071650a6ef2ec2ab534b099ae880ce6",
+    "match": true
+  },
+  {
+    "local": "studies/neuronshow/probes/2026-10-27_combo/03_performer.response.json",
+    "remote": "20261027T230856Z_80775_03_performer_request.json",
+    "canonical_sha256": "3c72d2fa0e38d51f4a35c76e2dadf139fc666fbcf3d6f610b403df63a3a5756a",
+    "match": true
+  },
+  {
+    "local": "studies/neuronshow/probes/2026-10-27_combo/04_combined.response.json",
+    "remote": "20261027T230921Z_80856_04_combined_request.json",
+    "canonical_sha256": "17e9f47ecedeebf83e010f0b13c340a578e470b8714f5822655d88b90ebf6da9",
+    "match": true
+  },
+  {
+    "local": "studies/neuronshow/probes/2026-10-27_combo/05_combined_075.response.json",
+    "remote": "20261027T230942Z_80914_05_combined_075_request.json",
+    "canonical_sha256": "d73191b18d018b8c1badac9e6b4a680ac7137e5e3d7394ecc746d799e9cf0240",
+    "match": true
+  },
+  {
+    "local": "studies/neuronshow/probes/2026-10-27_combo/06_combined_050.response.json",
+    "remote": "20261027T231005Z_81052_06_combined_050_request.json",
+    "canonical_sha256": "dd64b53d1f11dd960d35cf566bbc26a1f95002e9be8f0fb4ff9c6bbddda1fbbb",
+    "match": true
+  },
+  {
+    "local": "studies/neuronshow/probes/2026-10-27_combo/07_student_input.response.json",
+    "remote": "20261027T231026Z_81130_07_student_input_request.json",
+    "canonical_sha256": "3d790b88f0099ff491d94469d7e85699e1b2a202cd74a24b57f94a45f8719c2f",
+    "match": true
+  },
+  {
+    "local": "studies/neuronshow/probes/2026-10-27_combo/08_performer_input.response.json",
+    "remote": "20261027T231045Z_81178_08_performer_input_request.json",
+    "canonical_sha256": "1d254f07fd4614a22b680082386393c73a823ae3df5230e31a10470879ddbac6",
+    "match": true
+  },
+  {
+    "local": "studies/neuronshow/probes/2026-10-27_combo/09_combined_input.response.json",
+    "remote": "20261027T231111Z_81268_09_combined_input_request.json",
+    "canonical_sha256": "2fc21f6e9a4be84c550786c2bcbccb379a666352213715e6070672b41e5ba491",
+    "match": true
+  },
+  {
+    "local": "studies/neuronshow/probes/2026-10-27_combo/10_student_batch2.response.json",
+    "remote": "20261027T231129Z_81366_10_student_batch2_request.json",
+    "canonical_sha256": "db3c8600ed0289e2f58e945f77f565c8c5d204d8f9583020eb02c8e427914b35",
+    "match": true
+  },
+  {
+    "local": "studies/neuronshow/probes/2026-10-27_combo/11_combined_batch2.response.json",
+    "remote": "20261027T231146Z_81430_11_combined_batch2_request.json",
+    "canonical_sha256": "acd6c751a59c8803a57c10f3261e17d266627e468de360c67ccfe2238bfbde71",
+    "match": true
+  },
+  {
+    "local": "studies/neuronshow/probes/2026-10-27_combo/12_combined_025.response.json",
+    "remote": "20261027T231206Z_81520_12_combined_025_request.json",
+    "canonical_sha256": "a616c4f42ec169b991dcec026fee59dddc7a05fc08f6d53254510692d3cd01db",
+    "match": true
+  },
+  {
+    "local": "studies/neuronshow/probes/2026-10-27_combo/13_student_050.response.json",
+    "remote": "20261027T231236Z_81804_13_student_050_request.json",
+    "canonical_sha256": "f91c5506f13c3e9ac0905a7d68638c33aab526d8532c79de0ba3885d2bfca0fc",
+    "match": true
+  },
+  {
+    "local": "studies/neuronshow/probes/2026-10-27_combo/14_performer_050.response.json",
+    "remote": "20261027T231257Z_81862_14_performer_050_request.json",
+    "canonical_sha256": "a662383dc82f0e4fb068d7d97c2a8bea986a0a97982e4847487cf5ebadf5c47e",
+    "match": true
+  },
+  {
+    "local": "studies/neuronshow/probes/2026-10-27_combo/startup_combo.json",
+    "remote": "startup_combo.json",
+    "canonical_sha256": "9be09ba23fbec2688665205f0a22b0c050d03682d1b15ba83d19ad8a239fc42b",
+    "match": true
+  }
+]

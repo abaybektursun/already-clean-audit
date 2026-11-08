@@ -1,0 +1,23 @@
+{
+  "n_steps": 4,
+  "state": "failed",
+  "completed": 1,
+  "steps": [
+    {
+      "i": 0,
+      "name": "setup",
+      "module": "infra.aws_pg.jobs.n13_setup",
+      "args": "--pair pair1 --models base,rl --olmes",
+      "state": "ok",
+      "returncode": 0
+    },
+    {
+      "i": 1,
+      "name": "r0_known",
+      "module": "infra.aws_pg.jobs.n13_known",
+      "args": "--setup-dir /work/out/setup --allowance-min 280 --proj-tok-s 500.0",
+      "state": "failed",
+      "returncode": 1
+    }
+  ]
+}

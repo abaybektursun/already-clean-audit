@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-07-19T05:00:55Z",
+  "status": "EXACT_FRESH_IDENTITY_PRICE_RED_NO_PAID_ELIGIBILITY",
+  "run_id": "parallax-pg1-primary-interface-s3-v2",
+  "fresh_identity": {
+    "status": "EXACT",
+    "predecessor_run_id": "parallax-pg1-primary-interface-s3-v1",
+    "predecessor_spec_sha256": "eb3e53611bde17192c8270f67fca1abcac84e65649cb7f99b0cc2a0c5b6554b8",
+    "fresh_spec_path": "infra/vast/parallax/operations/readiness/pg1_equal_token_interface_seed17_fresh_v2_spec.json",
+    "fresh_spec_sha256": "287deb60b3cd577d3bb428090f797340013f973b56af20390098711d657d8516",
+    "scientific_change_count": 0,
+    "critic_sha256": "d6b03945ed389a48b764fdeef509aa22818c0051654534f789559c4ba05ee8c4",
+    "new_execution_freeze_created": false
+  },
+  "tests": {
+    "focused": {
+      "status": "GREEN",
+      "passed": 44,
+      "failed": 0,
+      "command": "pytest -q infra/vast/parallax/tests/test_primary_interface_control_job.py infra/vast/parallax/tests/test_primary_interface_control_worker.py infra/vast/parallax/tests/test_primary_interface_control_source_gate.py infra/vast/parallax/tests/test_primary_interface_control_launch.py"
+    },
+    "full": {
+      "status": "GREEN",
+      "passed": 687,
+      "failed": 0,
+      "command": "pytest -q infra/vast/parallax/tests"
+    }
+  },
+  "current_source_and_market_gate": {
+    "status": "NO_GO_CHEAPEST_ELIGIBLE_H100_ABOVE_FROZEN_CEILING",
+    "path": "infra/vast/parallax/operations/readiness/pg1_equal_token_interface_seed17_fresh_v2_current_gate_v1.json",
+    "sha256": "0df4fe823a8b466d685d00c34097a41b4850ae07c58f947110bfeea9e7d0b931",
+    "source_status": "GREEN_EXACT_PRIMARY_PG1_INTERFACE_SOURCE",
+    "selected_dph_total": 2.8222222222222224,
+    "frozen_price_ceiling_dph": 2.25,
+    "price_green": false
+  },
+  "no_create": {
+    "status": "RED_NO_CREATE_CHEAPEST_ELIGIBLE_H100_ABOVE_FROZEN_CEILING",
+    "path": "infra/vast/parallax/operations/readiness/pg1_equal_token_interface_seed17_fresh_v2_no_create_v1.json",
+    "sha256": "24e20341b892935350b7ef98074ea4b976c3057b71644f9ca71343343ebe7ee2",
+    "paid_run_mechanically_eligible": false
+  },
+  "fresh_boundaries": {
+    "claim_absent": true,
+    "local_attempt_paths_absent": true,
+    "artifact_key_absent": true,
+    "terminal_key_absent": true,
+    "execution_freeze_absent": true
+  },
+  "mutation": {
+    "instances_created": 0,
+    "volumes_created": 0,
+    "claims_created": 0,
+    "s3_objects_written": 0,
+    "model_or_data_body_bytes_read": 0,
+    "gpu_operations": 0
+  },
+  "paid_compute": {
+    "status": "OFF",
+    "vast_instances": 0,
+    "vast_volumes": 0,
+    "vast_zero_observations_utc": [
+      "2026-07-19T05:00:34Z",
+      "2026-07-19T05:00:38Z",
+      "2026-07-19T05:00:42Z"
+    ],
+    "aws_pending_or_running_instances": 0
+  }
+}

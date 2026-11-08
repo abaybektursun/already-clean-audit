@@ -1,0 +1,1 @@
+Moved on 2026-11-04 to `studies/reproductions/` (`studies/reproductions/README.md`): `evilqwen_score.py`, `evil_probe_session.py` to `evilqwen/code/pg/`; `alwayson.py`, `alwayson_edit.py` to `alwayson/code/pg/`; `instruments_e2.py` to `instruments_e2/code/pg/`.

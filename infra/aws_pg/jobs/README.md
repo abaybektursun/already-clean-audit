@@ -1,0 +1,1 @@
+Moved on 2026-11-04 to `studies/reproductions/` (`studies/reproductions/README.md`): `evilqwen.py` to `evilqwen/code/jobs/`; `alwayson_qwen.py`, `alwayson_edit.py`, `alwayson_dryrun.py`, `alwayson_dryrun_edit.py` to `alwayson/code/jobs/`; `instruments_e2.py`, `instruments_dryrun_e2.py` to `instruments_e2/code/jobs/`.

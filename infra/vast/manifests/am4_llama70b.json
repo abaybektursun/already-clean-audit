@@ -1,0 +1,39 @@
+{
+  "rental": "am4_llama70b",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:v1-anchor-gemma2b",
+  "disk": 260,
+  "gpu_query": "gpu_ram>=44 num_gpus=4 cuda_vers>=12.8 compute_cap>=800",
+  "expected_gpu": "",
+  "bound": "overhead",
+  "weights_mode": "download",
+  "weights_hf_repo": "NousResearch/Meta-Llama-3.1-70B",
+  "weights_dir": "/models/llama31_70b",
+  "weights_ignore": "*.pth,original/*,*.gguf,*.bin",
+  "_comment": "AM-4: does the 72B first-token relocation replicate off the Qwen family? Llama-3.1-70B base (ungated mirror, sha verified at freeze), 80 layers, RMSNorm, BOS-family tokenizer. Two DISJOINT window slices are scored as independent eval batches (the frozen stability control); the verdict takes the min of their maxima. Small image + in-run download: the 141 GB baked-image path is the wedge-prone one (SHACKLETON's 72B lesson). GPU topology: 4 x >=44GB (>=176GB total) \u2014 the 141GB weights plus activations fit with headroom, and the 4x pool is cheaper per hour than the 2x80GB pool.",
+  "cells": [
+    {
+      "id": "am4_actstats_a",
+      "module": "infra.vast.cells.v1_actstats",
+      "model_dir": "/models/llama31_70b",
+      "device_map": "auto",
+      "batch": 2,
+      "corpus_s3": "s3://pg-lineage-769063704696/results/amundsen_inputs/corpus_llama31_70b.npy",
+      "window_offset": 0,
+      "n_windows": 49
+    },
+    {
+      "id": "am4_actstats_b",
+      "module": "infra.vast.cells.v1_actstats",
+      "model_dir": "/models/llama31_70b",
+      "device_map": "auto",
+      "batch": 2,
+      "corpus_s3": "s3://pg-lineage-769063704696/results/amundsen_inputs/corpus_llama31_70b.npy",
+      "window_offset": 49,
+      "n_windows": 49
+    }
+  ],
+  "watch": {
+    "load_backstop_min": 60,
+    "max_billed_h": 3
+  }
+}

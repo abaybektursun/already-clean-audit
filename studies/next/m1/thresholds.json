@@ -1,0 +1,379 @@
+{
+ "tau": [
+  0.008198923510174372,
+  0.006556368095930229,
+  0.0022529069767441845,
+  0.0035377679869185857
+ ],
+ "eps_dev": [
+  2.2597202034929653e-05,
+  2.8388444767435406e-06,
+  2.8161337209314796e-05,
+  1.7487281976737157e-05
+ ],
+ "kappa": [
+  0.1832627407340116,
+  0.17685262990552328,
+  0.1921298146802326,
+  0.2021358330305233
+ ],
+ "bar_before_identity": [
+  0.008198923510174372,
+  0.006556368095930229,
+  0.0022529069767441845,
+  0.0035377679869185857
+ ],
+ "C_refs": {
+  "t00": [
+   0.3056304505813953,
+   0.2815319540334303,
+   0.26641385810319773,
+   0.2534778115915698
+  ],
+  "t12": [
+   0.12236770984738371,
+   0.10999352743459304,
+   0.07520621366279069,
+   0.0545030886627907
+  ],
+  "t13": [
+   0.12645189861918607,
+   0.11553358920784884,
+   0.07745912063953488,
+   0.05635776253633721
+  ],
+  "t14b": [
+   0.13465082212936044,
+   0.10897722111191861,
+   0.0756175054505814,
+   0.052819994549418624
+  ],
+  "t14c": [
+   0.13467341933139537,
+   0.10897438226744187,
+   0.07564566678779071,
+   0.05283748183139536
+  ],
+  "t15": [
+   0.14230716946117114,
+   0.10467932412790701,
+   0.07428404342296513,
+   0.05134197856104651
+  ]
+ },
+ "room": {
+  "pairs": [
+   {
+    "as_G": "t00",
+    "as_M": "t12",
+    "labels": [
+     "REFUTED",
+     "REFUTED",
+     "REFUTED",
+     "REFUTED"
+    ]
+   },
+   {
+    "as_G": "t00",
+    "as_M": "t13",
+    "labels": [
+     "REFUTED",
+     "REFUTED",
+     "REFUTED",
+     "REFUTED"
+    ]
+   },
+   {
+    "as_G": "t00",
+    "as_M": "t14b",
+    "labels": [
+     "REFUTED",
+     "REFUTED",
+     "REFUTED",
+     "REFUTED"
+    ]
+   },
+   {
+    "as_G": "t00",
+    "as_M": "t14c",
+    "labels": [
+     "REFUTED",
+     "REFUTED",
+     "REFUTED",
+     "REFUTED"
+    ]
+   },
+   {
+    "as_G": "t00",
+    "as_M": "t15",
+    "labels": [
+     "REFUTED",
+     "REFUTED",
+     "REFUTED",
+     "REFUTED"
+    ]
+   },
+   {
+    "as_G": "t12",
+    "as_M": "t00",
+    "labels": [
+     "ABOVE_CEILING",
+     "SUPPORTED",
+     "SUPPORTED",
+     "SUPPORTED"
+    ]
+   },
+   {
+    "as_G": "t12",
+    "as_M": "t13",
+    "labels": [
+     "REFUTED",
+     "REFUTED",
+     "UNDECIDED",
+     "REFUTED"
+    ]
+   },
+   {
+    "as_G": "t12",
+    "as_M": "t14b",
+    "labels": [
+     "SUPPORTED",
+     "REFUTED",
+     "REFUTED",
+     "REFUTED"
+    ]
+   },
+   {
+    "as_G": "t12",
+    "as_M": "t14c",
+    "labels": [
+     "SUPPORTED",
+     "REFUTED",
+     "REFUTED",
+     "REFUTED"
+    ]
+   },
+   {
+    "as_G": "t12",
+    "as_M": "t15",
+    "labels": [
+     "SUPPORTED",
+     "REFUTED",
+     "REFUTED",
+     "REFUTED"
+    ]
+   },
+   {
+    "as_G": "t13",
+    "as_M": "t00",
+    "labels": [
+     "SUPPORTED",
+     "SUPPORTED",
+     "SUPPORTED",
+     "SUPPORTED"
+    ]
+   },
+   {
+    "as_G": "t13",
+    "as_M": "t12",
+    "labels": [
+     "REFUTED",
+     "REFUTED",
+     "REFUTED",
+     "REFUTED"
+    ]
+   },
+   {
+    "as_G": "t13",
+    "as_M": "t14b",
+    "labels": [
+     "UNDECIDED",
+     "REFUTED",
+     "REFUTED",
+     "REFUTED"
+    ]
+   },
+   {
+    "as_G": "t13",
+    "as_M": "t14c",
+    "labels": [
+     "UNDECIDED",
+     "REFUTED",
+     "REFUTED",
+     "REFUTED"
+    ]
+   },
+   {
+    "as_G": "t13",
+    "as_M": "t15",
+    "labels": [
+     "SUPPORTED",
+     "REFUTED",
+     "REFUTED",
+     "REFUTED"
+    ]
+   },
+   {
+    "as_G": "t14b",
+    "as_M": "t00",
+    "labels": [
+     "SUPPORTED",
+     "SUPPORTED",
+     "SUPPORTED",
+     "SUPPORTED"
+    ]
+   },
+   {
+    "as_G": "t14b",
+    "as_M": "t12",
+    "labels": [
+     "REFUTED",
+     "REFUTED",
+     "REFUTED",
+     "REFUTED"
+    ]
+   },
+   {
+    "as_G": "t14b",
+    "as_M": "t13",
+    "labels": [
+     "REFUTED",
+     "UNDECIDED",
+     "REFUTED",
+     "UNDECIDED"
+    ]
+   },
+   {
+    "as_G": "t14b",
+    "as_M": "t14c",
+    "labels": [
+     "REFUTED",
+     "REFUTED",
+     "REFUTED",
+     "REFUTED"
+    ]
+   },
+   {
+    "as_G": "t14b",
+    "as_M": "t15",
+    "labels": [
+     "REFUTED",
+     "REFUTED",
+     "REFUTED",
+     "REFUTED"
+    ]
+   },
+   {
+    "as_G": "t14c",
+    "as_M": "t00",
+    "labels": [
+     "SUPPORTED",
+     "SUPPORTED",
+     "SUPPORTED",
+     "SUPPORTED"
+    ]
+   },
+   {
+    "as_G": "t14c",
+    "as_M": "t12",
+    "labels": [
+     "REFUTED",
+     "REFUTED",
+     "REFUTED",
+     "REFUTED"
+    ]
+   },
+   {
+    "as_G": "t14c",
+    "as_M": "t13",
+    "labels": [
+     "REFUTED",
+     "UNDECIDED",
+     "REFUTED",
+     "UNDECIDED"
+    ]
+   },
+   {
+    "as_G": "t14c",
+    "as_M": "t14b",
+    "labels": [
+     "REFUTED",
+     "REFUTED",
+     "REFUTED",
+     "REFUTED"
+    ]
+   },
+   {
+    "as_G": "t14c",
+    "as_M": "t15",
+    "labels": [
+     "REFUTED",
+     "REFUTED",
+     "REFUTED",
+     "REFUTED"
+    ]
+   },
+   {
+    "as_G": "t15",
+    "as_M": "t00",
+    "labels": [
+     "SUPPORTED",
+     "SUPPORTED",
+     "SUPPORTED",
+     "SUPPORTED"
+    ]
+   },
+   {
+    "as_G": "t15",
+    "as_M": "t12",
+    "labels": [
+     "REFUTED",
+     "REFUTED",
+     "REFUTED",
+     "UNDECIDED"
+    ]
+   },
+   {
+    "as_G": "t15",
+    "as_M": "t13",
+    "labels": [
+     "REFUTED",
+     "SUPPORTED",
+     "SUPPORTED",
+     "SUPPORTED"
+    ]
+   },
+   {
+    "as_G": "t15",
+    "as_M": "t14b",
+    "labels": [
+     "REFUTED",
+     "REFUTED",
+     "REFUTED",
+     "REFUTED"
+    ]
+   },
+   {
+    "as_G": "t15",
+    "as_M": "t14c",
+    "labels": [
+     "REFUTED",
+     "REFUTED",
+     "REFUTED",
+     "REFUTED"
+    ]
+   }
+  ],
+  "supported_reachable": true,
+  "refuted_reachable": true,
+  "tau_below_kappa": true
+ },
+ "refs_sha256": {
+  "t00": "076c074c7987825e402b099b9aef37c17799e77e91e475dcf45c33da3b8914ed",
+  "t12": "5ef992a8aaa9574d9d924bd6e4abf68c8c29c0a2a1ef1b61d8b355d63ee38791",
+  "t13": "934c10e5803386bb4e91370d57c93875b91d3271a45ff8bc7139bd8b87c7a4a1",
+  "t14b": "3eb8a29937c079bfb4580a1c544158e66c6668398f68f67365ee0b8c6bbf6189",
+  "t14c": "e91c2469f4acdaf884c00e4f20a07fbef277b0b53d9bf00631be056283d4a2f7",
+  "t15": "935c7b710db3de735c3370c354117c500503a10b0c76e50405ba77ee5f5e435a"
+ }
+}

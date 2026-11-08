@@ -1,0 +1,4 @@
+[
+  {"name": "M-C6", "module": "infra.aws_pg.jobs.mercator_w0_census", "args": "--arm M-C6"},
+  {"name": "M-D5", "module": "infra.aws_pg.jobs.mercator_w0_audit",  "args": "--arm M-D5"}
+]

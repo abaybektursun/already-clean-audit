@@ -1,0 +1,393 @@
+{
+  "artifact_s3_proof": null,
+  "automatic_retry": false,
+  "cleanup": {
+    "action": "destroy",
+    "confirmation": {
+      "consecutive_absences": 3,
+      "instance_ids": [
+        45288435,
+        45288475
+      ],
+      "reissued_destroy_requests": 0,
+      "status": "GREEN_KNOWN_INSTANCES_CONFIRMED_ABSENT"
+    },
+    "reason": "S3_durable"
+  },
+  "created_utc": "2026-07-19T06:12:47.797075+00:00",
+  "durable_provider": "amazon_s3",
+  "execution_provenance": null,
+  "guardian_instance_id": 45288435,
+  "guardian_market": {
+    "candidate_count": 92,
+    "excluded_machine_ids": [],
+    "query": "cpu_arch=amd64 num_gpus=1 reliability>=0.98 disk_space>=10 duration>=1 rentable=true rented=false static_ip=true direct_port_count>=2 inet_down>=100",
+    "selected": {
+      "cuda_max_good": 12.4,
+      "dph_total": 0.05251851851851852,
+      "geolocation": "Poland, PL",
+      "gpu_name": "RTX 3060",
+      "gpu_ram": 12288,
+      "id": 34534934,
+      "inet_down": 865.1,
+      "inet_up": 923.3,
+      "machine_id": 21103,
+      "reliability": 0.9907008,
+      "verification": "verified"
+    },
+    "selection_rule": "literal_cheapest_eligible_all_regions_at_query_time"
+  },
+  "initial_account": {
+    "active_instances": 0,
+    "active_volumes": 0,
+    "consecutive_observations": 3,
+    "instance_ids": [],
+    "status": "GREEN_ACCOUNT_ZERO_CONFIRMED",
+    "volume_ids": []
+  },
+  "input_proof": {
+    "bytes": 11728612811,
+    "objects": 27,
+    "status": "GREEN_EXACT_IMMUTABLE_INPUTS",
+    "verified": [
+      {
+        "bytes": 24,
+        "key": "parallax/input-staging/sha256/7d0bad90030d638a4bf89a82e91206e25f1fbe0012f14bca21666a64b643bc49/added_tokens.json",
+        "server_side_encryption": "AES256",
+        "sha256": "7d0bad90030d638a4bf89a82e91206e25f1fbe0012f14bca21666a64b643bc49",
+        "version_id": "_lkvo4fVIHSOKYYRWSpUtySvyGjeBlIZ"
+      },
+      {
+        "bytes": 1027,
+        "key": "parallax/input-staging/sha256/e00c72cdff16296bf1229c3267b99f5247d8c740cae84336866338d64fa7918f/config.json",
+        "server_side_encryption": "AES256",
+        "sha256": "e00c72cdff16296bf1229c3267b99f5247d8c740cae84336866338d64fa7918f",
+        "version_id": "oxJg5Mk9fRsgdla7nY6tF6AqPak.6I9."
+      },
+      {
+        "bytes": 137,
+        "key": "parallax/input-staging/sha256/e851cababc44e9fbd81a42b19f9220638832bf8a17e0927bb7cbba97b446893d/generation_config.json",
+        "server_side_encryption": "AES256",
+        "sha256": "e851cababc44e9fbd81a42b19f9220638832bf8a17e0927bb7cbba97b446893d",
+        "version_id": "54sAVItnwW4MrM8ZcJVA0V_97ZdzM9Kz"
+      },
+      {
+        "bytes": 4953412480,
+        "key": "parallax/input-staging/sha256/22f48f9c252403ca55bce4f488b5d0b731c3f42850d3ef718f992e328248a6da/model-00001-of-00003.safetensors",
+        "server_side_encryption": "AES256",
+        "sha256": "22f48f9c252403ca55bce4f488b5d0b731c3f42850d3ef718f992e328248a6da",
+        "version_id": "kQjBAG74bxQ4TNvYtyxb1gy0RWEb_R08"
+      },
+      {
+        "bytes": 4999820608,
+        "key": "parallax/input-staging/sha256/b2b70c8b29f36554dd92a97d002cf0bcb867d3f5dc0a983d587f1598513e4cf0/model-00002-of-00003.safetensors",
+        "server_side_encryption": "AES256",
+        "sha256": "b2b70c8b29f36554dd92a97d002cf0bcb867d3f5dc0a983d587f1598513e4cf0",
+        "version_id": "uK8xF3_OKtn6lC1Gb8GWEPQmRoRWdstO"
+      },
+      {
+        "bytes": 1740714288,
+        "key": "parallax/input-staging/sha256/3e5197dfc42a88f4b1134d484c73b9cda815b630da87aa16ecf9c26a99cddb6a/model-00003-of-00003.safetensors",
+        "server_side_encryption": "AES256",
+        "sha256": "3e5197dfc42a88f4b1134d484c73b9cda815b630da87aa16ecf9c26a99cddb6a",
+        "version_id": "39.ChOzkx_rPSaswIsWolgoxbeUZbKFn"
+      },
+      {
+        "bytes": 62552,
+        "key": "parallax/input-staging/sha256/4c409fac461b069803703357d42cbd5eb822778ccc959af82da07b5899f1b6ef/model.safetensors.index.json",
+        "server_side_encryption": "AES256",
+        "sha256": "4c409fac461b069803703357d42cbd5eb822778ccc959af82da07b5899f1b6ef",
+        "version_id": "uLby6z6xFMGZ48BTPQ4r4luVn0rkZ.yq"
+      },
+      {
+        "bytes": 699,
+        "key": "parallax/input-staging/sha256/ae5e5f748a642ae71344facf4012b1607852db13f080e42cd12b5db4e75ca7e8/preprocessor_config.json",
+        "server_side_encryption": "AES256",
+        "sha256": "ae5e5f748a642ae71344facf4012b1607852db13f080e42cd12b5db4e75ca7e8",
+        "version_id": "MIdlaGdbQ7bn_bnLLMOkET3cqx9CJon8"
+      },
+      {
+        "bytes": 607,
+        "key": "parallax/input-staging/sha256/5ef37093ae4236587b6e8266acb815b46e2db8ce656c66552bfa574d32880405/special_tokens_map.json",
+        "server_side_encryption": "AES256",
+        "sha256": "5ef37093ae4236587b6e8266acb815b46e2db8ce656c66552bfa574d32880405",
+        "version_id": "VYW9SIVrorKhzDtuEph0aZbP3RAGDboh"
+      },
+      {
+        "bytes": 17549604,
+        "key": "parallax/input-staging/sha256/ef6773c135b77b834de1d13c75a4c98ab7a3684ffd602d1831e1f1bf5467c563/tokenizer.json",
+        "server_side_encryption": "AES256",
+        "sha256": "ef6773c135b77b834de1d13c75a4c98ab7a3684ffd602d1831e1f1bf5467c563",
+        "version_id": "SMVEFPcw9vuph8sJhSzKuh.XKfZ54Owr"
+      },
+      {
+        "bytes": 4264023,
+        "key": "parallax/input-staging/sha256/8986bb4f423f07f8c7f70d0dbe3526fb2316056c17bae71b1ea975e77a168fc6/tokenizer.model",
+        "server_side_encryption": "AES256",
+        "sha256": "8986bb4f423f07f8c7f70d0dbe3526fb2316056c17bae71b1ea975e77a168fc6",
+        "version_id": "T3T4xvnYt2eOwj0ueSnPnn1IH0vBidSp"
+      },
+      {
+        "bytes": 39968,
+        "key": "parallax/input-staging/sha256/3259402b1d1802e02417d7bff75a889ec61d359d15be6050a957b307c48edbbe/tokenizer_config.json",
+        "server_side_encryption": "AES256",
+        "sha256": "3259402b1d1802e02417d7bff75a889ec61d359d15be6050a957b307c48edbbe",
+        "version_id": "ZqWajy2KVbXMJONqgDW26yIZzJnCAVsZ"
+      },
+      {
+        "bytes": 12626256,
+        "key": "parallax/input-staging/sha256/8b2f16138376e992816f669fb63ab9ff18d6085da3d009aa9931f6e0a834c517/parallax-training-optimizer-scale-v1.tar.gz",
+        "server_side_encryption": "AES256",
+        "sha256": "8b2f16138376e992816f669fb63ab9ff18d6085da3d009aa9931f6e0a834c517",
+        "version_id": "Ohfs88ITOuoRFZxeTfVCfCtx1aRAHRfs"
+      },
+      {
+        "bytes": 11340,
+        "key": "parallax/input-staging/sha256/81ec1e5b7a6fa50db0a8243c21f03bb9c6a9830a6b25532de763abf8d5497da6/training_interface_control.py",
+        "server_side_encryption": "AES256",
+        "sha256": "81ec1e5b7a6fa50db0a8243c21f03bb9c6a9830a6b25532de763abf8d5497da6",
+        "version_id": "a0zqeyt17ItWG2xr2_Y8bDqr_EmDvICD"
+      },
+      {
+        "bytes": 20679,
+        "key": "parallax/input-staging/sha256/2bdfb7bef9137eccf51211b5708d2bef9f98fe3d2577593479ab2c24f284647e/training_interface_control_cell.py",
+        "server_side_encryption": "AES256",
+        "sha256": "2bdfb7bef9137eccf51211b5708d2bef9f98fe3d2577593479ab2c24f284647e",
+        "version_id": "Ywv3SLbndD8n7W.FIJ8Ec_QAWb8KDPPO"
+      },
+      {
+        "bytes": 6636,
+        "key": "parallax/input-staging/sha256/faf4acbadccbcb730ca7388131611b3facf4e15d70cb4523ad3360973441491a/training_interface_control_primary_cell.py",
+        "server_side_encryption": "AES256",
+        "sha256": "faf4acbadccbcb730ca7388131611b3facf4e15d70cb4523ad3360973441491a",
+        "version_id": "ox4IiKwIch8daqwxWfiMtIasmxIDwXgd"
+      },
+      {
+        "bytes": 16869,
+        "key": "parallax/input-staging/sha256/ca95530cb74182c549f18535ab12787660c1dd17608164b1b71a771097ecfbb7/training_interface_interaction.py",
+        "server_side_encryption": "AES256",
+        "sha256": "ca95530cb74182c549f18535ab12787660c1dd17608164b1b71a771097ecfbb7",
+        "version_id": "YXSTfGfhhZRKCsn803.TJP7c_AMpVdzQ"
+      },
+      {
+        "bytes": 3331,
+        "key": "parallax/input-staging/sha256/c6976d93c756dbf5f6e03180e170e99501490c54d1f85309287bbe1f51f169e8/parallax_execution_freeze_v111.json",
+        "server_side_encryption": "AES256",
+        "sha256": "c6976d93c756dbf5f6e03180e170e99501490c54d1f85309287bbe1f51f169e8",
+        "version_id": "hJzENAampu3J2AolHVzCb66SKiph3MC1"
+      },
+      {
+        "bytes": 2524,
+        "key": "parallax/input-staging/sha256/5bffe282c29def40828add88b7d2158fd8a41f3e16b166e02e641bbae3bcf608/parallax_interface_interaction_metric_v1.yaml",
+        "server_side_encryption": "AES256",
+        "sha256": "5bffe282c29def40828add88b7d2158fd8a41f3e16b166e02e641bbae3bcf608",
+        "version_id": "88YiYOdDeZUngqmRyCKO6u5kIiHjOtQv"
+      },
+      {
+        "bytes": 6958,
+        "key": "parallax/input-staging/sha256/fc186748f7a19ca922aac1a25f09745b366d1b4efb62353dc2254a5bc303fbab/parallax_pg1_h100_s3_hydration_job_v1.json",
+        "server_side_encryption": "AES256",
+        "sha256": "fc186748f7a19ca922aac1a25f09745b366d1b4efb62353dc2254a5bc303fbab",
+        "version_id": "2SibwnKCfokeYMMdzSRXUcmchkbZM6.P"
+      },
+      {
+        "bytes": 5009,
+        "key": "parallax/input-staging/sha256/fa5d8ccefeacfbb57fcd223b3b4486d4adef80388ae06d48452221d738e53078/parallax_training_interface_control_pg1_primary_v1.yaml",
+        "server_side_encryption": "AES256",
+        "sha256": "fa5d8ccefeacfbb57fcd223b3b4486d4adef80388ae06d48452221d738e53078",
+        "version_id": "M7Gu1ab3evPjsGTdwyZlKCRPY5chu7cv"
+      },
+      {
+        "bytes": 7266,
+        "key": "parallax/input-staging/sha256/a95f65a78d5dc6b7f4b80416d40c6b9dcc45cc1c91fde74154da90dd117e5544/parallax_training_interface_control_source_contract_pg1_primary_v1.json",
+        "server_side_encryption": "AES256",
+        "sha256": "a95f65a78d5dc6b7f4b80416d40c6b9dcc45cc1c91fde74154da90dd117e5544",
+        "version_id": "ZQdB_NEakxhgbPP9t8muFWXiU3GRRXRw"
+      },
+      {
+        "bytes": 4397,
+        "key": "parallax/input-staging/sha256/a92181ec909d12942a59b5e6f11ac63575f3d9fd0a63bbba7b4fc5b94ec6ecba/2026-07-18_parallax_interface_interaction_metric_spec.md",
+        "server_side_encryption": "AES256",
+        "sha256": "a92181ec909d12942a59b5e6f11ac63575f3d9fd0a63bbba7b4fc5b94ec6ecba",
+        "version_id": "TnvY8_kslwAD9rzu1P5ha.3K9MCZDy_y"
+      },
+      {
+        "bytes": 3608,
+        "key": "parallax/input-staging/sha256/e2623b5220c5c86aca3f84580e637d0f98f3fc147e2d5e2941f757f0659cc3d2/2026-07-18_parallax_pg1_primary_interface_control_spec.md",
+        "server_side_encryption": "AES256",
+        "sha256": "e2623b5220c5c86aca3f84580e637d0f98f3fc147e2d5e2941f757f0659cc3d2",
+        "version_id": "mQYi1vQ55YeIP9aTUPD9E5R2cISe0kcF"
+      },
+      {
+        "bytes": 2490,
+        "key": "parallax/input-staging/sha256/1d418bb360c401c150562cd2535db3ea95904a6c5b46592d7a357a8dd6c3c01c/adjudication.json",
+        "server_side_encryption": "AES256",
+        "sha256": "1d418bb360c401c150562cd2535db3ea95904a6c5b46592d7a357a8dd6c3c01c",
+        "version_id": "c58qLqRXSJxbooKIlt9rYJa4CL7NgOSy"
+      },
+      {
+        "bytes": 25760,
+        "key": "parallax/input-staging/sha256/f751ef90acd6a96cafe3dea4b491ab8df9d06d6f7faa8388ebda798c5f4b2ba9/terminal.json",
+        "server_side_encryption": "AES256",
+        "sha256": "f751ef90acd6a96cafe3dea4b491ab8df9d06d6f7faa8388ebda798c5f4b2ba9",
+        "version_id": "23kDpRI8Yc_tGfYYdiLy_9XEIk8QO5Jt"
+      },
+      {
+        "bytes": 3671,
+        "key": "parallax/input-staging/sha256/c7437eddce4532b71299003c7f6a3b712484a5bfea9185f680c761cde69866b4/parallax_primary_next_cell_audit_v1.json",
+        "server_side_encryption": "AES256",
+        "sha256": "c7437eddce4532b71299003c7f6a3b712484a5bfea9185f680c761cde69866b4",
+        "version_id": "w2wiiBVKt_jedM7_UFuMhpo43ArzYBOY"
+      }
+    ]
+  },
+  "interface_adjudication": null,
+  "launch_state": {
+    "path": "infra/vast/parallax/operations/readiness/pg1_equal_token_interface_seed17_fresh_v2_attempt/launch-state.json",
+    "sha256": "cbaf366aa32dc07f13d8f9be1556662ccb3dddef8e04115157ff04853c4e8062"
+  },
+  "lineage": "pg1_pi",
+  "machine_quarantine": {
+    "active_machine_ids": [
+      58747,
+      59184,
+      59352,
+      81035,
+      141549,
+      142009
+    ],
+    "entries": 7,
+    "launch_construction": "managed_template_private_runtime",
+    "path": "studies/lineage/cross-lineage/config/parallax_h100_machine_quarantine_v4.json",
+    "rehabilitated_machine_ids": [
+      141956
+    ],
+    "sha256": "a28727a48e0f61e287010e7c362ead3074363b39925aa364eb6f89fe90b923ba",
+    "status": "GREEN_FROZEN_MODE_SPECIFIC_REGISTRY"
+  },
+  "paired_or_shared_range_claim": false,
+  "pre_science_terminal_durable": true,
+  "promotion_boundary": "PRIMARY_PG1_DISCOVERY_ONLY_NO_CONFIRMATION_PROMOTION_OR_PG1_TO_PG2_CAUSAL_CHAIN",
+  "provider": "vast.ai",
+  "role": "primary_within_lineage_discovery_independent_of_supporting_pg2",
+  "run_id": "parallax-pg1-primary-interface-s3-v2",
+  "s3_safety": {
+    "all_public_access_blocked": true,
+    "default_encryption": "AES256",
+    "profile": "fuelos",
+    "region": "us-east-1",
+    "versioning": "Enabled"
+  },
+  "schema_version": 1,
+  "scope": "PRIMARY_PG1_INTERFACE_DISCOVERY_PROVISIONAL_NONPROMOTION",
+  "status": "RED_PRIMARY_PG1_INTERFACE_EXECUTION",
+  "supporting_pg2_dependency": "none_within_lineage",
+  "terminal": {
+    "created_utc": "2026-07-19T06:12:37.190047+00:00",
+    "durability_contract": {
+      "archive_durable": false,
+      "archive_key": "parallax/results/parallax-pg1-primary-interface-s3-v2/artifacts.tar",
+      "archive_proof": null,
+      "bucket": "pg-lineage-769063704696",
+      "durable_provider": "amazon_s3",
+      "post_terminal_action": "destroy",
+      "pre_science": true,
+      "pre_science_report_complete": false,
+      "region": "us-east-1",
+      "terminal_key": "parallax/results/parallax-pg1-primary-interface-s3-v2/terminal.json",
+      "terminal_upload_failure_action": "stop",
+      "vast_persistent_storage": "FORBIDDEN"
+    },
+    "instance_id": 45288475,
+    "job": {
+      "log_tail": "Traceback (most recent call last):\n  File \"/opt/parallax/primary_interface_control_job.py\", line 375, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/opt/parallax/primary_interface_control_job.py\", line 369, in main\n    packet = run(args.input_contract.resolve(), args.artifact_post.resolve())\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/parallax/primary_interface_control_job.py\", line 358, in run\n    return legacy.run(input_contract_path, artifact_post_path)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/parallax/ephemeral_interface_control_job.py\", line 550, in run\n    source = _verify_source(contract)\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/parallax/ephemeral_interface_control_job.py\", line 255, in _verify_source\n    raise InterfaceJobError(\"interface source contract escaped its boundary\")\nephemeral_interface_control_job.InterfaceJobError: interface source contract escaped its boundary\n",
+      "result": {
+        "present": false
+      },
+      "result_error": null,
+      "returncode": 1,
+      "timed_out": false
+    },
+    "phase": {
+      "created_utc": "2026-07-19T06:12:34.547744+00:00",
+      "phase": "SOURCE_STAGING",
+      "run_id": "parallax-pg1-primary-interface-s3-v2",
+      "schema_version": 1,
+      "science_started": false
+    },
+    "provider": "vast.ai",
+    "run_id": "parallax-pg1-primary-interface-s3-v2",
+    "schema_version": 1,
+    "stage": "training_interface_control",
+    "started_utc": "2026-07-19T06:12:34.472690+00:00",
+    "status": "RED_JOB_TERMINAL",
+    "wall_seconds": 2.717370104044676
+  },
+  "terminal_account": {
+    "active_instances": 0,
+    "active_volumes": 0,
+    "consecutive_observations": 3,
+    "instance_ids": [],
+    "status": "GREEN_ACCOUNT_ZERO_CONFIRMED",
+    "volume_ids": []
+  },
+  "terminal_s3_proof": {
+    "bucket": "pg-lineage-769063704696",
+    "bytes": 2325,
+    "checksum_sha256_base64": null,
+    "key": "parallax/results/parallax-pg1-primary-interface-s3-v2/terminal.json",
+    "server_side_encryption": "AES256",
+    "sha256": "ebf586b54047a5faf4550a0a1976fd6ecf2207f98cb070f8a971bc60935a4da4",
+    "version_id": "z8jDUARxpzc.zvZ9YlZT2SLW54rUNxjq"
+  },
+  "wall_seconds": 214.05736720899586,
+  "worker_instance_id": 45288475,
+  "worker_market": {
+    "candidate_count": 4,
+    "excluded_machine_ids": [
+      21103,
+      58747,
+      59184,
+      59352,
+      81035,
+      141549,
+      142009
+    ],
+    "other_excluded_machine_ids": [
+      21103
+    ],
+    "quarantine_applied_before_price_ordering": true,
+    "quarantined_machine_ids": [
+      58747,
+      59184,
+      59352,
+      81035,
+      141549,
+      142009
+    ],
+    "query": "gpu_name in [H100_SXM,H100_NVL,H100_PCIE,H100] num_gpus=1 gpu_ram>=80 reliability>=0.98 disk_space>=80 duration>=1 rentable=true rented=false static_ip=true direct_port_count>=2 cuda_max_good>=13 inet_down>=500",
+    "selected": {
+      "cpu_cores_effective": 128.0,
+      "cpu_ram": 515452,
+      "cuda_max_good": 13.2,
+      "direct_port_count": 998,
+      "disk_bw": 6873.0,
+      "disk_space": 3521.0,
+      "dph_total": 2.0814814814814815,
+      "duration": 13918799.432989836,
+      "geolocation": ", CA",
+      "gpu_name": "H100 NVL",
+      "gpu_ram": 95830,
+      "id": 42823318,
+      "inet_down": 938.8,
+      "inet_up": 906.6,
+      "machine_id": 141791,
+      "num_gpus": 1,
+      "reliability": 0.9925933,
+      "static_ip": true,
+      "storage_cost": 0.1333333333333333,
+      "verification": "verified"
+    },
+    "selection_rule": "literal_cheapest_eligible_all_regions_at_query_time"
+  }
+}

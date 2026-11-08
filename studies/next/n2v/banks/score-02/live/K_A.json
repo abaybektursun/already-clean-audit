@@ -1,0 +1,24 @@
+{
+ "pass": true,
+ "units": [
+  "L00N9356-:c8",
+  "L02N1367-:c7",
+  "L02N4649+:c3",
+  "L02N7380+:c2",
+  "L03N6372+:c10",
+  "L03N7746+:c0",
+  "L04N7919-:c0",
+  "L05N8714-:c5",
+  "L06N2185+:c5",
+  "L06N9844+:c1"
+ ],
+ "n_pairs": 40,
+ "max_abs_diff": 0.0,
+ "n_exact": 40,
+ "tol": 1e-06,
+ "failing_input": {
+  "what": "N12's banked dL with the poles rolled inside each unit",
+  "pass": false,
+  "min_abs_diff": 0.0166015625
+ }
+}

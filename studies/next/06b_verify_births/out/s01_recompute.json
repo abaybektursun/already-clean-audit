@@ -1,0 +1,160 @@
+{
+ "broken_input_birth_pct_mismatches": {
+  "no_next_point_rule": 155,
+  "q999_shifted_one_point": 1469
+ },
+ "n_rows": 2465,
+ "n_non_echo": 2454,
+ "mismatches_vs_banked": {
+  "mine": {
+   "birth_pct": 0,
+   "birth_raw": 0,
+   "is_main": 0,
+   "late_pct": 0,
+   "late_raw": 0,
+   "status": 0,
+   "matched": 0
+  },
+  "repo": {
+   "birth_pct": 0,
+   "birth_raw": 0,
+   "is_main": 0,
+   "late_pct": 0,
+   "late_raw": 0,
+   "status": 0,
+   "matched": 0
+  }
+ },
+ "max_abs_med_diff_vs_banked": {
+  "mine": 0.0,
+  "repo": 0.0
+ },
+ "b_mine": 0.47560975609756095,
+ "n_poles_b_mine": 574,
+ "birth_order_repo_recomputed": {
+  "b": 0.47560975609756095,
+  "ci95": [
+   0.4355400696864111,
+   0.5174216027874564
+  ],
+  "n_poles": 574,
+  "null_mean": 0.4140604529616725,
+  "null_97_5": 0.44947735191637633,
+  "gap_to_null_mean": 0.06154930313588847,
+  "supports_main_oldest": true,
+  "drift_share": 0.524390243902439,
+  "p": 0.0004999500049995,
+  "n_perm": 10000,
+  "n_boot": 10000,
+  "seed": 0
+ },
+ "birth_order_metrics_json": {
+  "b": 0.47560975609756095,
+  "ci95": [
+   0.4355400696864111,
+   0.5174216027874564
+  ],
+  "n_poles": 574,
+  "null_mean": 0.4140604529616725,
+  "null_97_5": 0.44947735191637633,
+  "gap_to_null_mean": 0.06154930313588847,
+  "supports_main_oldest": true,
+  "drift_share": 0.524390243902439,
+  "p": 0.0004999500049995,
+  "n_perm": 10000,
+  "n_boot": 10000,
+  "seed": 0
+ },
+ "births_hist_recomputed": {
+  "main": [
+   0,
+   1,
+   1,
+   5,
+   8,
+   19,
+   17,
+   34,
+   42,
+   50,
+   74,
+   89,
+   97,
+   109,
+   47,
+   7
+  ],
+  "non_main": [
+   0,
+   0,
+   2,
+   9,
+   22,
+   30,
+   45,
+   63,
+   118,
+   126,
+   164,
+   257,
+   370,
+   380,
+   239,
+   29
+  ]
+ },
+ "births_hist_metrics_json": {
+  "main": [
+   0,
+   1,
+   1,
+   5,
+   8,
+   19,
+   17,
+   34,
+   42,
+   50,
+   74,
+   89,
+   97,
+   109,
+   47,
+   7
+  ],
+  "non_main": [
+   0,
+   0,
+   2,
+   9,
+   22,
+   30,
+   45,
+   63,
+   118,
+   126,
+   164,
+   257,
+   370,
+   380,
+   239,
+   29
+  ]
+ },
+ "status_counts_recomputed": {
+  "never_born": 0,
+  "earliest": 919,
+  "formed_before_step_1000": 0,
+  "readings_disagree": 244,
+  "unmatched_in_sample_1": 53,
+  "late_primary": 1238
+ },
+ "status_counts_metrics_json": {
+  "never_born": 0,
+  "earliest": 919,
+  "formed_before_step_1000": 0,
+  "readings_disagree": 244,
+  "unmatched_in_sample_1": 53,
+  "late_primary": 1238
+ }
+}

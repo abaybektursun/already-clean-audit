@@ -1,0 +1,8 @@
+[
+ {"name": "pg_16k_s1337", "module": "infra.aws_pg.jobs.w17_cell",
+  "args": "--controls-s3 s3://pg-lineage-769063704696/results/w17_controls_a3/out/w17_controls.json --decoder pg --arm cap --rank 512 --n 16000 --seed 1337 --eval-split confirmation --lr 5e-6 --epochs 1 --batch 8 --warmup 0.03 --alpha 512"},
+ {"name": "pg_16k_s1338", "module": "infra.aws_pg.jobs.w17_cell",
+  "args": "--controls-s3 s3://pg-lineage-769063704696/results/w17_controls_a3/out/w17_controls.json --decoder pg --arm cap --rank 512 --n 16000 --seed 1338 --eval-split confirmation --lr 5e-6 --epochs 1 --batch 8 --warmup 0.03 --alpha 512"},
+ {"name": "pg_16k_s1339", "module": "infra.aws_pg.jobs.w17_cell",
+  "args": "--controls-s3 s3://pg-lineage-769063704696/results/w17_controls_a3/out/w17_controls.json --decoder pg --arm cap --rank 512 --n 16000 --seed 1339 --eval-split confirmation --lr 5e-6 --epochs 1 --batch 8 --warmup 0.03 --alpha 512"}
+]

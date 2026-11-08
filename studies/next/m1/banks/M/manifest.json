@@ -1,0 +1,296 @@
+{
+ "model_key": "O7",
+ "repo": "allenai/Olmo-3-1025-7B",
+ "revision": "ab9f4b070e9125de257bfbe31bf8cc777daadfb4",
+ "branch": "stage2-step47684-mix-math-code-reasoning-web-from-2T-ckpt",
+ "transformers": "5.9.0",
+ "torch": "2.12.0+cu130",
+ "act_fn": "SiLUActivation",
+ "act_fn_measured": "silu",
+ "model_type": "olmo3",
+ "model_class": "Olmo3ForCausalLM",
+ "n_layers": 32,
+ "width": 11008,
+ "hidden": 4096,
+ "dtype": "torch.bfloat16",
+ "attn": "sdpa",
+ "corpus_manifest_sha256": "0c99a8e86856f1d94f08535b252d541f2ab18c4cbcb486c9e4993d6eb70a305c",
+ "tokname": "olmo3",
+ "tokens_sha256": "2aca80ca6537f46b8f60a550b4a3f2f13be2d18c5402be8f1af5c00caa86f531",
+ "bos_id": 100257,
+ "n_tokens_scored": 20560068,
+ "n_tokens_windowed": 20570112,
+ "excluded_positions": "BOS and window position 0",
+ "probe_excluded_positions": null,
+ "probe_rule": null,
+ "max_tokens_arg": 20570743,
+ "n_windows": 10044,
+ "batch": 8,
+ "window": 2048,
+ "topk_K": 50,
+ "poles_K": 1000,
+ "hist_edges": {
+  "lo_log10": -6.0,
+  "hi_log10": 4.0,
+  "bins": 400,
+  "below_lo": "bin 0",
+  "at_or_above_hi": "bin B-1"
+ },
+ "density_rule": "every token in the bin holding 0.01*max_abs and above (bin resolution)",
+ "vocab_rule": "score = sign * W_U @ (gamma_final * W_down[:, i]) in fp32, sign = +1 for the + pole and -1 for the - pole (the direction the pole writes when it fires); gamma_final = final_norm(ones), which is the norm's effective gain for every RMSNorm form; the 1/rms factor is a positive scalar and does not change the ranking",
+ "sample_rule": "neuron i of n sits in layer floor(i * n_layers / n); neurons within a layer drawn without replacement by numpy default_rng(seed); both poles of each neuron",
+ "snapshot_bands": [
+  1
+ ],
+ "band_end_tok": {
+  "1": 10432539
+ },
+ "started_utc": "2026-11-05T19:07:51Z",
+ "args": {
+  "mode": "harvest",
+  "out": "/work/out/M",
+  "corpus": "s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus",
+  "branch": "stage2-step47684-mix-math-code-reasoning-web-from-2T-ckpt",
+  "inputs": "s3://pg-lineage-769063704696/results/next_m1/inputs",
+  "bank_exemplar": "t15_exemplar_a.npz",
+  "fail_exemplar": "t14_exemplar_a.npz",
+  "bank_contexts": "t15_contexts.jsonl",
+  "refs": null,
+  "registry": null,
+  "n_poles_grid": 640,
+  "device": "cuda"
+ },
+ "device_name": "NVIDIA L40S",
+ "pg_git_sha": "e76b318aa502",
+ "download": {
+  "branch": "stage2-step47684-mix-math-code-reasoning-web-from-2T-ckpt",
+  "commit": "ab9f4b070e9125de257bfbe31bf8cc777daadfb4",
+  "allow_patterns": [
+   "config.json",
+   "generation_config.json",
+   "model.safetensors.index.json",
+   "special_tokens_map.json",
+   "tokenizer.json",
+   "tokenizer_config.json",
+   "vocab.json",
+   "merges.txt",
+   "model-00001-of-00006.safetensors",
+   "model-00002-of-00006.safetensors",
+   "model-00003-of-00006.safetensors",
+   "model-00004-of-00006.safetensors",
+   "model-00005-of-00006.safetensors",
+   "model-00006-of-00006.safetensors"
+  ],
+  "bytes": 29201786046,
+  "seconds": 511.8,
+  "MB_per_s": 57.1,
+  "xet_disabled": "1",
+  "sha256_s": 18.4,
+  "G_SHARD": {
+   "pass": true,
+   "files": [
+    "model-00001-of-00006.safetensors",
+    "model-00002-of-00006.safetensors",
+    "model-00003-of-00006.safetensors",
+    "model-00004-of-00006.safetensors",
+    "model-00005-of-00006.safetensors",
+    "model-00006-of-00006.safetensors"
+   ],
+   "index_files": [
+    "model-00001-of-00006.safetensors",
+    "model-00002-of-00006.safetensors",
+    "model-00003-of-00006.safetensors",
+    "model-00004-of-00006.safetensors",
+    "model-00005-of-00006.safetensors",
+    "model-00006-of-00006.safetensors"
+   ],
+   "mismatch": [],
+   "stale_present": [],
+   "failing_input": {
+    "pass": false,
+    "files": [
+     "model-00001-of-00003.safetensors",
+     "model-00002-of-00003.safetensors",
+     "model-00003-of-00003.safetensors"
+    ],
+    "index_files": [
+     "model-00001-of-00006.safetensors",
+     "model-00002-of-00006.safetensors",
+     "model-00003-of-00006.safetensors",
+     "model-00004-of-00006.safetensors",
+     "model-00005-of-00006.safetensors",
+     "model-00006-of-00006.safetensors"
+    ],
+    "mismatch": [
+     "model-00001-of-00006.safetensors",
+     "model-00002-of-00006.safetensors",
+     "model-00003-of-00006.safetensors",
+     "model-00004-of-00006.safetensors",
+     "model-00005-of-00006.safetensors",
+     "model-00006-of-00006.safetensors"
+    ],
+    "stale_present": [
+     "model-00001-of-00003.safetensors",
+     "model-00002-of-00003.safetensors",
+     "model-00003-of-00003.safetensors"
+    ]
+   }
+  }
+ },
+ "load_s": 5.6,
+ "m1": {
+  "config": {
+   "rewrite": true,
+   "as_released": {
+    "model_type": "olmo2-retrofit",
+    "architectures": [
+     "Olmo2RetrofitForCausalLM"
+    ],
+    "sliding_window": 4097,
+    "torch_dtype": "bfloat16"
+   },
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "architectures",
+     "model_type",
+     "sliding_window"
+    ],
+    "sliding_window": 4097
+   },
+   "G_CFG": {
+    "pass": true,
+    "diff_keys": [
+     "sliding_window"
+    ],
+    "sliding_window": 4097
+   },
+   "load_dir": "/work/m1/load/ab9f4b070e9125de257bfbe31bf8cc777daadfb4"
+  },
+  "G_CAST": {
+   "pass": true,
+   "param_dtypes": [
+    "torch.bfloat16"
+   ],
+   "tensors": [
+    {
+     "name": "model.layers.0.mlp.gate_proj.weight",
+     "file_dtype": "torch.float32",
+     "shape": [
+      11008,
+      4096
+     ],
+     "equal_rne": true,
+     "trunc_mismatch_share": 0.49932488799095154
+    },
+    {
+     "name": "model.layers.0.mlp.up_proj.weight",
+     "file_dtype": "torch.float32",
+     "shape": [
+      11008,
+      4096
+     ],
+     "equal_rne": true,
+     "trunc_mismatch_share": 0.49942469596862793
+    },
+    {
+     "name": "model.layers.15.mlp.down_proj.weight",
+     "file_dtype": "torch.float32",
+     "shape": [
+      4096,
+      11008
+     ],
+     "equal_rne": true,
+     "trunc_mismatch_share": 0.4992903769016266
+    },
+    {
+     "name": "model.layers.31.mlp.down_proj.weight",
+     "file_dtype": "torch.float32",
+     "shape": [
+      4096,
+      11008
+     ],
+     "equal_rne": true,
+     "trunc_mismatch_share": 0.4993477761745453
+    },
+    {
+     "name": "model.layers.16.self_attn.q_proj.weight",
+     "file_dtype": "torch.float32",
+     "shape": [
+      4096,
+      4096
+     ],
+     "equal_rne": true,
+     "trunc_mismatch_share": 0.49917566776275635
+    },
+    {
+     "name": "model.layers.31.post_feedforward_layernorm.weight",
+     "file_dtype": "torch.float32",
+     "shape": [
+      4096
+     ],
+     "equal_rne": true,
+     "trunc_mismatch_share": 0.53564453125
+    },
+    {
+     "name": "model.norm.weight",
+     "file_dtype": "torch.float32",
+     "shape": [
+      4096
+     ],
+     "equal_rne": true,
+     "trunc_mismatch_share": 0.532958984375
+    }
+   ],
+   "failing_input": {
+    "pass": false,
+    "tensors": [
+     {
+      "name": "model.layers.0.mlp.gate_proj.weight",
+      "against": "model.layers.1.mlp.gate_proj.weight",
+      "equal": false
+     },
+     {
+      "name": "model.layers.0.mlp.up_proj.weight",
+      "against": "model.layers.1.mlp.up_proj.weight",
+      "equal": false
+     },
+     {
+      "name": "model.layers.15.mlp.down_proj.weight",
+      "against": "model.layers.16.mlp.down_proj.weight",
+      "equal": false
+     },
+     {
+      "name": "model.layers.31.mlp.down_proj.weight",
+      "against": "model.layers.0.mlp.down_proj.weight",
+      "equal": false
+     },
+     {
+      "name": "model.layers.16.self_attn.q_proj.weight",
+      "against": "model.layers.17.self_attn.q_proj.weight",
+      "equal": false
+     },
+     {
+      "name": "model.layers.31.post_feedforward_layernorm.weight",
+      "against": "model.layers.0.post_feedforward_layernorm.weight",
+      "equal": false
+     },
+     {
+      "name": "model.norm.weight",
+      "against": "model.layers.0.post_feedforward_layernorm.weight",
+      "equal": false
+     }
+    ]
+   }
+  }
+ },
+ "tokens_per_second": 3340.3076402812185,
+ "timing_s": {
+  "harvest_loop_s": 6155.142045021057,
+  "snapshot_write_s": 158.9236056804657,
+  "metrics_write_s": 0.09756350517272949,
+  "final_write_s": 149.7779564857483
+ },
+ "wall_s": 6474.417169809341,
+ "finished_utc": "2026-11-05T20:55:46Z"
+}

@@ -1,0 +1,927 @@
+{
+ "n_examples": 10,
+ "n_with_label_in": 9,
+ "n_against_label_in": 1,
+ "chosen_with_label": "L22N7483-:c5",
+ "chosen_against_label": "L03N9631+:c3",
+ "max_abs_diff_record_vs_recount": 2.220446049250313e-16,
+ "rows": [
+  {
+   "birth": "L01N369+:c0",
+   "k": 12,
+   "real": {
+    "unit": "L01N369+:c0",
+    "pole": "L01N369+",
+    "layer": 1,
+    "neuron": 369,
+    "e_in": -0.5959799174561027,
+    "e_out": -0.625439757437825,
+    "e_k_in": -0.7183402808772843,
+    "e_by_bracket_in": {
+     "10": -0.460736454081906,
+     "11": -0.6088630174091176,
+     "12": -0.7183402808772843,
+     "13": -0.7118774607257361
+    },
+    "r_in_window": [
+     0.691926816106321,
+     0.7977598862388929,
+     0.7957505643119525
+    ],
+    "cos_in_k": 0.6792195139116758,
+    "cos_out_k": 0.6786306648069109,
+    "recount_e_in": -0.5959799174561027,
+    "recount_e_out": -0.625439757437825,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "dt": {
+    "unit": "L01N369+:c0:dt",
+    "pole": "L01N8975-",
+    "layer": 1,
+    "neuron": 8975,
+    "e_in": -0.3046446340005916,
+    "e_out": 0.056870591970750305,
+    "e_k_in": -0.001265631709822218,
+    "e_by_bracket_in": {
+     "10": -0.5289735735749859,
+     "11": -0.3836946967169668,
+     "12": -0.001265631709822218,
+     "13": -0.20096601160988414
+    },
+    "r_in_window": [
+     0.6925138269038409,
+     0.8134656666539919,
+     0.8361051312680156
+    ],
+    "cos_in_k": 0.6405042978702,
+    "cos_out_k": 0.6437208464811296,
+    "recount_e_in": -0.3046446340005916,
+    "recount_e_out": 0.056870591970750284,
+    "abs_diff_record_vs_recount": 2.0816681711721685e-17
+   },
+   "pb": {
+    "unit": "L01N369+:c0:pb",
+    "pole": "L01N9435-",
+    "layer": 1,
+    "neuron": 9435,
+    "e_in": 1.3612004451836868,
+    "e_out": 1.639479309782709,
+    "e_k_in": 1.5115307437700567,
+    "e_by_bracket_in": {
+     "10": 1.2599318955430385,
+     "11": 1.3121386962379653,
+     "12": 1.5115307437700567,
+     "13": 1.140625854383152
+    },
+    "r_in_window": [
+     0.7356177963739773,
+     0.8744286341332891,
+     0.8875699516702967
+    ],
+    "cos_in_k": 0.6020228028754128,
+    "cos_out_k": 0.5834234700608417,
+    "recount_e_in": 1.3612004451836868,
+    "recount_e_out": 1.6394793097827092,
+    "abs_diff_record_vs_recount": 2.220446049250313e-16
+   },
+   "real_minus_dt_in": -0.2913352834555111,
+   "real_minus_dt_out": -0.6823103494085753,
+   "direction_in": "with the label (real below dt)",
+   "exemplars": {
+    "real": [
+     "Connect with us\n\nCardi B Net Worth, Age, Height, Parents, Boyfriend, [[ Husband]] , Bio & Much More\n\nCardi B Net Worth\n\nShe is one of",
+     "he app has 2.1 million fans, and the 17-year-old is gaining fame for her upbeat dance videos and related content.\n\nHowever, rumors and internet trolls about her [[ breakup]]  with Addison Ray at Bryce Hall in January have haunted her to become a star.\n\n"
+    ],
+    "dt": [
+     "For more, please visit https://5dartist.com.\n\nMedia Contact\nCompany Name: 5DArtist\nContact Person: Benjamin Plaksin\nEmail: Send Email\nCity: Las Vegas\nState: NV\n [[Country]] : United States\nWebsite: https://5dartist.com<|endoftext|>",
+     "er. It is said that there was a dragon in the sky. The dragon wanted to swallow up the moon. To protect the frighten the dragon away.\n\n版权声明\n\n声明：本站(非盈利网站)所发表的作品版 [[权]] 归作者所有。\n\n若您发现本站存在您非�"
+    ]
+   }
+  },
+  {
+   "birth": "L02N4649+:c3",
+   "k": 15,
+   "real": {
+    "unit": "L02N4649+:c3",
+    "pole": "L02N4649+",
+    "layer": 2,
+    "neuron": 4649,
+    "e_in": 0.22084067125925808,
+    "e_out": 0.3954315886427091,
+    "e_k_in": 0.7856071718634943,
+    "e_by_bracket_in": {
+     "13": -0.2369679607636383,
+     "14": 0.11388280267791824,
+     "15": 0.7856071718634943
+    },
+    "r_in_window": [
+     0.7425772477595268,
+     0.6785440708884837,
+     0.531694905440504
+    ],
+    "cos_in_k": 0.8601974143297038,
+    "cos_out_k": 0.888023083179551,
+    "recount_e_in": 0.22084067125925808,
+    "recount_e_out": 0.3954315886427091,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "dt": {
+    "unit": "L02N4649+:c3:dt",
+    "pole": "L02N91-",
+    "layer": 2,
+    "neuron": 91,
+    "e_in": 1.1705000793431615,
+    "e_out": 0.17328965299879773,
+    "e_k_in": 1.1461647497691916,
+    "e_by_bracket_in": {
+     "13": 1.1531943930878377,
+     "14": 1.2121410951724552,
+     "15": 1.1461647497691916
+    },
+    "r_in_window": [
+     0.7695996683957107,
+     0.6928202638376788,
+     0.5336780400245422
+    ],
+    "cos_in_k": 0.8565669544958083,
+    "cos_out_k": 0.8852858153118611,
+    "recount_e_in": 1.1705000793431615,
+    "recount_e_out": 0.17328965299879773,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "pb": {
+    "unit": "L02N4649+:c3:pb",
+    "pole": "L02N5291+",
+    "layer": 2,
+    "neuron": 5291,
+    "e_in": -0.3073270096649466,
+    "e_out": 0.40781492244144457,
+    "e_k_in": -1.1305752237932716,
+    "e_by_bracket_in": {
+     "13": 0.5511965102030965,
+     "14": -0.34260231540466474,
+     "15": -1.1305752237932716
+    },
+    "r_in_window": [
+     0.7607183938601038,
+     0.6730072260814827,
+     0.51683866204654
+    ],
+    "cos_in_k": 0.8691360331575351,
+    "cos_out_k": 0.8859309156895944,
+    "recount_e_in": -0.3073270096649466,
+    "recount_e_out": 0.40781492244144457,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "real_minus_dt_in": -0.9496594080839034,
+   "real_minus_dt_out": 0.22214193564391138,
+   "direction_in": "with the label (real below dt)",
+   "exemplars": {
+    "real": [
+     "r(500),\n   authority            smallint default 1,\n   register_time        timestamp default now() on update now(),\n   primary key (id)\n) ENGINE=InnoDB DEFAULT [[ CHARSET]] =utf8;\n\n\n/*==============================================================*/\n/* Table: floor                                                 */\n/*==============================================================",
+     "archar(50) NOT NULL,\n  `email` varchar(50) NOT NULL,\n  `ip` varchar(20) NOT NULL,\n  `published` datetime NOT NULL,\n  PRIMARY KEY (`id`)\n) ENGINE=MyISAM  DEFAULT [[ CHARSET]] =latin1 AUTO_INCREMENT=4 ;\n\n--\n-- Dumping data for table `"
+    ],
+    "dt": [
+     "he same frequency from other masts.\n\nAre there any planned engineering works or unexpected transmitter faults on the Tacolneston (Norfolk, England) mast?\n\nTacol [[nest]] on transmitter - Tacolneston transmitter: Possible effect on TV reception week comm",
+     "menuMENU     Freeview\n\nClick to see updates\n\nFull Freeview on the Tacol [[nest]] on (Norfolk, England) transmitter\n\nfirst published this on - UK Free"
+    ]
+   }
+  },
+  {
+   "birth": "L03N9631+:c3",
+   "k": 13,
+   "real": {
+    "unit": "L03N9631+:c3",
+    "pole": "L03N9631+",
+    "layer": 3,
+    "neuron": 9631,
+    "e_in": 0.46447018873429335,
+    "e_out": 0.03643736273587933,
+    "e_k_in": 0.5661695163408387,
+    "e_by_bracket_in": {
+     "11": 0.3640177078217084,
+     "12": 0.46322334204033305,
+     "13": 0.5661695163408387,
+     "14": 0.9772937434019078
+    },
+    "r_in_window": [
+     0.7648319975511403,
+     0.8137426755910174,
+     0.7885152084532526
+    ],
+    "cos_in_k": 0.6477681759060092,
+    "cos_out_k": 0.671152302527749,
+    "recount_e_in": 0.46447018873429335,
+    "recount_e_out": 0.03643736273587933,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "dt": {
+    "unit": "L03N9631+:c3:dt",
+    "pole": "L03N10451-",
+    "layer": 3,
+    "neuron": 10451,
+    "e_in": 0.42266166831791163,
+    "e_out": -0.015830267708311085,
+    "e_k_in": 0.08914661790090467,
+    "e_by_bracket_in": {
+     "11": 0.5896441601586078,
+     "12": 0.5891942268942224,
+     "13": 0.08914661790090467,
+     "14": 0.9646889793221132
+    },
+    "r_in_window": [
+     0.7625168413330218,
+     0.8081095061424639,
+     0.7643882879089748
+    ],
+    "cos_in_k": 0.6688239873806505,
+    "cos_out_k": 0.6833479676602766,
+    "recount_e_in": 0.42266166831791163,
+    "recount_e_out": -0.015830267708311085,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "pb": {
+    "unit": "L03N9631+:c3:pb",
+    "pole": "L03N1487+",
+    "layer": 3,
+    "neuron": 1487,
+    "e_in": -0.02056669052110993,
+    "e_out": 0.5573155500058722,
+    "e_k_in": -0.1811500387844993,
+    "e_by_bracket_in": {
+     "11": -0.1276267118501493,
+     "12": 0.24707667907131892,
+     "13": -0.1811500387844993,
+     "14": -0.11761844726359988
+    },
+    "r_in_window": [
+     0.7719369669513214,
+     0.8303308986332795,
+     0.7897043517574922
+    ],
+    "cos_in_k": 0.6480293296179276,
+    "cos_out_k": 0.6683121993878633,
+    "recount_e_in": -0.02056669052110993,
+    "recount_e_out": 0.5573155500058722,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "real_minus_dt_in": 0.04180852041638172,
+   "real_minus_dt_out": 0.052267630444190416,
+   "direction_in": "against the label",
+   "exemplars": {
+    "real": [
+     "quia vate sacro.' (') -HOR.\n\nSuch imperfect though interesting sketches as Ben Jonson's visit to Drummond, Selden's Table Talk, Swift's Journal, and Spence's An [[ecd]] otes, only tantalise our curiosity and excite our regret that there was no",
+     "is perhaps unreasonable to expect height and depth where there is\nexcessive breadth. The Archbishop might make a bad captain, but he could\nhave few rivals as an [[ ump]] ire. He is an admirable judge if an indifferent\n\nHis grave earnestness is"
+    ],
+    "dt": [
+     ", so will the app ecosystem around it. \"We have the core audience, which can still grow, and that's already millions strong.\"\n\nBuy this article as PDF\n\nExpress- [[Checkout]]  as PDF\nPrice $2.95\n(incl. VAT)\n\nBuy ADMIN",
+     "demy offers students enrolled in a SmartStart course. If you’re ready to learn to code now, then set up time to meet with an Admissions Rep!\n\nYou Earned your GI [[ Bill]] ® Benefits. Now Use Them To Launch A New Career!LEARN HOW<|endoftext|>"
+    ]
+   }
+  },
+  {
+   "birth": "L05N3483+:c3",
+   "k": 13,
+   "real": {
+    "unit": "L05N3483+:c3",
+    "pole": "L05N3483+",
+    "layer": 5,
+    "neuron": 3483,
+    "e_in": -1.3073584041427497,
+    "e_out": -0.7083671923633528,
+    "e_k_in": -1.25152692642891,
+    "e_by_bracket_in": {
+     "11": -1.3908982757684234,
+     "12": -1.2796500102309163,
+     "13": -1.25152692642891,
+     "14": -0.9435022695728845
+    },
+    "r_in_window": [
+     0.7436908267035831,
+     0.7764818782849637,
+     0.7370252530993788
+    ],
+    "cos_in_k": 0.6958511293499523,
+    "cos_out_k": 0.7273526222009623,
+    "recount_e_in": -1.3073584041427497,
+    "recount_e_out": -0.7083671923633528,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "dt": {
+    "unit": "L05N3483+:c3:dt",
+    "pole": "L05N534+",
+    "layer": 5,
+    "neuron": 534,
+    "e_in": -0.044183928626543745,
+    "e_out": 0.011295162454432406,
+    "e_k_in": -0.031005731214910126,
+    "e_by_bracket_in": {
+     "11": 0.02674714931789457,
+     "12": -0.12829320398261568,
+     "13": -0.031005731214910126,
+     "14": 0.27918902884262864
+    },
+    "r_in_window": [
+     0.7357292710883727,
+     0.7555810889578037,
+     0.7166377799482377
+    ],
+    "cos_in_k": 0.7114583025945092,
+    "cos_out_k": 0.7467654191062502,
+    "recount_e_in": -0.044183928626543745,
+    "recount_e_out": 0.011295162454432406,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "pb": {
+    "unit": "L05N3483+:c3:pb",
+    "pole": "L05N4149+",
+    "layer": 5,
+    "neuron": 4149,
+    "e_in": -1.9267434526419998,
+    "e_out": -1.3716714401447585,
+    "e_k_in": -1.7691071419777373,
+    "e_by_bracket_in": {
+     "11": -1.8274473924341972,
+     "12": -2.183675823514064,
+     "13": -1.7691071419777373,
+     "14": -1.2809755520321455
+    },
+    "r_in_window": [
+     0.6969437601040476,
+     0.6983334461682016,
+     0.6656138393766667
+    ],
+    "cos_in_k": 0.7528918610575625,
+    "cos_out_k": 0.7826823080948011,
+    "recount_e_in": -1.9267434526419998,
+    "recount_e_out": -1.3716714401447585,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "real_minus_dt_in": -1.263174475516206,
+   "real_minus_dt_out": -0.7196623548177852,
+   "direction_in": "with the label (real below dt)",
+   "exemplars": {
+    "real": [
+     "om/2020/11/south-korea-bans-privacy-coins/ \n\n  139. https://finance.yahoo.com/news/litecoin-anonymity-gets-booted-south-031233431.html \n\n  140. https://home.tre [[asury]] .gov/news/press-releases/jy0916 \n\n  141.",
+     "Skip to content [[ ↓]] \n\n    Transition Packs\n\n    Transition Packs\n\n    Below you will find the timetable"
+    ],
+    "dt": [
+     "tively new activity, and more research is needed in the area of its effects on mental health.\n\n3. Heart Health Improvements\n\nNot only is the nicotine found in v [[apes]]  and cigarettes addictive, but it’s also toxic. As such, its use increases",
+     "e traced to the microscopic realm thriving within the intricate network of your car’s HVAC (Heating, Ventilation, and Air Conditioning) system. Here, amidst the [[ coils]] , ducts, and filters, a bustling ecosystem of bacteria, fungi, and"
+    ]
+   }
+  },
+  {
+   "birth": "L10N10529-:c3",
+   "k": 13,
+   "real": {
+    "unit": "L10N10529-:c3",
+    "pole": "L10N10529-",
+    "layer": 10,
+    "neuron": 10529,
+    "e_in": -1.319539504375491,
+    "e_out": -2.0832995022054908,
+    "e_k_in": -0.9427504816715522,
+    "e_by_bracket_in": {
+     "11": -1.98585087429237,
+     "12": -1.0300171571625507,
+     "13": -0.9427504816715522,
+     "14": -1.0451681878950272
+    },
+    "r_in_window": [
+     0.661955311972907,
+     0.6605316884726455,
+     0.6047306229640562
+    ],
+    "cos_in_k": 0.7991613031380717,
+    "cos_out_k": 0.8308632765973608,
+    "recount_e_in": -1.319539504375491,
+    "recount_e_out": -2.0832995022054908,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "dt": {
+    "unit": "L10N10529-:c3:dt",
+    "pole": "L10N4041+",
+    "layer": 10,
+    "neuron": 4041,
+    "e_in": 0.6565373496806212,
+    "e_out": 0.546546053629826,
+    "e_k_in": 0.7196181326034967,
+    "e_by_bracket_in": {
+     "11": 0.5612137922958755,
+     "12": 0.6887801241424911,
+     "13": 0.7196181326034967,
+     "14": 0.832587414216937
+    },
+    "r_in_window": [
+     0.8282799419272183,
+     0.8445906158189492,
+     0.7706917150390007
+    ],
+    "cos_in_k": 0.6684801034722015,
+    "cos_out_k": 0.6954783491709171,
+    "recount_e_in": 0.6565373496806212,
+    "recount_e_out": 0.546546053629826,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "pb": {
+    "unit": "L10N10529-:c3:pb",
+    "pole": "L10N1636+",
+    "layer": 10,
+    "neuron": 1636,
+    "e_in": 1.4259715808497448,
+    "e_out": 1.44125352034686,
+    "e_k_in": 1.628672410190696,
+    "e_by_bracket_in": {
+     "11": 1.2442917710261785,
+     "12": 1.4049505613323596,
+     "13": 1.628672410190696,
+     "14": 2.3033319130470167
+    },
+    "r_in_window": [
+     0.8517156167608927,
+     0.8875155536116589,
+     0.83314260571362
+    ],
+    "cos_in_k": 0.6116055294738932,
+    "cos_out_k": 0.7038435775483636,
+    "recount_e_in": 1.4259715808497448,
+    "recount_e_out": 1.44125352034686,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "real_minus_dt_in": -1.976076854056112,
+   "real_minus_dt_out": -2.629845555835317,
+   "direction_in": "with the label (real below dt)",
+   "exemplars": {
+    "real": [
+     "Hire World's Best & Most [[ Affordable]]  Freelancers\n\nData Processing Freelancers in Mohali\n\nTruelancer is a",
+     "ript.\n\nThe Rapa Nui people may have been one of the few civilisations on Earth to have independently invented writing, or they may not. That they had the Rongor [[ongo]]  script before the 1860s is not disputed. Whether it was true writing"
+    ],
+    "dt": [
+     "\r\n\tprocedure remove_dependent(eno in employee.ssn%type,dpname in dependent.dependentname%type)\r\n\tas\r\n\t\tbn number;\r\n\t\tan number;\r\n\tbegin  \r\n\t\t\r\n\t\tselect count(*) [[ into]]  bn from dependent where dependentname = dpname and essn = eno;\r\n",
+     "_distance=True)[1]\nimport os\nfrom skimage.measure import block_reduce\n\nplt_settings = {\"interpolation\": \"none\"}\n\n\n# # Distance Maps\n# Here we calculate distance [[ maps]]  with the ```ndimage.distance_transform_``` family of functions. Initially we focus"
+    ]
+   }
+  },
+  {
+   "birth": "L12N5641+:c0",
+   "k": 13,
+   "real": {
+    "unit": "L12N5641+:c0",
+    "pole": "L12N5641+",
+    "layer": 12,
+    "neuron": 5641,
+    "e_in": 0.3914243309079239,
+    "e_out": -0.18387425861895965,
+    "e_k_in": 0.6088954087164768,
+    "e_by_bracket_in": {
+     "11": 0.03639508958169668,
+     "12": 0.5289824944255983,
+     "13": 0.6088954087164768,
+     "14": 0.4353967974509208
+    },
+    "r_in_window": [
+     0.7416339386440367,
+     0.7410955161572473,
+     0.673677286475472
+    ],
+    "cos_in_k": 0.7510076818407764,
+    "cos_out_k": 0.7549814699295001,
+    "recount_e_in": 0.3914243309079239,
+    "recount_e_out": -0.18387425861895965,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "dt": {
+    "unit": "L12N5641+:c0:dt",
+    "pole": "L12N727+",
+    "layer": 12,
+    "neuron": 727,
+    "e_in": 1.2476957654225538,
+    "e_out": 0.9832370226951295,
+    "e_k_in": 1.559877735993783,
+    "e_by_bracket_in": {
+     "11": 0.9911871326420529,
+     "12": 1.1920224276318256,
+     "13": 1.559877735993783,
+     "14": 1.6216146551183859
+    },
+    "r_in_window": [
+     0.816525243206606,
+     0.8323171480165211,
+     0.7978491503777289
+    ],
+    "cos_in_k": 0.6460461589087382,
+    "cos_out_k": 0.6820696215209386,
+    "recount_e_in": 1.2476957654225538,
+    "recount_e_out": 0.9832370226951295,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "pb": {
+    "unit": "L12N5641+:c0:pb",
+    "pole": "L12N1642+",
+    "layer": 12,
+    "neuron": 1642,
+    "e_in": 0.6821995839431186,
+    "e_out": 0.06391382444766397,
+    "e_k_in": 0.3708809421788105,
+    "e_by_bracket_in": {
+     "11": 1.111131623470235,
+     "12": 0.5645861861803102,
+     "13": 0.3708809421788105,
+     "14": 0.13697398535515026
+    },
+    "r_in_window": [
+     0.8108724650259412,
+     0.740074628432751,
+     0.6450992305018308
+    ],
+    "cos_in_k": 0.7708985660585664,
+    "cos_out_k": 0.7980127289689104,
+    "recount_e_in": 0.6821995839431186,
+    "recount_e_out": 0.06391382444766397,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "real_minus_dt_in": -0.8562714345146298,
+   "real_minus_dt_out": -1.1671112813140891,
+   "direction_in": "with the label (real below dt)",
+   "exemplars": {
+    "real": [
+     "enetics, sacred sex and conscious relating which will help us create the life we were born to live!\n\n Wholistic Living Webinar 1 Replay \n\nhttps://meetings.webex [[.com]] /collabs/files/playRecording?encryptedDocID=0_F59CBC6",
+     "0F9A437682A50770433A8208EC81BFF8CE32042_1D440E87DCB18868A19645A28DE64F93DFAD20EC\n\n  Wholistic Living Webinar 2 Replay \n\nhttps://meetings.webex [[.com]] /collabs/files/playRecording?encryptedDocID=0_0EEC"
+    ],
+    "dt": [
+     "ople think it’s ok to down grade others and the people on this app proves exactly that. If you want to download this app and meet new people by all means go for [[ it]]  all I’m saying is don’t be surprised when you encounter several group chats of",
+     "but we still ended up a sticky mess. We've had to shower each and every time we've used these drops, but for occasional and infrequent use it's really not a big [[ deal]]  at all.\nThis content is the opinion of the submitting contributor and is not endorsed"
+    ]
+   }
+  },
+  {
+   "birth": "L22N7483-:c5",
+   "k": 13,
+   "real": {
+    "unit": "L22N7483-:c5",
+    "pole": "L22N7483-",
+    "layer": 22,
+    "neuron": 7483,
+    "e_in": -2.3671924048748334,
+    "e_out": -0.9604528758127326,
+    "e_k_in": -2.4111619642609616,
+    "e_by_bracket_in": {
+     "11": -1.7784823656394901,
+     "12": -2.9119328847240484,
+     "13": -2.4111619642609616,
+     "14": -2.167809885380263
+    },
+    "r_in_window": [
+     0.7184062059980865,
+     0.6977992162840442,
+     0.652801214353047
+    ],
+    "cos_in_k": 0.7637069134007708,
+    "cos_out_k": 0.7938389712929061,
+    "recount_e_in": -2.3671924048748334,
+    "recount_e_out": -0.9604528758127326,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "dt": {
+    "unit": "L22N7483-:c5:dt",
+    "pole": "L22N7806-",
+    "layer": 22,
+    "neuron": 7806,
+    "e_in": 0.47473715023592583,
+    "e_out": 0.9199376778867416,
+    "e_k_in": 0.5182102181671846,
+    "e_by_bracket_in": {
+     "11": 0.30136959910837186,
+     "12": 0.604631633432221,
+     "13": 0.5182102181671846,
+     "14": 0.38848511984024775
+    },
+    "r_in_window": [
+     0.7676971031489801,
+     0.7886327189524267,
+     0.74055756039727
+    ],
+    "cos_in_k": 0.6911771019175328,
+    "cos_out_k": 0.7458750012166587,
+    "recount_e_in": 0.47473715023592583,
+    "recount_e_out": 0.9199376778867416,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "pb": {
+    "unit": "L22N7483-:c5:pb",
+    "pole": "L22N4270-",
+    "layer": 22,
+    "neuron": 4270,
+    "e_in": 0.3155817885758075,
+    "e_out": -0.440204428666331,
+    "e_k_in": 0.34634566692044955,
+    "e_by_bracket_in": {
+     "11": 0.34758733197318353,
+     "12": 0.2528123668337893,
+     "13": 0.34634566692044955,
+     "14": 0.2629791482143258
+    },
+    "r_in_window": [
+     0.7611499424056819,
+     0.7715292106472124,
+     0.7258782349935892
+    ],
+    "cos_in_k": 0.7050216024434932,
+    "cos_out_k": 0.7594409043484242,
+    "recount_e_in": 0.3155817885758075,
+    "recount_e_out": -0.440204428666331,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "real_minus_dt_in": -2.841929555110759,
+   "real_minus_dt_out": -1.8803905536994743,
+   "direction_in": "with the label (real below dt)",
+   "exemplars": {
+    "real": [
+     " that we get various forms of polarization, and social media offers more opportunities for that. And indeed, Pew's social media use data [http://www.pewinternet [[.org]] /data-trend/social-media/social-media-use-all-users/] lines up well with the",
+     "ommunity around the videos you’re making so people will share it with their friends.\nWas reviewing some competitive data and thought this was pretty interesting [[.]]  I ran a batch analysis on Ahrefs of competitors. See attached screenshot."
+    ],
+    "dt": [
+     "e second question, I think it's probably all of the above. My understanding is they will be deployed principally into the south, and so it will be combating the [[ Taliban]] ; it will be population security.\n\nAnd with respect to the 35(,",
+     "/05/alianza-aprofujimorista-en-campana.html\">wrote on his blog</a>, Pescador de Luceros, noting that Keiko Fujimori is surrounded by several of her father's old [[ political]]  hands.</p>&#xD; &#xD; <blockquote> <p>"
+    ]
+   }
+  },
+  {
+   "birth": "L24N8193-:c1",
+   "k": 8,
+   "real": {
+    "unit": "L24N8193-:c1",
+    "pole": "L24N8193-",
+    "layer": 24,
+    "neuron": 8193,
+    "e_in": -0.45970768889124036,
+    "e_out": -0.2716672125869821,
+    "e_k_in": -1.0348350169326967,
+    "e_by_bracket_in": {
+     "6": -0.09203008112106298,
+     "7": -0.2522579686199613,
+     "8": -1.0348350169326967,
+     "9": -1.074857498466135
+    },
+    "r_in_window": [
+     0.49679549899449854,
+     0.5815811677219174,
+     0.6110723665216006
+    ],
+    "cos_in_k": 0.8319538687292887,
+    "cos_out_k": 0.8566160902561565,
+    "recount_e_in": -0.45970768889124036,
+    "recount_e_out": -0.2716672125869821,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "dt": {
+    "unit": "L24N8193-:c1:dt",
+    "pole": "L24N269+",
+    "layer": 24,
+    "neuron": 269,
+    "e_in": 0.6407289968922715,
+    "e_out": 0.13768822111646004,
+    "e_k_in": 0.3444682408695666,
+    "e_by_bracket_in": {
+     "6": -0.0029432509353688185,
+     "7": 1.5806620007426166,
+     "8": 0.3444682408695666,
+     "9": -0.007527003449702252
+    },
+    "r_in_window": [
+     0.49505002579029334,
+     0.5983506898059572,
+     0.6236647897864591
+    ],
+    "cos_in_k": 0.8254028344331694,
+    "cos_out_k": 0.8503629206894567,
+    "recount_e_in": 0.6407289968922715,
+    "recount_e_out": 0.13768822111646004,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "pb": {
+    "unit": "L24N8193-:c1:pb",
+    "pole": "L24N1234-",
+    "layer": 24,
+    "neuron": 1234,
+    "e_in": 0.7129866361460395,
+    "e_out": 0.3993315600474532,
+    "e_k_in": 1.0443673480911357,
+    "e_by_bracket_in": {
+     "6": 0.8465371479445392,
+     "7": 0.2480554124024439,
+     "8": 1.0443673480911357,
+     "9": 1.4265609781918678
+    },
+    "r_in_window": [
+     0.49606397183576617,
+     0.575995955091328,
+     0.6232939625580954
+    ],
+    "cos_in_k": 0.8253263216338655,
+    "cos_out_k": 0.8403490684163806,
+    "recount_e_in": 0.7129866361460395,
+    "recount_e_out": 0.3993315600474532,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "real_minus_dt_in": -1.100436685783512,
+   "real_minus_dt_out": -0.4093554337034422,
+   "direction_in": "with the label (real below dt)",
+   "exemplars": {
+    "real": [
+     "sday afternoon amid gun threats.\n\nAt around 3:30 p.m. ET, UM wrote on Twitter: “There is no threat to the campus.”\n\nUM later tweeted: “Safety of our students is [[ of]]  paramount importance. Administration is aware of the matter, and proper steps to ensure safety",
+     " to mediate in a non-official capacity between the parties, to the best interests of everyone involved.\n  • In the end, our relationships with our customers are [[ of]]  paramount importance to us. We will only ever promote someone as an affiliate if we"
+    ],
+    "dt": [
+     "US) as a Third Class Companion, the honorary membership category for militia officers and civilians who made significant contributions to the war effort. He was [[ assigned]]  MOLLUS insignia number 2430.[50] In addition, Grand",
+     "ded the motion. The motion carried 5-0, Councilmembers Derasary, Duncan, Knuteson-Boyd, Guzman-Newton, and Jones voting aye. Mayor Niehaus adjourned the meeting [[ at]]  11:12 PM.\n\nAPPROVED: ____________________________ ATTEST:\n\n"
+    ]
+   }
+  },
+  {
+   "birth": "L27N8999-:c1",
+   "k": 12,
+   "real": {
+    "unit": "L27N8999-:c1",
+    "pole": "L27N8999-",
+    "layer": 27,
+    "neuron": 8999,
+    "e_in": -0.08584349798504848,
+    "e_out": 0.41665223590479084,
+    "e_k_in": 0.4106019543380317,
+    "e_by_bracket_in": {
+     "10": -0.6305870479246174,
+     "11": -0.03754540036855983,
+     "12": 0.4106019543380317,
+     "13": -0.8824232368866166
+    },
+    "r_in_window": [
+     0.6482472484706472,
+     0.7408124455364973,
+     0.7673864166332423
+    ],
+    "cos_in_k": 0.6940333354051009,
+    "cos_out_k": 0.7089487039407849,
+    "recount_e_in": -0.08584349798504848,
+    "recount_e_out": 0.41665223590479084,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "dt": {
+    "unit": "L27N8999-:c1:dt",
+    "pole": "L27N10663+",
+    "layer": 27,
+    "neuron": 10663,
+    "e_in": 2.238440333516125,
+    "e_out": 4.98420118551558,
+    "e_k_in": 2.4550549477605434,
+    "e_by_bracket_in": {
+     "10": 1.3891036780856607,
+     "11": 2.8711623747021715,
+     "12": 2.4550549477605434,
+     "13": 2.8908641673373126
+    },
+    "r_in_window": [
+     0.6601669214700662,
+     0.7695032592548687,
+     0.7825448027797312
+    ],
+    "cos_in_k": 0.6819004336903851,
+    "cos_out_k": 0.7055316781768602,
+    "recount_e_in": 2.238440333516125,
+    "recount_e_out": 4.98420118551558,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "pb": {
+    "unit": "L27N8999-:c1:pb",
+    "pole": "L27N10591+",
+    "layer": 27,
+    "neuron": 10591,
+    "e_in": 0.0024000853023127267,
+    "e_out": 0.35595976302027754,
+    "e_k_in": 0.6266966988764819,
+    "e_by_bracket_in": {
+     "10": -0.19688936643366828,
+     "11": -0.4226070765358755,
+     "12": 0.6266966988764819,
+     "13": 0.03238415222056734
+    },
+    "r_in_window": [
+     0.6414748099664044,
+     0.7199878707276951,
+     0.7554235022270579
+    ],
+    "cos_in_k": 0.705229809982575,
+    "cos_out_k": 0.7250159405238444,
+    "recount_e_in": 0.0024000853023127267,
+    "recount_e_out": 0.35595976302027754,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "real_minus_dt_in": -2.3242838315011736,
+   "real_minus_dt_out": -4.5675489496107895,
+   "direction_in": "with the label (real below dt)",
+   "exemplars": {
+    "real": [
+     "d to be asked.\n\n“Sammy, are you and your parents runaway slaves?”\n\nSammy blinked but didn’t look away.  “My pa was freed, sir. He’s got papers.  My ma and me, y [[ess]] ir, we’s runaways. Actu’lly they ain’t my",
+     " boys are gonna be alright.”  Roy rested a hand on his friend’s arm and shared a smile with him. “Thomas, I hear tell you and your wife hid in that cellar.”\n\n“Y [[ess]] ir.  After seeing our Sammy fall, I tol’ Missy we"
+    ],
+    "dt": [
+     "\nIt's Amway male enhancement is nothing to say, but that I don't know how to say it when my stomach is full The name is not right, the words are not smooth, and [[ I]]  always feel that there is something wrong Hey, I'll hang up first, I",
+     " do over school breaks. Ship grins. I fumble with my wallet.\n\n“So, big spender,” he jokes as he hands me my change. “Who’s the bargain bouquet for?”\n\n“Wedding,” [[ I]]  say automatically, reaching around to tap the bright violin case strapped to my back."
+    ]
+   }
+  },
+  {
+   "birth": "L28N4613+:c0",
+   "k": 10,
+   "real": {
+    "unit": "L28N4613+:c0",
+    "pole": "L28N4613+",
+    "layer": 28,
+    "neuron": 4613,
+    "e_in": -0.8788055071089789,
+    "e_out": -0.3950908243931234,
+    "e_k_in": -0.44150692132373465,
+    "e_by_bracket_in": {
+     "8": -1.2450741361038689,
+     "9": -0.9498354638993329,
+     "10": -0.44150692132373465,
+     "11": -1.0398446782221535
+    },
+    "r_in_window": [
+     0.609863610064982,
+     0.6176779760065788,
+     0.6486687911769754
+    ],
+    "cos_in_k": 0.786419007845084,
+    "cos_out_k": 0.8194799422208594,
+    "recount_e_in": -0.8788055071089789,
+    "recount_e_out": -0.3950908243931234,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "dt": {
+    "unit": "L28N4613+:c0:dt",
+    "pole": "L28N10177+",
+    "layer": 28,
+    "neuron": 10177,
+    "e_in": 0.26660974524931846,
+    "e_out": -0.6224500977432667,
+    "e_k_in": -0.459633483760405,
+    "e_by_bracket_in": {
+     "8": 0.7919515338359557,
+     "9": 0.4675111856724048,
+     "10": -0.459633483760405,
+     "11": -0.5049848060593156
+    },
+    "r_in_window": [
+     0.6220836067424655,
+     0.6219782006402396,
+     0.632886772928912
+    ],
+    "cos_in_k": 0.797027700100394,
+    "cos_out_k": 0.8270408239881186,
+    "recount_e_in": 0.26660974524931846,
+    "recount_e_out": -0.6224500977432667,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "pb": {
+    "unit": "L28N4613+:c0:pb",
+    "pole": "L28N4478+",
+    "layer": 28,
+    "neuron": 4478,
+    "e_in": 0.0662201578981231,
+    "e_out": 0.46358003566998685,
+    "e_k_in": 0.27718084856220976,
+    "e_by_bracket_in": {
+     "8": -0.44704691550914155,
+     "9": 0.3685265406413012,
+     "10": 0.27718084856220976,
+     "11": 0.06541682754290765
+    },
+    "r_in_window": [
+     0.6137711050735098,
+     0.6286906038572525,
+     0.6518993484366812
+    ],
+    "cos_in_k": 0.7853443358271611,
+    "cos_out_k": 0.8137885859184801,
+    "recount_e_in": 0.0662201578981231,
+    "recount_e_out": 0.46358003566998685,
+    "abs_diff_record_vs_recount": 0.0
+   },
+   "real_minus_dt_in": -1.1454152523582972,
+   "real_minus_dt_out": 0.22735927335014328,
+   "direction_in": "with the label (real below dt)",
+   "exemplars": {
+    "real": [
+     "hy indicated that the right lung was more severely diseased than the left. Broncho-alveolar lavage (BAL) fluid cytological examination was suggestive of PAP. He [[ was]]  admitted to a specialist cardiothoracic unit for urgent lung lavage.\n\nOn",
+     " and one patient had desquamation of the palms and soles. Both were treated with prophylactic antibiotics and granulocyte colony-stimulating factor. One patient [[ was]]  admitted to the intensive care unit and received a platelet transfusion. Both patients"
+    ],
+    "dt": [
+     "heard lots of stories from my customers about Clickfunnel’s non-responsive support. They don’t bother describing things to you after you signup and end up being [[ a]]  customer (Clickfunnels 502 Bad Gateway Message). Here’s what Miles Beck",
+     "program ⅼike thiѕ. You must contend within yoᥙr market market рlace ɑnd after tһat drive traffic to an individual elѕе's product іn hopes wһiсh they be a paying [[ out]]  client. Tһere's practically notһing speedy ϲon"
+    ]
+   }
+  }
+ ]
+}

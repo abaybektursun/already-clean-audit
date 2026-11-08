@@ -1,0 +1,139 @@
+{
+ "mode": "refs",
+ "branch": null,
+ "key": null,
+ "started_utc": "2026-11-05T16:31:58Z",
+ "gates_pass": true,
+ "same": {
+  "model_key": "O7",
+  "tokname": "olmo3",
+  "max_tokens": 20570743,
+  "snapshot_bands": [
+   1
+  ],
+  "batch": 8,
+  "window": 2048,
+  "n_windows": 10044,
+  "n_tokens_scored": 20560068,
+  "topk_K": 50,
+  "poles_K": 1000,
+  "corpus_manifest_sha256": "0c99a8e86856f1d94f08535b252d541f2ab18c4cbcb486c9e4993d6eb70a305c",
+  "tokens_sha256": "2aca80ca6537f46b8f60a550b4a3f2f13be2d18c5402be8f1af5c00caa86f531",
+  "bos_id": 100257,
+  "model_type": "olmo3",
+  "model_class": "Olmo3ForCausalLM",
+  "act_fn_measured": "silu",
+  "dtype": "torch.bfloat16",
+  "attn": "sdpa",
+  "transformers": "5.9.0",
+  "torch": "2.12.0+cu130"
+ },
+ "nll_band": [
+  2.4,
+  3.2
+ ],
+ "versions": {
+  "torch": "2.12.0+cu130",
+  "transformers": "5.9.0"
+ },
+ "refs": {
+  "t00": {
+   "uri": "s3://pg-lineage-769063704696/results/neurons/w3/grid/1/out/t00_step0",
+   "branch": "stage1-step0",
+   "revision": "f129a5d178fd784d802a521d6f388c6df6988fd6",
+   "device_name": "NVIDIA L40S",
+   "nll_first_120k": 12.2233822265625,
+   "n_dirs": 50,
+   "cm_dirs": [
+    "data/finemath-3plus",
+    "data/stack_edu-CSharp",
+    "data/stack_edu-JavaScript",
+    "data/stack_edu-Python",
+    "data/stack_edu-SQL"
+   ],
+   "min_filled": 50
+  },
+  "t12": {
+   "uri": "s3://pg-lineage-769063704696/results/neurons/w3/grid/1b/out/t12_step320000",
+   "branch": "stage1-step320000",
+   "revision": "af83fc98693475b503de0a86407f0260a7281786",
+   "device_name": "NVIDIA RTX PRO 5000 Blackwell",
+   "nll_first_120k": 2.8164237569173176,
+   "n_dirs": 50,
+   "cm_dirs": [
+    "data/finemath-3plus",
+    "data/stack_edu-CSharp",
+    "data/stack_edu-JavaScript",
+    "data/stack_edu-Python",
+    "data/stack_edu-SQL"
+   ],
+   "min_filled": 50
+  },
+  "t13": {
+   "uri": "s3://pg-lineage-769063704696/results/neurons/w3/grid/1b/out/t13_step560000",
+   "branch": "stage1-step560000",
+   "revision": "db8c654b5cbe06311f92e86d68cd4f7d31642a5a",
+   "device_name": "NVIDIA RTX PRO 5000 Blackwell",
+   "nll_first_120k": 2.7708053771972656,
+   "n_dirs": 50,
+   "cm_dirs": [
+    "data/finemath-3plus",
+    "data/stack_edu-CSharp",
+    "data/stack_edu-JavaScript",
+    "data/stack_edu-Python",
+    "data/stack_edu-SQL"
+   ],
+   "min_filled": 50
+  },
+  "t14b": {
+   "uri": "s3://pg-lineage-769063704696/results/neurons/w3/grid/1b/out/t14_step1000000",
+   "branch": "stage1-step1000000",
+   "revision": "cb286dcdaaf3f92b3c419dd77439078fdebffe53",
+   "device_name": "NVIDIA RTX PRO 5000 Blackwell",
+   "nll_first_120k": 2.714761865234375,
+   "n_dirs": 50,
+   "cm_dirs": [
+    "data/finemath-3plus",
+    "data/stack_edu-CSharp",
+    "data/stack_edu-JavaScript",
+    "data/stack_edu-Python",
+    "data/stack_edu-SQL"
+   ],
+   "min_filled": 50
+  },
+  "t14c": {
+   "uri": "s3://pg-lineage-769063704696/results/neurons/w3/grid/1c/out/t14_step1000000",
+   "branch": "stage1-step1000000",
+   "revision": "cb286dcdaaf3f92b3c419dd77439078fdebffe53",
+   "device_name": "NVIDIA L40S",
+   "nll_first_120k": 2.714700182088216,
+   "n_dirs": 50,
+   "cm_dirs": [
+    "data/finemath-3plus",
+    "data/stack_edu-CSharp",
+    "data/stack_edu-JavaScript",
+    "data/stack_edu-Python",
+    "data/stack_edu-SQL"
+   ],
+   "min_filled": 50
+  },
+  "t15": {
+   "uri": "s3://pg-lineage-769063704696/results/neurons/w3/grid/1/out/t15_step1413814",
+   "branch": "stage1-step1413814",
+   "revision": "373bad25002f1624757a73235c5ca844c6375c25",
+   "device_name": "NVIDIA L40S",
+   "nll_first_120k": 2.675372037760417,
+   "n_dirs": 50,
+   "cm_dirs": [
+    "data/finemath-3plus",
+    "data/stack_edu-CSharp",
+    "data/stack_edu-JavaScript",
+    "data/stack_edu-Python",
+    "data/stack_edu-SQL"
+   ],
+   "min_filled": 2
+  }
+ },
+ "phase": "done",
+ "updated_utc": "2026-11-05T16:33:05Z"
+}

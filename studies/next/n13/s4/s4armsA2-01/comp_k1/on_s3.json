@@ -1,0 +1,22 @@
+{
+ "comp_k1/build.json": {
+  "bytes": 25533136,
+  "sha256": "c930a1540b934d31954b7a737f8eddf5a77632acd9e9c27bcfcdc7dd53ebda18",
+  "s3": "s3://pg-lineage-769063704696/results/next_n13/s4armsA2-01/out/comp_k1/comp_k1/build.json"
+ },
+ "comp_k1/gsm8k/generations.jsonl": {
+  "bytes": 11514926,
+  "sha256": "d5737f55a6d0988e888e7fb67825e933510d386a98d5abdbff345e32e0de9a7b",
+  "s3": "s3://pg-lineage-769063704696/results/next_n13/s4armsA2-01/out/comp_k1/comp_k1/gsm8k/generations.jsonl"
+ },
+ "comp_k1/math500/generations.jsonl": {
+  "bytes": 7748277,
+  "sha256": "0bf8055202195b438cfa3664e592599beceefe13c1af9e1f00db51420c94074f",
+  "s3": "s3://pg-lineage-769063704696/results/next_n13/s4armsA2-01/out/comp_k1/comp_k1/math500/generations.jsonl"
+ },
+ "steps.jsonl": {
+  "bytes": 5038215,
+  "sha256": "dbc4e6cce57a3add49ba0f3b9f4a67fcf689d7271ba06206c478ac72a153b2d0",
+  "s3": "s3://pg-lineage-769063704696/results/next_n13/s4armsA2-01/out/comp_k1/steps.jsonl"
+ }
+}

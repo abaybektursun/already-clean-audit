@@ -1,0 +1,5 @@
+grid dirs: ['w3/grid/1/out/t00_step0', 'w3/grid/1/out/t01_step1000', 'w3/grid/1/out/t02_step2000', 'w3/grid/1/out/t03_step3000', 'w3/grid/1/out/t04_step5000', 'w3/grid/1/out/t05_step8000', 'w3/grid/1/out/t06_step12000', 'w3/grid/1b/out/t07_step20000', 'w3/grid/1b/out/t08_step35000', 'w3/grid/1b/out/t09_step60000', 'w3/grid/1b/out/t10_step100000', 'w3/grid/1b/out/t11_step180000', 'w3/grid/1b/out/t12_step320000', 'w3/grid/1b/out/t13_step560000', 'w3/grid/1b/out/t14_step1000000', 'w3/grid/1/out/t15_step1413814']
+poles in grid: 640; exemplar_a shape (16, 640, 50)
+T_15 check, max |exemplar_a[15] - contexts.topk.a| = 0.000e+00
+clusters.jsonl: 600 poles, samples [0, 1]
+q2_clusters.jsonl: 2465 rows, 2454 non-echo, 1238 with a judge flag

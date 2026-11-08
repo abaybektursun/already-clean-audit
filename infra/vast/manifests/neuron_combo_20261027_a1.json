@@ -1,0 +1,34 @@
+{
+  "rental": "neuron_combo_20261027_a1",
+  "session": "neuronshow",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+  "disk": 80,
+  "gpu_query": "gpu_name=RTX_PRO_5000 gpu_ram>=40 num_gpus=1 cuda_vers>=13.0 cpu_ram>=30",
+  "expected_gpu": "RTX PRO 5000",
+  "bound": "overhead",
+  "weights_mode": "download",
+  "env": {
+    "HF_ONLINE": "1",
+    "HF_HOME": "/workspace/hf",
+    "HF_HUB_CACHE": "/workspace/hf/hub",
+    "HF_HUB_DISABLE_XET": "1"
+  },
+  "cells": [
+    {
+      "id": "station",
+      "module": "infra.vast.cells.probe_station",
+      "server": "python3 -m infra.pg.persona_combo_session --requests /workspace/probe/requests --responses /workspace/probe/responses",
+      "idle_min": 30
+    }
+  ],
+  "watch": {
+    "max_billed_h": 0.75,
+    "load_backstop_min": 30,
+    "progress_stall_min": 90,
+    "auto_respawn": false
+  },
+  "_comment": "Two neuron combination from nautamine post. 45 minute billed cap, 30 minute idle shutdown, no respawn.",
+  "code_paths": [],
+  "estimated_billed_h": 0.75,
+  "estimated_download_gb": 17
+}

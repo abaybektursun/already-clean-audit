@@ -1,0 +1,30 @@
+{
+  "rental": "neuronshow_probe",
+  "session": "neuronshow",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+  "disk": 80,
+  "gpu_query": "gpu_ram>=40 num_gpus=1 compute_cap>=800 cuda_vers>=13.0 cpu_ram>=30",
+  "expected_gpu": "",
+  "bound": "overhead",
+  "weights_mode": "download",
+  "env": {
+    "HF_ONLINE": "1",
+    "HF_HOME": "/workspace/hf",
+    "HF_HUB_CACHE": "/workspace/hf/hub",
+    "HF_HUB_DISABLE_XET": "1"
+  },
+  "cells": [
+    {
+      "id": "station",
+      "module": "infra.vast.cells.probe_station",
+      "server": "python3 -m infra.vast.probe_echo",
+      "idle_min": 30
+    }
+  ],
+  "watch": {
+    "max_billed_h": 6,
+    "load_backstop_min": 30,
+    "progress_stall_min": 45
+  },
+  "_comment": "NEURONSHOW probe station (infra/vast/operations/2026-10-26_neuronshow_path.md): one rental that stays up while requests arrive and ends itself 30 min after the last one (cells/probe_station.py), then banks every request and response and is destroyed by lifecycle.sh. Laptop client: infra/vast/probe.py (one ssh command per probe). The server starts as the echo stand-in; the real server (infra/pg/probe_server.py) is started on the live box with `probe.py deploy --ref <commit> --server '<cmd>'`, or by renting with this cell's server set to its command. GPU >= 40 GB for the three models at once (Q4B + G4 + O7 bf16 = about 31 GB); L40S preferred, but on 2026-10-27 every L40S and RTX 6000 Ada offer failed the README base filter (bandwidth charge, CUDA < 13.0 driver or < 800 Mb/s), so such an offer is rented by explicit id (controller rent does not re-apply the filter). cuda_vers>=13.0 because mdl-v1 is torch 2.12.0+cu130. Weights from the Hub by the server (HF_ONLINE=1, HF_TOKEN shipped by controller.py from SSM). max_billed_h 6 is the per-session ceiling and keeps a session inside budget.json's remaining headroom; load_backstop_min 30 as the other vast manifests."
+}

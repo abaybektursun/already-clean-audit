@@ -1,0 +1,393 @@
+{
+ "started_utc": "2026-11-06T03:11:58Z",
+ "complete": false,
+ "gates": {
+  "G_SAME": {
+   "pass": true,
+   "versions": {
+    "torch": "2.12.0+cu130",
+    "transformers": "5.9.0"
+   },
+   "registered": {
+    "torch": "2.12.0+cu130",
+    "transformers": "5.9.0"
+   },
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "INPUTS": {
+   "pass": true,
+   "mismatch": [],
+   "paths": {
+    "births": "/work/fetch/inputs/births.json",
+    "0": "/work/fetch/inputs/exemplar_a_t00.npz",
+    "1": "/work/fetch/inputs/exemplar_a_t01.npz",
+    "2": "/work/fetch/inputs/exemplar_a_t02.npz",
+    "3": "/work/fetch/inputs/exemplar_a_t03.npz",
+    "4": "/work/fetch/inputs/exemplar_a_t04.npz",
+    "5": "/work/fetch/inputs/exemplar_a_t05.npz",
+    "6": "/work/fetch/inputs/exemplar_a_t06.npz",
+    "7": "/work/fetch/inputs/exemplar_a_t07.npz",
+    "8": "/work/fetch/inputs/exemplar_a_t08.npz",
+    "9": "/work/fetch/inputs/exemplar_a_t09.npz",
+    "10": "/work/fetch/inputs/exemplar_a_t10.npz",
+    "11": "/work/fetch/inputs/exemplar_a_t11.npz",
+    "12": "/work/fetch/inputs/exemplar_a_t12.npz",
+    "13": "/work/fetch/inputs/exemplar_a_t13.npz",
+    "14": "/work/fetch/inputs/exemplar_a_t14.npz",
+    "15": "/work/fetch/inputs/exemplar_a_t15.npz"
+   },
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "G_CORPUS": {
+   "pass": true,
+   "got": "2aca80ca6537f46b8f60a550b4a3f2f13be2d18c5402be8f1af5c00caa86f531",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t15_G_REV": {
+   "pass": true,
+   "commit": "373bad25002f1624757a73235c5ca844c6375c25",
+   "registered": "373bad25002f1624757a73235c5ca844c6375c25",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t15_G_CFG": {
+   "pass": true,
+   "diff_keys": [],
+   "sliding_window": 4096,
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "model_type"
+    ],
+    "sliding_window": 4096
+   }
+  },
+  "t15_G0": {
+   "pass": true,
+   "max_ratio": 0.006066504865884781,
+   "failing_input": {
+    "pass": false,
+    "max_ratio": 0.6373435258865356
+   }
+  },
+  "K0": {
+   "pass": true,
+   "n": 63,
+   "n_poles": 10,
+   "statistic": "|new - bank| / (0.05 + |bank|)",
+   "median": 0.0,
+   "p99": 0.0,
+   "max": 0.0,
+   "exact_share": 1.0,
+   "tol": {
+    "p99": 0.021158761373165365
+   },
+   "failing_input": {
+    "pass": false,
+    "n": 63,
+    "n_poles": 10,
+    "statistic": "|new - bank| / (0.05 + |bank|)",
+    "median": 0.33538140521671483,
+    "p99": 3.793633962133321,
+    "max": 3.910273440836581,
+    "exact_share": 0.0,
+    "tol": {
+     "p99": 0.021158761373165365
+    }
+   },
+   "farthest": {
+    "row": 4,
+    "slot": 15,
+    "a_bank": 0.3545938730239868,
+    "a_new": 0.3545938730239868
+   }
+  },
+  "t15_G_EX": {
+   "pass": true,
+   "n": 2295,
+   "n_poles": 230,
+   "statistic": "|new - bank| / (0.05 + |bank|)",
+   "median": 0.0,
+   "p99": 0.0,
+   "max": 0.0,
+   "exact_share": 1.0,
+   "tol": {
+    "p99": 0.021158761373165365
+   },
+   "failing_input": {
+    "pass": false,
+    "n": 2295,
+    "n_poles": 230,
+    "statistic": "|new - bank| / (0.05 + |bank|)",
+    "median": 0.2636115375472413,
+    "p99": 3.7871424562511966,
+    "max": 80.03124626230012,
+    "exact_share": 0.0,
+    "tol": {
+     "p99": 0.021158761373165365
+    }
+   },
+   "farthest": {
+    "row": 4,
+    "slot": 15,
+    "a_bank": 0.3545938730239868,
+    "a_new": 0.3545938730239868
+   }
+  },
+  "t15_G_TOPK": {
+   "pass": true,
+   "n": 5675,
+   "n_poles": null,
+   "statistic": "|new - bank| / (0.05 + |bank|)",
+   "median": 0.0,
+   "p99": 0.0,
+   "max": 0.0,
+   "exact_share": 1.0,
+   "tol": {
+    "p99": 0.021158761373165365
+   },
+   "failing_input": {
+    "pass": false,
+    "n": 5675,
+    "n_poles": null,
+    "statistic": "|new - bank| / (0.05 + |bank|)",
+    "median": 0.8639821722964461,
+    "p99": 1.1284506353152992,
+    "max": 1.8460270167853337,
+    "exact_share": 0.0,
+    "tol": {
+     "p99": 0.021158761373165365
+    }
+   }
+  },
+  "t14_G_REV": {
+   "pass": true,
+   "commit": "cb286dcdaaf3f92b3c419dd77439078fdebffe53",
+   "registered": "cb286dcdaaf3f92b3c419dd77439078fdebffe53",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t14_G_CFG": {
+   "pass": true,
+   "diff_keys": [],
+   "sliding_window": 4096,
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "model_type"
+    ],
+    "sliding_window": 4096
+   }
+  },
+  "t14_G0": {
+   "pass": true,
+   "max_ratio": 0.005030064377933741,
+   "failing_input": {
+    "pass": false,
+    "max_ratio": 0.5724493861198425
+   }
+  },
+  "t14_G_EX": {
+   "pass": true,
+   "n": 477,
+   "n_poles": 62,
+   "statistic": "|new - bank| / (0.05 + |bank|)",
+   "median": 0.004274399388468139,
+   "p99": 0.04033830443538224,
+   "max": 0.3851617529991849,
+   "exact_share": 0.32914046121593293,
+   "tol": {
+    "p99": 0.044273286522651334
+   },
+   "failing_input": {
+    "pass": false,
+    "n": 477,
+    "n_poles": 62,
+    "statistic": "|new - bank| / (0.05 + |bank|)",
+    "median": 0.338570235151696,
+    "p99": 1.044426421042909,
+    "max": 1.523924241770775,
+    "exact_share": 0.0,
+    "tol": {
+     "p99": 0.044273286522651334
+    }
+   },
+   "farthest": {
+    "row": 581,
+    "slot": 30,
+    "a_bank": -0.1508559137582779,
+    "a_new": -0.2282179296016693
+   }
+  },
+  "t14_G_TOPK": {
+   "pass": true,
+   "n": 934,
+   "n_poles": null,
+   "statistic": "|new - bank| / (0.05 + |bank|)",
+   "median": 0.0,
+   "p99": 0.014174279882684142,
+   "max": 0.027405335755612492,
+   "exact_share": 0.5578158458244111,
+   "tol": {
+    "p99": 0.044273286522651334
+   },
+   "failing_input": {
+    "pass": false,
+    "n": 934,
+    "n_poles": null,
+    "statistic": "|new - bank| / (0.05 + |bank|)",
+    "median": 0.9041359876704773,
+    "p99": 1.2178311140722078,
+    "max": 1.5365275658855417,
+    "exact_share": 0.0,
+    "tol": {
+     "p99": 0.044273286522651334
+    }
+   }
+  },
+  "t13_G_REV": {
+   "pass": true,
+   "commit": "db8c654b5cbe06311f92e86d68cd4f7d31642a5a",
+   "registered": "db8c654b5cbe06311f92e86d68cd4f7d31642a5a",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t13_G_CFG": {
+   "pass": true,
+   "diff_keys": [],
+   "sliding_window": 4096,
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "model_type"
+    ],
+    "sliding_window": 4096
+   }
+  },
+  "t13_G0": {
+   "pass": true,
+   "max_ratio": 0.004761958960443735,
+   "failing_input": {
+    "pass": false,
+    "max_ratio": 0.454460471868515
+   }
+  },
+  "t13_G_EX": {
+   "pass": false,
+   "n": 717,
+   "n_poles": 79,
+   "statistic": "|new - bank| / (0.05 + |bank|)",
+   "median": 0.004312613345930174,
+   "p99": 0.05433198292594636,
+   "max": 0.22208712575808767,
+   "exact_share": 0.30962343096234307,
+   "tol": {
+    "p99": 0.044273286522651334
+   },
+   "failing_input": {
+    "pass": false,
+    "n": 717,
+    "n_poles": 79,
+    "statistic": "|new - bank| / (0.05 + |bank|)",
+    "median": 0.41935297681243405,
+    "p99": 3.908130743346785,
+    "max": 46.066892173416484,
+    "exact_share": 0.0,
+    "tol": {
+     "p99": 0.044273286522651334
+    }
+   },
+   "farthest": {
+    "row": 130,
+    "slot": 35,
+    "a_bank": 0.031073985621333122,
+    "a_new": 0.049079474061727524
+   }
+  }
+ },
+ "points": {
+  "15": {
+   "t": 15,
+   "branch": "stage1-step1413814",
+   "windows": 1732,
+   "entries": 2295,
+   "records": {
+    "freeze": 177,
+    "test": 148
+   },
+   "download": {
+    "branch": "stage1-step1413814",
+    "commit": "373bad25002f1624757a73235c5ca844c6375c25",
+    "bytes": 14605764269,
+    "seconds": 109.6,
+    "MB_per_s": 133.3
+   },
+   "load_s": 9.8,
+   "forward_s": 372.3,
+   "fixed_s": 197.3
+  },
+  "14": {
+   "t": 14,
+   "branch": "stage1-step1000000",
+   "windows": 381,
+   "entries": 477,
+   "records": {
+    "freeze": 49,
+    "test": 27
+   },
+   "download": {
+    "branch": "stage1-step1000000",
+    "commit": "cb286dcdaaf3f92b3c419dd77439078fdebffe53",
+    "bytes": 14605764269,
+    "seconds": 145.7,
+    "MB_per_s": 100.2
+   },
+   "load_s": 1.5,
+   "forward_s": 80.7,
+   "fixed_s": 193.8
+  },
+  "13": {
+   "t": 13,
+   "branch": "stage1-step560000",
+   "windows": 579,
+   "entries": 717,
+   "records": {
+    "freeze": 0,
+    "test": 0
+   },
+   "download": {
+    "branch": "stage1-step560000",
+    "commit": "db8c654b5cbe06311f92e86d68cd4f7d31642a5a",
+    "bytes": 14605764269,
+    "seconds": 201.5,
+    "MB_per_s": 72.5
+   },
+   "load_s": 1.5,
+   "forward_s": 123.6
+  }
+ },
+ "parked": [],
+ "phase": "gate t13_G_EX",
+ "updated_utc": "2026-11-06T03:34:15Z",
+ "elapsed_s": 1337.0,
+ "measured": {
+  "fixed_s": 227.3,
+  "per_window_s": 0.2149,
+  "tokens_per_s": 9555.0
+ },
+ "projection": {
+  "at": 13,
+  "elapsed_s": 957,
+  "remaining_s": 2694,
+  "budget_s": 9000.0
+ }
+}

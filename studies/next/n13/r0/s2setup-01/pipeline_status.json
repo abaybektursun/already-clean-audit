@@ -1,0 +1,15 @@
+{
+  "n_steps": 4,
+  "state": "failed",
+  "completed": 0,
+  "steps": [
+    {
+      "i": 0,
+      "name": "setup",
+      "module": "infra.aws_pg.jobs.n13_setup",
+      "args": "--pair pair1 --models base,rl --olmes",
+      "state": "failed",
+      "returncode": 1
+    }
+  ]
+}

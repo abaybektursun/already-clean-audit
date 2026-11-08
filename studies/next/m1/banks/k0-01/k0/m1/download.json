@@ -1,0 +1,60 @@
+{
+ "branch": "stage1-step1413814",
+ "commit": "373bad25002f1624757a73235c5ca844c6375c25",
+ "allow_patterns": [
+  "config.json",
+  "generation_config.json",
+  "model.safetensors.index.json",
+  "special_tokens_map.json",
+  "tokenizer.json",
+  "tokenizer_config.json",
+  "vocab.json",
+  "merges.txt",
+  "model-00001-of-00003.safetensors",
+  "model-00002-of-00003.safetensors",
+  "model-00003-of-00003.safetensors"
+ ],
+ "bytes": 14605764269,
+ "seconds": 192.2,
+ "MB_per_s": 76.0,
+ "xet_disabled": "1",
+ "sha256_s": 9.2,
+ "G_SHARD": {
+  "pass": true,
+  "files": [
+   "model-00001-of-00003.safetensors",
+   "model-00002-of-00003.safetensors",
+   "model-00003-of-00003.safetensors"
+  ],
+  "index_files": [
+   "model-00001-of-00003.safetensors",
+   "model-00002-of-00003.safetensors",
+   "model-00003-of-00003.safetensors"
+  ],
+  "mismatch": [],
+  "stale_present": [],
+  "failing_input": {
+   "pass": false,
+   "files": [
+    "model-00001-of-00003.safetensors",
+    "model-00002-of-00003.safetensors",
+    "model-00003-of-00003.safetensors"
+   ],
+   "index_files": [
+    "model-00001-of-00003.safetensors",
+    "model-00002-of-00003.safetensors",
+    "model-00003-of-00003.safetensors"
+   ],
+   "mismatch": [
+    "model-00001-of-00003.safetensors",
+    "model-00002-of-00003.safetensors",
+    "model-00003-of-00003.safetensors"
+   ],
+   "stale_present": [
+    "model-00001-of-00003.safetensors",
+    "model-00002-of-00003.safetensors",
+    "model-00003-of-00003.safetensors"
+   ]
+  }
+ }
+}

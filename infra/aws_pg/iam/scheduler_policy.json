@@ -1,0 +1,14 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "TerminatePgInstancesOnly",
+      "Effect": "Allow",
+      "Action": ["ec2:TerminateInstances"],
+      "Resource": "arn:aws:ec2:us-east-1:769063704696:instance/*",
+      "Condition": {
+        "StringEquals": { "aws:ResourceTag/app": "pg-lineage" }
+      }
+    }
+  ]
+}

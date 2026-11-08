@@ -1,0 +1,7 @@
+[
+  {
+    "name": "edit",
+    "module": "infra.aws_pg.jobs.n6_edit",
+    "args": "--stage L2 --half freeze --inputs s3://pg-lineage-769063704696/results/next_n6/inputs_L2 --corpus s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus --budget-min 1672"
+  }
+]

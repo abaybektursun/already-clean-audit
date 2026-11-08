@@ -1,0 +1,5994 @@
+{
+  "arm": "G4",
+  "atlas": {
+    "n_rows": 634,
+    "n_vectors": 378,
+    "path": "/work/out/atlas.parquet"
+  },
+  "base_repo": "google/paligemma-3b-pt-224",
+  "base_sha": "35e4f46485b4d07967e7e9935bc3786aad50687c",
+  "beats_activation_banked": 12,
+  "beats_activation_ours": 12,
+  "k": 32,
+  "n_cells_banked": 126,
+  "n_cells_compared": 72,
+  "n_frozen_windows": 24,
+  "n_layers": 18,
+  "per_cell": {
+    "down_proj/L0": {
+      "activation_magnitude": {
+        "enrichment": 96.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.10344827586206896,
+        "log_p_hypergeom": -24.24559697045083,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 6,
+        "n_total": 16384,
+        "p_hypergeom": 2.953051529478319e-11
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 80.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0847457627118644,
+        "log_p_hypergeom": -19.34346421236431,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 5,
+        "n_total": 16384,
+        "p_hypergeom": 3.9741131829298826e-09
+      },
+      "predictor": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      },
+      "random": {
+        "enrichment": 16.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -2.801810460505339,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 16384,
+        "p_hypergeom": 0.06070006800900678
+      }
+    },
+    "down_proj/L1": {
+      "activation_magnitude": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      },
+      "predictor": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      }
+    },
+    "down_proj/L10": {
+      "activation_magnitude": {
+        "enrichment": 96.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.10344827586206896,
+        "log_p_hypergeom": -24.24559697045083,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 6,
+        "n_total": 16384,
+        "p_hypergeom": 2.953051529478319e-11
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.03225806451612903,
+        "log_p_hypergeom": -6.338351681750387,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 2,
+        "n_total": 16384,
+        "p_hypergeom": 0.0017672127664897347
+      },
+      "predictor": {
+        "enrichment": 48.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.04918032786885246,
+        "log_p_hypergeom": -10.34042581947928,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 3,
+        "n_total": 16384,
+        "p_hypergeom": 3.2300565521631794e-05
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      }
+    },
+    "down_proj/L11": {
+      "activation_magnitude": {
+        "enrichment": 64.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.06666666666666667,
+        "log_p_hypergeom": -14.695810544002388,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 4,
+        "n_total": 16384,
+        "p_hypergeom": 4.1465850126085634e-07
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 80.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0847457627118644,
+        "log_p_hypergeom": -19.34346421236431,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 5,
+        "n_total": 16384,
+        "p_hypergeom": 3.9741131829298826e-09
+      },
+      "predictor": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      }
+    },
+    "down_proj/L12": {
+      "activation_magnitude": {
+        "enrichment": 48.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.04918032786885246,
+        "log_p_hypergeom": -10.34042581947928,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 3,
+        "n_total": 16384,
+        "p_hypergeom": 3.2300565521631794e-05
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.03225806451612903,
+        "log_p_hypergeom": -6.338351681750387,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 2,
+        "n_total": 16384,
+        "p_hypergeom": 0.0017672127664897347
+      },
+      "predictor": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      }
+    },
+    "down_proj/L13": {
+      "activation_magnitude": {
+        "enrichment": 64.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.06666666666666667,
+        "log_p_hypergeom": -14.695810544002388,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 4,
+        "n_total": 16384,
+        "p_hypergeom": 4.1465850126085634e-07
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 48.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.04918032786885246,
+        "log_p_hypergeom": -10.34042581947928,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 3,
+        "n_total": 16384,
+        "p_hypergeom": 3.2300565521631794e-05
+      },
+      "predictor": {
+        "enrichment": 16.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -2.801810460505339,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 16384,
+        "p_hypergeom": 0.06070006800900678
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      }
+    },
+    "down_proj/L14": {
+      "activation_magnitude": {
+        "enrichment": 80.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0847457627118644,
+        "log_p_hypergeom": -19.34346421236431,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 5,
+        "n_total": 16384,
+        "p_hypergeom": 3.9741131829298826e-09
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 64.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.06666666666666667,
+        "log_p_hypergeom": -14.695810544002388,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 4,
+        "n_total": 16384,
+        "p_hypergeom": 4.1465850126085634e-07
+      },
+      "predictor": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      }
+    },
+    "down_proj/L15": {
+      "activation_magnitude": {
+        "enrichment": 144.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.16363636363636364,
+        "log_p_hypergeom": -40.26271369219938,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 9,
+        "n_total": 16384,
+        "p_hypergeom": 3.266823093716295e-18
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 64.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.06666666666666667,
+        "log_p_hypergeom": -14.695810544002388,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 4,
+        "n_total": 16384,
+        "p_hypergeom": 4.1465850126085634e-07
+      },
+      "predictor": {
+        "enrichment": 48.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.04918032786885246,
+        "log_p_hypergeom": -10.34042581947928,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 3,
+        "n_total": 16384,
+        "p_hypergeom": 3.2300565521631794e-05
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      }
+    },
+    "down_proj/L16": {
+      "activation_magnitude": {
+        "enrichment": 192.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.23076923076923078,
+        "log_p_hypergeom": -58.009801604534765,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 12,
+        "n_total": 16384,
+        "p_hypergeom": 6.407126031116774e-26
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 128.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.14285714285714285,
+        "log_p_hypergeom": -34.720217321229875,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 8,
+        "n_total": 16384,
+        "p_hypergeom": 8.340675152863582e-16
+      },
+      "predictor": {
+        "enrichment": 48.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.04918032786885246,
+        "log_p_hypergeom": -10.34042581947928,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 3,
+        "n_total": 16384,
+        "p_hypergeom": 3.2300565521631794e-05
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      }
+    },
+    "down_proj/L17": {
+      "activation_magnitude": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.03225806451612903,
+        "log_p_hypergeom": -6.338351681750387,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 2,
+        "n_total": 16384,
+        "p_hypergeom": 0.0017672127664897347
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.03225806451612903,
+        "log_p_hypergeom": -6.338351681750387,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 2,
+        "n_total": 16384,
+        "p_hypergeom": 0.0017672127664897347
+      },
+      "predictor": {
+        "enrichment": 16.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -2.801810460505339,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 16384,
+        "p_hypergeom": 0.06070006800900678
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      }
+    },
+    "down_proj/L2": {
+      "activation_magnitude": {
+        "enrichment": 16.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -2.801810460505339,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 16384,
+        "p_hypergeom": 0.06070006800900678
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 16.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -2.801810460505339,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 16384,
+        "p_hypergeom": 0.06070006800900678
+      },
+      "predictor": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      }
+    },
+    "down_proj/L3": {
+      "activation_magnitude": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      },
+      "predictor": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      }
+    },
+    "down_proj/L4": {
+      "activation_magnitude": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      },
+      "predictor": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      }
+    },
+    "down_proj/L5": {
+      "activation_magnitude": {
+        "enrichment": 16.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -2.801810460505339,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 16384,
+        "p_hypergeom": 0.06070006800900678
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.03225806451612903,
+        "log_p_hypergeom": -6.338351681750387,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 2,
+        "n_total": 16384,
+        "p_hypergeom": 0.0017672127664897347
+      },
+      "predictor": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      }
+    },
+    "down_proj/L6": {
+      "activation_magnitude": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      },
+      "predictor": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      }
+    },
+    "down_proj/L7": {
+      "activation_magnitude": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.03225806451612903,
+        "log_p_hypergeom": -6.338351681750387,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 2,
+        "n_total": 16384,
+        "p_hypergeom": 0.0017672127664897347
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.03225806451612903,
+        "log_p_hypergeom": -6.338351681750387,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 2,
+        "n_total": 16384,
+        "p_hypergeom": 0.0017672127664897347
+      },
+      "predictor": {
+        "enrichment": 16.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -2.801810460505339,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 16384,
+        "p_hypergeom": 0.06070006800900678
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      }
+    },
+    "down_proj/L8": {
+      "activation_magnitude": {
+        "enrichment": 48.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.04918032786885246,
+        "log_p_hypergeom": -10.34042581947928,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 3,
+        "n_total": 16384,
+        "p_hypergeom": 3.2300565521631794e-05
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.03225806451612903,
+        "log_p_hypergeom": -6.338351681750387,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 2,
+        "n_total": 16384,
+        "p_hypergeom": 0.0017672127664897347
+      },
+      "predictor": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      }
+    },
+    "down_proj/L9": {
+      "activation_magnitude": {
+        "enrichment": 48.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.04918032786885246,
+        "log_p_hypergeom": -10.34042581947928,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 3,
+        "n_total": 16384,
+        "p_hypergeom": 3.2300565521631794e-05
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.03225806451612903,
+        "log_p_hypergeom": -6.338351681750387,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 2,
+        "n_total": 16384,
+        "p_hypergeom": 0.0017672127664897347
+      },
+      "predictor": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.0625,
+        "jaccard": 0.0,
+        "log_p_hypergeom": 5.4115545378152774e-11,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 16384,
+        "p_hypergeom": 1.0000000000541156
+      }
+    },
+    "gate_proj/L0": {
+      "activation_magnitude": {
+        "enrichment": 28.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.28,
+        "log_p_hypergeom": -41.71615879948414,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 14,
+        "n_total": 2048,
+        "p_hypergeom": 7.636641920893578e-19
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 24.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.23076923076923078,
+        "log_p_hypergeom": -33.18854785606142,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 12,
+        "n_total": 2048,
+        "p_hypergeom": 3.8583072030332434e-15
+      },
+      "predictor": {
+        "enrichment": 28.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.28,
+        "log_p_hypergeom": -41.71615879948414,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 14,
+        "n_total": 2048,
+        "p_hypergeom": 7.636641920893578e-19
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "gate_proj/L1": {
+      "activation_magnitude": {
+        "enrichment": 30.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.30612244897959184,
+        "log_p_hypergeom": -46.2456540399867,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 15,
+        "n_total": 2048,
+        "p_hypergeom": 8.236972924441917e-21
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 22.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.20754716981132076,
+        "log_p_hypergeom": -29.19074727677466,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 11,
+        "n_total": 2048,
+        "p_hypergeom": 2.101936225642528e-13
+      },
+      "predictor": {
+        "enrichment": 20.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.18518518518518517,
+        "log_p_hypergeom": -25.372845235646245,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 10,
+        "n_total": 2048,
+        "p_hypergeom": 9.565624398615511e-12
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "gate_proj/L10": {
+      "activation_magnitude": {
+        "enrichment": 46.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5609756097560976,
+        "log_p_hypergeom": -89.37514547688224,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 23,
+        "n_total": 2048,
+        "p_hypergeom": 1.5306204099093178e-39
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 26.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.2549019607843137,
+        "log_p_hypergeom": -37.36396006846065,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 13,
+        "n_total": 2048,
+        "p_hypergeom": 5.929776439825166e-17
+      },
+      "predictor": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3333333333333333,
+        "log_p_hypergeom": -50.95423267397222,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 16,
+        "n_total": 2048,
+        "p_hypergeom": 7.427760981207614e-23
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "gate_proj/L11": {
+      "activation_magnitude": {
+        "enrichment": 48.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6,
+        "log_p_hypergeom": -95.76405149084096,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 24,
+        "n_total": 2048,
+        "p_hypergeom": 2.571584934643298e-42
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 26.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.2549019607843137,
+        "log_p_hypergeom": -37.36396006846065,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 13,
+        "n_total": 2048,
+        "p_hypergeom": 5.929776439825166e-17
+      },
+      "predictor": {
+        "enrichment": 38.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4222222222222222,
+        "log_p_hypergeom": -66.1918921276599,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 19,
+        "n_total": 2048,
+        "p_hypergeom": 1.7915399713271677e-29
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "gate_proj/L12": {
+      "activation_magnitude": {
+        "enrichment": 46.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5609756097560976,
+        "log_p_hypergeom": -89.37514547688224,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 23,
+        "n_total": 2048,
+        "p_hypergeom": 1.5306204099093178e-39
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 24.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.23076923076923078,
+        "log_p_hypergeom": -33.18854785606142,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 12,
+        "n_total": 2048,
+        "p_hypergeom": 3.8583072030332434e-15
+      },
+      "predictor": {
+        "enrichment": 26.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.2549019607843137,
+        "log_p_hypergeom": -37.36396006846065,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 13,
+        "n_total": 2048,
+        "p_hypergeom": 5.929776439825166e-17
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "gate_proj/L13": {
+      "activation_magnitude": {
+        "enrichment": 40.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.45454545454545453,
+        "log_p_hypergeom": -71.66142469850199,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 20,
+        "n_total": 2048,
+        "p_hypergeom": 7.548118125623544e-32
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 24.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.23076923076923078,
+        "log_p_hypergeom": -33.18854785606142,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 12,
+        "n_total": 2048,
+        "p_hypergeom": 3.8583072030332434e-15
+      },
+      "predictor": {
+        "enrichment": 22.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.20754716981132076,
+        "log_p_hypergeom": -29.19074727677466,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 11,
+        "n_total": 2048,
+        "p_hypergeom": 2.101936225642528e-13
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "gate_proj/L14": {
+      "activation_magnitude": {
+        "enrichment": 38.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4222222222222222,
+        "log_p_hypergeom": -66.1918921276599,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 19,
+        "n_total": 2048,
+        "p_hypergeom": 1.7915399713271677e-29
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 28.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.28,
+        "log_p_hypergeom": -41.71615879948414,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 14,
+        "n_total": 2048,
+        "p_hypergeom": 7.636641920893578e-19
+      },
+      "predictor": {
+        "enrichment": 28.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.28,
+        "log_p_hypergeom": -41.71615879948414,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 14,
+        "n_total": 2048,
+        "p_hypergeom": 7.636641920893578e-19
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "gate_proj/L15": {
+      "activation_magnitude": {
+        "enrichment": 34.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3617021276595745,
+        "log_p_hypergeom": -55.84495882178034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 17,
+        "n_total": 2048,
+        "p_hypergeom": 5.58267751704775e-25
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 26.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.2549019607843137,
+        "log_p_hypergeom": -37.36396006846065,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 13,
+        "n_total": 2048,
+        "p_hypergeom": 5.929776439825166e-17
+      },
+      "predictor": {
+        "enrichment": 22.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.20754716981132076,
+        "log_p_hypergeom": -29.19074727677466,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 11,
+        "n_total": 2048,
+        "p_hypergeom": 2.101936225642528e-13
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "gate_proj/L16": {
+      "activation_magnitude": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 20.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.18518518518518517,
+        "log_p_hypergeom": -25.372845235646245,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 10,
+        "n_total": 2048,
+        "p_hypergeom": 9.565624398615511e-12
+      },
+      "predictor": {
+        "enrichment": 20.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.18518518518518517,
+        "log_p_hypergeom": -25.372845235646245,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 10,
+        "n_total": 2048,
+        "p_hypergeom": 9.565624398615511e-12
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "gate_proj/L17": {
+      "activation_magnitude": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 30.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.30612244897959184,
+        "log_p_hypergeom": -46.2456540399867,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 15,
+        "n_total": 2048,
+        "p_hypergeom": 8.236972924441917e-21
+      },
+      "predictor": {
+        "enrichment": 30.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.30612244897959184,
+        "log_p_hypergeom": -46.2456540399867,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 15,
+        "n_total": 2048,
+        "p_hypergeom": 8.236972924441917e-21
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "gate_proj/L2": {
+      "activation_magnitude": {
+        "enrichment": 42.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4883720930232558,
+        "log_p_hypergeom": -77.34021277182562,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 21,
+        "n_total": 2048,
+        "p_hypergeom": 2.579718772207545e-34
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3333333333333333,
+        "log_p_hypergeom": -50.95423267397222,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 16,
+        "n_total": 2048,
+        "p_hypergeom": 7.427760981207614e-23
+      },
+      "predictor": {
+        "enrichment": 26.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.2549019607843137,
+        "log_p_hypergeom": -37.36396006846065,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 13,
+        "n_total": 2048,
+        "p_hypergeom": 5.929776439825166e-17
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "gate_proj/L3": {
+      "activation_magnitude": {
+        "enrichment": 48.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6,
+        "log_p_hypergeom": -95.76405149084096,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 24,
+        "n_total": 2048,
+        "p_hypergeom": 2.571584934643298e-42
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 34.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3617021276595745,
+        "log_p_hypergeom": -55.84495882178034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 17,
+        "n_total": 2048,
+        "p_hypergeom": 5.58267751704775e-25
+      },
+      "predictor": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3333333333333333,
+        "log_p_hypergeom": -50.95423267397222,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 16,
+        "n_total": 2048,
+        "p_hypergeom": 7.427760981207614e-23
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "gate_proj/L4": {
+      "activation_magnitude": {
+        "enrichment": 52.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6842105263157895,
+        "log_p_hypergeom": -109.4022143923237,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 26,
+        "n_total": 2048,
+        "p_hypergeom": 3.0705910619503405e-48
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3333333333333333,
+        "log_p_hypergeom": -50.95423267397222,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 16,
+        "n_total": 2048,
+        "p_hypergeom": 7.427760981207614e-23
+      },
+      "predictor": {
+        "enrichment": 28.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.28,
+        "log_p_hypergeom": -41.71615879948414,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 14,
+        "n_total": 2048,
+        "p_hypergeom": 7.636641920893578e-19
+      },
+      "random": {
+        "enrichment": 4.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.03225806451612903,
+        "log_p_hypergeom": -2.4332449027678034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 2,
+        "n_total": 2048,
+        "p_hypergeom": 0.0877516246069873
+      }
+    },
+    "gate_proj/L5": {
+      "activation_magnitude": {
+        "enrichment": 46.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5609756097560976,
+        "log_p_hypergeom": -89.37514547688224,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 23,
+        "n_total": 2048,
+        "p_hypergeom": 1.5306204099093178e-39
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 30.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.30612244897959184,
+        "log_p_hypergeom": -46.2456540399867,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 15,
+        "n_total": 2048,
+        "p_hypergeom": 8.236972924441917e-21
+      },
+      "predictor": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "gate_proj/L6": {
+      "activation_magnitude": {
+        "enrichment": 54.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.7297297297297297,
+        "log_p_hypergeom": -116.72113901497944,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 27,
+        "n_total": 2048,
+        "p_hypergeom": 2.0354170321787666e-51
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 30.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.30612244897959184,
+        "log_p_hypergeom": -46.2456540399867,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 15,
+        "n_total": 2048,
+        "p_hypergeom": 8.236972924441917e-21
+      },
+      "predictor": {
+        "enrichment": 46.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5609756097560976,
+        "log_p_hypergeom": -89.37514547688224,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 23,
+        "n_total": 2048,
+        "p_hypergeom": 1.5306204099093178e-39
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "gate_proj/L7": {
+      "activation_magnitude": {
+        "enrichment": 50.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6410256410256411,
+        "log_p_hypergeom": -102.42977344416883,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 25,
+        "n_total": 2048,
+        "p_hypergeom": 3.275779121745679e-45
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 24.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.23076923076923078,
+        "log_p_hypergeom": -33.18854785606142,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 12,
+        "n_total": 2048,
+        "p_hypergeom": 3.8583072030332434e-15
+      },
+      "predictor": {
+        "enrichment": 40.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.45454545454545453,
+        "log_p_hypergeom": -71.66142469850199,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 20,
+        "n_total": 2048,
+        "p_hypergeom": 7.548118125623544e-32
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "gate_proj/L8": {
+      "activation_magnitude": {
+        "enrichment": 46.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5609756097560976,
+        "log_p_hypergeom": -89.37514547688224,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 23,
+        "n_total": 2048,
+        "p_hypergeom": 1.5306204099093178e-39
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 24.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.23076923076923078,
+        "log_p_hypergeom": -33.18854785606142,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 12,
+        "n_total": 2048,
+        "p_hypergeom": 3.8583072030332434e-15
+      },
+      "predictor": {
+        "enrichment": 34.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3617021276595745,
+        "log_p_hypergeom": -55.84495882178034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 17,
+        "n_total": 2048,
+        "p_hypergeom": 5.58267751704775e-25
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "gate_proj/L9": {
+      "activation_magnitude": {
+        "enrichment": 48.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6,
+        "log_p_hypergeom": -95.76405149084096,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 24,
+        "n_total": 2048,
+        "p_hypergeom": 2.571584934643298e-42
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 24.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.23076923076923078,
+        "log_p_hypergeom": -33.18854785606142,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 12,
+        "n_total": 2048,
+        "p_hypergeom": 3.8583072030332434e-15
+      },
+      "predictor": {
+        "enrichment": 38.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4222222222222222,
+        "log_p_hypergeom": -66.1918921276599,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 19,
+        "n_total": 2048,
+        "p_hypergeom": 1.7915399713271677e-29
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "k_proj/L0": {
+      "activation_magnitude": {
+        "enrichment": 4.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.03225806451612903,
+        "log_p_hypergeom": -2.4332449027678034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 2,
+        "n_total": 2048,
+        "p_hypergeom": 0.0877516246069873
+      },
+      "beats_activation_baseline": true,
+      "gradient_magnitude": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      },
+      "predictor": {
+        "enrichment": 10.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0847457627118644,
+        "log_p_hypergeom": -9.20422306094481,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 5,
+        "n_total": 2048,
+        "p_hypergeom": 0.00010061360599900726
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "k_proj/L1": {
+      "activation_magnitude": {
+        "enrichment": 34.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3617021276595745,
+        "log_p_hypergeom": -55.84495882178034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 17,
+        "n_total": 2048,
+        "p_hypergeom": 5.58267751704775e-25
+      },
+      "beats_activation_baseline": true,
+      "gradient_magnitude": {
+        "enrichment": 8.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.06666666666666667,
+        "log_p_hypergeom": -6.645414574807403,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 4,
+        "n_total": 2048,
+        "p_hypergeom": 0.0012999693719802196
+      },
+      "predictor": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "k_proj/L10": {
+      "activation_magnitude": {
+        "enrichment": 48.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6,
+        "log_p_hypergeom": -95.76405149084096,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 24,
+        "n_total": 2048,
+        "p_hypergeom": 2.571584934643298e-42
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 24.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.23076923076923078,
+        "log_p_hypergeom": -33.18854785606142,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 12,
+        "n_total": 2048,
+        "p_hypergeom": 3.8583072030332434e-15
+      },
+      "predictor": {
+        "enrichment": 46.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5609756097560976,
+        "log_p_hypergeom": -89.37514547688224,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 23,
+        "n_total": 2048,
+        "p_hypergeom": 1.5306204099093178e-39
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "k_proj/L11": {
+      "activation_magnitude": {
+        "enrichment": 42.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4883720930232558,
+        "log_p_hypergeom": -77.34021277182562,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 21,
+        "n_total": 2048,
+        "p_hypergeom": 2.579718772207545e-34
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 22.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.20754716981132076,
+        "log_p_hypergeom": -29.19074727677466,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 11,
+        "n_total": 2048,
+        "p_hypergeom": 2.101936225642528e-13
+      },
+      "predictor": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "k_proj/L12": {
+      "activation_magnitude": {
+        "enrichment": 50.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6410256410256411,
+        "log_p_hypergeom": -102.42977344416883,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 25,
+        "n_total": 2048,
+        "p_hypergeom": 3.275779121745679e-45
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 24.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.23076923076923078,
+        "log_p_hypergeom": -33.18854785606142,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 12,
+        "n_total": 2048,
+        "p_hypergeom": 3.8583072030332434e-15
+      },
+      "predictor": {
+        "enrichment": 44.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5238095238095238,
+        "log_p_hypergeom": -83.23993897862805,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 22,
+        "n_total": 2048,
+        "p_hypergeom": 7.068932385075592e-37
+      },
+      "random": {
+        "enrichment": 4.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.03225806451612903,
+        "log_p_hypergeom": -2.4332449027678034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 2,
+        "n_total": 2048,
+        "p_hypergeom": 0.0877516246069873
+      }
+    },
+    "k_proj/L13": {
+      "activation_magnitude": {
+        "enrichment": 44.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5238095238095238,
+        "log_p_hypergeom": -83.23993897862805,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 22,
+        "n_total": 2048,
+        "p_hypergeom": 7.068932385075592e-37
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "predictor": {
+        "enrichment": 44.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5238095238095238,
+        "log_p_hypergeom": -83.23993897862805,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 22,
+        "n_total": 2048,
+        "p_hypergeom": 7.068932385075592e-37
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "k_proj/L14": {
+      "activation_magnitude": {
+        "enrichment": 38.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4222222222222222,
+        "log_p_hypergeom": -66.1918921276599,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 19,
+        "n_total": 2048,
+        "p_hypergeom": 1.7915399713271677e-29
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 18.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.16363636363636364,
+        "log_p_hypergeom": -21.73880523398609,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 9,
+        "n_total": 2048,
+        "p_hypergeom": 3.6220700374553147e-10
+      },
+      "predictor": {
+        "enrichment": 16.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.14285714285714285,
+        "log_p_hypergeom": -18.294605080050964,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 8,
+        "n_total": 2048,
+        "p_hypergeom": 1.134367995744147e-08
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "k_proj/L15": {
+      "activation_magnitude": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 18.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.16363636363636364,
+        "log_p_hypergeom": -21.73880523398609,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 9,
+        "n_total": 2048,
+        "p_hypergeom": 3.6220700374553147e-10
+      },
+      "predictor": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3333333333333333,
+        "log_p_hypergeom": -50.95423267397222,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 16,
+        "n_total": 2048,
+        "p_hypergeom": 7.427760981207614e-23
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "k_proj/L16": {
+      "activation_magnitude": {
+        "enrichment": 38.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4222222222222222,
+        "log_p_hypergeom": -66.1918921276599,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 19,
+        "n_total": 2048,
+        "p_hypergeom": 1.7915399713271677e-29
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 22.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.20754716981132076,
+        "log_p_hypergeom": -29.19074727677466,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 11,
+        "n_total": 2048,
+        "p_hypergeom": 2.101936225642528e-13
+      },
+      "predictor": {
+        "enrichment": 34.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3617021276595745,
+        "log_p_hypergeom": -55.84495882178034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 17,
+        "n_total": 2048,
+        "p_hypergeom": 5.58267751704775e-25
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "k_proj/L17": {
+      "activation_magnitude": {
+        "enrichment": 34.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3617021276595745,
+        "log_p_hypergeom": -55.84495882178034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 17,
+        "n_total": 2048,
+        "p_hypergeom": 5.58267751704775e-25
+      },
+      "beats_activation_baseline": true,
+      "gradient_magnitude": {
+        "enrichment": 34.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3617021276595745,
+        "log_p_hypergeom": -55.84495882178034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 17,
+        "n_total": 2048,
+        "p_hypergeom": 5.58267751704775e-25
+      },
+      "predictor": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "k_proj/L2": {
+      "activation_magnitude": {
+        "enrichment": 48.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6,
+        "log_p_hypergeom": -95.76405149084096,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 24,
+        "n_total": 2048,
+        "p_hypergeom": 2.571584934643298e-42
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "predictor": {
+        "enrichment": 34.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3617021276595745,
+        "log_p_hypergeom": -55.84495882178034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 17,
+        "n_total": 2048,
+        "p_hypergeom": 5.58267751704775e-25
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "k_proj/L3": {
+      "activation_magnitude": {
+        "enrichment": 48.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6,
+        "log_p_hypergeom": -95.76405149084096,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 24,
+        "n_total": 2048,
+        "p_hypergeom": 2.571584934643298e-42
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "predictor": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3333333333333333,
+        "log_p_hypergeom": -50.95423267397222,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 16,
+        "n_total": 2048,
+        "p_hypergeom": 7.427760981207614e-23
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "k_proj/L4": {
+      "activation_magnitude": {
+        "enrichment": 52.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6842105263157895,
+        "log_p_hypergeom": -109.4022143923237,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 26,
+        "n_total": 2048,
+        "p_hypergeom": 3.0705910619503405e-48
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 46.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5609756097560976,
+        "log_p_hypergeom": -89.37514547688224,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 23,
+        "n_total": 2048,
+        "p_hypergeom": 1.5306204099093178e-39
+      },
+      "predictor": {
+        "enrichment": 38.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4222222222222222,
+        "log_p_hypergeom": -66.1918921276599,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 19,
+        "n_total": 2048,
+        "p_hypergeom": 1.7915399713271677e-29
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "k_proj/L5": {
+      "activation_magnitude": {
+        "enrichment": 42.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4883720930232558,
+        "log_p_hypergeom": -77.34021277182562,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 21,
+        "n_total": 2048,
+        "p_hypergeom": 2.579718772207545e-34
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 34.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3617021276595745,
+        "log_p_hypergeom": -55.84495882178034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 17,
+        "n_total": 2048,
+        "p_hypergeom": 5.58267751704775e-25
+      },
+      "predictor": {
+        "enrichment": 28.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.28,
+        "log_p_hypergeom": -41.71615879948414,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 14,
+        "n_total": 2048,
+        "p_hypergeom": 7.636641920893578e-19
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "k_proj/L6": {
+      "activation_magnitude": {
+        "enrichment": 42.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4883720930232558,
+        "log_p_hypergeom": -77.34021277182562,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 21,
+        "n_total": 2048,
+        "p_hypergeom": 2.579718772207545e-34
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 24.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.23076923076923078,
+        "log_p_hypergeom": -33.18854785606142,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 12,
+        "n_total": 2048,
+        "p_hypergeom": 3.8583072030332434e-15
+      },
+      "predictor": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "k_proj/L7": {
+      "activation_magnitude": {
+        "enrichment": 42.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4883720930232558,
+        "log_p_hypergeom": -77.34021277182562,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 21,
+        "n_total": 2048,
+        "p_hypergeom": 2.579718772207545e-34
+      },
+      "beats_activation_baseline": true,
+      "gradient_magnitude": {
+        "enrichment": 8.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.06666666666666667,
+        "log_p_hypergeom": -6.645414574807403,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 4,
+        "n_total": 2048,
+        "p_hypergeom": 0.0012999693719802196
+      },
+      "predictor": {
+        "enrichment": 44.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5238095238095238,
+        "log_p_hypergeom": -83.23993897862805,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 22,
+        "n_total": 2048,
+        "p_hypergeom": 7.068932385075592e-37
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "k_proj/L8": {
+      "activation_magnitude": {
+        "enrichment": 46.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5609756097560976,
+        "log_p_hypergeom": -89.37514547688224,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 23,
+        "n_total": 2048,
+        "p_hypergeom": 1.5306204099093178e-39
+      },
+      "beats_activation_baseline": true,
+      "gradient_magnitude": {
+        "enrichment": 14.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.12280701754385964,
+        "log_p_hypergeom": -15.048758100603203,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 7,
+        "n_total": 2048,
+        "p_hypergeom": 2.9134488474131926e-07
+      },
+      "predictor": {
+        "enrichment": 48.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6,
+        "log_p_hypergeom": -95.76405149084096,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 24,
+        "n_total": 2048,
+        "p_hypergeom": 2.571584934643298e-42
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "k_proj/L9": {
+      "activation_magnitude": {
+        "enrichment": 48.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6,
+        "log_p_hypergeom": -95.76405149084096,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 24,
+        "n_total": 2048,
+        "p_hypergeom": 2.571584934643298e-42
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 22.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.20754716981132076,
+        "log_p_hypergeom": -29.19074727677466,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 11,
+        "n_total": 2048,
+        "p_hypergeom": 2.101936225642528e-13
+      },
+      "predictor": {
+        "enrichment": 46.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5609756097560976,
+        "log_p_hypergeom": -89.37514547688224,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 23,
+        "n_total": 2048,
+        "p_hypergeom": 1.5306204099093178e-39
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "o_proj/L0": {
+      "activation_magnitude": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      },
+      "predictor": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "o_proj/L1": {
+      "activation_magnitude": {
+        "enrichment": 24.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.23076923076923078,
+        "log_p_hypergeom": -33.18854785606142,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 12,
+        "n_total": 2048,
+        "p_hypergeom": 3.8583072030332434e-15
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 28.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.28,
+        "log_p_hypergeom": -41.71615879948414,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 14,
+        "n_total": 2048,
+        "p_hypergeom": 7.636641920893578e-19
+      },
+      "predictor": {
+        "enrichment": 4.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.03225806451612903,
+        "log_p_hypergeom": -2.4332449027678034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 2,
+        "n_total": 2048,
+        "p_hypergeom": 0.0877516246069873
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "o_proj/L10": {
+      "activation_magnitude": {
+        "enrichment": 20.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.18518518518518517,
+        "log_p_hypergeom": -25.372845235646245,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 10,
+        "n_total": 2048,
+        "p_hypergeom": 9.565624398615511e-12
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 14.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.12280701754385964,
+        "log_p_hypergeom": -15.048758100603203,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 7,
+        "n_total": 2048,
+        "p_hypergeom": 2.9134488474131926e-07
+      },
+      "predictor": {
+        "enrichment": 14.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.12280701754385964,
+        "log_p_hypergeom": -15.048758100603203,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 7,
+        "n_total": 2048,
+        "p_hypergeom": 2.9134488474131926e-07
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "o_proj/L11": {
+      "activation_magnitude": {
+        "enrichment": 16.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.14285714285714285,
+        "log_p_hypergeom": -18.294605080050964,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 8,
+        "n_total": 2048,
+        "p_hypergeom": 1.134367995744147e-08
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 24.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.23076923076923078,
+        "log_p_hypergeom": -33.18854785606142,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 12,
+        "n_total": 2048,
+        "p_hypergeom": 3.8583072030332434e-15
+      },
+      "predictor": {
+        "enrichment": 8.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.06666666666666667,
+        "log_p_hypergeom": -6.645414574807403,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 4,
+        "n_total": 2048,
+        "p_hypergeom": 0.0012999693719802196
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "o_proj/L12": {
+      "activation_magnitude": {
+        "enrichment": 24.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.23076923076923078,
+        "log_p_hypergeom": -33.18854785606142,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 12,
+        "n_total": 2048,
+        "p_hypergeom": 3.8583072030332434e-15
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 20.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.18518518518518517,
+        "log_p_hypergeom": -25.372845235646245,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 10,
+        "n_total": 2048,
+        "p_hypergeom": 9.565624398615511e-12
+      },
+      "predictor": {
+        "enrichment": 8.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.06666666666666667,
+        "log_p_hypergeom": -6.645414574807403,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 4,
+        "n_total": 2048,
+        "p_hypergeom": 0.0012999693719802196
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "o_proj/L13": {
+      "activation_magnitude": {
+        "enrichment": 28.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.28,
+        "log_p_hypergeom": -41.71615879948414,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 14,
+        "n_total": 2048,
+        "p_hypergeom": 7.636641920893578e-19
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 12.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.10344827586206896,
+        "log_p_hypergeom": -12.01312580137735,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 6,
+        "n_total": 2048,
+        "p_hypergeom": 6.064091617101001e-06
+      },
+      "predictor": {
+        "enrichment": 4.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.03225806451612903,
+        "log_p_hypergeom": -2.4332449027678034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 2,
+        "n_total": 2048,
+        "p_hypergeom": 0.0877516246069873
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "o_proj/L14": {
+      "activation_magnitude": {
+        "enrichment": 22.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.20754716981132076,
+        "log_p_hypergeom": -29.19074727677466,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 11,
+        "n_total": 2048,
+        "p_hypergeom": 2.101936225642528e-13
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 16.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.14285714285714285,
+        "log_p_hypergeom": -18.294605080050964,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 8,
+        "n_total": 2048,
+        "p_hypergeom": 1.134367995744147e-08
+      },
+      "predictor": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "o_proj/L15": {
+      "activation_magnitude": {
+        "enrichment": 24.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.23076923076923078,
+        "log_p_hypergeom": -33.18854785606142,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 12,
+        "n_total": 2048,
+        "p_hypergeom": 3.8583072030332434e-15
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 24.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.23076923076923078,
+        "log_p_hypergeom": -33.18854785606142,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 12,
+        "n_total": 2048,
+        "p_hypergeom": 3.8583072030332434e-15
+      },
+      "predictor": {
+        "enrichment": 14.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.12280701754385964,
+        "log_p_hypergeom": -15.048758100603203,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 7,
+        "n_total": 2048,
+        "p_hypergeom": 2.9134488474131926e-07
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "o_proj/L16": {
+      "activation_magnitude": {
+        "enrichment": 12.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.10344827586206896,
+        "log_p_hypergeom": -12.01312580137735,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 6,
+        "n_total": 2048,
+        "p_hypergeom": 6.064091617101001e-06
+      },
+      "beats_activation_baseline": true,
+      "gradient_magnitude": {
+        "enrichment": 4.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.03225806451612903,
+        "log_p_hypergeom": -2.4332449027678034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 2,
+        "n_total": 2048,
+        "p_hypergeom": 0.0877516246069873
+      },
+      "predictor": {
+        "enrichment": 14.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.12280701754385964,
+        "log_p_hypergeom": -15.048758100603203,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 7,
+        "n_total": 2048,
+        "p_hypergeom": 2.9134488474131926e-07
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "o_proj/L17": {
+      "activation_magnitude": {
+        "enrichment": 20.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.18518518518518517,
+        "log_p_hypergeom": -25.372845235646245,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 10,
+        "n_total": 2048,
+        "p_hypergeom": 9.565624398615511e-12
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      },
+      "predictor": {
+        "enrichment": 8.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.06666666666666667,
+        "log_p_hypergeom": -6.645414574807403,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 4,
+        "n_total": 2048,
+        "p_hypergeom": 0.0012999693719802196
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "o_proj/L2": {
+      "activation_magnitude": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 26.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.2549019607843137,
+        "log_p_hypergeom": -37.36396006846065,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 13,
+        "n_total": 2048,
+        "p_hypergeom": 5.929776439825166e-17
+      },
+      "predictor": {
+        "enrichment": 14.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.12280701754385964,
+        "log_p_hypergeom": -15.048758100603203,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 7,
+        "n_total": 2048,
+        "p_hypergeom": 2.9134488474131926e-07
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "o_proj/L3": {
+      "activation_magnitude": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3333333333333333,
+        "log_p_hypergeom": -50.95423267397222,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 16,
+        "n_total": 2048,
+        "p_hypergeom": 7.427760981207614e-23
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 26.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.2549019607843137,
+        "log_p_hypergeom": -37.36396006846065,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 13,
+        "n_total": 2048,
+        "p_hypergeom": 5.929776439825166e-17
+      },
+      "predictor": {
+        "enrichment": 28.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.28,
+        "log_p_hypergeom": -41.71615879948414,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 14,
+        "n_total": 2048,
+        "p_hypergeom": 7.636641920893578e-19
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "o_proj/L4": {
+      "activation_magnitude": {
+        "enrichment": 20.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.18518518518518517,
+        "log_p_hypergeom": -25.372845235646245,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 10,
+        "n_total": 2048,
+        "p_hypergeom": 9.565624398615511e-12
+      },
+      "beats_activation_baseline": true,
+      "gradient_magnitude": {
+        "enrichment": 22.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.20754716981132076,
+        "log_p_hypergeom": -29.19074727677466,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 11,
+        "n_total": 2048,
+        "p_hypergeom": 2.101936225642528e-13
+      },
+      "predictor": {
+        "enrichment": 22.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.20754716981132076,
+        "log_p_hypergeom": -29.19074727677466,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 11,
+        "n_total": 2048,
+        "p_hypergeom": 2.101936225642528e-13
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "o_proj/L5": {
+      "activation_magnitude": {
+        "enrichment": 34.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3617021276595745,
+        "log_p_hypergeom": -55.84495882178034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 17,
+        "n_total": 2048,
+        "p_hypergeom": 5.58267751704775e-25
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 12.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.10344827586206896,
+        "log_p_hypergeom": -12.01312580137735,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 6,
+        "n_total": 2048,
+        "p_hypergeom": 6.064091617101001e-06
+      },
+      "predictor": {
+        "enrichment": 30.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.30612244897959184,
+        "log_p_hypergeom": -46.2456540399867,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 15,
+        "n_total": 2048,
+        "p_hypergeom": 8.236972924441917e-21
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "o_proj/L6": {
+      "activation_magnitude": {
+        "enrichment": 24.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.23076923076923078,
+        "log_p_hypergeom": -33.18854785606142,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 12,
+        "n_total": 2048,
+        "p_hypergeom": 3.8583072030332434e-15
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      },
+      "predictor": {
+        "enrichment": 24.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.23076923076923078,
+        "log_p_hypergeom": -33.18854785606142,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 12,
+        "n_total": 2048,
+        "p_hypergeom": 3.8583072030332434e-15
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "o_proj/L7": {
+      "activation_magnitude": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 12.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.10344827586206896,
+        "log_p_hypergeom": -12.01312580137735,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 6,
+        "n_total": 2048,
+        "p_hypergeom": 6.064091617101001e-06
+      },
+      "predictor": {
+        "enrichment": 30.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.30612244897959184,
+        "log_p_hypergeom": -46.2456540399867,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 15,
+        "n_total": 2048,
+        "p_hypergeom": 8.236972924441917e-21
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "o_proj/L8": {
+      "activation_magnitude": {
+        "enrichment": 24.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.23076923076923078,
+        "log_p_hypergeom": -33.18854785606142,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 12,
+        "n_total": 2048,
+        "p_hypergeom": 3.8583072030332434e-15
+      },
+      "beats_activation_baseline": true,
+      "gradient_magnitude": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      },
+      "predictor": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3333333333333333,
+        "log_p_hypergeom": -50.95423267397222,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 16,
+        "n_total": 2048,
+        "p_hypergeom": 7.427760981207614e-23
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "o_proj/L9": {
+      "activation_magnitude": {
+        "enrichment": 30.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.30612244897959184,
+        "log_p_hypergeom": -46.2456540399867,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 15,
+        "n_total": 2048,
+        "p_hypergeom": 8.236972924441917e-21
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 26.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.2549019607843137,
+        "log_p_hypergeom": -37.36396006846065,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 13,
+        "n_total": 2048,
+        "p_hypergeom": 5.929776439825166e-17
+      },
+      "predictor": {
+        "enrichment": 14.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.12280701754385964,
+        "log_p_hypergeom": -15.048758100603203,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 7,
+        "n_total": 2048,
+        "p_hypergeom": 2.9134488474131926e-07
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "q_proj/L0": {
+      "activation_magnitude": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      },
+      "predictor": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "q_proj/L1": {
+      "activation_magnitude": {
+        "enrichment": 34.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3617021276595745,
+        "log_p_hypergeom": -55.84495882178034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 17,
+        "n_total": 2048,
+        "p_hypergeom": 5.58267751704775e-25
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 28.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.28,
+        "log_p_hypergeom": -41.71615879948414,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 14,
+        "n_total": 2048,
+        "p_hypergeom": 7.636641920893578e-19
+      },
+      "predictor": {
+        "enrichment": 30.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.30612244897959184,
+        "log_p_hypergeom": -46.2456540399867,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 15,
+        "n_total": 2048,
+        "p_hypergeom": 8.236972924441917e-21
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "q_proj/L10": {
+      "activation_magnitude": {
+        "enrichment": 48.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6,
+        "log_p_hypergeom": -95.76405149084096,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 24,
+        "n_total": 2048,
+        "p_hypergeom": 2.571584934643298e-42
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3333333333333333,
+        "log_p_hypergeom": -50.95423267397222,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 16,
+        "n_total": 2048,
+        "p_hypergeom": 7.427760981207614e-23
+      },
+      "predictor": {
+        "enrichment": 38.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4222222222222222,
+        "log_p_hypergeom": -66.1918921276599,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 19,
+        "n_total": 2048,
+        "p_hypergeom": 1.7915399713271677e-29
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "q_proj/L11": {
+      "activation_magnitude": {
+        "enrichment": 46.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5609756097560976,
+        "log_p_hypergeom": -89.37514547688224,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 23,
+        "n_total": 2048,
+        "p_hypergeom": 1.5306204099093178e-39
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "predictor": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "q_proj/L12": {
+      "activation_magnitude": {
+        "enrichment": 46.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5609756097560976,
+        "log_p_hypergeom": -89.37514547688224,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 23,
+        "n_total": 2048,
+        "p_hypergeom": 1.5306204099093178e-39
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3333333333333333,
+        "log_p_hypergeom": -50.95423267397222,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 16,
+        "n_total": 2048,
+        "p_hypergeom": 7.427760981207614e-23
+      },
+      "predictor": {
+        "enrichment": 34.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3617021276595745,
+        "log_p_hypergeom": -55.84495882178034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 17,
+        "n_total": 2048,
+        "p_hypergeom": 5.58267751704775e-25
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "q_proj/L13": {
+      "activation_magnitude": {
+        "enrichment": 42.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4883720930232558,
+        "log_p_hypergeom": -77.34021277182562,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 21,
+        "n_total": 2048,
+        "p_hypergeom": 2.579718772207545e-34
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 28.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.28,
+        "log_p_hypergeom": -41.71615879948414,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 14,
+        "n_total": 2048,
+        "p_hypergeom": 7.636641920893578e-19
+      },
+      "predictor": {
+        "enrichment": 34.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3617021276595745,
+        "log_p_hypergeom": -55.84495882178034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 17,
+        "n_total": 2048,
+        "p_hypergeom": 5.58267751704775e-25
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "q_proj/L14": {
+      "activation_magnitude": {
+        "enrichment": 34.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3617021276595745,
+        "log_p_hypergeom": -55.84495882178034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 17,
+        "n_total": 2048,
+        "p_hypergeom": 5.58267751704775e-25
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 24.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.23076923076923078,
+        "log_p_hypergeom": -33.18854785606142,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 12,
+        "n_total": 2048,
+        "p_hypergeom": 3.8583072030332434e-15
+      },
+      "predictor": {
+        "enrichment": 20.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.18518518518518517,
+        "log_p_hypergeom": -25.372845235646245,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 10,
+        "n_total": 2048,
+        "p_hypergeom": 9.565624398615511e-12
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "q_proj/L15": {
+      "activation_magnitude": {
+        "enrichment": 26.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.2549019607843137,
+        "log_p_hypergeom": -37.36396006846065,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 13,
+        "n_total": 2048,
+        "p_hypergeom": 5.929776439825166e-17
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 20.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.18518518518518517,
+        "log_p_hypergeom": -25.372845235646245,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 10,
+        "n_total": 2048,
+        "p_hypergeom": 9.565624398615511e-12
+      },
+      "predictor": {
+        "enrichment": 26.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.2549019607843137,
+        "log_p_hypergeom": -37.36396006846065,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 13,
+        "n_total": 2048,
+        "p_hypergeom": 5.929776439825166e-17
+      },
+      "random": {
+        "enrichment": 4.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.03225806451612903,
+        "log_p_hypergeom": -2.4332449027678034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 2,
+        "n_total": 2048,
+        "p_hypergeom": 0.0877516246069873
+      }
+    },
+    "q_proj/L16": {
+      "activation_magnitude": {
+        "enrichment": 26.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.2549019607843137,
+        "log_p_hypergeom": -37.36396006846065,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 13,
+        "n_total": 2048,
+        "p_hypergeom": 5.929776439825166e-17
+      },
+      "beats_activation_baseline": true,
+      "gradient_magnitude": {
+        "enrichment": 18.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.16363636363636364,
+        "log_p_hypergeom": -21.73880523398609,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 9,
+        "n_total": 2048,
+        "p_hypergeom": 3.6220700374553147e-10
+      },
+      "predictor": {
+        "enrichment": 28.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.28,
+        "log_p_hypergeom": -41.71615879948414,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 14,
+        "n_total": 2048,
+        "p_hypergeom": 7.636641920893578e-19
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "q_proj/L17": {
+      "activation_magnitude": {
+        "enrichment": 30.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.30612244897959184,
+        "log_p_hypergeom": -46.2456540399867,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 15,
+        "n_total": 2048,
+        "p_hypergeom": 8.236972924441917e-21
+      },
+      "beats_activation_baseline": true,
+      "gradient_magnitude": {
+        "enrichment": 28.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.28,
+        "log_p_hypergeom": -41.71615879948414,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 14,
+        "n_total": 2048,
+        "p_hypergeom": 7.636641920893578e-19
+      },
+      "predictor": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3333333333333333,
+        "log_p_hypergeom": -50.95423267397222,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 16,
+        "n_total": 2048,
+        "p_hypergeom": 7.427760981207614e-23
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "q_proj/L2": {
+      "activation_magnitude": {
+        "enrichment": 52.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6842105263157895,
+        "log_p_hypergeom": -109.4022143923237,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 26,
+        "n_total": 2048,
+        "p_hypergeom": 3.0705910619503405e-48
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 52.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6842105263157895,
+        "log_p_hypergeom": -109.4022143923237,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 26,
+        "n_total": 2048,
+        "p_hypergeom": 3.0705910619503405e-48
+      },
+      "predictor": {
+        "enrichment": 26.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.2549019607843137,
+        "log_p_hypergeom": -37.36396006846065,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 13,
+        "n_total": 2048,
+        "p_hypergeom": 5.929776439825166e-17
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "q_proj/L3": {
+      "activation_magnitude": {
+        "enrichment": 52.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6842105263157895,
+        "log_p_hypergeom": -109.4022143923237,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 26,
+        "n_total": 2048,
+        "p_hypergeom": 3.0705910619503405e-48
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 46.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5609756097560976,
+        "log_p_hypergeom": -89.37514547688224,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 23,
+        "n_total": 2048,
+        "p_hypergeom": 1.5306204099093178e-39
+      },
+      "predictor": {
+        "enrichment": 24.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.23076923076923078,
+        "log_p_hypergeom": -33.18854785606142,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 12,
+        "n_total": 2048,
+        "p_hypergeom": 3.8583072030332434e-15
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "q_proj/L4": {
+      "activation_magnitude": {
+        "enrichment": 50.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6410256410256411,
+        "log_p_hypergeom": -102.42977344416883,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 25,
+        "n_total": 2048,
+        "p_hypergeom": 3.275779121745679e-45
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 50.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6410256410256411,
+        "log_p_hypergeom": -102.42977344416883,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 25,
+        "n_total": 2048,
+        "p_hypergeom": 3.275779121745679e-45
+      },
+      "predictor": {
+        "enrichment": 30.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.30612244897959184,
+        "log_p_hypergeom": -46.2456540399867,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 15,
+        "n_total": 2048,
+        "p_hypergeom": 8.236972924441917e-21
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "q_proj/L5": {
+      "activation_magnitude": {
+        "enrichment": 44.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5238095238095238,
+        "log_p_hypergeom": -83.23993897862805,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 22,
+        "n_total": 2048,
+        "p_hypergeom": 7.068932385075592e-37
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 46.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5609756097560976,
+        "log_p_hypergeom": -89.37514547688224,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 23,
+        "n_total": 2048,
+        "p_hypergeom": 1.5306204099093178e-39
+      },
+      "predictor": {
+        "enrichment": 30.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.30612244897959184,
+        "log_p_hypergeom": -46.2456540399867,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 15,
+        "n_total": 2048,
+        "p_hypergeom": 8.236972924441917e-21
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "q_proj/L6": {
+      "activation_magnitude": {
+        "enrichment": 44.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5238095238095238,
+        "log_p_hypergeom": -83.23993897862805,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 22,
+        "n_total": 2048,
+        "p_hypergeom": 7.068932385075592e-37
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 38.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4222222222222222,
+        "log_p_hypergeom": -66.1918921276599,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 19,
+        "n_total": 2048,
+        "p_hypergeom": 1.7915399713271677e-29
+      },
+      "predictor": {
+        "enrichment": 40.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.45454545454545453,
+        "log_p_hypergeom": -71.66142469850199,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 20,
+        "n_total": 2048,
+        "p_hypergeom": 7.548118125623544e-32
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "q_proj/L7": {
+      "activation_magnitude": {
+        "enrichment": 42.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4883720930232558,
+        "log_p_hypergeom": -77.34021277182562,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 21,
+        "n_total": 2048,
+        "p_hypergeom": 2.579718772207545e-34
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "predictor": {
+        "enrichment": 38.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4222222222222222,
+        "log_p_hypergeom": -66.1918921276599,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 19,
+        "n_total": 2048,
+        "p_hypergeom": 1.7915399713271677e-29
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "q_proj/L8": {
+      "activation_magnitude": {
+        "enrichment": 48.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6,
+        "log_p_hypergeom": -95.76405149084096,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 24,
+        "n_total": 2048,
+        "p_hypergeom": 2.571584934643298e-42
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3333333333333333,
+        "log_p_hypergeom": -50.95423267397222,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 16,
+        "n_total": 2048,
+        "p_hypergeom": 7.427760981207614e-23
+      },
+      "predictor": {
+        "enrichment": 38.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4222222222222222,
+        "log_p_hypergeom": -66.1918921276599,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 19,
+        "n_total": 2048,
+        "p_hypergeom": 1.7915399713271677e-29
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "q_proj/L9": {
+      "activation_magnitude": {
+        "enrichment": 46.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5609756097560976,
+        "log_p_hypergeom": -89.37514547688224,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 23,
+        "n_total": 2048,
+        "p_hypergeom": 1.5306204099093178e-39
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "predictor": {
+        "enrichment": 38.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4222222222222222,
+        "log_p_hypergeom": -66.1918921276599,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 19,
+        "n_total": 2048,
+        "p_hypergeom": 1.7915399713271677e-29
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "up_proj/L0": {
+      "activation_magnitude": {
+        "enrichment": 28.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.28,
+        "log_p_hypergeom": -41.71615879948414,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 14,
+        "n_total": 2048,
+        "p_hypergeom": 7.636641920893578e-19
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 24.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.23076923076923078,
+        "log_p_hypergeom": -33.18854785606142,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 12,
+        "n_total": 2048,
+        "p_hypergeom": 3.8583072030332434e-15
+      },
+      "predictor": {
+        "enrichment": 28.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.28,
+        "log_p_hypergeom": -41.71615879948414,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 14,
+        "n_total": 2048,
+        "p_hypergeom": 7.636641920893578e-19
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "up_proj/L1": {
+      "activation_magnitude": {
+        "enrichment": 34.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3617021276595745,
+        "log_p_hypergeom": -55.84495882178034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 17,
+        "n_total": 2048,
+        "p_hypergeom": 5.58267751704775e-25
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 26.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.2549019607843137,
+        "log_p_hypergeom": -37.36396006846065,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 13,
+        "n_total": 2048,
+        "p_hypergeom": 5.929776439825166e-17
+      },
+      "predictor": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3333333333333333,
+        "log_p_hypergeom": -50.95423267397222,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 16,
+        "n_total": 2048,
+        "p_hypergeom": 7.427760981207614e-23
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "up_proj/L10": {
+      "activation_magnitude": {
+        "enrichment": 48.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6,
+        "log_p_hypergeom": -95.76405149084096,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 24,
+        "n_total": 2048,
+        "p_hypergeom": 2.571584934643298e-42
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 26.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.2549019607843137,
+        "log_p_hypergeom": -37.36396006846065,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 13,
+        "n_total": 2048,
+        "p_hypergeom": 5.929776439825166e-17
+      },
+      "predictor": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3333333333333333,
+        "log_p_hypergeom": -50.95423267397222,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 16,
+        "n_total": 2048,
+        "p_hypergeom": 7.427760981207614e-23
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "up_proj/L11": {
+      "activation_magnitude": {
+        "enrichment": 46.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5609756097560976,
+        "log_p_hypergeom": -89.37514547688224,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 23,
+        "n_total": 2048,
+        "p_hypergeom": 1.5306204099093178e-39
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 28.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.28,
+        "log_p_hypergeom": -41.71615879948414,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 14,
+        "n_total": 2048,
+        "p_hypergeom": 7.636641920893578e-19
+      },
+      "predictor": {
+        "enrichment": 34.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3617021276595745,
+        "log_p_hypergeom": -55.84495882178034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 17,
+        "n_total": 2048,
+        "p_hypergeom": 5.58267751704775e-25
+      },
+      "random": {
+        "enrichment": 4.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.03225806451612903,
+        "log_p_hypergeom": -2.4332449027678034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 2,
+        "n_total": 2048,
+        "p_hypergeom": 0.0877516246069873
+      }
+    },
+    "up_proj/L12": {
+      "activation_magnitude": {
+        "enrichment": 48.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6,
+        "log_p_hypergeom": -95.76405149084096,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 24,
+        "n_total": 2048,
+        "p_hypergeom": 2.571584934643298e-42
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 28.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.28,
+        "log_p_hypergeom": -41.71615879948414,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 14,
+        "n_total": 2048,
+        "p_hypergeom": 7.636641920893578e-19
+      },
+      "predictor": {
+        "enrichment": 24.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.23076923076923078,
+        "log_p_hypergeom": -33.18854785606142,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 12,
+        "n_total": 2048,
+        "p_hypergeom": 3.8583072030332434e-15
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "up_proj/L13": {
+      "activation_magnitude": {
+        "enrichment": 40.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.45454545454545453,
+        "log_p_hypergeom": -71.66142469850199,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 20,
+        "n_total": 2048,
+        "p_hypergeom": 7.548118125623544e-32
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 24.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.23076923076923078,
+        "log_p_hypergeom": -33.18854785606142,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 12,
+        "n_total": 2048,
+        "p_hypergeom": 3.8583072030332434e-15
+      },
+      "predictor": {
+        "enrichment": 20.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.18518518518518517,
+        "log_p_hypergeom": -25.372845235646245,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 10,
+        "n_total": 2048,
+        "p_hypergeom": 9.565624398615511e-12
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "up_proj/L14": {
+      "activation_magnitude": {
+        "enrichment": 38.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4222222222222222,
+        "log_p_hypergeom": -66.1918921276599,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 19,
+        "n_total": 2048,
+        "p_hypergeom": 1.7915399713271677e-29
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 28.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.28,
+        "log_p_hypergeom": -41.71615879948414,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 14,
+        "n_total": 2048,
+        "p_hypergeom": 7.636641920893578e-19
+      },
+      "predictor": {
+        "enrichment": 26.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.2549019607843137,
+        "log_p_hypergeom": -37.36396006846065,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 13,
+        "n_total": 2048,
+        "p_hypergeom": 5.929776439825166e-17
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "up_proj/L15": {
+      "activation_magnitude": {
+        "enrichment": 34.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3617021276595745,
+        "log_p_hypergeom": -55.84495882178034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 17,
+        "n_total": 2048,
+        "p_hypergeom": 5.58267751704775e-25
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 26.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.2549019607843137,
+        "log_p_hypergeom": -37.36396006846065,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 13,
+        "n_total": 2048,
+        "p_hypergeom": 5.929776439825166e-17
+      },
+      "predictor": {
+        "enrichment": 18.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.16363636363636364,
+        "log_p_hypergeom": -21.73880523398609,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 9,
+        "n_total": 2048,
+        "p_hypergeom": 3.6220700374553147e-10
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "up_proj/L16": {
+      "activation_magnitude": {
+        "enrichment": 34.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3617021276595745,
+        "log_p_hypergeom": -55.84495882178034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 17,
+        "n_total": 2048,
+        "p_hypergeom": 5.58267751704775e-25
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 20.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.18518518518518517,
+        "log_p_hypergeom": -25.372845235646245,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 10,
+        "n_total": 2048,
+        "p_hypergeom": 9.565624398615511e-12
+      },
+      "predictor": {
+        "enrichment": 20.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.18518518518518517,
+        "log_p_hypergeom": -25.372845235646245,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 10,
+        "n_total": 2048,
+        "p_hypergeom": 9.565624398615511e-12
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "up_proj/L17": {
+      "activation_magnitude": {
+        "enrichment": 38.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4222222222222222,
+        "log_p_hypergeom": -66.1918921276599,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 19,
+        "n_total": 2048,
+        "p_hypergeom": 1.7915399713271677e-29
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 34.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3617021276595745,
+        "log_p_hypergeom": -55.84495882178034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 17,
+        "n_total": 2048,
+        "p_hypergeom": 5.58267751704775e-25
+      },
+      "predictor": {
+        "enrichment": 28.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.28,
+        "log_p_hypergeom": -41.71615879948414,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 14,
+        "n_total": 2048,
+        "p_hypergeom": 7.636641920893578e-19
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "up_proj/L2": {
+      "activation_magnitude": {
+        "enrichment": 44.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5238095238095238,
+        "log_p_hypergeom": -83.23993897862805,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 22,
+        "n_total": 2048,
+        "p_hypergeom": 7.068932385075592e-37
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 34.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3617021276595745,
+        "log_p_hypergeom": -55.84495882178034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 17,
+        "n_total": 2048,
+        "p_hypergeom": 5.58267751704775e-25
+      },
+      "predictor": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "up_proj/L3": {
+      "activation_magnitude": {
+        "enrichment": 50.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6410256410256411,
+        "log_p_hypergeom": -102.42977344416883,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 25,
+        "n_total": 2048,
+        "p_hypergeom": 3.275779121745679e-45
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 34.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3617021276595745,
+        "log_p_hypergeom": -55.84495882178034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 17,
+        "n_total": 2048,
+        "p_hypergeom": 5.58267751704775e-25
+      },
+      "predictor": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "up_proj/L4": {
+      "activation_magnitude": {
+        "enrichment": 54.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.7297297297297297,
+        "log_p_hypergeom": -116.72113901497944,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 27,
+        "n_total": 2048,
+        "p_hypergeom": 2.0354170321787666e-51
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 30.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.30612244897959184,
+        "log_p_hypergeom": -46.2456540399867,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 15,
+        "n_total": 2048,
+        "p_hypergeom": 8.236972924441917e-21
+      },
+      "predictor": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3333333333333333,
+        "log_p_hypergeom": -50.95423267397222,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 16,
+        "n_total": 2048,
+        "p_hypergeom": 7.427760981207614e-23
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "up_proj/L5": {
+      "activation_magnitude": {
+        "enrichment": 48.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6,
+        "log_p_hypergeom": -95.76405149084096,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 24,
+        "n_total": 2048,
+        "p_hypergeom": 2.571584934643298e-42
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3333333333333333,
+        "log_p_hypergeom": -50.95423267397222,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 16,
+        "n_total": 2048,
+        "p_hypergeom": 7.427760981207614e-23
+      },
+      "predictor": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "up_proj/L6": {
+      "activation_magnitude": {
+        "enrichment": 54.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.7297297297297297,
+        "log_p_hypergeom": -116.72113901497944,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 27,
+        "n_total": 2048,
+        "p_hypergeom": 2.0354170321787666e-51
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 30.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.30612244897959184,
+        "log_p_hypergeom": -46.2456540399867,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 15,
+        "n_total": 2048,
+        "p_hypergeom": 8.236972924441917e-21
+      },
+      "predictor": {
+        "enrichment": 42.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4883720930232558,
+        "log_p_hypergeom": -77.34021277182562,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 21,
+        "n_total": 2048,
+        "p_hypergeom": 2.579718772207545e-34
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "up_proj/L7": {
+      "activation_magnitude": {
+        "enrichment": 48.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6,
+        "log_p_hypergeom": -95.76405149084096,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 24,
+        "n_total": 2048,
+        "p_hypergeom": 2.571584934643298e-42
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 28.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.28,
+        "log_p_hypergeom": -41.71615879948414,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 14,
+        "n_total": 2048,
+        "p_hypergeom": 7.636641920893578e-19
+      },
+      "predictor": {
+        "enrichment": 40.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.45454545454545453,
+        "log_p_hypergeom": -71.66142469850199,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 20,
+        "n_total": 2048,
+        "p_hypergeom": 7.548118125623544e-32
+      },
+      "random": {
+        "enrichment": 6.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.04918032786885246,
+        "log_p_hypergeom": -4.37085960697657,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 3,
+        "n_total": 2048,
+        "p_hypergeom": 0.012640370146165382
+      }
+    },
+    "up_proj/L8": {
+      "activation_magnitude": {
+        "enrichment": 46.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5609756097560976,
+        "log_p_hypergeom": -89.37514547688224,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 23,
+        "n_total": 2048,
+        "p_hypergeom": 1.5306204099093178e-39
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 24.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.23076923076923078,
+        "log_p_hypergeom": -33.18854785606142,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 12,
+        "n_total": 2048,
+        "p_hypergeom": 3.8583072030332434e-15
+      },
+      "predictor": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3333333333333333,
+        "log_p_hypergeom": -50.95423267397222,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 16,
+        "n_total": 2048,
+        "p_hypergeom": 7.427760981207614e-23
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "up_proj/L9": {
+      "activation_magnitude": {
+        "enrichment": 50.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6410256410256411,
+        "log_p_hypergeom": -102.42977344416883,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 25,
+        "n_total": 2048,
+        "p_hypergeom": 3.275779121745679e-45
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 26.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.2549019607843137,
+        "log_p_hypergeom": -37.36396006846065,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 13,
+        "n_total": 2048,
+        "p_hypergeom": 5.929776439825166e-17
+      },
+      "predictor": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "v_proj/L0": {
+      "activation_magnitude": {
+        "enrichment": 6.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.04918032786885246,
+        "log_p_hypergeom": -4.37085960697657,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 3,
+        "n_total": 2048,
+        "p_hypergeom": 0.012640370146165382
+      },
+      "beats_activation_baseline": true,
+      "gradient_magnitude": {
+        "enrichment": 8.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.06666666666666667,
+        "log_p_hypergeom": -6.645414574807403,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 4,
+        "n_total": 2048,
+        "p_hypergeom": 0.0012999693719802196
+      },
+      "predictor": {
+        "enrichment": 8.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.06666666666666667,
+        "log_p_hypergeom": -6.645414574807403,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 4,
+        "n_total": 2048,
+        "p_hypergeom": 0.0012999693719802196
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "v_proj/L1": {
+      "activation_magnitude": {
+        "enrichment": 38.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4222222222222222,
+        "log_p_hypergeom": -66.1918921276599,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 19,
+        "n_total": 2048,
+        "p_hypergeom": 1.7915399713271677e-29
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 30.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.30612244897959184,
+        "log_p_hypergeom": -46.2456540399867,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 15,
+        "n_total": 2048,
+        "p_hypergeom": 8.236972924441917e-21
+      },
+      "predictor": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "v_proj/L10": {
+      "activation_magnitude": {
+        "enrichment": 46.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5609756097560976,
+        "log_p_hypergeom": -89.37514547688224,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 23,
+        "n_total": 2048,
+        "p_hypergeom": 1.5306204099093178e-39
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 38.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4222222222222222,
+        "log_p_hypergeom": -66.1918921276599,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 19,
+        "n_total": 2048,
+        "p_hypergeom": 1.7915399713271677e-29
+      },
+      "predictor": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "v_proj/L11": {
+      "activation_magnitude": {
+        "enrichment": 40.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.45454545454545453,
+        "log_p_hypergeom": -71.66142469850199,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 20,
+        "n_total": 2048,
+        "p_hypergeom": 7.548118125623544e-32
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 34.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3617021276595745,
+        "log_p_hypergeom": -55.84495882178034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 17,
+        "n_total": 2048,
+        "p_hypergeom": 5.58267751704775e-25
+      },
+      "predictor": {
+        "enrichment": 28.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.28,
+        "log_p_hypergeom": -41.71615879948414,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 14,
+        "n_total": 2048,
+        "p_hypergeom": 7.636641920893578e-19
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "v_proj/L12": {
+      "activation_magnitude": {
+        "enrichment": 46.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5609756097560976,
+        "log_p_hypergeom": -89.37514547688224,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 23,
+        "n_total": 2048,
+        "p_hypergeom": 1.5306204099093178e-39
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 34.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3617021276595745,
+        "log_p_hypergeom": -55.84495882178034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 17,
+        "n_total": 2048,
+        "p_hypergeom": 5.58267751704775e-25
+      },
+      "predictor": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "v_proj/L13": {
+      "activation_magnitude": {
+        "enrichment": 46.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5609756097560976,
+        "log_p_hypergeom": -89.37514547688224,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 23,
+        "n_total": 2048,
+        "p_hypergeom": 1.5306204099093178e-39
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 34.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3617021276595745,
+        "log_p_hypergeom": -55.84495882178034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 17,
+        "n_total": 2048,
+        "p_hypergeom": 5.58267751704775e-25
+      },
+      "predictor": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3333333333333333,
+        "log_p_hypergeom": -50.95423267397222,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 16,
+        "n_total": 2048,
+        "p_hypergeom": 7.427760981207614e-23
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "v_proj/L14": {
+      "activation_magnitude": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 28.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.28,
+        "log_p_hypergeom": -41.71615879948414,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 14,
+        "n_total": 2048,
+        "p_hypergeom": 7.636641920893578e-19
+      },
+      "predictor": {
+        "enrichment": 20.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.18518518518518517,
+        "log_p_hypergeom": -25.372845235646245,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 10,
+        "n_total": 2048,
+        "p_hypergeom": 9.565624398615511e-12
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "v_proj/L15": {
+      "activation_magnitude": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 28.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.28,
+        "log_p_hypergeom": -41.71615879948414,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 14,
+        "n_total": 2048,
+        "p_hypergeom": 7.636641920893578e-19
+      },
+      "predictor": {
+        "enrichment": 22.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.20754716981132076,
+        "log_p_hypergeom": -29.19074727677466,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 11,
+        "n_total": 2048,
+        "p_hypergeom": 2.101936225642528e-13
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "v_proj/L16": {
+      "activation_magnitude": {
+        "enrichment": 30.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.30612244897959184,
+        "log_p_hypergeom": -46.2456540399867,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 15,
+        "n_total": 2048,
+        "p_hypergeom": 8.236972924441917e-21
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 22.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.20754716981132076,
+        "log_p_hypergeom": -29.19074727677466,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 11,
+        "n_total": 2048,
+        "p_hypergeom": 2.101936225642528e-13
+      },
+      "predictor": {
+        "enrichment": 22.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.20754716981132076,
+        "log_p_hypergeom": -29.19074727677466,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 11,
+        "n_total": 2048,
+        "p_hypergeom": 2.101936225642528e-13
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "v_proj/L17": {
+      "activation_magnitude": {
+        "enrichment": 32.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3333333333333333,
+        "log_p_hypergeom": -50.95423267397222,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 16,
+        "n_total": 2048,
+        "p_hypergeom": 7.427760981207614e-23
+      },
+      "beats_activation_baseline": true,
+      "gradient_magnitude": {
+        "enrichment": 28.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.28,
+        "log_p_hypergeom": -41.71615879948414,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 14,
+        "n_total": 2048,
+        "p_hypergeom": 7.636641920893578e-19
+      },
+      "predictor": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "v_proj/L2": {
+      "activation_magnitude": {
+        "enrichment": 46.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5609756097560976,
+        "log_p_hypergeom": -89.37514547688224,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 23,
+        "n_total": 2048,
+        "p_hypergeom": 1.5306204099093178e-39
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 44.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5238095238095238,
+        "log_p_hypergeom": -83.23993897862805,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 22,
+        "n_total": 2048,
+        "p_hypergeom": 7.068932385075592e-37
+      },
+      "predictor": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "v_proj/L3": {
+      "activation_magnitude": {
+        "enrichment": 50.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6410256410256411,
+        "log_p_hypergeom": -102.42977344416883,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 25,
+        "n_total": 2048,
+        "p_hypergeom": 3.275779121745679e-45
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 44.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5238095238095238,
+        "log_p_hypergeom": -83.23993897862805,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 22,
+        "n_total": 2048,
+        "p_hypergeom": 7.068932385075592e-37
+      },
+      "predictor": {
+        "enrichment": 42.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4883720930232558,
+        "log_p_hypergeom": -77.34021277182562,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 21,
+        "n_total": 2048,
+        "p_hypergeom": 2.579718772207545e-34
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "v_proj/L4": {
+      "activation_magnitude": {
+        "enrichment": 50.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6410256410256411,
+        "log_p_hypergeom": -102.42977344416883,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 25,
+        "n_total": 2048,
+        "p_hypergeom": 3.275779121745679e-45
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 48.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6,
+        "log_p_hypergeom": -95.76405149084096,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 24,
+        "n_total": 2048,
+        "p_hypergeom": 2.571584934643298e-42
+      },
+      "predictor": {
+        "enrichment": 46.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5609756097560976,
+        "log_p_hypergeom": -89.37514547688224,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 23,
+        "n_total": 2048,
+        "p_hypergeom": 1.5306204099093178e-39
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "v_proj/L5": {
+      "activation_magnitude": {
+        "enrichment": 40.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.45454545454545453,
+        "log_p_hypergeom": -71.66142469850199,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 20,
+        "n_total": 2048,
+        "p_hypergeom": 7.548118125623544e-32
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 38.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4222222222222222,
+        "log_p_hypergeom": -66.1918921276599,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 19,
+        "n_total": 2048,
+        "p_hypergeom": 1.7915399713271677e-29
+      },
+      "predictor": {
+        "enrichment": 38.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4222222222222222,
+        "log_p_hypergeom": -66.1918921276599,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 19,
+        "n_total": 2048,
+        "p_hypergeom": 1.7915399713271677e-29
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "v_proj/L6": {
+      "activation_magnitude": {
+        "enrichment": 48.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6,
+        "log_p_hypergeom": -95.76405149084096,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 24,
+        "n_total": 2048,
+        "p_hypergeom": 2.571584934643298e-42
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 44.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5238095238095238,
+        "log_p_hypergeom": -83.23993897862805,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 22,
+        "n_total": 2048,
+        "p_hypergeom": 7.068932385075592e-37
+      },
+      "predictor": {
+        "enrichment": 44.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5238095238095238,
+        "log_p_hypergeom": -83.23993897862805,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 22,
+        "n_total": 2048,
+        "p_hypergeom": 7.068932385075592e-37
+      },
+      "random": {
+        "enrichment": 2.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.015873015873015872,
+        "log_p_hypergeom": -0.9207982376427424,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 1,
+        "n_total": 2048,
+        "p_hypergeom": 0.39820105511564063
+      }
+    },
+    "v_proj/L7": {
+      "activation_magnitude": {
+        "enrichment": 40.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.45454545454545453,
+        "log_p_hypergeom": -71.66142469850199,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 20,
+        "n_total": 2048,
+        "p_hypergeom": 7.548118125623544e-32
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "predictor": {
+        "enrichment": 40.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.45454545454545453,
+        "log_p_hypergeom": -71.66142469850199,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 20,
+        "n_total": 2048,
+        "p_hypergeom": 7.548118125623544e-32
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "v_proj/L8": {
+      "activation_magnitude": {
+        "enrichment": 42.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.4883720930232558,
+        "log_p_hypergeom": -77.34021277182562,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 21,
+        "n_total": 2048,
+        "p_hypergeom": 2.579718772207545e-34
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 34.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.3617021276595745,
+        "log_p_hypergeom": -55.84495882178034,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 17,
+        "n_total": 2048,
+        "p_hypergeom": 5.58267751704775e-25
+      },
+      "predictor": {
+        "enrichment": 36.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.391304347826087,
+        "log_p_hypergeom": -60.92222994232628,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 18,
+        "n_total": 2048,
+        "p_hypergeom": 3.481863254680538e-27
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    },
+    "v_proj/L9": {
+      "activation_magnitude": {
+        "enrichment": 50.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.6410256410256411,
+        "log_p_hypergeom": -102.42977344416883,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 25,
+        "n_total": 2048,
+        "p_hypergeom": 3.275779121745679e-45
+      },
+      "beats_activation_baseline": false,
+      "gradient_magnitude": {
+        "enrichment": 40.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.45454545454545453,
+        "log_p_hypergeom": -71.66142469850199,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 20,
+        "n_total": 2048,
+        "p_hypergeom": 7.548118125623544e-32
+      },
+      "predictor": {
+        "enrichment": 46.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.5609756097560976,
+        "log_p_hypergeom": -89.37514547688224,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 23,
+        "n_total": 2048,
+        "p_hypergeom": 1.5306204099093178e-39
+      },
+      "random": {
+        "enrichment": 0.0,
+        "expected_intersection": 0.5,
+        "jaccard": 0.0,
+        "log_p_hypergeom": -2.967515122520581e-12,
+        "n_a": 32,
+        "n_b": 32,
+        "n_intersection": 0,
+        "n_total": 2048,
+        "p_hypergeom": 0.9999999999970325
+      }
+    }
+  },
+  "provenance": {
+    "branch": "science/mendel",
+    "commit_sha": "f8bbed21f458bfae45797db31834318c0511a1dc",
+    "dirty": false,
+    "dirty_files": [],
+    "program": "mendel",
+    "source": "scripts/mendel_stamp.py",
+    "stamped_utc": "2026-08-19T17:21:59Z",
+    "tags_at_head": []
+  },
+  "queue_item": "12",
+  "reference": "s3://pg-lineage-769063704696/results/mercator_w0gpu4/out/M-8/M-8_result.json",
+  "reproduction": {
+    "activation_magnitude": {
+      "abs_diff": 0.0,
+      "banked": 0.41597866552692153,
+      "n_cells": 72,
+      "ours": 0.41597866552692153
+    },
+    "gradient_magnitude": {
+      "abs_diff": 0.0,
+      "banked": 0.27899202802871786,
+      "n_cells": 72,
+      "ours": 0.27899202802871786
+    },
+    "predictor": {
+      "abs_diff": 0.0,
+      "banked": 0.30682528035793794,
+      "n_cells": 72,
+      "ours": 0.30682528035793794
+    },
+    "random": {
+      "abs_diff": 0.0004622518063378267,
+      "banked": 0.007090231552597143,
+      "n_cells": 72,
+      "ours": 0.0066279797462593165
+    }
+  },
+  "types": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+  ],
+  "vectors_banked": [
+    "act_rms",
+    "grad_mag",
+    "grad_cons"
+  ],
+  "verdict": "REPRODUCED"
+}

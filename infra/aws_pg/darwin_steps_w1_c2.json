@@ -1,0 +1,4 @@
+[
+  {"name": "w1_c", "module": "infra.aws_pg.jobs.darwin_w1_icl",
+   "args": "--arm W1-C --run-id darwin_w1_c --s3-prefix darwin/darwin_w1_c"}
+]

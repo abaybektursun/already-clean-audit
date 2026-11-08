@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Thin wrapper: run the pg launcher from its isolated venv with the worktree on PYTHONPATH.
+set -euo pipefail
+DIR="$(cd "$(dirname "$0")/../.." && pwd)"
+exec "$DIR/.pgvenv/bin/python" -m infra.aws_pg.pg "$@"

@@ -1,0 +1,12 @@
+[
+ {
+  "name": "g4",
+  "module": "infra.aws_pg.jobs.instruments_e1b",
+  "args": "--model-key g4 --items s3://pg-lineage-769063704696/results/instruments/e1b/inputs/e1b_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus"
+ },
+ {
+  "name": "q4b",
+  "module": "infra.aws_pg.jobs.instruments_e1b",
+  "args": "--model-key q4b --items s3://pg-lineage-769063704696/results/instruments/e1b/inputs/e1b_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus"
+ }
+]

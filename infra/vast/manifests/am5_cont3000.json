@@ -1,0 +1,36 @@
+{
+  "rental": "am5_cont3000",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:v2-gauge",
+  "disk": 80,
+  "gpu_query": "gpu_ram>=88 num_gpus=1 cuda_vers>=12.8 compute_cap>=800",
+  "expected_gpu": "",
+  "bound": "compute",
+  "env": {
+    "HF_ONLINE": "1"
+  },
+  "_comment": "AM-5: scar vs slow re-formation at 3000 steps. The banked V2b run kept rows only (no optimizer state, no checkpoints), so the PRE-SPECIFIED pivot applies: fresh 0->3000 with identical configs. Ships both instrument fixes \u2014 horizon-matched delivery_win and per-layer activation trackers with a distinctness counter.",
+  "cells": [
+    {
+      "id": "am5_smoke",
+      "module": "infra.vast.cells.v2b_continuation",
+      "gauges": "unrotated",
+      "seeds": "2026",
+      "steps": 4,
+      "ckpt_every": 2,
+      "n_train": 24,
+      "n_eval": 8
+    },
+    {
+      "id": "am5_cont",
+      "module": "infra.vast.cells.v2b_continuation",
+      "gauges": "unrotated,hadamard",
+      "seeds": "2026,2027,2028",
+      "steps": 3000,
+      "ckpt_every": 120
+    }
+  ],
+  "watch": {
+    "load_backstop_min": 90,
+    "max_billed_h": 8
+  }
+}

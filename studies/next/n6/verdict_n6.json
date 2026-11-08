@@ -1,0 +1,29 @@
+{
+ "what": "N6 verdict: G-POWER failed at freeze 2 (amendment A4); the test half was not read",
+ "failed_gates": [
+  "G_PC",
+  "G_PC:failing_input_passed"
+ ],
+ "G_POWER": {
+  "value": 1.5096240466239023e-06,
+  "median_abs_D_col": 1.2725860535311037e-06,
+  "bound": 6.362930267655518e-07,
+  "ratio": 1.1862648049890838,
+  "pass": false,
+  "rule": "amendment A4: tau_s <= 0.5 x median |D_col| over the freeze pairs; if not, the verdict reads UNDECIDED_NO_POWER before the test half is read"
+ },
+ "n_test_read": 0,
+ "H_age": {
+  "label": "DOES NOT COUNT",
+  "realized": "UNDECIDED_NO_POWER"
+ },
+ "H_adj": {
+  "label": "DOES NOT COUNT",
+  "realized": "UNDECIDED_NO_POWER"
+ },
+ "H_eff": {
+  "label": "DOES NOT COUNT",
+  "realized": "UNDECIDED_NO_POWER"
+ },
+ "headline": "H_age DOES NOT COUNT; H_adj DOES NOT COUNT; H_eff DOES NOT COUNT"
+}

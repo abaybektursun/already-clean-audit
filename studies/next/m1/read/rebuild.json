@@ -1,0 +1,183 @@
+{
+ "mapping": {
+  "tokens_per_dir_equal_manifest": true,
+  "band_rule_ok": true,
+  "tok_per_dir_prefix": [
+   402300,
+   402137,
+   400802,
+   401726,
+   400939,
+   400131,
+   401593,
+   400209,
+   400265,
+   400170,
+   402305,
+   400073,
+   401423,
+   401714,
+   402054,
+   401060,
+   402708,
+   400626,
+   400060,
+   407616,
+   402008,
+   400079,
+   400720,
+   403647,
+   410058,
+   405874,
+   400341,
+   400238,
+   401010,
+   400006,
+   400049,
+   401126,
+   400316,
+   400106,
+   401057,
+   402451,
+   400659,
+   400054,
+   791610,
+   437393,
+   403049,
+   421228,
+   409395,
+   432309,
+   407568,
+   404182,
+   400236,
+   400890,
+   400508,
+   402665
+  ],
+  "cm_token_share_prefix": 0.11647168019161971
+ },
+ "a": {
+  "start_a": {
+   "n_poles": 640,
+   "n_poles_equal": 640,
+   "n_slots": 32000,
+   "n_doc_field_equal_offsets": 32000,
+   "planted_n_poles_equal": {
+    "dir+1": 0,
+    "doc+1": 230,
+    "sign_swap": 0
+   }
+  },
+  "start_b": {
+   "n_poles": 640,
+   "n_poles_equal": 640,
+   "n_slots": 32000,
+   "n_doc_field_equal_offsets": 32000,
+   "planted_n_poles_equal": {
+    "dir+1": 0,
+    "doc+1": 230,
+    "sign_swap": 0
+   }
+  },
+  "G": {
+   "n_poles": 640,
+   "n_poles_equal": 640,
+   "n_slots": 32000,
+   "n_doc_field_equal_offsets": 32000,
+   "planted_n_poles_equal": {
+    "dir+1": 0,
+    "doc+1": 201,
+    "sign_swap": 0
+   }
+  },
+  "R": {
+   "n_poles": 640,
+   "n_poles_equal": 640,
+   "n_slots": 32000,
+   "n_doc_field_equal_offsets": 32000,
+   "planted_n_poles_equal": {
+    "dir+1": 0,
+    "doc+1": 214,
+    "sign_swap": 0
+   }
+  },
+  "M": {
+   "n_poles": 640,
+   "n_poles_equal": 640,
+   "n_slots": 32000,
+   "n_doc_field_equal_offsets": 32000,
+   "planted_n_poles_equal": {
+    "dir+1": 0,
+    "doc+1": 211,
+    "sign_swap": 0
+   }
+  }
+ },
+ "b": {
+  "layers": [
+   20,
+   26
+  ],
+  "rule": "sorted(np.random.default_rng(0).choice(32, size=2, replace=False))",
+  "M_L20": {
+   "n_poles": 22016,
+   "n_poles_equal": 22016,
+   "filled_equal": true,
+   "n_empty_slots": 0,
+   "planted_n_poles_equal": {
+    "dir+1": 0,
+    "doc+1": 7406,
+    "doc_left_boundary": 21977,
+    "sign_swap": 0
+   },
+   "grid_poles_in_layer": 20,
+   "grid_poles_contexts_equal_raw": 20,
+   "n_poles_with_duplicate_positions": 0
+  },
+  "M_L26": {
+   "n_poles": 22016,
+   "n_poles_equal": 22016,
+   "filled_equal": true,
+   "n_empty_slots": 0,
+   "planted_n_poles_equal": {
+    "dir+1": 0,
+    "doc+1": 7696,
+    "doc_left_boundary": 22012,
+    "sign_swap": 0
+   },
+   "grid_poles_in_layer": 20,
+   "grid_poles_contexts_equal_raw": 20,
+   "n_poles_with_duplicate_positions": 0
+  },
+  "G_L20": {
+   "n_poles": 22016,
+   "n_poles_equal": 22016,
+   "filled_equal": true,
+   "n_empty_slots": 0,
+   "planted_n_poles_equal": {
+    "dir+1": 0,
+    "doc+1": 7427,
+    "doc_left_boundary": 21977,
+    "sign_swap": 0
+   },
+   "grid_poles_in_layer": 20,
+   "grid_poles_contexts_equal_raw": 20,
+   "n_poles_with_duplicate_positions": 0
+  },
+  "G_L26": {
+   "n_poles": 22016,
+   "n_poles_equal": 22016,
+   "filled_equal": true,
+   "n_empty_slots": 0,
+   "planted_n_poles_equal": {
+    "dir+1": 0,
+    "doc+1": 7691,
+    "doc_left_boundary": 22012,
+    "sign_swap": 0
+   },
+   "grid_poles_in_layer": 20,
+   "grid_poles_contexts_equal_raw": 20,
+   "n_poles_with_duplicate_positions": 0
+  }
+ }
+}

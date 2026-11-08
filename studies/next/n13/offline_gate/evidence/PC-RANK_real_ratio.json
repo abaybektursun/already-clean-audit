@@ -1,0 +1,25 @@
+{
+ "neurons": 8192,
+ "k_ref": 82,
+ "n_plant": 23,
+ "pass": {
+  "recovery": 1.0,
+  "n_plant": 23,
+  "k_ref": 82,
+  "top_n": 105,
+  "along": "neurons",
+  "seed": 40,
+  "s_ref": 0.0008611420324415566,
+  "chance": 0.0128173828125
+ },
+ "failing_input": {
+  "recovery": 0.0,
+  "n_plant": 23,
+  "k_ref": 82,
+  "top_n": 105,
+  "along": "down_rows",
+  "seed": 40,
+  "s_ref": 0.0008611420324415566,
+  "chance": 0.0128173828125
+ }
+}

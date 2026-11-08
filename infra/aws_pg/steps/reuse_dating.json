@@ -1,0 +1,82 @@
+[
+ {
+  "name": "t00",
+  "module": "infra.aws_pg.jobs.reuse_dating",
+  "args": "--stage dating --t T_0 --revision stage1-step0 --items s3://pg-lineage-769063704696/results/reuse/dating/inputs/dating_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus"
+ },
+ {
+  "name": "t01",
+  "module": "infra.aws_pg.jobs.reuse_dating",
+  "args": "--stage dating --t T_1 --revision stage1-step1000 --items s3://pg-lineage-769063704696/results/reuse/dating/inputs/dating_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus"
+ },
+ {
+  "name": "t02",
+  "module": "infra.aws_pg.jobs.reuse_dating",
+  "args": "--stage dating --t T_2 --revision stage1-step2000 --items s3://pg-lineage-769063704696/results/reuse/dating/inputs/dating_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus"
+ },
+ {
+  "name": "t03",
+  "module": "infra.aws_pg.jobs.reuse_dating",
+  "args": "--stage dating --t T_3 --revision stage1-step3000 --items s3://pg-lineage-769063704696/results/reuse/dating/inputs/dating_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus"
+ },
+ {
+  "name": "t04",
+  "module": "infra.aws_pg.jobs.reuse_dating",
+  "args": "--stage dating --t T_4 --revision stage1-step5000 --items s3://pg-lineage-769063704696/results/reuse/dating/inputs/dating_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus"
+ },
+ {
+  "name": "t05",
+  "module": "infra.aws_pg.jobs.reuse_dating",
+  "args": "--stage dating --t T_5 --revision stage1-step8000 --items s3://pg-lineage-769063704696/results/reuse/dating/inputs/dating_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus"
+ },
+ {
+  "name": "t06",
+  "module": "infra.aws_pg.jobs.reuse_dating",
+  "args": "--stage dating --t T_6 --revision stage1-step12000 --items s3://pg-lineage-769063704696/results/reuse/dating/inputs/dating_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus"
+ },
+ {
+  "name": "t07",
+  "module": "infra.aws_pg.jobs.reuse_dating",
+  "args": "--stage dating --t T_7 --revision stage1-step20000 --items s3://pg-lineage-769063704696/results/reuse/dating/inputs/dating_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus"
+ },
+ {
+  "name": "t08",
+  "module": "infra.aws_pg.jobs.reuse_dating",
+  "args": "--stage dating --t T_8 --revision stage1-step35000 --items s3://pg-lineage-769063704696/results/reuse/dating/inputs/dating_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus"
+ },
+ {
+  "name": "t09",
+  "module": "infra.aws_pg.jobs.reuse_dating",
+  "args": "--stage dating --t T_9 --revision stage1-step60000 --items s3://pg-lineage-769063704696/results/reuse/dating/inputs/dating_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus"
+ },
+ {
+  "name": "t10",
+  "module": "infra.aws_pg.jobs.reuse_dating",
+  "args": "--stage dating --t T_10 --revision stage1-step100000 --items s3://pg-lineage-769063704696/results/reuse/dating/inputs/dating_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus"
+ },
+ {
+  "name": "t11",
+  "module": "infra.aws_pg.jobs.reuse_dating",
+  "args": "--stage dating --t T_11 --revision stage1-step180000 --items s3://pg-lineage-769063704696/results/reuse/dating/inputs/dating_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus"
+ },
+ {
+  "name": "t12",
+  "module": "infra.aws_pg.jobs.reuse_dating",
+  "args": "--stage dating --t T_12 --revision stage1-step320000 --items s3://pg-lineage-769063704696/results/reuse/dating/inputs/dating_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus"
+ },
+ {
+  "name": "t13",
+  "module": "infra.aws_pg.jobs.reuse_dating",
+  "args": "--stage dating --t T_13 --revision stage1-step560000 --items s3://pg-lineage-769063704696/results/reuse/dating/inputs/dating_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus"
+ },
+ {
+  "name": "t14",
+  "module": "infra.aws_pg.jobs.reuse_dating",
+  "args": "--stage dating --t T_14 --revision stage1-step1000000 --items s3://pg-lineage-769063704696/results/reuse/dating/inputs/dating_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus"
+ },
+ {
+  "name": "t15",
+  "module": "infra.aws_pg.jobs.reuse_dating",
+  "args": "--stage dating --t T_15 --revision stage1-step1413814 --items s3://pg-lineage-769063704696/results/reuse/dating/inputs/dating_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus"
+ }
+]

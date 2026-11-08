@@ -1,0 +1,251 @@
+{
+ "label": "Dated exploratory analysis, 2026-11-05, on the closed and unblinded M1 result. No rule here decides a headline. Frozen on stage-1 references before start_a, start_b, G, R, M were read for this analysis.",
+ "share": "cm_share(p) = slots of pole p's top-50 in the five code+math directories / filled slots (read_head/recount.py)",
+ "bands": "layers 0-7, 8-15, 16-23, 24-31; 176,128 poles each",
+ "tau": [
+  0.44,
+  0.3,
+  0.2,
+  0.12
+ ],
+ "tau_definition": "per band, np.quantile(cm_share at t15 over the band's 176,128 poles, 0.9), numpy default linear method",
+ "fraction_of_t15_poles_at_or_above_tau": [
+  0.10493504723837209,
+  0.10460006359011628,
+  0.10421965843023256,
+  0.11332667151162791
+ ],
+ "leavers": "poles with share >= tau at X and < tau at Y, divided by the number of poles with share >= tau at X",
+ "arrivals": "poles with share < tau at X and >= tau at Y, divided by the number of poles with share >= tau at X",
+ "floor_pairs": [
+  "t12->t13",
+  "t13->t14b",
+  "t14b->t15",
+  "t14b->t14c"
+ ],
+ "floor_leavers": [
+  0.30264446620959845,
+  0.32232324209304575,
+  0.25184796854521624,
+  0.2782963827304551
+ ],
+ "floor_arrivals": [
+  0.3526361819090455,
+  0.37973239290530025,
+  0.27145478374836174,
+  0.2849681587025244
+ ],
+ "floor_definition": "per band, the largest point value over the four floor pairs (three stage-1 neighbour pairs and the identity pair t14b->t14c)",
+ "ceiling": "per pair and band, the value if pole identity were scrambled within the band: leavers 1 - n_high_Y/N, arrivals (N - n_high_X) * (n_high_Y/N) / n_high_X",
+ "interval": "95 % bootstrap over neurons of the band, the two poles of a neuron resampled together, 2,000 resamples, numpy default_rng(0) created once per pair and used for bands 0..3 in order, percentile 2.5 and 97.5",
+ "side_label": "ABOVE if the interval's lower end > floor; WITHIN if its upper end <= floor; UNDECIDED otherwise (applied to leavers and to arrivals separately, per band)",
+ "reading": {
+  "leavers ABOVE, arrivals WITHIN": "loss at fixed identity",
+  "leavers ABOVE, arrivals ABOVE": "movement between poles",
+  "leavers WITHIN, arrivals WITHIN": "within drift",
+  "leavers WITHIN, arrivals ABOVE": "arrivals only",
+  "any side UNDECIDED": "undecided"
+ },
+ "does_not_count_if": "any counts file fails counts.sum(-1) == filled (assert, fails loud), or the identity pair start_a->start_b has a nonzero leaver or arrival fraction in any band",
+ "decomposition": "per band, Delta = mean over the band's poles of (share at Y - share at X) = high_part + rest_part, where high_part sums the differences of poles at or above tau at X and rest_part the others, both divided by the band's pole count",
+ "per_pair_point_values": {
+  "t12->t13": [
+   {
+    "leavers": 0.30264446620959845,
+    "arrivals": 0.3478942213516161,
+    "n_high_X": 15315,
+    "n_high_Y": 16008,
+    "n_poles": 176128,
+    "shuffle_leavers": 0.9091115552325582,
+    "shuffle_arrivals": 0.9543613103745757
+   },
+   {
+    "leavers": 0.30733326418421325,
+    "arrivals": 0.37973239290530025,
+    "n_high_X": 19282,
+    "n_high_Y": 20678,
+    "n_poles": 176128,
+    "shuffle_leavers": 0.8825967478197674,
+    "shuffle_arrivals": 0.9549958765408545
+   },
+   {
+    "leavers": 0.25184796854521624,
+    "arrivals": 0.27145478374836174,
+    "n_high_X": 19075,
+    "n_high_Y": 19449,
+    "n_poles": 176128,
+    "shuffle_leavers": 0.8895746275436046,
+    "shuffle_arrivals": 0.9091814427467501
+   },
+   {
+    "leavers": 0.2641224171897191,
+    "arrivals": 0.2849681587025244,
+    "n_high_X": 21827,
+    "n_high_Y": 22282,
+    "n_poles": 176128,
+    "shuffle_leavers": 0.8734897347383721,
+    "shuffle_arrivals": 0.8943354762511772
+   }
+  ],
+  "t13->t14b": [
+   {
+    "leavers": 0.26949025487256373,
+    "arrivals": 0.3526361819090455,
+    "n_high_X": 16008,
+    "n_high_Y": 17339,
+    "n_poles": 176128,
+    "shuffle_leavers": 0.9015545512354651,
+    "shuffle_arrivals": 0.984700478271947
+   },
+   {
+    "leavers": 0.32232324209304575,
+    "arrivals": 0.2609053099912951,
+    "n_high_X": 20678,
+    "n_high_Y": 19408,
+    "n_poles": 176128,
+    "shuffle_leavers": 0.8898074127906976,
+    "shuffle_arrivals": 0.828389480688947
+   },
+   {
+    "leavers": 0.24011517301660754,
+    "arrivals": 0.20263252609388657,
+    "n_high_X": 19449,
+    "n_high_Y": 18720,
+    "n_poles": 176128,
+    "shuffle_leavers": 0.8937136627906976,
+    "shuffle_arrivals": 0.8562310158679767
+   },
+   {
+    "leavers": 0.2782963827304551,
+    "arrivals": 0.2121892110223499,
+    "n_high_X": 22282,
+    "n_high_Y": 20809,
+    "n_poles": 176128,
+    "shuffle_leavers": 0.8818529705668605,
+    "shuffle_arrivals": 0.8157457988587552
+   }
+  ],
+  "t14b->t15": [
+   {
+    "leavers": 0.2306938116385028,
+    "arrivals": 0.29661456831420496,
+    "n_high_X": 17339,
+    "n_high_Y": 18482,
+    "n_poles": 176128,
+    "shuffle_leavers": 0.8950649527616279,
+    "shuffle_arrivals": 0.96098570943733
+   },
+   {
+    "leavers": 0.2563375927452597,
+    "arrivals": 0.2055853256389118,
+    "n_high_X": 19408,
+    "n_high_Y": 18423,
+    "n_poles": 176128,
+    "shuffle_leavers": 0.8953999364098837,
+    "shuffle_arrivals": 0.8446476693035359
+   },
+   {
+    "leavers": 0.1873397435897436,
+    "arrivals": 0.16789529914529913,
+    "n_high_X": 18720,
+    "n_high_Y": 18356,
+    "n_poles": 176128,
+    "shuffle_leavers": 0.8957803415697674,
+    "shuffle_arrivals": 0.876335897125323
+   },
+   {
+    "leavers": 0.2223076553414388,
+    "arrivals": 0.18150800134557163,
+    "n_high_X": 20809,
+    "n_high_Y": 19960,
+    "n_poles": 176128,
+    "shuffle_leavers": 0.8866733284883721,
+    "shuffle_arrivals": 0.845873674492505
+   }
+  ],
+  "t14b->t14c": [
+   {
+    "leavers": 0.0061133860084203245,
+    "arrivals": 0.006344079820058827,
+    "n_high_X": 17339,
+    "n_high_Y": 17343,
+    "n_poles": 176128,
+    "shuffle_leavers": 0.9015318404796512,
+    "shuffle_arrivals": 0.9017625342912896
+   },
+   {
+    "leavers": 0.014942291838417148,
+    "arrivals": 0.013757213520197856,
+    "n_high_X": 19408,
+    "n_high_Y": 19385,
+    "n_poles": 176128,
+    "shuffle_leavers": 0.8899379996366279,
+    "shuffle_arrivals": 0.8887529213184087
+   },
+   {
+    "leavers": 0.01217948717948718,
+    "arrivals": 0.011752136752136752,
+    "n_high_X": 18720,
+    "n_high_Y": 18712,
+    "n_poles": 176128,
+    "shuffle_leavers": 0.8937590843023255,
+    "shuffle_arrivals": 0.8933317338749751
+   },
+   {
+    "leavers": 0.012062088519390649,
+    "arrivals": 0.012782930462780527,
+    "n_high_X": 20809,
+    "n_high_Y": 20824,
+    "n_poles": 176128,
+    "shuffle_leavers": 0.8817678052325582,
+    "shuffle_arrivals": 0.882488647175948
+   }
+  ],
+  "t14c->t15": [
+   {
+    "leavers": 0.23121720578907917,
+    "arrivals": 0.2968921178573488,
+    "n_high_X": 17343,
+    "n_high_Y": 18482,
+    "n_poles": 176128,
+    "shuffle_leavers": 0.8950649527616279,
+    "shuffle_arrivals": 0.9607398648298974
+   },
+   {
+    "leavers": 0.25524890379159143,
+    "arrivals": 0.20562290430745422,
+    "n_high_X": 19385,
+    "n_high_Y": 18423,
+    "n_poles": 176128,
+    "shuffle_leavers": 0.8953999364098837,
+    "shuffle_arrivals": 0.8457739369257465
+   },
+   {
+    "leavers": 0.18699230440359127,
+    "arrivals": 0.16796707994869603,
+    "n_high_X": 18712,
+    "n_high_Y": 18356,
+    "n_poles": 176128,
+    "shuffle_leavers": 0.8957803415697674,
+    "shuffle_arrivals": 0.8767551171148722
+   },
+   {
+    "leavers": 0.2223876296580868,
+    "arrivals": 0.18089704187475988,
+    "n_high_X": 20824,
+    "n_high_Y": 19960,
+    "n_poles": 176128,
+    "shuffle_leavers": 0.8866733284883721,
+    "shuffle_arrivals": 0.8451827407050453
+   }
+  ]
+ },
+ "note_on_pairs": "The brief names (t14b, t15) as the third neighbour pair; M1_SPEC 3.2 used (t14c, t15) for its drift tau. The floor follows the brief; t14c->t15 is reported beside it, not in the floor.",
+ "source_files": [
+  "studies/next/m1/banks/refs/t12/m1/counts.npz",
+  "studies/next/m1/banks/refs/t13/m1/counts.npz",
+  "studies/next/m1/banks/refs/t14b/m1/counts.npz",
+  "studies/next/m1/banks/refs/t14c/m1/counts.npz",
+  "studies/next/m1/banks/refs/t15/m1/counts.npz"
+ ]
+}

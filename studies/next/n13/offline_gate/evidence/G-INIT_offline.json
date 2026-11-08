@@ -1,0 +1,38 @@
+{
+ "a": {
+  "pass": true,
+  "per_shard": {
+   "model-00001-of-00003.safetensors": true,
+   "model-00002-of-00003.safetensors": true,
+   "model-00003-of-00003.safetensors": true
+  }
+ },
+ "failing_input": {
+  "pass": false,
+  "per_shard": {
+   "model-00001-of-00003.safetensors": false,
+   "model-00002-of-00003.safetensors": false,
+   "model-00003-of-00003.safetensors": false
+  }
+ },
+ "oids": {
+  "a81bae42": {
+   "model-00001-of-00003.safetensors": "0490d6668e613a29b23367e3a7aa9cc6aced3d162694445bb969ed7622b3c4e2",
+   "model-00002-of-00003.safetensors": "e127ea479fb6e208fe9d48d23b11212b5722f4873f6eef9c009b7a855866c641",
+   "model-00003-of-00003.safetensors": "f3ddff10052ffe5de5c6b4cad45c422c0d898acc6beb21b1b8531244adfb3c70"
+  },
+  "39ff1a89": {
+   "model-00001-of-00003.safetensors": "0490d6668e613a29b23367e3a7aa9cc6aced3d162694445bb969ed7622b3c4e2",
+   "model-00002-of-00003.safetensors": "e127ea479fb6e208fe9d48d23b11212b5722f4873f6eef9c009b7a855866c641",
+   "model-00003-of-00003.safetensors": "f3ddff10052ffe5de5c6b4cad45c422c0d898acc6beb21b1b8531244adfb3c70"
+  },
+  "c3c800dc": {
+   "model-00001-of-00003.safetensors": "822ceb78d3fabd6160569ed5417a05e5f511d37579addeb8065badcdc850a095",
+   "model-00002-of-00003.safetensors": "7551e03e9c1d08009c46da6b60e8d4aaa44716d7cd4a1d65291997613ee8566d",
+   "model-00003-of-00003.safetensors": "28e89370d6abb65c26494292473188617454d081a82ef67f36f1bd9da517aa44"
+  }
+ },
+ "wandb_run": "ydkgbnai",
+ "wandb_names_init": true,
+ "wandb_field": "model_name_or_path = /gs/ai2-llm/post-training/deletable_cache_models/allenai/Olmo-3-1025-7B/39ff1a89dc6950c25f4a435a993904f8587c6a3a"
+}

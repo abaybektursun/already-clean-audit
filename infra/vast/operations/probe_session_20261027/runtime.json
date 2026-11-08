@@ -1,0 +1,1 @@
+{"torch": "2.12.0+cu130", "cuda": "13.0", "capability": [8, 9], "tf32": false, "bf16_reduce": true, "flash": true, "cudnn": true}

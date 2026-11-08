@@ -1,0 +1,64 @@
+{
+  "baseline_commit": "8bba643",
+  "files": {
+    "infra/vast/parallax/audit_primary_interface_independent.py": {
+      "constants": {
+        "BOOTSTRAP_REPLICATES": "99a3f47caf215b692ef3b8c10b248662d6e0ed695193751d99778e7910dd8068",
+        "BOOTSTRAP_SEED": "33f7666f68df57bf293c37bfa66d4ee6154559f55313ca4e98e3f8405e5c489c",
+        "CODEBOOKS": "c8b828c06ffcb71f9a5ffe79bd29a2b86ced7378ef692e2c9672b90800e5057f",
+        "CODES": "ccf79402c8c740a9292e2d7e2ed1d94004ef8308e74c8ef6e719e9c90e93a2e4",
+        "EXPECTED_STEPS": "cb2766f636b5b79522fe3fcb57816ea05bd64bf0e96b1fa71b9825cee9dac78c",
+        "MAX_P": "a20ce746f1b44b9be5f7509149008aad408d023dee94600ad97293b6daf8b586",
+        "METRIC_ID": "a08fb5780e5706d34529ad6c8d8ca1ae95900e1ac62eec5d26527a7b02d11f28",
+        "PERMUTATION_REPLICATES": "e7bc02db7d0fbce86f2975e41bfb00156e6cfc0042ba41b2b41f61969a29b99a",
+        "PERMUTATION_SEED": "7ce34cb894ef4fa4be30a73e166ebbcb9bf2f925839286415418936d06eed3de",
+        "SEMANTIC_LABELS": "f06c768c83ed99d55d37aa651355fd190143e0af631f3007ce3f5cfba6b5eb6d"
+      },
+      "functions": {
+        "_assert_producer_agreement": "c926bc0b5b3d4c8f15ad4a5753ef506294a27ecf7978a17e81836671744e74b1",
+        "_close": "113c77fc30d831f30686bfdedde545290aa81f942d4fbf6d7a8d9b76837e7657",
+        "_compare": "9c29f5c8fe318105f97ab3b7131119762acdf9c36d54b2e8e7d187e7a1317715",
+        "_mapped_interaction": "32806f8d17981630c6c2ecb2a87f3106f4acf907d262273046b4ce5a9c78d83a",
+        "_mapping": "650b2004ab3d8fb6564578ea55832753bb5f95c99e98e517171c324dff392dde",
+        "_matrix": "60ebcd0cadf98bceb41ea3f1c90213a868a4bc363c8b324ff18f0c9197683e6d",
+        "_parse_rows": "e8279d2f02b7c74a6aa20a235221b9fc1b4eb3bc4472e70bae9e9439432dd322",
+        "_percentile": "3bf2215de5c1ebffe667c3ac679e030009ade57060f77bfaf447bf6c0fcde784",
+        "_sampled_gain": "d25d7c66cf08b15ce5dda312dbac8c9fc5cdd06f8a7d7af430cb8219071767b2",
+        "_void": "235f2e401efb2ea7b82a12ca31e2c245f438d901fcea483d87fd8d5ddf662048",
+        "build_audit": "53ed2b6b969dd7164184842c61a9060f99e951120d33edbd956ce34273a6e0e4",
+        "recompute": "1da3e40405cc4d6ae447501bf5b17bf9e1b0ca3496f02830ad45b9d78da9a70e"
+      },
+      "protected_slices": {}
+    },
+    "infra/vast/parallax/training_interface_control_cell.py": {
+      "constants": {
+        "ALLOWED": "7799b5a3ff2f33605c07508aca035946a0466b51bac2dcd0c54338c55405acb9"
+      },
+      "functions": {
+        "_aggregate_adjudication": "9a92adf4470f998638fd7d465bf0d60ac2fd6372708985de21ede1238e43a07a",
+        "_cell_adjudication": "e220c7dbf6322234413dd6679e5a16598ba37877c22434f346078769081da972",
+        "_mean_score_items": "ea9da9618a28f27e7f10b58e4722d2c82f000697b985b8234c7191ccac3a5cdd",
+        "_objective": "a3582178900551ecaeccaa19a4c065404fda6b28fd837db7a025b0c5531b0d56"
+      },
+      "protected_slices": {
+        "run_from_lineage_rows": "025e5fc53186d8a1d97daf826f873994dc4ec9abbafc8086f74638cd723cbfe6"
+      }
+    },
+    "infra/vast/parallax/training_interface_control_primary_cell.py": {
+      "constants": {
+        "DESIGN_ID": "d7896f7c4b5761bbafb3054f19c22b7e5910aa1db1b43484428cf604d98b4f6d",
+        "LINEAGE": "567ccdaa1e5601dcd93b8a985c1229f53e356476b087920bc94d3b3bdefe63c1",
+        "ROLE": "6bcbf56b74d1de448f60828638d56dc792c40cf2745dad469d54a4507fdd4a4c"
+      },
+      "functions": {
+        "_metric_inputs": "cc8f2ec211646e476db30f056dc6e3a61f4e7a8aca3552928d33744ccf5f2dcd",
+        "_validate_primary_config": "2f6b20ab5d6e107341160aa3a5d04cf184ee4936c0c912655b2ecd2492d8f9e7",
+        "adjudicate_primary_packet": "59c557795255d0a739217061b96d0026107ab7565bc02583a64b28ff00f1ab8f"
+      },
+      "protected_slices": {
+        "run_from_primary_adjudication": "158ac4a48c7a27f89d52d850d3ccb42cfc159ccff4494933fc4623c9ee0a7232"
+      }
+    }
+  },
+  "schema": "pg1-scientific-ast-baseline/v1"
+}

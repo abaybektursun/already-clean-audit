@@ -1,0 +1,5 @@
+[
+ {"name":"no_projector","module":"infra.aws_pg.jobs.mercator_mq","args":"--rotation hadamard --n-seq 2 --groups attn_readers,o_proj,mlp_readers,down_proj,embed,lm_head"},
+ {"name":"no_embed","module":"infra.aws_pg.jobs.mercator_mq","args":"--rotation hadamard --n-seq 2 --groups attn_readers,o_proj,mlp_readers,down_proj,lm_head,projector"},
+ {"name":"no_lm_head","module":"infra.aws_pg.jobs.mercator_mq","args":"--rotation hadamard --n-seq 2 --groups attn_readers,o_proj,mlp_readers,down_proj,embed,projector"}
+]

@@ -1,0 +1,686 @@
+{
+ "n_checks": 136,
+ "n_failed": 0,
+ "checks": [
+  {
+   "check": "A1 critic's within-layer Spearman(age, ln max|a|) reproduced (-0.592, age_energy_out.txt)",
+   "ok": true,
+   "detail": "-0.5915283299521876"
+  },
+  {
+   "check": "A2 critic's Spearman(age, ln density) reproduced (+0.502)",
+   "ok": true,
+   "detail": "0.5018415090637923"
+  },
+  {
+   "check": "A3 pairs.json rebuilt from the banks equals the committed file",
+   "ok": true,
+   "detail": "74 pairs"
+  },
+  {
+   "check": "A4 balance gate pass side: |rho_pair| <= 0.10 and |SMD| <= 0.10 on ln max|a| and ln density",
+   "ok": true,
+   "detail": "{'ln_max_abs': (0.027, 0.005), 'ln_density': (0.027, -0.004)}"
+  },
+  {
+   "check": "A5 balance gate failing input (unmatched pairs) fails",
+   "ok": true,
+   "detail": "{'ln_max_abs': (-0.739, 1.488), 'ln_density': (0.659, -1.135)}"
+  },
+  {
+   "check": "A6 every pair: same layer, different neurons, |d age| >= 3, early younger in index",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "A7 every pole in at most one pair",
+   "ok": true,
+   "detail": "148"
+  },
+  {
+   "check": "A8 every pair inside the chosen calipers",
+   "ok": true,
+   "detail": "{'ln_density': 0.5, 'ln_max_abs': 0.1}"
+  },
+  {
+   "check": "A15 the L1 inputs' sha256 registered in the job equal the committed files",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "A9 Wilson(5, 10) = [0.2366, 0.7634]",
+   "ok": true,
+   "detail": "(0.236593090512564, 0.7634069094874361)"
+  },
+  {
+   "check": "A10 Wilson(0, 10) upper = 0.2775",
+   "ok": true,
+   "detail": "0.2775327998628892"
+  },
+  {
+   "check": "A13 stage 2 on planted L1 arrays (a simulation, not data): balanced on all four quantities, >= 40 pairs, a subset of the graph",
+   "ok": true,
+   "detail": "(67, {'ln_density': 0.5, 'ln_max_abs': 0.1, 'ln_E_plus': 1.0, 'ln_colnorm': 0.3}, {'ln_colnorm': -0.079, 'ln_E_plus': 0.016})"
+  },
+  {
+   "check": "A14 stage 2 planted: column norm a function of age leaves no balanced point, L2 does not launch",
+   "ok": true,
+   "detail": "no instance grid point gives a balanced matched set: L2 does not launch (spec section 9.5)"
+  },
+  {
+   "check": "A16 A3: pairs_L2.json rebuilt from L1-02's banks equals the committed file (floats within rel 1e-6: the file was written under numpy 2.4.3, this venv has 1.26.4, and float32 sums differ in the 8th digit; every string and integer exact)",
+   "ok": true,
+   "detail": "(45, 21, 24)"
+  },
+  {
+   "check": "A16 A3: 45 pairs, 24 test and 21 freeze; the pairs holding an L1-edited pole are freeze; every other pair is test iff its early member's neuron index is even",
+   "ok": true,
+   "detail": "['P003', 'P008', 'P025', 'P039']"
+  },
+  {
+   "check": "A16 A3: the freeze half still holds the probes and the ten raw examples (>= 5 layers, two probe poles)",
+   "ok": true,
+   "detail": "(['L01N8975-', 'L30N9731+'], ['P005', 'P035', 'P025', 'P008', 'P015'])"
+  },
+  {
+   "check": "A17 the L2 inputs' sha256 registered in the job equal the committed files",
+   "ok": true,
+   "detail": "{'pairs_L2.json': '7e3a99480b3a2b939ca6eb0a8ae6fe43ee0e8bad22bee302c1a37ca1e4e1755b', 'e1_known.json': '79da230cc099e6981dad1df00bee7c46dfd3b6e890cb9ca7e9a174937e27db61'}"
+  },
+  {
+   "check": "A18 A3 planted: marking a test pair's late pole as L1-edited moves that pair, and only it, to the freeze half",
+   "ok": true,
+   "detail": "P000"
+  },
+  {
+   "check": "A11 eval windows: 96 distinct, wholly in band 3",
+   "ok": true,
+   "detail": "(10045, 24525)"
+  },
+  {
+   "check": "A19 A4: pairs_L2.json's eval set is the registered rule at 1,024 windows (n6.eval_windows(1024)): distinct, ascending, wholly in band 3, after the grid harvest's windows 0-10,043; the list's sha256 is the registered one; inst_windows (G-INST) are pairs.json's 96 windows",
+   "ok": true,
+   "detail": "(10045, 24663, '5822191728d4', 32)"
+  },
+  {
+   "check": "A20 A4: the L2 plan holds 209 edits: the positive control (col, rand, col_half) in the 8 layers 0, 4, ..., 28; the probes on the positive controls of layers 0 and 31 and on two pair poles; the zero edit; col and rand of both members of all 45 pairs in both halves",
+   "ok": true,
+   "detail": "{'pc': 24, 'probe_pc': 2, 'pair': 180, 'probe_pair': 2, 'zero': 1}"
+  },
+  {
+   "check": "A21 A4: G-PC needs 6 of 8 layers; P(X >= 6 | n = 8, p = 0.5) = 37/256 = 0.1445",
+   "ok": true,
+   "detail": "0.14453125"
+  },
+  {
+   "check": "A22 A5: the L2 plan split by half. L2a (freeze) 113 edits: the positive control 24, its probes 2, the 21 freeze pairs' col and rand 84, the two pair probes and the zero edit; L2b (test) 99 edits: the 24 test pairs' col and rand 96 and the same pair probes and zero edit; together the 209-edit plan in its order; in both only those 3; every test-pair edit in L2b only",
+   "ok": true,
+   "detail": "(113, 99, ['P005_late_probe', 'P005_late_zero', 'P015_late_probe'])"
+  },
+  {
+   "check": "A12 pair-stratified Spearman = 1 - 2f (f = share of pairs whose earlier member has the larger value)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "B the tiny model was trained (last training loss below ln 256 - 1)",
+   "ok": true,
+   "detail": "1.9306429624557495"
+  },
+  {
+   "check": "B G_SAME: pass side passes and its failing input fails",
+   "ok": true,
+   "detail": "{}"
+  },
+  {
+   "check": "B G_REV: pass side passes and its failing input fails",
+   "ok": true,
+   "detail": "{}"
+  },
+  {
+   "check": "B K1: pass side passes and its failing input fails",
+   "ok": true,
+   "detail": "{'value': -0.22333523631095886, 'target': -0.22333523631095886}"
+  },
+  {
+   "check": "B K2: pass side passes and its failing input fails",
+   "ok": true,
+   "detail": "{'value': 2.2208583374023436, 'target': 2.2208583374023436}"
+  },
+  {
+   "check": "B G_POLE: pass side passes and its failing input fails",
+   "ok": true,
+   "detail": "{'value': 0.0, 'failing_input_min': 0.9614127803566935}"
+  },
+  {
+   "check": "B G_FP32: pass side passes and its failing input fails",
+   "ok": true,
+   "detail": "{}"
+  },
+  {
+   "check": "B K3: pass side passes and its failing input fails",
+   "ok": true,
+   "detail": "{'value': 2.220648341878255, 'bf16': 2.2208583374023436, 'failing_value_off_by_one': 7.983666902669271}"
+  },
+  {
+   "check": "B G_INST: pass side passes and its failing input fails",
+   "ok": true,
+   "detail": "{'value': 0.0, 'failing_input_min': 0.006216701511831624}"
+  },
+  {
+   "check": "B G_ID: pass side passes and its failing input fails",
+   "ok": true,
+   "detail": "{'value_max_abs': 0.0}"
+  },
+  {
+   "check": "B G_CACHE: pass side passes and its failing input fails",
+   "ok": true,
+   "detail": "{'value_max_abs': 0.0}"
+  },
+  {
+   "check": "B G_EPS: pass side passes and its failing input fails",
+   "ok": true,
+   "detail": "{'value': 1.895841705845669e-08, 'bf16': {'P000_late_probe': -0.0001491478037678462, 'P010_late_probe': 4.686885858973255e-06}}"
+  },
+  {
+   "check": "B G_ZN: pass side passes and its failing input fails",
+   "ok": true,
+   "detail": "{'value_max_abs': 0.0}"
+  },
+  {
+   "check": "B G_NORM: pass side passes and its failing input fails",
+   "ok": true,
+   "detail": "{'max_E_rel_err': 1.077274215835295e-07}"
+  },
+  {
+   "check": "B G_SAMPLES: pass side passes and its failing input fails",
+   "ok": true,
+   "detail": "{'n': 10}"
+  },
+  {
+   "check": "B A1 g_pole.npz: per pole the recomputed g, u, a of the neuron and of n + 1 beside the bank's a at the 10 positions; a = act(g) u; the bank's a and positions equal the pairs file; the statistic from the file equals metrics' per_pole",
+   "ok": true,
+   "detail": "((24, 10, 2), 0.0)"
+  },
+  {
+   "check": "B A1 peak GPU memory recorded per phase in metrics.json (None on the CPU)",
+   "ok": true,
+   "detail": "{'load_K1': None, 'K2': None, 'G_POLE': None, 'bf16_probes': None, 'cast': None, 'K3': None, 'pass1': None, 'inst': None, 'pass2': None, 'progression': None}"
+  },
+  {
+   "check": "B A1 G_POLE planted 0.03 of max|a|: value 0.03, passes at the tolerance 0.05",
+   "ok": true,
+   "detail": "(0.030000000000000006, True)"
+  },
+  {
+   "check": "B A1 G_POLE planted 0.06 of max|a| stops the job (tolerance 0.05)",
+   "ok": true,
+   "detail": "G_POLE FAILED: {\"pass\": false, \"failing_input\": {\"pass\": false}, \"value\": 0.060000000000000005, \"tol\": 0.05, \"n_poles\": 24, \"n_exemplars\": 10, \"failing_input_mi"
+  },
+  {
+   "check": "B A1 G_POLE planted 0.06 of max|a|: value 0.06, fails at the tolerance 0.05",
+   "ok": true,
+   "detail": "(0.060000000000000005, False)"
+  },
+  {
+   "check": "B A2 G_ZN planted zero edit dL 5e-08: passes at 1.221e-07; failing input (first col edit dL 0.0204) fails",
+   "ok": true,
+   "detail": "(5e-08, True)"
+  },
+  {
+   "check": "B A2 G_ZN planted zero edit dL 5e-07: fails at 1.221e-07; failing input (first col edit dL 0.0204) fails",
+   "ok": true,
+   "detail": "(5e-07, False)"
+  },
+  {
+   "check": "B A2 G_ZN planted failing input: a first column edit at 5e-8 passes the bar, so the failing side registers it",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "B A2 G_CACHE planted largest per-token difference 5e-06: passes at 1e-05; failing input fails",
+   "ok": true,
+   "detail": "(4.76837158203125e-06, 5.820766091346741e-10)"
+  },
+  {
+   "check": "B A2 G_CACHE planted largest per-token difference 5e-05: fails at 1e-05; failing input fails",
+   "ok": true,
+   "detail": "(5.0067901611328125e-05, 6.111804395914078e-09)"
+  },
+  {
+   "check": "B A2 G_CACHE planted uniform offset 2e-7 (largest 2e-7, under 1e-5): the mean condition fails it",
+   "ok": true,
+   "detail": "(1.99999999995912e-07, 2.0000000056086265e-07)"
+  },
+  {
+   "check": "B A2 the head's input shapes of the two paths are recorded: base pass 1 a batch, the progression one window",
+   "ok": true,
+   "detail": "{'base_pass1 (model forward)': [[2, 2049, 32]], 'progression (head per window)': [[1, 2049, 32]]}"
+  },
+  {
+   "check": "B A2 G_CACHE records the mean and the largest per-token difference and its failing input's values",
+   "ok": true,
+   "detail": "{'value_mean': 0.0, 'value_max_abs': 0.0}"
+  },
+  {
+   "check": "B K2: the job's corpus NLL equals a second implementation (one window at a time)",
+   "ok": true,
+   "detail": "(2.2208583374023436, 2.2208583374023436)"
+  },
+  {
+   "check": "B G_EPS: the bf16 probe moves the loss by more than the bound, the fp32 probe by less (the floor is the precision's)",
+   "ok": true,
+   "detail": "({'P000_late_probe': -0.0001491478037678462, 'P010_late_probe': 4.686885858973255e-06}, {'PC00_probe': 1.0838903108378872e-08, 'P000_late_probe': 1.895841705845669e-08, 'PC05_probe': -1.0550138540565968e-10, 'P010_late_probe': 1.3360477169044316e-09})"
+  },
+  {
+   "check": "B G_PC and G_DOSE computed on the positive-control layers (A4: every fourth, layers 0 and 4 of 6; values only; a tiny model need not pass)",
+   "ok": true,
+   "detail": "(2, 2)"
+  },
+  {
+   "check": "B every planned edit has one record, in plan order",
+   "ok": true,
+   "detail": "59"
+  },
+  {
+   "check": "B m['complete'] and nothing parked",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "B the job's E+ equals an independent fp32 loop over the same windows (rel 1e-5)",
+   "ok": true,
+   "detail": "0.0048828125"
+  },
+  {
+   "check": "B the job's column norms equal the independent ones",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "B zero-norm edit: bitwise equal to base, dL exactly 0",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "B every col edit changes the loss (not bitwise equal to base)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "B pair edit size c = min of the two column norms; equal within each pair",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "B kappa = c / ||w|| and kappa = 1 on the smaller-norm member",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "B realized: the hook's E equals pass 1's E+ (rel 1e-4) on every edit",
+   "ok": true,
+   "detail": "1.077274215835295e-07"
+  },
+  {
+   "check": "B every edit read 50 eval exemplars and the KL is >= 0",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "B ten raw examples: pole, partner, c, dL, rand dL, 5 tokens with context",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "B col edit (kappa 1) equals zero written into the pole's own-sign inputs (E1's operator restricted to the sign), fp32",
+   "ok": true,
+   "detail": "4.76837158203125e-06"
+  },
+  {
+   "check": "B forward from a kept residual (layer 0) equals the model's forward bitwise",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "B its failing input (layer 0 skipped) differs",
+   "ok": true,
+   "detail": "16.177640914916992"
+  },
+  {
+   "check": "B G_SAME planted wrong torch version stops",
+   "ok": true,
+   "detail": "G_SAME FAILED: {\"pass\": false, \"failing_input\": {\"pass\": false}, \"got\": {\"torch\": \"wrong\", \"transformers\": \"x\", \"device\": \"cpu\"}, \"want\": {\"torch\": \"t\", \"transf"
+  },
+  {
+   "check": "B G_REV planted wrong snapshot stops",
+   "ok": true,
+   "detail": "G_REV FAILED: {\"pass\": false, \"failing_input\": {\"pass\": false}, \"got\": \"0000000000000000000000000000000000000000\", \"want\": \"tiny\"}"
+  },
+  {
+   "check": "B K1 planted wrong banked value stops",
+   "ok": true,
+   "detail": "K1 FAILED: {\"pass\": false, \"failing_input\": {\"pass\": false, \"value\": 0.27666476368904114}, \"value\": -0.22333523631095886, \"target\": -0.12333523631095886, \"tol\":"
+  },
+  {
+   "check": "B K1 failing input planted equal to the target stops",
+   "ok": true,
+   "detail": "K1: its failing input passed: {\"pass\": true, \"failing_input\": {\"pass\": true, \"value\": -0.22333523631095886}, \"value\": -0.22333523631095886, \"target\": -0.2233352"
+  },
+  {
+   "check": "B K2 planted wrong target stops",
+   "ok": true,
+   "detail": "K2 FAILED: {\"pass\": false, \"failing_input\": {\"pass\": false}, \"value\": 2.2208583374023436, \"target\": 2.2308583374023434, \"tol\": 0.001, \"failing_value_T14\": 2.260"
+  },
+  {
+   "check": "B G_POLE planted wrong bank (0.7 x a, the T_14 analog) stops",
+   "ok": true,
+   "detail": "G_POLE FAILED: {\"pass\": false, \"failing_input\": {\"pass\": false}, \"value\": 0.42857142857142877, \"tol\": 0.05, \"n_poles\": 24, \"n_exemplars\": 10, \"failing_input_min"
+  },
+  {
+   "check": "B G_INST planted: column norms 1.1 x L1's stop L2",
+   "ok": true,
+   "detail": "G_INST FAILED: {\"pass\": false, \"failing_input\": {\"pass\": false}, \"value\": 0.09090909090909105, \"tol\": 1e-05, \"failing_input_min\": 0.07937280202205543}"
+  },
+  {
+   "check": "B a stage-1 pairs file given to L2 stops",
+   "ok": true,
+   "detail": "pairs file of stage L1 given to stage L2"
+  },
+  {
+   "check": "B G_NORM failing input: the neighbouring neuron's E differs from the pole's by more than 1e-4",
+   "ok": true,
+   "detail": "(71.16006630914288, 849.3573913574219)"
+  },
+  {
+   "check": "B stop rule: a short budget parks the remaining edits and the job ends normally",
+   "ok": true,
+   "detail": "(45, 14)"
+  },
+  {
+   "check": "B L1 runs the 10 raw column edits, 2 probes and the zero edit; the ten raw examples written",
+   "ok": true,
+   "detail": "13"
+  },
+  {
+   "check": "B L1 and L2 give the same dL for the same edits (bit for bit)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "B A4 chunks: L1 (one chunk of 4 windows) and L2 (two chunks of 2) give equal records for the same edits, field by field (dL, per-window dL, R, E+, KL, top-5 tokens, bitwise flag, hook calls)",
+   "ok": true,
+   "detail": "13"
+  },
+  {
+   "check": "B A4 an L2 eval set of 8 windows (two chunks of 4) beside L1's 4: G-INST reads L1's 4 windows (inst_windows) and passes, its failing input fails; every record has 8 per-window values; pass 1's E+ is over the 8 windows (differs from L1's)",
+   "ok": true,
+   "detail": "(0.0, 59)"
+  },
+  {
+   "check": "B A4 G-INST planted on L2's eval set (8 windows) instead of L1's 4 stops the job",
+   "ok": true,
+   "detail": "G_INST FAILED: {\"pass\": false, \"failing_input\": {\"pass\": false}, \"value\": 1.171513534739729, \"tol\": 1e-05, \"failing_input_min\": 0.6734081284776428}"
+  },
+  {
+   "check": "B G_PC / G_DOSE planted: col > rand everywhere passes, its swapped labels fail",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "B G_PC planted: col > rand only in the odd layers, none of the 8 positive-control layers (A4), fails",
+   "ok": true,
+   "detail": "0"
+  },
+  {
+   "check": "B A4 G_PC planted: col > rand in 6 of the 8 positive-control layers passes (need 6); the swapped labels fail",
+   "ok": true,
+   "detail": "(6, 2)"
+  },
+  {
+   "check": "B A4 G_DOSE planted: full > half in 6 of 8 passes",
+   "ok": true,
+   "detail": "6"
+  },
+  {
+   "check": "B A4 G_PC planted: col > rand in 5 of the 8 positive-control layers fails (need 6); the swapped labels fail",
+   "ok": true,
+   "detail": "(5, 3)"
+  },
+  {
+   "check": "B A4 G_DOSE planted: full > half in 5 of 8 fails",
+   "ok": true,
+   "detail": "5"
+  },
+  {
+   "check": "B A5 L2a and L2b run their halves of the plan (n6.plan with half), in plan order; together every edit of the single launch",
+   "ok": true,
+   "detail": "(35, 27, 59)"
+  },
+  {
+   "check": "B A5 every L2a and L2b record equals the single launch's record of the same edit, field by field (dL, per-window dL, R, E+, KL, top-5 tokens, c, kappa, the bitwise flag, hook calls); the record format is unchanged (same keys)",
+   "ok": true,
+   "detail": "62"
+  },
+  {
+   "check": "B A5 L2b re-runs the 13 gates that do not depend on the half, each passes and its failing input fails; G-EPS reads the two pair probes; no G-PC, G-DOSE, G-SAMPLES, no positive-control or freeze-pair record in L2b",
+   "ok": true,
+   "detail": "['G_CACHE', 'G_EPS', 'G_FP32', 'G_ID', 'G_INST', 'G_NORM', 'G_POLE', 'G_REV', 'G_SAME', 'G_ZN', 'K1', 'K2', 'K3']"
+  },
+  {
+   "check": "B A5 L2a holds every gate of L2, G-PC, G-DOSE and G-SAMPLES equal to the single launch's; G-EPS reads the four probes",
+   "ok": true,
+   "detail": "['G_CACHE', 'G_DOSE', 'G_EPS', 'G_FP32', 'G_ID', 'G_INST', 'G_NORM', 'G_PC', 'G_POLE', 'G_REV', 'G_SAME', 'G_SAMPLES', 'G_ZN', 'K1', 'K2', 'K3']"
+  },
+  {
+   "check": "B A5 L2b's metrics record L2a's eval windows, eval tokens and pairs content (sha256) beside its own, equal; halves recorded",
+   "ok": true,
+   "detail": "{'eval_windows_sha256': 'a608262cc8f7', 'eval_tokens_sha256': '1ffacf378c9c', 'pairs_sha256': 'eb6b26adda67', 'w_eval': '4'}"
+  },
+  {
+   "check": "B A5 freeze 2 from L2a's bank alone (n6 freeze --bank L2a) equals freeze on the single launch's records and gates",
+   "ok": true,
+   "detail": "(1.895841705845669e-07, 0.0008129841631896757, 0.6735915731811083)"
+  },
+  {
+   "check": "B A5 the verdict on both banks (n6 verdict --bank L2a --bank L2b, G-POWER planted to pass) reads every test pair and equals the single launch's verdict, every field",
+   "ok": true,
+   "detail": "('H_age UNDECIDED; H_adj UNDECIDED; H_eff UNDECIDED', 6, [])"
+  },
+  {
+   "check": "B A5 the verdict reads L2b's gates: a planted failure of L2b's K3 makes every label DOES NOT COUNT ('L2b:K3' listed)",
+   "ok": true,
+   "detail": "['L2b:K3']"
+  },
+  {
+   "check": "B A5 G-POWER failed: the verdict on L2a alone is UNDECIDED_NO_POWER with no test pair read (L2b is never launched)",
+   "ok": true,
+   "detail": "H_age UNDECIDED_NO_POWER; H_adj UNDECIDED_NO_POWER; H_eff UNDECIDED_NO_POWER"
+  },
+  {
+   "check": "B A5 planted: an L2b whose eval set differs from L2a's (window 52 replaced by 54) stops before its first gate",
+   "ok": true,
+   "detail": "A5: L2b's eval_windows_sha256 95734590027697162cdeb0796b44c1fc6dcdcaf68cdfe7ffd1b211ef0af81971 is not L2a's a608262cc8f7e34bef84c506d172e240a61be140415cd3f218ad"
+  },
+  {
+   "check": "B A5 planted: that L2b wrote no gate and no record (it stopped before G-SAME)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "B A5 planted: the verdict given an L2b bank whose eval windows differ from L2a's stops",
+   "ok": true,
+   "detail": "A5: the test launch's eval_windows_sha256 95734590027697162cdeb0796b44c1fc6dcdcaf68cdfe7ffd1b211ef0af81971 is not the freeze launch's a608262cc8f7e34bef84c506d1"
+  },
+  {
+   "check": "B A5 planted: an L2b against an L2a that parked edits stops",
+   "ok": true,
+   "detail": "A5: L2a is not complete (1 edits parked): L2b does not run"
+  },
+  {
+   "check": "B A5 planted: n6 freeze given L2b's bank stops (freeze reads L2a only)",
+   "ok": true,
+   "detail": "banks of halves ['freeze', 'test'], this step reads ['freeze'] (amendment A5)"
+  },
+  {
+   "check": "B A5 planted: the verdict with G-POWER passed and L2a alone stops (L2b's bank is needed)",
+   "ok": true,
+   "detail": "banks of halves ['freeze'], this step reads ['freeze', 'test'] (amendment A5)"
+  },
+  {
+   "check": "B A5 the manifests pass the job's argument checks: next_n6_L2a.json --half freeze, no --against, --budget-min = projection_L1.json L2a's job stop rule; next_n6_L2b.json --half test, --against L2a-01's metrics.json, L2b's job stop rule; both stage L2 on inputs_L2",
+   "ok": true,
+   "detail": "{'next_n6_L2a.json': ('freeze', None, 1672.0), 'next_n6_L2b.json': ('test', 's3://pg-lineage-769063704696/results/next_n6/L2a-01/out/edit/n6/metrics.json', 1601.0)}"
+  },
+  {
+   "check": "B A5 planted: the job's CLI refuses stage L2 without --half",
+   "ok": true,
+   "detail": "stage L2, half None: L2 runs as L2a (freeze) and L2b (test), A5"
+  },
+  {
+   "check": "B A5 planted: the job's CLI refuses --half test without --against",
+   "ok": true,
+   "detail": "A5: --against (L2a's metrics.json) is given to L2b and only to L2b"
+  },
+  {
+   "check": "C label branch SUPPORTED",
+   "ok": true,
+   "detail": "('SUPPORTED', 1.0, [0.9010990076755959, 0.9999999999999999])"
+  },
+  {
+   "check": "C label branch SUPPORTED_UNSPECIFIC",
+   "ok": true,
+   "detail": "('SUPPORTED_UNSPECIFIC', 1.0, [0.9010990076755959, 0.9999999999999999])"
+  },
+  {
+   "check": "C label branch REVERSED",
+   "ok": true,
+   "detail": "('REVERSED', 0.0, [6.938893903907228e-18, 0.09890099232440402])"
+  },
+  {
+   "check": "C label branch FLAT",
+   "ok": true,
+   "detail": "('FLAT', 0.486, [0.32994236002509725, 0.6443119540413141])"
+  },
+  {
+   "check": "C label branch UNDECIDED_NO_POWER",
+   "ok": true,
+   "detail": "('UNDECIDED_NO_POWER', 0.486, [0.32994236002509725, 0.6443119540413141])"
+  },
+  {
+   "check": "C label branch UNDECIDED",
+   "ok": true,
+   "detail": "('UNDECIDED', 0.657, [0.4915194951399626, 0.7916830501295105])"
+  },
+  {
+   "check": "C ABOVE_CEILING when the age ordering is more reliable than the positive control's (8 of 32)",
+   "ok": true,
+   "detail": "[0.9010990076755959, 0.9999999999999999]"
+  },
+  {
+   "check": "C a failed gate makes every label DOES NOT COUNT (realized label kept beside it)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "C a failing input that passed makes every label DOES NOT COUNT",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "C G_RES fails when the rounding floor exceeds min(1e-6, 0.02 x q10 |dL_col|) of the freeze half (A4: the factor 50)",
+   "ok": true,
+   "detail": "(5e-05, 1e-06)"
+  },
+  {
+   "check": "C A4 G_RES planted floor 0.015 x q10 (q10 1.02e-06): passes at q10 / 50 (it would fail at freeze 1's q10 / 100)",
+   "ok": true,
+   "detail": "(1.5365226250323473e-08, 2.048696833376463e-08)"
+  },
+  {
+   "check": "C A4 G_RES planted floor 0.05 x q10 (q10 1.02e-06): fails at q10 / 50 (the registered failing input)",
+   "ok": true,
+   "detail": "(5.1217420834411583e-08, 2.048696833376463e-08)"
+  },
+  {
+   "check": "C room: at 35 test pairs the FLAT band is reachable and 24 wins lift the lower bound above 0.5",
+   "ok": true,
+   "detail": "([0.34275735921480777, 0.6572426407851922], 24)"
+  },
+  {
+   "check": "C A3 room at 24 test pairs (21 freeze): FLAT reachable, SUPPORTED needs 17 wins, REVERSED at most 7; freeze reads 21 pairs (tau_s and G-RES's q10 from 42 column edits)",
+   "ok": true,
+   "detail": "([0.3142742581957335, 0.6857257418042665], 2.0225248395655517e-06)"
+  },
+  {
+   "check": "C A3 room at 28 test pairs (17 freeze): FLAT reachable, SUPPORTED needs 20 wins, REVERSED at most 8; freeze reads 17 pairs (tau_s and G-RES's q10 from 34 column edits)",
+   "ok": true,
+   "detail": "([0.32633127457293465, 0.6736687254270654], 1.9964303062405384e-06)"
+  },
+  {
+   "check": "C A3 room at 17 test pairs (28 freeze): FLAT unreachable, SUPPORTED needs 13 wins, REVERSED at most 4; freeze reads 28 pairs (tau_s and G-RES's q10 from 56 column edits)",
+   "ok": true,
+   "detail": "([0.28533856016458625, 0.7146614398354137], 2.0127675358239404e-06)"
+  },
+  {
+   "check": "C one parked test pair is listed; the label still reads (1 of 35 <= 0.2)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "C parked above 0.2 of the test half: DOES NOT COUNT (G_PARK)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "C a run parked before every positive control was read: DOES NOT COUNT (G_PC_missing)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "C H_eff reads the collateral per unit efficacy: an early pole ten times as effective at 3e-4 nats per token more cost is REVERSED",
+   "ok": true,
+   "detail": "{'label': 'REVERSED', 'p': 0.0, 'ci': [6.938893903907228e-18, 0.09890099232440402], 'n': 35, 'resolved': 1.0}"
+  },
+  {
+   "check": "C practical: the age pick saves D/2 against a random pick",
+   "ok": true,
+   "detail": "{'gain_vs_random_pick': 0.00014999999999999996, 'ci': [0.00014999999999999996, 0.00014999999999999996], 'gain_vs_energy_pick': 0.0, 'ci_E': [0.0, 0.0]}"
+  },
+  {
+   "check": "C freeze reads only the freeze half (test D planted at +3e-4 does not move the freeze median)",
+   "ok": true,
+   "detail": "3.012921765535581e-05"
+  },
+  {
+   "check": "C A4 G_POWER planted: window-bootstrap sd of D_col at 0.4 x the median |D_col| over the 21 freeze pairs passes (bar 0.5)",
+   "ok": true,
+   "detail": "(3.2578746424601766e-05, 8.14468660615044e-05, 0.4)"
+  },
+  {
+   "check": "C A4 G_POWER passes: the verdict reads the test half (planted SUPPORTED)",
+   "ok": true,
+   "detail": "H_age SUPPORTED; H_adj SUPPORTED; H_eff SUPPORTED"
+  },
+  {
+   "check": "C A4 G_POWER planted: window-bootstrap sd of D_col at 0.6 x the median |D_col| over the 21 freeze pairs fails (bar 0.5)",
+   "ok": true,
+   "detail": "(4.886811963690264e-05, 8.14468660615044e-05, 0.6)"
+  },
+  {
+   "check": "C A4 G_POWER fails: H_age, H_adj and H_eff read UNDECIDED_NO_POWER and no test pair is read",
+   "ok": true,
+   "detail": "H_age UNDECIDED_NO_POWER; H_adj UNDECIDED_NO_POWER; H_eff UNDECIDED_NO_POWER"
+  },
+  {
+   "check": "C A4 G_POWER fails: with every test record removed the verdict is the same (the test half is not read; no G_PARK)",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "check": "C A4 G_POWER fails and a gate failed: DOES NOT COUNT, UNDECIDED_NO_POWER kept as the realized label",
+   "ok": true,
+   "detail": ""
+  }
+ ]
+}

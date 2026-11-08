@@ -1,0 +1,287 @@
+{
+ "started_utc": "2026-11-06T01:48:35Z",
+ "complete": false,
+ "gates": {
+  "G_SAME": {
+   "pass": true,
+   "versions": {
+    "torch": "2.12.0+cu130",
+    "transformers": "5.9.0"
+   },
+   "registered": {
+    "torch": "2.12.0+cu130",
+    "transformers": "5.9.0"
+   },
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "INPUTS": {
+   "pass": true,
+   "mismatch": [],
+   "paths": {
+    "births": "/work/fetch/inputs/births.json",
+    "0": "/work/fetch/inputs/exemplar_a_t00.npz",
+    "1": "/work/fetch/inputs/exemplar_a_t01.npz",
+    "2": "/work/fetch/inputs/exemplar_a_t02.npz",
+    "3": "/work/fetch/inputs/exemplar_a_t03.npz",
+    "4": "/work/fetch/inputs/exemplar_a_t04.npz",
+    "5": "/work/fetch/inputs/exemplar_a_t05.npz",
+    "6": "/work/fetch/inputs/exemplar_a_t06.npz",
+    "7": "/work/fetch/inputs/exemplar_a_t07.npz",
+    "8": "/work/fetch/inputs/exemplar_a_t08.npz",
+    "9": "/work/fetch/inputs/exemplar_a_t09.npz",
+    "10": "/work/fetch/inputs/exemplar_a_t10.npz",
+    "11": "/work/fetch/inputs/exemplar_a_t11.npz",
+    "12": "/work/fetch/inputs/exemplar_a_t12.npz",
+    "13": "/work/fetch/inputs/exemplar_a_t13.npz",
+    "14": "/work/fetch/inputs/exemplar_a_t14.npz",
+    "15": "/work/fetch/inputs/exemplar_a_t15.npz"
+   },
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "G_CORPUS": {
+   "pass": true,
+   "got": "2aca80ca6537f46b8f60a550b4a3f2f13be2d18c5402be8f1af5c00caa86f531",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t15_G_REV": {
+   "pass": true,
+   "commit": "373bad25002f1624757a73235c5ca844c6375c25",
+   "registered": "373bad25002f1624757a73235c5ca844c6375c25",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t15_G_CFG": {
+   "pass": true,
+   "diff_keys": [],
+   "sliding_window": 4096,
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "model_type"
+    ],
+    "sliding_window": 4096
+   }
+  },
+  "t15_G0": {
+   "pass": true,
+   "max_ratio": 0.006066504865884781,
+   "failing_input": {
+    "pass": false,
+    "max_ratio": 0.6373435258865356
+   }
+  },
+  "K0": {
+   "pass": true,
+   "n": 63,
+   "n_poles": 10,
+   "median_rel": 0.0,
+   "p99_rel": 0.0,
+   "max_rel": 0.0,
+   "exact_share": 1.0,
+   "tol": {
+    "median": 0.0043,
+    "p99": 0.0222
+   },
+   "failing_input": {
+    "pass": false,
+    "n": 63,
+    "n_poles": 10,
+    "median_rel": 0.388397006204223,
+    "p99_rel": 0.9990895641929122,
+    "max_rel": 1.0197446223620947,
+    "exact_share": 0.0,
+    "tol": {
+     "median": 0.0043,
+     "p99": 0.0222
+    }
+   },
+   "farthest": {
+    "row": 4,
+    "slot": 15,
+    "a_bank": 0.3545938730239868,
+    "a_new": 0.3545938730239868
+   }
+  },
+  "t15_G_EX": {
+   "pass": true,
+   "n": 2295,
+   "n_poles": 230,
+   "median_rel": 0.0,
+   "p99_rel": 0.0,
+   "max_rel": 0.0,
+   "exact_share": 1.0,
+   "tol": {
+    "median": 0.0043,
+    "p99": 0.0222
+   },
+   "failing_input": {
+    "pass": false,
+    "n": 2295,
+    "n_poles": 230,
+    "median_rel": 0.2690167133553447,
+    "p99_rel": 0.8946252341761948,
+    "max_rel": 1.0378767644649136,
+    "exact_share": 0.0,
+    "tol": {
+     "median": 0.0043,
+     "p99": 0.0222
+    }
+   },
+   "farthest": {
+    "row": 4,
+    "slot": 15,
+    "a_bank": 0.3545938730239868,
+    "a_new": 0.3545938730239868
+   }
+  },
+  "t15_G_TOPK": {
+   "pass": true,
+   "n": 5675,
+   "n_poles": null,
+   "median_rel": 0.0,
+   "p99_rel": 0.0,
+   "max_rel": 0.0,
+   "exact_share": 1.0,
+   "tol": {
+    "median": 0.0043,
+    "p99": 0.0222
+   },
+   "failing_input": {
+    "pass": false,
+    "n": 5675,
+    "n_poles": null,
+    "median_rel": 0.9996965900419515,
+    "p99_rel": 1.376872888521784,
+    "max_rel": 1.9902848552839902,
+    "exact_share": 0.0,
+    "tol": {
+     "median": 0.0043,
+     "p99": 0.0222
+    }
+   }
+  },
+  "t14_G_REV": {
+   "pass": true,
+   "commit": "cb286dcdaaf3f92b3c419dd77439078fdebffe53",
+   "registered": "cb286dcdaaf3f92b3c419dd77439078fdebffe53",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t14_G_CFG": {
+   "pass": true,
+   "diff_keys": [],
+   "sliding_window": 4096,
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "model_type"
+    ],
+    "sliding_window": 4096
+   }
+  },
+  "t14_G0": {
+   "pass": true,
+   "max_ratio": 0.005030064377933741,
+   "failing_input": {
+    "pass": false,
+    "max_ratio": 0.5724493861198425
+   }
+  },
+  "t14_G_EX": {
+   "pass": false,
+   "n": 477,
+   "n_poles": 62,
+   "median_rel": 0.0052419216385804785,
+   "p99_rel": 0.2562705341026918,
+   "max_rel": 1.952766309595231,
+   "exact_share": 0.32914046121593293,
+   "tol": {
+    "median": 0.0086,
+    "p99": 0.0444
+   },
+   "failing_input": {
+    "pass": false,
+    "n": 477,
+    "n_poles": 62,
+    "median_rel": 0.33590355276063705,
+    "p99_rel": 1.0120037858722106,
+    "max_rel": 1.0372420946156407,
+    "exact_share": 0.0,
+    "tol": {
+     "median": 0.0086,
+     "p99": 0.0444
+    }
+   },
+   "farthest": {
+    "row": 320,
+    "slot": 38,
+    "a_bank": 0.0011334940791130066,
+    "a_new": -0.0011896874057129025
+   }
+  }
+ },
+ "points": {
+  "15": {
+   "t": 15,
+   "branch": "stage1-step1413814",
+   "windows": 1732,
+   "entries": 2295,
+   "records": {
+    "freeze": 177,
+    "test": 148
+   },
+   "download": {
+    "branch": "stage1-step1413814",
+    "commit": "373bad25002f1624757a73235c5ca844c6375c25",
+    "bytes": 14605764269,
+    "seconds": 42.1,
+    "MB_per_s": 346.8
+   },
+   "load_s": 7.8,
+   "forward_s": 376.6,
+   "fixed_s": 124.4
+  },
+  "14": {
+   "t": 14,
+   "branch": "stage1-step1000000",
+   "windows": 381,
+   "entries": 477,
+   "records": {
+    "freeze": 0,
+    "test": 0
+   },
+   "download": {
+    "branch": "stage1-step1000000",
+    "commit": "cb286dcdaaf3f92b3c419dd77439078fdebffe53",
+    "bytes": 14605764269,
+    "seconds": 43.8,
+    "MB_per_s": 333.8
+   },
+   "load_s": 1.6,
+   "forward_s": 82.3
+  }
+ },
+ "parked": [],
+ "phase": "gate t14_G_EX",
+ "updated_utc": "2026-11-06T02:01:34Z",
+ "elapsed_s": 779.9,
+ "measured": {
+  "fixed_s": 154.4,
+  "per_window_s": 0.2174,
+  "tokens_per_s": 9446.2
+ },
+ "projection": {
+  "at": 14,
+  "elapsed_s": 607,
+  "remaining_s": 2282,
+  "budget_s": 9000.0
+ }
+}

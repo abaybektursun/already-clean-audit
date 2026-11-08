@@ -1,0 +1,33 @@
+{
+  "ftfam_instrument_detects_a_planted_colocation": {
+    "_required": false,
+    "abs_error": 9.992007221626409e-16,
+    "expected": 0.9,
+    "ok": true,
+    "recovered": 0.899999999999999,
+    "tol": 0.1,
+    "void": false
+  },
+  "mn2_beats_the_total_write_incumbent": {
+    "_required": false,
+    "mn5_banked": -0.4734,
+    "note": "a sink statistic that does not beat total ||dW|| is the same finding in new coordinates, not a co-location finding",
+    "ok": true,
+    "rho_dW_norm": -0.14704980056384323,
+    "rho_sink": 0.3027495893961478
+  },
+  "mn2_sink_outside_energy_band": {
+    "_required": false,
+    "ci_hi": -0.07976437776978498,
+    "ci_lo": -0.08113539822964204,
+    "ci_method": "percentile_bootstrap",
+    "clears_zero": false,
+    "control_mean": 0.11812320800483962,
+    "delta_mean": -0.08042766631570201,
+    "n": 1080,
+    "n_boot": 2000,
+    "ok": true,
+    "seed": 1337,
+    "treatment_mean": 0.037695541689137586
+  }
+}

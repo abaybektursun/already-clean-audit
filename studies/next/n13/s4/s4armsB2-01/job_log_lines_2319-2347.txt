@@ -1,0 +1,29 @@
+[pipeline] step 3/7 START rndE_k3: /opt/pg/venv/bin/python -m infra.aws_pg.jobs.n13_gen --arm rndE_k3 --bench math500 --problems 0:500 --sets s3://pg-lineage-769063704696/results/next_n13/s4armsB2-01/inputs/sets.json --setup-dir /work/out/setup --cap-from s3://pg-lineage-769063704696/results/next_n13/s4armsB2-01/inputs/thresholds.json --allowance-min 1762 --proj-tok-s 236.5774019149508 --proj-mean-math 5498.672839506173 --proj-mean-gsm 940.0 --proj-load-min 14.352775791059367 --out /work/out/rndE_k3
+Completed 256.0 KiB/723.5 KiB (2.2 MiB/s) with 1 file(s) remainingCompleted 512.0 KiB/723.5 KiB (4.2 MiB/s) with 1 file(s) remainingCompleted 723.5 KiB/723.5 KiB (6.0 MiB/s) with 1 file(s) remainingdownload: s3://pg-lineage-769063704696/results/next_n13/s4armsB2-01/inputs/sets.json to ../../../work/inputs/sets.json
+Completed 3.0 KiB/3.0 KiB (30.8 KiB/s) with 1 file(s) remainingdownload: s3://pg-lineage-769063704696/results/next_n13/s4armsB2-01/inputs/thresholds.json to ../../../work/inputs/thresholds.json
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/pg/repo/infra/aws_pg/jobs/n13_gen.py", line 557, in <module>
+    main()
+  File "/opt/pg/repo/infra/aws_pg/jobs/n13_gen.py", line 553, in main
+    run(a)
+  File "/opt/pg/repo/infra/aws_pg/jobs/n13_gen.py", line 389, in run
+    audit = A.build_arm(before, after, cfg, spec, out_dir=model_dir, kept_sd=a.kept_sd)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/pg/repo/infra/pg/n13_arms.py", line 611, in build_arm
+    assert audit["families"]["mlp"]["realized_sq"] == rec[-1]["realized"], "A30: the written arm differs from the matched build"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: A30: the written arm differs from the matched build
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/pg/repo/infra/aws_pg/jobs/n13_gen.py", line 557, in <module>
+    main()
+  File "/opt/pg/repo/infra/aws_pg/jobs/n13_gen.py", line 549, in main
+    subprocess.run([N13_PY, "-m", "infra.aws_pg.jobs.n13_gen", *argv, "--inner"], check=True, env=child_env(os.environ))
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/n13/bin/python', '-m', 'infra.aws_pg.jobs.n13_gen', '--arm', 'rndE_k3', '--bench', 'math500', '--problems', '0:500', '--sets', '/work/inputs/sets.json', '--setup-dir', '/work/out/setup', '--cap-from', '/work/inputs/thresholds.json', '--allowance-min', '1762', '--proj-tok-s', '236.5774019149508', '--proj-mean-math', '5498.672839506173', '--proj-mean-gsm', '940.0', '--proj-load-min', '14.352775791059367', '--out', '/work/out/rndE_k3', '--inner']' returned non-zero exit status 1.
+[pipeline] ABORT — step rndE_k3 failed rc=1 (fail-loud; 2/7 steps done before failure)
+Completed 73.3 KiB/73.3 KiB (1.0 MiB/s) with 1 file(s) remainingupload: ../../../var/log/pg-heartbeat.jsonl to s3://pg-lineage-769063704696/results/next_n13/s4armsB2-01/heartbeat.jsonl

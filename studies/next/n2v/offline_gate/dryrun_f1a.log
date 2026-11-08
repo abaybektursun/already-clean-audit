@@ -1,0 +1,129 @@
+== REAL
+CHECK REAL units.json sha256 is the one n2v_score registers            PASS c223dfee261c
+CHECK REAL N12 n12_freeze.jsonl sha256 registered                      PASS 30f31cb1b964
+CHECK REAL N12 n12_test.jsonl sha256 registered                        PASS 877926da3462
+CHECK REAL the manifest runs the registered parts and job budget (core,fd,jvp; 700 min; freeze 1a) PASS pus --parts core,fd,jvp --budget-min 700
+CHECK REAL gate_sides.json was computed from the registered N12 records PASS 
+CHECK REAL plan: 153 real units, 987 unit windows, 9 pre points, 328 and 284 pairs PASS {"freeze": 328, "test": 284}
+CHECK REAL the keys the job reads from units.json exist in the registered file (N1 A1's lesson): examples of both halves, each a real unit of its half PASS ['births_sha256', 'dt_missing', 'examples', 'n_units', 'rule', 'units']
+CHECK REAL plan: every unit's first pole is its carrier; poles in N12's abl order PASS 
+CHECK REAL K-A units are N12's K0 units; the rolled-pole failing input fails with room PASS min |diff| 0.0166 against 1e-06
+CHECK REAL the re-reading needs no gradient run: every unit of both halves carries its pull PASS {"records": 442, "records_without_pull": 0, "real_with_u_matched": 153, "pb_dt_with_u_S": 289, "floor_u_freeze_q025": 0.4457317073170731}
+CHECK REAL freeze: G-VAL fails on N12's bf16 measurement (N12's rho reproduces) PASS rho 0.0996
+CHECK REAL freeze: G-VAL passes on a planted fp32 measurement; the sign flip fails PASS rho 0.99978
+CHECK REAL freeze: above N12's ceiling the inspection clears a 5 % deviation and refuses a copy PASS 
+CHECK REAL freeze: G-FD passes planted, its copy reads above its ceiling, the sign flip fails PASS 
+CHECK REAL freeze: G-ROOM fails on its failing input (N12's bf16 measured change as the floor) PASS median rho 0.063
+CHECK REAL freeze: G-ROOM passes at a planted floor of 1e-4 nats (window and fd) PASS 
+CHECK REAL freeze: room holds for a floor up to about 0.017 (window) and 0.0017 nats (fd) PASS 0.0169, 0.00169
+CHECK REAL test: G-VAL fails on N12's bf16 measurement (N12's rho reproduces) PASS rho 0.0425
+CHECK REAL test: G-VAL passes on a planted fp32 measurement; the sign flip fails PASS rho 0.99973
+CHECK REAL test: above N12's ceiling the inspection clears a 5 % deviation and refuses a copy PASS 
+CHECK REAL test: G-FD passes planted, its copy reads above its ceiling, the sign flip fails PASS 
+CHECK REAL test: G-ROOM fails on its failing input (N12's bf16 measured change as the floor) PASS median rho 0.077
+CHECK REAL test: G-ROOM passes at a planted floor of 1e-4 nats (window and fd) PASS 
+CHECK REAL test: room holds for a floor up to about 0.017 (window) and 0.0017 nats (fd) PASS 0.0174, 0.00174
+CHECK REAL re-reading on N12's records: planted fp32 and cleared gives the gradient labels PASS H_cf OWN_RISE; H_away_sel_pb BELOW_SELECTION; H_signal REFUTED; H_bridge UNDECIDED; H_dt SUPPORTED
+CHECK REAL re-reading: N12's bf16 measurement gives N12's verdict (DOES NOT COUNT); not cleared also PASS 
+== SCORE
+CHECK SCORE pair_values: window and own sums over two windows          PASS {'dL': 8.0, 'dL_own': 1.5, 'dL_fd': 0.7999996244907379, 'dL_fd_own': 0.1499999538064003, 'pred_jvp': 4.0, 'pred_jvp_own': 0.75}
+CHECK SCORE pair_values: the probe's window sum and own sum            PASS 
+CHECK SCORE causal_ok: equal before i0 passes; the comparison through i0 fails PASS 
+CHECK SCORE room: a tiny floor passes, a floor of 0.1 nats fails       PASS 
+CHECK SCORE bf16_noise: one value per unit from the carrier's banked measurement PASS 
+CHECK SCORE g_label: PASS, FAIL, no room, failing input passed, above ceiling (cleared, not), NOT_RUN PASS 
+CHECK SCORE both halves: PASS only if both; a does-not-count half wins; NOT_RUN kept PASS 
+CHECK SCORE decision table: A, B, C, D                                 PASS 
+CHECK SCORE inspect: a 1 % deviation clears, a copy does not           PASS median rel 0.0100
+== INSTR
+CHECK INSTR G-CAUSAL on the tiny model: zero row bitwise before i0, differs through i0 PASS 
+CHECK INSTR G-CAUSAL: fd and probe rows bitwise before i0              PASS 
+CHECK INSTR forward-mode prediction equals reverse-mode sum(-h G) (fp32) PASS neuron 20: jvp 0.1190132 reverse 0.1190135; zero ablation 0.13351
+CHECK INSTR the neighbouring neuron's tangent differs (failing input)  PASS -0.003488
+CHECK INSTR the 10 % finite difference agrees with 0.1 x the prediction to 5 % PASS fd 0.012200 0.1 pred 0.011901
+CHECK INSTR the probe row is at the fp32 floor, far below the zero-ablation change PASS probe 9.54e-07 zero 0.1335
+CHECK INSTR own-loss tangent: the per-position derivative is 0 before i0 (causal) PASS 
+== JOB
+Loading weights:   0%|          | 0/47 [00:00<?, ?it/s]Loading weights: 100%|██████████| 47/47 [00:00<00:00, 28943.22it/s]
+Loading weights:   0%|          | 0/47 [00:00<?, ?it/s]Loading weights: 100%|██████████| 47/47 [00:00<00:00, 14888.02it/s]
+Loading weights:   0%|          | 0/47 [00:00<?, ?it/s]Loading weights: 100%|██████████| 47/47 [00:00<00:00, 17737.29it/s]
+Loading weights:   0%|          | 0/47 [00:00<?, ?it/s]Loading weights: 100%|██████████| 47/47 [00:00<00:00, 14408.15it/s]
+CHECK JOB M2's tiny job writes the banks N12 reads (ranks, vectors)    PASS exit 0 Loading weights: 100%|██████████| 47/47 [00:00<00:00, 21537.45it/s]
+CHECK JOB n12_score.main exits 0 and prints N12_JOB_OK                 PASS exit 0 Loading weights: 100%|██████████| 47/47 [00:00<00:00, 23462.54it/s]
+CHECK JOB metrics complete, nothing parked                             PASS 
+CHECK JOB every gate passed                                            PASS ['G_CORPUS', 'G_SAME', 'INPUTS', 'I_GRAD', 'I_ID', 'K0', 't12_G0', 't12_G_ABL_ID', 't12_G_CFG', 't12_G_EX', 't12_G_M2V', 't12_G_REV', 't12_G_TOPK', 't13_G0', 't13_G_ABL_ID', 't13_G_CFG', 't13_G_EX', 't13_G_M2V', 't13_G_REV', 't13_G_TOPK', 't14_G0', 't14_G_ABL_ID', 't14_G_CFG', 't14_G_EX', 't14_G_M2V', 't14_G_REV', 't14_G_TOPK', 't15_G0', 't15_G_CFG', 't15_G_EX', 't15_G_M2V', 't15_G_REV', 't15_G_TOPK']
+CHECK JOB every registered failing input failed                        PASS 33 failing inputs
+CHECK JOB K0 at T_14 first: 10 carriers' B equal M2's banked pre-role B; birth-role B fails PASS max |dB| 0.0e+00; failing min |dB| 1.936e-03
+CHECK JOB G-M2V at every point: the forward equals M2's banked vectors (same device) PASS {'t14_G_M2V': (37, 1.0), 't15_G_M2V': (24, 1.0), 't13_G_M2V': (37, 1.0), 't12_G_M2V': (25, 1.0)}
+CHECK JOB G-ABL-ID: clean rows equal the forward's loss; another window's loss fails PASS {'t14_G_ABL_ID': (0.0, 0.85), 't13_G_ABL_ID': (0.0, 0.222), 't12_G_ABL_ID': (0.0, 0.541)}
+CHECK JOB I-GRAD: the reversed gradient pass reproduces G; the rolled axis fails PASS rho 1.000000, exact 1.000, failing rho -0.006
+CHECK JOB A1: settings recorded; I-GRAD writes |dG|, |dS| (0 here) and empty changed-unit files PASS n_units 36, n 9984
+CHECK JOB I-ID: the reversed forward reproduces a, 0 flips; M2's birth-role vectors fail PASS 
+CHECK JOB metrics.json carries no rank, hit or label                   PASS 
+CHECK JOB one N12 record per unit                                      PASS 112 records
+CHECK JOB a real record has 20 competitors, pull, 4 ablation pairs, matched u, the identity, the drop PASS 
+CHECK JOB the carrier's r0 and r1 equal M2's banked ranks under B (every real unit) PASS 
+CHECK JOB the pull recomputes from the banked gradient rows and the grid q999 PASS 
+CHECK JOB raw examples: the selected births, competitors' contexts, exemplars, loss-matched texts PASS 
+CHECK JOB N12's tiny world and N12's tiny job (n12_dryrun.job) checks all pass PASS 17 of 17
+CHECK JOB n2v_score.main exits 0 and prints N2V_JOB_OK                 PASS exit 0 Loading weights: 100%|██████████| 47/47 [00:00<00:00, 19485.25it/s]
+CHECK JOB metrics complete, nothing parked, parts core,fd,jvp          PASS 
+CHECK JOB every gate passed                                            PASS ['G_CORPUS', 'G_SAME', 'INPUTS', 'I_FWD', 'I_JVP', 'K_A', 't12_G_CAUSAL', 't12_G_CFG', 't12_G_FP32', 't12_G_REV', 't13_G_CAUSAL', 't13_G_CFG', 't13_G_FP32', 't13_G_REV', 't14_G_CAUSAL', 't14_G_CFG', 't14_G_FP32', 't14_G_REV']
+CHECK JOB every registered failing input failed                        PASS 18 failing inputs
+CHECK JOB K-A: N12's bf16 ablation rows re-measured equal N12's banked dL; rolled poles fail PASS 40 pairs, 40 bitwise, max 0; failing min 0.00159
+CHECK JOB order: K-A before the fp32 cast at T_14; G-CAUSAL at every point; I-FWD and I-JVP at T_13 PASS 
+CHECK JOB one pair per N12 ablated pair, in both halves                PASS {'freeze': 64, 'test': 96}
+CHECK JOB every pair carries every readout                             PASS 
+CHECK JOB tiny world: the fp32 zero ablation tracks the fp32 forward-mode prediction PASS rho 0.959
+CHECK JOB tiny world: the probe is far below the zero-ablation change  PASS 
+CHECK JOB a pair's dL recounts from the banked per-row losses          PASS 0.00466442
+CHECK JOB raw examples: the selected births with decoded exemplars, pairs and the largest per-position changes PASS 
+CHECK JOB metrics.json carries no Spearman, room or label              PASS 
+CHECK JOB parts core,fd (a supported path): exits 0, every gate passes, every failing input fails, no I-JVP, no forward-mode value; dL, dL_own, dL_fd equal the full run's bitwise PASS exit 0 ; 160 pairs; gates 17
+== FAIL
+CHECK FAIL versions: the job stops at G_SAME                           PASS AssertionError: G_SAME failed: {"pass": false, "versions": {"torch": "2.12.0", "transformers": "5.9.0"}, "devi
+CHECK FAIL units_sha: the job stops at INPUTS                          PASS AssertionError: INPUTS failed: {"pass": false, "mismatch": ["units"], "failing_input": {"pass": false}}
+CHECK FAIL causal_early: the job stops at G_CAUSAL                     PASS AssertionError: t14_G_CAUSAL failed: {"pass": false, "n_rows": 288, "n_bitwise_before_i0": 162, "failing_input
+CHECK FAIL fwd_second_noisy: the job stops at I_FWD                    PASS AssertionError: I_FWD failed: {"pass": false, "n": 33, "n_bitwise": 0, "failing_input": {"what": "each clean r
+CHECK FAIL jvp_second_noisy: the job stops at I_JVP                    PASS AssertionError: I_JVP failed: {"pass": false, "n": 32, "n_bitwise": 0, "failing_input": {"what": "pole 1's tan
+CHECK FAIL precision_high: the job stops at G_FP32                     PASS AssertionError: t14_G_FP32 failed: {"pass": false, "dtypes": ["torch.float32"], "failing_input": {"what": "the
+CHECK FAIL ka_off: the job stops at K_A                                PASS AssertionError: K_A failed: {"pass": false, "units": ["L00N17+:c0", "L00N40-:c0", "L00N90+:c0", "L01N3-:c0", "
+CHECK FAIL a tiny budget parks the later points and the job ends normally PASS [13, 12]
+== VERDICT
+CHECK VERDICT branch A: fp32 measurement tracks the banked prediction; N12 re-read with its frozen rules PASS G-VAL window PASS; G-FD PASS; G-VAL own PASS; branch A; N12 re-read: H_cf OWN_RISE; H_away_sel_pb BELOW_SELECTION; H_signal REFUTED; H_bridge UNDECIDE
+CHECK VERDICT branch B: window fails with room, the 10 % finite difference passes PASS G-VAL window FAIL; G-FD PASS; G-VAL own FAIL; branch B
+CHECK VERDICT branch C: window and finite difference fail: the instrument is retired PASS G-VAL window FAIL; G-FD FAIL; G-VAL own FAIL; branch C
+CHECK VERDICT branch D: a floor of 0.5 nats leaves no room: DOES NOT COUNT PASS G-VAL window DOES NOT COUNT: no room; G-FD DOES NOT COUNT: no room; G-VAL own DOES NOT COUNT: no room; branch D
+CHECK VERDICT a measurement equal to the prediction is above the ceiling and not cleared PASS 
+CHECK VERDICT parts core only: fd and own read NOT_RUN; a failing window gives branch C PASS 
+CHECK VERDICT parts core,fd (a supported path): own and window_jvp read NOT_RUN; branches A and B reachable PASS G-VAL window PASS; G-FD PASS; G-VAL own NOT_RUN; branch A; N12 re-read: H_cf OWN_RISE; H_a | G-VAL window FAIL; G-FD PASS; G-VAL own NOT_RUN; branch B
+CHECK VERDICT freeze refuses when a job gate failed                    PASS True
+CHECK VERDICT freeze refuses when G-ROOM's failing input passes        PASS 
+CHECK VERDICT the verdict refuses if the freeze records changed        PASS 
+== PROJECT
+CHECK PROJECT the full launch from the real plan and measured rates    PASS {'core': (2.61, 3.56, 278), 'core,fd': (3.9, 5.1, 398), 'core,fd,jvp': (6.53, 9.78, 763)}
+{
+ "checks": 76,
+ "passed": 76,
+ "failed": [],
+ "projection": {
+  "core": {
+   "gpu_h_center": 2.61,
+   "gpu_h_high": 3.56,
+   "budget_min_hard_kill": 278
+  },
+  "core,fd": {
+   "gpu_h_center": 3.9,
+   "gpu_h_high": 5.1,
+   "budget_min_hard_kill": 398
+  },
+  "core,fd,jvp": {
+   "gpu_h_center": 6.53,
+   "gpu_h_high": 9.78,
+   "budget_min_hard_kill": 763
+  }
+ }
+}
+N2V_DRYRUN_OK
+exit 0
+2026-11-07T16:05:19Z

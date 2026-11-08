@@ -1,0 +1,75 @@
+{
+ "branch": "stage2-step47684-mix-gen-mc-only-from-2T-ckpt",
+ "commit": "45786899c6c427d17f9291f3d97c7e4fcbd4962b",
+ "allow_patterns": [
+  "config.json",
+  "generation_config.json",
+  "model.safetensors.index.json",
+  "special_tokens_map.json",
+  "tokenizer.json",
+  "tokenizer_config.json",
+  "vocab.json",
+  "merges.txt",
+  "model-00001-of-00006.safetensors",
+  "model-00002-of-00006.safetensors",
+  "model-00003-of-00006.safetensors",
+  "model-00004-of-00006.safetensors",
+  "model-00005-of-00006.safetensors",
+  "model-00006-of-00006.safetensors"
+ ],
+ "bytes": 29201786097,
+ "seconds": 794.1,
+ "MB_per_s": 36.8,
+ "xet_disabled": "1",
+ "sha256_s": 18.4,
+ "G_SHARD": {
+  "pass": true,
+  "files": [
+   "model-00001-of-00006.safetensors",
+   "model-00002-of-00006.safetensors",
+   "model-00003-of-00006.safetensors",
+   "model-00004-of-00006.safetensors",
+   "model-00005-of-00006.safetensors",
+   "model-00006-of-00006.safetensors"
+  ],
+  "index_files": [
+   "model-00001-of-00006.safetensors",
+   "model-00002-of-00006.safetensors",
+   "model-00003-of-00006.safetensors",
+   "model-00004-of-00006.safetensors",
+   "model-00005-of-00006.safetensors",
+   "model-00006-of-00006.safetensors"
+  ],
+  "mismatch": [],
+  "stale_present": [],
+  "failing_input": {
+   "pass": false,
+   "files": [
+    "model-00001-of-00003.safetensors",
+    "model-00002-of-00003.safetensors",
+    "model-00003-of-00003.safetensors"
+   ],
+   "index_files": [
+    "model-00001-of-00006.safetensors",
+    "model-00002-of-00006.safetensors",
+    "model-00003-of-00006.safetensors",
+    "model-00004-of-00006.safetensors",
+    "model-00005-of-00006.safetensors",
+    "model-00006-of-00006.safetensors"
+   ],
+   "mismatch": [
+    "model-00001-of-00006.safetensors",
+    "model-00002-of-00006.safetensors",
+    "model-00003-of-00006.safetensors",
+    "model-00004-of-00006.safetensors",
+    "model-00005-of-00006.safetensors",
+    "model-00006-of-00006.safetensors"
+   ],
+   "stale_present": [
+    "model-00001-of-00003.safetensors",
+    "model-00002-of-00003.safetensors",
+    "model-00003-of-00003.safetensors"
+   ]
+  }
+ }
+}

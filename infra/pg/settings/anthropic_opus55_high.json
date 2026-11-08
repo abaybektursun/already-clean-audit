@@ -1,0 +1,14 @@
+{
+ "backend": "anthropic",
+ "effort": "high",
+ "models": {
+  "explainer": "claude-opus-5-5",
+  "second_reader": "claude-opus-5-5",
+  "writer": "claude-opus-5-5",
+  "writer_job": "claude-opus-5-5",
+  "clusterer": "claude-opus-5-5",
+  "judge": "claude-opus-5-5"
+ },
+ "temperature": 1.0,
+ "notes": "Direct Anthropic API, every role on Opus 5.5 (claude-opus-5-5, the bare Anthropic id, from the claude-api skill's model table of 2026-10-06). The user's order of 2026-11-04 14:19 CST: when this research uses the API, Opus only; this file is the default settings file from that time. Effort high stated explicitly (Opus 5.5's own default is medium); thinking is always on for this model, so no thinking field is sent. Prices for estimates: $4 in / $20 out per million standard, $2 / $10 through the Message Batches API (half price). Key ANTHROPIC_API_KEY in ~/.config/interp_research/keys.env, sourced only inside the command that needs it; never in this file. run-batch / collect-batch send it through the Message Batches API. Copy of anthropic_sonnet55_high.json with the model ids changed. The user's efficiency comparison behind the order: https://share.gemini.google/3S6S8eHJ2nwF (recorded 2026-11-04 14:19 CST)."
+}

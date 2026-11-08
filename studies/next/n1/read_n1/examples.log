@@ -1,0 +1,11 @@
+L01N369+:c0 12 -0.596 -0.625 {'dt': (-0.305, 0.057), 'pb': (1.361, 1.639)} with the label (real below dt)
+L02N4649+:c3 15 0.221 0.395 {'dt': (1.171, 0.173), 'pb': (-0.307, 0.408)} with the label (real below dt)
+L03N9631+:c3 13 0.464 0.036 {'dt': (0.423, -0.016), 'pb': (-0.021, 0.557)} against the label
+L05N3483+:c3 13 -1.307 -0.708 {'dt': (-0.044, 0.011), 'pb': (-1.927, -1.372)} with the label (real below dt)
+L10N10529-:c3 13 -1.32 -2.083 {'dt': (0.657, 0.547), 'pb': (1.426, 1.441)} with the label (real below dt)
+L12N5641+:c0 13 0.391 -0.184 {'dt': (1.248, 0.983), 'pb': (0.682, 0.064)} with the label (real below dt)
+L22N7483-:c5 13 -2.367 -0.96 {'dt': (0.475, 0.92), 'pb': (0.316, -0.44)} with the label (real below dt)
+L24N8193-:c1 8 -0.46 -0.272 {'dt': (0.641, 0.138), 'pb': (0.713, 0.399)} with the label (real below dt)
+L27N8999-:c1 12 -0.086 0.417 {'dt': (2.238, 4.984), 'pb': (0.002, 0.356)} with the label (real below dt)
+L28N4613+:c0 10 -0.879 -0.395 {'dt': (0.267, -0.622), 'pb': (0.066, 0.464)} with the label (real below dt)
+{'n_examples': 10, 'n_with_label_in': 9, 'n_against_label_in': 1, 'chosen_with_label': 'L22N7483-:c5', 'chosen_against_label': 'L03N9631+:c3', 'max_abs_diff_record_vs_recount': 2.220446049250313e-16}

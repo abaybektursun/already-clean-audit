@@ -1,0 +1,3010 @@
+{
+"order": "finish",
+"n_submitted": 300,
+"n_finished": 300,
+"unfinished_problem_index": [],
+"partial_tokens_of_unfinished": 0,
+"note": "finished answers in generations.jsonl line order; the unfinished were cut by the hard kill (censored)",
+"answers": [
+{
+"problem_index": 67,
+"n_new": 0,
+"n_generated": 1,
+"prompt_n_tokens": 103,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 113,
+"n_new": 0,
+"n_generated": 1,
+"prompt_n_tokens": 81,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 5,
+"n_new": 5,
+"n_generated": 6,
+"prompt_n_tokens": 95,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 31,
+"n_new": 8,
+"n_generated": 9,
+"prompt_n_tokens": 63,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 90,
+"n_new": 8,
+"n_generated": 9,
+"prompt_n_tokens": 96,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 68,
+"n_new": 10,
+"n_generated": 11,
+"prompt_n_tokens": 116,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 111,
+"n_new": 8,
+"n_generated": 9,
+"prompt_n_tokens": 107,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 0
+},
+{
+"problem_index": 57,
+"n_new": 183,
+"n_generated": 184,
+"prompt_n_tokens": 109,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 29,
+"n_new": 197,
+"n_generated": 198,
+"prompt_n_tokens": 132,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 133,
+"n_new": 203,
+"n_generated": 204,
+"prompt_n_tokens": 95,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 65,
+"n_new": 216,
+"n_generated": 217,
+"prompt_n_tokens": 69,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 28,
+"n_new": 225,
+"n_generated": 226,
+"prompt_n_tokens": 89,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 56,
+"n_new": 230,
+"n_generated": 231,
+"prompt_n_tokens": 79,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 55,
+"n_new": 235,
+"n_generated": 236,
+"prompt_n_tokens": 105,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 141,
+"n_new": 0,
+"n_generated": 1,
+"prompt_n_tokens": 115,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 38,
+"n_new": 239,
+"n_generated": 240,
+"prompt_n_tokens": 96,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 105,
+"n_new": 240,
+"n_generated": 241,
+"prompt_n_tokens": 308,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 107,
+"n_new": 242,
+"n_generated": 243,
+"prompt_n_tokens": 86,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 88,
+"n_new": 254,
+"n_generated": 255,
+"prompt_n_tokens": 142,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 0
+},
+{
+"problem_index": 52,
+"n_new": 261,
+"n_generated": 262,
+"prompt_n_tokens": 85,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 27,
+"n_new": 272,
+"n_generated": 273,
+"prompt_n_tokens": 132,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 127,
+"n_new": 289,
+"n_generated": 290,
+"prompt_n_tokens": 67,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 86,
+"n_new": 293,
+"n_generated": 294,
+"prompt_n_tokens": 93,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 83,
+"n_new": 298,
+"n_generated": 299,
+"prompt_n_tokens": 77,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 129,
+"n_new": 303,
+"n_generated": 304,
+"prompt_n_tokens": 109,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 124,
+"n_new": 313,
+"n_generated": 314,
+"prompt_n_tokens": 87,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 59,
+"n_new": 331,
+"n_generated": 332,
+"prompt_n_tokens": 101,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 79,
+"n_new": 338,
+"n_generated": 339,
+"prompt_n_tokens": 76,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 2,
+"n_new": 349,
+"n_generated": 350,
+"prompt_n_tokens": 102,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 89,
+"n_new": 351,
+"n_generated": 352,
+"prompt_n_tokens": 75,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 70,
+"n_new": 354,
+"n_generated": 355,
+"prompt_n_tokens": 75,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 76,
+"n_new": 360,
+"n_generated": 361,
+"prompt_n_tokens": 95,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 36,
+"n_new": 375,
+"n_generated": 376,
+"prompt_n_tokens": 84,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 0
+},
+{
+"problem_index": 72,
+"n_new": 385,
+"n_generated": 386,
+"prompt_n_tokens": 89,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 97,
+"n_new": 391,
+"n_generated": 392,
+"prompt_n_tokens": 98,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 81,
+"n_new": 396,
+"n_generated": 397,
+"prompt_n_tokens": 104,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 102,
+"n_new": 403,
+"n_generated": 404,
+"prompt_n_tokens": 70,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 98,
+"n_new": 404,
+"n_generated": 405,
+"prompt_n_tokens": 73,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 106,
+"n_new": 405,
+"n_generated": 406,
+"prompt_n_tokens": 105,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 118,
+"n_new": 421,
+"n_generated": 422,
+"prompt_n_tokens": 81,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 116,
+"n_new": 425,
+"n_generated": 426,
+"prompt_n_tokens": 78,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 94,
+"n_new": 431,
+"n_generated": 432,
+"prompt_n_tokens": 397,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 35,
+"n_new": 445,
+"n_generated": 446,
+"prompt_n_tokens": 96,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 6,
+"n_new": 447,
+"n_generated": 448,
+"prompt_n_tokens": 74,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 115,
+"n_new": 457,
+"n_generated": 458,
+"prompt_n_tokens": 73,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 0
+},
+{
+"problem_index": 75,
+"n_new": 462,
+"n_generated": 463,
+"prompt_n_tokens": 93,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 23,
+"n_new": 473,
+"n_generated": 474,
+"prompt_n_tokens": 83,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 85,
+"n_new": 507,
+"n_generated": 508,
+"prompt_n_tokens": 115,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 87,
+"n_new": 516,
+"n_generated": 517,
+"prompt_n_tokens": 79,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 73,
+"n_new": 523,
+"n_generated": 524,
+"prompt_n_tokens": 126,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 122,
+"n_new": 531,
+"n_generated": 532,
+"prompt_n_tokens": 121,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 4,
+"n_new": 538,
+"n_generated": 539,
+"prompt_n_tokens": 382,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 121,
+"n_new": 547,
+"n_generated": 548,
+"prompt_n_tokens": 76,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 42,
+"n_new": 555,
+"n_generated": 556,
+"prompt_n_tokens": 95,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 99,
+"n_new": 559,
+"n_generated": 560,
+"prompt_n_tokens": 152,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 40,
+"n_new": 576,
+"n_generated": 577,
+"prompt_n_tokens": 152,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 3,
+"n_new": 582,
+"n_generated": 583,
+"prompt_n_tokens": 67,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 33,
+"n_new": 595,
+"n_generated": 596,
+"prompt_n_tokens": 100,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 44,
+"n_new": 613,
+"n_generated": 614,
+"prompt_n_tokens": 119,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 1,
+"n_new": 617,
+"n_generated": 618,
+"prompt_n_tokens": 166,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 54,
+"n_new": 624,
+"n_generated": 625,
+"prompt_n_tokens": 67,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 41,
+"n_new": 648,
+"n_generated": 649,
+"prompt_n_tokens": 105,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 0
+},
+{
+"problem_index": 77,
+"n_new": 663,
+"n_generated": 664,
+"prompt_n_tokens": 74,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 49,
+"n_new": 673,
+"n_generated": 674,
+"prompt_n_tokens": 80,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 0,
+"n_new": 686,
+"n_generated": 687,
+"prompt_n_tokens": 103,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 104,
+"n_new": 687,
+"n_generated": 688,
+"prompt_n_tokens": 131,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 117,
+"n_new": 693,
+"n_generated": 694,
+"prompt_n_tokens": 75,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 26,
+"n_new": 707,
+"n_generated": 708,
+"prompt_n_tokens": 107,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 84,
+"n_new": 721,
+"n_generated": 722,
+"prompt_n_tokens": 108,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 34,
+"n_new": 725,
+"n_generated": 726,
+"prompt_n_tokens": 88,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 48,
+"n_new": 728,
+"n_generated": 729,
+"prompt_n_tokens": 74,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 74,
+"n_new": 739,
+"n_generated": 740,
+"prompt_n_tokens": 82,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 125,
+"n_new": 705,
+"n_generated": 706,
+"prompt_n_tokens": 85,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 17,
+"n_new": 775,
+"n_generated": 776,
+"prompt_n_tokens": 262,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 66,
+"n_new": 799,
+"n_generated": 800,
+"prompt_n_tokens": 93,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 37,
+"n_new": 804,
+"n_generated": 805,
+"prompt_n_tokens": 89,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 51,
+"n_new": 816,
+"n_generated": 817,
+"prompt_n_tokens": 77,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 13,
+"n_new": 860,
+"n_generated": 861,
+"prompt_n_tokens": 226,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 8,
+"n_new": 881,
+"n_generated": 882,
+"prompt_n_tokens": 89,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 25,
+"n_new": 893,
+"n_generated": 894,
+"prompt_n_tokens": 134,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 95,
+"n_new": 896,
+"n_generated": 897,
+"prompt_n_tokens": 135,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 96,
+"n_new": 905,
+"n_generated": 906,
+"prompt_n_tokens": 159,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 123,
+"n_new": 894,
+"n_generated": 895,
+"prompt_n_tokens": 298,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 46,
+"n_new": 949,
+"n_generated": 950,
+"prompt_n_tokens": 99,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 47,
+"n_new": 974,
+"n_generated": 975,
+"prompt_n_tokens": 106,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 16,
+"n_new": 991,
+"n_generated": 992,
+"prompt_n_tokens": 76,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 22,
+"n_new": 1070,
+"n_generated": 1071,
+"prompt_n_tokens": 180,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 24,
+"n_new": 1161,
+"n_generated": 1162,
+"prompt_n_tokens": 152,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 45,
+"n_new": 1247,
+"n_generated": 1248,
+"prompt_n_tokens": 91,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 93,
+"n_new": 1312,
+"n_generated": 1313,
+"prompt_n_tokens": 97,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 101,
+"n_new": 1312,
+"n_generated": 1313,
+"prompt_n_tokens": 242,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 12,
+"n_new": 1326,
+"n_generated": 1327,
+"prompt_n_tokens": 123,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 39,
+"n_new": 1383,
+"n_generated": 1384,
+"prompt_n_tokens": 77,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 69,
+"n_new": 1422,
+"n_generated": 1423,
+"prompt_n_tokens": 111,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 50,
+"n_new": 1609,
+"n_generated": 1610,
+"prompt_n_tokens": 151,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 61,
+"n_new": 2028,
+"n_generated": 2029,
+"prompt_n_tokens": 124,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 14,
+"n_new": 2105,
+"n_generated": 2106,
+"prompt_n_tokens": 166,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 15,
+"n_new": 2244,
+"n_generated": 2245,
+"prompt_n_tokens": 233,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 58,
+"n_new": 2706,
+"n_generated": 2707,
+"prompt_n_tokens": 69,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 7,
+"n_new": 2739,
+"n_generated": 2740,
+"prompt_n_tokens": 121,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 20,
+"n_new": 3021,
+"n_generated": 3022,
+"prompt_n_tokens": 68,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 64,
+"n_new": 3114,
+"n_generated": 3115,
+"prompt_n_tokens": 121,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 9,
+"n_new": 4625,
+"n_generated": 4626,
+"prompt_n_tokens": 196,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 19,
+"n_new": 7288,
+"n_generated": 7289,
+"prompt_n_tokens": 103,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 10,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 79,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 11,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 114,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 18,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 201,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 21,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 84,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 30,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 79,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 32,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 106,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 43,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 129,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 92,
+"n_new": 2340,
+"n_generated": 2341,
+"prompt_n_tokens": 95,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 109,
+"n_new": 2116,
+"n_generated": 2117,
+"prompt_n_tokens": 184,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 80,
+"n_new": 3757,
+"n_generated": 3758,
+"prompt_n_tokens": 97,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 71,
+"n_new": 6203,
+"n_generated": 6204,
+"prompt_n_tokens": 75,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 78,
+"n_new": 6083,
+"n_generated": 6084,
+"prompt_n_tokens": 124,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 53,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 82,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 103,
+"n_new": 5762,
+"n_generated": 5763,
+"prompt_n_tokens": 162,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 112,
+"n_new": 3066,
+"n_generated": 3067,
+"prompt_n_tokens": 131,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 108,
+"n_new": 5228,
+"n_generated": 5229,
+"prompt_n_tokens": 141,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 135,
+"n_new": 312,
+"n_generated": 313,
+"prompt_n_tokens": 121,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 137,
+"n_new": 263,
+"n_generated": 264,
+"prompt_n_tokens": 74,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 0
+},
+{
+"problem_index": 132,
+"n_new": 556,
+"n_generated": 557,
+"prompt_n_tokens": 100,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 114,
+"n_new": 2647,
+"n_generated": 2648,
+"prompt_n_tokens": 129,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 144,
+"n_new": 266,
+"n_generated": 267,
+"prompt_n_tokens": 105,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 128,
+"n_new": 1451,
+"n_generated": 1452,
+"prompt_n_tokens": 79,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 140,
+"n_new": 577,
+"n_generated": 578,
+"prompt_n_tokens": 87,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 60,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 105,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 131,
+"n_new": 1919,
+"n_generated": 1920,
+"prompt_n_tokens": 91,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 130,
+"n_new": 3630,
+"n_generated": 3631,
+"prompt_n_tokens": 88,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 134,
+"n_new": 2334,
+"n_generated": 2335,
+"prompt_n_tokens": 169,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 62,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 161,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 142,
+"n_new": 530,
+"n_generated": 531,
+"prompt_n_tokens": 115,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 148,
+"n_new": 214,
+"n_generated": 215,
+"prompt_n_tokens": 86,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 63,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 144,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 82,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 142,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 143,
+"n_new": 780,
+"n_generated": 781,
+"prompt_n_tokens": 135,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 146,
+"n_new": 554,
+"n_generated": 555,
+"prompt_n_tokens": 73,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 91,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 98,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 165,
+"n_new": 0,
+"n_generated": 1,
+"prompt_n_tokens": 128,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 167,
+"n_new": 0,
+"n_generated": 1,
+"prompt_n_tokens": 131,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 178,
+"n_new": 0,
+"n_generated": 1,
+"prompt_n_tokens": 76,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 166,
+"n_new": 8,
+"n_generated": 9,
+"prompt_n_tokens": 243,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 198,
+"n_new": 6,
+"n_generated": 7,
+"prompt_n_tokens": 84,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 0
+},
+{
+"problem_index": 161,
+"n_new": 61,
+"n_generated": 62,
+"prompt_n_tokens": 62,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 149,
+"n_new": 610,
+"n_generated": 611,
+"prompt_n_tokens": 112,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 169,
+"n_new": 146,
+"n_generated": 147,
+"prompt_n_tokens": 81,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 100,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 243,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 208,
+"n_new": 3,
+"n_generated": 4,
+"prompt_n_tokens": 78,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 177,
+"n_new": 188,
+"n_generated": 189,
+"prompt_n_tokens": 295,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 0
+},
+{
+"problem_index": 179,
+"n_new": 178,
+"n_generated": 179,
+"prompt_n_tokens": 157,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 157,
+"n_new": 306,
+"n_generated": 307,
+"prompt_n_tokens": 100,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 171,
+"n_new": 318,
+"n_generated": 319,
+"prompt_n_tokens": 104,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 159,
+"n_new": 376,
+"n_generated": 377,
+"prompt_n_tokens": 106,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 182,
+"n_new": 303,
+"n_generated": 304,
+"prompt_n_tokens": 86,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 174,
+"n_new": 374,
+"n_generated": 375,
+"prompt_n_tokens": 87,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 154,
+"n_new": 490,
+"n_generated": 491,
+"prompt_n_tokens": 195,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 0
+},
+{
+"problem_index": 176,
+"n_new": 478,
+"n_generated": 479,
+"prompt_n_tokens": 76,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 0
+},
+{
+"problem_index": 172,
+"n_new": 528,
+"n_generated": 529,
+"prompt_n_tokens": 81,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 160,
+"n_new": 584,
+"n_generated": 585,
+"prompt_n_tokens": 76,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 163,
+"n_new": 593,
+"n_generated": 594,
+"prompt_n_tokens": 126,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 153,
+"n_new": 702,
+"n_generated": 703,
+"prompt_n_tokens": 141,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 158,
+"n_new": 637,
+"n_generated": 638,
+"prompt_n_tokens": 74,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 168,
+"n_new": 696,
+"n_generated": 697,
+"prompt_n_tokens": 649,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 162,
+"n_new": 702,
+"n_generated": 703,
+"prompt_n_tokens": 104,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 180,
+"n_new": 621,
+"n_generated": 622,
+"prompt_n_tokens": 71,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 138,
+"n_new": 3908,
+"n_generated": 3909,
+"prompt_n_tokens": 136,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 152,
+"n_new": 1080,
+"n_generated": 1081,
+"prompt_n_tokens": 135,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 187,
+"n_new": 316,
+"n_generated": 317,
+"prompt_n_tokens": 86,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 185,
+"n_new": 531,
+"n_generated": 532,
+"prompt_n_tokens": 73,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 147,
+"n_new": 2043,
+"n_generated": 2044,
+"prompt_n_tokens": 103,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 110,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 170,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 150,
+"n_new": 3706,
+"n_generated": 3707,
+"prompt_n_tokens": 277,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 151,
+"n_new": 4017,
+"n_generated": 4018,
+"prompt_n_tokens": 228,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 156,
+"n_new": 4058,
+"n_generated": 4059,
+"prompt_n_tokens": 249,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 119,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 207,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 181,
+"n_new": 1242,
+"n_generated": 1243,
+"prompt_n_tokens": 86,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 155,
+"n_new": 4267,
+"n_generated": 4268,
+"prompt_n_tokens": 109,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 191,
+"n_new": 368,
+"n_generated": 369,
+"prompt_n_tokens": 96,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 193,
+"n_new": 324,
+"n_generated": 325,
+"prompt_n_tokens": 109,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 186,
+"n_new": 745,
+"n_generated": 746,
+"prompt_n_tokens": 88,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 173,
+"n_new": 2170,
+"n_generated": 2171,
+"prompt_n_tokens": 108,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 139,
+"n_new": 6047,
+"n_generated": 6048,
+"prompt_n_tokens": 106,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 274,
+"n_new": 0,
+"n_generated": 1,
+"prompt_n_tokens": 118,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 209,
+"n_new": 153,
+"n_generated": 154,
+"prompt_n_tokens": 89,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 195,
+"n_new": 441,
+"n_generated": 442,
+"prompt_n_tokens": 104,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 120,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 108,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 267,
+"n_new": 21,
+"n_generated": 22,
+"prompt_n_tokens": 232,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 207,
+"n_new": 324,
+"n_generated": 325,
+"prompt_n_tokens": 86,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 225,
+"n_new": 234,
+"n_generated": 235,
+"prompt_n_tokens": 91,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 199,
+"n_new": 511,
+"n_generated": 512,
+"prompt_n_tokens": 84,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 192,
+"n_new": 649,
+"n_generated": 650,
+"prompt_n_tokens": 92,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 0
+},
+{
+"problem_index": 196,
+"n_new": 578,
+"n_generated": 579,
+"prompt_n_tokens": 73,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 226,
+"n_new": 268,
+"n_generated": 269,
+"prompt_n_tokens": 82,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 240,
+"n_new": 215,
+"n_generated": 216,
+"prompt_n_tokens": 264,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 200,
+"n_new": 562,
+"n_generated": 563,
+"prompt_n_tokens": 87,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 211,
+"n_new": 406,
+"n_generated": 407,
+"prompt_n_tokens": 83,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 210,
+"n_new": 411,
+"n_generated": 412,
+"prompt_n_tokens": 255,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 212,
+"n_new": 412,
+"n_generated": 413,
+"prompt_n_tokens": 117,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 218,
+"n_new": 489,
+"n_generated": 490,
+"prompt_n_tokens": 89,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 221,
+"n_new": 443,
+"n_generated": 444,
+"prompt_n_tokens": 82,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 227,
+"n_new": 441,
+"n_generated": 442,
+"prompt_n_tokens": 116,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 217,
+"n_new": 548,
+"n_generated": 549,
+"prompt_n_tokens": 72,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 183,
+"n_new": 1680,
+"n_generated": 1681,
+"prompt_n_tokens": 148,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 229,
+"n_new": 551,
+"n_generated": 552,
+"prompt_n_tokens": 134,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 206,
+"n_new": 678,
+"n_generated": 679,
+"prompt_n_tokens": 145,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 233,
+"n_new": 517,
+"n_generated": 518,
+"prompt_n_tokens": 161,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 126,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 125,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 190,
+"n_new": 1137,
+"n_generated": 1138,
+"prompt_n_tokens": 85,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 220,
+"n_new": 727,
+"n_generated": 728,
+"prompt_n_tokens": 136,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 201,
+"n_new": 949,
+"n_generated": 950,
+"prompt_n_tokens": 128,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 253,
+"n_new": 164,
+"n_generated": 165,
+"prompt_n_tokens": 74,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 242,
+"n_new": 355,
+"n_generated": 356,
+"prompt_n_tokens": 127,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 234,
+"n_new": 636,
+"n_generated": 637,
+"prompt_n_tokens": 113,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 213,
+"n_new": 887,
+"n_generated": 888,
+"prompt_n_tokens": 124,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 246,
+"n_new": 283,
+"n_generated": 284,
+"prompt_n_tokens": 115,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 0
+},
+{
+"problem_index": 238,
+"n_new": 521,
+"n_generated": 522,
+"prompt_n_tokens": 100,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 216,
+"n_new": 962,
+"n_generated": 963,
+"prompt_n_tokens": 107,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 231,
+"n_new": 981,
+"n_generated": 982,
+"prompt_n_tokens": 119,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 230,
+"n_new": 1116,
+"n_generated": 1117,
+"prompt_n_tokens": 137,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 235,
+"n_new": 898,
+"n_generated": 899,
+"prompt_n_tokens": 89,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 202,
+"n_new": 1337,
+"n_generated": 1338,
+"prompt_n_tokens": 133,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 203,
+"n_new": 1319,
+"n_generated": 1320,
+"prompt_n_tokens": 109,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 243,
+"n_new": 555,
+"n_generated": 556,
+"prompt_n_tokens": 93,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 164,
+"n_new": 5351,
+"n_generated": 5352,
+"prompt_n_tokens": 74,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 215,
+"n_new": 1864,
+"n_generated": 1865,
+"prompt_n_tokens": 87,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 175,
+"n_new": 3687,
+"n_generated": 3688,
+"prompt_n_tokens": 95,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 145,
+"n_new": 7240,
+"n_generated": 7241,
+"prompt_n_tokens": 111,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 197,
+"n_new": 2675,
+"n_generated": 2676,
+"prompt_n_tokens": 119,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 223,
+"n_new": 2396,
+"n_generated": 2397,
+"prompt_n_tokens": 86,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 244,
+"n_new": 633,
+"n_generated": 634,
+"prompt_n_tokens": 85,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 237,
+"n_new": 1430,
+"n_generated": 1431,
+"prompt_n_tokens": 98,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 170,
+"n_new": 5578,
+"n_generated": 5579,
+"prompt_n_tokens": 98,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 188,
+"n_new": 4057,
+"n_generated": 4058,
+"prompt_n_tokens": 261,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 228,
+"n_new": 3701,
+"n_generated": 3702,
+"prompt_n_tokens": 170,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 0
+},
+{
+"problem_index": 205,
+"n_new": 4197,
+"n_generated": 4198,
+"prompt_n_tokens": 203,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 189,
+"n_new": 4707,
+"n_generated": 4708,
+"prompt_n_tokens": 507,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 241,
+"n_new": 1457,
+"n_generated": 1458,
+"prompt_n_tokens": 98,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 250,
+"n_new": 456,
+"n_generated": 457,
+"prompt_n_tokens": 123,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 252,
+"n_new": 390,
+"n_generated": 391,
+"prompt_n_tokens": 81,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 247,
+"n_new": 1093,
+"n_generated": 1094,
+"prompt_n_tokens": 95,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 184,
+"n_new": 6745,
+"n_generated": 6746,
+"prompt_n_tokens": 109,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 194,
+"n_new": 6446,
+"n_generated": 6447,
+"prompt_n_tokens": 92,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 254,
+"n_new": 479,
+"n_generated": 480,
+"prompt_n_tokens": 119,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 136,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 152,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 283,
+"n_new": 71,
+"n_generated": 72,
+"prompt_n_tokens": 91,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 0
+},
+{
+"problem_index": 255,
+"n_new": 568,
+"n_generated": 569,
+"prompt_n_tokens": 111,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 0
+},
+{
+"problem_index": 275,
+"n_new": 148,
+"n_generated": 149,
+"prompt_n_tokens": 91,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 257,
+"n_new": 462,
+"n_generated": 463,
+"prompt_n_tokens": 79,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 258,
+"n_new": 407,
+"n_generated": 408,
+"prompt_n_tokens": 127,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 270,
+"n_new": 310,
+"n_generated": 311,
+"prompt_n_tokens": 119,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 263,
+"n_new": 401,
+"n_generated": 402,
+"prompt_n_tokens": 87,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 262,
+"n_new": 431,
+"n_generated": 432,
+"prompt_n_tokens": 76,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 266,
+"n_new": 400,
+"n_generated": 401,
+"prompt_n_tokens": 85,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 260,
+"n_new": 525,
+"n_generated": 526,
+"prompt_n_tokens": 97,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 259,
+"n_new": 614,
+"n_generated": 615,
+"prompt_n_tokens": 74,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 269,
+"n_new": 489,
+"n_generated": 490,
+"prompt_n_tokens": 96,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 268,
+"n_new": 522,
+"n_generated": 523,
+"prompt_n_tokens": 87,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 271,
+"n_new": 562,
+"n_generated": 563,
+"prompt_n_tokens": 81,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 265,
+"n_new": 605,
+"n_generated": 606,
+"prompt_n_tokens": 85,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 245,
+"n_new": 2817,
+"n_generated": 2818,
+"prompt_n_tokens": 140,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 280,
+"n_new": 237,
+"n_generated": 238,
+"prompt_n_tokens": 100,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 249,
+"n_new": 1779,
+"n_generated": 1780,
+"prompt_n_tokens": 94,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 261,
+"n_new": 969,
+"n_generated": 970,
+"prompt_n_tokens": 95,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 282,
+"n_new": 377,
+"n_generated": 378,
+"prompt_n_tokens": 180,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 278,
+"n_new": 689,
+"n_generated": 690,
+"prompt_n_tokens": 75,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 277,
+"n_new": 812,
+"n_generated": 813,
+"prompt_n_tokens": 67,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 256,
+"n_new": 1650,
+"n_generated": 1651,
+"prompt_n_tokens": 81,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 273,
+"n_new": 1499,
+"n_generated": 1500,
+"prompt_n_tokens": 121,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 272,
+"n_new": 1590,
+"n_generated": 1591,
+"prompt_n_tokens": 104,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 251,
+"n_new": 2717,
+"n_generated": 2718,
+"prompt_n_tokens": 162,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 279,
+"n_new": 968,
+"n_generated": 969,
+"prompt_n_tokens": 230,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 0
+},
+{
+"problem_index": 281,
+"n_new": 660,
+"n_generated": 661,
+"prompt_n_tokens": 354,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 204,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 142,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 214,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 137,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 219,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 755,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 222,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 192,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 224,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 106,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 232,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 121,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 293,
+"n_new": 426,
+"n_generated": 427,
+"prompt_n_tokens": 98,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 290,
+"n_new": 489,
+"n_generated": 490,
+"prompt_n_tokens": 92,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 298,
+"n_new": 831,
+"n_generated": 832,
+"prompt_n_tokens": 228,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 297,
+"n_new": 1039,
+"n_generated": 1040,
+"prompt_n_tokens": 147,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 236,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 104,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 294,
+"n_new": 2105,
+"n_generated": 2106,
+"prompt_n_tokens": 111,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 287,
+"n_new": 3105,
+"n_generated": 3106,
+"prompt_n_tokens": 117,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 291,
+"n_new": 3137,
+"n_generated": 3138,
+"prompt_n_tokens": 105,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 292,
+"n_new": 4431,
+"n_generated": 4432,
+"prompt_n_tokens": 166,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 285,
+"n_new": 5713,
+"n_generated": 5714,
+"prompt_n_tokens": 211,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 239,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 160,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 296,
+"n_new": 3483,
+"n_generated": 3484,
+"prompt_n_tokens": 196,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 1
+},
+{
+"problem_index": 288,
+"n_new": 5890,
+"n_generated": 5891,
+"prompt_n_tokens": 172,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 0
+},
+{
+"problem_index": 286,
+"n_new": 6183,
+"n_generated": 6184,
+"prompt_n_tokens": 123,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "boxed",
+"score": 0
+},
+{
+"problem_index": 299,
+"n_new": 3315,
+"n_generated": 3316,
+"prompt_n_tokens": 96,
+"cap_hit": false,
+"finish_reason": "stop",
+"mode": "answer_line",
+"score": 1
+},
+{
+"problem_index": 248,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 122,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 264,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 300,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 276,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 77,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 284,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 115,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 289,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 128,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+},
+{
+"problem_index": 295,
+"n_new": 16384,
+"n_generated": 16384,
+"prompt_n_tokens": 155,
+"cap_hit": true,
+"finish_reason": "length",
+"mode": "none",
+"score": 0
+}
+]
+}

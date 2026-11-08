@@ -1,0 +1,286 @@
+{
+ "mode": "known",
+ "branch": "stage1-step1413814",
+ "key": "T15",
+ "started_utc": "2026-11-05T16:19:30Z",
+ "gates_pass": true,
+ "same": {
+  "model_key": "O7",
+  "tokname": "olmo3",
+  "max_tokens": 20570743,
+  "snapshot_bands": [
+   1
+  ],
+  "batch": 8,
+  "window": 2048,
+  "n_windows": 10044,
+  "n_tokens_scored": 20560068,
+  "topk_K": 50,
+  "poles_K": 1000,
+  "corpus_manifest_sha256": "0c99a8e86856f1d94f08535b252d541f2ab18c4cbcb486c9e4993d6eb70a305c",
+  "tokens_sha256": "2aca80ca6537f46b8f60a550b4a3f2f13be2d18c5402be8f1af5c00caa86f531",
+  "bos_id": 100257,
+  "model_type": "olmo3",
+  "model_class": "Olmo3ForCausalLM",
+  "act_fn_measured": "silu",
+  "dtype": "torch.bfloat16",
+  "attn": "sdpa",
+  "transformers": "5.9.0",
+  "torch": "2.12.0+cu130"
+ },
+ "nll_band": [
+  2.4,
+  3.2
+ ],
+ "versions": {
+  "torch": "2.12.0+cu130",
+  "transformers": "5.9.0"
+ },
+ "phase": "done",
+ "updated_utc": "2026-11-05T16:31:38Z",
+ "download": {
+  "branch": "stage1-step1413814",
+  "commit": "373bad25002f1624757a73235c5ca844c6375c25",
+  "allow_patterns": [
+   "config.json",
+   "generation_config.json",
+   "model.safetensors.index.json",
+   "special_tokens_map.json",
+   "tokenizer.json",
+   "tokenizer_config.json",
+   "vocab.json",
+   "merges.txt",
+   "model-00001-of-00003.safetensors",
+   "model-00002-of-00003.safetensors",
+   "model-00003-of-00003.safetensors"
+  ],
+  "bytes": 14605764269,
+  "seconds": 192.2,
+  "MB_per_s": 76.0,
+  "xet_disabled": "1",
+  "sha256_s": 9.2,
+  "G_SHARD": {
+   "pass": true,
+   "files": [
+    "model-00001-of-00003.safetensors",
+    "model-00002-of-00003.safetensors",
+    "model-00003-of-00003.safetensors"
+   ],
+   "index_files": [
+    "model-00001-of-00003.safetensors",
+    "model-00002-of-00003.safetensors",
+    "model-00003-of-00003.safetensors"
+   ],
+   "mismatch": [],
+   "stale_present": [],
+   "failing_input": {
+    "pass": false,
+    "files": [
+     "model-00001-of-00003.safetensors",
+     "model-00002-of-00003.safetensors",
+     "model-00003-of-00003.safetensors"
+    ],
+    "index_files": [
+     "model-00001-of-00003.safetensors",
+     "model-00002-of-00003.safetensors",
+     "model-00003-of-00003.safetensors"
+    ],
+    "mismatch": [
+     "model-00001-of-00003.safetensors",
+     "model-00002-of-00003.safetensors",
+     "model-00003-of-00003.safetensors"
+    ],
+    "stale_present": [
+     "model-00001-of-00003.safetensors",
+     "model-00002-of-00003.safetensors",
+     "model-00003-of-00003.safetensors"
+    ]
+   }
+  }
+ },
+ "config": {
+  "rewrite": false,
+  "as_released": {
+   "model_type": "olmo3",
+   "architectures": [
+    "Olmo3ForCausalLM"
+   ],
+   "sliding_window": 4096,
+   "torch_dtype": "bfloat16"
+  },
+  "failing_input": {
+   "pass": false,
+   "diff_keys": [
+    "architectures",
+    "model_type"
+   ],
+   "sliding_window": 4096
+  },
+  "G_CFG": {
+   "pass": true,
+   "diff_keys": [],
+   "sliding_window": 4096
+  }
+ },
+ "load_s": 51.5,
+ "G_CAST": {
+  "pass": true,
+  "param_dtypes": [
+   "torch.bfloat16"
+  ],
+  "tensors": [
+   {
+    "name": "model.layers.0.mlp.gate_proj.weight",
+    "file_dtype": "torch.bfloat16",
+    "shape": [
+     11008,
+     4096
+    ],
+    "equal_rne": true
+   },
+   {
+    "name": "model.layers.0.mlp.up_proj.weight",
+    "file_dtype": "torch.bfloat16",
+    "shape": [
+     11008,
+     4096
+    ],
+    "equal_rne": true
+   },
+   {
+    "name": "model.layers.15.mlp.down_proj.weight",
+    "file_dtype": "torch.bfloat16",
+    "shape": [
+     4096,
+     11008
+    ],
+    "equal_rne": true
+   },
+   {
+    "name": "model.layers.31.mlp.down_proj.weight",
+    "file_dtype": "torch.bfloat16",
+    "shape": [
+     4096,
+     11008
+    ],
+    "equal_rne": true
+   },
+   {
+    "name": "model.layers.16.self_attn.q_proj.weight",
+    "file_dtype": "torch.bfloat16",
+    "shape": [
+     4096,
+     4096
+    ],
+    "equal_rne": true
+   },
+   {
+    "name": "model.layers.31.post_feedforward_layernorm.weight",
+    "file_dtype": "torch.bfloat16",
+    "shape": [
+     4096
+    ],
+    "equal_rne": true
+   },
+   {
+    "name": "model.norm.weight",
+    "file_dtype": "torch.bfloat16",
+    "shape": [
+     4096
+    ],
+    "equal_rne": true
+   }
+  ],
+  "failing_input": {
+   "pass": false,
+   "tensors": [
+    {
+     "name": "model.layers.0.mlp.gate_proj.weight",
+     "against": "model.layers.1.mlp.gate_proj.weight",
+     "equal": false
+    },
+    {
+     "name": "model.layers.0.mlp.up_proj.weight",
+     "against": "model.layers.1.mlp.up_proj.weight",
+     "equal": false
+    },
+    {
+     "name": "model.layers.15.mlp.down_proj.weight",
+     "against": "model.layers.16.mlp.down_proj.weight",
+     "equal": false
+    },
+    {
+     "name": "model.layers.31.mlp.down_proj.weight",
+     "against": "model.layers.0.mlp.down_proj.weight",
+     "equal": false
+    },
+    {
+     "name": "model.layers.16.self_attn.q_proj.weight",
+     "against": "model.layers.17.self_attn.q_proj.weight",
+     "equal": false
+    },
+    {
+     "name": "model.layers.31.post_feedforward_layernorm.weight",
+     "against": "model.layers.0.post_feedforward_layernorm.weight",
+     "equal": false
+    },
+    {
+     "name": "model.norm.weight",
+     "against": "model.layers.0.post_feedforward_layernorm.weight",
+     "equal": false
+    }
+   ]
+  }
+ },
+ "K0": {
+  "values": {
+   "pass": true,
+   "n": 1535,
+   "median_rel": 0.0,
+   "p99_rel": 0.0,
+   "max_rel": 0.0,
+   "exact_share": 1.0,
+   "failing_input": {
+    "pass": false,
+    "n": 1535,
+    "median_rel": 0.31442278142859637,
+    "p99_rel": 1.5020965658911485,
+    "max_rel": 2.4332148342582642,
+    "exact_share": 0.0
+   }
+  },
+  "subset": {
+   "pass": true,
+   "n": 1535,
+   "share": 1.0,
+   "failing_input": {
+    "pass": false,
+    "n": 1535,
+    "share": 0.13550488599348534
+   }
+  },
+  "n_tokens": 1048576,
+  "bank": "t15_exemplar_a.npz",
+  "failing_input_exemplar": "t14_exemplar_a.npz",
+  "samples": [
+   {
+    "which": "closest",
+    "pole": "L00N181+",
+    "slot": 0,
+    "tok": 327203,
+    "a_bank": 0.32780566811561584,
+    "a_new": 0.32780566811561584
+   },
+   {
+    "which": "farthest",
+    "pole": "L00N181+",
+    "slot": 0,
+    "tok": 327203,
+    "a_bank": 0.32780566811561584,
+    "a_new": 0.32780566811561584
+   }
+  ],
+  "pass": true
+ },
+ "deleted_after_harvest": "/opt/hf-cache/hf/hub/models--allenai--Olmo-3-1025-7B"
+}

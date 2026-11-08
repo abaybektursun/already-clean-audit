@@ -1,0 +1,29 @@
+{
+  "mn13_instrument_detects_a_planted_colocation": {
+    "_required": false,
+    "abs_error": 9.992007221626409e-16,
+    "expected": 0.9,
+    "ok": true,
+    "recovered": 0.899999999999999,
+    "tol": 0.1,
+    "void": false
+  },
+  "mn13_sink_ABOVE_energy_band": {
+    "_required": false,
+    "ci_hi": -0.004418246096058724,
+    "ci_lo": -0.009206852742098941,
+    "ci_method": "percentile_bootstrap",
+    "clears_zero": false,
+    "control_mean": 0.16337337298752,
+    "delta_mean": -0.006866554599083194,
+    "n": 810,
+    "n_above_layers": 15,
+    "n_above_types": 5,
+    "n_boot": 2000,
+    "n_cells_above": 254,
+    "n_cells_below": 154,
+    "ok": false,
+    "seed": 1337,
+    "treatment_mean": 0.1565068183884368
+  }
+}

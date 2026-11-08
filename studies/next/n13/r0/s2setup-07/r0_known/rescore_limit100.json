@@ -1,0 +1,31 @@
+{
+ "scorer": "olmes",
+ "seed": 0,
+ "per_subject_true": {
+  "algebra": 0.5925,
+  "counting_and_probability": 0.4125,
+  "geometry": 0.3725,
+  "intermediate_algebra": 0.2,
+  "number_theory": 0.2925,
+  "prealgebra": 0.5875,
+  "precalculus": 0.265
+ },
+ "per_subject_deranged": {
+  "algebra": 0.01,
+  "counting_and_probability": 0.01,
+  "geometry": 0.0,
+  "intermediate_algebra": 0.015,
+  "number_theory": 0.0025,
+  "prealgebra": 0.0225,
+  "precalculus": 0.005
+ },
+ "identity_macro": 0.38892857142857146,
+ "deranged_macro": 0.009285714285714286,
+ "identity_docs_equal": true,
+ "n_docs": 700,
+ "context_tokens": {
+  "over_1024": 5,
+  "n": 700,
+  "max": 1494
+ }
+}

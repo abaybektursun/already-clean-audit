@@ -1,0 +1,5 @@
+K0         pass True fail True  pairs [0.0, 0.0, 6.1683e-05]; neighbour gap / tol min 3.4
+G_REV      pass True fail True  16 points
+G_CFG      pass True fail True  16 points
+G_CORPUS   pass True fail True  16 manifests and the corpus record
+G_TOK      pass True fail True  all 1,200 items, 2,400 counterfactuals and every class prompt re-encode

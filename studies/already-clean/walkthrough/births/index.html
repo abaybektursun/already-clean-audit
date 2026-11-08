@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When groups are born</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<style>
+/* The same tokens and reading column as the walkthrough page (../index.html), which will host the same picture. */
+:root {
+  --bg: #f4f6f4;
+  --ink: #18211f;
+  --muted: #56625e;
+  --rule: #d3dad7;
+  --grid: #e1e6e3;
+  --bar: #b3bfbb;
+  --accent: #0a6b5d;
+  --font-text: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #101514;
+    --ink: #e3e9e6;
+    --muted: #9aa7a3;
+    --rule: #29322f;
+    --grid: #1d2523;
+    --bar: #4a5754;
+    --accent: #4cc3ae;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #101514;
+  --ink: #e3e9e6;
+  --muted: #9aa7a3;
+  --rule: #29322f;
+  --grid: #1d2523;
+  --bar: #4a5754;
+  --accent: #4cc3ae;
+  color-scheme: dark;
+}
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-text); font-size: 1.0625rem; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+.page { max-width: 47.5rem; margin: 0 auto; padding: 3rem max(16px, env(safe-area-inset-right, 0px)) 4rem max(16px, env(safe-area-inset-left, 0px)); }
+h1 { font-size: 1.3125rem; font-weight: 700; line-height: 1.2; margin: 0 0 1rem; }
+p { max-width: 66ch; margin: 0 0 1rem; }
+.record { color: var(--muted); font-size: 0.9375rem; margin-top: 1rem; }
+</style>
+<link rel="stylesheet" href="births.css">
+</head>
+<body>
+<main class="page">
+  <h1>When a neuron’s groups are born</h1>
+  <p>Each row is one group of a neuron’s 50 strongest contexts at the end of training; it is present at a training point when the median activation of its contexts is in the neuron’s top 0.1% there, and born at the first point where it is present and still present at the next.</p>
+  <div id="nbirths" data-keys="page"></div>
+  <p class="record">Source: the verdict’s per-group record for the 600 OLMo-3 7B neurons of the development test, its births per training point, and the saved activations of each group’s contexts at the 16 training points.</p>
+</main>
+<script src="data.js"></script>
+<script src="births.js"></script>
+</body>
+</html>

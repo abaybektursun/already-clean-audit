@@ -1,0 +1,38 @@
+{
+ "step": "gen",
+ "arm": "base",
+ "pair": "pair1",
+ "seed_set": "A",
+ "status": "running",
+ "started_utc": "2026-11-06T01:17:08Z",
+ "smoke": true,
+ "grade_rule": "dollar_both",
+ "bench": "math500",
+ "park": {
+  "allowance_min": 110.0,
+  "elapsed_min": 6.85085437297821,
+  "projected_min": 30.0,
+  "earlier_parked": false,
+  "parked": false
+ },
+ "cap": 16384,
+ "updated_utc": "2026-11-06T01:17:11Z",
+ "template": {
+  "pass": true,
+  "first_id_is_bos": [
+   false
+  ],
+  "n": 300
+ },
+ "build": {
+  "arm": "base",
+  "from": "HF snapshot",
+  "G-HASH": null,
+  "kept_rel_err": null,
+  "kept_sd_units": null,
+  "energy_rel_err": null,
+  "energy_flag": null,
+  "build_seconds": null,
+  "G-MASK": null
+ }
+}

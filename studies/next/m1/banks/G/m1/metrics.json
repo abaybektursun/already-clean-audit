@@ -1,0 +1,506 @@
+{
+ "mode": "harvest",
+ "branch": "stage2-step47684-mix-gen-mc-only-from-2T-ckpt",
+ "key": "G",
+ "started_utc": "2026-11-05T19:09:50Z",
+ "gates_pass": true,
+ "same": {
+  "model_key": "O7",
+  "tokname": "olmo3",
+  "max_tokens": 20570743,
+  "snapshot_bands": [
+   1
+  ],
+  "batch": 8,
+  "window": 2048,
+  "n_windows": 10044,
+  "n_tokens_scored": 20560068,
+  "topk_K": 50,
+  "poles_K": 1000,
+  "corpus_manifest_sha256": "0c99a8e86856f1d94f08535b252d541f2ab18c4cbcb486c9e4993d6eb70a305c",
+  "tokens_sha256": "2aca80ca6537f46b8f60a550b4a3f2f13be2d18c5402be8f1af5c00caa86f531",
+  "bos_id": 100257,
+  "model_type": "olmo3",
+  "model_class": "Olmo3ForCausalLM",
+  "act_fn_measured": "silu",
+  "dtype": "torch.bfloat16",
+  "attn": "sdpa",
+  "transformers": "5.9.0",
+  "torch": "2.12.0+cu130"
+ },
+ "nll_band": [
+  2.4,
+  3.2
+ ],
+ "versions": {
+  "torch": "2.12.0+cu130",
+  "transformers": "5.9.0"
+ },
+ "phase": "done",
+ "updated_utc": "2026-11-05T21:11:28Z",
+ "download": {
+  "branch": "stage2-step47684-mix-gen-mc-only-from-2T-ckpt",
+  "commit": "45786899c6c427d17f9291f3d97c7e4fcbd4962b",
+  "allow_patterns": [
+   "config.json",
+   "generation_config.json",
+   "model.safetensors.index.json",
+   "special_tokens_map.json",
+   "tokenizer.json",
+   "tokenizer_config.json",
+   "vocab.json",
+   "merges.txt",
+   "model-00001-of-00006.safetensors",
+   "model-00002-of-00006.safetensors",
+   "model-00003-of-00006.safetensors",
+   "model-00004-of-00006.safetensors",
+   "model-00005-of-00006.safetensors",
+   "model-00006-of-00006.safetensors"
+  ],
+  "bytes": 29201786097,
+  "seconds": 794.1,
+  "MB_per_s": 36.8,
+  "xet_disabled": "1",
+  "sha256_s": 18.4,
+  "G_SHARD": {
+   "pass": true,
+   "files": [
+    "model-00001-of-00006.safetensors",
+    "model-00002-of-00006.safetensors",
+    "model-00003-of-00006.safetensors",
+    "model-00004-of-00006.safetensors",
+    "model-00005-of-00006.safetensors",
+    "model-00006-of-00006.safetensors"
+   ],
+   "index_files": [
+    "model-00001-of-00006.safetensors",
+    "model-00002-of-00006.safetensors",
+    "model-00003-of-00006.safetensors",
+    "model-00004-of-00006.safetensors",
+    "model-00005-of-00006.safetensors",
+    "model-00006-of-00006.safetensors"
+   ],
+   "mismatch": [],
+   "stale_present": [],
+   "failing_input": {
+    "pass": false,
+    "files": [
+     "model-00001-of-00003.safetensors",
+     "model-00002-of-00003.safetensors",
+     "model-00003-of-00003.safetensors"
+    ],
+    "index_files": [
+     "model-00001-of-00006.safetensors",
+     "model-00002-of-00006.safetensors",
+     "model-00003-of-00006.safetensors",
+     "model-00004-of-00006.safetensors",
+     "model-00005-of-00006.safetensors",
+     "model-00006-of-00006.safetensors"
+    ],
+    "mismatch": [
+     "model-00001-of-00006.safetensors",
+     "model-00002-of-00006.safetensors",
+     "model-00003-of-00006.safetensors",
+     "model-00004-of-00006.safetensors",
+     "model-00005-of-00006.safetensors",
+     "model-00006-of-00006.safetensors"
+    ],
+    "stale_present": [
+     "model-00001-of-00003.safetensors",
+     "model-00002-of-00003.safetensors",
+     "model-00003-of-00003.safetensors"
+    ]
+   }
+  }
+ },
+ "config": {
+  "rewrite": true,
+  "as_released": {
+   "model_type": "olmo2-retrofit",
+   "architectures": [
+    "Olmo2RetrofitForCausalLM"
+   ],
+   "sliding_window": 4097,
+   "torch_dtype": "bfloat16"
+  },
+  "failing_input": {
+   "pass": false,
+   "diff_keys": [
+    "architectures",
+    "model_type",
+    "sliding_window"
+   ],
+   "sliding_window": 4097
+  },
+  "G_CFG": {
+   "pass": true,
+   "diff_keys": [
+    "sliding_window"
+   ],
+   "sliding_window": 4097
+  },
+  "load_dir": "/work/m1/load/45786899c6c427d17f9291f3d97c7e4fcbd4962b"
+ },
+ "load_s": 5.5,
+ "G_CAST": {
+  "pass": true,
+  "param_dtypes": [
+   "torch.bfloat16"
+  ],
+  "tensors": [
+   {
+    "name": "model.layers.0.mlp.gate_proj.weight",
+    "file_dtype": "torch.float32",
+    "shape": [
+     11008,
+     4096
+    ],
+    "equal_rne": true,
+    "trunc_mismatch_share": 0.49930962920188904
+   },
+   {
+    "name": "model.layers.0.mlp.up_proj.weight",
+    "file_dtype": "torch.float32",
+    "shape": [
+     11008,
+     4096
+    ],
+    "equal_rne": true,
+    "trunc_mismatch_share": 0.4992251396179199
+   },
+   {
+    "name": "model.layers.15.mlp.down_proj.weight",
+    "file_dtype": "torch.float32",
+    "shape": [
+     4096,
+     11008
+    ],
+    "equal_rne": true,
+    "trunc_mismatch_share": 0.4992873966693878
+   },
+   {
+    "name": "model.layers.31.mlp.down_proj.weight",
+    "file_dtype": "torch.float32",
+    "shape": [
+     4096,
+     11008
+    ],
+    "equal_rne": true,
+    "trunc_mismatch_share": 0.4992077052593231
+   },
+   {
+    "name": "model.layers.16.self_attn.q_proj.weight",
+    "file_dtype": "torch.float32",
+    "shape": [
+     4096,
+     4096
+    ],
+    "equal_rne": true,
+    "trunc_mismatch_share": 0.499284029006958
+   },
+   {
+    "name": "model.layers.31.post_feedforward_layernorm.weight",
+    "file_dtype": "torch.float32",
+    "shape": [
+     4096
+    ],
+    "equal_rne": true,
+    "trunc_mismatch_share": 0.54296875
+   },
+   {
+    "name": "model.norm.weight",
+    "file_dtype": "torch.float32",
+    "shape": [
+     4096
+    ],
+    "equal_rne": true,
+    "trunc_mismatch_share": 0.544921875
+   }
+  ],
+  "failing_input": {
+   "pass": false,
+   "tensors": [
+    {
+     "name": "model.layers.0.mlp.gate_proj.weight",
+     "against": "model.layers.1.mlp.gate_proj.weight",
+     "equal": false
+    },
+    {
+     "name": "model.layers.0.mlp.up_proj.weight",
+     "against": "model.layers.1.mlp.up_proj.weight",
+     "equal": false
+    },
+    {
+     "name": "model.layers.15.mlp.down_proj.weight",
+     "against": "model.layers.16.mlp.down_proj.weight",
+     "equal": false
+    },
+    {
+     "name": "model.layers.31.mlp.down_proj.weight",
+     "against": "model.layers.0.mlp.down_proj.weight",
+     "equal": false
+    },
+    {
+     "name": "model.layers.16.self_attn.q_proj.weight",
+     "against": "model.layers.17.self_attn.q_proj.weight",
+     "equal": false
+    },
+    {
+     "name": "model.layers.31.post_feedforward_layernorm.weight",
+     "against": "model.layers.0.post_feedforward_layernorm.weight",
+     "equal": false
+    },
+    {
+     "name": "model.norm.weight",
+     "against": "model.layers.0.post_feedforward_layernorm.weight",
+     "equal": false
+    }
+   ]
+  }
+ },
+ "counts": {
+  "n_dirs": 50,
+  "cm_dirs": [
+   "data/finemath-3plus",
+   "data/stack_edu-CSharp",
+   "data/stack_edu-JavaScript",
+   "data/stack_edu-Python",
+   "data/stack_edu-SQL"
+  ],
+  "min_filled": 50
+ },
+ "samples": [
+  {
+   "counted_as": "code+math",
+   "pole": "L00N181+",
+   "rank": 47,
+   "tok": 7860287,
+   "a": 0.48345839977264404,
+   "doc": 5849,
+   "dir": "data/finemath-3plus",
+   "before": " retake the GMAT-Low score- Help! 1 22 Jul 2009, 10:13\nDisplay posts from previous: Sort by\n\n# Low GMAT Score: Retaking: Your inputs required\n\nModerator: HiLine\n\n Powered by phpBB \u00a9 phpBB Group and phpBB SEO",
+   "token": " Kind",
+   "after": "ly note that the GMAT\u00ae test is a registered trademark of the Graduate Management"
+  },
+  {
+   "counted_as": "other",
+   "pole": "L00N181+",
+   "rank": 0,
+   "tok": 6490697,
+   "a": 0.7902445793151855,
+   "doc": 4766,
+   "dir": "data/common_crawl-software-0017",
+   "before": "Skip site",
+   "token": " navigation",
+   "after": " (1)Skip section navigation (2)\n\nFreeBSD Man Pages\n\nMan Page"
+  }
+ ],
+ "token_share_per_dir": [
+  402300,
+  402137,
+  400802,
+  401726,
+  400939,
+  400131,
+  401593,
+  400209,
+  400265,
+  400170,
+  402305,
+  400073,
+  401423,
+  401714,
+  402054,
+  401060,
+  402708,
+  400626,
+  400060,
+  407616,
+  402008,
+  400079,
+  400720,
+  403647,
+  410058,
+  405874,
+  400341,
+  400238,
+  401010,
+  400006,
+  400049,
+  401126,
+  400316,
+  400106,
+  401057,
+  402451,
+  400659,
+  400054,
+  791610,
+  437393,
+  403049,
+  421228,
+  409395,
+  432309,
+  407568,
+  404182,
+  400236,
+  400890,
+  400508,
+  402034
+ ],
+ "pc_nll": {
+  "windows": {
+   "cm": [
+    3770,
+    3785,
+    3806,
+    3813,
+    3852,
+    4804,
+    4808,
+    4911,
+    4924,
+    4954,
+    5061,
+    8867,
+    8870,
+    8915,
+    8933,
+    8935,
+    8986,
+    9013,
+    9017,
+    9033,
+    9065,
+    9716,
+    9727,
+    9767,
+    9808,
+    9820,
+    9843,
+    9864,
+    9872,
+    9923,
+    9957,
+    9993
+   ],
+   "n_candidates_cm": 1167,
+   "web": [
+    20,
+    122,
+    250,
+    304,
+    558,
+    1301,
+    1308,
+    2002,
+    2062,
+    2284,
+    2933,
+    3741,
+    5121,
+    5370,
+    5455,
+    5492,
+    5836,
+    6029,
+    6054,
+    6152,
+    6320,
+    6751,
+    6762,
+    7024,
+    7369,
+    7398,
+    7634,
+    7638,
+    7710,
+    8109,
+    8283,
+    8543
+   ],
+   "n_candidates_web": 7449
+  },
+  "nll": {
+   "cm": [
+    1.6138813495635986,
+    1.5200741291046143,
+    0.013984853401780128,
+    0.013984853401780128,
+    1.5253068208694458,
+    1.030678391456604,
+    1.3786845207214355,
+    1.320359230041504,
+    1.1937437057495117,
+    1.4790760278701782,
+    0.6525728702545166,
+    2.2111494541168213,
+    1.841942310333252,
+    1.5270507335662842,
+    1.4077085256576538,
+    1.6393928527832031,
+    2.701752185821533,
+    1.5467922687530518,
+    0.9004960656166077,
+    1.6061387062072754,
+    1.305853009223938,
+    0.6152077317237854,
+    0.9305060505867004,
+    1.3646602630615234,
+    1.2930413484573364,
+    1.3496536016464233,
+    1.05570387840271,
+    1.638771653175354,
+    1.524294137954712,
+    1.3083112239837646,
+    1.0424898862838745,
+    1.157473087310791
+   ],
+   "web": [
+    2.2649691104888916,
+    2.5724637508392334,
+    2.3779687881469727,
+    2.0438880920410156,
+    2.4548773765563965,
+    0.7747371792793274,
+    1.6990171670913696,
+    2.328453540802002,
+    2.391841411590576,
+    2.2788619995117188,
+    2.7908408641815186,
+    2.348588705062866,
+    4.6477952003479,
+    1.8275513648986816,
+    2.121680736541748,
+    2.1729068756103516,
+    2.2903647422790527,
+    2.8348493576049805,
+    2.529339551925659,
+    2.227823257446289,
+    2.1645596027374268,
+    1.8431904315948486,
+    1.5625773668289185,
+    2.0993409156799316,
+    2.1398582458496094,
+    2.664328098297119,
+    2.2772154808044434,
+    2.158620595932007,
+    2.155428886413574,
+    2.7123820781707764,
+    1.99163818359375,
+    1.8054618835449219
+   ]
+  }
+ },
+ "fit": {
+  "pass": true,
+  "metrics_ok": true,
+  "nll": 2.7174425659179686,
+  "nll_band": [
+   2.4,
+   3.2
+  ],
+  "nll_ok": true,
+  "same_diff": []
+ },
+ "deleted_after_harvest": "/opt/hf-cache/hf/hub/models--allenai--Olmo-3-1025-7B"
+}

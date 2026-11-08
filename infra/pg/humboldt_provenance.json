@@ -1,0 +1,9 @@
+{
+  "commit_sha": "b73c2a798ba9e70796ced30f92d7f2d1977150e6",
+  "branch": "science/humboldt",
+  "tags_at_head": [],
+  "dirty": false,
+  "dirty_files": [],
+  "stamped_utc": "2026-08-12T19:03:24Z",
+  "source": "scripts/humboldt_stamp.py"
+}

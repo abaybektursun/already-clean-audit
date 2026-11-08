@@ -1,0 +1,42 @@
+{
+  "rental": "mdl_rec_r512_row2-10B",
+  "session": "S3",
+  "cell_id": "2-10B:REC-r512",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+  "disk": 160,
+  "gpu_query": "gpu_ram>=79 num_gpus=1 compute_cap>=800 compute_cap<1000 cuda_vers>=13.0",
+  "expected_gpu": "H100",
+  "bound": "compute",
+  "weights_mode": "download",
+  "env": {
+    "HF_ONLINE": "1",
+    "HF_HUB_DISABLE_XET": "1"
+  },
+  "_comment": "MENDELEEV S3 row 2-10B LoRA-r512 recovery + its fair-scratch twin in ONE rental (one 10B pair load ~ 51 GB peak, spec 11.2 corrected 2026-09-03: does not fit the L40S). Hopper only (confound 27). weights_mode download: gemma-2-9b + paligemma2-10b pulled in-run via the hub (~40 GB). {BEH_METRICS_S3} substituted at rent time from the 2-10B behaviour cell (AWS lane).",
+  "cells": [
+    {
+      "id": "smoke",
+      "module": "infra.vast.cells.mdl_job",
+      "job": "infra.aws_pg.jobs.matrix_recovery",
+      "args": "--row 2-10B --recipe r512 --arm rec --smoke --behaviour-metrics {BEH_METRICS_S3}"
+    },
+    {
+      "id": "rec_r512",
+      "module": "infra.vast.cells.mdl_job",
+      "job": "infra.aws_pg.jobs.matrix_recovery",
+      "args": "--row 2-10B --recipe r512 --arm rec --behaviour-metrics {BEH_METRICS_S3}"
+    },
+    {
+      "id": "rec_r512_scratch",
+      "module": "infra.vast.cells.mdl_job",
+      "job": "infra.aws_pg.jobs.matrix_recovery",
+      "args": "--row 2-10B --recipe r512 --arm scratch --behaviour-metrics {BEH_METRICS_S3}"
+    }
+  ],
+  "watch": {
+    "max_billed_h": 6,
+    "load_backstop_min": 30,
+    "progress_stall_min": 20,
+    "progress_kill_min": 45
+  }
+}

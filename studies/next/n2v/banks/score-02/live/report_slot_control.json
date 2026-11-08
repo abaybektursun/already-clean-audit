@@ -1,0 +1,29 @@
+{
+ "window": 4441,
+ "dtype": "torch.float32",
+ "vocab": 100278,
+ "view_offset_mod16_bytes": [
+  0,
+  8,
+  0,
+  8
+ ],
+ "logits_max_abs_vs_slot0": [
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ],
+ "copy_max_abs_vs_slot0": [
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ],
+ "view_max_abs_vs_slot0": [
+  0.0,
+  9.5367431640625e-07,
+  0.0,
+  9.5367431640625e-07
+ ]
+}

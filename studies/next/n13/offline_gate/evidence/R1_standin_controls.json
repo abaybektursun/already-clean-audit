@@ -1,0 +1,226 @@
+{
+ "G-PARTITION": {
+  "n_names": 47,
+  "n_expected": 47,
+  "missing": [],
+  "extra": [],
+  "per_family": {
+   "mlp": 73728,
+   "attn": 65536,
+   "norm": 1088,
+   "embed": 65536
+  },
+  "sum": 205888,
+  "total": 205888,
+  "pass": true,
+  "failing_input": {
+   "what": "the index without model.layers.0.mlp.down_proj.weight",
+   "failed": true
+  },
+  "config_shape_fields_equal": {
+   "num_hidden_layers": true,
+   "hidden_size": true,
+   "intermediate_size": true,
+   "num_attention_heads": true,
+   "num_key_value_heads": true,
+   "vocab_size": true,
+   "tie_word_embeddings": true,
+   "sliding_window": true,
+   "layer_types": true,
+   "rope_scaling": true
+  }
+ },
+ "G-INIT": {
+  "a": {
+   "pass": true,
+   "per_shard": {
+    "model-00001-of-00003.safetensors": true,
+    "model-00002-of-00003.safetensors": true,
+    "model-00003-of-00003.safetensors": true
+   },
+   "failing_input": {
+    "what": "stage2-step47684's shard oids in place of base main's",
+    "failed": true
+   }
+  },
+  "b": {
+   "pass": true,
+   "share_main": 0.6841634114583334,
+   "share_other": 0.0017225477430555555,
+   "difference": 0.6824408637152778,
+   "margin": 0.1,
+   "failing_input": {
+    "what": "the two candidates swapped",
+    "failed": true
+   }
+  },
+  "pass": true,
+  "failing_input": {
+   "failed": true
+  }
+ },
+ "PC-RANK": {
+  "recovery": 1.0,
+  "n_plant": 8,
+  "k_ref": 8,
+  "top_n": 16,
+  "along": "neurons",
+  "seed": 40,
+  "s_ref": 0.6503670781889979,
+  "chance": 0.041666666666666664,
+  "pass": true,
+  "failing_input": {
+   "what": "planted along rows of down_proj (h = n mod hidden), gate and up untouched",
+   "value": 0.0,
+   "failed": true,
+   "chance": 0.041666666666666664
+  }
+ },
+ "PC-ART": {
+  "J_round_synthetic": {
+   "k0.1": 0.24999999999999994,
+   "k0.3": 0.17761904761904762,
+   "k1": 0.23446886446886445,
+   "k3": 0.38845863157458094
+  },
+  "J_floor_synthetic": {
+   "k0.1": 0.0,
+   "k0.3": 0.0,
+   "k1": 0.0,
+   "k3": 0.043478260869565216
+  },
+  "pass": true,
+  "rule": "J_round(synthetic, k1) < 0.4",
+  "failing_input": {
+   "what": "the real change: reported, not a gate",
+   "failed": null
+  }
+ },
+ "G-HASH": {
+  "zero": {
+   "pass": true,
+   "mismatched": [],
+   "n_mismatched": 0
+  },
+  "id": {
+   "pass": true,
+   "mismatched": [],
+   "n_mismatched": 0
+  },
+  "failing_input": {
+   "what": "id with neuron (0, 0) reverted",
+   "failed": true
+  },
+  "pass": true
+ },
+ "G-MASK": {
+  "pass": true,
+  "n_mask_arms": 20,
+  "failing_input": {
+   "what": "top_k1 built with down_proj rows instead of columns",
+   "failed": true
+  }
+ },
+ "J_floor": {
+  "k0.1": 1.0,
+  "k0.3": 1.0,
+  "k1": 1.0,
+  "k3": 0.2
+ },
+ "J_round": {
+  "k0.1": 1.0,
+  "k0.3": 1.0,
+  "k1": 1.0,
+  "k3": 0.5564658337801699
+ },
+ "J_round_per_redraw": {
+  "k0.1": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "k0.3": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "k1": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "k3": [
+   0.5,
+   0.5,
+   0.5,
+   0.6,
+   0.5483870967741935,
+   0.45454545454545453,
+   0.6,
+   0.6,
+   0.6,
+   0.4117647058823529,
+   0.5483870967741935,
+   0.6,
+   0.5,
+   0.6551724137931034,
+   0.5,
+   0.6,
+   0.5483870967741935,
+   0.5483870967741935,
+   0.7142857142857143,
+   0.6
+  ]
+ }
+}

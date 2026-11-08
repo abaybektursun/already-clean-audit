@@ -1,0 +1,55 @@
+{
+ "prefix": "s4armsA1-01",
+ "step": "mlp",
+ "reference": "studies/next/n13/s3/s3gate-03 (base MATH-500 engine block; setup pip freeze)",
+ "bench": {
+  "math500": {
+   "fields": {
+    "vllm": "0.32.0",
+    "max_num_seqs": 128,
+    "max_num_batched_tokens": 2048,
+    "num_gpu_blocks": 12817,
+    "attention_backend": "FLASH_ATTN",
+    "env": {
+     "VLLM_USE_FLASHINFER_SAMPLER": "0"
+    }
+   },
+   "engine_args_model": "/work/arm/mlp",
+   "load_s": 60.31412863731384,
+   "differences": []
+  },
+  "gsm8k": {
+   "fields": {
+    "vllm": "0.32.0",
+    "max_num_seqs": 128,
+    "max_num_batched_tokens": 2048,
+    "num_gpu_blocks": 12817,
+    "attention_backend": "FLASH_ATTN",
+    "env": {
+     "VLLM_USE_FLASHINFER_SAMPLER": "0"
+    }
+   },
+   "engine_args_model": "/work/arm/mlp",
+   "load_s": 60.31412863731384,
+   "differences": []
+  }
+ },
+ "libs": {
+  "s3": {
+   "vllm": "0.32.0",
+   "torch": "2.13.0",
+   "triton": "3.7.1",
+   "transformers": "5.19.0",
+   "tokenizers": "0.23.3"
+  },
+  "arm": {
+   "vllm": "0.32.0",
+   "torch": "2.13.0",
+   "triton": "3.7.1",
+   "transformers": "5.19.0",
+   "tokenizers": "0.23.3"
+  }
+ },
+ "differences": [],
+ "equal": true
+}

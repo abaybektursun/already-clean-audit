@@ -1,0 +1,445 @@
+{
+ "project": {
+  "n_points": 11,
+  "points": {
+   "15": {
+    "windows": 1732,
+    "batches": 217,
+    "entries": 2295,
+    "s_low": 1359,
+    "s_measured": 1279
+   },
+   "14": {
+    "windows": 381,
+    "batches": 48,
+    "entries": 477,
+    "s_low": 497,
+    "s_measured": 448
+   },
+   "13": {
+    "windows": 579,
+    "batches": 73,
+    "entries": 717,
+    "s_low": 874,
+    "s_measured": 812
+   },
+   "12": {
+    "windows": 606,
+    "batches": 76,
+    "entries": 717,
+    "s_low": 640,
+    "s_measured": 586
+   },
+   "11": {
+    "windows": 511,
+    "batches": 64,
+    "entries": 643,
+    "s_low": 578,
+    "s_measured": 527
+   },
+   "10": {
+    "windows": 315,
+    "batches": 40,
+    "entries": 397,
+    "s_low": 456,
+    "s_measured": 409
+   },
+   "9": {
+    "windows": 181,
+    "batches": 23,
+    "entries": 243,
+    "s_low": 369,
+    "s_measured": 326
+   },
+   "8": {
+    "windows": 126,
+    "batches": 16,
+    "entries": 147,
+    "s_low": 334,
+    "s_measured": 291
+   },
+   "7": {
+    "windows": 105,
+    "batches": 14,
+    "entries": 116,
+    "s_low": 324,
+    "s_measured": 281
+   },
+   "6": {
+    "windows": 5,
+    "batches": 1,
+    "entries": 5,
+    "s_low": 257,
+    "s_measured": 217
+   },
+   "5": {
+    "windows": 10,
+    "batches": 2,
+    "entries": 10,
+    "s_low": 262,
+    "s_measured": 222
+   }
+  },
+  "gpu_h_low_rate": 1.72,
+  "gpu_h_measured_rate": 1.56,
+  "window_forwards": 4551
+ },
+ "checks": [
+  [
+   "REAL bank arrays.npz and births.jsonl sha256 registered",
+   true
+  ],
+  [
+   "REAL 16 exemplar_a.npz and 16 contexts.jsonl sha256 registered",
+   true
+  ],
+  [
+   "REAL arrays.npz a[t] equals exemplar_a.npz of point t (16 of 16)",
+   true
+  ],
+  [
+   "REAL the dating rule reproduces every banked date (sample 0)",
+   true
+  ],
+  [
+   "REAL failing input: zeroing the birth-point exemplars moves every date later",
+   true
+  ],
+  [
+   "REAL pre-check: at least 100 passing births",
+   true
+  ],
+  [
+   "REAL the count equals 10_RECOUNT2.md \u00a78 (153 later than chance, R1t)",
+   true
+  ],
+  [
+   "REAL split: every birth's half is its neuron parity",
+   true
+  ],
+  [
+   "REAL both halves at or above N_MIN",
+   true
+  ],
+  [
+   "REAL every pseudo-birth twin: same layer, other neuron, same size, dated k",
+   true
+  ],
+  [
+   "REAL every exemplar position is the carrier's T_15 top-50 position",
+   true
+  ],
+  [
+   "REAL births.json reproduces from the banks (byte-identical JSON)",
+   true
+  ],
+  [
+   "REAL births.json sha256 is registered in m2_score.BIRTHS_SHA",
+   true
+  ],
+  [
+   "REAL examples: 10 freeze-half and 10 test-half ids",
+   true
+  ],
+  [
+   "REAL examples: 5 with A_own >= 1 and 5 with A_own = 0",
+   true
+  ],
+  [
+   "REAL G-CFG passes on the 11 branch configs T_5..T_15 (diff empty)",
+   true
+  ],
+  [
+   "REAL G-CFG failing input (model_type renamed) fails on all 11",
+   true
+  ],
+  [
+   "REAL the 11 branch indexes name exactly 3 bf16 shards",
+   true
+  ],
+  [
+   "REAL K0 offline: the T_15 bank against itself passes",
+   true
+  ],
+  [
+   "REAL K0 offline: T_14's values at the same entries fail",
+   true
+  ],
+  [
+   "REAL G-EX offline: the neighbour point's values fail at all 11 points",
+   true
+  ],
+  [
+   "REAL A1 the T_14 L40S repeat has its registered sha256",
+   true
+  ],
+  [
+   "REAL A1 control p99 recomputes to the registered tolerance",
+   true
+  ],
+  [
+   "REAL A2 control p99 over |a_bank| >= 0.1 recomputes to the registered tolerance",
+   true
+  ],
+  [
+   "REAL A2 pass side across devices: L40S repeat against the Blackwell bank, all 32,000",
+   true
+  ],
+  [
+   "REAL A2 pass side across devices: the plan's entries at T_14 (score-01's 477)",
+   true
+  ],
+  [
+   "REAL A2 failing input: T_13's values in T_14's place fail (plan's 477; all 32,000)",
+   true
+  ],
+  [
+   "SCORE percentile: v at a bin's lower edge counts the bins below",
+   true
+  ],
+  [
+   "SCORE percentile: halfway through a bin counts half of it (log scale)",
+   true
+  ],
+  [
+   "SCORE percentile: above every token gives 1",
+   true
+  ],
+  [
+   "SCORE percentile within one bin's share of the empirical fraction",
+   true
+  ],
+  [
+   "SCORE ranks: ties count against (3, 3, 1, 0.5 -> 2, 2, 3, 4)",
+   true
+  ],
+  [
+   "SCORE matched: K poles, the carrier's neuron excluded, nearest first",
+   true
+  ],
+  [
+   "SCORE overlap counts exemplar positions, ignores -1 slots",
+   true
+  ],
+  [
+   "SCORE ratio uses a+ = max(a, 0) for + and max(-a, 0) for -",
+   true
+  ],
+  [
+   "SCORE Wilson 0 of 71: upper bound 0.0513",
+   true
+  ],
+  [
+   "SCORE paired interval excludes 0 for 30 of 71 against 0",
+   true
+  ],
+  [
+   "JOB m2_score.main exits 0 and prints M2_JOB_OK",
+   true
+  ],
+  [
+   "JOB metrics complete, no checkpoint parked",
+   true
+  ],
+  [
+   "JOB every gate passed",
+   true
+  ],
+  [
+   "JOB every registered failing input failed",
+   true
+  ],
+  [
+   "JOB K0: known number on >= 10 poles before any score",
+   true
+  ],
+  [
+   "JOB K0 failing input (T_14's banked values) fails",
+   true
+  ],
+  [
+   "JOB G-TOPK compared banked top-50 entries at every point",
+   true
+  ],
+  [
+   "JOB I-ID passes with 0 carrier flips; its failing input fails",
+   true
+  ],
+  [
+   "JOB metrics.json carries no hit rate or rank",
+   true
+  ],
+  [
+   "JOB one record per planned (unit, role)",
+   true
+  ],
+  [
+   "JOB records split by the unit's half",
+   true
+  ],
+  [
+   "JOB construction control: every carrier in the top 10 under A at T_15",
+   true
+  ],
+  [
+   "JOB construction control under B: at least 0.9 of carriers in the top 10",
+   true
+  ],
+  [
+   "JOB construction failing input: the opposite pole is not in the top 10 under A",
+   true
+  ],
+  [
+   "JOB activations banked per (unit, role)",
+   true
+  ],
+  [
+   "JOB raw examples: the selected ids, top-10 lists with decoded contexts",
+   true
+  ],
+  [
+   "JOB a record recomputes from the banked activations and the grid arrays",
+   true
+  ],
+  [
+   "JOB A3 cross-device G-EX at T_14 is reported, not gated (A2 statistic); G-TOPK there a gate; T_13 G-EX a gate",
+   true
+  ],
+  [
+   "JOB A3 the verdict's line: no reported point over the tolerance",
+   true
+  ],
+  [
+   "FAIL G_SAME on its planted input: exit non-zero, gate named",
+   true
+  ],
+  [
+   "FAIL INPUTS on its planted input: exit non-zero, gate named",
+   true
+  ],
+  [
+   "FAIL G_CORPUS on its planted input: exit non-zero, gate named",
+   true
+  ],
+  [
+   "FAIL t15_G_REV on its planted input: exit non-zero, gate named",
+   true
+  ],
+  [
+   "FAIL t15_G_CFG on its planted input: exit non-zero, gate named",
+   true
+  ],
+  [
+   "FAIL K0 on its planted input: exit non-zero, gate named",
+   true
+  ],
+  [
+   "FAIL t14_G_EX on its planted input: exit non-zero, gate named",
+   true
+  ],
+  [
+   "FAIL K0 on its planted input: exit non-zero, gate named",
+   true
+  ],
+  [
+   "FAIL A3 a planted G-EX excess at a cross-device point (T_13 x 1.2) is written and does not stop the job",
+   true
+  ],
+  [
+   "FAIL A3 a planted G-TOPK excess (T_14 top-50 x 1.1, cross-device) stops the job, gate named",
+   true
+  ],
+  [
+   "FAIL stop rule: a 0.6 s budget parks every point after T_15",
+   true
+  ],
+  [
+   "FAIL stop rule: parked births have no pre record (not usable)",
+   true
+  ],
+  [
+   "VERDICT A3 the cross-device G-EX line names the points over the tolerance; the headline is unchanged",
+   true
+  ],
+  [
+   "VERDICT satisfying case: H_A SUPPORTED, H_B SUPPORTED, H_AB LOSES, H_sel_B ABOVE",
+   true
+  ],
+  [
+   "VERDICT the bar is the largest of chance and the two floors",
+   true
+  ],
+  [
+   "VERDICT A never hits: H_A REFUTED",
+   true
+  ],
+  [
+   "VERDICT A and B drawn alike: H_AB TIES",
+   true
+  ],
+  [
+   "VERDICT A above B: H_AB BEATS",
+   true
+  ],
+  [
+   "VERDICT twins drawn like the carriers: H_sel_B AT_SELECTION",
+   true
+  ],
+  [
+   "VERDICT twins above the carriers: H_sel_B BELOW_SELECTION",
+   true
+  ],
+  [
+   "VERDICT fewer than N_MIN twins: H_sel NOT_RUN",
+   true
+  ],
+  [
+   "VERDICT a floor above the carrier's value: H_A not SUPPORTED",
+   true
+  ],
+  [
+   "VERDICT pre above the birth point: DOES NOT COUNT until inspected",
+   true
+  ],
+  [
+   "VERDICT construction control at 0.5: freeze refuses",
+   true
+  ],
+  [
+   "VERDICT construction control failing on the test half: DOES NOT COUNT",
+   true
+  ],
+  [
+   "VERDICT the construction failing input passing: DOES NOT COUNT",
+   true
+  ],
+  [
+   "VERDICT a failed gate: DOES NOT COUNT",
+   true
+  ],
+  [
+   "VERDICT a failing input that passed: freeze refuses",
+   true
+  ],
+  [
+   "VERDICT 30 usable test births: DOES NOT COUNT (missing)",
+   true
+  ],
+  [
+   "VERDICT freeze records changed after freeze: verdict refuses",
+   true
+  ],
+  [
+   "VERDICT room: each label branch reachable at the test half's size",
+   true
+  ],
+  [
+   "VERDICT runs on the tiny job's records (N_MIN 5 for the tiny world)",
+   true
+  ],
+  [
+   "PROJECT the launch at the lowest banked rates fits 0.9 of a 150-minute budget",
+   true
+  ]
+ ]
+}

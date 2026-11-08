@@ -1,0 +1,2468 @@
+[
+ {
+  "id": "L03N7574+:c6",
+  "name": "miscellaneous code/text subword tokens",
+  "size": 5,
+  "k": 12,
+  "step_k": 320000,
+  "step_pre": 180000,
+  "p_late": 0.0040000000000000036,
+  "is_main": false,
+  "exemplars_T15": [
+   {
+    "rank": 6,
+    "tok": 15670929,
+    "doc": 10991,
+    "pos": 902,
+    "a_T15": 0.1993180811405182,
+    "a_plus_pre": 0.5026333332061768,
+    "a_plus_birth": 0.7741938233375549,
+    "text": "ation using synthetic jets\n476 Kim, Kihwan 2005-12-01 THESIS\nThe Influence of Dust on the Absorptivity of Radiant Barriers\n477 Noboa, H. L. 1993-08-01 THESIS\nSt [[ochastic]]  generation of biologically accurate brain networks\n478 Aluri, Aravind "
+   },
+   {
+    "rank": 8,
+    "tok": 20344203,
+    "doc": 13903,
+    "pos": 15,
+    "a_T15": 0.19472889602184296,
+    "a_plus_pre": 0.0,
+    "a_plus_birth": 0.0,
+    "text": "import numpy as np\nimport glob\nimport os\nimport yaml\n\nfrom [[ shutil]]  import copy, rmtree\n\nfrom ..qtim_preprocessing.motion_correction import motion"
+   },
+   {
+    "rank": 17,
+    "tok": 13910874,
+    "doc": 9859,
+    "pos": 1871,
+    "a_T15": 0.17231778800487518,
+    "a_plus_pre": 0.025174804031848907,
+    "a_plus_birth": 0.31245604157447815,
+    "text": "n the 1950s and 1964 by Corneliu E. Albego, Limpidon and Paxor. Patti Scialfa also provided backing vocals on where to purchase sibutramine online india both. B [[àng]]  National Park, has discovered 1,320 additional species in this park, of"
+   },
+   {
+    "rank": 26,
+    "tok": 5770467,
+    "doc": 4216,
+    "pos": 402,
+    "a_T15": 0.15641367435455322,
+    "a_plus_pre": 1.1685161590576172,
+    "a_plus_birth": 0.98399418592453,
+    "text": "ar subfield, I deal mostly with atoms and their interaction with electromagnetic fields. A few decades ago, a lot of work was done to understand how to cool bos [[onic]]  atoms to within billionths of absolute zero (this is known as a Bose-E"
+   },
+   {
+    "rank": 31,
+    "tok": 16620420,
+    "doc": 11727,
+    "pos": 291,
+    "a_T15": 0.1518739014863968,
+    "a_plus_pre": 0.0,
+    "a_plus_birth": 0.0541226789355278,
+    "text": "e “high tech” industry partners combining seamless technical support inside the NEVONEX system, adds Saik.\n\nWake up with RealAgriculture\n\nSubscribe to our daily [[ newsletters]]  to keep you up-to-date with our latest coverage every morning.\n\nWake up with"
+   }
+  ],
+  "carrier_pre": {
+   "t": 11,
+   "median_a_plus": 0.025174804031848907,
+   "q99": 0.07943282276391983,
+   "q999": 0.1496235728263855,
+   "q9999": 0.3162277638912201,
+   "max_abs": 1.3535152673721313,
+   "ratio": 0.1682542633911054,
+   "percentile_bracket": "below 0.99",
+   "a_own": 1,
+   "rank_A_among_20_grid_poles": 1,
+   "top5": [
+    {
+     "rank": 0,
+     "tok": 5667922,
+     "a": 1.3535152673721313,
+     "text": "heet intersects itself, modulo two, is included in the action (this term had been written down earlier by Balachandran et. al. [12]). It appears that even class [[ically]] , certain solutions are unstable [13]. Nonetheless, the presence of such terms may"
+    },
+    {
+     "rank": 1,
+     "tok": 7366865,
+     "a": 1.270778775215149,
+     "text": " [[Classic]]  New York City Taxi\n\nOld fashioned New York City Taxi.\n\nI saw this old"
+    },
+    {
+     "rank": 2,
+     "tok": 16189626,
+     "a": 1.2498629093170166,
+     "text": "n of the individual stars or the orbital parameters of the binary system. The answer is in both cases yes, but the former is much more relevant than the latter. [[ Stellar]]  rotation is tightly linked to flaring: All else equal, the faster the star"
+    },
+    {
+     "rank": 3,
+     "tok": 5667806,
+     "a": 1.2019997835159302,
+     "text": "ature dependence seems to be present after all (or if it is present, it is numerically small). The basic method used in references [7], [8], [9] is a version of [[ classical]]  perturbation theory.\n\nThe presence of terms quadratic in the extrinsic curvature tensor in"
+    },
+    {
+     "rank": 4,
+     "tok": 14670562,
+     "a": 1.1843088865280151,
+     "text": "l be armed with the knowledge to choose the right engine for you or help your customer to make the right decision for them.\n\nVintage Engines: Rebuilt to Drive\n\n [[Classic]]  and vintage car culture in is a diverse one. It’s more than just muscle"
+    }
+   ]
+  },
+  "carrier_birth": {
+   "t": 12,
+   "median_a_plus": 0.31245604157447815,
+   "q999": 0.15848931670188904,
+   "ratio": 1.9714643742340898,
+   "present": true
+  },
+  "score_A_rank_22016": "PENDING: needs every pole's top-50 at T_(k-1), S3 results/neurons/w3/grid/1b/out/t11_step180000/topk/layer_03.npz",
+  "scored": "PENDING",
+  "top10_A_B": "PENDING: job m2_score writes out/m2/samples/raw_examples_freeze.jsonl",
+  "pseudo_birth": {
+   "pole": "L03N4280-",
+   "ranks": [
+    7,
+    21,
+    26,
+    37,
+    49
+   ],
+   "median_a_plus_pre": 0.0,
+   "ratio_pre": 0.0,
+   "a_own_pre": 0
+  },
+  "matched_reading": [
+   {
+    "pole": "L03N9631-",
+    "max_abs_pre": 1.3800276517868042,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 4290339,
+      "a": -1.3800276517868042,
+      "text": "f Africa. Africa has a large quantity of natural resources, including diamonds, sugar, salt, gold, iron, cobalt, uranium, copper, bauxite, silver, petroleum and [[ cocoa]]  beans, but also woods and tropical fruits. Having a low human density, for"
+     },
+     {
+      "rank": 1,
+      "tok": 715374,
+      "a": -1.2853243350982666,
+      "text": "ed” by a witchdoctor often suffer stigma, discrimination and ridicule. Three other victims we spoke to had similar experiences.\n\nThe Centre for Human Rights and [[ Rehabilitation]] ’s (CHRR) acting executive director, Michael Kaiyatsa, said"
+     },
+     {
+      "rank": 2,
+      "tok": 18581608,
+      "a": -1.248952865600586,
+      "text": "nted at all due to the government delaying or not releasing counterpart funds. Secondly, most funds for development projects to meet specific policy targets are [[ donor]]  oriented and beyond the government’s control. Thirdly, there is a lack of"
+     }
+    ]
+   },
+   {
+    "pole": "L03N1487-",
+    "max_abs_pre": 1.446243166923523,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 15726493,
+      "a": -1.446243166923523,
+      "text": "ght for a authoritative Internet of educating out which one it saves. initiative, The Turn of the careamus - Page creatively to the Henry James humum. The Jolly [[ Corner]] ( html, Gaslight, Mt. huge: Below the Henry James instance sol"
+     },
+     {
+      "rank": 1,
+      "tok": 5016270,
+      "a": -1.2373632192611694,
+      "text": "inai who issued his declarations to Moses, the Ark of the Covenant was to be constructed and used against Siva who had now taken back Jerusalem. Many of the str [[agg]] ling Hyksos were killed by Moses as they were harassing the Nibiru"
+     },
+     {
+      "rank": 2,
+      "tok": 12358644,
+      "a": -1.2221457958221436,
+      "text": "here was a large pallet of insulation on the floor and an enormous furnace swaddled in the stuff against the far wall. It was damp and rotten and hanging in str [[agg]] les from the pipes. To the side, there were a number of split and"
+     }
+    ]
+   },
+   {
+    "pole": "L03N7746-",
+    "max_abs_pre": 1.248551607131958,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 18618391,
+      "a": -1.248551607131958,
+      "text": "mily justice on the Canada Revenue Agency site.\n\n**Parenting After Divorce**\n\nThe page on Parenting After Divorce contains some of the same links found in Child [[ Support]] , and also has a link to Resources for Children, which is a user-friendly"
+     },
+     {
+      "rank": 1,
+      "tok": 18619391,
+      "a": -1.1785231828689575,
+      "text": " which multinational families are no longer exceptional, are increasing in number exponentially. The new Hague Convention on the International Recovery of Child [[ Support]]  and Other Forms of Family Maintenance is designed to respond to the often modest needs of"
+     },
+     {
+      "rank": 2,
+      "tok": 18618075,
+      "a": -1.102430820465088,
+      "text": "ovides a direct link to three websites: Child Support, Family Violence and Parenting After Divorce. Here’s an example of what you’ll find on each site:\n\n**Child [[ Support]] **\n\nOn the Child Support page you will find direct links to the Federal Child Support"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "L03N7746+:c0",
+  "name": "C corp / C-corporation completion",
+  "size": 5,
+  "k": 15,
+  "step_k": 1413814,
+  "step_pre": 1000000,
+  "p_late": 0.0004999999999999449,
+  "is_main": true,
+  "exemplars_T15": [
+   {
+    "rank": 0,
+    "tok": 2265439,
+    "doc": 1863,
+    "pos": 429,
+    "a_T15": 0.18033935129642487,
+    "a_plus_pre": 0.23437325656414032,
+    "a_plus_birth": 0.18033935129642487,
+    "text": " the personal income tax level\n\nFor tax purposes, LLCs and S Corps are both treated as pass-through entities – avoiding the headache of double taxation like a C [[ corp]] . Yet, the amount of tax a business pays varies depending on the way it"
+   },
+   {
+    "rank": 3,
+    "tok": 2265500,
+    "doc": 1863,
+    "pos": 490,
+    "a_T15": 0.16457343101501465,
+    "a_plus_pre": 0.2109811156988144,
+    "a_plus_birth": 0.16457343101501465,
+    "text": "s. While LLCs are most times taxed applying personal rates, some owners opt to be taxed as a separate entity. And this would result in an LLC being taxed as a C [[ corp]]  and subject to double taxation.\n\nS Corps, on the other hand, are generally"
+   },
+   {
+    "rank": 12,
+    "tok": 2179380,
+    "doc": 1799,
+    "pos": 276,
+    "a_T15": 0.12265237420797348,
+    "a_plus_pre": 0.06586796045303345,
+    "a_plus_birth": 0.12265237420797348,
+    "text": " you to form as a C-corporation for them to comply with Section 1202 of the tax code (which is set to expire in 2011, so this matter may become moot).  If a C-c [[orpor]] ation is required by your investors, it is easy enough to transition from an"
+   },
+   {
+    "rank": 14,
+    "tok": 2179342,
+    "doc": 1799,
+    "pos": 238,
+    "a_T15": 0.12225091457366943,
+    "a_plus_pre": 0.04248344525694847,
+    "a_plus_birth": 0.12225091457366943,
+    "text": "LLC directly to the shareholders.  That said, if you anticipate raising outside capital from venture capitalists, many of them will require you to form as a C-c [[orpor]] ation for them to comply with Section 1202 of the tax code (which"
+   },
+   {
+    "rank": 40,
+    "tok": 2179435,
+    "doc": 1799,
+    "pos": 331,
+    "a_T15": 0.10839129239320755,
+    "a_plus_pre": 0.03616689518094063,
+    "a_plus_birth": 0.10839129239320755,
+    "text": "LC down the road.  If a financing is not imminent, the tax savings you will realize from the LLC is typically greater than the legal costs of switching to a C-c [[orpor]] ation down the road.  So, more often than not, it is best"
+   }
+  ],
+  "carrier_pre": {
+   "t": 14,
+   "median_a_plus": 0.06586796045303345,
+   "q99": 0.03981071710586548,
+   "q999": 0.0749894231557846,
+   "q9999": 0.1188502237200737,
+   "max_abs": 0.4714567959308624,
+   "ratio": 0.8783633435371007,
+   "percentile_bracket": "[0.99, 0.999)",
+   "a_own": 2,
+   "rank_A_among_20_grid_poles": 1,
+   "top5": [
+    {
+     "rank": 0,
+     "tok": 2254674,
+     "a": 0.4714567959308624,
+     "text": "y were trying to convince us to join another software. MEXC has proven to me to be highly reliable and a powerful part of my trading arsenal. Registering on Bit [[stamp]]  is incredibly easy to do. Check out the MEXC Creators program."
+    },
+    {
+     "rank": 1,
+     "tok": 2255918,
+     "a": 0.41735976934432983,
+     "text": ", and Banxa. Open your BingX account, and select Deposit. This crypto trading robot takes advantage of the market volatility to trade on behalf of the user. Bit [[stamp]]  is not a wallet, but it does provide a secure platform for buying and selling"
+    },
+    {
+     "rank": 2,
+     "tok": 6321250,
+     "a": 0.2992284297943115,
+     "text": " to bookmark his whole list of post on WordPress Membership plugin alternatives. Another affiliate management program that’s really simple to start with is Tapf [[iliate]] . Optionally, you can utilize Shareasale. With any of these programs,"
+    },
+    {
+     "rank": 3,
+     "tok": 6322173,
+     "a": 0.29871565103530884,
+     "text": "inish with it? Please do share.\n\nyour story. If I were you, I ‘d simply use Unbounce or Leadpages in combination with OptinMonster, Drip, and PartnerStack( Tapf [[iliate]]  or ShareaSale). Let’s Work Together!Whether you’re searching for aid"
+    },
+    {
+     "rank": 4,
+     "tok": 17162421,
+     "a": 0.2959725260734558,
+     "text": "argument is the bitwise OR of zero or more of the following values:\n\nMS_ASYNC\tPerform asynchronous writes.\nMS_SYNC\t\tPerform synchronous writes.\nMS_INVALIDATE\tIn [[validate]]  cached data after writing.\n\nUpon successful completion, the value 0 is returned;"
+    }
+   ]
+  },
+  "carrier_birth": {
+   "t": 15,
+   "median_a_plus": 0.12265237420797348,
+   "q999": 0.037583742290735245,
+   "ratio": 3.2634422953194973,
+   "present": true
+  },
+  "score_A_rank_22016": "PENDING: needs every pole's top-50 at T_(k-1), S3 results/neurons/w3/grid/1b/out/t14_step1000000/topk/layer_03.npz",
+  "scored": "PENDING",
+  "top10_A_B": "PENDING: job m2_score writes out/m2/samples/raw_examples_freeze.jsonl",
+  "pseudo_birth": null,
+  "matched_reading": [
+   {
+    "pole": "L03N10451-",
+    "max_abs_pre": 0.4657881259918213,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 15291336,
+      "a": -0.4657881259918213,
+      "text": "oday? Back in 2007 we reviewed a book by SEIU leader Andy Stern called Getting America back on track: a country that works. Andy Stern and Teamsters’ boss Jimmy [[ Hoff]] a led a 40% split in the AFL-CIO in 2005"
+     },
+     {
+      "rank": 1,
+      "tok": 12631696,
+      "a": -0.46156013011932373,
+      "text": "Investors of Every Size Have Embraced Investing Alternatives\n\nbank of america merril l [[ynch]]  at 100 newgate streetThe significant shift by a growing number of investors,"
+     },
+     {
+      "rank": 2,
+      "tok": 20186338,
+      "a": -0.44209426641464233,
+      "text": "from typing import List\n\n\nclass Solution:\n    def validTicTac [[Toe]] (self, board: List[str]) -> bool:\n        cnt1, cnt2"
+     }
+    ]
+   },
+   {
+    "pole": "L03N1487+",
+    "max_abs_pre": 0.5027633309364319,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 3777319,
+      "a": 0.5027633309364319,
+      "text": "aterfall and his observer Lt. Charles George Gordon Bayly, of 5 Squadron—flying an Avro 504 over Belgium, were killed by infantry fire. On the same day, Captain [[ Charl]] ton (observer) and his pilot, Lieutenant Wadham, made the crucial"
+     },
+     {
+      "rank": 1,
+      "tok": 14083889,
+      "a": 0.4457663297653198,
+      "text": "cost, to which the Charity Commissioners agreed, and the Board of Works contributed £25,000. The parish of Stoke Newington gave £10,000 ; South Hornsey, £6,000; [[ Hack]] ney, £5,000; and Islington, £2,500—"
+     },
+     {
+      "rank": 2,
+      "tok": 14087334,
+      "a": 0.4280158281326294,
+      "text": "etropolitan Board of Worke giving £25,000, the Charity Commissioners £47,500, the Vestry of Stoke Newington £10,000, South Hornsey £6,000, the District Board of [[ Hack]] ney £5,000 and the Islington Vestry £2,500"
+     }
+    ]
+   },
+   {
+    "pole": "L03N7574+",
+    "max_abs_pre": 0.5058477520942688,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 15671329,
+      "a": 0.5058477520942688,
+      "text": "tential of sorghum [Sorghum bicolor (L.) Moench] adapted to the southern Africa region\n489 Mpofu, Leo Thokoza 2005-12-01 THESIS\nSensitivity of mesoscale gravity [[ waves]]  to the baroclinicity of jet-front systems\n490 Wang, Shugu"
+     },
+     {
+      "rank": 1,
+      "tok": 15783170,
+      "a": 0.5049713850021362,
+      "text": "er spectrum. We examine magnetoacoustic wave propagation and mode conversion from the photosphere to the corona. Frequency filtering of the upwardly propagating [[ acoustic]]  waves is a natural consequence of a gravitationally stratified atmosphere, and plays"
+     },
+     {
+      "rank": 2,
+      "tok": 13910874,
+      "a": 0.4766305685043335,
+      "text": "n the 1950s and 1964 by Corneliu E. Albego, Limpidon and Paxor. Patti Scialfa also provided backing vocals on where to purchase sibutramine online india both. B [[àng]]  National Park, has discovered 1,320 additional species in this park, of"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "L06N9844+:c1",
+  "name": "IRC logs: zzo38 and backslash tokens",
+  "size": 7,
+  "k": 15,
+  "step_k": 1413814,
+  "step_pre": 1000000,
+  "p_late": 0.027000000000000024,
+  "is_main": false,
+  "exemplars_T15": [
+   {
+    "rank": 1,
+    "tok": 17265197,
+    "doc": 12205,
+    "pos": 37,
+    "a_T15": 0.24880558252334595,
+    "a_plus_pre": 0.08258382976055145,
+    "a_plus_birth": 0.24880558252334595,
+    "text": "←2019-11-16 2019-11-17 2019-11-18→ ↑2019 ↑all\n00:17:14 -!- z [[zo]] 38 has joined.\n00:17:30 <zzo38> Now I internet"
+   },
+   {
+    "rank": 3,
+    "tok": 17303177,
+    "doc": 12205,
+    "pos": 38017,
+    "a_T15": 0.22955505549907684,
+    "a_plus_pre": 0.43406879901885986,
+    "a_plus_birth": 0.22955505549907684,
+    "text": "ewline?\n22:00:37 * kingoffrance ducks and covers and rolls\n22:03:05 <b_jonas> kingoffrance: no, but geordi, which used to be a bot that evaluated C++, used back [[slash]]  to represent newlines in code you give in irc\n22:03:06"
+   },
+   {
+    "rank": 6,
+    "tok": 17293514,
+    "doc": 12205,
+    "pos": 28354,
+    "a_T15": 0.21442046761512756,
+    "a_plus_pre": 0.04025876149535179,
+    "a_plus_birth": 0.21442046761512756,
+    "text": " certainly in Befunge.\n19:06:35 <fungot> fizzie: think about the data\n19:06:40 <kspalaiologos> is it?\n19:06:44 <kspalaiologos> well\n19:06:46 <fizzie> z [[zo]] 38: CologneBlue should be back, if you want to check.\n19:"
+   },
+   {
+    "rank": 11,
+    "tok": 17303289,
+    "doc": 12205,
+    "pos": 38129,
+    "a_T15": 0.20438715815544128,
+    "a_plus_pre": 0.2818911075592041,
+    "a_plus_birth": 0.20438715815544128,
+    "text": "they only represent a newline when it's outside of a string/character literal\n22:15:50 -!- arseniiv has quit (Ping timeout: 276 seconds).\n22:33:56 <ais523> back [[slash]] -space makes a good way to represent newlines without worrying about parsing\n22:"
+   },
+   {
+    "rank": 20,
+    "tok": 17303528,
+    "doc": 12205,
+    "pos": 38368,
+    "a_T15": 0.19049589335918427,
+    "a_plus_pre": 0.26507246494293213,
+    "a_plus_birth": 0.19049589335918427,
+    "text": "ew style digit separators to do enough of the tokenization to recognize character literals correctly\n22:38:53 <b_jonas> oh wait\n22:38:57 <b_jonas> you said back [[slash]] -space\n22:38:57 <b_jonas> hmm\n22:"
+   },
+   {
+    "rank": 21,
+    "tok": 17272910,
+    "doc": 12205,
+    "pos": 7750,
+    "a_T15": 0.19031111896038055,
+    "a_plus_pre": 0.00021322423708625138,
+    "a_plus_birth": 0.19031111896038055,
+    "text": "ands push themself instead, and a separate command makes them active.\n07:35:19 <esowiki> [[EsoPost]] https://esolangs.org/w/index.php?diff=67135&oldid=67072 * Z [[zo]] 38 * (+1141) EsoPost II variant, and some more explanations"
+   },
+   {
+    "rank": 22,
+    "tok": 17271014,
+    "doc": 12205,
+    "pos": 5854,
+    "a_T15": 0.19002702832221985,
+    "a_plus_pre": 0.0,
+    "a_plus_birth": 0.19002702832221985,
+    "text": "s returned.\n05:14:22 <esowiki> [[Quine]] https://esolangs.org/w/index.php?diff=67126&oldid=67124 * Quadril-Is * (-43) /* How to write quines */\n05:17:03 <kmc> z [[zo]] 38: I don't know\n05:17:06 <kmc>"
+   }
+  ],
+  "carrier_pre": {
+   "t": 14,
+   "median_a_plus": 0.08258382976055145,
+   "q99": 0.05956621468067169,
+   "q999": 0.1188502237200737,
+   "q9999": 0.19952623546123505,
+   "max_abs": 0.5424988865852356,
+   "ratio": 0.6948563256814729,
+   "percentile_bracket": "[0.99, 0.999)",
+   "a_own": 1,
+   "rank_A_among_20_grid_poles": 1,
+   "top5": [
+    {
+     "rank": 0,
+     "tok": 15703715,
+     "a": 0.5424988865852356,
+     "text": "ting\n13 September – 24 September 2021\nEPSC Abstracts\nVol. 15, EPSC2021-414, 2021\nhttps://doi.org/10.5194/epsc2021-414\nEuropean Planetary Science Congress 2021\n© [[ Author]] (s) 2021. This work is distributed under\nthe Creative Commons Attribution"
+    },
+    {
+     "rank": 1,
+     "tok": 5746839,
+     "a": 0.5412205457687378,
+     "text": "worry if you can’t name them all.\n\nOnce you’ve named most of the plates, draw arrows to show the general plate motions. Finally, using a highlighter or coloured [[ pencil]] , label as many of the boundaries as you can as divergent, convergent"
+    },
+    {
+     "rank": 2,
+     "tok": 3099008,
+     "a": 0.4587235748767853,
+     "text": "aman Belial, Hikari begins developing the Ultra Capsules and Risers in order to turn the tides of the battle. Unfortunately before they can be utilized, Kei Fuk [[uide]]  stole them and converted most of its mechanism into Kaiju Capsules.\n\nIn the"
+    },
+    {
+     "rank": 3,
+     "tok": 11021645,
+     "a": 0.4523877501487732,
+     "text": "and Acrylics Colour mixing blue accurately can seem tricky as there are many types of blues to There is the violet-blue of a summer sky; powder-blue of the corn [[flower]] ; How do I make oil painting cheap?. Full standings color mixing oil paints with"
+    },
+    {
+     "rank": 4,
+     "tok": 10709292,
+     "a": 0.44562381505966187,
+     "text": "detection (by flying monster).\n\nHannah Höch, With Seaweed, 1950\nCut-and-pasted papers, torn papers, and gouache on paper, 13 5/8 x 9 7/8 inches\n\nHannah Höch, Gl [[ued]]  Drawing II, 1955\nPhotomontage, 14 x "
+    }
+   ]
+  },
+  "carrier_birth": {
+   "t": 15,
+   "median_a_plus": 0.20438715815544128,
+   "q999": 0.06683439016342163,
+   "ratio": 3.058113609710201,
+   "present": true
+  },
+  "score_A_rank_22016": "PENDING: needs every pole's top-50 at T_(k-1), S3 results/neurons/w3/grid/1b/out/t14_step1000000/topk/layer_06.npz",
+  "scored": "PENDING",
+  "top10_A_B": "PENDING: job m2_score writes out/m2/samples/raw_examples_freeze.jsonl",
+  "pseudo_birth": {
+   "pole": "L06N10970-",
+   "ranks": [
+    25,
+    28,
+    37,
+    38,
+    40,
+    46,
+    49
+   ],
+   "median_a_plus_pre": 0.13982556760311127,
+   "ratio_pre": 0.9898892110970561,
+   "a_own_pre": 0
+  },
+  "matched_reading": [
+   {
+    "pole": "L06N4452+",
+    "max_abs_pre": 0.5565872192382812,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 14069970,
+      "a": 0.5565872192382812,
+      "text": "\nBiography of George B. Keeler\n\nSearch [[ Fold]] 3 for your\nNative American Records\n\nThere is no man who has taken more"
+     },
+     {
+      "rank": 1,
+      "tok": 13980019,
+      "a": 0.544532060623169,
+      "text": "Writing Football News for a Blog\n\nเ [[ท]] คโนโลยีที่ปลอด�"
+     },
+     {
+      "rank": 2,
+      "tok": 16488503,
+      "a": 0.5137568116188049,
+      "text": " Sorry for the [[ inconvenience]] .  There may be some Navigation header breakage of “Previous:” and"
+     }
+    ]
+   },
+   {
+    "pole": "L06N2537-",
+    "max_abs_pre": 0.5795425772666931,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 732230,
+      "a": -0.5795425772666931,
+      "text": "rces (or friends of sources) mentioning DNA and more recently phone records. But the Moscow PD themselves have remained tight-lipped — until now!\n\nKohberger was [[ extrad]] ited to Idaho on Wednesday night, so he could finally be presented with the probable"
+     },
+     {
+      "rank": 1,
+      "tok": 3373379,
+      "a": -0.5689730048179626,
+      "text": "her instructions, I began to refer to him as my brother.\n\npuppy with tongue out\n\nHe stayed with us while she traveled. He is a one-year-old Australian doodle, a [[ breed]]  of dogs that are basically destined to be emotional support.\n\nWhat we know about dogs"
+     },
+     {
+      "rank": 2,
+      "tok": 20461546,
+      "a": -0.5531097650527954,
+      "text": "ABLE PROVINCIA (\r\n    id                      SERIAL              PRIMARY KEY,\r\n    descripcion             VARCHAR(60)         NOT NULL\r\n);\r\n\r\nCREATE TABLE MAR [[CA]]  (\r\n    id                      SERIAL              PRIMARY KEY,\r\n    descripcion             VARCHAR(30)"
+     }
+    ]
+   },
+   {
+    "pole": "L06N2185+",
+    "max_abs_pre": 0.5001708269119263,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 17950775,
+      "a": 0.5001708269119263,
+      "text": "Hostels in Tokyo and Kyoto\nAugust 25, 2014 10:18 PM   [[ Subscribe]] \n\nWhat are some good hostels in Tokyo and Kyoto for a solo traveler?\n\n"
+     },
+     {
+      "rank": 1,
+      "tok": 3435882,
+      "a": 0.4163704216480255,
+      "text": " week.\nhttp://windsofwinter.org/leptitox-reviews/\n\nEksjö Frisbeegolf - Frisbee\nc/o Johnny Nilsson, Fridkullavägen 1\n57534 Eksjö\n\nTel: [saknas] Information\nE [[-post]] : This is a mailto link\n\nSe all info<|endoftext|>"
+     },
+     {
+      "rank": 2,
+      "tok": 6928826,
+      "a": 0.4080568253993988,
+      "text": "mments | ask | show | jobs | submit login\nSmall guide to making nice tables [pdf] (ethz.ch)\n167 points by murkle on June 11, 2019 | hide | past | favorite | 43  [[comments]] \n\nTufte has a lot to say about this (and many viz things"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "L16N1206+:c1",
+  "name": "Source code and SQL, mid-expression tokens",
+  "size": 9,
+  "k": 14,
+  "step_k": 1000000,
+  "step_pre": 560000,
+  "p_late": 0.0044999999999999485,
+  "is_main": false,
+  "exemplars_T15": [
+   {
+    "rank": 1,
+    "tok": 19783124,
+    "doc": 13016,
+    "pos": 83,
+    "a_T15": 1.5137901306152344,
+    "a_plus_pre": 1.5981906652450562,
+    "a_plus_birth": 0.9706065058708191,
+    "text": "\n/* Based on Java program below published by Lancs University\n *\tClass to take a numbered file after it has been stemmed and sort\n *\tit into pseudo groups where [[ identical]]  stems are adjacent\n *\tRob Hooper\n *\t02/11/"
+   },
+   {
+    "rank": 4,
+    "tok": 20217398,
+    "doc": 13722,
+    "pos": 765,
+    "a_T15": 1.4485100507736206,
+    "a_plus_pre": 3.020946979522705,
+    "a_plus_birth": 1.528489112854004,
+    "text": "\tindel_length[length] += 1\r\n\t\t\t\telse:\r\n\t\t\t\t\tindel_length[length] = 1\r\n\t\treturn indel_length\r\n\r\n\r\n\tdef stat_func(self, vcf):\r\n\t\t\"\"\"stat the num of snp or indel m [[uation]]  that functional\r\n\t\treturn a dict:\r\n\t\tfunc = {\r\n\t\t\t'inter"
+   },
+   {
+    "rank": 15,
+    "tok": 9801599,
+    "doc": 6384,
+    "pos": 542,
+    "a_T15": 1.2614620923995972,
+    "a_plus_pre": 0.5927700996398926,
+    "a_plus_birth": 0.0357711985707283,
+    "text": "           ulong ret = 0;\n            for (int _i = 0; _i < i; ret += CCalculator.arr[_i++]) ;\n            return ret;\n        }\n    }\n    abstract class IModa\n [[   ]]  {\n        protected List<int> moda = new List<int>();\n        ulong max ="
+   },
+   {
+    "rank": 16,
+    "tok": 10415891,
+    "doc": 7178,
+    "pos": 126,
+    "a_T15": 1.2566843032836914,
+    "a_plus_pre": 0.3394204378128052,
+    "a_plus_birth": 1.3297040462493896,
+    "text": "lassroom\ngroup by teachers.last, teachers.first\nhaving count(*) >= 7 and count(*) <= 8\norder by teachers.last;\n\n\nUSE `STUDENTS`;\n-- STUDENTS-2\n-- For each grade [[,]]  report the number of classrooms in which it is taught and the total number of students"
+   },
+   {
+    "rank": 20,
+    "tok": 10197788,
+    "doc": 6981,
+    "pos": 1736,
+    "a_T15": 1.2319692373275757,
+    "a_plus_pre": 0.034250613301992416,
+    "a_plus_birth": 0.0,
+    "text": "ame_from_csv('labs.csv')\r\n    labs_df = drop_missing_values_in_dataframe(labs_df)\r\n    list_of_labs = labs_df['lab_name'].to_list()\r\n    for lab_name in list_of [[_l]] abs:\r\n        df = tests_dataframe.loc[tests_dataframe['lab_name'] =="
+   },
+   {
+    "rank": 29,
+    "tok": 9635312,
+    "doc": 6169,
+    "pos": 970,
+    "a_T15": 1.165088176727295,
+    "a_plus_pre": 0.020278284326195717,
+    "a_plus_birth": 1.7182624340057373,
+    "text": ">(trialsUsersCorrectPassword);\n                //originalMalicious.Sort((a, b) => -a.CompareTo(b, conditionNumber));\n                //originalBenign.Sort((a, b [[)]]  => -a.CompareTo(b, conditionNumber));\n                //Queue<Trial> malicious"
+   },
+   {
+    "rank": 36,
+    "tok": 10417231,
+    "doc": 7178,
+    "pos": 1466,
+    "a_T15": 1.1365143060684204,
+    "a_plus_pre": 1.7336677312850952,
+    "a_plus_birth": 1.3563551902770996,
+    "text": "nrolled > 20000\nand Gr > 0\ngroup by Campus\norder by Campus\n;\n\n\nUSE `MARATHON`;\n-- MARATHON-1\n-- For each gender/age group, report total number of runners in the [[ group]] , the overall place of the best runner in the group and the overall place of"
+   },
+   {
+    "rank": 37,
+    "tok": 9851686,
+    "doc": 6459,
+    "pos": 178,
+    "a_T15": 1.1079227924346924,
+    "a_plus_pre": 0.642501711845398,
+    "a_plus_birth": 1.5155731439590454,
+    "text": "= yield Axios.get('/api/admin/users');\n    yield put({ type: 'GET_USER_ADMIN', payload: elementResponse.data })\n}\n// GET to DB to get all Gender \"other\" and add [[ them]]  to reduxStore\nfunction* fetchOther() {\n    const elementResponse = yield"
+   },
+   {
+    "rank": 46,
+    "tok": 9704490,
+    "doc": 6256,
+    "pos": 174,
+    "a_T15": 1.0673402547836304,
+    "a_plus_pre": 0.16604523360729218,
+    "a_plus_birth": 0.4608118236064911,
+    "text": " DbSet<T>.AddOrUpdate() helper extension method \n            //  to avoid creating duplicate seed data. E.g.\n            //\n            //    context.People.Add [[OrUpdate]] (\n            //      p => p.FullName,\n            //      new Person { FullName"
+   }
+  ],
+  "carrier_pre": {
+   "t": 13,
+   "median_a_plus": 0.5927700996398926,
+   "q99": 0.2985382676124573,
+   "q999": 0.7079457640647888,
+   "q9999": 1.3335214853286743,
+   "max_abs": 3.436617612838745,
+   "ratio": 0.8373100451034612,
+   "percentile_bracket": "[0.99, 0.999)",
+   "a_own": 1,
+   "rank_A_among_20_grid_poles": 1,
+   "top5": [
+    {
+     "rank": 0,
+     "tok": 7099765,
+     "a": 3.436617612838745,
+     "text": "e mapping the palette to line color, not fill, so we had to make a few tweaks. # Importantly, it is now easy to see that \"shared room\" listings run cheaper more [[ often]]  than other room types, and almost all the pricey rooms are \"entire home"
+    },
+    {
+     "rank": 1,
+     "tok": 3311192,
+     "a": 3.046877861022949,
+     "text": "ang, Ting Jiang, Weihong Zhang, Chunyu Li, Jun Chen, Dandan Xiang, Kejiang Cao, Lian-Wen Qi, Ping Li, Wei Zhu, Wensen Chen, Yan Chen\nThe study was undertaken to [[ describe]]  the profile of patients and the characteristics of all multidrug-resistant gram-negative bacteria ("
+    },
+    {
+     "rank": 2,
+     "tok": 20217398,
+     "a": 3.020946979522705,
+     "text": "\tindel_length[length] += 1\r\n\t\t\t\telse:\r\n\t\t\t\t\tindel_length[length] = 1\r\n\t\treturn indel_length\r\n\r\n\r\n\tdef stat_func(self, vcf):\r\n\t\t\"\"\"stat the num of snp or indel m [[uation]]  that functional\r\n\t\treturn a dict:\r\n\t\tfunc = {\r\n\t\t\t'inter"
+    },
+    {
+     "rank": 3,
+     "tok": 19043080,
+     "a": 2.889112949371338,
+     "text": "71 sq. ft. to 3,044,587 sq. ft. The value of building permits is expected to increase by 40.5% from $151,050,592 to $212,190,654. The table below shows the Top  [[10]]  Permits by valuation during October 2023.\n\n* The Top 10 Per"
+    },
+    {
+     "rank": 4,
+     "tok": 10022,
+     "a": 2.827083110809326,
+     "text": "e trying to search for having an affair, a casual sex or connection or any other comparable type of raw thing.\n\nIf we were to take the user base and split it up [[ by]]  the nations that the people are located in primary is the united states second? Is"
+    }
+   ]
+  },
+  "carrier_birth": {
+   "t": 14,
+   "median_a_plus": 1.3297040462493896,
+   "q999": 0.5011872053146362,
+   "ratio": 2.653108523420157,
+   "present": true
+  },
+  "score_A_rank_22016": "PENDING: needs every pole's top-50 at T_(k-1), S3 results/neurons/w3/grid/1b/out/t13_step560000/topk/layer_16.npz",
+  "scored": "PENDING",
+  "top10_A_B": "PENDING: job m2_score writes out/m2/samples/raw_examples_freeze.jsonl",
+  "pseudo_birth": {
+   "pole": "L16N7733-",
+   "ranks": [
+    6,
+    11,
+    14,
+    18,
+    22,
+    26,
+    31,
+    41,
+    46
+   ],
+   "median_a_plus_pre": 1.4134563207626343,
+   "ratio_pre": 0.8918306274636992,
+   "a_own_pre": 0
+  },
+  "matched_reading": [
+   {
+    "pole": "L16N10389-",
+    "max_abs_pre": 3.7606618404388428,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 10515478,
+      "a": -3.7606618404388428,
+      "text": "uietly asked.\n\nEither his counterpart had shared too much, or McCoy had gotten some medical texts from the Healers that he never wanted to see, Spock decided. “ [[I]]  have been able to determine that I am physically mature and my symptoms matched the profile"
+     },
+     {
+      "rank": 1,
+      "tok": 6367903,
+      "a": -2.9828715324401855,
+      "text": "launch the CKayTV APK on your Android Smartphone or Tablet and vpn client meraki then sign up to watch Live TV channels. Select the. When the pop-up shows, when [[ its]]  done, youve started streaming your favorite channels without any issues. The installation process"
+     },
+     {
+      "rank": 2,
+      "tok": 19373087,
+      "a": -2.8622543811798096,
+      "text": "ndent*, and some matters he states just as plainly; and he will be justified by the unprejudiced reader.\n\nOne of the most notable studies of the Jewish Question [[ has]]  come out of the University of the South, at Sewanee, Tennessee."
+     }
+    ]
+   },
+   {
+    "pole": "L16N6982-",
+    "max_abs_pre": 3.7895939350128174,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 17371707,
+      "a": -3.7895939350128174,
+      "text": "tion. Since we are classifying each image as one of the digits from 0 through 9, we only need 10 neurons in this layer. Each of these 10 neurons is connected to [[ all]]  1,024 of the neurons in the previous layer.\n\nNow there’s a"
+     },
+     {
+      "rank": 1,
+      "tok": 17371706,
+      "a": -3.334810733795166,
+      "text": "ication. Since we are classifying each image as one of the digits from 0 through 9, we only need 10 neurons in this layer. Each of these 10 neurons is connected [[ to]]  all 1,024 of the neurons in the previous layer.\n\nNow there’s"
+     },
+     {
+      "rank": 2,
+      "tok": 17371600,
+      "a": -3.2175521850585938,
+      "text": " tf.layers.dense (dense is another name for fully connected) and tell it to create 1,024 neurons. Each of those neurons will be connected to every neuron in the [[ previous]]  layer, which has over 3,000 neurons. This is why it’s"
+     }
+    ]
+   },
+   {
+    "pole": "L16N864+",
+    "max_abs_pre": 2.9408915042877197,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 163273,
+      "a": 2.9408915042877197,
+      "text": "ant him to cum in your mouth, you incestuous bitch!!\" she screamed.\n\nMy mom just kissed Asha hard.\n\n\"First, I am going to taste it. I haven't tasted it for ages [[,\"]]  she said, getting down on her knees. I watched in awe as my mom"
+     },
+     {
+      "rank": 1,
+      "tok": 10592804,
+      "a": 2.6359832286834717,
+      "text": "have you inside me, that's what I miss the most.\"\n\nYou waited a moment before moving me onto my back and straddling me. \"God, I've missed being with you so much [[.\"]]  you said as you moved your face down to my neck. You traced your warm"
+     },
+     {
+      "rank": 2,
+      "tok": 163275,
+      "a": 2.6268112659454346,
+      "text": "m to cum in your mouth, you incestuous bitch!!\" she screamed.\n\nMy mom just kissed Asha hard.\n\n\"First, I am going to taste it. I haven't tasted it for ages,\" she [[ said]] , getting down on her knees. I watched in awe as my mom, took"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "L20N5782+:c1",
+  "name": "responsibility and consequences words themselves",
+  "size": 15,
+  "k": 12,
+  "step_k": 320000,
+  "step_pre": 180000,
+  "p_late": 0.026499999999999968,
+  "is_main": false,
+  "exemplars_T15": [
+   {
+    "rank": 2,
+    "tok": 683463,
+    "doc": 589,
+    "pos": 465,
+    "a_T15": 7.282980442047119,
+    "a_plus_pre": 0.8731545805931091,
+    "a_plus_birth": 6.748570442199707,
+    "text": "s while trying to save her 9-year-old neighbor, and Mavy Stoddard, whose husband died shielding her from bullets, plan to address the court.\n\n\"He has to pay the [[ consequences]]  for what he did, and justice will be served,\" Hileman said.\n\n"
+   },
+   {
+    "rank": 3,
+    "tok": 11552850,
+    "doc": 8058,
+    "pos": 821,
+    "a_T15": 6.794814586639404,
+    "a_plus_pre": 12.775504112243652,
+    "a_plus_birth": 15.60336971282959,
+    "text": "his application and in his interview. Regardless that the lie could be considered minor (HIPAA violation), it is still wrong. We all make mistakes and should be [[ accountable]]  when asked about them. Ethically, I had to do the right thing even"
+   },
+   {
+    "rank": 7,
+    "tok": 11552552,
+    "doc": 8058,
+    "pos": 523,
+    "a_T15": 6.410530090332031,
+    "a_plus_pre": 11.616299629211426,
+    "a_plus_birth": 7.8785014152526855,
+    "text": "sy; it can be unpleasant and frankly inconvenient. It can put you in a stressful situation, forcing yourself, those you love, and colleagues you work with to be [[ accountable]] . However, doing the right thing is always the right thing to do.\n\nProvide"
+   },
+   {
+    "rank": 12,
+    "tok": 3969379,
+    "doc": 3113,
+    "pos": 879,
+    "a_T15": 6.099699974060059,
+    "a_plus_pre": 5.530785083770752,
+    "a_plus_birth": 8.90790843963623,
+    "text": "been prosecuted. Bohm, herself, says she wants to see Groening declared guilty, but rather than having him sent to jail at his age 93, feels that he must accept [[ responsibility]]  over his complicity, rather than just claim he was a “cog in"
+   },
+   {
+    "rank": 16,
+    "tok": 15019496,
+    "doc": 10699,
+    "pos": 1982,
+    "a_T15": 5.581994533538818,
+    "a_plus_pre": 6.033632755279541,
+    "a_plus_birth": 8.692540168762207,
+    "text": "ble as an adult, while not always fun, does carry a significant amount of power. We begin to control our own destinies, make choices, and learn to deal with the [[ consequences]] —good or bad—of those actions. More important, the responsibilities that we"
+   },
+   {
+    "rank": 23,
+    "tok": 1915788,
+    "doc": 1641,
+    "pos": 144,
+    "a_T15": 5.156084060668945,
+    "a_plus_pre": 2.4423160552978516,
+    "a_plus_birth": 6.3837456703186035,
+    "text": "losses alone would have been apalling considering how many airplanes, ships and armored vehicles the Alone have destroyed. And yet she never faces any real cons [[quences]]  for her actions.\n    • The fact that Showing Rei compassion was a critical part"
+   },
+   {
+    "rank": 26,
+    "tok": 15375225,
+    "doc": 10860,
+    "pos": 2240,
+    "a_T15": 5.047971248626709,
+    "a_plus_pre": 3.5099802017211914,
+    "a_plus_birth": 6.731972694396973,
+    "text": "tition is to let everyone know how people feel about the teen years of a teenager. Teens should be free to do what they please...although there are some consequ [[enses]] .\n\n45. \"Happy Birthday to You.....\" 24th B-day for"
+   },
+   {
+    "rank": 29,
+    "tok": 4879175,
+    "doc": 3739,
+    "pos": 6533,
+    "a_T15": 4.69372034072876,
+    "a_plus_pre": 2.1166412830352783,
+    "a_plus_birth": 4.325607776641846,
+    "text": "ave done so much more damage to the dinar community, than good….I can assure you of this.\n\nMy opinion is that parliament members will very soon have to face the [[ consequences]]  of not addressing these laws and bringing them to a legitimate voting process. Thus their"
+   },
+   {
+    "rank": 30,
+    "tok": 5164648,
+    "doc": 3862,
+    "pos": 2047,
+    "a_T15": 4.691756248474121,
+    "a_plus_pre": 2.1497409343719482,
+    "a_plus_birth": 6.9705119132995605,
+    "text": "he more urgent. The attacks are particularly diabolical against young people, seducing them to believe that there is no God or absolute morality, and no eternal [[ consequences]] . Anything goes! The devil lies hidden before our secular eyes. This makes the"
+   },
+   {
+    "rank": 32,
+    "tok": 12380296,
+    "doc": 8751,
+    "pos": 403,
+    "a_T15": 4.6570634841918945,
+    "a_plus_pre": 3.4188144207000732,
+    "a_plus_birth": 4.076727390289307,
+    "text": "r others in similar situations, be let off the hook.\n\n\"I'm down for accountability culture. I'm cool with that. Even for myself,\" he said. \"Everyone needs to be [[ accountable]] . I don't mind if someone got something to say about me or what I"
+   },
+   {
+    "rank": 35,
+    "tok": 4647141,
+    "doc": 3642,
+    "pos": 1403,
+    "a_T15": 4.5380754470825195,
+    "a_plus_pre": 0.0,
+    "a_plus_birth": 6.473695278167725,
+    "text": "red and controlled since he knew his vulnerability consisted of his jealous nature. It is if he is scared to live his life that way or does not want to face the [[ consequences]]  he brings forth onto others. Othello wants Desdemona, and by"
+   },
+   {
+    "rank": 36,
+    "tok": 7918404,
+    "doc": 5906,
+    "pos": 1966,
+    "a_T15": 4.522561073303223,
+    "a_plus_pre": 0.8400804400444031,
+    "a_plus_birth": 5.253915786743164,
+    "text": "y also note that a previous history of driving offences and irresponsible behaviour can be indicative of a personality that can be callous and fails to consider [[ consequences]] . Thus they concur with Solnick & Hemenway (1994)"
+   },
+   {
+    "rank": 39,
+    "tok": 4931077,
+    "doc": 3754,
+    "pos": 467,
+    "a_T15": 4.458034992218018,
+    "a_plus_pre": 5.498656272888184,
+    "a_plus_birth": 5.4107441902160645,
+    "text": "not even think of.\n\nQ You hint that George W Bush should be tried for war crimes. Is that a correct inference?\n\nA My goal in the book is that somebody should be [[ accountable]] . I am not talking personalities—George Bush or (Tony) Blair. I"
+   },
+   {
+    "rank": 44,
+    "tok": 6355897,
+    "doc": 4642,
+    "pos": 19429,
+    "a_T15": 4.321732044219971,
+    "a_plus_pre": 3.514852523803711,
+    "a_plus_birth": 6.437932968139648,
+    "text": "have taken from my devices all I gotta say is you are violating my privacy I don’t agree with your policies or how you allow this to happen and you will be held [[ responsible]]  for these actions .\n\n- steal money\n\n\n- Banned or Glitched\n\nI"
+   },
+   {
+    "rank": 48,
+    "tok": 5969164,
+    "doc": 4344,
+    "pos": 14067,
+    "a_T15": 4.16869592666626,
+    "a_plus_pre": 2.7205822467803955,
+    "a_plus_birth": 5.667588233947754,
+    "text": "ry by saying to this day this story still blows my mind as it could have ended up a lot worse and is the moment in time where I really started thinking about my [[ actions]]  having consequences. When I was in 7th grade, I came home from"
+   }
+  ],
+  "carrier_pre": {
+   "t": 11,
+   "median_a_plus": 3.4188144207000732,
+   "q99": 1.5848932266235352,
+   "q999": 3.758373975753784,
+   "q9999": 6.683439254760742,
+   "max_abs": 19.45865821838379,
+   "ratio": 0.9096525366436935,
+   "percentile_bracket": "[0.99, 0.999)",
+   "a_own": 1,
+   "rank_A_among_20_grid_poles": 1,
+   "top5": [
+    {
+     "rank": 0,
+     "tok": 12233552,
+     "a": 19.45865821838379,
+     "text": "t.” Castiel smoothly pulls Anna’s essay out from under her hands. “I’m sure this will be a useful starting point, and any mistakes I make from now on will be my [[ own]] .”\n\n“And…” Anna swallows, looking rather nervous all of a sudden. “"
+    },
+    {
+     "rank": 1,
+     "tok": 18823820,
+     "a": 17.546585083007812,
+     "text": "what’s happened here.”\n\nSyrian opposition activists reported that helicopters dropped chlorine gas on Kfar Zeita on 11 April, activists said. The government has [[ denied]]  any such attacks.\n\nPsaki said chlorine was not one of the priority one or"
+    },
+    {
+     "rank": 2,
+     "tok": 448361,
+     "a": 15.270153045654297,
+     "text": "nd it with your piece:\n\n“I am the sole owner of my quilt square and I choose to donate it to “Piece for Peace”, a branch of WWP.\n\nMy quilt square is entirely my [[ own]]  design: Yes_____ No_____.\nIf yes, I grant WWP unrestricted license"
+    },
+    {
+     "rank": 3,
+     "tok": 17336936,
+     "a": 14.362536430358887,
+     "text": "enting backend systems that connect and integrate with customer environments. You will work closely with customers, field engineers, and product teams and be an [[ integral]]  part of the thought and design process of our methodologies and practices which guide us in"
+    },
+    {
+     "rank": 4,
+     "tok": 11216831,
+     "a": 13.809568405151367,
+     "text": "d above (higher-ranking administrators) precipitated Monroe's move. Nelson Perez and Henry Fraind refute that assessment. Both say the change was totally Monroe [['s]]  idea, and that neither their displeasure with her nor union bellyaching, had"
+    }
+   ]
+  },
+  "carrier_birth": {
+   "t": 12,
+   "median_a_plus": 6.473695278167725,
+   "q999": 2.3713736534118652,
+   "ratio": 2.729934723215616,
+   "present": true
+  },
+  "score_A_rank_22016": "PENDING: needs every pole's top-50 at T_(k-1), S3 results/neurons/w3/grid/1b/out/t11_step180000/topk/layer_20.npz",
+  "scored": "PENDING",
+  "top10_A_B": "PENDING: job m2_score writes out/m2/samples/raw_examples_freeze.jsonl",
+  "pseudo_birth": {
+   "pole": "L20N8272+",
+   "ranks": [
+    5,
+    8,
+    9,
+    12,
+    17,
+    18,
+    19,
+    20,
+    23,
+    24,
+    31,
+    33,
+    41,
+    46,
+    49
+   ],
+   "median_a_plus_pre": 3.6602694988250732,
+   "ratio_pre": 0.8194322600562746,
+   "a_own_pre": 3
+  },
+  "matched_reading": [
+   {
+    "pole": "L20N5759+",
+    "max_abs_pre": 19.266450881958008,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 6810916,
+      "a": 19.266450881958008,
+      "text": "pport the entire language of the project. find someone to take java assignment add any and all help you have provided: Support the type annotations of the javax [[.e]] jtag package references, as used in.java files based on javax.view.\n\nCan"
+     },
+     {
+      "rank": 1,
+      "tok": 20052622,
+      "a": 16.297693252563477,
+      "text": "if( window.BO == null ) {\n  window.BO = {};\n}\n\n/**\n * (INTERNAL) Append SVG. Called by only constructor.\n * Added: 2021-04-01\n */\nfunction appendSvg [[(e]] _parent, iconname) {\n  var e_div= document.createElement(\"div\");\n"
+     },
+     {
+      "rank": 2,
+      "tok": 17308836,
+      "a": 16.283647537231445,
+      "text": "<devEUI>, instead of creating a thing for every device we have. They claim AWS thing should only be used if you also need to publish a state back to the device, [[ e]] .g. when downlink is required.\n\nAWS and AWS IoT integration\nAmazon AWS"
+     }
+    ]
+   },
+   {
+    "pole": "L20N5759-",
+    "max_abs_pre": 18.81443977355957,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 10676592,
+      "a": -18.81443977355957,
+      "text": " the Design Museum, London.\n\nRecollect by Tan Wei Xiang | Photography by Tim Robinson\n\nMentored by design entrepreneurs such as Tomoko Azumi, Nathan Yong, Maria [[ Jeg]] linska and Adam Markowitz, the designers had to consider the materials’"
+     },
+     {
+      "rank": 1,
+      "tok": 15203434,
+      "a": -15.927474021911621,
+      "text": "Is the Vicar in, Pet? (Heftet)\n\nFrom the Pit to the Pulpit - My Childhood in a Geordie Vicarage\n\n [[Leg]] g i ønskeliste\n\nInnbinding: Heftet\nUtg"
+     },
+     {
+      "rank": 2,
+      "tok": 10236058,
+      "a": -15.473410606384277,
+      "text": "2019, 'Jajang Sukmara', 'Belum'),\n('RB44141343', 'Rancabentang', 2020, 'Yoggi Doang', 'Selesai'),\n('RB54541343', 'Rancabentang', 2020, 'Yusman [[ Jeg]] ag', 'Selesai');\n\n-- --------------------------------------------------------\n\n--\n-- Table structure for table `"
+     }
+    ]
+   },
+   {
+    "pole": "L20N8203+",
+    "max_abs_pre": 18.75946807861328,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 7761499,
+      "a": 18.75946807861328,
+      "text": "as accurate as each other for the median and the mode the women were much more accurate than the men for the mean.\n\n2. ## mayfeild statistics\n\n48 50 50 50 50 51 [[ ]] 52 52 52 54 54 54 54 54 "
+     },
+     {
+      "rank": 1,
+      "tok": 6643669,
+      "a": 18.702354431152344,
+      "text": "\n\n170.81.103.x/24/26266413rewritten\n\n170.81.103.x/24/25266413rewritten\n\n170.81.103.x/24/24266413rewritten\n\n170.81.102.x/24/23266413rewritten\n\n170.81 [[.]] 101.x/24/22266413rewritten\n\n170.81.99"
+     },
+     {
+      "rank": 2,
+      "tok": 18692729,
+      "a": 18.34372329711914,
+      "text": "IS further agrees that end-user control and awareness of call blocking being performed on the end-user’s traffic is important.\n\\item \\textsuperscript{26} NOI at [[ ¶]] 39.\n\\item \\textsuperscript{27} As previously noted,"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "L07N8340+:c4",
+  "name": "mid-word fragments of rare proper names/terms (Templi, Epidemiology, Desulfovibrio, clerical)",
+  "size": 5,
+  "k": 14,
+  "step_k": 1000000,
+  "step_pre": 560000,
+  "p_late": 0.02400000000000002,
+  "is_main": false,
+  "exemplars_T15": [
+   {
+    "rank": 7,
+    "tok": 13805251,
+    "doc": 9797,
+    "pos": 6514,
+    "a_T15": 0.30366572737693787,
+    "a_plus_pre": 0.07660038024187088,
+    "a_plus_birth": 0.43619006872177124,
+    "text": ", Loeb M, Maccannell T, Malani PN, Mody L, Mylotte JM, Nicolle LE, Roghmann MC, Schweon SJ, Simor AE, Smith PW, Stevenson KB, Bradley SF, Society for Healthcare [[ Epidemi]] ology Long-Term Care Special Interest Group. Surveillance definitions of infections in long-term"
+   },
+   {
+    "rank": 8,
+    "tok": 8560790,
+    "doc": 5962,
+    "pos": 79916,
+    "a_T15": 0.303382009267807,
+    "a_plus_pre": 0.08029408752918243,
+    "a_plus_birth": 0.10082416981458664,
+    "text": "r Crowley, who called himself \"the Great Beast,\" was a showman, drug fiend, and Satanist of the early twentieth century. He attracted many followers to the Ordo [[ Templ]] i Orientis, seduced (and abused) scores of women, and claimed"
+   },
+   {
+    "rank": 14,
+    "tok": 15503442,
+    "doc": 10914,
+    "pos": 127,
+    "a_T15": 0.2772384583950043,
+    "a_plus_pre": 0.42481034994125366,
+    "a_plus_birth": 0.23974765837192535,
+    "text": "s in the Cloyne Report and in formal Irish government observations about it that accused the Vatican of undermining “the Irish church’s own efforts to deal with [[ cler]] ical child sexual abuse.”\n\nThe text said:\n\nAt the outset, the Holy See"
+   },
+   {
+    "rank": 15,
+    "tok": 15911618,
+    "doc": 11141,
+    "pos": 7,
+    "a_T15": 0.2698498070240021,
+    "a_plus_pre": 0.25816643238067627,
+    "a_plus_birth": 0.32242655754089355,
+    "text": "Changes in metabolic pathways of Desul [[fov]] ibrio alaskensis G20 cells induced by molybdate excess\n\n"
+   },
+   {
+    "rank": 47,
+    "tok": 8590973,
+    "doc": 5962,
+    "pos": 110099,
+    "a_T15": 0.24174101650714874,
+    "a_plus_pre": 0.025807999074459076,
+    "a_plus_birth": 0.13923530280590057,
+    "text": "bined these discoveries with secrets taken from Masonry (and thus the Templars). Spearheaded by orders including the Theosophists, the Golden Dawn, and the Ordo [[ Templ]] i Orientis, occultism rose to a crescendo in the modern era.\n\n"
+   }
+  ],
+  "carrier_pre": {
+   "t": 13,
+   "median_a_plus": 0.08029408752918243,
+   "q99": 0.10592537373304367,
+   "q999": 0.21134890615940094,
+   "q9999": 0.3981071710586548,
+   "max_abs": 1.0165802240371704,
+   "ratio": 0.37991248210494183,
+   "percentile_bracket": "below 0.99",
+   "a_own": 0,
+   "rank_A_among_20_grid_poles": 20,
+   "top5": [
+    {
+     "rank": 0,
+     "tok": 4161809,
+     "a": 1.0165802240371704,
+     "text": "ical elements as well as the arrangement varies from plant to plant based upon numerous wastewater streams produced. Zero Liquid Discharge System Layout. A Zero [[ Liquid]]  Discharge system normally has a Dissipation systems usually are more capital as well as"
+    },
+    {
+     "rank": 1,
+     "tok": 4161801,
+     "a": 0.9728374481201172,
+     "text": " a very customizable service. The technical elements as well as the arrangement varies from plant to plant based upon numerous wastewater streams produced. Zero [[ Liquid]]  Discharge System Layout. A Zero Liquid Discharge system normally has a Dissipation"
+    },
+    {
+     "rank": 2,
+     "tok": 14585910,
+     "a": 0.9138579368591309,
+     "text": " Play Recycling Model are:\n\n  • Ready to use equipment \n  • No initial CAPEX required \n  • Quick Mobilization \n  • Pay per use model \n  • Rental options on Zero [[ Liquid]]  Discharge \n  • Flexible renting solutions along with short-term rental options\n\nThis"
+    },
+    {
+     "rank": 3,
+     "tok": 13586110,
+     "a": 0.8451358675956726,
+     "text": " morbidity, disease and physical corruption.5\n\nNurgle overlooking his army\n\nOf the four Gods of Chaos, Nurgle is said to be the most involved with the plight of [[ mort]] als. Those afflicted by his contagions often turn to him in order to escape"
+    },
+    {
+     "rank": 4,
+     "tok": 3483872,
+     "a": 0.8421388268470764,
+     "text": "itis. Acta Orthop 2010;81:199-205. [Crossref] [PubMed]\n  42. Borus T, Brilhault J, Confalonieri N, et al. Patellofemoral joint replacement, an evolving concept. [[ Knee]]  2014;21 Suppl 1:S47-50. [Cross"
+    }
+   ]
+  },
+  "carrier_birth": {
+   "t": 14,
+   "median_a_plus": 0.23974765837192535,
+   "q999": 0.1333521455526352,
+   "ratio": 1.7978537756431896,
+   "present": true
+  },
+  "score_A_rank_22016": 22016,
+  "scored": "wrong under A (rank 22,016 for certain)",
+  "top10_A_B": "PENDING: job m2_score writes out/m2/samples/raw_examples_freeze.jsonl",
+  "pseudo_birth": {
+   "pole": "L07N7004+",
+   "ranks": [
+    2,
+    4,
+    11,
+    19,
+    30
+   ],
+   "median_a_plus_pre": 0.2612904906272888,
+   "ratio_pre": 0.7800520927170289,
+   "a_own_pre": 0
+  },
+  "matched_reading": [
+   {
+    "pole": "L07N4017+",
+    "max_abs_pre": 1.0205256938934326,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 12046936,
+      "a": 1.0205256938934326,
+      "text": "< Back to Article list\n\nUntitled 1\n\nForgotten your details? Enter email address in Username box and click Reminder. Your details will be emailed to you.\n\nLatest [[ Poll]] \nWhich star is the best at shouting?\nArnold Schwarzenegger\n"
+     },
+     {
+      "rank": 1,
+      "tok": 12916738,
+      "a": 0.8928279876708984,
+      "text": "a salad?? Is that strange?\n\nSo, I love Doughboys but, on one recent visit I tried the Grandma Rose's Special. It's a Huge bowl of quite excellent chicken noodle [[ soup]]  accompanied by a tuna melt which they describe on their menu as follows: grandma rose"
+     },
+     {
+      "rank": 2,
+      "tok": 14596444,
+      "a": 0.8107157349586487,
+      "text": "o withstand extreme arctic conditions. This product is for you if you're building in such areas.\n\nYears of experience\n\nRotopile Offices\n\ndesign engineers\n\nLet's [[ Talk]]  About Your\nNext Project.\n\nWe’ll be glad to answer any question! Feel"
+     }
+    ]
+   },
+   {
+    "pole": "L07N5613-",
+    "max_abs_pre": 1.1504228115081787,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 9478148,
+      "a": -1.1504228115081787,
+      "text": " assessment in heritage regulation 460\nSzántó, A. 37\nTaalas, M. 482, 483, 486\nTabellini, G. 32, 33\nTalisman, B. 116\nTanner, S. 258\nTapper, R [[.]]  173\ntax incentives 8, 10, 12\ncultural"
+     },
+     {
+      "rank": 1,
+      "tok": 11591361,
+      "a": -1.1471894979476929,
+      "text": "Bryant, R [[.]]  (2015, February). College Preparation for African American Students: Gaps in"
+     },
+     {
+      "rank": 2,
+      "tok": 14454180,
+      "a": -1.0908805131912231,
+      "text": "1\nFiling dateSep 25, 1969\nPriority dateSep 25, 1969\nPublication numberUS 3602221 A, US 3602221A, US-A-3602221, US3602221 A, US3602221A\nInventorsBleicken [[ Eric]]  V\nOriginal AssigneeBleicken Eric V\nExport CitationBiBTeX"
+     }
+    ]
+   },
+   {
+    "pole": "L07N2194+",
+    "max_abs_pre": 1.1597484350204468,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 2530282,
+      "a": 1.1597484350204468,
+      "text": "lm’s Koppi Roasters to design elements featuring clean lines and soothing tones. This Hamburg cafe takes the concept even further by serving sweet treats like k [[anel]] buallar cinnamon pastries ideal for fika, Sweden’s traditional coffee break"
+     },
+     {
+      "rank": 1,
+      "tok": 2506172,
+      "a": 1.0171937942504883,
+      "text": "\nUsta Don [[er]]  is a Turkish restaurant located in Mall of Qatar that offers a wide variety of delicious"
+     },
+     {
+      "rank": 2,
+      "tok": 11932407,
+      "a": 0.9975937604904175,
+      "text": " your response. Here are the devices present in my system: CPU - i5 4300M 2.6GHz quad core IGP - HD4600 15\" 1920x1080 2x2 11b/g/n Wileless LAN M.2 Adapter Intel [[ ®]]  Ethernet Connection 1217-LM Realtek Blutooth 4.0"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "L10N9052+:c2",
+  "name": "NPR 'Transcript provided by NPR, Copyright'",
+  "size": 5,
+  "k": 14,
+  "step_k": 1000000,
+  "step_pre": 560000,
+  "p_late": 0.04500000000000004,
+  "is_main": false,
+  "exemplars_T15": [
+   {
+    "rank": 4,
+    "tok": 12303516,
+    "doc": 8723,
+    "pos": 1343,
+    "a_T15": 0.7569568753242493,
+    "a_plus_pre": 0.12271813303232193,
+    "a_plus_birth": 0.5283359885215759,
+    "text": "s a new album out, \"AudioLust & HigherLove.\" Thank you so much for joining us.\n\nLEWIS: Thank you so much. Thanks for the great chat. Transcript provided by NPR, [[ Copyright]]  NPR.\n\nAyesha Rascoe is a White House correspondent for NPR. She"
+   },
+   {
+    "rank": 9,
+    "tok": 772223,
+    "doc": 675,
+    "pos": 1406,
+    "a_T15": 0.6669536828994751,
+    "a_plus_pre": 0.02349891886115074,
+    "a_plus_birth": 0.30225318670272827,
+    "text": "artment. He joined me from the studios at Berkeley School of Journalism. Thanks so much for talking with us.\n\nHAY: Thank you, ma'am. Transcript provided by NPR, [[ Copyright]]  NPR.\n\nMore On This Topic<|endoftext|>"
+   },
+   {
+    "rank": 12,
+    "tok": 5753886,
+    "doc": 4198,
+    "pos": 1132,
+    "a_T15": 0.6570508480072021,
+    "a_plus_pre": 0.0,
+    "a_plus_birth": 0.3077187240123749,
+    "text": " in Austria. Vesta, thank you for speaking with us.\n\nELEUTERI: Thank you so much for having me.\n\n(SOUNDBITE OF FETE'S \"THE ISLANDS\") Transcript provided by NPR, [[ Copyright]]  NPR.\n\nNPR transcripts are created on a rush deadline by an NPR contractor."
+   },
+   {
+    "rank": 19,
+    "tok": 17486381,
+    "doc": 12320,
+    "pos": 1049,
+    "a_T15": 0.588344931602478,
+    "a_plus_pre": 0.0,
+    "a_plus_birth": 0.20140661299228668,
+    "text": "or ESPN.com and ESPN, the magazine, talking about the phenomenon of Tim Tebow. You can also hear Howard on WEEKEND EDITION SATURDAY. Transcript provided by NPR, [[ Copyright]]  NPR.<|endoftext|>"
+   },
+   {
+    "rank": 49,
+    "tok": 2088520,
+    "doc": 1735,
+    "pos": 1152,
+    "a_T15": 0.5152525305747986,
+    "a_plus_pre": 0.044384561479091644,
+    "a_plus_birth": 0.34357258677482605,
+    "text": "hile, this turf war is blocking the bureau from doing much to help.\n\nChris Arnold, NPR News.\n\n(SOUNDBITE OF I/O'S \"BAIT AND SWITCH\") Transcript provided by NPR, [[ Copyright]]  NPR.\n\nNPR correspondent Chris Arnold is based in Boston. His reports are heard"
+   }
+  ],
+  "carrier_pre": {
+   "t": 13,
+   "median_a_plus": 0.02349891886115074,
+   "q99": 0.1496235728263855,
+   "q999": 0.33496543765068054,
+   "q9999": 0.7079457640647888,
+   "max_abs": 1.723524570465088,
+   "ratio": 0.07015326424709119,
+   "percentile_bracket": "below 0.99",
+   "a_own": 0,
+   "rank_A_among_20_grid_poles": 20,
+   "top5": [
+    {
+     "rank": 0,
+     "tok": 2002264,
+     "a": 1.723524570465088,
+     "text": "idea to think about why people use them all the time, but then twist them around so it doesn't sound like a cliche, but the sentiment is still there.”\n\nSpeaking [[ of]]  cliches: Near the end of this month, Brauns' life will come"
+    },
+    {
+     "rank": 1,
+     "tok": 7481638,
+     "a": 1.6768972873687744,
+     "text": "ys on the highway, and sent a geyser shooting high into the air.\n\nWe’re working on getting more information on the cause and impact of this water main break.\n\n( [[Submitted]]  photo)\n\n(Photo: Cydny Neville)\n\nSend news and photos to Potom"
+    },
+    {
+     "rank": 2,
+     "tok": 11217318,
+     "a": 1.6659371852874756,
+     "text": "t, glasses pushed down on her nose. She is one of six police officers assigned to the special investigations unit now headed by Vivian Monroe. Clark regards the [[ reporter]]  who has identified himself as a staff writer for New Times.\n\n\"Oh,\" she says"
+    },
+    {
+     "rank": 3,
+     "tok": 744889,
+     "a": 1.6607434749603271,
+     "text": "d the soldier to death ‘in order to advance your extremist cause’, as if trying to decapitate a man in a London street was not crime enough?\n\nAs Brendan O’Neill [[ pointed]]  out on spiked amid the immediate panicky political and media response to the killing,"
+    },
+    {
+     "rank": 4,
+     "tok": 12764282,
+     "a": 1.6247632503509521,
+     "text": "hat’s been made available to them.”\n\nBaker praised the T for its plan to hire the new capital workers to help improve the system.\n\nMatt Stout of the Globe staff [[ contributed]]  to this report.<|endoftext|>"
+    }
+   ]
+  },
+  "carrier_birth": {
+   "t": 14,
+   "median_a_plus": 0.3077187240123749,
+   "q999": 0.21134890615940094,
+   "ratio": 1.4559750017361863,
+   "present": true
+  },
+  "score_A_rank_22016": 22016,
+  "scored": "wrong under A (rank 22,016 for certain)",
+  "top10_A_B": "PENDING: job m2_score writes out/m2/samples/raw_examples_freeze.jsonl",
+  "pseudo_birth": {
+   "pole": "L10N9100+",
+   "ranks": [
+    11,
+    16,
+    21,
+    33,
+    37
+   ],
+   "median_a_plus_pre": 0.20702587068080902,
+   "ratio_pre": 0.7780806419238899,
+   "a_own_pre": 0
+  },
+  "matched_reading": [
+   {
+    "pole": "L10N4041-",
+    "max_abs_pre": 1.7105698585510254,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 10042088,
+      "a": -1.7105698585510254,
+      "text": "| for each package.\n    \"\"\"\n    package_to_images = defaultdict(list)\n    for image in images:\n        package_to_images[image['package']].append(image)\n\n    to [[_gc]]  = []\n    for _, images in package_to_images.items():\n        # Because the"
+     },
+     {
+      "rank": 1,
+      "tok": 10041999,
+      "a": -1.5711935758590698,
+      "text": "                 artifact_repository_url, '--format=json', '--quiet'])\n    if not ok:\n        return None\n    return list(json.loads(text))\n\n\ndef find_images_to [[_gc]] (images: List[Dict[str, Any]], num_last_to_keep) -> List"
+     },
+     {
+      "rank": 2,
+      "tok": 18022769,
+      "a": -1.451307773590088,
+      "text": "e m x n numerical data matrix A, where m is the number of rows and n is the number of features\n• Decompose it into 3 matrices as shown here:\n• Choose k singular [[ values]]  based on the diagonal matrix and truncate (trim) the 3 matrices accordingly:\n\n"
+     }
+    ]
+   },
+   {
+    "pole": "L10N9794-",
+    "max_abs_pre": 1.9469749927520752,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 10033074,
+      "a": -1.9469749927520752,
+      "text": "y calling stop.\n# This can be fiddlier than you might think, because if an exception is raised in the setUp then tearDown is not called.\n# unittest.TestCase.add [[Cleanup]] () makes this easier:\n# \n\nc_ MyTest(T..\n        ___ setUp"
+     },
+     {
+      "rank": 1,
+      "tok": 6569982,
+      "a": -1.7799772024154663,
+      "text": "ion source code. APR pools offer some extensibility mechanisms, like the ability to have custom “user data” attached to the pool, and mechanisms for registering [[ cleanup]]  functions that get called when the pool is destroyed. Subversion makes use of these"
+     },
+     {
+      "rank": 2,
+      "tok": 10091210,
+      "a": -1.752777099609375,
+      "text": "# Define your item pipelines here\n#\n# Don't forget to add your pipeline to the ITEM_PIPELINES setting\n# See: http://doc.scrapy.org/en/0.16/topics/item-p [[ipeline]] .html\nfrom scrapy.exceptions import DropItem\nimport hashlib\nimport bleach\n\n\nclass"
+     }
+    ]
+   },
+   {
+    "pole": "L10N3963-",
+    "max_abs_pre": 1.493571162223816,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 5701070,
+      "a": -1.493571162223816,
+      "text": " real and surrogate (shuffled) data, for all nonself channel pairs (connections), for each participant dyad, for each gaze condition, and in Theta and Alpha EEG [[ bands]]  (Fig. 1 C and D). In the subsequent network diagrams (F"
+     },
+     {
+      "rank": 1,
+      "tok": 5350984,
+      "a": -1.377610206604004,
+      "text": " Polo S, Monaco MC, Verani A, et al. Nonproductive human immunodeficiency virus type 1 infection of human fetal astrocytes: independence from CD4 and major chem [[ok]] ine receptors. Virology 1999; 264:370–384"
+     },
+     {
+      "rank": 2,
+      "tok": 13768927,
+      "a": -1.3081691265106201,
+      "text": "Dendritic cell-derived interleuk [[in]] -15 is crucial for therapeutic cancer vaccine potency\n\nOncoimmunology."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "L10N9794+:c2",
+  "name": "get/delete/add/list verb inside identifiers, CLI args and function names",
+  "size": 12,
+  "k": 10,
+  "step_k": 100000,
+  "step_pre": 60000,
+  "p_late": 0.028000000000000025,
+  "is_main": false,
+  "exemplars_T15": [
+   {
+    "rank": 5,
+    "tok": 20017162,
+    "doc": 13356,
+    "pos": 229,
+    "a_T15": 1.987622857093811,
+    "a_plus_pre": 6.5685133934021,
+    "a_plus_birth": 5.180752754211426,
+    "text": "sync function getAutorByAutorId (autorId) {\n  return await autorRepository.getAutorByAutorId(autorId)\n}\n\nexport default { createAutor, updateAutor, deleteAutor, [[ get]] Autores, getAutorByAutorId }\n<|endoftext|>"
+   },
+   {
+    "rank": 7,
+    "tok": 20145484,
+    "doc": 13608,
+    "pos": 23,
+    "a_T15": 1.973264455795288,
+    "a_plus_pre": 2.447582960128784,
+    "a_plus_birth": 4.843782901763916,
+    "text": "const db = require('./db');\nconst helper = require('../helper');\nconst config = require('../config');\n\n\n\n\n// [[ get]]  top 10 messages\nasync function getMultiple(page = 1){\n  const"
+   },
+   {
+    "rank": 14,
+    "tok": 20150912,
+    "doc": 13617,
+    "pos": 100,
+    "a_T15": 1.8252571821212769,
+    "a_plus_pre": 3.523275375366211,
+    "a_plus_birth": 5.093756675720215,
+    "text": "op, schema);\n    const { error } = result;\n    if (error) {\n      const {\n        details: [{ message }]\n      } = error;\n      return message;\n    }\n  };\n\n  // [[ get]]  methods\n\n  couseRouter.get('/', (req, res) => {\n   "
+   },
+   {
+    "rank": 16,
+    "tok": 20017159,
+    "doc": 13356,
+    "pos": 226,
+    "a_T15": 1.7702795267105103,
+    "a_plus_pre": 12.477309226989746,
+    "a_plus_birth": 8.187582969665527,
+    "text": "utores()\n}\n\nasync function getAutorByAutorId (autorId) {\n  return await autorRepository.getAutorByAutorId(autorId)\n}\n\nexport default { createAutor, updateAutor, [[ delete]] Autor, getAutores, getAutorByAutorId }\n<|endoftext|>"
+   },
+   {
+    "rank": 18,
+    "tok": 20126864,
+    "doc": 13557,
+    "pos": 82,
+    "a_T15": 1.7181644439697266,
+    "a_plus_pre": 1.9119305610656738,
+    "a_plus_birth": 0.9506267309188843,
+    "text": " = this.category(arg);\n        this.action = this.action(arg);\n    }\n\n\n    action(arg = {}) {\n        if(arg.list || arg.l) {return 'list';}\n        else if(arg [[.add]]  || arg.a) {return 'add';}\n        // add delete func\n"
+   },
+   {
+    "rank": 20,
+    "tok": 9963416,
+    "doc": 6626,
+    "pos": 71,
+    "a_T15": 1.6953544616699219,
+    "a_plus_pre": 9.330859184265137,
+    "a_plus_birth": 4.9396843910217285,
+    "text": "re(\"express\");\nconst app = express();\nconst cors = require('cors');\nconst path =require(\"path\");\nconst{uploadImage, updateContact, createContact, deleteContact, [[ getAll]] Contacts} = require(\"./controller/contactController\");\n\n\n// Middleware\napp.use(express.json"
+   },
+   {
+    "rank": 23,
+    "tok": 20126885,
+    "doc": 13557,
+    "pos": 103,
+    "a_T15": 1.660324215888977,
+    "a_plus_pre": 7.849940299987793,
+    "a_plus_birth": 3.4880826473236084,
+    "text": "tion(arg = {}) {\n        if(arg.list || arg.l) {return 'list';}\n        else if(arg.add || arg.a) {return 'add';}\n        // add delete func\n        else if(arg [[.delete]]  || arg.d) {return 'delete';}\n        else {return 'Enter"
+   },
+   {
+    "rank": 26,
+    "tok": 20126893,
+    "doc": 13557,
+    "pos": 111,
+    "a_T15": 1.6352125406265259,
+    "a_plus_pre": 4.728150367736816,
+    "a_plus_birth": 3.287749767303467,
+    "text": "(arg.list || arg.l) {return 'list';}\n        else if(arg.add || arg.a) {return 'add';}\n        // add delete func\n        else if(arg.delete || arg.d) {return ' [[delete]] ';}\n        else {return 'Enter a command';}\n    }\n    note"
+   },
+   {
+    "rank": 29,
+    "tok": 20126857,
+    "doc": 13557,
+    "pos": 75,
+    "a_T15": 1.622900128364563,
+    "a_plus_pre": 2.046665906906128,
+    "a_plus_birth": 2.1754415035247803,
+    "text": "arg);\n        this.category = this.category(arg);\n        this.action = this.action(arg);\n    }\n\n\n    action(arg = {}) {\n        if(arg.list || arg.l) {return ' [[list]] ';}\n        else if(arg.add || arg.a) {return 'add';"
+   },
+   {
+    "rank": 31,
+    "tok": 20126926,
+    "doc": 13557,
+    "pos": 144,
+    "a_T15": 1.574004054069519,
+    "a_plus_pre": 3.21262788772583,
+    "a_plus_birth": 3.9763150215148926,
+    "text": "else if(arg.delete || arg.d) {return 'delete';}\n        else {return 'Enter a command';}\n    }\n    note(arg = {}) {\n        if(arg.list || arg.l) {return 'Notes [[ list]] ';}\n        else if(arg.add || arg.a) {return `${arg.add"
+   },
+   {
+    "rank": 39,
+    "tok": 10023886,
+    "doc": 6724,
+    "pos": 519,
+    "a_T15": 1.4830551147460938,
+    "a_plus_pre": 3.588940382003784,
+    "a_plus_birth": 1.7256720066070557,
+    "text": "('me', 'GET')\n  }\n  static refresh (params) {\n    return super.request('access-tokens/refresh', 'POST', params)\n  }\n}\n\nexport class Ideas extends API {\n  static [[ get]]  URL () {\n    return 'ideas'\n  }\n  static get () {\n   "
+   },
+   {
+    "rank": 43,
+    "tok": 10057763,
+    "doc": 6768,
+    "pos": 1538,
+    "a_T15": 1.4690481424331665,
+    "a_plus_pre": 1.1922886371612549,
+    "a_plus_birth": 1.017731785774231,
+    "text": ":\n    params = json.loads(request.data.decode(\"utf-8\"))\n    res = service.get_relation_id_by_relation(params['relation'])\n    return jsonify({'relation_id': res [[})\n\n\n]] if __name__ == \"__main__\":\n    app.run(host='0.0"
+   }
+  ],
+  "carrier_pre": {
+   "t": 9,
+   "median_a_plus": 3.5561078786849976,
+   "q99": 1.1220184564590454,
+   "q999": 4.216965198516846,
+   "q9999": 10.0,
+   "max_abs": 34.36409378051758,
+   "ratio": 0.8432860389589463,
+   "percentile_bracket": "[0.99, 0.999)",
+   "a_own": 0,
+   "rank_A_among_20_grid_poles": 20,
+   "top5": [
+    {
+     "rank": 0,
+     "tok": 8895860,
+     "a": 34.36409378051758,
+     "text": "of at least a portion of a built-in outdoor kitchen that is substantially constructed of the outdoor building material.\n\n[0008] The invention further includes a [[ method]]  of providing a weather-resistant outdoor kitchen. The method includes making available a plurality of"
+    },
+    {
+     "rank": 1,
+     "tok": 19942947,
+     "a": 33.4205207824707,
+     "text": "c(id);\n\n            if (enrollment == null)\n            {\n                return NotFound();\n            }\n\n            return enrollment;\n        }\n\n        // [[ PUT]] : api/EnrollmentsAPI/5\n        // To protect from overposting"
+    },
+    {
+     "rank": 2,
+     "tok": 19962606,
+     "a": 32.71221923828125,
+     "text": "tChannelList(plan);\n            if (plan == null)\n            {\n                return NotFound();\n            }\n\n            return plan;\n        }\n\n        // [[ PUT]] : api/Plans/5\n        // To protect from overposting attacks, please"
+    },
+    {
+     "rank": 3,
+     "tok": 9725741,
+     "a": 31.451602935791016,
+     "text": "    if (personalvisita == null)\r\n            {\r\n                return NotFound();\r\n            }\r\n\r\n            return personalvisita;\r\n        }\r\n\r\n        // [[ PUT]] : api/Personalvisita/5\r\n        [HttpPut(\"{id}"
+    },
+    {
+     "rank": 4,
+     "tok": 18051938,
+     "a": 29.197826385498047,
+     "text": " | 'nil'.\niterator --> [tree|iterator] | [].\nThe (sub)trees in an iterator are there for the sake of the key\nand _one_ of the subtrees.\n\niterator({_Size, Tree}) [[ ->\n]] iterator(Tree, []).\n\niterator({_X, nil, _Right} = Tree"
+    }
+   ]
+  },
+  "carrier_birth": {
+   "t": 10,
+   "median_a_plus": 3.7321988344192505,
+   "q999": 1.3335214853286743,
+   "ratio": 2.7987541824265185,
+   "present": true
+  },
+  "score_A_rank_22016": 22016,
+  "scored": "wrong under A (rank 22,016 for certain)",
+  "top10_A_B": "PENDING: job m2_score writes out/m2/samples/raw_examples_freeze.jsonl",
+  "pseudo_birth": {
+   "pole": "L10N9052-",
+   "ranks": [
+    1,
+    3,
+    6,
+    12,
+    13,
+    28,
+    32,
+    34,
+    35,
+    36,
+    46,
+    48
+   ],
+   "median_a_plus_pre": 6.457842588424683,
+   "ratio_pre": 0.9662454227925595,
+   "a_own_pre": 0
+  },
+  "matched_reading": [
+   {
+    "pole": "L10N5687+",
+    "max_abs_pre": 36.57771682739258,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 5356936,
+      "a": 36.57771682739258,
+      "text": " please contact the two PC chairs:\nCatalin Hritcu (catalin.hritcu@gmail.com),\nJasmin Christian Blanchette (j.c.blanchette@vu.nl)\n\nRelated Resources\n\nICDMML 2020 [[  ]]  【EI SCOPUS】2020 International Conference on Data Mining and Machine Learning"
+     },
+     {
+      "rank": 1,
+      "tok": 18064966,
+      "a": 32.48223114013672,
+      "text": " with the product topology. I think I have an example for when A is not countable. Suppose A is the set of all … Read more\n\n## Landau’s proof that ζ(s)=∏p11−p−s [[\\]] zeta(s)=\\prod_{p} \\frac{1}{1-p"
+     },
+     {
+      "rank": 2,
+      "tok": 15856886,
+      "a": 31.22589111328125,
+      "text": "ure 3(b), we consider a C++ component for a low-level real-time implementation. Alternatively, one may want to derive VHDL or Verilog HDL to synthesize an FPGA. [[444]] VHSIC or Verilog hardware description language (VHDL or Verilog"
+     }
+    ]
+   },
+   {
+    "pole": "L10N5687-",
+    "max_abs_pre": 24.027538299560547,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 6822909,
+      "a": -24.027538299560547,
+      "text": "ferencesconference list [pretty|summary|count|delim <string>]\n\nlockLock a conference so no new members will be allowed to enterconference <confname> lock\n\nmuteM [[utes]]  a conference memberconference <confname> mute <member_id>|all|last"
+     },
+     {
+      "rank": 1,
+      "tok": 6823419,
+      "a": -20.726560592651367,
+      "text": "name> <value>\n\nsetvarsets the value of a confernce variableconference <confname> setvar <var-name> <var-value>conference testconf setvar mycustomvar 1234\nstopSt [[ops]]  any queued audio from playing into conferenceconference <confname> [current|all"
+     },
+     {
+      "rank": 2,
+      "tok": 11672963,
+      "a": -18.4675350189209,
+      "text": "hing — let me explain. I was in the middle of copying some files to a new, shared directory that I setup to share with my LAN. This is when I had to ‘chown’ (CH [[ange]]  OWNership) the copied files — I started to type the command\n\nsudo"
+     }
+    ]
+   },
+   {
+    "pole": "L10N10529+",
+    "max_abs_pre": 51.141265869140625,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 5005857,
+      "a": 51.141265869140625,
+      "text": " using non-profit covers ect. No different than the rich Americans try to do. Waltons, Koch Bros. Buffett ect.\n\nP.S. You know things are getting bad in the U.S. [[ when]]  a corporation like Berger King is looking to Canada to relocate. Thank you BO."
+     },
+     {
+      "rank": 1,
+      "tok": 13456100,
+      "a": 47.525386810302734,
+      "text": "m a different dimension.[2] Despite this, it seems that he has at least spent time or somehow lived in Blaze's home dimension prior to the events of Sonic Rush, [[ as]]  she expresses familiarity with him.\n  • Curiously, in both Sonic Rivals"
+     },
+     {
+      "rank": 2,
+      "tok": 3938308,
+      "a": 42.301151275634766,
+      "text": " and which may have been mentioned in the last portion of our inscription. That the final restorer took some pains to follow his copy with care is proved by the [[ fact]]  that he corrected the erroneous u to o in navebos, and this"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "L19N7374-:c1",
+  "name": "web boilerplate: Skip to Content, You are here, http",
+  "size": 10,
+  "k": 13,
+  "step_k": 560000,
+  "step_pre": 320000,
+  "p_late": 0.0,
+  "is_main": false,
+  "exemplars_T15": [
+   {
+    "rank": 2,
+    "tok": 17673844,
+    "doc": 12436,
+    "pos": 4,
+    "a_T15": -3.855329990386963,
+    "a_plus_pre": 6.482115268707275,
+    "a_plus_birth": 6.059136867523193,
+    "text": "Fairfield Ledger\n [[http]] ://fairfield-ia.villagesoup.com/p/1060541\n\n"
+   },
+   {
+    "rank": 5,
+    "tok": 1485897,
+    "doc": 1310,
+    "pos": 2,
+    "a_T15": -3.6348400115966797,
+    "a_plus_pre": 3.985867738723755,
+    "a_plus_birth": 5.525918960571289,
+    "text": "You are [[ here]] \n\nDoepfer Dark Time\n\nStep Sequencer\nPublished August 2013"
+   },
+   {
+    "rank": 7,
+    "tok": 3195413,
+    "doc": 2643,
+    "pos": 2,
+    "a_T15": -3.5980663299560547,
+    "a_plus_pre": 0.5270952582359314,
+    "a_plus_birth": 3.6070594787597656,
+    "text": "Skip to [[ Content]] \nDark Mode\n\nBest Wondrous Physick Combinations in Elden Ring\n\n"
+   },
+   {
+    "rank": 12,
+    "tok": 7436629,
+    "doc": 5546,
+    "pos": 2,
+    "a_T15": -3.477731227874756,
+    "a_plus_pre": 2.86789608001709,
+    "a_plus_birth": 3.9796550273895264,
+    "text": "You are [[ here]] \n\nIN AND AROUND CAR ACTIVITIES (Education only - no car seat"
+   },
+   {
+    "rank": 16,
+    "tok": 3187908,
+    "doc": 2631,
+    "pos": 2,
+    "a_T15": -3.4575273990631104,
+    "a_plus_pre": 0.8957506418228149,
+    "a_plus_birth": 3.9087793827056885,
+    "text": "Skip to [[ Content]] \n\nRWBY: Amity Arena Launches Today on iOS and Android\n\nThe"
+   },
+   {
+    "rank": 20,
+    "tok": 1597204,
+    "doc": 1424,
+    "pos": 2,
+    "a_T15": -3.41351056098938,
+    "a_plus_pre": 4.1694111824035645,
+    "a_plus_birth": 5.2717766761779785,
+    "text": "You are [[ here]] \n\nThis ATEM (mini) Tips” series of short video tutorials for"
+   },
+   {
+    "rank": 21,
+    "tok": 3161468,
+    "doc": 2612,
+    "pos": 2,
+    "a_T15": -3.373481035232544,
+    "a_plus_pre": 1.0455098152160645,
+    "a_plus_birth": 4.380327224731445,
+    "text": "Skip to [[ Content]] \n\nWoW Insider has the latest on the Mists of Pandaria!\n\nTot"
+   },
+   {
+    "rank": 28,
+    "tok": 13243075,
+    "doc": 9454,
+    "pos": 2,
+    "a_T15": -3.3115854263305664,
+    "a_plus_pre": 0.7715364098548889,
+    "a_plus_birth": 3.8831124305725098,
+    "text": "Skip to [[ Content]] \n\nWoW Insider has the latest on the Mists of Pandaria!\n\nThe"
+   },
+   {
+    "rank": 37,
+    "tok": 1582302,
+    "doc": 1406,
+    "pos": 1142,
+    "a_T15": -3.142132043838501,
+    "a_plus_pre": 4.576821327209473,
+    "a_plus_birth": 6.421454906463623,
+    "text": "ble, slow, or unresponsive console can throw a wrench in your gaming \"game,\" and shipping your console back to the factory for fixes can be a super slow ordeal. [[ What]] 's a gamer to do? Instead of shipping off your precious Sony or Nintendo console"
+   },
+   {
+    "rank": 46,
+    "tok": 13305188,
+    "doc": 9506,
+    "pos": 2,
+    "a_T15": -3.044184923171997,
+    "a_plus_pre": 0.7175343036651611,
+    "a_plus_birth": 2.777494192123413,
+    "text": "Skip to [[ Content]] \n\nWoW Insider has the latest on the Mists of Pandaria!\n\nPosts"
+   }
+  ],
+  "carrier_pre": {
+   "t": 12,
+   "median_a_plus": 1.9567029476165771,
+   "q99": 0.7943282127380371,
+   "q999": 2.3713736534118652,
+   "q9999": 5.011872291564941,
+   "max_abs": 15.848142623901367,
+   "ratio": 0.8251348094389631,
+   "percentile_bracket": "[0.99, 0.999)",
+   "a_own": 0,
+   "rank_A_among_20_grid_poles": 20,
+   "top5": [
+    {
+     "rank": 0,
+     "tok": 2796361,
+     "a": -15.848142623901367,
+     "text": "gs, this innovative system caters to diverse cooking needs with ease.\n\nXL capacity\n\nOur Score\n\nExperience the ultimate culinary versatility with the Ninja DG551 [[ Food]] i Smart XL 6-in-1 Indoor Grill. This sleek appliance combines the"
+    },
+    {
+     "rank": 1,
+     "tok": 2592146,
+     "a": -14.784592628479004,
+     "text": "maller in size than regular blenders for making sauce.\n\nCheck latest price on Amazon >>\n\n4. Ninja BN801 Professional Plus Kitchen System with Auto-IQ\n\nThe Ninja [[ Food]] i is a great choice for hot sauce, but the Professional Plus Kitchen system has"
+    },
+    {
+     "rank": 2,
+     "tok": 2590901,
+     "a": -14.120211601257324,
+     "text": "ystem With Auto IQ\n\n5. Instant Ace Nova Cooking Blender\n\nBest Blender For Making Hot Sauce – Detailed Reviews\n\n1. Ninja Foodi Cold And Hot – Top Pick\n\nThe Ninja [[ Food]] i Cold and Hot is a revolutionary new way to cook your meals. \n\n"
+    },
+    {
+     "rank": 3,
+     "tok": 2796916,
+     "a": -13.099466323852539,
+     "text": "inimizes smoke production during grilling, allowing users to enjoy a truly smokeless cooking experience right in their kitchen.\n\nSmoke-control system\n\nThe Ninja [[ Food]] i Grill XL features a smoke-control system that helps to minimize smoke production during gr"
+    },
+    {
+     "rank": 4,
+     "tok": 2590890,
+     "a": -12.935892105102539,
+     "text": ". Ninja BN801 Professional Plus Kitchen System With Auto IQ\n\n5. Instant Ace Nova Cooking Blender\n\nBest Blender For Making Hot Sauce – Detailed Reviews\n\n1. Ninja [[ Food]] i Cold And Hot – Top Pick\n\nThe Ninja Foodi Cold and Hot is"
+    }
+   ]
+  },
+  "carrier_birth": {
+   "t": 13,
+   "median_a_plus": 4.179991126060486,
+   "q999": 1.5848932266235352,
+   "ratio": 2.637396044000744,
+   "present": true
+  },
+  "score_A_rank_22016": 22016,
+  "scored": "wrong under A (rank 22,016 for certain)",
+  "top10_A_B": "PENDING: job m2_score writes out/m2/samples/raw_examples_freeze.jsonl",
+  "pseudo_birth": {
+   "pole": "L19N2718+",
+   "ranks": [
+    2,
+    4,
+    9,
+    11,
+    22,
+    30,
+    39,
+    40,
+    44,
+    49
+   ],
+   "median_a_plus_pre": 2.059897541999817,
+   "ratio_pre": 0.8686516100219359,
+   "a_own_pre": 2
+  },
+  "matched_reading": [
+   {
+    "pole": "L19N6189+",
+    "max_abs_pre": 16.556652069091797,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 5922217,
+      "a": 16.556652069091797,
+      "text": "tside of the home or not. Or join the PTA or not. Or send your kid to private school or not. Neither they, nor any other rational human being, believes there is [[ One]]  Moral And Acceptable Way To Live Your Life. They'll do them, you"
+     },
+     {
+      "rank": 1,
+      "tok": 3756221,
+      "a": 16.23223304748535,
+      "text": "h as Julian T. Jackson have argued, de Gaulle and his followers were revolutionaries, unlike the Dutch, Belgian, and other governments in exile in London.[17] A [[ third]]  option might be that neither considered that a fully free, legitimate, sovereign, and"
+     },
+     {
+      "rank": 2,
+      "tok": 14977040,
+      "a": 14.533855438232422,
+      "text": " through. Some would try their very best to hold on to every second of their childhood, whereas some would just pray for the arrival of adulthood. But no matter [[ which]]  type, they are still helpless when it comes to altering the hour-glass that"
+     }
+    ]
+   },
+   {
+    "pole": "L19N1554+",
+    "max_abs_pre": 15.064421653747559,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 16723364,
+      "a": 15.064421653747559,
+      "text": "me account, 2,500 email addresses and more. We offer both software products and customized software development services. To examine the involvement of AIP1Alix [[ in]]  HTLV-1 budding, we q mutant connecting to a sql server asp"
+     },
+     {
+      "rank": 1,
+      "tok": 15912098,
+      "a": 14.407679557800293,
+      "text": "Personal tools\n\nA2: Basolateral ciliogenesis, [[ basal]]  progenitor delamination, and the formation of the subventricular zone in developing"
+     },
+     {
+      "rank": 2,
+      "tok": 16723819,
+      "a": 14.369614601135254,
+      "text": "comes effective the first of the month following serve date the enrollment form is signed and submitted to Human Resources. The EARP served associates with Rab4 [[-positive]]  endosomes and promotes recycling of internalized transferrin receptor (TFRC)"
+     }
+    ]
+   },
+   {
+    "pole": "L19N1154+",
+    "max_abs_pre": 13.609163284301758,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 11883572,
+      "a": 13.609163284301758,
+      "text": "itating noise—from other nearby electronic products and transmitters, including older cordless phones that might use the same frequency bands as your monitor.\n\n [[Think]]  about the size of your home and your daily routine when deciding which brand/model to"
+     },
+     {
+      "rank": 1,
+      "tok": 11883928,
+      "a": 13.51476001739502,
+      "text": " keep tabs on your little one(s) during nap time or nighttime, and still go about your day. Generally, the number one benefit provided by the best baby monitors [[ are]]  peace of mind, followed closely by the benefits of security and convenience. Plus,"
+     },
+     {
+      "rank": 2,
+      "tok": 11883618,
+      "a": 11.862069129943848,
+      "text": "ciding which brand/model to buy. If you'll be making calls during nap time, for example, look for monitors with lights that let you know when your baby is awake [[.]]  Of course you can accomplish the same thing by turning down the sound on a video"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "L24N5066-:c1",
+  "name": "commas separating company names in the cable glands market report list",
+  "size": 15,
+  "k": 12,
+  "step_k": 320000,
+  "step_pre": 180000,
+  "p_late": 0.013000000000000012,
+  "is_main": false,
+  "exemplars_T15": [
+   {
+    "rank": 1,
+    "tok": 4121859,
+    "doc": 3247,
+    "pos": 218,
+    "a_T15": -8.992772102355957,
+    "a_plus_pre": 6.159791469573975,
+    "a_plus_birth": 14.356391906738281,
+    "text": "                                  \n\nKey Companies Analysis:- Amphenol Industrial Products Group, Caledonian Cables Ltd, CMP Products, Copper Crouse-Hinds (Eaton [[),]]  Cortem Group, Elsewedy Electric, Emerson Industrial Automation, BARTEC"
+   },
+   {
+    "rank": 3,
+    "tok": 4121849,
+    "doc": 3247,
+    "pos": 208,
+    "a_T15": -8.552311897277832,
+    "a_plus_pre": 6.769519329071045,
+    "a_plus_birth": 14.84200668334961,
+    "text": "out this news                                                 \n\nKey Companies Analysis:- Amphenol Industrial Products Group, Caledonian Cables Ltd, CMP Products [[,]]  Copper Crouse-Hinds (Eaton), Cortem Group, Elsew"
+   },
+   {
+    "rank": 4,
+    "tok": 4121863,
+    "doc": 3247,
+    "pos": 222,
+    "a_T15": -8.481968879699707,
+    "a_plus_pre": 5.121649742126465,
+    "a_plus_birth": 13.43375301361084,
+    "text": "                   \n\nKey Companies Analysis:- Amphenol Industrial Products Group, Caledonian Cables Ltd, CMP Products, Copper Crouse-Hinds (Eaton), Cortem Group [[,]]  Elsewedy Electric, Emerson Industrial Automation, BARTEC FEAM, BAR"
+   },
+   {
+    "rank": 5,
+    "tok": 4121839,
+    "doc": 3247,
+    "pos": 198,
+    "a_T15": -8.440433502197266,
+    "a_plus_pre": 10.650023460388184,
+    "a_plus_birth": 11.768248558044434,
+    "text": "fore-buying/457120 Make an Inquiry about this news                                                 \n\nKey Companies Analysis:- Amphenol Industrial Products Group [[,]]  Caledonian Cables Ltd, CMP Products, Copper Crouse-Hinds"
+   },
+   {
+    "rank": 6,
+    "tok": 4121846,
+    "doc": 3247,
+    "pos": 205,
+    "a_T15": -8.361411094665527,
+    "a_plus_pre": 9.631017684936523,
+    "a_plus_birth": 13.71170425415039,
+    "text": " an Inquiry about this news                                                 \n\nKey Companies Analysis:- Amphenol Industrial Products Group, Caledonian Cables Ltd [[,]]  CMP Products, Copper Crouse-Hinds (Eaton), Cortem Group"
+   },
+   {
+    "rank": 11,
+    "tok": 4121886,
+    "doc": 3247,
+    "pos": 245,
+    "a_T15": -7.141247272491455,
+    "a_plus_pre": 5.165218353271484,
+    "a_plus_birth": 8.72079849243164,
+    "text": "ian Cables Ltd, CMP Products, Copper Crouse-Hinds (Eaton), Cortem Group, Elsewedy Electric, Emerson Industrial Automation, BARTEC FEAM, BARTEC Group, Jacob GmbH [[,]]  Metal Craft Industries, R.Stahl AG, Sealcon, TE Connectivity, Hub"
+   },
+   {
+    "rank": 13,
+    "tok": 4121883,
+    "doc": 3247,
+    "pos": 242,
+    "a_T15": -6.9049272537231445,
+    "a_plus_pre": 7.149717807769775,
+    "a_plus_birth": 10.446094512939453,
+    "text": "oup, Caledonian Cables Ltd, CMP Products, Copper Crouse-Hinds (Eaton), Cortem Group, Elsewedy Electric, Emerson Industrial Automation, BARTEC FEAM, BARTEC Group [[,]]  Jacob GmbH, Metal Craft Industries, R.Stahl AG, Sealcon, TE"
+   },
+   {
+    "rank": 15,
+    "tok": 4121878,
+    "doc": 3247,
+    "pos": 237,
+    "a_T15": -6.841614246368408,
+    "a_plus_pre": 6.449765205383301,
+    "a_plus_birth": 11.039183616638184,
+    "text": "al Products Group, Caledonian Cables Ltd, CMP Products, Copper Crouse-Hinds (Eaton), Cortem Group, Elsewedy Electric, Emerson Industrial Automation, BARTEC FEAM [[,]]  BARTEC Group, Jacob GmbH, Metal Craft Industries, R.Stahl AG"
+   },
+   {
+    "rank": 16,
+    "tok": 4121905,
+    "doc": 3247,
+    "pos": 264,
+    "a_T15": -6.6592864990234375,
+    "a_plus_pre": 9.70998764038086,
+    "a_plus_birth": 7.76635217666626,
+    "text": "sewedy Electric, Emerson Industrial Automation, BARTEC FEAM, BARTEC Group, Jacob GmbH, Metal Craft Industries, R.Stahl AG, Sealcon, TE Connectivity, Hubbell Inc [[ and]]  Warom Group\n\n The Cable Glands Market Make an Inquiry about this news"
+   },
+   {
+    "rank": 17,
+    "tok": 4121868,
+    "doc": 3247,
+    "pos": 227,
+    "a_T15": -6.64209508895874,
+    "a_plus_pre": 5.061453342437744,
+    "a_plus_birth": 9.457437515258789,
+    "text": "\n\nKey Companies Analysis:- Amphenol Industrial Products Group, Caledonian Cables Ltd, CMP Products, Copper Crouse-Hinds (Eaton), Cortem Group, Elsewedy Electric [[,]]  Emerson Industrial Automation, BARTEC FEAM, BARTEC Group, Jacob"
+   },
+   {
+    "rank": 18,
+    "tok": 4121895,
+    "doc": 3247,
+    "pos": 254,
+    "a_T15": -6.635144233703613,
+    "a_plus_pre": 6.6417741775512695,
+    "a_plus_birth": 8.882377624511719,
+    "text": " Crouse-Hinds (Eaton), Cortem Group, Elsewedy Electric, Emerson Industrial Automation, BARTEC FEAM, BARTEC Group, Jacob GmbH, Metal Craft Industries, R.Stahl AG [[,]]  Sealcon, TE Connectivity, Hubbell Inc and Warom Group\n\n The"
+   },
+   {
+    "rank": 23,
+    "tok": 4121872,
+    "doc": 3247,
+    "pos": 231,
+    "a_T15": -6.491358757019043,
+    "a_plus_pre": 4.57685661315918,
+    "a_plus_birth": 9.454072952270508,
+    "text": "enol Industrial Products Group, Caledonian Cables Ltd, CMP Products, Copper Crouse-Hinds (Eaton), Cortem Group, Elsewedy Electric, Emerson Industrial Automation [[,]]  BARTEC FEAM, BARTEC Group, Jacob GmbH, Metal Craft"
+   },
+   {
+    "rank": 28,
+    "tok": 4121890,
+    "doc": 3247,
+    "pos": 249,
+    "a_T15": -6.196567535400391,
+    "a_plus_pre": 3.7846901416778564,
+    "a_plus_birth": 9.408893585205078,
+    "text": "ucts, Copper Crouse-Hinds (Eaton), Cortem Group, Elsewedy Electric, Emerson Industrial Automation, BARTEC FEAM, BARTEC Group, Jacob GmbH, Metal Craft Industries [[,]]  R.Stahl AG, Sealcon, TE Connectivity, Hubbell Inc and War"
+   },
+   {
+    "rank": 30,
+    "tok": 4121901,
+    "doc": 3247,
+    "pos": 260,
+    "a_T15": -6.108002662658691,
+    "a_plus_pre": 6.334949016571045,
+    "a_plus_birth": 9.297765731811523,
+    "text": "tem Group, Elsewedy Electric, Emerson Industrial Automation, BARTEC FEAM, BARTEC Group, Jacob GmbH, Metal Craft Industries, R.Stahl AG, Sealcon, TE Connectivity [[,]]  Hubbell Inc and Warom Group\n\n The Cable Glands Market Make an"
+   },
+   {
+    "rank": 36,
+    "tok": 4121898,
+    "doc": 3247,
+    "pos": 257,
+    "a_T15": -5.999579429626465,
+    "a_plus_pre": 6.418008804321289,
+    "a_plus_birth": 9.489540100097656,
+    "text": "inds (Eaton), Cortem Group, Elsewedy Electric, Emerson Industrial Automation, BARTEC FEAM, BARTEC Group, Jacob GmbH, Metal Craft Industries, R.Stahl AG, Sealcon [[,]]  TE Connectivity, Hubbell Inc and Warom Group\n\n The Cable Glands"
+   }
+  ],
+  "carrier_pre": {
+   "t": 11,
+   "median_a_plus": 6.418008804321289,
+   "q99": 2.5118863582611084,
+   "q999": 6.683439254760742,
+   "q9999": 12.589254379272461,
+   "max_abs": 43.2255859375,
+   "ratio": 0.9602853500538092,
+   "percentile_bracket": "[0.99, 0.999)",
+   "a_own": 0,
+   "rank_A_among_20_grid_poles": 20,
+   "top5": [
+    {
+     "rank": 0,
+     "tok": 5858083,
+     "a": -43.2255859375,
+     "text": "to the columbite supergroup are: the general stoichiometry MO2; the crystal structure based on the hexagonal close packing (hcp) of anions (or close to it); the [[ six]] -fold coordination number of M-type cations (augmented to eight-fold in the"
+    },
+    {
+     "rank": 1,
+     "tok": 5305373,
+     "a": -29.304702758789062,
+     "text": "p view of the atomic models of the four kinds of Fe-N centers. From the atomic models, one can see that the normal FeN4 and normal FeN3C moieties exhibit a plan [[ar]]  structure in the carbon matrices, while FeN4 SW and FeN3C"
+    },
+    {
+     "rank": 2,
+     "tok": 11781159,
+     "a": -28.579818725585938,
+     "text": "A wide prototyping area with some extra features:\n  • 1.0 Arduino pinout\n  • 1 Reset button\n  • 1 ICSP connector\n  • 14-pin SMD footprint (50 mils pitch)\n  • 20 [[-pin]]  Through Hole footpront (100 mils pitch)\n\nSchematic & Reference Design"
+    },
+    {
+     "rank": 3,
+     "tok": 6807679,
+     "a": -26.48956871032715,
+     "text": "  In contrast conda install <package> probably will install all dependencies, including C/C++, FORTRAN, etc., even Haskell libraries, because conda doesn't just [[ manage]]  Python packages like pip, it manages environments. So if you had Anaconda or"
+    },
+    {
+     "rank": 4,
+     "tok": 15860102,
+     "a": -26.377151489257812,
+     "text": "e if and only if it is observationally equivalent to . As explained in Sect. 3.5, the test wrapper with embedded supervisor (denoted by ) implements an FSM over [[ the]]  same input and output alphabet as . The test executable runs test suite against ; this"
+    }
+   ]
+  },
+  "carrier_birth": {
+   "t": 12,
+   "median_a_plus": 9.489540100097656,
+   "q999": 4.731512546539307,
+   "ratio": 2.0056039177236116,
+   "present": true
+  },
+  "score_A_rank_22016": 22016,
+  "scored": "wrong under A (rank 22,016 for certain)",
+  "top10_A_B": "PENDING: job m2_score writes out/m2/samples/raw_examples_freeze.jsonl",
+  "pseudo_birth": {
+   "pole": "L24N3927-",
+   "ranks": [
+    2,
+    8,
+    11,
+    13,
+    14,
+    16,
+    17,
+    19,
+    21,
+    24,
+    29,
+    36,
+    39,
+    40,
+    48
+   ],
+   "median_a_plus_pre": 8.905513763427734,
+   "ratio_pre": 0.9992151254895033,
+   "a_own_pre": 2
+  },
+  "matched_reading": [
+   {
+    "pole": "L24N269-",
+    "max_abs_pre": 42.37101745605469,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 16640380,
+      "a": -42.37101745605469,
+      "text": "ing email messages are stored by your Internet Service Provider.\n\nMailing list: A single email address that comprises several different email addresses. Example [[:]]  An automated software allows you to send email to one address. Then your message ("
+     },
+     {
+      "rank": 1,
+      "tok": 16416936,
+      "a": -33.553287506103516,
+      "text": " email address something like …@gmail.com, …@yahoo.com and so on, use your own domain;\n  • your sender address is the same of the receiver address (do not test  [[from]]  name@domain.com to name@domain.com many mail service providers drop that emails"
+     },
+     {
+      "rank": 2,
+      "tok": 15687344,
+      "a": -32.9072265625,
+      "text": "ing 8 of Cadence Design Systems' San Jose, Calif. office. Cadence Design Systems, D2S and e-Shuttle are sponsoring the training sessions at no cost to attendees [[.]]  For both locations, the morning session will take place from 10:00 a"
+     }
+    ]
+   },
+   {
+    "pole": "L24N1234-",
+    "max_abs_pre": 42.04676818847656,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 13593526,
+      "a": -42.04676818847656,
+      "text": "\nThis article provides information and/or facts that contain spoilers.\nPlease read with caution or refrain from proceeding further.\n\n\"Take up arms, newly arisen [[.]]  For my kind do not heed the toothless\"\n\n\"Dragons are creatures wre"
+     },
+     {
+      "rank": 1,
+      "tok": 5887848,
+      "a": -40.97871398925781,
+      "text": " family, attendees can expect an experience that embodies the vibrant spirit of Patchogue.\n\n“Alive After 5” continues on August 8, with a rain date of August 15 [[.]]  For those planning to attend, parking and shuttle services will be available to accommodate the"
+     },
+     {
+      "rank": 2,
+      "tok": 3095706,
+      "a": -35.58623504638672,
+      "text": "ch also ignited a war between alien races and was misused by invaders for their malicious means (such as Alien Bat reviving the original Zetton into Zetton II). [[ Seeing]]  the horrifying results of his actions, Hikari resigned from the Space Science and"
+     }
+    ]
+   },
+   {
+    "pole": "L24N2862+",
+    "max_abs_pre": 39.84670639038086,
+    "a_on_E": 0,
+    "top3": [
+     {
+      "rank": 0,
+      "tok": 11454131,
+      "a": 39.84670639038086,
+      "text": "shyness by putting your resistance in perspective. The importance of your job search, earning a living or performing well in your position far outweigh any real [[ or]]  imagined consequences that could result from these reasons for resisting.\n\nOf course, resistance can"
+     },
+     {
+      "rank": 1,
+      "tok": 5127267,
+      "a": 37.450687408447266,
+      "text": "ied, you were justified in the name of the Lord Jesus Christ\" (1 Cor. 6:9-11 NIV).\n\n7. Its analysis of human nature.\nThe Bible says that society's real problems [[ are]]  problems of the heart. In an age of information and technology, failures of character"
+     },
+     {
+      "rank": 2,
+      "tok": 5224518,
+      "a": 36.92121124267578,
+      "text": " of Rome.\n\nThe consolations of Anglo-Catholicism, then, were insufficient for the\nspiritual needs of this scion of the Low Church.\n\nWhat were those needs?\n\nWere [[ they]] , indeed, _spiritual_ needs, as he suggests by the title of"
+     }
+    ]
+   }
+  ]
+ }
+]

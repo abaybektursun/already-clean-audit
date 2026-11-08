@@ -1,0 +1,198 @@
+/* "One explanation and its test texts": the picture's styles, shared by the walkthrough page and index.html.
+   Every rule is scoped under #xtest and every class is prefixed xt-, so nothing reaches the host page and
+   the host's own classes (.texts, .kind, .tally, .sq, ...) do not reach in. The host defines --bg, --ink,
+   --muted, --rule, --grid, --bar, --accent, --font-text and --font-mono, light and dark. A strong text's bar
+   is the host's accent; a text below the line keeps the host's --bar grey, and its score is printed beside
+   it, as in the table view (README.md, "Colours"). */
+#xtest {
+  --xt-f: 0.2627;                 /* the strong line's place on the score axis, 0 to 1; set by the script */
+  --xt-lane: 40%;                 /* width of the bar column */
+  --xt-valw: 3.4rem;              /* width of the score column */
+  --xt-gap: 16px;
+  --xt-gridc: var(--grid, var(--rule));
+  --xt-band: color-mix(in srgb, var(--ink) 6%, transparent);
+  --xt-markbg: color-mix(in srgb, var(--accent) 16%, transparent);
+  font: 400 16px/1.5 var(--font-text);
+  color: var(--ink);
+}
+@media (max-width: 640px) {
+  #xtest { --xt-valw: 3.1rem; --xt-gap: 10px; }
+}
+
+#xtest, #xtest * { box-sizing: border-box; }
+#xtest p, #xtest blockquote { margin: 0; max-width: none; }
+#xtest h3 { margin: 0; font-size: 15px; font-weight: 700; line-height: 1.3; }
+#xtest button, #xtest select { font: inherit; color: inherit; }
+#xtest :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+#xtest .xt-mono { font-family: var(--font-mono); }
+
+/* controls: the picker and the random comparison */
+#xtest .xt-top { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; }
+#xtest .xt-top label { font-size: 15px; font-weight: 700; }
+#xtest .xt-selwrap { position: relative; flex: 1 1 260px; min-width: 0; max-width: 30rem; }
+#xtest .xt-selwrap::after {
+  content: ""; position: absolute; right: 14px; top: 50%; width: 7px; height: 7px; margin-top: -6px;
+  border-right: 1.5px solid var(--muted); border-bottom: 1.5px solid var(--muted); transform: rotate(45deg);
+  pointer-events: none;
+}
+#xtest select {
+  appearance: none; -webkit-appearance: none; width: 100%; max-width: 100%; cursor: pointer;
+  background: transparent; border: 1px solid var(--rule); border-radius: 8px; padding: 8px 36px 8px 12px;
+  font-size: 15px; text-overflow: ellipsis;
+}
+#xtest select option, #xtest select optgroup { background: var(--bg); color: var(--ink); }
+#xtest .xt-btn {
+  border: 1px solid var(--rule); background: transparent; border-radius: 8px; padding: 8px 14px;
+  font-size: 15px; cursor: pointer; text-align: left;
+}
+#xtest .xt-btn:hover { background: var(--xt-band); }
+#xtest .xt-btn[aria-pressed="true"] { border-color: var(--ink); background: var(--xt-band); }
+
+/* the neuron and its explanation */
+#xtest .xt-id { margin-top: 22px; font-size: 14px; color: var(--muted); }
+#xtest .xt-id b { font-family: var(--font-mono); font-weight: 500; color: var(--ink); margin-right: 8px; }
+#xtest .xt-expl {
+  margin-top: 8px; padding-left: 14px; border-left: 2px solid var(--rule); font-style: normal;
+  font-size: 16.5px; line-height: 1.5; max-width: 70ch;
+}
+#xtest .xt-by { margin-top: 8px; font-size: 14px; color: var(--muted); max-width: 70ch; }
+#xtest .xt-rnote { margin-top: 8px; font-size: 14px; color: var(--ink); max-width: 70ch; min-height: 0; }
+#xtest .xt-rnote:empty { display: none; }
+
+/* chart: one grid template for the head and every row, so the bar column lines up under the strong line */
+#xtest .xt-chart { margin-top: 18px; user-select: none; -webkit-user-select: none; }
+#xtest .xt-head, #xtest .xt-row {
+  display: grid; grid-template-columns: minmax(0, 1fr) var(--xt-lane) var(--xt-valw); column-gap: var(--xt-gap);
+}
+#xtest .xt-head {
+  position: sticky; top: 0; z-index: 3; background: var(--bg); padding-top: 12px;
+  border-bottom: 1px solid var(--rule);
+}
+#xtest .xt-verdict { align-self: end; padding-bottom: 12px; transition: opacity 400ms ease; }
+#xtest .xt-where { display: block; font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+#xtest .xt-where:empty { display: none; }
+#xtest .xt-word { display: block; font-size: 30px; font-weight: 700; line-height: 1.05; letter-spacing: -0.01em; }
+#xtest .xt-why { display: block; margin-top: 6px; font-size: 14px; color: var(--muted); line-height: 1.45; }
+#xtest .xt-lanehead { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; font-size: 13.5px; }
+#xtest .xt-lanehead b { font-weight: 700; font-size: 14px; }
+#xtest .xt-note { color: var(--muted); }
+#xtest .xt-stops { display: inline-flex; gap: 2px; margin-left: -4px; }
+#xtest .xt-stop {
+  border: 0; background: transparent; padding: 1px 4px; border-radius: 4px; cursor: pointer;
+  font-family: var(--font-mono); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums;
+}
+#xtest .xt-stop:hover { color: var(--ink); background: var(--xt-band); }
+#xtest .xt-stop.xt-on { color: var(--ink); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+
+/* the scale: the line's tag, then tick labels; the line itself runs from the tag down through every track */
+#xtest .xt-scale { position: relative; height: 58px; margin-top: 4px; touch-action: none; cursor: ew-resize; }
+#xtest .xt-tick {
+  position: absolute; bottom: 4px; transform: translateX(-50%); font-family: var(--font-mono); font-size: 11px;
+  color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; pointer-events: none;
+  z-index: 1; background: var(--bg); padding: 0 3px; line-height: 1.3;   /* the line passes behind its label */
+}
+#xtest .xt-tick:first-of-type { transform: none; padding-left: 0; }
+#xtest .xt-handle {
+  position: absolute; top: 0; left: 0; height: 26px; padding: 0 9px; border-radius: 6px;
+  display: flex; align-items: center; background: var(--ink); color: var(--bg);
+  font-family: var(--font-mono); font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums;
+  white-space: nowrap; cursor: grab; touch-action: none; transition: opacity 300ms ease, transform 300ms ease;
+}
+#xtest .xt-handle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+#xtest.xt-dragging .xt-handle { cursor: grabbing; }
+#xtest .xt-scale::after, #xtest .xt-track::after {
+  content: ""; position: absolute; left: calc(var(--xt-f) * 100%); width: 2px; margin-left: -1px;
+  background: var(--ink); pointer-events: none; transform-origin: top;
+  transition: transform 220ms ease calc(var(--xt-i, 0) * 28ms);
+}
+#xtest .xt-scale::after { top: 26px; bottom: -1px; }
+#xtest .xt-track::after { top: 0; bottom: 0; }
+
+/* rows */
+#xtest .xt-row > * { padding-block: 5px; }
+#xtest .xt-text {
+  font-size: 15px; line-height: 1.45; white-space: pre-wrap; overflow-wrap: anywhere; align-self: center;
+}
+#xtest .xt-m {
+  background: var(--xt-markbg); color: inherit; border-bottom: 2px solid var(--accent); border-radius: 2px 2px 0 0;
+  padding: 0 1px; transition: background-color 200ms ease;
+}
+#xtest .xt-track {
+  position: relative; align-self: stretch; min-height: 30px; touch-action: pan-y; cursor: ew-resize;
+  /* hairlines at 0, 0.25, 0.5, 0.75 and 1 on a 0 to 1.2 axis */
+  background-image: linear-gradient(to right, var(--xt-gridc) 1px, transparent 1px);
+  background-size: calc(100% * 0.25 / 1.2) 100%; background-repeat: repeat-x;
+}
+#xtest .xt-bar {
+  position: absolute; left: 0; top: 50%; height: 12px; margin-top: -6px; width: calc(var(--xt-w, 0) * 100%);
+  border-radius: 0 4px 4px 0; background: var(--bar);
+  transition: width 600ms cubic-bezier(.3, .7, .2, 1) var(--xt-d, 0ms), background-color 150ms ease;
+}
+#xtest .xt-strong .xt-bar { background: var(--accent); }
+/* a score past the end of the axis: the bar stops at the end with a break in it */
+#xtest .xt-over .xt-bar {
+  border-radius: 0;
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 9px), transparent calc(100% - 9px), transparent calc(100% - 6px), #000 calc(100% - 6px));
+  mask-image: linear-gradient(to right, #000 calc(100% - 9px), transparent calc(100% - 9px), transparent calc(100% - 6px), #000 calc(100% - 6px));
+}
+#xtest .xt-v {
+  align-self: center; text-align: left; font-family: var(--font-mono); font-size: 13px; color: var(--muted);
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+#xtest .xt-strong .xt-v { color: var(--ink); font-weight: 500; }
+#xtest .xt-none .xt-text { color: var(--muted); }
+#xtest .xt-none .xt-v { font-family: var(--font-text); font-size: 12px; white-space: normal; line-height: 1.3; }
+
+/* group heads: the kind of text, the rule, and five squares for the count */
+#xtest .xt-ghead > * { padding-top: 22px; padding-bottom: 6px; }
+#xtest .xt-ghead:first-child > * { padding-top: 14px; }
+#xtest .xt-gnote { display: block; font-size: 13.5px; color: var(--muted); margin-top: 1px; }
+#xtest .xt-tally { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; margin-top: 6px; font-size: 14px; }
+#xtest .xt-sqs { display: inline-flex; gap: 3px; }
+#xtest .xt-sq { width: 11px; height: 11px; border-radius: 2px; box-shadow: inset 0 0 0 1.5px var(--bar); }
+#xtest .xt-sq.xt-on { background: var(--accent); box-shadow: none; }
+#xtest .xt-rule { color: var(--muted); }
+#xtest .xt-ok, #xtest .xt-no { font-weight: 700; }
+#xtest .xt-ghead .xt-track { background-image: none; cursor: default; }
+#xtest .xt-ghead .xt-track, #xtest .xt-row.xt-ghead .xt-track { min-height: 0; }
+#xtest .xt-group.xt-blind .xt-track::after { opacity: 0.35; }
+
+/* intro: bars at zero, line up, verdict hidden; the script removes these one after the other */
+#xtest.xt-pre-bars .xt-bar { width: 0; }
+#xtest.xt-pre-line .xt-track::after, #xtest.xt-pre-line .xt-scale::after { transform: scaleY(0); }
+#xtest.xt-pre-line .xt-handle { opacity: 0; transform: translateY(-10px); }
+#xtest.xt-pre-verdict .xt-verdict { opacity: 0; }
+#xtest.xt-still .xt-bar, #xtest.xt-still .xt-handle, #xtest.xt-still .xt-track::after { transition: none; }
+
+#xtest details { margin-top: 22px; font-size: 14px; color: var(--muted); }
+#xtest summary { cursor: pointer; width: max-content; max-width: 100%; }
+#xtest .xt-tablewrap { overflow-x: auto; margin-top: 10px; }
+#xtest table { border-collapse: collapse; font-size: 13.5px; width: 100%; }
+#xtest th, #xtest td {
+  text-align: left; padding: 5px 12px 5px 0; border-bottom: 1px solid var(--rule); vertical-align: baseline;
+  color: var(--ink); font-family: inherit; letter-spacing: 0;
+}
+#xtest th { font-size: 13px; font-weight: 700; white-space: nowrap; }
+#xtest td.xt-num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+#xtest td.xt-ttext { min-width: 16ch; white-space: pre-wrap; overflow-wrap: anywhere; }
+
+#xtest .xt-caption { margin-top: 22px; padding-top: 14px; border-top: 1px solid var(--rule); font-size: 14px; color: var(--muted); max-width: 72ch; }
+#xtest .xt-missing { font-size: 16px; }
+
+@media (max-width: 640px) {
+  #xtest .xt-head, #xtest .xt-row { grid-template-columns: minmax(0, 1fr) var(--xt-valw); }
+  #xtest .xt-verdict, #xtest .xt-text, #xtest .xt-gtext { grid-column: 1 / -1; }
+  #xtest .xt-verdict { padding-bottom: 8px; }
+  #xtest .xt-word { font-size: 26px; }
+  #xtest .xt-row > .xt-text { padding-bottom: 2px; }
+  #xtest .xt-row > .xt-track, #xtest .xt-row > .xt-v { padding-top: 0; }
+  #xtest .xt-track { min-height: 22px; }
+  #xtest .xt-ghead .xt-track, #xtest .xt-ghead > .xt-v { display: none; }
+  #xtest .xt-text { font-size: 14.5px; }
+  #xtest .xt-scale { height: 54px; }
+  #xtest .xt-btn { flex: 1 1 100%; }
+  #xtest .xt-selwrap { flex-basis: 100%; max-width: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #xtest .xt-bar, #xtest .xt-handle, #xtest .xt-verdict, #xtest .xt-track::after, #xtest .xt-scale::after { transition: none; }
+}

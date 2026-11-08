@@ -1,0 +1,2871 @@
+{
+ "rows": [
+  {
+   "field": "C[start_a] b0 (L0-7)",
+   "mine": 0.1237764580305233,
+   "verdict": 0.1237764580305233,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[start_a] b1 (L8-15)",
+   "mine": 0.11086221384447678,
+   "verdict": 0.11086221384447678,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[start_a] b2 (L16-23)",
+   "mine": 0.07607819313226744,
+   "verdict": 0.07607819313226744,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[start_a] b3 (L24-31)",
+   "mine": 0.054745071765988376,
+   "verdict": 0.054745071765988376,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[start_b] b0 (L0-7)",
+   "mine": 0.1237764580305233,
+   "verdict": 0.1237764580305233,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[start_b] b1 (L8-15)",
+   "mine": 0.11086221384447678,
+   "verdict": 0.11086221384447678,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[start_b] b2 (L16-23)",
+   "mine": 0.07607819313226744,
+   "verdict": 0.07607819313226744,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[start_b] b3 (L24-31)",
+   "mine": 0.054745071765988376,
+   "verdict": 0.054745071765988376,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[G] b0 (L0-7)",
+   "mine": 0.11248637354651164,
+   "verdict": 0.11248637354651164,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[G] b1 (L8-15)",
+   "mine": 0.09383425690406978,
+   "verdict": 0.09383425690406978,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[G] b2 (L16-23)",
+   "mine": 0.05875510992005815,
+   "verdict": 0.05875510992005815,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[G] b3 (L24-31)",
+   "mine": 0.0386365597747093,
+   "verdict": 0.0386365597747093,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[R] b0 (L0-7)",
+   "mine": 0.12016374454941861,
+   "verdict": 0.12016374454941861,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[R] b1 (L8-15)",
+   "mine": 0.10065327489098838,
+   "verdict": 0.10065327489098838,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[R] b2 (L16-23)",
+   "mine": 0.07021007449127907,
+   "verdict": 0.07021007449127907,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[R] b3 (L24-31)",
+   "mine": 0.053613962572674416,
+   "verdict": 0.053613962572674416,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[M] b0 (L0-7)",
+   "mine": 0.12338753633720932,
+   "verdict": 0.12338753633720932,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[M] b1 (L8-15)",
+   "mine": 0.10382335574127907,
+   "verdict": 0.10382335574127907,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[M] b2 (L16-23)",
+   "mine": 0.07614666606104653,
+   "verdict": 0.07614666606104653,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[M] b3 (L24-31)",
+   "mine": 0.058255132630813944,
+   "verdict": 0.058255132630813944,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[t00] b0 (L0-7)",
+   "mine": 0.3056304505813953,
+   "verdict": 0.3056304505813953,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[t00] b1 (L8-15)",
+   "mine": 0.2815319540334303,
+   "verdict": 0.2815319540334303,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[t00] b2 (L16-23)",
+   "mine": 0.26641385810319773,
+   "verdict": 0.26641385810319773,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[t00] b3 (L24-31)",
+   "mine": 0.2534778115915698,
+   "verdict": 0.2534778115915698,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[t12] b0 (L0-7)",
+   "mine": 0.12236770984738371,
+   "verdict": 0.12236770984738371,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[t12] b1 (L8-15)",
+   "mine": 0.10999352743459304,
+   "verdict": 0.10999352743459304,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[t12] b2 (L16-23)",
+   "mine": 0.07520621366279069,
+   "verdict": 0.07520621366279069,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[t12] b3 (L24-31)",
+   "mine": 0.0545030886627907,
+   "verdict": 0.0545030886627907,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[t13] b0 (L0-7)",
+   "mine": 0.12645189861918607,
+   "verdict": 0.12645189861918607,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[t13] b1 (L8-15)",
+   "mine": 0.11553358920784884,
+   "verdict": 0.11553358920784884,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[t13] b2 (L16-23)",
+   "mine": 0.07745912063953488,
+   "verdict": 0.07745912063953488,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[t13] b3 (L24-31)",
+   "mine": 0.05635776253633721,
+   "verdict": 0.05635776253633721,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[t14b] b0 (L0-7)",
+   "mine": 0.13465082212936044,
+   "verdict": 0.13465082212936044,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[t14b] b1 (L8-15)",
+   "mine": 0.10897722111191861,
+   "verdict": 0.10897722111191861,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[t14b] b2 (L16-23)",
+   "mine": 0.0756175054505814,
+   "verdict": 0.0756175054505814,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[t14b] b3 (L24-31)",
+   "mine": 0.052819994549418624,
+   "verdict": 0.052819994549418624,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[t14c] b0 (L0-7)",
+   "mine": 0.13467341933139537,
+   "verdict": 0.13467341933139537,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[t14c] b1 (L8-15)",
+   "mine": 0.10897438226744187,
+   "verdict": 0.10897438226744187,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[t14c] b2 (L16-23)",
+   "mine": 0.07564566678779071,
+   "verdict": 0.07564566678779071,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[t14c] b3 (L24-31)",
+   "mine": 0.05283748183139536,
+   "verdict": 0.05283748183139536,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[t15] b0 (L0-7)",
+   "mine": 0.14230716946117114,
+   "verdict": 0.14230716946117114,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[t15] b1 (L8-15)",
+   "mine": 0.10467932412790701,
+   "verdict": 0.10467932412790701,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[t15] b2 (L16-23)",
+   "mine": 0.07428404342296513,
+   "verdict": 0.07428404342296513,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "C[t15] b3 (L24-31)",
+   "mine": 0.05134197856104651,
+   "verdict": 0.05134197856104651,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "tau b0 (L0-7)",
+   "mine": 0.008198923510174372,
+   "verdict": 0.008198923510174372,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "tau b1 (L8-15)",
+   "mine": 0.006556368095930229,
+   "verdict": 0.006556368095930229,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "tau b2 (L16-23)",
+   "mine": 0.0022529069767441845,
+   "verdict": 0.0022529069767441845,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "tau b3 (L24-31)",
+   "mine": 0.0035377679869185857,
+   "verdict": 0.0035377679869185857,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "eps_dev b0 (L0-7)",
+   "mine": 2.2597202034929653e-05,
+   "verdict": 2.2597202034929653e-05,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "eps_dev b1 (L8-15)",
+   "mine": 2.8388444767435406e-06,
+   "verdict": 2.8388444767435406e-06,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "eps_dev b2 (L16-23)",
+   "mine": 2.8161337209314796e-05,
+   "verdict": 2.8161337209314796e-05,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "eps_dev b3 (L24-31)",
+   "mine": 1.7487281976737157e-05,
+   "verdict": 1.7487281976737157e-05,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "kappa b0 (L0-7)",
+   "mine": 0.1832627407340116,
+   "verdict": 0.1832627407340116,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "kappa b1 (L8-15)",
+   "mine": 0.17685262990552328,
+   "verdict": 0.17685262990552328,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "kappa b2 (L16-23)",
+   "mine": 0.1921298146802326,
+   "verdict": 0.1921298146802326,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "kappa b3 (L24-31)",
+   "mine": 0.2021358330305233,
+   "verdict": 0.2021358330305233,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "bar b0 (L0-7)",
+   "mine": 0.008198923510174372,
+   "verdict": 0.008198923510174372,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "I b0 (L0-7)",
+   "mine": 0.0,
+   "verdict": 0.0,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "bar b1 (L8-15)",
+   "mine": 0.006556368095930229,
+   "verdict": 0.006556368095930229,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "I b1 (L8-15)",
+   "mine": 0.0,
+   "verdict": 0.0,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "bar b2 (L16-23)",
+   "mine": 0.0022529069767441845,
+   "verdict": 0.0022529069767441845,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "I b2 (L16-23)",
+   "mine": 0.0,
+   "verdict": 0.0,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "bar b3 (L24-31)",
+   "mine": 0.0035377679869185857,
+   "verdict": 0.0035377679869185857,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "I b3 (L24-31)",
+   "mine": 0.0,
+   "verdict": 0.0,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "G-ID line",
+   "mine": 0.0005632267441860461,
+   "verdict": 0.0005632267441860461,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "G-ID pass",
+   "mine": true,
+   "verdict": true,
+   "diff": null,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "G-ID changed pole share",
+   "mine": 0.0,
+   "verdict": 0.0,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "G-ID failing input passes",
+   "mine": false,
+   "verdict": false,
+   "diff": null,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "Delta_MG mean b0 (L0-7)",
+   "mine": 0.010901162790697676,
+   "verdict": 0.010901162790697676,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "Delta_MG lo b0 (L0-7)",
+   "mine": 0.0103808451807773,
+   "verdict": 0.010364726221838665,
+   "diff": 1.6118958938635825e-05,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "Delta_MG hi b0 (L0-7)",
+   "mine": 0.01144645939316824,
+   "verdict": 0.01143517214752907,
+   "diff": 1.1287245639170912e-05,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "lead bar b0 (L0-7)",
+   "mine": 0.008198923510174372,
+   "verdict": 0.008198923510174372,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "lead ceiling b0 (L0-7)",
+   "mine": 0.1832627407340116,
+   "verdict": 0.1832627407340116,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "lead label b0 (L0-7)",
+   "mine": "SUPPORTED",
+   "verdict": "SUPPORTED",
+   "diff": null,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "Delta_MG mean b1 (L8-15)",
+   "mine": 0.009989098837209304,
+   "verdict": 0.009989098837209304,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "Delta_MG lo b1 (L8-15)",
+   "mine": 0.009520570267077763,
+   "verdict": 0.009499653660973837,
+   "diff": 2.091660610392676e-05,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "Delta_MG hi b1 (L8-15)",
+   "mine": 0.010460494640260817,
+   "verdict": 0.010491761673328489,
+   "diff": -3.126703306767162e-05,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "lead bar b1 (L8-15)",
+   "mine": 0.006556368095930229,
+   "verdict": 0.006556368095930229,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "lead ceiling b1 (L8-15)",
+   "mine": 0.17685262990552328,
+   "verdict": 0.17685262990552328,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "lead label b1 (L8-15)",
+   "mine": "SUPPORTED",
+   "verdict": "SUPPORTED",
+   "diff": null,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "Delta_MG mean b2 (L16-23)",
+   "mine": 0.017391556140988373,
+   "verdict": 0.017391556140988373,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "Delta_MG lo b2 (L16-23)",
+   "mine": 0.01702609181958315,
+   "verdict": 0.016990847565406975,
+   "diff": 3.524425417617688e-05,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "Delta_MG hi b2 (L16-23)",
+   "mine": 0.017781400458754502,
+   "verdict": 0.017784032067587205,
+   "diff": -2.63160883270247e-06,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "lead bar b2 (L16-23)",
+   "mine": 0.0022529069767441845,
+   "verdict": 0.0022529069767441845,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "lead ceiling b2 (L16-23)",
+   "mine": 0.1921298146802326,
+   "verdict": 0.1921298146802326,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "lead label b2 (L16-23)",
+   "mine": "SUPPORTED",
+   "verdict": "SUPPORTED",
+   "diff": null,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "Delta_MG mean b3 (L24-31)",
+   "mine": 0.01961857285610465,
+   "verdict": 0.01961857285610465,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "Delta_MG lo b3 (L24-31)",
+   "mine": 0.01919236577942991,
+   "verdict": 0.01919567303324855,
+   "diff": -3.3072538186407208e-06,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "Delta_MG hi b3 (L24-31)",
+   "mine": 0.020034753134081006,
+   "verdict": 0.02002373841751454,
+   "diff": 1.1014716566466048e-05,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "lead bar b3 (L24-31)",
+   "mine": 0.0035377679869185857,
+   "verdict": 0.0035377679869185857,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "lead ceiling b3 (L24-31)",
+   "mine": 0.2021358330305233,
+   "verdict": 0.2021358330305233,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "lead label b3 (L24-31)",
+   "mine": "SUPPORTED",
+   "verdict": "SUPPORTED",
+   "diff": null,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "Delta_RG mean b0 (L0-7)",
+   "mine": 0.0076773710029069756,
+   "verdict": 0.0076773710029069756,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "Delta_RG lo b0 (L0-7)",
+   "mine": 0.0071818762490914794,
+   "verdict": 0.007189881790515988,
+   "diff": -8.00554142450869e-06,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "Delta_RG hi b0 (L0-7)",
+   "mine": 0.008165217909701742,
+   "verdict": 0.008162021370821221,
+   "diff": 3.1965388805205164e-06,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "Delta_MR mean b0 (L0-7)",
+   "mine": 0.003223791787790698,
+   "verdict": 0.003223791787790698,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "Delta_MR lo b0 (L0-7)",
+   "mine": 0.002770141601562496,
+   "verdict": 0.002762380200763081,
+   "diff": 7.761400799414717e-06,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "Delta_MR hi b0 (L0-7)",
+   "mine": 0.003688726380813937,
+   "verdict": 0.003685291378997093,
+   "diff": 3.4350018168439675e-06,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "between label b0 (L0-7)",
+   "mine": "UNDECIDED",
+   "verdict": "UNDECIDED",
+   "diff": null,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "Delta_RG mean b1 (L8-15)",
+   "mine": 0.006819017986918604,
+   "verdict": 0.006819017986918604,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "Delta_RG lo b1 (L8-15)",
+   "mine": 0.006389197061227994,
+   "verdict": 0.0063727715070857555,
+   "diff": 1.642555414223864e-05,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "Delta_RG hi b1 (L8-15)",
+   "mine": 0.007267586641533036,
+   "verdict": 0.007265769781068314,
+   "diff": 1.8168604647220143e-06,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "Delta_MR mean b1 (L8-15)",
+   "mine": 0.0031700808502906977,
+   "verdict": 0.0031700808502906977,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "Delta_MR lo b1 (L8-15)",
+   "mine": 0.0027921511627907515,
+   "verdict": 0.0028100898210392444,
+   "diff": -1.7938658248492934e-05,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "Delta_MR hi b1 (L8-15)",
+   "mine": 0.0035241528888080927,
+   "verdict": 0.003549611646075581,
+   "diff": -2.5458757267488204e-05,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "between label b1 (L8-15)",
+   "mine": "UNDECIDED",
+   "verdict": "UNDECIDED",
+   "diff": null,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "Delta_RG mean b2 (L16-23)",
+   "mine": 0.011454964571220931,
+   "verdict": 0.011454964571220931,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "Delta_RG lo b2 (L16-23)",
+   "mine": 0.011126141215478615,
+   "verdict": 0.011133107739825582,
+   "diff": -6.966524346967498e-06,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "Delta_RG hi b2 (L16-23)",
+   "mine": 0.011781215933865205,
+   "verdict": 0.01177205214389535,
+   "diff": 9.163789969854688e-06,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "Delta_MR mean b2 (L16-23)",
+   "mine": 0.005936591569767441,
+   "verdict": 0.005936591569767441,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "Delta_MR lo b2 (L16-23)",
+   "mine": 0.00567676065134417,
+   "verdict": 0.005663818359375001,
+   "diff": 1.2942291969168622e-05,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "Delta_MR hi b2 (L16-23)",
+   "mine": 0.006200269122456037,
+   "verdict": 0.006201328011446221,
+   "diff": -1.0588889901835125e-06,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "between label b2 (L16-23)",
+   "mine": "SUPPORTED",
+   "verdict": "SUPPORTED",
+   "diff": null,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "Delta_RG mean b3 (L24-31)",
+   "mine": 0.014977402797965117,
+   "verdict": 0.014977402797965117,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "Delta_RG lo b3 (L24-31)",
+   "mine": 0.014615038494729029,
+   "verdict": 0.014602556095566861,
+   "diff": 1.248239916216802e-05,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "Delta_RG hi b3 (L24-31)",
+   "mine": 0.01532943654614605,
+   "verdict": 0.015321490620457848,
+   "diff": 7.94592568820196e-06,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "Delta_MR mean b3 (L24-31)",
+   "mine": 0.004641170058139535,
+   "verdict": 0.004641170058139535,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "Delta_MR lo b3 (L24-31)",
+   "mine": 0.004379309365915474,
+   "verdict": 0.004391101925872093,
+   "diff": -1.179255995661932e-05,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "Delta_MR hi b3 (L24-31)",
+   "mine": 0.004893012468204762,
+   "verdict": 0.004889461073764535,
+   "diff": 3.5513944402270833e-06,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "between label b3 (L24-31)",
+   "mine": "SUPPORTED",
+   "verdict": "SUPPORTED",
+   "diff": null,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "PC_NLL d_cm mean",
+   "mine": -0.14756154915085062,
+   "verdict": -0.14756154915085062,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "PC_NLL d_cm lo",
+   "mine": -0.20335866328168778,
+   "verdict": -0.20353337165361154,
+   "diff": 0.0001747083719237652,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "PC_NLL d_cm hi",
+   "mine": -0.09722059851337693,
+   "verdict": -0.09809707587119193,
+   "diff": 0.0008764773578150004,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "PC_NLL d_cm-d_web mean",
+   "mine": -0.23990586487343535,
+   "verdict": -0.23990586487343535,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "PC_NLL d_cm-d_web lo",
+   "mine": -0.2965205797088856,
+   "verdict": -0.2957254302353249,
+   "diff": -0.0007951494735607412,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "PC_NLL d_cm-d_web hi",
+   "mine": -0.1883925970774726,
+   "verdict": -0.18749042246199688,
+   "diff": -0.0009021746154757315,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "PC_NLL identity NLL diff",
+   "mine": 0.0,
+   "verdict": 0.0,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "PC_NLL floor f",
+   "mine": 0.01,
+   "verdict": 0.01,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "PC_NLL fires",
+   "mine": true,
+   "verdict": true,
+   "diff": null,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "PC_NLL swapped fires",
+   "mine": false,
+   "verdict": false,
+   "diff": null,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "H_specific cm b0 (L0-7)",
+   "mine": 0.010901162790696913,
+   "verdict": 0.010901162790696913,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "H_specific random q99 b0 (L0-7)",
+   "mine": 0.0030776571584302716,
+   "verdict": 0.003083332576308155,
+   "diff": -5.675417877883462e-06,
+   "kind": "own random sets",
+   "match": null
+  },
+  {
+   "field": "H_specific random median b0 (L0-7)",
+   "mine": 0.0011169149709302317,
+   "verdict": 0.0011525140806685995,
+   "diff": -3.559910973836779e-05,
+   "kind": "own random sets",
+   "match": null
+  },
+  {
+   "field": "H_specific label b0 (L0-7)",
+   "mine": "SUPPORTED",
+   "verdict": "SUPPORTED",
+   "diff": null,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "H_specific cm b1 (L8-15)",
+   "mine": 0.00998909883720846,
+   "verdict": 0.00998909883720846,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "H_specific random q99 b1 (L8-15)",
+   "mine": 0.003921932912427395,
+   "verdict": 0.003439106785973906,
+   "diff": 0.0004828261264534892,
+   "kind": "own random sets",
+   "match": null
+  },
+  {
+   "field": "H_specific random median b1 (L8-15)",
+   "mine": 0.0011045376090116608,
+   "verdict": 0.0011423510174418765,
+   "diff": -3.7813408430215686e-05,
+   "kind": "own random sets",
+   "match": null
+  },
+  {
+   "field": "H_specific label b1 (L8-15)",
+   "mine": "SUPPORTED",
+   "verdict": "SUPPORTED",
+   "diff": null,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "H_specific cm b2 (L16-23)",
+   "mine": 0.01739155614098695,
+   "verdict": 0.01739155614098695,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "H_specific random q99 b2 (L16-23)",
+   "mine": 0.00532548260356115,
+   "verdict": 0.005084501044694907,
+   "diff": 0.00024098155886624357,
+   "kind": "own random sets",
+   "match": null
+  },
+  {
+   "field": "H_specific random median b2 (L16-23)",
+   "mine": 0.0020338617369186733,
+   "verdict": 0.0020686091933139654,
+   "diff": -3.474745639529212e-05,
+   "kind": "own random sets",
+   "match": null
+  },
+  {
+   "field": "H_specific label b2 (L16-23)",
+   "mine": "SUPPORTED",
+   "verdict": "SUPPORTED",
+   "diff": null,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "H_specific cm b3 (L24-31)",
+   "mine": 0.01961857285610323,
+   "verdict": 0.01961857285610323,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "H_specific random q99 b3 (L24-31)",
+   "mine": 0.006961753951671584,
+   "verdict": 0.006835590025436113,
+   "diff": 0.00012616392623547058,
+   "kind": "own random sets",
+   "match": null
+  },
+  {
+   "field": "H_specific random median b3 (L24-31)",
+   "mine": 0.002445323855377976,
+   "verdict": 0.002712913335755859,
+   "diff": -0.0002675894803778828,
+   "kind": "own random sets",
+   "match": null
+  },
+  {
+   "field": "H_specific label b3 (L24-31)",
+   "mine": "SUPPORTED",
+   "verdict": "SUPPORTED",
+   "diff": null,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "shift G-start_a mean b0 (L0-7)",
+   "mine": -0.011290084484011628,
+   "verdict": -0.011290084484011628,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "shift G-start_a lo b0 (L0-7)",
+   "mine": -0.011736839117005028,
+   "verdict": -0.011747876544331395,
+   "diff": 1.10374273263672e-05,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "shift G-start_a hi b0 (L0-7)",
+   "mine": -0.010797229855558936,
+   "verdict": -0.010812636264534886,
+   "diff": 1.5406408975949387e-05,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "shift G-start_a mean b1 (L8-15)",
+   "mine": -0.017027956940406982,
+   "verdict": -0.017027956940406982,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "shift G-start_a lo b1 (L8-15)",
+   "mine": -0.01747117721202435,
+   "verdict": -0.017454257698946225,
+   "diff": -1.691951307812578e-05,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "shift G-start_a hi b1 (L8-15)",
+   "mine": -0.016587578352104452,
+   "verdict": -0.01660324593477471,
+   "diff": 1.5667582670259722e-05,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "shift G-start_a mean b2 (L16-23)",
+   "mine": -0.017323083212209305,
+   "verdict": -0.017323083212209305,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "shift G-start_a lo b2 (L16-23)",
+   "mine": -0.017666069563041703,
+   "verdict": -0.017672726653343022,
+   "diff": 6.657090301318697e-06,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "shift G-start_a hi b2 (L16-23)",
+   "mine": -0.016975895371544827,
+   "verdict": -0.016981697969658434,
+   "diff": 5.80259811360645e-06,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "shift G-start_a mean b3 (L24-31)",
+   "mine": -0.016108511991279075,
+   "verdict": -0.016108511991279075,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "shift G-start_a lo b3 (L24-31)",
+   "mine": -0.016459123478376525,
+   "verdict": -0.01644434445403343,
+   "diff": -1.477902434309647e-05,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "shift G-start_a hi b3 (L24-31)",
+   "mine": -0.01576794149709031,
+   "verdict": -0.015755654978197673,
+   "diff": -1.2286518892637432e-05,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "shift R-start_a mean b0 (L0-7)",
+   "mine": -0.003612713481104651,
+   "verdict": -0.003612713481104651,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "shift R-start_a lo b0 (L0-7)",
+   "mine": -0.0040656908611918854,
+   "verdict": -0.004069046375363371,
+   "diff": 3.3555141714857947e-06,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "shift R-start_a hi b0 (L0-7)",
+   "mine": -0.003132883471111927,
+   "verdict": -0.0031487242232921507,
+   "diff": 1.5840752180223527e-05,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "shift R-start_a mean b1 (L8-15)",
+   "mine": -0.010208938953488372,
+   "verdict": -0.010208938953488372,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "shift R-start_a lo b1 (L8-15)",
+   "mine": -0.010638308502906136,
+   "verdict": -0.01060191167787064,
+   "diff": -3.639682503549582e-05,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "shift R-start_a hi b1 (L8-15)",
+   "mine": -0.009795012718022524,
+   "verdict": -0.009790368368459304,
+   "diff": -4.6443495632202125e-06,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "shift R-start_a mean b2 (L16-23)",
+   "mine": -0.005868118640988373,
+   "verdict": -0.005868118640988373,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "shift R-start_a lo b2 (L16-23)",
+   "mine": -0.006155188272165452,
+   "verdict": -0.006163602607194767,
+   "diff": 8.414335029315045e-06,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "shift R-start_a hi b2 (L16-23)",
+   "mine": -0.005564535451489592,
+   "verdict": -0.0055771512763444775,
+   "diff": 1.2615824854885459e-05,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "shift R-start_a mean b3 (L24-31)",
+   "mine": -0.001131109193313954,
+   "verdict": -0.001131109193313954,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "shift R-start_a lo b3 (L24-31)",
+   "mine": -0.0014172845884811106,
+   "verdict": -0.001424904047056686,
+   "diff": 7.619458575575458e-06,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "shift R-start_a hi b3 (L24-31)",
+   "mine": -0.0008376124182412869,
+   "verdict": -0.0008382823855377923,
+   "diff": 6.699672965053893e-07,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "shift M-start_a mean b0 (L0-7)",
+   "mine": -0.0003889216933139533,
+   "verdict": -0.0003889216933139533,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "shift M-start_a lo b0 (L0-7)",
+   "mine": -0.0008826961073764529,
+   "verdict": -0.0008749574173328488,
+   "diff": -7.738690043604043e-06,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "shift M-start_a hi b0 (L0-7)",
+   "mine": 0.00012327398255813812,
+   "verdict": 0.0001277905841206393,
+   "diff": -4.516601562501183e-06,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "shift M-start_a mean b1 (L8-15)",
+   "mine": -0.007038858103197675,
+   "verdict": -0.007038858103197675,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "shift M-start_a lo b1 (L8-15)",
+   "mine": -0.007483026548873335,
+   "verdict": -0.00748593636446221,
+   "diff": 2.909815588874806e-06,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "shift M-start_a hi b1 (L8-15)",
+   "mine": -0.006601417718931567,
+   "verdict": -0.00658907726199128,
+   "diff": -1.2340456940287264e-05,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "shift M-start_a mean b2 (L16-23)",
+   "mine": 6.847292877906962e-05,
+   "verdict": 6.847292877906962e-05,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "shift M-start_a lo b2 (L16-23)",
+   "mine": -0.00026663846747819914,
+   "verdict": -0.00028806038789970945,
+   "diff": 2.1421920421510314e-05,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "shift M-start_a hi b2 (L16-23)",
+   "mine": 0.0004092534974563919,
+   "verdict": 0.0004007426417151161,
+   "diff": 8.510855741275785e-06,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "shift M-start_a mean b3 (L24-31)",
+   "mine": 0.0035100608648255816,
+   "verdict": 0.0035100608648255816,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "shift M-start_a lo b3 (L24-31)",
+   "mine": 0.0031792559956395124,
+   "verdict": 0.0031876760083575585,
+   "diff": -8.420012718046103e-06,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "shift M-start_a hi b3 (L24-31)",
+   "mine": 0.0038709603243095455,
+   "verdict": 0.003837254723837209,
+   "diff": 3.3705600472336544e-05,
+   "kind": "bootstrap",
+   "match": null
+  },
+  {
+   "field": "H_lead",
+   "mine": "SUPPORTED",
+   "verdict": "SUPPORTED",
+   "diff": null,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "H_order",
+   "mine": "UNDECIDED",
+   "verdict": "UNDECIDED",
+   "diff": null,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "H_specific",
+   "mine": "SUPPORTED",
+   "verdict": "SUPPORTED",
+   "diff": null,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "headline",
+   "mine": "H_lead SUPPORTED; H_order UNDECIDED; H_specific SUPPORTED",
+   "verdict": "H_lead SUPPORTED; H_order UNDECIDED; H_specific SUPPORTED",
+   "diff": null,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "G-FIT nll start_a (m1/metrics.json fit)",
+   "mine": 2.781479736328125,
+   "verdict": 2.781479736328125,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "G-FIT nll start_b (m1/metrics.json fit)",
+   "mine": 2.781479736328125,
+   "verdict": 2.781479736328125,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "G-FIT nll G (m1/metrics.json fit)",
+   "mine": 2.7174425659179686,
+   "verdict": 2.7174425659179686,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "G-FIT nll R (m1/metrics.json fit)",
+   "mine": 2.786846201578776,
+   "verdict": 2.786846201578776,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  },
+  {
+   "field": "G-FIT nll M (m1/metrics.json fit)",
+   "mine": 2.8271537180582684,
+   "verdict": 2.8271537180582684,
+   "diff": 0.0,
+   "kind": "exact",
+   "match": true
+  }
+ ],
+ "n_fields": 191,
+ "n_exact_match": 131,
+ "n_exact_mismatch": 0,
+ "max_abs_diff_exact_numeric": 0.0,
+ "max_abs_diff_bootstrap": 0.0009021746154757315,
+ "max_abs_diff_random_sets": 0.0004828261264534892,
+ "room_30_pairs": {
+  "n_labels": 120,
+  "n_same_label": 120,
+  "label_counts_mine": {
+   "REFUTED": 85,
+   "ABOVE_CEILING": 1,
+   "SUPPORTED": 26,
+   "UNDECIDED": 8
+  },
+  "differing": [],
+  "rows": [
+   {
+    "as_G": "t00",
+    "as_M": "t12",
+    "band": 0,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.18326274073401164,
+    "lo": -0.18496503395258002,
+    "hi": -0.18167185228924665,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t00",
+    "as_M": "t12",
+    "band": 1,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.17153842659883722,
+    "lo": -0.17316681901798608,
+    "hi": -0.1698976596566129,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t00",
+    "as_M": "t12",
+    "band": 2,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.19120764444040697,
+    "lo": -0.1928653252180262,
+    "hi": -0.1896676110556016,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t00",
+    "as_M": "t12",
+    "band": 3,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.1989747229287791,
+    "lo": -0.20050838594659184,
+    "hi": -0.19738928506541592,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t00",
+    "as_M": "t13",
+    "band": 0,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.17917855196220928,
+    "lo": -0.18093361646075903,
+    "hi": -0.1775845890488753,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t00",
+    "as_M": "t13",
+    "band": 1,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.1659983648255814,
+    "lo": -0.16760153695039937,
+    "hi": -0.1642822066905907,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t00",
+    "as_M": "t13",
+    "band": 2,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.18895473746366276,
+    "lo": -0.1905970657703522,
+    "hi": -0.18735503156795685,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t00",
+    "as_M": "t13",
+    "band": 3,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.19712004905523256,
+    "lo": -0.1986529399073486,
+    "hi": -0.1955268072084018,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t00",
+    "as_M": "t14b",
+    "band": 0,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.17097962845203488,
+    "lo": -0.17270101857740014,
+    "hi": -0.16930882085755894,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t00",
+    "as_M": "t14b",
+    "band": 1,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.17255473292151163,
+    "lo": -0.1741357648982585,
+    "hi": -0.17082905046330035,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t00",
+    "as_M": "t14b",
+    "band": 2,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.1907963526526163,
+    "lo": -0.19241164096566457,
+    "hi": -0.18924946345839583,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t00",
+    "as_M": "t14b",
+    "band": 3,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.2006578170421512,
+    "lo": -0.2022221424191605,
+    "hi": -0.19909153854015854,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t00",
+    "as_M": "t14c",
+    "band": 0,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.17095703125,
+    "lo": -0.17268118073219688,
+    "hi": -0.16929533918513917,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t00",
+    "as_M": "t14c",
+    "band": 1,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.17255757176598838,
+    "lo": -0.1741304562590862,
+    "hi": -0.17083560819404064,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t00",
+    "as_M": "t14c",
+    "band": 2,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.19076819131540698,
+    "lo": -0.19238014966388636,
+    "hi": -0.18922472860647252,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t00",
+    "as_M": "t14c",
+    "band": 3,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.20064032976017446,
+    "lo": -0.20220315622729898,
+    "hi": -0.19909121207304267,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t00",
+    "as_M": "t15",
+    "band": 0,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.16332328112022426,
+    "lo": -0.16504300484388273,
+    "hi": -0.16161983938629346,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t00",
+    "as_M": "t15",
+    "band": 1,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.17685262990552328,
+    "lo": -0.17840301655614282,
+    "hi": -0.17513852993277937,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t00",
+    "as_M": "t15",
+    "band": 2,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.19212981468023257,
+    "lo": -0.19376355548237953,
+    "hi": -0.19058390772620365,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t00",
+    "as_M": "t15",
+    "band": 3,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.2021358330305233,
+    "lo": -0.20365405273438308,
+    "hi": -0.20053542877907826,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t12",
+    "as_M": "t00",
+    "band": 0,
+    "mine": "ABOVE_CEILING",
+    "thresholds": "ABOVE_CEILING",
+    "d": 0.18326274073401164,
+    "lo": 0.18167185228924665,
+    "hi": 0.18496503395258002,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t12",
+    "as_M": "t00",
+    "band": 1,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.17153842659883722,
+    "lo": 0.1698976596566129,
+    "hi": 0.17316681901798608,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t12",
+    "as_M": "t00",
+    "band": 2,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.19120764444040697,
+    "lo": 0.1896676110556016,
+    "hi": 0.1928653252180262,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t12",
+    "as_M": "t00",
+    "band": 3,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.1989747229287791,
+    "lo": 0.19738928506541592,
+    "hi": 0.20050838594659184,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t12",
+    "as_M": "t13",
+    "band": 0,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": 0.004084188771802326,
+    "lo": 0.00346002055323402,
+    "hi": 0.004719632880632294,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t12",
+    "as_M": "t13",
+    "band": 1,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": 0.005540061773255814,
+    "lo": 0.005032689294149648,
+    "hi": 0.006082045444222343,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t12",
+    "as_M": "t13",
+    "band": 2,
+    "mine": "UNDECIDED",
+    "thresholds": "UNDECIDED",
+    "d": 0.0022529069767441862,
+    "lo": 0.0018759453352107766,
+    "hi": 0.0026067944903706898,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t12",
+    "as_M": "t13",
+    "band": 3,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": 0.0018546738735465119,
+    "lo": 0.0015193410474200403,
+    "hi": 0.002217483875363341,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t12",
+    "as_M": "t14b",
+    "band": 0,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.012283112281976743,
+    "lo": 0.011533333711845839,
+    "hi": 0.013043820403342937,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t12",
+    "as_M": "t14b",
+    "band": 1,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.0010163063226744182,
+    "lo": -0.0016007647847020446,
+    "hi": -0.00042854628452035056,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t12",
+    "as_M": "t14b",
+    "band": 2,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": 0.00041129178779069774,
+    "lo": -2.761627906976667e-05,
+    "hi": 0.0008510060864825549,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t12",
+    "as_M": "t14b",
+    "band": 3,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.001683094113372093,
+    "lo": -0.0020708263308503293,
+    "hi": -0.0012568813590116384,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t12",
+    "as_M": "t14c",
+    "band": 0,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.012305709484011629,
+    "lo": 0.011550673373909788,
+    "hi": 0.013061659702034566,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t12",
+    "as_M": "t14c",
+    "band": 1,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.0010191451671511629,
+    "lo": -0.0015944795830305338,
+    "hi": -0.0004304710210755779,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t12",
+    "as_M": "t14c",
+    "band": 2,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": 0.0004394531250000001,
+    "lo": -2.674191497094138e-06,
+    "hi": 0.0008807259493095936,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t12",
+    "as_M": "t14c",
+    "band": 3,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.0016656068313953489,
+    "lo": -0.002056850699491285,
+    "hi": -0.001233614189680257,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t12",
+    "as_M": "t15",
+    "band": 0,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.019939459613787378,
+    "lo": 0.01917379689770985,
+    "hi": 0.020733355854831596,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t12",
+    "as_M": "t15",
+    "band": 1,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.005314203306686046,
+    "lo": -0.005885330555050762,
+    "hi": -0.004683048691860436,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t12",
+    "as_M": "t15",
+    "band": 2,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.0009221702398255815,
+    "lo": -0.0013745684956395392,
+    "hi": -0.0004566877498183129,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t12",
+    "as_M": "t15",
+    "band": 3,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.003161110101744187,
+    "lo": -0.0035887649890987403,
+    "hi": -0.0027089361146439327,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t13",
+    "as_M": "t00",
+    "band": 0,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.17917855196220928,
+    "lo": 0.1775845890488753,
+    "hi": 0.18093361646075903,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t13",
+    "as_M": "t00",
+    "band": 1,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.1659983648255814,
+    "lo": 0.1642822066905907,
+    "hi": 0.16760153695039937,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t13",
+    "as_M": "t00",
+    "band": 2,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.18895473746366276,
+    "lo": 0.18735503156795685,
+    "hi": 0.1905970657703522,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t13",
+    "as_M": "t00",
+    "band": 3,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.19712004905523256,
+    "lo": 0.1955268072084018,
+    "hi": 0.1986529399073486,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t13",
+    "as_M": "t12",
+    "band": 0,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.004084188771802326,
+    "lo": -0.004719632880632295,
+    "hi": -0.0034600205532340205,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t13",
+    "as_M": "t12",
+    "band": 1,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.005540061773255814,
+    "lo": -0.006082045444222343,
+    "hi": -0.005032689294149648,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t13",
+    "as_M": "t12",
+    "band": 2,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.0022529069767441862,
+    "lo": -0.00260679449037069,
+    "hi": -0.001875945335210777,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t13",
+    "as_M": "t12",
+    "band": 3,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.0018546738735465119,
+    "lo": -0.002217483875363341,
+    "hi": -0.0015193410474200406,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t13",
+    "as_M": "t14b",
+    "band": 0,
+    "mine": "UNDECIDED",
+    "thresholds": "UNDECIDED",
+    "d": 0.00819892351017442,
+    "lo": 0.007622927643531959,
+    "hi": 0.00879955770803037,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t13",
+    "as_M": "t14b",
+    "band": 1,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.006556368095930234,
+    "lo": -0.007032399732012748,
+    "hi": -0.006086789153342866,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t13",
+    "as_M": "t14b",
+    "band": 2,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.0018416151889534885,
+    "lo": -0.0021608318949854527,
+    "hi": -0.0014961845930232603,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t13",
+    "as_M": "t14b",
+    "band": 3,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.003537767986918605,
+    "lo": -0.003848510742187408,
+    "hi": -0.003231152911518874,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t13",
+    "as_M": "t14c",
+    "band": 0,
+    "mine": "UNDECIDED",
+    "thresholds": "UNDECIDED",
+    "d": 0.008221520712209301,
+    "lo": 0.007644849200581302,
+    "hi": 0.008824164811954768,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t13",
+    "as_M": "t14c",
+    "band": 1,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.006559206940406978,
+    "lo": -0.007033245707666904,
+    "hi": -0.0060919955941131565,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t13",
+    "as_M": "t14c",
+    "band": 2,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.0018134538517441858,
+    "lo": -0.0021378911927689218,
+    "hi": -0.0014691389216933367,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t13",
+    "as_M": "t14c",
+    "band": 3,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.0035202807049418603,
+    "lo": -0.003827733239462091,
+    "hi": -0.0032144519894622206,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t13",
+    "as_M": "t15",
+    "band": 0,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.01585527084198505,
+    "lo": 0.015226732425118747,
+    "hi": 0.016516183441262607,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t13",
+    "as_M": "t15",
+    "band": 1,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.01085426507994186,
+    "lo": -0.011352624227833332,
+    "hi": -0.010360842682593643,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t13",
+    "as_M": "t15",
+    "band": 2,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.0031750772165697674,
+    "lo": -0.0035358801553415603,
+    "hi": -0.002797252566315438,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t13",
+    "as_M": "t15",
+    "band": 3,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.005015783975290698,
+    "lo": -0.005373733875363111,
+    "hi": -0.004678517896075452,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t14b",
+    "as_M": "t00",
+    "band": 0,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.17097962845203488,
+    "lo": 0.16930882085755894,
+    "hi": 0.17270101857740014,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t14b",
+    "as_M": "t00",
+    "band": 1,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.17255473292151163,
+    "lo": 0.17082905046330035,
+    "hi": 0.1741357648982585,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t14b",
+    "as_M": "t00",
+    "band": 2,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.1907963526526163,
+    "lo": 0.18924946345839583,
+    "hi": 0.19241164096566457,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t14b",
+    "as_M": "t00",
+    "band": 3,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.2006578170421512,
+    "lo": 0.19909153854015854,
+    "hi": 0.2022221424191605,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t14b",
+    "as_M": "t12",
+    "band": 0,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.012283112281976743,
+    "lo": -0.013043820403342937,
+    "hi": -0.011533333711845839,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t14b",
+    "as_M": "t12",
+    "band": 1,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": 0.0010163063226744182,
+    "lo": 0.0004285462845203499,
+    "hi": 0.001600764784702044,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t14b",
+    "as_M": "t12",
+    "band": 2,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.00041129178779069774,
+    "lo": -0.0008510060864825551,
+    "hi": 2.7616279069766544e-05,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t14b",
+    "as_M": "t12",
+    "band": 3,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": 0.001683094113372093,
+    "lo": 0.0012568813590116382,
+    "hi": 0.0020708263308503293,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t14b",
+    "as_M": "t13",
+    "band": 0,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.00819892351017442,
+    "lo": -0.008799557708030372,
+    "hi": -0.00762292764353196,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t14b",
+    "as_M": "t13",
+    "band": 1,
+    "mine": "UNDECIDED",
+    "thresholds": "UNDECIDED",
+    "d": 0.006556368095930234,
+    "lo": 0.006086789153342865,
+    "hi": 0.007032399732012748,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t14b",
+    "as_M": "t13",
+    "band": 2,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": 0.0018416151889534885,
+    "lo": 0.0014961845930232603,
+    "hi": 0.0021608318949854527,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t14b",
+    "as_M": "t13",
+    "band": 3,
+    "mine": "UNDECIDED",
+    "thresholds": "UNDECIDED",
+    "d": 0.003537767986918605,
+    "lo": 0.003231152911518874,
+    "hi": 0.0038485107421874078,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t14b",
+    "as_M": "t14c",
+    "band": 0,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": 2.2597202034883707e-05,
+    "lo": -4.315043604651173e-06,
+    "hi": 4.94044104287786e-05,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t14b",
+    "as_M": "t14c",
+    "band": 1,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -2.8388444767442076e-06,
+    "lo": -3.7932639898255804e-05,
+    "hi": 3.202500454215104e-05,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t14b",
+    "as_M": "t14c",
+    "band": 2,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": 2.816133720930231e-05,
+    "lo": -2.8388444767181243e-09,
+    "hi": 5.5984851925871704e-05,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t14b",
+    "as_M": "t14c",
+    "band": 3,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": 1.7487281976744187e-05,
+    "lo": -7.046011991279074e-06,
+    "hi": 4.088219930959289e-05,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t14b",
+    "as_M": "t15",
+    "band": 0,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": 0.007656347331810631,
+    "lo": 0.0071179410104338856,
+    "hi": 0.008167113852263163,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t14b",
+    "as_M": "t15",
+    "band": 1,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.004297896984011627,
+    "lo": -0.004668087981467961,
+    "hi": -0.003918124886446168,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t14b",
+    "as_M": "t15",
+    "band": 2,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.0013334620276162792,
+    "lo": -0.0015826416015624987,
+    "hi": -0.001080793513808138,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t14b",
+    "as_M": "t15",
+    "band": 3,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.001478015988372093,
+    "lo": -0.001705580600472388,
+    "hi": -0.0012333416606104782,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t14c",
+    "as_M": "t00",
+    "band": 0,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.17095703125,
+    "lo": 0.16929533918513917,
+    "hi": 0.17268118073219688,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t14c",
+    "as_M": "t00",
+    "band": 1,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.17255757176598838,
+    "lo": 0.17083560819404064,
+    "hi": 0.1741304562590862,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t14c",
+    "as_M": "t00",
+    "band": 2,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.19076819131540698,
+    "lo": 0.18922472860647252,
+    "hi": 0.19238014966388636,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t14c",
+    "as_M": "t00",
+    "band": 3,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.20064032976017446,
+    "lo": 0.19909121207304267,
+    "hi": 0.20220315622729898,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t14c",
+    "as_M": "t12",
+    "band": 0,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.012305709484011629,
+    "lo": -0.013061659702034566,
+    "hi": -0.01155067337390979,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t14c",
+    "as_M": "t12",
+    "band": 1,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": 0.0010191451671511629,
+    "lo": 0.0004304710210755766,
+    "hi": 0.001594479583030533,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t14c",
+    "as_M": "t12",
+    "band": 2,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.0004394531250000001,
+    "lo": -0.0008807259493095936,
+    "hi": 2.6741914970938006e-06,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t14c",
+    "as_M": "t12",
+    "band": 3,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": 0.0016656068313953489,
+    "lo": 0.0012336141896802568,
+    "hi": 0.002056850699491285,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t14c",
+    "as_M": "t13",
+    "band": 0,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.008221520712209301,
+    "lo": -0.008824164811954768,
+    "hi": -0.007644849200581302,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t14c",
+    "as_M": "t13",
+    "band": 1,
+    "mine": "UNDECIDED",
+    "thresholds": "UNDECIDED",
+    "d": 0.006559206940406978,
+    "lo": 0.0060919955941131565,
+    "hi": 0.007033245707666904,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t14c",
+    "as_M": "t13",
+    "band": 2,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": 0.0018134538517441858,
+    "lo": 0.0014691389216933367,
+    "hi": 0.0021378911927689218,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t14c",
+    "as_M": "t13",
+    "band": 3,
+    "mine": "UNDECIDED",
+    "thresholds": "UNDECIDED",
+    "d": 0.0035202807049418603,
+    "lo": 0.00321445198946222,
+    "hi": 0.0038277332394620906,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t14c",
+    "as_M": "t14b",
+    "band": 0,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -2.2597202034883707e-05,
+    "lo": -4.940441042877865e-05,
+    "hi": 4.315043604651173e-06,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t14c",
+    "as_M": "t14b",
+    "band": 1,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": 2.8388444767442076e-06,
+    "lo": -3.202500454215105e-05,
+    "hi": 3.793263989825578e-05,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t14c",
+    "as_M": "t14b",
+    "band": 2,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -2.816133720930231e-05,
+    "lo": -5.5984851925871724e-05,
+    "hi": 2.838844476702794e-09,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t14c",
+    "as_M": "t14b",
+    "band": 3,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -1.7487281976744187e-05,
+    "lo": -4.0882199309592904e-05,
+    "hi": 7.046011991279043e-06,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t14c",
+    "as_M": "t15",
+    "band": 0,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": 0.0076337501297757465,
+    "lo": 0.007091066480870901,
+    "hi": 0.008143985380761994,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t14c",
+    "as_M": "t15",
+    "band": 1,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.004295058139534883,
+    "lo": -0.0046594011173690395,
+    "hi": -0.0039155585710391756,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t14c",
+    "as_M": "t15",
+    "band": 2,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.0013616233648255816,
+    "lo": -0.0016124636627906893,
+    "hi": -0.0011090400163517459,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t14c",
+    "as_M": "t15",
+    "band": 3,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.001495503270348837,
+    "lo": -0.0017226505723110515,
+    "hi": -0.0012515414925508787,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t15",
+    "as_M": "t00",
+    "band": 0,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.16332328112022426,
+    "lo": 0.16161983938629346,
+    "hi": 0.16504300484388273,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t15",
+    "as_M": "t00",
+    "band": 1,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.17685262990552328,
+    "lo": 0.17513852993277937,
+    "hi": 0.17840301655614282,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t15",
+    "as_M": "t00",
+    "band": 2,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.19212981468023257,
+    "lo": 0.19058390772620365,
+    "hi": 0.19376355548237953,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t15",
+    "as_M": "t00",
+    "band": 3,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.2021358330305233,
+    "lo": 0.20053542877907826,
+    "hi": 0.20365405273438308,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t15",
+    "as_M": "t12",
+    "band": 0,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.019939459613787378,
+    "lo": -0.020733355854831596,
+    "hi": -0.01917379689770985,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t15",
+    "as_M": "t12",
+    "band": 1,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": 0.005314203306686046,
+    "lo": 0.004683048691860436,
+    "hi": 0.005885330555050762,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t15",
+    "as_M": "t12",
+    "band": 2,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": 0.0009221702398255815,
+    "lo": 0.00045668774981831275,
+    "hi": 0.0013745684956395392,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t15",
+    "as_M": "t12",
+    "band": 3,
+    "mine": "UNDECIDED",
+    "thresholds": "UNDECIDED",
+    "d": 0.003161110101744187,
+    "lo": 0.0027089361146439327,
+    "hi": 0.0035887649890987403,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t15",
+    "as_M": "t13",
+    "band": 0,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.01585527084198505,
+    "lo": -0.016516183441262607,
+    "hi": -0.015226732425118747,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t15",
+    "as_M": "t13",
+    "band": 1,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.01085426507994186,
+    "lo": 0.010360842682593643,
+    "hi": 0.011352624227833332,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t15",
+    "as_M": "t13",
+    "band": 2,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.0031750772165697674,
+    "lo": 0.002797252566315438,
+    "hi": 0.00353588015534156,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t15",
+    "as_M": "t13",
+    "band": 3,
+    "mine": "SUPPORTED",
+    "thresholds": "SUPPORTED",
+    "d": 0.005015783975290698,
+    "lo": 0.004678517896075452,
+    "hi": 0.0053737338753631105,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t15",
+    "as_M": "t14b",
+    "band": 0,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.007656347331810631,
+    "lo": -0.008167113852263163,
+    "hi": -0.0071179410104338856,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t15",
+    "as_M": "t14b",
+    "band": 1,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": 0.004297896984011627,
+    "lo": 0.003918124886446167,
+    "hi": 0.004668087981467961,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t15",
+    "as_M": "t14b",
+    "band": 2,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": 0.0013334620276162792,
+    "lo": 0.001080793513808138,
+    "hi": 0.0015826416015624985,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t15",
+    "as_M": "t14b",
+    "band": 3,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": 0.001478015988372093,
+    "lo": 0.0012333416606104778,
+    "hi": 0.001705580600472388,
+    "bar": 0.0035377679869185857
+   },
+   {
+    "as_G": "t15",
+    "as_M": "t14c",
+    "band": 0,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": -0.0076337501297757465,
+    "lo": -0.008143985380761994,
+    "hi": -0.007091066480870901,
+    "bar": 0.008198923510174372
+   },
+   {
+    "as_G": "t15",
+    "as_M": "t14c",
+    "band": 1,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": 0.004295058139534883,
+    "lo": 0.0039155585710391756,
+    "hi": 0.0046594011173690395,
+    "bar": 0.006556368095930229
+   },
+   {
+    "as_G": "t15",
+    "as_M": "t14c",
+    "band": 2,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": 0.0013616233648255816,
+    "lo": 0.0011090400163517456,
+    "hi": 0.0016124636627906893,
+    "bar": 0.0022529069767441845
+   },
+   {
+    "as_G": "t15",
+    "as_M": "t14c",
+    "band": 3,
+    "mine": "REFUTED",
+    "thresholds": "REFUTED",
+    "d": 0.001495503270348837,
+    "lo": 0.0012515414925508782,
+    "hi": 0.0017226505723110512,
+    "bar": 0.0035377679869185857
+   }
+  ]
+ }
+}

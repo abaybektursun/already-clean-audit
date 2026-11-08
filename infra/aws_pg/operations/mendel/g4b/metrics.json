@@ -1,0 +1,1024 @@
+{
+  "arm": "G4b",
+  "atlas": {
+    "n_rows": 216,
+    "n_vectors": 216,
+    "path": "/work/out/atlas.parquet"
+  },
+  "base_repo": "google/paligemma-3b-pt-224",
+  "base_sha": "35e4f46485b4d07967e7e9935bc3786aad50687c",
+  "consumers": {
+    "MN-2/MN-13": "a non-diagonal energy-matched control subspace",
+    "MN-7": "the activation span for the SGD out-of-span test"
+  },
+  "excluded_types": [
+    "down_proj"
+  ],
+  "exclusion_reason": "input axis 16384 -> 2.1 GB per site, 38 GB over layers (freeze A3)",
+  "n_frozen_windows": 24,
+  "n_sites": 108,
+  "provenance": {
+    "branch": "science/mendel",
+    "commit_sha": "0f15effa801e6c718e55852c3e7e07c36162dd78",
+    "dirty": false,
+    "dirty_files": [],
+    "program": "mendel",
+    "source": "scripts/mendel_stamp.py",
+    "stamped_utc": "2026-08-19T18:30:14Z",
+    "tags_at_head": []
+  },
+  "queue_item": "12",
+  "sites": [
+    {
+      "lambda_max": 1978.580401303756,
+      "lambda_min": 2.265630316790414e-20,
+      "layer": 0,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 2.643443595038275,
+      "top_k_energy_share": 0.9609465803204486,
+      "type": "gate_proj"
+    },
+    {
+      "lambda_max": 392.5468831586233,
+      "lambda_min": 0.0,
+      "layer": 1,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 7.167690251330164,
+      "top_k_energy_share": 0.89341491916547,
+      "type": "gate_proj"
+    },
+    {
+      "lambda_max": 478.0303286588046,
+      "lambda_min": 2.0544929180380336e-17,
+      "layer": 2,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 6.268870077411941,
+      "top_k_energy_share": 0.8855854789133388,
+      "type": "gate_proj"
+    },
+    {
+      "lambda_max": 245.95926559988143,
+      "lambda_min": 0.0,
+      "layer": 3,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 10.693465599296594,
+      "top_k_energy_share": 0.8603019851826907,
+      "type": "gate_proj"
+    },
+    {
+      "lambda_max": 194.09786851639748,
+      "lambda_min": 1.0122877936581344e-17,
+      "layer": 4,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 10.532478833787687,
+      "top_k_energy_share": 0.869183360738875,
+      "type": "gate_proj"
+    },
+    {
+      "lambda_max": 196.89439550410125,
+      "lambda_min": 1.1493657390740544e-17,
+      "layer": 5,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 10.603419185236161,
+      "top_k_energy_share": 0.8691199390104545,
+      "type": "gate_proj"
+    },
+    {
+      "lambda_max": 268.0319752513606,
+      "lambda_min": 9.675432695915283e-05,
+      "layer": 6,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 7.457147311329355,
+      "top_k_energy_share": 0.8984236810508043,
+      "type": "gate_proj"
+    },
+    {
+      "lambda_max": 212.75672237970036,
+      "lambda_min": 0.0013228917926956347,
+      "layer": 7,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 8.569046863496576,
+      "top_k_energy_share": 0.9003446212222663,
+      "type": "gate_proj"
+    },
+    {
+      "lambda_max": 231.0494181162634,
+      "lambda_min": 0.0,
+      "layer": 8,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 8.21209497144328,
+      "top_k_energy_share": 0.9018469620855347,
+      "type": "gate_proj"
+    },
+    {
+      "lambda_max": 235.7259857685453,
+      "lambda_min": 0.0009091598650899054,
+      "layer": 9,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 7.743748111497892,
+      "top_k_energy_share": 0.9093731141413636,
+      "type": "gate_proj"
+    },
+    {
+      "lambda_max": 332.3884328794842,
+      "lambda_min": 0.0006736049405536634,
+      "layer": 10,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 7.237202379757119,
+      "top_k_energy_share": 0.911641902444054,
+      "type": "gate_proj"
+    },
+    {
+      "lambda_max": 462.8401025443732,
+      "lambda_min": 0.0003897278042900202,
+      "layer": 11,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 6.263866148749435,
+      "top_k_energy_share": 0.9228744234038299,
+      "type": "gate_proj"
+    },
+    {
+      "lambda_max": 522.7127791385691,
+      "lambda_min": 0.0,
+      "layer": 12,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 6.987553837284781,
+      "top_k_energy_share": 0.9197535161563795,
+      "type": "gate_proj"
+    },
+    {
+      "lambda_max": 1018.9804240646547,
+      "lambda_min": 0.00036708782704877933,
+      "layer": 13,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 5.762725737223641,
+      "top_k_energy_share": 0.935273523685804,
+      "type": "gate_proj"
+    },
+    {
+      "lambda_max": 1468.4938157840784,
+      "lambda_min": 0.0,
+      "layer": 14,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 7.041399303975278,
+      "top_k_energy_share": 0.9373471780405153,
+      "type": "gate_proj"
+    },
+    {
+      "lambda_max": 1032.8802502025442,
+      "lambda_min": 1.9522406704699707e-16,
+      "layer": 15,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 10.722382569827275,
+      "top_k_energy_share": 0.9165305889006118,
+      "type": "gate_proj"
+    },
+    {
+      "lambda_max": 1292.9976460919602,
+      "lambda_min": 1.294166895188496e-17,
+      "layer": 16,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 8.772132088396688,
+      "top_k_energy_share": 0.9238550349077824,
+      "type": "gate_proj"
+    },
+    {
+      "lambda_max": 3525.9840376974967,
+      "lambda_min": 0.0031840431252379586,
+      "layer": 17,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 4.305544281748591,
+      "top_k_energy_share": 0.9500819829424161,
+      "type": "gate_proj"
+    },
+    {
+      "lambda_max": 1686.6971703357278,
+      "lambda_min": 0.0,
+      "layer": 0,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 5.004930593722234,
+      "top_k_energy_share": 0.9670622881843276,
+      "type": "k_proj"
+    },
+    {
+      "lambda_max": 398.8687478867272,
+      "lambda_min": 0.0018810424886051612,
+      "layer": 1,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 6.288448983721265,
+      "top_k_energy_share": 0.9440315308125837,
+      "type": "k_proj"
+    },
+    {
+      "lambda_max": 325.44728487780225,
+      "lambda_min": 0.0032733074406228893,
+      "layer": 2,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 6.576891620301632,
+      "top_k_energy_share": 0.917932264771086,
+      "type": "k_proj"
+    },
+    {
+      "lambda_max": 432.8190971614521,
+      "lambda_min": 0.005268287726210171,
+      "layer": 3,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 4.54321253949726,
+      "top_k_energy_share": 0.9367026340500842,
+      "type": "k_proj"
+    },
+    {
+      "lambda_max": 403.22259769231437,
+      "lambda_min": 0.0037268440674849477,
+      "layer": 4,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 4.075335065570943,
+      "top_k_energy_share": 0.9435196921415078,
+      "type": "k_proj"
+    },
+    {
+      "lambda_max": 319.17554022750795,
+      "lambda_min": 0.0039437455323421515,
+      "layer": 5,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 5.770847605376158,
+      "top_k_energy_share": 0.930218883767096,
+      "type": "k_proj"
+    },
+    {
+      "lambda_max": 420.1181000004886,
+      "lambda_min": 0.0028605404083200466,
+      "layer": 6,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 4.884928158799835,
+      "top_k_energy_share": 0.933099388721886,
+      "type": "k_proj"
+    },
+    {
+      "lambda_max": 425.871917730271,
+      "lambda_min": 0.002953798519630695,
+      "layer": 7,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 3.937708009219035,
+      "top_k_energy_share": 0.9519558728176406,
+      "type": "k_proj"
+    },
+    {
+      "lambda_max": 476.8872760848642,
+      "lambda_min": 0.0018592675232752935,
+      "layer": 8,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 4.629193666329572,
+      "top_k_energy_share": 0.9388717967640474,
+      "type": "k_proj"
+    },
+    {
+      "lambda_max": 1122.4402221498988,
+      "lambda_min": 0.0018679603516254019,
+      "layer": 9,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 2.4090925640515155,
+      "top_k_energy_share": 0.9732420134398424,
+      "type": "k_proj"
+    },
+    {
+      "lambda_max": 735.4664314921735,
+      "lambda_min": 0.0029722860267646276,
+      "layer": 10,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 3.531036493331114,
+      "top_k_energy_share": 0.9545287260864439,
+      "type": "k_proj"
+    },
+    {
+      "lambda_max": 1261.7738439861657,
+      "lambda_min": 0.005311961487668751,
+      "layer": 11,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 3.377503612250712,
+      "top_k_energy_share": 0.9531332187388575,
+      "type": "k_proj"
+    },
+    {
+      "lambda_max": 936.5956755348461,
+      "lambda_min": 0.005250662983512763,
+      "layer": 12,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 4.786146161086432,
+      "top_k_energy_share": 0.9359556443115188,
+      "type": "k_proj"
+    },
+    {
+      "lambda_max": 1443.234944830574,
+      "lambda_min": 0.007492693763516183,
+      "layer": 13,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 3.4551688022503115,
+      "top_k_energy_share": 0.9590972596862679,
+      "type": "k_proj"
+    },
+    {
+      "lambda_max": 1642.7231077289061,
+      "lambda_min": 0.00765321868160709,
+      "layer": 14,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 7.911163245220774,
+      "top_k_energy_share": 0.957972276617731,
+      "type": "k_proj"
+    },
+    {
+      "lambda_max": 1449.0244009986732,
+      "lambda_min": 0.0036157906679144154,
+      "layer": 15,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 6.70177020719565,
+      "top_k_energy_share": 0.9421045948781446,
+      "type": "k_proj"
+    },
+    {
+      "lambda_max": 2664.49088223438,
+      "lambda_min": 0.00407134770565345,
+      "layer": 16,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 3.6415247309115606,
+      "top_k_energy_share": 0.9523395162676015,
+      "type": "k_proj"
+    },
+    {
+      "lambda_max": 5393.014326576608,
+      "lambda_min": 0.006175115855017987,
+      "layer": 17,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 2.4061569666861686,
+      "top_k_energy_share": 0.966872686331333,
+      "type": "k_proj"
+    },
+    {
+      "lambda_max": 1803.1921327284517,
+      "lambda_min": 0.0,
+      "layer": 0,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 4.438576252492499,
+      "top_k_energy_share": 0.9866257097664984,
+      "type": "o_proj"
+    },
+    {
+      "lambda_max": 329.3479455641087,
+      "lambda_min": 0.00010567638297079412,
+      "layer": 1,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 4.736844386498597,
+      "top_k_energy_share": 0.9607093354763869,
+      "type": "o_proj"
+    },
+    {
+      "lambda_max": 123.53803073049399,
+      "lambda_min": 0.0004076802391315325,
+      "layer": 2,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 10.17924950223925,
+      "top_k_energy_share": 0.9187387905574219,
+      "type": "o_proj"
+    },
+    {
+      "lambda_max": 152.95625814910906,
+      "lambda_min": 0.00026223730894116645,
+      "layer": 3,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 6.451675052938463,
+      "top_k_energy_share": 0.9532458041081894,
+      "type": "o_proj"
+    },
+    {
+      "lambda_max": 121.37634547724686,
+      "lambda_min": 9.1801346817225e-05,
+      "layer": 4,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 6.574350108171398,
+      "top_k_energy_share": 0.9550724944294124,
+      "type": "o_proj"
+    },
+    {
+      "lambda_max": 96.99650708004576,
+      "lambda_min": 0.0003900873387873948,
+      "layer": 5,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 7.017671474126098,
+      "top_k_energy_share": 0.9541215379523316,
+      "type": "o_proj"
+    },
+    {
+      "lambda_max": 154.65102373528714,
+      "lambda_min": 6.833016432643586e-05,
+      "layer": 6,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 5.511636140130077,
+      "top_k_energy_share": 0.9813687006127026,
+      "type": "o_proj"
+    },
+    {
+      "lambda_max": 125.85220625294073,
+      "lambda_min": 0.0001642929572437973,
+      "layer": 7,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 5.536790638994699,
+      "top_k_energy_share": 0.9686858175869969,
+      "type": "o_proj"
+    },
+    {
+      "lambda_max": 151.8951853809251,
+      "lambda_min": 0.00013927689146837782,
+      "layer": 8,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 4.9663383934690755,
+      "top_k_energy_share": 0.9743071798129609,
+      "type": "o_proj"
+    },
+    {
+      "lambda_max": 176.3532773571523,
+      "lambda_min": 0.0002993941098462836,
+      "layer": 9,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 6.364986338483672,
+      "top_k_energy_share": 0.9715327150765309,
+      "type": "o_proj"
+    },
+    {
+      "lambda_max": 236.25116932928313,
+      "lambda_min": 0.0001869135055467131,
+      "layer": 10,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 4.385068658333655,
+      "top_k_energy_share": 0.9780400703583227,
+      "type": "o_proj"
+    },
+    {
+      "lambda_max": 356.1177666395511,
+      "lambda_min": 0.00034350218549540704,
+      "layer": 11,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 5.230158167700845,
+      "top_k_energy_share": 0.9707242646600355,
+      "type": "o_proj"
+    },
+    {
+      "lambda_max": 563.4836633745214,
+      "lambda_min": 0.0007302035889665085,
+      "layer": 12,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 5.297966212495667,
+      "top_k_energy_share": 0.9762797957339453,
+      "type": "o_proj"
+    },
+    {
+      "lambda_max": 603.5088331103029,
+      "lambda_min": 7.485204335766558e-05,
+      "layer": 13,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 5.260160055967121,
+      "top_k_energy_share": 0.9734882251048735,
+      "type": "o_proj"
+    },
+    {
+      "lambda_max": 1518.6149583067531,
+      "lambda_min": 0.0002724505876094169,
+      "layer": 14,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 6.7775853895076015,
+      "top_k_energy_share": 0.9536491191633094,
+      "type": "o_proj"
+    },
+    {
+      "lambda_max": 1527.7279572348873,
+      "lambda_min": 3.358878609495134e-05,
+      "layer": 15,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 4.768440849687283,
+      "top_k_energy_share": 0.9887833088589382,
+      "type": "o_proj"
+    },
+    {
+      "lambda_max": 1503.6783364890575,
+      "lambda_min": 0.0001907940118714487,
+      "layer": 16,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 4.36203824278849,
+      "top_k_energy_share": 0.9846715713753458,
+      "type": "o_proj"
+    },
+    {
+      "lambda_max": 922.5117698325478,
+      "lambda_min": 8.588219209825164e-05,
+      "layer": 17,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 7.001115321648169,
+      "top_k_energy_share": 0.9746615374681407,
+      "type": "o_proj"
+    },
+    {
+      "lambda_max": 1686.6971703357278,
+      "lambda_min": 0.0,
+      "layer": 0,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 5.004930593722234,
+      "top_k_energy_share": 0.9670622881843276,
+      "type": "q_proj"
+    },
+    {
+      "lambda_max": 398.8687478867272,
+      "lambda_min": 0.0018810424886051612,
+      "layer": 1,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 6.288448983721265,
+      "top_k_energy_share": 0.9440315308125837,
+      "type": "q_proj"
+    },
+    {
+      "lambda_max": 325.44728487780225,
+      "lambda_min": 0.0032733074406228893,
+      "layer": 2,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 6.576891620301632,
+      "top_k_energy_share": 0.917932264771086,
+      "type": "q_proj"
+    },
+    {
+      "lambda_max": 432.8190971614521,
+      "lambda_min": 0.005268287726210171,
+      "layer": 3,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 4.54321253949726,
+      "top_k_energy_share": 0.9367026340500842,
+      "type": "q_proj"
+    },
+    {
+      "lambda_max": 403.22259769231437,
+      "lambda_min": 0.0037268440674849477,
+      "layer": 4,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 4.075335065570943,
+      "top_k_energy_share": 0.9435196921415078,
+      "type": "q_proj"
+    },
+    {
+      "lambda_max": 319.17554022750795,
+      "lambda_min": 0.0039437455323421515,
+      "layer": 5,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 5.770847605376158,
+      "top_k_energy_share": 0.930218883767096,
+      "type": "q_proj"
+    },
+    {
+      "lambda_max": 420.1181000004886,
+      "lambda_min": 0.0028605404083200466,
+      "layer": 6,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 4.884928158799835,
+      "top_k_energy_share": 0.933099388721886,
+      "type": "q_proj"
+    },
+    {
+      "lambda_max": 425.871917730271,
+      "lambda_min": 0.002953798519630695,
+      "layer": 7,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 3.937708009219035,
+      "top_k_energy_share": 0.9519558728176406,
+      "type": "q_proj"
+    },
+    {
+      "lambda_max": 476.8872760848642,
+      "lambda_min": 0.0018592675232752935,
+      "layer": 8,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 4.629193666329572,
+      "top_k_energy_share": 0.9388717967640474,
+      "type": "q_proj"
+    },
+    {
+      "lambda_max": 1122.4402221498988,
+      "lambda_min": 0.0018679603516254019,
+      "layer": 9,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 2.4090925640515155,
+      "top_k_energy_share": 0.9732420134398424,
+      "type": "q_proj"
+    },
+    {
+      "lambda_max": 735.4664314921735,
+      "lambda_min": 0.0029722860267646276,
+      "layer": 10,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 3.531036493331114,
+      "top_k_energy_share": 0.9545287260864439,
+      "type": "q_proj"
+    },
+    {
+      "lambda_max": 1261.7738439861657,
+      "lambda_min": 0.005311961487668751,
+      "layer": 11,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 3.377503612250712,
+      "top_k_energy_share": 0.9531332187388575,
+      "type": "q_proj"
+    },
+    {
+      "lambda_max": 936.5956755348461,
+      "lambda_min": 0.005250662983512763,
+      "layer": 12,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 4.786146161086432,
+      "top_k_energy_share": 0.9359556443115188,
+      "type": "q_proj"
+    },
+    {
+      "lambda_max": 1443.234944830574,
+      "lambda_min": 0.007492693763516183,
+      "layer": 13,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 3.4551688022503115,
+      "top_k_energy_share": 0.9590972596862679,
+      "type": "q_proj"
+    },
+    {
+      "lambda_max": 1642.7231077289061,
+      "lambda_min": 0.00765321868160709,
+      "layer": 14,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 7.911163245220774,
+      "top_k_energy_share": 0.957972276617731,
+      "type": "q_proj"
+    },
+    {
+      "lambda_max": 1449.0244009986732,
+      "lambda_min": 0.0036157906679144154,
+      "layer": 15,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 6.70177020719565,
+      "top_k_energy_share": 0.9421045948781446,
+      "type": "q_proj"
+    },
+    {
+      "lambda_max": 2664.49088223438,
+      "lambda_min": 0.00407134770565345,
+      "layer": 16,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 3.6415247309115606,
+      "top_k_energy_share": 0.9523395162676015,
+      "type": "q_proj"
+    },
+    {
+      "lambda_max": 5393.014326576608,
+      "lambda_min": 0.006175115855017987,
+      "layer": 17,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 2.4061569666861686,
+      "top_k_energy_share": 0.966872686331333,
+      "type": "q_proj"
+    },
+    {
+      "lambda_max": 1978.580401303756,
+      "lambda_min": 2.265630316790414e-20,
+      "layer": 0,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 2.643443595038275,
+      "top_k_energy_share": 0.9609465803204486,
+      "type": "up_proj"
+    },
+    {
+      "lambda_max": 392.5468831586233,
+      "lambda_min": 0.0,
+      "layer": 1,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 7.167690251330164,
+      "top_k_energy_share": 0.89341491916547,
+      "type": "up_proj"
+    },
+    {
+      "lambda_max": 478.0303286588046,
+      "lambda_min": 2.0544929180380336e-17,
+      "layer": 2,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 6.268870077411941,
+      "top_k_energy_share": 0.8855854789133388,
+      "type": "up_proj"
+    },
+    {
+      "lambda_max": 245.95926559988143,
+      "lambda_min": 0.0,
+      "layer": 3,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 10.693465599296594,
+      "top_k_energy_share": 0.8603019851826907,
+      "type": "up_proj"
+    },
+    {
+      "lambda_max": 194.09786851639748,
+      "lambda_min": 1.0122877936581344e-17,
+      "layer": 4,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 10.532478833787687,
+      "top_k_energy_share": 0.869183360738875,
+      "type": "up_proj"
+    },
+    {
+      "lambda_max": 196.89439550410125,
+      "lambda_min": 1.1493657390740544e-17,
+      "layer": 5,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 10.603419185236161,
+      "top_k_energy_share": 0.8691199390104545,
+      "type": "up_proj"
+    },
+    {
+      "lambda_max": 268.0319752513606,
+      "lambda_min": 9.675432695915283e-05,
+      "layer": 6,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 7.457147311329355,
+      "top_k_energy_share": 0.8984236810508043,
+      "type": "up_proj"
+    },
+    {
+      "lambda_max": 212.75672237970036,
+      "lambda_min": 0.0013228917926956347,
+      "layer": 7,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 8.569046863496576,
+      "top_k_energy_share": 0.9003446212222663,
+      "type": "up_proj"
+    },
+    {
+      "lambda_max": 231.0494181162634,
+      "lambda_min": 0.0,
+      "layer": 8,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 8.21209497144328,
+      "top_k_energy_share": 0.9018469620855347,
+      "type": "up_proj"
+    },
+    {
+      "lambda_max": 235.7259857685453,
+      "lambda_min": 0.0009091598650899054,
+      "layer": 9,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 7.743748111497892,
+      "top_k_energy_share": 0.9093731141413636,
+      "type": "up_proj"
+    },
+    {
+      "lambda_max": 332.3884328794842,
+      "lambda_min": 0.0006736049405536634,
+      "layer": 10,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 7.237202379757119,
+      "top_k_energy_share": 0.911641902444054,
+      "type": "up_proj"
+    },
+    {
+      "lambda_max": 462.8401025443732,
+      "lambda_min": 0.0003897278042900202,
+      "layer": 11,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 6.263866148749435,
+      "top_k_energy_share": 0.9228744234038299,
+      "type": "up_proj"
+    },
+    {
+      "lambda_max": 522.7127791385691,
+      "lambda_min": 0.0,
+      "layer": 12,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 6.987553837284781,
+      "top_k_energy_share": 0.9197535161563795,
+      "type": "up_proj"
+    },
+    {
+      "lambda_max": 1018.9804240646547,
+      "lambda_min": 0.00036708782704877933,
+      "layer": 13,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 5.762725737223641,
+      "top_k_energy_share": 0.935273523685804,
+      "type": "up_proj"
+    },
+    {
+      "lambda_max": 1468.4938157840784,
+      "lambda_min": 0.0,
+      "layer": 14,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 7.041399303975278,
+      "top_k_energy_share": 0.9373471780405153,
+      "type": "up_proj"
+    },
+    {
+      "lambda_max": 1032.8802502025442,
+      "lambda_min": 1.9522406704699707e-16,
+      "layer": 15,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 10.722382569827275,
+      "top_k_energy_share": 0.9165305889006118,
+      "type": "up_proj"
+    },
+    {
+      "lambda_max": 1292.9976460919602,
+      "lambda_min": 1.294166895188496e-17,
+      "layer": 16,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 8.772132088396688,
+      "top_k_energy_share": 0.9238550349077824,
+      "type": "up_proj"
+    },
+    {
+      "lambda_max": 3525.9840376974967,
+      "lambda_min": 0.0031840431252379586,
+      "layer": 17,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 4.305544281748591,
+      "top_k_energy_share": 0.9500819829424161,
+      "type": "up_proj"
+    },
+    {
+      "lambda_max": 1686.6971703357278,
+      "lambda_min": 0.0,
+      "layer": 0,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 5.004930593722234,
+      "top_k_energy_share": 0.9670622881843276,
+      "type": "v_proj"
+    },
+    {
+      "lambda_max": 398.8687478867272,
+      "lambda_min": 0.0018810424886051612,
+      "layer": 1,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 6.288448983721265,
+      "top_k_energy_share": 0.9440315308125837,
+      "type": "v_proj"
+    },
+    {
+      "lambda_max": 325.44728487780225,
+      "lambda_min": 0.0032733074406228893,
+      "layer": 2,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 6.576891620301632,
+      "top_k_energy_share": 0.917932264771086,
+      "type": "v_proj"
+    },
+    {
+      "lambda_max": 432.8190971614521,
+      "lambda_min": 0.005268287726210171,
+      "layer": 3,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 4.54321253949726,
+      "top_k_energy_share": 0.9367026340500842,
+      "type": "v_proj"
+    },
+    {
+      "lambda_max": 403.22259769231437,
+      "lambda_min": 0.0037268440674849477,
+      "layer": 4,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 4.075335065570943,
+      "top_k_energy_share": 0.9435196921415078,
+      "type": "v_proj"
+    },
+    {
+      "lambda_max": 319.17554022750795,
+      "lambda_min": 0.0039437455323421515,
+      "layer": 5,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 5.770847605376158,
+      "top_k_energy_share": 0.930218883767096,
+      "type": "v_proj"
+    },
+    {
+      "lambda_max": 420.1181000004886,
+      "lambda_min": 0.0028605404083200466,
+      "layer": 6,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 4.884928158799835,
+      "top_k_energy_share": 0.933099388721886,
+      "type": "v_proj"
+    },
+    {
+      "lambda_max": 425.871917730271,
+      "lambda_min": 0.002953798519630695,
+      "layer": 7,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 3.937708009219035,
+      "top_k_energy_share": 0.9519558728176406,
+      "type": "v_proj"
+    },
+    {
+      "lambda_max": 476.8872760848642,
+      "lambda_min": 0.0018592675232752935,
+      "layer": 8,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 4.629193666329572,
+      "top_k_energy_share": 0.9388717967640474,
+      "type": "v_proj"
+    },
+    {
+      "lambda_max": 1122.4402221498988,
+      "lambda_min": 0.0018679603516254019,
+      "layer": 9,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 2.4090925640515155,
+      "top_k_energy_share": 0.9732420134398424,
+      "type": "v_proj"
+    },
+    {
+      "lambda_max": 735.4664314921735,
+      "lambda_min": 0.0029722860267646276,
+      "layer": 10,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 3.531036493331114,
+      "top_k_energy_share": 0.9545287260864439,
+      "type": "v_proj"
+    },
+    {
+      "lambda_max": 1261.7738439861657,
+      "lambda_min": 0.005311961487668751,
+      "layer": 11,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 3.377503612250712,
+      "top_k_energy_share": 0.9531332187388575,
+      "type": "v_proj"
+    },
+    {
+      "lambda_max": 936.5956755348461,
+      "lambda_min": 0.005250662983512763,
+      "layer": 12,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 4.786146161086432,
+      "top_k_energy_share": 0.9359556443115188,
+      "type": "v_proj"
+    },
+    {
+      "lambda_max": 1443.234944830574,
+      "lambda_min": 0.007492693763516183,
+      "layer": 13,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 3.4551688022503115,
+      "top_k_energy_share": 0.9590972596862679,
+      "type": "v_proj"
+    },
+    {
+      "lambda_max": 1642.7231077289061,
+      "lambda_min": 0.00765321868160709,
+      "layer": 14,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 7.911163245220774,
+      "top_k_energy_share": 0.957972276617731,
+      "type": "v_proj"
+    },
+    {
+      "lambda_max": 1449.0244009986732,
+      "lambda_min": 0.0036157906679144154,
+      "layer": 15,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 6.70177020719565,
+      "top_k_energy_share": 0.9421045948781446,
+      "type": "v_proj"
+    },
+    {
+      "lambda_max": 2664.49088223438,
+      "lambda_min": 0.00407134770565345,
+      "layer": 16,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 3.6415247309115606,
+      "top_k_energy_share": 0.9523395162676015,
+      "type": "v_proj"
+    },
+    {
+      "lambda_max": 5393.014326576608,
+      "lambda_min": 0.006175115855017987,
+      "layer": 17,
+      "n_tokens": 18480,
+      "spectrum_participation_ratio": 2.4061569666861686,
+      "top_k_energy_share": 0.966872686331333,
+      "type": "v_proj"
+    }
+  ],
+  "top_k": 512,
+  "top_k_energy_share": {
+    "max": 0.9887833088589382,
+    "median": 0.9428121435098262,
+    "min": 0.8603019851826907
+  },
+  "types": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj"
+  ],
+  "vectors_banked": [
+    "act_gram_evecs",
+    "act_gram_evals"
+  ],
+  "verdict": "BANKED"
+}

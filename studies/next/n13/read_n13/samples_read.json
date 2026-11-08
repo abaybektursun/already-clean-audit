@@ -1,0 +1,524 @@
+{
+ "base": {
+  "rows": [
+   {
+    "i": 0,
+    "roles": [
+     "fixed",
+     "lowest_right"
+    ],
+    "prompt_starts_with_instruction": true,
+    "problem_first_line": "Convert the point $(0,3)$ in rectangular coordinates to polar coordinates.  Enter your answer in the form $(r,\\theta),$ where $r > 0$ and $0 \\le \\theta < 2 \\pi.",
+    "mode": "answer_line",
+    "extracted": "(3, \u03c0/2)",
+    "gold": "\\left( 3, \\frac{\\pi}{2} \\right)",
+    "score": 1,
+    "regrade": 1,
+    "n_new": 686,
+    "cap_hit": false,
+    "finish_reason": "stop",
+    "answer_prob": 0.39719237469518,
+    "equals_generations_record": true,
+    "n_fields_compared": 25
+   },
+   {
+    "i": 1,
+    "roles": [
+     "fixed"
+    ],
+    "prompt_starts_with_instruction": true,
+    "problem_first_line": "Define",
+    "mode": "boxed",
+    "extracted": "p - q",
+    "gold": "p - q",
+    "score": 1,
+    "regrade": 1,
+    "n_new": 617,
+    "cap_hit": false,
+    "finish_reason": "stop",
+    "answer_prob": 0.9885908630284495,
+    "equals_generations_record": true,
+    "n_fields_compared": 25
+   },
+   {
+    "i": 2,
+    "roles": [
+     "fixed",
+     "lowest_wrong"
+    ],
+    "prompt_starts_with_instruction": true,
+    "problem_first_line": "If $f(x) = \\frac{3x-2}{x-2}$, what is the value of $f(-2) +f(-1)+f(0)$? Express your answer as a common fraction.",
+    "mode": "boxed",
+    "extracted": "-1",
+    "gold": "\\frac{14}{3}",
+    "score": 0,
+    "regrade": 0,
+    "n_new": 349,
+    "cap_hit": false,
+    "finish_reason": "stop",
+    "answer_prob": 0.9949541581268773,
+    "equals_generations_record": true,
+    "n_fields_compared": 25
+   },
+   {
+    "i": 9,
+    "roles": [
+     "cap_hit"
+    ],
+    "prompt_starts_with_instruction": true,
+    "problem_first_line": "The expression $2\\cdot 3 \\cdot 4\\cdot 5+1$ is equal to 121, since multiplication is carried out before addition. However, we can obtain values other than 121 fo",
+    "mode": "none",
+    "extracted": null,
+    "gold": "4",
+    "score": 0,
+    "regrade": 0,
+    "n_new": 16384,
+    "cap_hit": true,
+    "finish_reason": "length",
+    "answer_prob": null,
+    "equals_generations_record": true,
+    "n_fields_compared": 25
+   }
+  ],
+  "lowest_right": 0,
+  "lowest_wrong": 2,
+  "first_cap_hit": 9,
+  "covers_0_1_2_right_wrong": true,
+  "has_a_cap_hit_row": true
+ },
+ "rl": {
+  "rows": [
+   {
+    "i": 0,
+    "roles": [
+     "fixed",
+     "lowest_right"
+    ],
+    "prompt_starts_with_instruction": true,
+    "problem_first_line": "Convert the point $(0,3)$ in rectangular coordinates to polar coordinates.  Enter your answer in the form $(r,\\theta),$ where $r > 0$ and $0 \\le \\theta < 2 \\pi.",
+    "mode": "boxed",
+    "extracted": "(3, \\frac{\\pi}{2})",
+    "gold": "\\left( 3, \\frac{\\pi}{2} \\right)",
+    "score": 1,
+    "regrade": 1,
+    "n_new": 1183,
+    "cap_hit": false,
+    "finish_reason": "stop",
+    "answer_prob": 0.4497561233121925,
+    "equals_generations_record": true,
+    "n_fields_compared": 25
+   },
+   {
+    "i": 1,
+    "roles": [
+     "fixed"
+    ],
+    "prompt_starts_with_instruction": true,
+    "problem_first_line": "Define",
+    "mode": "boxed",
+    "extracted": "p - q",
+    "gold": "p - q",
+    "score": 1,
+    "regrade": 1,
+    "n_new": 2648,
+    "cap_hit": false,
+    "finish_reason": "stop",
+    "answer_prob": 0.9999847413758958,
+    "equals_generations_record": true,
+    "n_fields_compared": 25
+   },
+   {
+    "i": 2,
+    "roles": [
+     "fixed"
+    ],
+    "prompt_starts_with_instruction": true,
+    "problem_first_line": "If $f(x) = \\frac{3x-2}{x-2}$, what is the value of $f(-2) +f(-1)+f(0)$? Express your answer as a common fraction.",
+    "mode": "boxed",
+    "extracted": "\\frac{14}{3}",
+    "gold": "\\frac{14}{3}",
+    "score": 1,
+    "regrade": 1,
+    "n_new": 2171,
+    "cap_hit": false,
+    "finish_reason": "stop",
+    "answer_prob": 0.9605243071387316,
+    "equals_generations_record": true,
+    "n_fields_compared": 25
+   },
+   {
+    "i": 9,
+    "roles": [
+     "lowest_wrong",
+     "cap_hit"
+    ],
+    "prompt_starts_with_instruction": true,
+    "problem_first_line": "The expression $2\\cdot 3 \\cdot 4\\cdot 5+1$ is equal to 121, since multiplication is carried out before addition. However, we can obtain values other than 121 fo",
+    "mode": "none",
+    "extracted": null,
+    "gold": "4",
+    "score": 0,
+    "regrade": 0,
+    "n_new": 16384,
+    "cap_hit": true,
+    "finish_reason": "length",
+    "answer_prob": null,
+    "equals_generations_record": true,
+    "n_fields_compared": 25
+   }
+  ],
+  "lowest_right": 0,
+  "lowest_wrong": 9,
+  "first_cap_hit": 9,
+  "covers_0_1_2_right_wrong": true,
+  "has_a_cap_hit_row": true
+ },
+ "top_k1": {
+  "rows": [
+   {
+    "i": 0,
+    "roles": [
+     "fixed",
+     "lowest_right"
+    ],
+    "prompt_starts_with_instruction": true,
+    "problem_first_line": "Convert the point $(0,3)$ in rectangular coordinates to polar coordinates.  Enter your answer in the form $(r,\\theta),$ where $r > 0$ and $0 \\le \\theta < 2 \\pi.",
+    "mode": "answer_line",
+    "extracted": "$\\boxed{\\left(3, \\dfrac{\\pi}{2}\\right)}$",
+    "gold": "\\left( 3, \\frac{\\pi}{2} \\right)",
+    "score": 1,
+    "regrade": 1,
+    "n_new": 624,
+    "cap_hit": false,
+    "finish_reason": "stop",
+    "answer_prob": 0.018013243742474826,
+    "equals_generations_record": true,
+    "n_fields_compared": 25
+   },
+   {
+    "i": 1,
+    "roles": [
+     "fixed"
+    ],
+    "prompt_starts_with_instruction": true,
+    "problem_first_line": "Define",
+    "mode": "boxed",
+    "extracted": "p - q",
+    "gold": "p - q",
+    "score": 1,
+    "regrade": 1,
+    "n_new": 617,
+    "cap_hit": false,
+    "finish_reason": "stop",
+    "answer_prob": 0.9896414464611273,
+    "equals_generations_record": true,
+    "n_fields_compared": 25
+   },
+   {
+    "i": 2,
+    "roles": [
+     "fixed",
+     "lowest_wrong"
+    ],
+    "prompt_starts_with_instruction": true,
+    "problem_first_line": "If $f(x) = \\frac{3x-2}{x-2}$, what is the value of $f(-2) +f(-1)+f(0)$? Express your answer as a common fraction.",
+    "mode": "boxed",
+    "extracted": "-1",
+    "gold": "\\frac{14}{3}",
+    "score": 0,
+    "regrade": 0,
+    "n_new": 246,
+    "cap_hit": false,
+    "finish_reason": "stop",
+    "answer_prob": 0.9957080321215752,
+    "equals_generations_record": true,
+    "n_fields_compared": 25
+   },
+   {
+    "i": 10,
+    "roles": [
+     "cap_hit"
+    ],
+    "prompt_starts_with_instruction": true,
+    "problem_first_line": "What is the least positive integer multiple of 30 that can be written with only the digits 0 and 2?",
+    "mode": "none",
+    "extracted": null,
+    "gold": "2220",
+    "score": 0,
+    "regrade": 0,
+    "n_new": 16384,
+    "cap_hit": true,
+    "finish_reason": "length",
+    "answer_prob": null,
+    "equals_generations_record": true,
+    "n_fields_compared": 25
+   }
+  ],
+  "lowest_right": 0,
+  "lowest_wrong": 2,
+  "first_cap_hit": 10,
+  "covers_0_1_2_right_wrong": true,
+  "has_a_cap_hit_row": true
+ },
+ "dare_k1": {
+  "rows": [
+   {
+    "i": 0,
+    "roles": [
+     "fixed",
+     "lowest_right"
+    ],
+    "prompt_starts_with_instruction": true,
+    "problem_first_line": "Convert the point $(0,3)$ in rectangular coordinates to polar coordinates.  Enter your answer in the form $(r,\\theta),$ where $r > 0$ and $0 \\le \\theta < 2 \\pi.",
+    "mode": "boxed",
+    "extracted": "\\left(3, \\frac{\\pi}{2}\\right)",
+    "gold": "\\left( 3, \\frac{\\pi}{2} \\right)",
+    "score": 1,
+    "regrade": 1,
+    "n_new": 987,
+    "cap_hit": false,
+    "finish_reason": "stop",
+    "answer_prob": 0.9945711969595561,
+    "equals_generations_record": true,
+    "n_fields_compared": 25
+   },
+   {
+    "i": 1,
+    "roles": [
+     "fixed"
+    ],
+    "prompt_starts_with_instruction": true,
+    "problem_first_line": "Define",
+    "mode": "boxed",
+    "extracted": "p - q",
+    "gold": "p - q",
+    "score": 1,
+    "regrade": 1,
+    "n_new": 10427,
+    "cap_hit": false,
+    "finish_reason": "stop",
+    "answer_prob": 0.999985575817738,
+    "equals_generations_record": true,
+    "n_fields_compared": 25
+   },
+   {
+    "i": 2,
+    "roles": [
+     "fixed"
+    ],
+    "prompt_starts_with_instruction": true,
+    "problem_first_line": "If $f(x) = \\frac{3x-2}{x-2}$, what is the value of $f(-2) +f(-1)+f(0)$? Express your answer as a common fraction.",
+    "mode": "boxed",
+    "extracted": "\\dfrac{14}{3}",
+    "gold": "\\frac{14}{3}",
+    "score": 1,
+    "regrade": 1,
+    "n_new": 1370,
+    "cap_hit": false,
+    "finish_reason": "stop",
+    "answer_prob": 0.9995669230596274,
+    "equals_generations_record": true,
+    "n_fields_compared": 25
+   },
+   {
+    "i": 4,
+    "roles": [
+     "lowest_wrong",
+     "cap_hit"
+    ],
+    "prompt_starts_with_instruction": true,
+    "problem_first_line": "The results of a cross-country team's training run are graphed below. Which student has the greatest average speed? [asy]",
+    "mode": "none",
+    "extracted": null,
+    "gold": "\\text{Evelyn}",
+    "score": 0,
+    "regrade": 0,
+    "n_new": 16384,
+    "cap_hit": true,
+    "finish_reason": "length",
+    "answer_prob": null,
+    "equals_generations_record": true,
+    "n_fields_compared": 25
+   }
+  ],
+  "lowest_right": 0,
+  "lowest_wrong": 4,
+  "first_cap_hit": 4,
+  "covers_0_1_2_right_wrong": true,
+  "has_a_cap_hit_row": true
+ },
+ "rndE_k1": {
+  "rows": [
+   {
+    "i": 0,
+    "roles": [
+     "fixed",
+     "lowest_right"
+    ],
+    "prompt_starts_with_instruction": true,
+    "problem_first_line": "Convert the point $(0,3)$ in rectangular coordinates to polar coordinates.  Enter your answer in the form $(r,\\theta),$ where $r > 0$ and $0 \\le \\theta < 2 \\pi.",
+    "mode": "answer_line",
+    "extracted": "(3, \u03c0/2)",
+    "gold": "\\left( 3, \\frac{\\pi}{2} \\right)",
+    "score": 1,
+    "regrade": 1,
+    "n_new": 686,
+    "cap_hit": false,
+    "finish_reason": "stop",
+    "answer_prob": 0.39637855252485876,
+    "equals_generations_record": true,
+    "n_fields_compared": 25
+   },
+   {
+    "i": 1,
+    "roles": [
+     "fixed"
+    ],
+    "prompt_starts_with_instruction": true,
+    "problem_first_line": "Define",
+    "mode": "boxed",
+    "extracted": "p - q",
+    "gold": "p - q",
+    "score": 1,
+    "regrade": 1,
+    "n_new": 617,
+    "cap_hit": false,
+    "finish_reason": "stop",
+    "answer_prob": 0.9885594849466922,
+    "equals_generations_record": true,
+    "n_fields_compared": 25
+   },
+   {
+    "i": 2,
+    "roles": [
+     "fixed",
+     "lowest_wrong"
+    ],
+    "prompt_starts_with_instruction": true,
+    "problem_first_line": "If $f(x) = \\frac{3x-2}{x-2}$, what is the value of $f(-2) +f(-1)+f(0)$? Express your answer as a common fraction.",
+    "mode": "boxed",
+    "extracted": "-1",
+    "gold": "\\frac{14}{3}",
+    "score": 0,
+    "regrade": 0,
+    "n_new": 246,
+    "cap_hit": false,
+    "finish_reason": "stop",
+    "answer_prob": 0.9951732111905585,
+    "equals_generations_record": true,
+    "n_fields_compared": 25
+   },
+   {
+    "i": 11,
+    "roles": [
+     "cap_hit"
+    ],
+    "prompt_starts_with_instruction": true,
+    "problem_first_line": "Let $p(x)$ be a polynomial of degree 5 such that",
+    "mode": "none",
+    "extracted": null,
+    "gold": "\\frac{3}{56}",
+    "score": 0,
+    "regrade": 0,
+    "n_new": 16384,
+    "cap_hit": true,
+    "finish_reason": "length",
+    "answer_prob": null,
+    "equals_generations_record": true,
+    "n_fields_compared": 25
+   }
+  ],
+  "lowest_right": 0,
+  "lowest_wrong": 2,
+  "first_cap_hit": 11,
+  "covers_0_1_2_right_wrong": true,
+  "has_a_cap_hit_row": true
+ },
+ "attn": {
+  "rows": [
+   {
+    "i": 0,
+    "roles": [
+     "fixed",
+     "lowest_right"
+    ],
+    "prompt_starts_with_instruction": true,
+    "problem_first_line": "Convert the point $(0,3)$ in rectangular coordinates to polar coordinates.  Enter your answer in the form $(r,\\theta),$ where $r > 0$ and $0 \\le \\theta < 2 \\pi.",
+    "mode": "boxed",
+    "extracted": "\\left(3, \\frac{\\pi}{2}\\right)",
+    "gold": "\\left( 3, \\frac{\\pi}{2} \\right)",
+    "score": 1,
+    "regrade": 1,
+    "n_new": 1002,
+    "cap_hit": false,
+    "finish_reason": "stop",
+    "answer_prob": 0.9981684533837183,
+    "equals_generations_record": true,
+    "n_fields_compared": 25
+   },
+   {
+    "i": 1,
+    "roles": [
+     "fixed"
+    ],
+    "prompt_starts_with_instruction": true,
+    "problem_first_line": "Define",
+    "mode": "boxed",
+    "extracted": "p - q",
+    "gold": "p - q",
+    "score": 1,
+    "regrade": 1,
+    "n_new": 2206,
+    "cap_hit": false,
+    "finish_reason": "stop",
+    "answer_prob": 0.9999918938163999,
+    "equals_generations_record": true,
+    "n_fields_compared": 25
+   },
+   {
+    "i": 2,
+    "roles": [
+     "fixed"
+    ],
+    "prompt_starts_with_instruction": true,
+    "problem_first_line": "If $f(x) = \\frac{3x-2}{x-2}$, what is the value of $f(-2) +f(-1)+f(0)$? Express your answer as a common fraction.",
+    "mode": "boxed",
+    "extracted": "\\dfrac{14}{3}",
+    "gold": "\\frac{14}{3}",
+    "score": 1,
+    "regrade": 1,
+    "n_new": 1444,
+    "cap_hit": false,
+    "finish_reason": "stop",
+    "answer_prob": 0.9988208030859033,
+    "equals_generations_record": true,
+    "n_fields_compared": 25
+   },
+   {
+    "i": 9,
+    "roles": [
+     "lowest_wrong",
+     "cap_hit"
+    ],
+    "prompt_starts_with_instruction": true,
+    "problem_first_line": "The expression $2\\cdot 3 \\cdot 4\\cdot 5+1$ is equal to 121, since multiplication is carried out before addition. However, we can obtain values other than 121 fo",
+    "mode": "none",
+    "extracted": null,
+    "gold": "4",
+    "score": 0,
+    "regrade": 0,
+    "n_new": 16384,
+    "cap_hit": true,
+    "finish_reason": "length",
+    "answer_prob": null,
+    "equals_generations_record": true,
+    "n_fields_compared": 25
+   }
+  ],
+  "lowest_right": 0,
+  "lowest_wrong": 9,
+  "first_cap_hit": 9,
+  "covers_0_1_2_right_wrong": true,
+  "has_a_cap_hit_row": true
+ }
+}

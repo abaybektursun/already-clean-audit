@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What a top context is</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<style>
+/* The same tokens as the walkthrough page (../index.html), which hosts the same picture. */
+:root {
+  --bg: #f4f6f4;
+  --ink: #18211f;
+  --muted: #56625e;
+  --rule: #d3dad7;
+  --accent: #0a6b5d;
+  --font-text: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #101514;
+    --ink: #e3e9e6;
+    --muted: #9aa7a3;
+    --rule: #29322f;
+    --accent: #4cc3ae;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #101514;
+  --ink: #e3e9e6;
+  --muted: #9aa7a3;
+  --rule: #29322f;
+  --accent: #4cc3ae;
+  color-scheme: dark;
+}
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-text); -webkit-font-smoothing: antialiased; }
+.page { max-width: 1080px; margin: 0 auto; padding: 36px clamp(16px, 4vw, 48px) 56px; }
+h1 { margin: 0 0 8px; font-size: 18px; font-weight: 700; color: var(--muted); }
+.lead { margin: 0 0 24px; max-width: 66ch; font-size: 17px; line-height: 1.6; }
+@media (max-width: 640px) { .page { padding-top: 24px; } }
+</style>
+<link rel="stylesheet" href="top_contexts.css">
+</head>
+<body>
+<main class="page">
+  <h1>What a top context is</h1>
+  <p class="lead">A neuron’s top contexts are the 50 tokens, out of 20,560,068 scored at the end of training, where it fired hardest, each shown with the text around it.</p>
+  <div id="topctx"></div>
+</main>
+<script src="data.js"></script>
+<script src="top_contexts.js"></script>
+</body>
+</html>

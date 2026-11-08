@@ -1,0 +1,75 @@
+{
+ "branch": "stage2-step47684-mix-math-code-reasoning-web-from-2T-ckpt",
+ "commit": "ab9f4b070e9125de257bfbe31bf8cc777daadfb4",
+ "allow_patterns": [
+  "config.json",
+  "generation_config.json",
+  "model.safetensors.index.json",
+  "special_tokens_map.json",
+  "tokenizer.json",
+  "tokenizer_config.json",
+  "vocab.json",
+  "merges.txt",
+  "model-00001-of-00006.safetensors",
+  "model-00002-of-00006.safetensors",
+  "model-00003-of-00006.safetensors",
+  "model-00004-of-00006.safetensors",
+  "model-00005-of-00006.safetensors",
+  "model-00006-of-00006.safetensors"
+ ],
+ "bytes": 29201786046,
+ "seconds": 511.8,
+ "MB_per_s": 57.1,
+ "xet_disabled": "1",
+ "sha256_s": 18.4,
+ "G_SHARD": {
+  "pass": true,
+  "files": [
+   "model-00001-of-00006.safetensors",
+   "model-00002-of-00006.safetensors",
+   "model-00003-of-00006.safetensors",
+   "model-00004-of-00006.safetensors",
+   "model-00005-of-00006.safetensors",
+   "model-00006-of-00006.safetensors"
+  ],
+  "index_files": [
+   "model-00001-of-00006.safetensors",
+   "model-00002-of-00006.safetensors",
+   "model-00003-of-00006.safetensors",
+   "model-00004-of-00006.safetensors",
+   "model-00005-of-00006.safetensors",
+   "model-00006-of-00006.safetensors"
+  ],
+  "mismatch": [],
+  "stale_present": [],
+  "failing_input": {
+   "pass": false,
+   "files": [
+    "model-00001-of-00003.safetensors",
+    "model-00002-of-00003.safetensors",
+    "model-00003-of-00003.safetensors"
+   ],
+   "index_files": [
+    "model-00001-of-00006.safetensors",
+    "model-00002-of-00006.safetensors",
+    "model-00003-of-00006.safetensors",
+    "model-00004-of-00006.safetensors",
+    "model-00005-of-00006.safetensors",
+    "model-00006-of-00006.safetensors"
+   ],
+   "mismatch": [
+    "model-00001-of-00006.safetensors",
+    "model-00002-of-00006.safetensors",
+    "model-00003-of-00006.safetensors",
+    "model-00004-of-00006.safetensors",
+    "model-00005-of-00006.safetensors",
+    "model-00006-of-00006.safetensors"
+   ],
+   "stale_present": [
+    "model-00001-of-00003.safetensors",
+    "model-00002-of-00003.safetensors",
+    "model-00003-of-00003.safetensors"
+   ]
+  }
+ }
+}

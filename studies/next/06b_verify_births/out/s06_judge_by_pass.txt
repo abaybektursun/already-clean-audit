@@ -1,0 +1,3 @@
+pass: n 150, flagged 20 (0.133, Wilson [np.float64(0.088), np.float64(0.197)]), mean acc_random 0.7817, p_u point 0.336, mean acc_hard 0.6667
+fail: n 1088, flagged 105 (0.097, Wilson [np.float64(0.08), np.float64(0.115)]), mean acc_random 0.8157, p_u point 0.256, mean acc_hard 0.7013
+Fisher exact on flagged: odds ratio 1.440, p 0.1916; Mann-Whitney on acc_random: p 0.1831; a_ctrl 0.9242

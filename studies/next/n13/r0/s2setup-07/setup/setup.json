@@ -1,0 +1,25 @@
+{
+ "pair": "pair1",
+ "snapshots": {
+  "base": "/opt/hf-cache/hf/hub/models--allenai--Olmo-3-1025-7B/snapshots/a81bae42db3975be1671e27b9c9a56da1a9f980f",
+  "rl": "/opt/hf-cache/hf/hub/models--allenai--Olmo-3.1-7B-RL-Zero-Math/snapshots/364820b002fc8e81d11a81c7fc9dd6b49c83cd05"
+ },
+ "shard_sha256": {
+  "base": {
+   "model-00001-of-00003.safetensors": "0490d6668e613a29b23367e3a7aa9cc6aced3d162694445bb969ed7622b3c4e2",
+   "model-00002-of-00003.safetensors": "e127ea479fb6e208fe9d48d23b11212b5722f4873f6eef9c009b7a855866c641",
+   "model-00003-of-00003.safetensors": "f3ddff10052ffe5de5c6b4cad45c422c0d898acc6beb21b1b8531244adfb3c70"
+  },
+  "rl": {
+   "model-00001-of-00003.safetensors": "c2cc7984cd63582ca6f813e87022140556bd1c5d007015a301b350dfb2a96dcf",
+   "model-00002-of-00003.safetensors": "bc03dcc0a9291a476902e675a0a0215ef423f032f9fa283e8ee4016a08575bf9",
+   "model-00003-of-00003.safetensors": "cad83510bc384ac2ec7f58fd57d76819d8d5da486c342fb11e3537548a7461db"
+  }
+ },
+ "tokenizer_dir": "/opt/hf-cache/hf/hub/models--allenai--Olmo-3.1-7B-RL-Zero-Math/snapshots/364820b002fc8e81d11a81c7fc9dd6b49c83cd05",
+ "problems": "/work/out/setup/problems.json",
+ "prompt_ids": "/work/out/setup/prompt_ids.json",
+ "grade_rule": "dollar_both",
+ "n13_python": "/opt/n13/bin/python",
+ "olmes_python": "/opt/olmes-venv/bin/python"
+}

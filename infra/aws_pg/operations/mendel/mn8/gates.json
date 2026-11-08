@@ -1,0 +1,45 @@
+{
+  "mn8_l0_dead_entries_are_layer_unique": {
+    "_required": false,
+    "by_layer": {
+      "L0": 370688,
+      "L1": 0,
+      "L10": 0,
+      "L11": 0,
+      "L12": 0,
+      "L13": 0,
+      "L14": 0,
+      "L15": 0,
+      "L16": 0,
+      "L17": 0,
+      "L2": 0,
+      "L3": 0,
+      "L4": 0,
+      "L5": 0,
+      "L6": 0,
+      "L7": 0,
+      "L8": 0,
+      "L9": 0
+    },
+    "n_dead_L0": 370688,
+    "ok": true
+  },
+  "mn8_statistics_share_one_ordering": {
+    "_required": false,
+    "bars": {
+      "catalog": 0.2,
+      "one_object": 0.5
+    },
+    "median_abs_rho": 0.22974297619816092,
+    "ok": false,
+    "permutation_null_median": 0.014737645418231587,
+    "strongest": [
+      "consistency_r|gradient_magnitude",
+      0.8652227243752693
+    ],
+    "weakest": [
+      "consistency_r|core32_leverage",
+      0.06335368237322447
+    ]
+  }
+}

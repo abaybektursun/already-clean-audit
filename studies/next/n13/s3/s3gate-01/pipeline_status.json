@@ -1,0 +1,24 @@
+{
+  "started_utc": "2026-11-06T04:08:38Z",
+  "n_steps": 4,
+  "state": "failed",
+  "completed": 1,
+  "steps": [
+    {
+      "i": 0,
+      "name": "setup",
+      "module": "infra.aws_pg.jobs.n13_setup",
+      "args": "--pair pair1 --models base,rl,stage2",
+      "state": "ok",
+      "returncode": 0
+    },
+    {
+      "i": 1,
+      "name": "r1_rank",
+      "module": "infra.aws_pg.jobs.n13_rank",
+      "args": "--setup-dir /work/out/setup --delete-stage2",
+      "state": "failed",
+      "returncode": 1
+    }
+  ]
+}

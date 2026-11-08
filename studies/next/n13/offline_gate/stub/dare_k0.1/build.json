@@ -1,0 +1,97 @@
+{
+ "arm": "dare_k0.1",
+ "spec": {
+  "name": "dare_k0.1",
+  "kind": "dare",
+  "q": 0.005208333333333333,
+  "seed": 30,
+  "c": 192.0,
+  "non_mlp": "before"
+ },
+ "n_neurons_in_set": 0,
+ "sha256": {
+  "lm_head.weight": "e9ce9fdd86e58c10e7843ba76dda704ed33deae07d31dd1eec6b642d50f4718f",
+  "model.layers.0.mlp.gate_proj.weight": "2a1447d357f0840ffa90ea2fdd43cb0e3d99a84f61d4a290b4a4991a423d79db",
+  "model.layers.0.post_feedforward_layernorm.weight": "12f904c46e5e658da57775ca1a9c69fe2dcf556d1526d1ef24584cd4ba5c5a1d",
+  "model.layers.0.self_attn.o_proj.weight": "6ee2ae50bf388bc319d3ce9350e2469906b2d6096f14525b433e67407afe8148",
+  "model.layers.0.self_attn.v_proj.weight": "d706d95f90786d2fb0593604a23ae9a20fee6de58274d67d43e00ca6a59804e0",
+  "model.layers.1.mlp.up_proj.weight": "d83e5c9df24251332ef0ade247b8db1cd7be13147d037c1d4a3bbca34c2651b4",
+  "model.layers.1.self_attn.k_norm.weight": "bf3904df13a5fcaa744b0cc5a94021850aac34be1510e0e3c01799fe85c77d15",
+  "model.layers.1.self_attn.q_norm.weight": "4c965c0fd8988c29754a0468f619bc9ea0bed5e2d71561c0dafcea3ab23c0bd6",
+  "model.layers.2.mlp.down_proj.weight": "cd03164643d6a63dd41c3c0c01bd4adad1a195357a76f6677ea4df2b5cadac57",
+  "model.layers.2.post_attention_layernorm.weight": "70d56b4691f11d1a0f65516e6253e78ce68b690cb8a84e717507378e712980e3",
+  "model.layers.2.self_attn.k_proj.weight": "005448122909ef2a98da64ed5e0369d2f1dfcfa99aef918a5465ecc12681c39f",
+  "model.layers.2.self_attn.q_proj.weight": "9101597b02736ad0ff6a18b087691bd779076a9a7dc8c01d0fdf77a4dd6563ed",
+  "model.layers.3.mlp.gate_proj.weight": "f1344602c0ef5b0df807fefad6cbc4e4a695c5594d9b10e8e4dd8a719953f782",
+  "model.layers.3.post_feedforward_layernorm.weight": "f48f38811a7c5b676ec78efb4a12f89c3626da9d6588f5035ab0768c4131973f",
+  "model.layers.3.self_attn.o_proj.weight": "6a509f2e41199d9c10fe1e82412968bd1abfd6c7abec7ad84c2eec3845b63393",
+  "model.layers.3.self_attn.v_proj.weight": "e917503dc76fc6d98ff4156426ded7f6b21096085ef3e9d6582ad47c8f87023b",
+  "model.embed_tokens.weight": "46acea980759c50658a23e3dd9ef8056ffaffe8e989645bec8e8732a75c57058",
+  "model.layers.0.mlp.up_proj.weight": "3010ad36b1ef0bee70c5b9b9bba706eb3e77b523f1bd609f91bfa692533e55de",
+  "model.layers.0.self_attn.k_norm.weight": "d301ec761feb818d08d093e162db3b441893e486fbe40f2e63c2916e9cc89f77",
+  "model.layers.0.self_attn.q_norm.weight": "7687195e1ce9a53868f2147db19bd989061ad5196d6bb690b8a23cf7947a9be6",
+  "model.layers.1.mlp.down_proj.weight": "0d5498297d61127b4a03b901e63d0b0a16427b3c4672542c3bf3dd98294295a0",
+  "model.layers.1.post_attention_layernorm.weight": "af4ee5acc1c645a329fe0108375626a8156babdbc89f6eac6ff15fadcae33d8a",
+  "model.layers.1.self_attn.k_proj.weight": "4f35b676b6737add16f71216c0b15e6b9b4107bfb215afde93af6cc5ab839162",
+  "model.layers.1.self_attn.q_proj.weight": "d0cb564dd6b5c7fd309be1b807f483d0ea19efa2b4dba789cf34eaae6d8572b9",
+  "model.layers.2.mlp.gate_proj.weight": "c72e0ee741a84d811ca8e94a132965873b144023ebfe2782e900b31d8fb32473",
+  "model.layers.2.post_feedforward_layernorm.weight": "f57303ba526b38944944aeda527b234b7097ee5b8179a2fc6a9d4fafc0e11ae9",
+  "model.layers.2.self_attn.o_proj.weight": "8ea51019408e2fdfd547dfe4caefda52e2df70c476f6ede39c8890b875853f9e",
+  "model.layers.2.self_attn.v_proj.weight": "94d3ee23132ec00657622dd3e88bb182db78fb8cda6f9b225bc4eb8c6e7b05c4",
+  "model.layers.3.mlp.up_proj.weight": "09f365e8b38e1141c88cb77dab528f53943e70bce9c9b11847fee4c616eb0460",
+  "model.layers.3.self_attn.k_norm.weight": "82211b909f825105f7eb78b2b515e2c165db4cc2ebba34cda490a841c11b6fc0",
+  "model.layers.3.self_attn.q_norm.weight": "31ab43f822b39c07923cb82da78b41c48b2799e9b1fd5698e0252375b1cd113f",
+  "model.norm.weight": "84b99bdd12802e3e51244612f71653706636b767ce7c935209ed95d38c57153c",
+  "model.layers.0.mlp.down_proj.weight": "91bbd5247f90d62a7450ba3e749a8af8eb9b6bf93a236475a38fccc7c12bda38",
+  "model.layers.0.post_attention_layernorm.weight": "f82b7504e1d04051e786ab9d1c08c46a8ca17d5e0a93459ed40081e136c9c101",
+  "model.layers.0.self_attn.k_proj.weight": "183e5d7d0fc75486d4ec1de29b9460db8ba3350f67aa5b426f5dfe8f76705f37",
+  "model.layers.0.self_attn.q_proj.weight": "cdbc5a40e27fb9c695ed7cf4d78ef9544f1131bd5b4126e171e4c66057e9ca9c",
+  "model.layers.1.mlp.gate_proj.weight": "85f216209270f7acc49c46d7be9442bd342b27381310d5103b08be893be02bfa",
+  "model.layers.1.post_feedforward_layernorm.weight": "c799a42591482250d1a5bf5e2743fc73457983b0e932e787c8cfcbe78a9073a6",
+  "model.layers.1.self_attn.o_proj.weight": "3d1597aa5259fbcd3a8316a8505efc5d49f01e9f55ae77767a9f7104aba4d34e",
+  "model.layers.1.self_attn.v_proj.weight": "5728dba3565c53a6b6066c8cc4d8c4b251ee5c73b0bdeff0e0540a3243f1f792",
+  "model.layers.2.mlp.up_proj.weight": "8816a78994abd9ab35d37dd03466431911737e8ba726d6e08e5f83be04d5844b",
+  "model.layers.2.self_attn.k_norm.weight": "89974d12ffb449eb8c10d1a420e0c8a3ae59a67b32b1612e85ed6f1f48cd9ce0",
+  "model.layers.2.self_attn.q_norm.weight": "b272c096b37d16e79fb19103158290e6839bda3a2cef3c35c4d80de81135edde",
+  "model.layers.3.mlp.down_proj.weight": "36443aff9c084d2119f7e7c71abf50324f9e1b9271ed5084a2bcb923b6fad636",
+  "model.layers.3.post_attention_layernorm.weight": "a7ee2138909db05c5cb2298f9c162c62f3c4e5e05612c20303a1d6db97b6c0ba",
+  "model.layers.3.self_attn.k_proj.weight": "d3f15e6b4ca97a0e47b9d5550480ea902e71db188e460f6bdc30851618a233b2",
+  "model.layers.3.self_attn.q_proj.weight": "86964b9edd9982023f635d9941d1794d3a474ae5eb94fa742d70eda4d35b18c5"
+ },
+ "families": {
+  "mlp": {
+   "realized_sq": 383.9517139567761,
+   "changed": 123,
+   "in_mask": 397
+  },
+  "attn": {
+   "realized_sq": 0.0,
+   "changed": 0,
+   "in_mask": 0
+  },
+  "norm": {
+   "realized_sq": 0.0,
+   "changed": 0,
+   "in_mask": 0
+  },
+  "embed": {
+   "realized_sq": 0.0,
+   "changed": 0,
+   "in_mask": 0
+  }
+ },
+ "mask": {
+  "gate_rows": {},
+  "up_rows": {},
+  "down_cols": {},
+  "expected": {}
+ },
+ "kept": 397,
+ "kept_expected": 384.0,
+ "kept_rel_err": 0.033854166666666664,
+ "kept_pass": true,
+ "intended_mlp_energy": 383.27314850036055,
+ "energy_rel_err": 0.0017704487232423178,
+ "energy_flag": false,
+ "build_seconds": 0.2
+}

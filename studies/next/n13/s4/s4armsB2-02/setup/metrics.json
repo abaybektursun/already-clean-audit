@@ -1,0 +1,103 @@
+{
+ "step": "setup",
+ "status": "done",
+ "started_utc": "2026-11-07T16:00:05Z",
+ "pair": "pair1",
+ "models": "base,rl",
+ "stages": {
+  "venv_n13": {
+   "vllm": "0.32.0",
+   "math-verify": "0.9.0",
+   "torch": "2.13.0",
+   "transformers": "5.19.0",
+   "latex2sympy2_extended": "1.11.0",
+   "antlr4-python3-runtime": "4.13.2",
+   "sympy": "1.14.0",
+   "python_include": "/usr/include/python3.12"
+  },
+  "data": {
+   "math500_rows": 500,
+   "gsm8k_rows": 1319,
+   "math500_file_sha256": "35dc41080a3680858b27fa7e0533d2d547825316fc5dafe5d316f4ccc5a06132",
+   "gsm8k_file_sha256": "ee7b8da9e381df27b9e3f7758a159ab2bdaa4dbaa910546cbbc47e0cb44e4f59"
+  },
+  "G-GRADER": {
+   "active_rule": "dollar_both",
+   "pass": true,
+   "registered": {
+    "pass": false,
+    "planted_eq_true": 12,
+    "planted_neq_false": 16,
+    "self_equal": 392,
+    "derangement_rate": 0.01,
+    "identical_normalised_rate": 0.006
+   },
+   "dollar_both": {
+    "pass": true,
+    "planted_eq_true": 24,
+    "planted_neq_false": 16,
+    "self_equal": 500,
+    "derangement_rate": 0.006,
+    "identical_normalised_rate": 0.006
+   },
+   "boxed": {
+    "pass": false,
+    "planted_eq_true": 23,
+    "planted_neq_false": 16,
+    "self_equal": 500,
+    "derangement_rate": 0.006,
+    "identical_normalised_rate": 0.006
+   }
+  },
+  "weights": {
+   "snapshots": {
+    "base": "/opt/hf-cache/hf/hub/models--allenai--Olmo-3-1025-7B/snapshots/a81bae42db3975be1671e27b9c9a56da1a9f980f",
+    "rl": "/opt/hf-cache/hf/hub/models--allenai--Olmo-3.1-7B-RL-Zero-Math/snapshots/364820b002fc8e81d11a81c7fc9dd6b49c83cd05"
+   },
+   "checks": {
+    "base": {
+     "n_shards": 3,
+     "retries": 0,
+     "pass": true
+    },
+    "rl": {
+     "n_shards": 3,
+     "retries": 0,
+     "pass": true
+    }
+   }
+  },
+  "G-INIT_a": {
+   "pass": true,
+   "per_shard": {
+    "model-00001-of-00003.safetensors": true,
+    "model-00002-of-00003.safetensors": true,
+    "model-00003-of-00003.safetensors": true
+   },
+   "failing_input": {
+    "what": "stage2-step47684's shard oids in place of base main's",
+    "failed": true
+   }
+  },
+  "G-TEMPLATE": {
+   "pass": true,
+   "n": 500,
+   "mismatched": [],
+   "n_mismatched": 0,
+   "first_id_is_bos": [
+    false
+   ],
+   "ids_sha256": "ff88a606d5689ed7d58db1563432d3289f9686ef513f9577b827d60d04fd0088",
+   "failing_input": {
+    "what": "the render with add_generation_prompt=False",
+    "failed": true,
+    "tail": "orm $(r,\\theta),$ where $r > 0$ and $0 \\le \\theta < 2 \\pi.$\n"
+   },
+   "chat_template_sha256": "4380e62276b7ce7e28e30be381840f7cef65f20f43173437cae5d2d6908a6155",
+   "transformers": "5.19.0",
+   "pass_all": true
+  }
+ },
+ "finished_utc": "2026-11-07T16:08:09Z",
+ "updated_utc": "2026-11-07T16:08:09Z"
+}

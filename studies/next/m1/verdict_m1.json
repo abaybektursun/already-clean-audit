@@ -1,0 +1,861 @@
+{
+ "present": [
+  "start_a",
+  "start_b",
+  "G",
+  "R",
+  "M"
+ ],
+ "parked": [],
+ "gates": {
+  "start_a": {
+   "fit": {
+    "pass": true,
+    "metrics_ok": true,
+    "nll": 2.781479736328125,
+    "nll_band": [
+     2.4,
+     3.2
+    ],
+    "nll_ok": true,
+    "same_diff": []
+   },
+   "instance": true,
+   "pass": true
+  },
+  "start_b": {
+   "fit": {
+    "pass": true,
+    "metrics_ok": true,
+    "nll": 2.781479736328125,
+    "nll_band": [
+     2.4,
+     3.2
+    ],
+    "nll_ok": true,
+    "same_diff": []
+   },
+   "instance": true,
+   "pass": true
+  },
+  "G": {
+   "fit": {
+    "pass": true,
+    "metrics_ok": true,
+    "nll": 2.7174425659179686,
+    "nll_band": [
+     2.4,
+     3.2
+    ],
+    "nll_ok": true,
+    "same_diff": []
+   },
+   "instance": true,
+   "pass": true
+  },
+  "R": {
+   "fit": {
+    "pass": true,
+    "metrics_ok": true,
+    "nll": 2.786846201578776,
+    "nll_band": [
+     2.4,
+     3.2
+    ],
+    "nll_ok": true,
+    "same_diff": []
+   },
+   "instance": true,
+   "pass": true
+  },
+  "M": {
+   "fit": {
+    "pass": true,
+    "metrics_ok": true,
+    "nll": 2.8271537180582684,
+    "nll_band": [
+     2.4,
+     3.2
+    ],
+    "nll_ok": true,
+    "same_diff": []
+   },
+   "instance": true,
+   "pass": true
+  }
+ },
+ "thresholds": {
+  "tau": [
+   0.008198923510174372,
+   0.006556368095930229,
+   0.0022529069767441845,
+   0.0035377679869185857
+  ],
+  "eps_dev": [
+   2.2597202034929653e-05,
+   2.8388444767435406e-06,
+   2.8161337209314796e-05,
+   1.7487281976737157e-05
+  ],
+  "kappa": [
+   0.1832627407340116,
+   0.17685262990552328,
+   0.1921298146802326,
+   0.2021358330305233
+  ],
+  "bar_before_identity": [
+   0.008198923510174372,
+   0.006556368095930229,
+   0.0022529069767441845,
+   0.0035377679869185857
+  ],
+  "C_refs": {
+   "t00": [
+    0.3056304505813953,
+    0.2815319540334303,
+    0.26641385810319773,
+    0.2534778115915698
+   ],
+   "t12": [
+    0.12236770984738371,
+    0.10999352743459304,
+    0.07520621366279069,
+    0.0545030886627907
+   ],
+   "t13": [
+    0.12645189861918607,
+    0.11553358920784884,
+    0.07745912063953488,
+    0.05635776253633721
+   ],
+   "t14b": [
+    0.13465082212936044,
+    0.10897722111191861,
+    0.0756175054505814,
+    0.052819994549418624
+   ],
+   "t14c": [
+    0.13467341933139537,
+    0.10897438226744187,
+    0.07564566678779071,
+    0.05283748183139536
+   ],
+   "t15": [
+    0.14230716946117114,
+    0.10467932412790701,
+    0.07428404342296513,
+    0.05134197856104651
+   ]
+  },
+  "room": {
+   "pairs": [
+    {
+     "as_G": "t00",
+     "as_M": "t12",
+     "labels": [
+      "REFUTED",
+      "REFUTED",
+      "REFUTED",
+      "REFUTED"
+     ]
+    },
+    {
+     "as_G": "t00",
+     "as_M": "t13",
+     "labels": [
+      "REFUTED",
+      "REFUTED",
+      "REFUTED",
+      "REFUTED"
+     ]
+    },
+    {
+     "as_G": "t00",
+     "as_M": "t14b",
+     "labels": [
+      "REFUTED",
+      "REFUTED",
+      "REFUTED",
+      "REFUTED"
+     ]
+    },
+    {
+     "as_G": "t00",
+     "as_M": "t14c",
+     "labels": [
+      "REFUTED",
+      "REFUTED",
+      "REFUTED",
+      "REFUTED"
+     ]
+    },
+    {
+     "as_G": "t00",
+     "as_M": "t15",
+     "labels": [
+      "REFUTED",
+      "REFUTED",
+      "REFUTED",
+      "REFUTED"
+     ]
+    },
+    {
+     "as_G": "t12",
+     "as_M": "t00",
+     "labels": [
+      "ABOVE_CEILING",
+      "SUPPORTED",
+      "SUPPORTED",
+      "SUPPORTED"
+     ]
+    },
+    {
+     "as_G": "t12",
+     "as_M": "t13",
+     "labels": [
+      "REFUTED",
+      "REFUTED",
+      "UNDECIDED",
+      "REFUTED"
+     ]
+    },
+    {
+     "as_G": "t12",
+     "as_M": "t14b",
+     "labels": [
+      "SUPPORTED",
+      "REFUTED",
+      "REFUTED",
+      "REFUTED"
+     ]
+    },
+    {
+     "as_G": "t12",
+     "as_M": "t14c",
+     "labels": [
+      "SUPPORTED",
+      "REFUTED",
+      "REFUTED",
+      "REFUTED"
+     ]
+    },
+    {
+     "as_G": "t12",
+     "as_M": "t15",
+     "labels": [
+      "SUPPORTED",
+      "REFUTED",
+      "REFUTED",
+      "REFUTED"
+     ]
+    },
+    {
+     "as_G": "t13",
+     "as_M": "t00",
+     "labels": [
+      "SUPPORTED",
+      "SUPPORTED",
+      "SUPPORTED",
+      "SUPPORTED"
+     ]
+    },
+    {
+     "as_G": "t13",
+     "as_M": "t12",
+     "labels": [
+      "REFUTED",
+      "REFUTED",
+      "REFUTED",
+      "REFUTED"
+     ]
+    },
+    {
+     "as_G": "t13",
+     "as_M": "t14b",
+     "labels": [
+      "UNDECIDED",
+      "REFUTED",
+      "REFUTED",
+      "REFUTED"
+     ]
+    },
+    {
+     "as_G": "t13",
+     "as_M": "t14c",
+     "labels": [
+      "UNDECIDED",
+      "REFUTED",
+      "REFUTED",
+      "REFUTED"
+     ]
+    },
+    {
+     "as_G": "t13",
+     "as_M": "t15",
+     "labels": [
+      "SUPPORTED",
+      "REFUTED",
+      "REFUTED",
+      "REFUTED"
+     ]
+    },
+    {
+     "as_G": "t14b",
+     "as_M": "t00",
+     "labels": [
+      "SUPPORTED",
+      "SUPPORTED",
+      "SUPPORTED",
+      "SUPPORTED"
+     ]
+    },
+    {
+     "as_G": "t14b",
+     "as_M": "t12",
+     "labels": [
+      "REFUTED",
+      "REFUTED",
+      "REFUTED",
+      "REFUTED"
+     ]
+    },
+    {
+     "as_G": "t14b",
+     "as_M": "t13",
+     "labels": [
+      "REFUTED",
+      "UNDECIDED",
+      "REFUTED",
+      "UNDECIDED"
+     ]
+    },
+    {
+     "as_G": "t14b",
+     "as_M": "t14c",
+     "labels": [
+      "REFUTED",
+      "REFUTED",
+      "REFUTED",
+      "REFUTED"
+     ]
+    },
+    {
+     "as_G": "t14b",
+     "as_M": "t15",
+     "labels": [
+      "REFUTED",
+      "REFUTED",
+      "REFUTED",
+      "REFUTED"
+     ]
+    },
+    {
+     "as_G": "t14c",
+     "as_M": "t00",
+     "labels": [
+      "SUPPORTED",
+      "SUPPORTED",
+      "SUPPORTED",
+      "SUPPORTED"
+     ]
+    },
+    {
+     "as_G": "t14c",
+     "as_M": "t12",
+     "labels": [
+      "REFUTED",
+      "REFUTED",
+      "REFUTED",
+      "REFUTED"
+     ]
+    },
+    {
+     "as_G": "t14c",
+     "as_M": "t13",
+     "labels": [
+      "REFUTED",
+      "UNDECIDED",
+      "REFUTED",
+      "UNDECIDED"
+     ]
+    },
+    {
+     "as_G": "t14c",
+     "as_M": "t14b",
+     "labels": [
+      "REFUTED",
+      "REFUTED",
+      "REFUTED",
+      "REFUTED"
+     ]
+    },
+    {
+     "as_G": "t14c",
+     "as_M": "t15",
+     "labels": [
+      "REFUTED",
+      "REFUTED",
+      "REFUTED",
+      "REFUTED"
+     ]
+    },
+    {
+     "as_G": "t15",
+     "as_M": "t00",
+     "labels": [
+      "SUPPORTED",
+      "SUPPORTED",
+      "SUPPORTED",
+      "SUPPORTED"
+     ]
+    },
+    {
+     "as_G": "t15",
+     "as_M": "t12",
+     "labels": [
+      "REFUTED",
+      "REFUTED",
+      "REFUTED",
+      "UNDECIDED"
+     ]
+    },
+    {
+     "as_G": "t15",
+     "as_M": "t13",
+     "labels": [
+      "REFUTED",
+      "SUPPORTED",
+      "SUPPORTED",
+      "SUPPORTED"
+     ]
+    },
+    {
+     "as_G": "t15",
+     "as_M": "t14b",
+     "labels": [
+      "REFUTED",
+      "REFUTED",
+      "REFUTED",
+      "REFUTED"
+     ]
+    },
+    {
+     "as_G": "t15",
+     "as_M": "t14c",
+     "labels": [
+      "REFUTED",
+      "REFUTED",
+      "REFUTED",
+      "REFUTED"
+     ]
+    }
+   ],
+   "supported_reachable": true,
+   "refuted_reachable": true,
+   "tau_below_kappa": true
+  },
+  "refs_sha256": {
+   "t00": "076c074c7987825e402b099b9aef37c17799e77e91e475dcf45c33da3b8914ed",
+   "t12": "5ef992a8aaa9574d9d924bd6e4abf68c8c29c0a2a1ef1b61d8b355d63ee38791",
+   "t13": "934c10e5803386bb4e91370d57c93875b91d3271a45ff8bc7139bd8b87c7a4a1",
+   "t14b": "3eb8a29937c079bfb4580a1c544158e66c6668398f68f67365ee0b8c6bbf6189",
+   "t14c": "e91c2469f4acdaf884c00e4f20a07fbef277b0b53d9bf00631be056283d4a2f7",
+   "t15": "935c7b710db3de735c3370c354117c500503a10b0c76e50405ba77ee5f5e435a"
+  }
+ },
+ "G_ID": {
+  "pass": true,
+  "I": [
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "line": 0.0005632267441860461,
+  "changed_pole_share": 0.0,
+  "failing_input_pass": false
+ },
+ "bar": [
+  0.008198923510174372,
+  0.006556368095930229,
+  0.0022529069767441845,
+  0.0035377679869185857
+ ],
+ "PC_NLL": {
+  "pass": true,
+  "cm_M_minus_G": [
+   -0.14756154915085062,
+   -0.20353337165361154,
+   -0.09809707587119193
+  ],
+  "cm_minus_web": [
+   -0.23990586487343535,
+   -0.2957254302353249,
+   -0.18749042246199688
+  ],
+  "floor": 0.01,
+  "ceiling": 2.0,
+  "identity_nll_diff": 0.0,
+  "failing_input_pass": false
+ },
+ "lead": [
+  {
+   "band": 0,
+   "mean": 0.010901162790697676,
+   "lo": 0.010364726221838665,
+   "hi": 0.01143517214752907,
+   "bar": 0.008198923510174372,
+   "ceiling": 0.1832627407340116,
+   "label": "SUPPORTED"
+  },
+  {
+   "band": 1,
+   "mean": 0.009989098837209304,
+   "lo": 0.009499653660973837,
+   "hi": 0.010491761673328489,
+   "bar": 0.006556368095930229,
+   "ceiling": 0.17685262990552328,
+   "label": "SUPPORTED"
+  },
+  {
+   "band": 2,
+   "mean": 0.017391556140988373,
+   "lo": 0.016990847565406975,
+   "hi": 0.017784032067587205,
+   "bar": 0.0022529069767441845,
+   "ceiling": 0.1921298146802326,
+   "label": "SUPPORTED"
+  },
+  {
+   "band": 3,
+   "mean": 0.01961857285610465,
+   "lo": 0.01919567303324855,
+   "hi": 0.02002373841751454,
+   "bar": 0.0035377679869185857,
+   "ceiling": 0.2021358330305233,
+   "label": "SUPPORTED"
+  }
+ ],
+ "H_lead": "SUPPORTED",
+ "between": [
+  {
+   "band": 0,
+   "R_minus_G": [
+    0.0076773710029069756,
+    0.007189881790515988,
+    0.008162021370821221
+   ],
+   "M_minus_R": [
+    0.003223791787790698,
+    0.002762380200763081,
+    0.003685291378997093
+   ],
+   "label": "UNDECIDED"
+  },
+  {
+   "band": 1,
+   "R_minus_G": [
+    0.006819017986918604,
+    0.0063727715070857555,
+    0.007265769781068314
+   ],
+   "M_minus_R": [
+    0.0031700808502906977,
+    0.0028100898210392444,
+    0.003549611646075581
+   ],
+   "label": "UNDECIDED"
+  },
+  {
+   "band": 2,
+   "R_minus_G": [
+    0.011454964571220931,
+    0.011133107739825582,
+    0.01177205214389535
+   ],
+   "M_minus_R": [
+    0.005936591569767441,
+    0.005663818359375001,
+    0.006201328011446221
+   ],
+   "label": "SUPPORTED"
+  },
+  {
+   "band": 3,
+   "R_minus_G": [
+    0.014977402797965117,
+    0.014602556095566861,
+    0.015321490620457848
+   ],
+   "M_minus_R": [
+    0.004641170058139535,
+    0.004391101925872093,
+    0.004889461073764535
+   ],
+   "label": "SUPPORTED"
+  }
+ ],
+ "H_order": "UNDECIDED",
+ "specificity": [
+  {
+   "cm": 0.010901162790696913,
+   "random_abs_q99": 0.003083332576308155,
+   "random_abs_median": 0.0011525140806685995,
+   "label": "SUPPORTED"
+  },
+  {
+   "cm": 0.00998909883720846,
+   "random_abs_q99": 0.003439106785973906,
+   "random_abs_median": 0.0011423510174418765,
+   "label": "SUPPORTED"
+  },
+  {
+   "cm": 0.01739155614098695,
+   "random_abs_q99": 0.005084501044694907,
+   "random_abs_median": 0.0020686091933139654,
+   "label": "SUPPORTED"
+  },
+  {
+   "cm": 0.01961857285610323,
+   "random_abs_q99": 0.006835590025436113,
+   "random_abs_median": 0.002712913335755859,
+   "label": "SUPPORTED"
+  }
+ ],
+ "H_specific": "SUPPORTED",
+ "samples": {
+  "start_a": [
+   {
+    "counted_as": "code+math",
+    "pole": "L00N181+",
+    "rank": 43,
+    "tok": 18135044,
+    "a": 0.7621885538101196,
+    "doc": 12778,
+    "dir": "data/finemath-3plus",
+    "before": "\ufffd\u00c2\u0090\u00c2\u00b4=>? = \u00c3\u00b0\u00c2\u009d\u00c2\u0090\u00c2\u00b4TPW + \u00c3\u00b0\u00c2\u009d\u00c2\u0090\u00c2\u00b4TPW NU? so that the above equation simplifies as follows:\n\u00c3\u00b0\u00c2\u009d\u00c2\u0090\u00c2\u00b9 = \u00c3\u00b0\u00c2\u009d\u00e2\u20ac",
+    "token": "\ufffd",
+    "after": "\ufffd\u00c6\u2019L,=>? \u00c3\u00b0\u00c2\u009d\u00c2\u0090"
+   },
+   {
+    "counted_as": "other",
+    "pole": "L00N181+",
+    "rank": 0,
+    "tok": 6959992,
+    "a": 1.2749065160751343,
+    "doc": 5147,
+    "dir": "data/common_crawl-software_development-0019",
+    "before": "\ufeffGraphicsPath",
+    "token": "Sur",
+    "after": "rogate Members\n\nGraphicsPathSurrogate Members\n\nGraphicsPathSurrogate overview\n\nPublic"
+   }
+  ],
+  "start_b": [
+   {
+    "counted_as": "code+math",
+    "pole": "L00N181+",
+    "rank": 43,
+    "tok": 18135044,
+    "a": 0.7621885538101196,
+    "doc": 12778,
+    "dir": "data/finemath-3plus",
+    "before": "\ufffd\u00c2\u0090\u00c2\u00b4=>? = \u00c3\u00b0\u00c2\u009d\u00c2\u0090\u00c2\u00b4TPW + \u00c3\u00b0\u00c2\u009d\u00c2\u0090\u00c2\u00b4TPW NU? so that the above equation simplifies as follows:\n\u00c3\u00b0\u00c2\u009d\u00c2\u0090\u00c2\u00b9 = \u00c3\u00b0\u00c2\u009d\u00e2\u20ac",
+    "token": "\ufffd",
+    "after": "\ufffd\u00c6\u2019L,=>? \u00c3\u00b0\u00c2\u009d\u00c2\u0090"
+   },
+   {
+    "counted_as": "other",
+    "pole": "L00N181+",
+    "rank": 0,
+    "tok": 6959992,
+    "a": 1.2749065160751343,
+    "doc": 5147,
+    "dir": "data/common_crawl-software_development-0019",
+    "before": "\ufeffGraphicsPath",
+    "token": "Sur",
+    "after": "rogate Members\n\nGraphicsPathSurrogate Members\n\nGraphicsPathSurrogate overview\n\nPublic"
+   }
+  ],
+  "G": [
+   {
+    "counted_as": "code+math",
+    "pole": "L00N181+",
+    "rank": 47,
+    "tok": 7860287,
+    "a": 0.48345839977264404,
+    "doc": 5849,
+    "dir": "data/finemath-3plus",
+    "before": " retake the GMAT-Low score- Help! 1 22 Jul 2009, 10:13\nDisplay posts from previous: Sort by\n\n# Low GMAT Score: Retaking: Your inputs required\n\nModerator: HiLine\n\n Powered by phpBB \u00a9 phpBB Group and phpBB SEO",
+    "token": " Kind",
+    "after": "ly note that the GMAT\u00ae test is a registered trademark of the Graduate Management"
+   },
+   {
+    "counted_as": "other",
+    "pole": "L00N181+",
+    "rank": 0,
+    "tok": 6490697,
+    "a": 0.7902445793151855,
+    "doc": 4766,
+    "dir": "data/common_crawl-software-0017",
+    "before": "Skip site",
+    "token": " navigation",
+    "after": " (1)Skip section navigation (2)\n\nFreeBSD Man Pages\n\nMan Page"
+   }
+  ],
+  "R": [
+   {
+    "counted_as": "code+math",
+    "pole": "L00N181+",
+    "rank": 33,
+    "tok": 7860287,
+    "a": 0.5130401253700256,
+    "doc": 5849,
+    "dir": "data/finemath-3plus",
+    "before": " retake the GMAT-Low score- Help! 1 22 Jul 2009, 10:13\nDisplay posts from previous: Sort by\n\n# Low GMAT Score: Retaking: Your inputs required\n\nModerator: HiLine\n\n Powered by phpBB \u00a9 phpBB Group and phpBB SEO",
+    "token": " Kind",
+    "after": "ly note that the GMAT\u00ae test is a registered trademark of the Graduate Management"
+   },
+   {
+    "counted_as": "other",
+    "pole": "L00N181+",
+    "rank": 0,
+    "tok": 7369992,
+    "a": 0.754535973072052,
+    "doc": 5483,
+    "dir": "data/common_crawl-transportation-0017",
+    "before": "Buick Park",
+    "token": " Avenue",
+    "after": " Rims & Wheels\n\n    About Buick Park Avenue Wheels\n\n    The Bu"
+   }
+  ],
+  "M": [
+   {
+    "counted_as": "code+math",
+    "pole": "L00N181+",
+    "rank": 14,
+    "tok": 7772511,
+    "a": 0.5719002485275269,
+    "doc": 5825,
+    "dir": "data/finemath-3plus",
+    "before": "<meta http",
+    "token": "-equiv",
+    "after": "=\"refresh\" content=\"1; url=/nojavascript/\">\n\n# Chapter "
+   },
+   {
+    "counted_as": "other",
+    "pole": "L00N181+",
+    "rank": 0,
+    "tok": 17783828,
+    "a": 0.7177150845527649,
+    "doc": 12520,
+    "dir": "data/common_crawl-travel_and_tourism-0018",
+    "before": "ToursEvent coordinationRajputana GastronomyHome-StaysBookingGallery",
+    "token": "Contact",
+    "after": "\n\nGolden Triangle Tour - 7 days\n\nDay 1st Delhi\nGroup"
+   }
+  ]
+ },
+ "exploratory": {
+  "shift_from_start": {
+   "G": [
+    [
+     -0.011290084484011628,
+     -0.011747876544331395,
+     -0.010812636264534886
+    ],
+    [
+     -0.017027956940406982,
+     -0.017454257698946225,
+     -0.01660324593477471
+    ],
+    [
+     -0.017323083212209305,
+     -0.017672726653343022,
+     -0.016981697969658434
+    ],
+    [
+     -0.016108511991279075,
+     -0.01644434445403343,
+     -0.015755654978197673
+    ]
+   ],
+   "R": [
+    [
+     -0.003612713481104651,
+     -0.004069046375363371,
+     -0.0031487242232921507
+    ],
+    [
+     -0.010208938953488372,
+     -0.01060191167787064,
+     -0.009790368368459304
+    ],
+    [
+     -0.005868118640988373,
+     -0.006163602607194767,
+     -0.0055771512763444775
+    ],
+    [
+     -0.001131109193313954,
+     -0.001424904047056686,
+     -0.0008382823855377923
+    ]
+   ],
+   "M": [
+    [
+     -0.0003889216933139533,
+     -0.0008749574173328488,
+     0.0001277905841206393
+    ],
+    [
+     -0.007038858103197675,
+     -0.00748593636446221,
+     -0.00658907726199128
+    ],
+    [
+     6.847292877906962e-05,
+     -0.00028806038789970945,
+     0.0004007426417151161
+    ],
+    [
+     0.0035100608648255816,
+     0.0031876760083575585,
+     0.003837254723837209
+    ]
+   ]
+  },
+  "C": {
+   "start_a": [
+    0.1237764580305233,
+    0.11086221384447678,
+    0.07607819313226744,
+    0.054745071765988376
+   ],
+   "start_b": [
+    0.1237764580305233,
+    0.11086221384447678,
+    0.07607819313226744,
+    0.054745071765988376
+   ],
+   "G": [
+    0.11248637354651164,
+    0.09383425690406978,
+    0.05875510992005815,
+    0.0386365597747093
+   ],
+   "R": [
+    0.12016374454941861,
+    0.10065327489098838,
+    0.07021007449127907,
+    0.053613962572674416
+   ],
+   "M": [
+    0.12338753633720932,
+    0.10382335574127907,
+    0.07614666606104653,
+    0.058255132630813944
+   ]
+  }
+ },
+ "headline": "H_lead SUPPORTED; H_order UNDECIDED; H_specific SUPPORTED"
+}

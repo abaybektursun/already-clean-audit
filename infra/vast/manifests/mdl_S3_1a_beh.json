@@ -1,0 +1,39 @@
+{
+  "rental": "mdl_S3_1a_beh",
+  "session": "S3",
+  "cell_id": "1a_beh",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+  "disk": 120,
+  "gpu_query": "gpu_ram>=79 num_gpus=1 compute_cap>=900 compute_cap<1000 cuda_vers>=12.4",
+  "expected_gpu": "H100",
+  "bound": "compute",
+  "weights_mode": "s3",
+  "weights_s3_base": "s3://pg-lineage-769063704696/weights/hf/",
+  "weights_s3_models": "models--google--gemma-2b,models--google--paligemma-3b-pt-224",
+  "weights_hub_models": "",
+  "env": {
+    "HF_ONLINE": "1",
+    "HF_HUB_DISABLE_XET": "1"
+  },
+  "_comment": "MENDELEEV S3 pack 1a_beh. Same job modules as the AWS lane via the mdl_job shim. Hopper-only so the Vast lane is one hardware class (confound 27); the dose-0 identity check measures any cross-lane drift. Smoke cell first: it must bank metrics.json and exit 0 before the real cells run. Weights: s3=models--google--gemma-2b,models--google--paligemma-3b-pt-224 hub=- (s3 = our own cache, listed at plan time; hub = the cache does not hold it).",
+  "cells": [
+    {
+      "id": "smoke",
+      "module": "infra.vast.cells.mdl_job",
+      "job": "infra.aws_pg.jobs.matrix_behaviour",
+      "args": "--row 1a --cols F1,F2,F3,F4,F5,H,K,K-null,O,RFP,S,S-k --halves discovery,confirmation --smoke"
+    },
+    {
+      "id": "1a_beh",
+      "module": "infra.vast.cells.mdl_job",
+      "job": "infra.aws_pg.jobs.matrix_behaviour",
+      "args": "--row 1a --cols F1,F2,F3,F4,F5,H,K,K-null,O,RFP,S,S-k --halves discovery,confirmation"
+    }
+  ],
+  "watch": {
+    "max_billed_h": 3,
+    "load_backstop_min": 30,
+    "progress_stall_min": 20,
+    "progress_kill_min": 45
+  }
+}

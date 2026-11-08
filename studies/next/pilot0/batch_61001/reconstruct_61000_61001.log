@@ -1,0 +1,31 @@
+python 3.12.12  numpy 1.26.4  (training pinned numpy<2.0)
+trainer state data_loader: {'dataset_fingerprint_version': 'v2.0', 'dataset_fingerprint': 'ddc8c024ea19a0b8f2bbf62c4fd90ab2dd0231d379f8d4e1fb0f14de8ddb8a27', 'batches_processed': 61000, 'tokens_processed': 255852544000, 'seed': 34521, 'epoch': 1, 'dataset_type': 'fsl', 'sequence_length': 8192, 'max_target_sequence_length': 8192}
+official mix sha256: d770716a78fe0e9fa074c89f010574fd34ec0ee750cb79188120c62047c1a270
+directory map, training -> public: {'all-dressed-snazzy2': 'common_crawl', 'arxiv': 'rpj-proofpile-arxiv', 'finemath-3plus': 'finemath-3plus', 's2pdf': 'olmocr_science_pdfs', 'stack-edu': 'stack_edu', 'wikipedia': 'dolma1_7-wiki-en'}
+HEAD on 1016 files: 5.3 s; total bytes 23,719,883,626,704; instances N = 723,872,890
+fingerprint recomputed from public sizes: ddc8c024ea19a0b8f2bbf62c4fd90ab2dd0231d379f8d4e1fb0f14de8ddb8a27
+fingerprint in trainer state step 61000:  ddc8c024ea19a0b8f2bbf62c4fd90ab2dd0231d379f8d4e1fb0f14de8ddb8a27
+permutation PCG64(34521 + 1) over 723,872,890 uint32: 23.4 s
+step 61000 -> batch index 60999: 512 ranges, 16,777,216 bytes in 11.4 s; 324 files; EOS 2733; pad 48234; token bytes sha256 400f42601db09643fcab26a4621baeaf9e90c5be0983a81ac2046098e2202d28
+  instances per source (batch, expected): {'common_crawl': (392, 389.5), 'dolma1_7-wiki-en': (2, 0.2), 'finemath-3plus': (9, 13.1), 'olmocr_science_pdfs': (67, 69.5), 'rpj-proofpile-arxiv': (6, 4.4), 'stack_edu': (36, 35.3)}
+step 61001 -> batch index 61000: 512 ranges, 16,777,216 bytes in 11.2 s; 318 files; EOS 2682; pad 45904; token bytes sha256 a67370a908a4003feec18766b6a876b2a0d2366b9e6ac30190d8f361986f323d
+  instances per source (batch, expected): {'common_crawl': (400, 389.5), 'dolma1_7-wiki-en': (0, 0.2), 'finemath-3plus': (11, 13.1), 'olmocr_science_pdfs': (65, 69.5), 'rpj-proofpile-arxiv': (3, 4.4), 'stack_edu': (33, 35.3)}
+total 59.1 s
+       59.28 real        83.31 user         6.95 sys
+          3032973312  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              215444  page reclaims
+                1172  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+               18546  messages sent
+               88116  messages received
+                   0  signals received
+                4484  voluntary context switches
+               91393  involuntary context switches
+        179153654575  instructions retired
+        311837124577  cycles elapsed
+          3013511904  peak memory footprint

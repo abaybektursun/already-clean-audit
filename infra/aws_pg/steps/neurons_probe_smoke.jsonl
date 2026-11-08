@@ -1,0 +1,5 @@
+{"text_id": "smoke:0", "text": "The committee met on Tuesday to discuss the budget for the new public library."}
+{"text_id": "smoke:1", "text": "def fib(n):\n    return n if n < 2 else fib(n - 1) + fib(n - 2)\n"}
+{"text_id": "smoke:2", "text": "Let x be a real number with x^2 - 5x + 6 = 0. Then x = 2 or x = 3."}
+{"text_id": "smoke:3", "text": "Paris is the capital of France, and Berlin is the capital of Germany."}
+{"text_id": "smoke:4", "text": "She opened the door, looked at the rain, and decided to stay home."}

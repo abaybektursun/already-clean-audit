@@ -1,0 +1,932 @@
+[
+ {
+  "birth": "L03N7574+:c6",
+  "t_pre": 11,
+  "layer": 3,
+  "size": 5,
+  "d": 5,
+  "windows": 5,
+  "loss_terms_reachable": 4126,
+  "exemplar_index_and_text": [
+   0,
+   "ation using synthetic jets\n476 Kim, Kihwan 2005-12-01 THESIS\nThe Influence of Dust on the Absorptivity of Radiant Barriers\n477 Noboa, H. L. 1993-08-01 THESIS\nSt [[ochastic]]  generation of biologically accurate brain networks\n478 Aluri, Aravind "
+  ],
+  "pairs": [
+   {
+    "rank": 0,
+    "pole": "L03N7574+",
+    "pred_bf16": 0.05654910206794739,
+    "meas_bf16": 0.124755859375,
+    "ratio_meas_to_pred": 2.2061510229658077,
+    "sum_abs_h": 1.9228515625,
+    "fd_pred_bf16": 0.0056549102067947376,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 1,
+    "pole": "L03N3745+",
+    "pred_bf16": -0.0022722482681274414,
+    "meas_bf16": -1.486083984375,
+    "ratio_meas_to_pred": 654.0147946067888,
+    "sum_abs_h": 0.6240234375,
+    "fd_pred_bf16": -0.0002272248268127441,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 2,
+    "pole": "L03N8204-",
+    "pred_bf16": -0.022302761673927307,
+    "meas_bf16": -0.351806640625,
+    "ratio_meas_to_pred": 15.774129041439474,
+    "sum_abs_h": 0.6063232421875,
+    "fd_pred_bf16": -0.00223027616739273,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 3,
+    "pole": "L03N1651-",
+    "pred_bf16": 0.05031951516866684,
+    "meas_bf16": 0.274658203125,
+    "ratio_meas_to_pred": 5.458283972020964,
+    "sum_abs_h": 0.6952590942382812,
+    "fd_pred_bf16": 0.005031951516866683,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   }
+  ],
+  "matched_pole_context": {
+   "L03N2224-": [
+    0,
+    "�を聴いていたのだけれども自宅でしか聴かないのにそれだと重くね？っちゅうことでRaspberry Pi 3を用いた新たなソリューションを� [[�]] �討したのだがカンタンにはいかな"
+   ]
+  }
+ },
+ {
+  "birth": "L03N7746+:c0",
+  "t_pre": 14,
+  "layer": 3,
+  "size": 5,
+  "d": 2,
+  "windows": 2,
+  "loss_terms_reachable": 3473,
+  "exemplar_index_and_text": [
+   1,
+   "s. While LLCs are most times taxed applying personal rates, some owners opt to be taxed as a separate entity. And this would result in an LLC being taxed as a C [[ corp]]  and subject to double taxation.\n\nS Corps, on the other hand, are generally"
+  ],
+  "pairs": [
+   {
+    "rank": 0,
+    "pole": "L03N7746+",
+    "pred_bf16": 0.004023030400276184,
+    "meas_bf16": 0.287841796875,
+    "ratio_meas_to_pred": 71.54850156122097,
+    "sum_abs_h": 0.5908203125,
+    "fd_pred_bf16": 0.00040230304002761833,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 1,
+    "pole": "L03N5771-",
+    "pred_bf16": -0.1103392243385315,
+    "meas_bf16": 0.827392578125,
+    "ratio_meas_to_pred": -7.4986260152280835,
+    "sum_abs_h": 1.712890625,
+    "fd_pred_bf16": -0.011033922433853148,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 2,
+    "pole": "L03N8235+",
+    "pred_bf16": -0.0271148681640625,
+    "meas_bf16": -0.6201171875,
+    "ratio_meas_to_pred": 22.870005627462014,
+    "sum_abs_h": 5.515625,
+    "fd_pred_bf16": -0.0027114868164062494,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 3,
+    "pole": "L03N1326-",
+    "pred_bf16": -0.14178705215454102,
+    "meas_bf16": -0.501220703125,
+    "ratio_meas_to_pred": 3.535024499830166,
+    "sum_abs_h": 6.9140625,
+    "fd_pred_bf16": -0.014178705215454099,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   }
+  ],
+  "matched_pole_context": {
+   "L03N463-": [
+    0,
+    "king the chain of fear. In life, we get many opportunities to get out of our comfort zone but to grab the right one becomes tough sometimes.\n\nSometimes, lack of [[ motivation]]  becomes the reason behind living in the comfort zone. For obvious reasons, people do"
+   ]
+  }
+ },
+ {
+  "birth": "L06N9844+:c1",
+  "t_pre": 14,
+  "layer": 6,
+  "size": 7,
+  "d": 2,
+  "windows": 5,
+  "loss_terms_reachable": 7495,
+  "exemplar_index_and_text": [
+   0,
+   "←2019-11-16 2019-11-17 2019-11-18→ ↑2019 ↑all\n00:17:14 -!- z [[zo]] 38 has joined.\n00:17:30 <zzo38> Now I internet"
+  ],
+  "pairs": [
+   {
+    "rank": 0,
+    "pole": "L06N9844+",
+    "pred_bf16": 0.029804185032844543,
+    "meas_bf16": -0.34814453125,
+    "ratio_meas_to_pred": -11.681061933629149,
+    "sum_abs_h": 1.1119384765625,
+    "fd_pred_bf16": 0.0029804185032844535,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 1,
+    "pole": "L06N6402+",
+    "pred_bf16": -0.016532421112060547,
+    "meas_bf16": -2.0380859375,
+    "ratio_meas_to_pred": 123.27812869545153,
+    "sum_abs_h": 1.153351068496704,
+    "fd_pred_bf16": -0.0016532421112060544,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 2,
+    "pole": "L06N5288-",
+    "pred_bf16": 0.03695395961403847,
+    "meas_bf16": -0.758544921875,
+    "ratio_meas_to_pred": -20.526756260967385,
+    "sum_abs_h": 1.391845703125,
+    "fd_pred_bf16": 0.003695395961403846,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 3,
+    "pole": "L06N363-",
+    "pred_bf16": -0.008209731429815292,
+    "meas_bf16": -0.321044921875,
+    "ratio_meas_to_pred": 39.10541101369781,
+    "sum_abs_h": 1.115509033203125,
+    "fd_pred_bf16": -0.0008209731429815291,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   }
+  ],
+  "matched_pole_context": {
+   "L06N7825+": [
+    0,
+    "l the while, it never occurs to Dick or his crew to shoot the damn dogs until LONG after the villain is a literal dog's dinner.\n  • In the final issue of Atomic [[ Rob]] o And the Dogs of War, the second half takes a time skip to the"
+   ]
+  }
+ },
+ {
+  "birth": "L16N1206+:c1",
+  "t_pre": 13,
+  "layer": 16,
+  "size": 9,
+  "d": 9,
+  "windows": 9,
+  "loss_terms_reachable": 6320,
+  "exemplar_index_and_text": [
+   0,
+   "\n/* Based on Java program below published by Lancs University\n *\tClass to take a numbered file after it has been stemmed and sort\n *\tit into pseudo groups where [[ identical]]  stems are adjacent\n *\tRob Hooper\n *\t02/11/"
+  ],
+  "pairs": [
+   {
+    "rank": 0,
+    "pole": "L16N1206+",
+    "pred_bf16": 0.05480687692761421,
+    "meas_bf16": -0.0335693359375,
+    "ratio_meas_to_pred": -0.6125022591934304,
+    "sum_abs_h": 8.1015625,
+    "fd_pred_bf16": 0.00548068769276142,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 1,
+    "pole": "L16N2324-",
+    "pred_bf16": 0.009160468354821205,
+    "meas_bf16": -1.464599609375,
+    "ratio_meas_to_pred": -159.8826121815238,
+    "sum_abs_h": 1.836669921875,
+    "fd_pred_bf16": 0.0009160468354821203,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 2,
+    "pole": "L16N7534-",
+    "pred_bf16": 0.00819931086152792,
+    "meas_bf16": -0.932373046875,
+    "ratio_meas_to_pred": -113.71358674175877,
+    "sum_abs_h": 2.01263427734375,
+    "fd_pred_bf16": 0.0008199310861527918,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 3,
+    "pole": "L16N1542+",
+    "pred_bf16": 0.015748362988233566,
+    "meas_bf16": -0.0732421875,
+    "ratio_meas_to_pred": -4.650781008459298,
+    "sum_abs_h": 3.3807373046875,
+    "fd_pred_bf16": 0.0015748362988233563,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   }
+  ],
+  "matched_pole_context": {
+   "L16N4452+": [
+    1,
+    "ugh completely.\n\n    Gina noticed he’d stared at one for several minutes. “Does that one look like a good lead?” she asked.\n\n    He glanced at her with a mild f [[rown]] . “No...it’s just as inane as the rest of them.”\n\n"
+   ]
+  }
+ },
+ {
+  "birth": "L20N5782+:c1",
+  "t_pre": 11,
+  "layer": 20,
+  "size": 15,
+  "d": 7,
+  "windows": 15,
+  "loss_terms_reachable": 16182,
+  "exemplar_index_and_text": [
+   0,
+   "s while trying to save her 9-year-old neighbor, and Mavy Stoddard, whose husband died shielding her from bullets, plan to address the court.\n\n\"He has to pay the [[ consequences]]  for what he did, and justice will be served,\" Hileman said.\n\n"
+  ],
+  "pairs": [
+   {
+    "rank": 0,
+    "pole": "L20N5782+",
+    "pred_bf16": -0.18721815943717957,
+    "meas_bf16": -1.140625,
+    "ratio_meas_to_pred": 6.092491259549707,
+    "sum_abs_h": 65.05859375,
+    "fd_pred_bf16": -0.018721815943717954,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 1,
+    "pole": "L20N1814+",
+    "pred_bf16": -0.21942050755023956,
+    "meas_bf16": 0.2471923828125,
+    "ratio_meas_to_pred": -1.12656918704785,
+    "sum_abs_h": 268.4439697265625,
+    "fd_pred_bf16": -0.02194205075502395,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 2,
+    "pole": "L20N7103+",
+    "pred_bf16": -0.19301193952560425,
+    "meas_bf16": -1.5726318359375,
+    "ratio_meas_to_pred": 8.147847432665586,
+    "sum_abs_h": 89.754638671875,
+    "fd_pred_bf16": -0.01930119395256042,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 3,
+    "pole": "L20N4687-",
+    "pred_bf16": -0.02452801540493965,
+    "meas_bf16": -2.755126953125,
+    "ratio_meas_to_pred": 112.32571847497087,
+    "sum_abs_h": 56.8271484375,
+    "fd_pred_bf16": -0.002452801540493965,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   }
+  ],
+  "matched_pole_context": {
+   "L20N1330-": [
+    0,
+    "(stick with something that can erase…at least for the first draft) or a computer or a smartphone with your favorite itinerary app. Choose whichever method comes [[ naturally]]  to you. \n\nI love creating things digitally while at the same time having"
+   ]
+  }
+ },
+ {
+  "birth": "L07N8340+:c4",
+  "t_pre": 13,
+  "layer": 7,
+  "size": 5,
+  "d": 4,
+  "windows": 5,
+  "loss_terms_reachable": 5905,
+  "exemplar_index_and_text": [
+   0,
+   ", Loeb M, Maccannell T, Malani PN, Mody L, Mylotte JM, Nicolle LE, Roghmann MC, Schweon SJ, Simor AE, Smith PW, Stevenson KB, Bradley SF, Society for Healthcare [[ Epidemi]] ology Long-Term Care Special Interest Group. Surveillance definitions of infections in long-term"
+  ],
+  "pairs": [
+   {
+    "rank": 0,
+    "pole": "L07N8340+",
+    "pred_bf16": 0.03053736686706543,
+    "meas_bf16": -2.66552734375,
+    "ratio_meas_to_pred": -87.28739957683689,
+    "sum_abs_h": 0.871826171875,
+    "fd_pred_bf16": 0.0030537366867065424,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 1,
+    "pole": "L07N6238+",
+    "pred_bf16": -0.037879228591918945,
+    "meas_bf16": -2.0546875,
+    "ratio_meas_to_pred": 54.2431188907142,
+    "sum_abs_h": 2.228759765625,
+    "fd_pred_bf16": -0.003787922859191894,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 2,
+    "pole": "L07N5607-",
+    "pred_bf16": -0.0008643120527267456,
+    "meas_bf16": -2.6865234375,
+    "ratio_meas_to_pred": 3108.2795027843385,
+    "sum_abs_h": 0.980712890625,
+    "fd_pred_bf16": -8.643120527267454e-05,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 3,
+    "pole": "L07N952+",
+    "pred_bf16": -0.005292508751153946,
+    "meas_bf16": -2.07861328125,
+    "ratio_meas_to_pred": 392.7463097338841,
+    "sum_abs_h": 1.0346527099609375,
+    "fd_pred_bf16": -0.0005292508751153945,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   }
+  ],
+  "matched_pole_context": {
+   "L07N965-": [
+    0,
+    " [[NASA]] ’s James Webb Telescope captures a stunning image of a ‘lonely’ galaxy\n\n"
+   ]
+  }
+ },
+ {
+  "birth": "L10N9052+:c2",
+  "t_pre": 13,
+  "layer": 10,
+  "size": 5,
+  "d": 1,
+  "windows": 5,
+  "loss_terms_reachable": 5709,
+  "exemplar_index_and_text": [
+   0,
+   "s a new album out, \"AudioLust & HigherLove.\" Thank you so much for joining us.\n\nLEWIS: Thank you so much. Thanks for the great chat. Transcript provided by NPR, [[ Copyright]]  NPR.\n\nAyesha Rascoe is a White House correspondent for NPR. She"
+  ],
+  "pairs": [
+   {
+    "rank": 0,
+    "pole": "L10N9052+",
+    "pred_bf16": -0.00013620941899716854,
+    "meas_bf16": -1.128173828125,
+    "ratio_meas_to_pred": 8282.641805765665,
+    "sum_abs_h": 0.263336181640625,
+    "fd_pred_bf16": -1.362094189971685e-05,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 1,
+    "pole": "L10N3510+",
+    "pred_bf16": 0.0024082064628601074,
+    "meas_bf16": -1.742431640625,
+    "ratio_meas_to_pred": -723.5391431329357,
+    "sum_abs_h": 4.85546875,
+    "fd_pred_bf16": 0.0002408206462860107,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 2,
+    "pole": "L10N3950-",
+    "pred_bf16": -0.008364170789718628,
+    "meas_bf16": -2.214599609375,
+    "ratio_meas_to_pred": 264.7721651137518,
+    "sum_abs_h": 7.2421875,
+    "fd_pred_bf16": -0.0008364170789718626,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 3,
+    "pole": "L10N9744+",
+    "pred_bf16": 0.010053396224975586,
+    "meas_bf16": -1.991455078125,
+    "ratio_meas_to_pred": -198.08779377238125,
+    "sum_abs_h": 7.84375,
+    "fd_pred_bf16": 0.0010053396224975583,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   }
+  ],
+  "matched_pole_context": {
+   "L10N4199+": [
+    0,
+    " that will pop up.\n\nTinyChat is an different selection to Omegle that, depending on your preferences, allows you to chat with random strangers by way of textual [[ content]] , audio, and video. It does not function in a one-on-one chat"
+   ]
+  }
+ },
+ {
+  "birth": "L10N9794+:c2",
+  "t_pre": 9,
+  "layer": 10,
+  "size": 12,
+  "d": 9,
+  "windows": 7,
+  "loss_terms_reachable": 8212,
+  "exemplar_index_and_text": [
+   0,
+   "sync function getAutorByAutorId (autorId) {\n  return await autorRepository.getAutorByAutorId(autorId)\n}\n\nexport default { createAutor, updateAutor, deleteAutor, [[ get]] Autores, getAutorByAutorId }\n<|endoftext|>"
+  ],
+  "pairs": [
+   {
+    "rank": 0,
+    "pole": "L10N9794+",
+    "pred_bf16": -0.06491980701684952,
+    "meas_bf16": -0.76904296875,
+    "ratio_meas_to_pred": 11.846045206979742,
+    "sum_abs_h": 58.6953125,
+    "fd_pred_bf16": -0.00649198070168495,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 1,
+    "pole": "L10N5132-",
+    "pred_bf16": -0.023955821990966797,
+    "meas_bf16": -0.094482421875,
+    "ratio_meas_to_pred": 3.944027548319035,
+    "sum_abs_h": 37.30078125,
+    "fd_pred_bf16": -0.002395582199096679,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 2,
+    "pole": "L10N4370+",
+    "pred_bf16": -0.029585838317871094,
+    "meas_bf16": -0.9501953125,
+    "ratio_meas_to_pred": 32.11655868226799,
+    "sum_abs_h": 32.58984375,
+    "fd_pred_bf16": -0.0029585838317871087,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 3,
+    "pole": "L10N7197+",
+    "pred_bf16": 0.003842957317829132,
+    "meas_bf16": 2.8912353515625,
+    "ratio_meas_to_pred": 752.3464645700892,
+    "sum_abs_h": 23.8662109375,
+    "fd_pred_bf16": 0.0003842957317829131,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   }
+  ],
+  "matched_pole_context": {
+   "L10N10180+": [
+    0,
+    "You can skip this in seconds\n\nClick here to continue\n\nDownload Now!\n\nAllWebMenus WordPress Menu Addin 1.0.8\n\nAllWeb [[Menus]]  WordPress Menu Addin AllWebMenus WordPress Menu Addin 1.0."
+   ]
+  }
+ },
+ {
+  "birth": "L19N7374-:c1",
+  "t_pre": 12,
+  "layer": 19,
+  "size": 10,
+  "d": 4,
+  "windows": 10,
+  "loss_terms_reachable": 9078,
+  "exemplar_index_and_text": [
+   1,
+   "You are [[ here]] \n\nDoepfer Dark Time\n\nStep Sequencer\nPublished August 2013"
+  ],
+  "pairs": [
+   {
+    "rank": 0,
+    "pole": "L19N7374-",
+    "pred_bf16": 0.058022093027830124,
+    "meas_bf16": 1.294921875,
+    "ratio_meas_to_pred": 22.317738079163995,
+    "sum_abs_h": 26.0625,
+    "fd_pred_bf16": 0.005802209302783011,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 1,
+    "pole": "L19N7298+",
+    "pred_bf16": -0.007338166236877441,
+    "meas_bf16": 0.9913330078125,
+    "ratio_meas_to_pred": -135.09274331107753,
+    "sum_abs_h": 82.16717529296875,
+    "fd_pred_bf16": -0.000733816623687744,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 2,
+    "pole": "L19N9178+",
+    "pred_bf16": -0.06769677251577377,
+    "meas_bf16": 0.5618896484375,
+    "ratio_meas_to_pred": -8.300095079223698,
+    "sum_abs_h": 44.026519775390625,
+    "fd_pred_bf16": -0.006769677251577376,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 3,
+    "pole": "L19N2397+",
+    "pred_bf16": 0.01337384432554245,
+    "meas_bf16": 1.7781982421875,
+    "ratio_meas_to_pred": 132.96088984611202,
+    "sum_abs_h": 48.097259521484375,
+    "fd_pred_bf16": 0.0013373844325542446,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   }
+  ],
+  "matched_pole_context": {
+   "L19N3415+": [
+    0,
+    "e your children in for Martial Arts training!  PM me for details!  Scumbag!  I know about you and like a Bulldog, won't let GO!\n\nlast post\n2 years ago\ncan view\n [[can]]  comment\natom/rss\nofficial fubar blogs\n 2 years ago\nf"
+   ]
+  }
+ },
+ {
+  "birth": "L24N5066-:c1",
+  "t_pre": 11,
+  "layer": 24,
+  "size": 15,
+  "d": 3,
+  "windows": 1,
+  "loss_terms_reachable": 784,
+  "exemplar_index_and_text": [
+   0,
+   "                                  \n\nKey Companies Analysis:- Amphenol Industrial Products Group, Caledonian Cables Ltd, CMP Products, Copper Crouse-Hinds (Eaton [[),]]  Cortem Group, Elsewedy Electric, Emerson Industrial Automation, BARTEC"
+  ],
+  "pairs": [
+   {
+    "rank": 0,
+    "pole": "L24N5066-",
+    "pred_bf16": 0.04816358909010887,
+    "meas_bf16": 0.200439453125,
+    "ratio_meas_to_pred": 4.161638634321862,
+    "sum_abs_h": 99.21875,
+    "fd_pred_bf16": 0.004816358909010886,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 1,
+    "pole": "L24N3879-",
+    "pred_bf16": -0.02147054672241211,
+    "meas_bf16": 0.29931640625,
+    "ratio_meas_to_pred": -13.940791080907012,
+    "sum_abs_h": 278.625,
+    "fd_pred_bf16": -0.0021470546722412104,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 2,
+    "pole": "L24N3071+",
+    "pred_bf16": -0.05982351303100586,
+    "meas_bf16": 0.231689453125,
+    "ratio_meas_to_pred": -3.8728827744522114,
+    "sum_abs_h": 393.375,
+    "fd_pred_bf16": -0.005982351303100585,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   },
+   {
+    "rank": 3,
+    "pole": "L24N234+",
+    "pred_bf16": 0.22519397735595703,
+    "meas_bf16": 0.387451171875,
+    "ratio_meas_to_pred": 1.7205219092630002,
+    "sum_abs_h": 404.375,
+    "fd_pred_bf16": 0.0225193977355957,
+    "PENDING": [
+     "dL fp32",
+     "dL_own",
+     "dL_fd",
+     "dL_fd_own",
+     "pred_jvp",
+     "pred_jvp_own",
+     "probe"
+    ]
+   }
+  ],
+  "matched_pole_context": {
+   "L24N228-": [
+    0,
+    "\npolitics. What can you expect from such people?\"\n\nHe said to me, \"Men outside politics are beginning to see what education\ninvolves. It involves the whole man, [[ body]] , mind, spirit. I do not think\nyou can frame an intelligent definition"
+   ]
+  }
+ }
+]

@@ -1,0 +1,202 @@
+CHECK selfchecks: n13_arms, n13_score: ok
+CHECK MATH-500 file: git blob sha1 equals the HF tree oid at 6e4ed1a2: ok  {"oid": "2376b9a194b46c0790e197c91b7249e5f88ac09b", "rows": 500}
+INFO  G-GRADER rule 'registered': {"pass": false, "planted_eq_true": 12, "planted_neq_false": 16, "self_equal": 392, "derangement_rate": 0.01, "eq_failed": [["[1,3)", "[1, 3)"], ["(-\\infty, 2]", "(-\\infty,2]"], ["2\\sqrt{3}", "\\sqrt{12}"], ["\\frac{\\sqrt{2}}{2}", "\\frac{1}{\\sqrt{2}}"], ["\\frac{\\pi}{2}", "\\pi/2"], ["(x+1)^2", "x^2+2x+1"], ["(2,3)", "(2, 3)"], ["\\{1,2,3\\}", "\\{3,2,1\\}"], ["1,2,3", "1, 2, 3"], ["\\text{(
+INFO  G-GRADER rule 'boxed': {"pass": false, "planted_eq_true": 23, "planted_neq_false": 16, "self_equal": 500, "derangement_rate": 0.006, "eq_failed": [["45^\\circ", "45\u00b0"]]}
+CHECK G-GRADER active rule passes (24/24, 16/16, 500/500, derangement bound): ok  {"rule": "dollar_both", "planted_eq_true": 24, "planted_neq_false": 16, "self_equal": 500, "derangement_rate": 0.006, "derangement_bound": 0.016}
+CHECK G-GRADER failing input fails under every rule (the derangement scored as the identity): ok  [5, 3, 3]
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+CHECK G-TEMPLATE pair 1: 500/500 renders equal the §2.2 bytes: ok  {"n_mismatched": 0, "first_id_is_bos": [false]}
+CHECK G-TEMPLATE pair 1 failing input fails (add_generation_prompt=False differs): ok  "orm $(r,\\theta),$ where $r > 0$ and $0 \\le \\theta < 2 \\pi.$\n"
+CHECK chat template sha256 equals the spec's 4380e622…: ok  "4380e62276b7ce7e28e30be381840f7cef65f20f43173437cae5d2d6908a6155"
+CHECK G-TEMPLATE pair 1b: 500/500 renders equal the 'math problem' bytes: ok  0
+CHECK G-INIT (a) offline: base main shard oids equal those at the logged init 39ff1a89: ok  {"model-00001-of-00003.safetensors": "0490d6668e613a29b23367e3a7aa9cc6aced3d162694445bb969ed7622b3c4e2", "model-00002-of-00003.safetensors": "e127ea479fb6e208fe9d48d23b11212b5722f4873f6eef9c009b7a855866c641", "model-00003-of-00003.safetensors": "f3ddff10052ffe5de5c6b4cad45c422c0d898acc6beb21b1b85312
+CHECK G-INIT (a) failing input fails: stage2-step47684 oids in place of main's: ok
+CHECK W&B run ydkgbnai names Olmo-3-1025-7B revision 39ff1a89 as model_name_or_path: ok
+CHECK G-PARTITION offline: 355 names in four families sum to 7,298,011,136 (3.1 index and config): ok  {"mlp": 4328521728, "attn": 2147483648, "norm": 528384, "embed": 821477376}
+CHECK G-PARTITION failing input fails: the index without one MLP tensor: ok  {"missing": ["model.layers.0.mlp.down_proj.weight"]}
+CHECK base and 3.1 configs: names and shape fields equal: ok  {"num_hidden_layers": true, "hidden_size": true, "intermediate_size": true, "num_attention_heads": true, "num_key_value_heads": true, "vocab_size": true, "tie_word_embeddings": true, "sliding_window": true, "layer_types": true, "rope_scaling": true}
+<unknown>:1348: SyntaxWarning: invalid escape sequence '\$'
+<unknown>:3570: SyntaxWarning: invalid escape sequence '\s'
+<unknown>:3571: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:3616: SyntaxWarning: invalid escape sequence '\s'
+<unknown>:3617: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:3662: SyntaxWarning: invalid escape sequence '\s'
+<unknown>:3663: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:4496: SyntaxWarning: invalid escape sequence '\s'
+<unknown>:4497: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:4537: SyntaxWarning: invalid escape sequence '\s'
+<unknown>:4538: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:4584: SyntaxWarning: invalid escape sequence '\s'
+<unknown>:4585: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:5814: SyntaxWarning: invalid escape sequence '\s'
+<unknown>:5816: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:5863: SyntaxWarning: invalid escape sequence '\s'
+<unknown>:5865: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:5912: SyntaxWarning: invalid escape sequence '\s'
+<unknown>:5914: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:5958: SyntaxWarning: invalid escape sequence '\s'
+<unknown>:5960: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:6005: SyntaxWarning: invalid escape sequence '\s'
+<unknown>:6007: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:6058: SyntaxWarning: invalid escape sequence '\s'
+<unknown>:6060: SyntaxWarning: invalid escape sequence '\.'
+CHECK G-KNOWN config: olmes at 5a51f502 equals N13_MATH_TASK.md field by field (alias, shots, decoding, metric, pins, flags): ok  []
+CHECK G-KNOWN config failing input fails (num_shots 0, chat_model true): ok  ["task.num_shots", "model_defaults"]
+CHECK N13_MATH_TASK.md quoted lines equal the expected config text: ok  {"93": true, "96": true, "97": true, "98": true, "100": true, "101": true, "102": true, "104": true, "105": true, "82": true, "84": true, "285": true, "286": true, "288": true}
+CHECK G-KNOWN command equals the spec §6.1 command as amended by A18 (b) and A19 (--batch-size auto), and the path check adds only --limit 100 (A19 second revision): ok  "/opt/olmes-venv/bin/olmes --model allenai/Olmo-3-1025-7B --revision a81bae42db3975be1671e27b9c9a56da1a9f980f --model-type vllm --model-args {\"trust_remote_code\": false} --task minerva_math::olmes:n4:v2 --gpus 1 --batch-size auto --output-dir out/r0_known/olmes"
+CHECK G-KNOWN tolerance recomputed: 3 x sqrt(2) x SE rounds to 1.6: ok  {"se_one_reading": 0.37421220512259656, "se_difference": 0.5292159756899187, "three_se_difference": 1.587647927069756, "tol": 1.6}
+INFO  olmes default max_length (default_configs.py) and the unset --model-args: {"chat_model": false, "max_length": 2048}
+CHECK S-BAND: 15 logged 3.1 MATH-500 readings span 0.874-0.908; band [81.46, 96.74] rounds to [81.5, 96.7]: ok  {"n": 15, "band": [81.46333426913726, 96.73666573086274]}
+INFO  3.1 main shard oids equal those of branch: ["step_2800"]
+CHECK stand-in shards written by n13_arms.write_safetensors open with the safetensors library: ok  {"safetensors": "0.8.0", "keys": 16}
+$ /private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_venv/bin/python -m infra.aws_pg.jobs.n13_setup --part grader --problems /private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_dry_a22b/e2e/out/setup/problems.json --part-out /private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_dry_a22b/e2e/out/setup/grader.json
+$ /private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_venv/bin/python -m infra.aws_pg.jobs.n13_setup --part template --problems /private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_dry_a22b/e2e/out/setup/problems.json --tok-dir /private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_dry_a22b/e2e/weights/rl --pair pair1 --part-out /private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_dry_a22b/e2e/out/setup/template.json --ids-out /private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_dry_a22b/e2e/out/setup/prompt_ids.json
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[transformers] Model config: pad_token_id must be `None` or an integer within the vocabulary (between 0 and 511), got 100277. This may result in unexpected behavior.
+[transformers] Model config: eos_token_id must be `None` or an integer within the vocabulary (between 0 and 511), got 100257. This may result in unexpected behavior.
+CHECK setup (local): data, G-GRADER, G-INIT (a), G-TEMPLATE pass; setup.json written: ok  {"G-GRADER": true, "G-INIT_a": true}
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[transformers] Model config: pad_token_id must be `None` or an integer within the vocabulary (between 0 and 511), got 100277. This may result in unexpected behavior.
+[transformers] Model config: eos_token_id must be `None` or an integer within the vocabulary (between 0 and 511), got 100257. This may result in unexpected behavior.
+PATH CHECK passed: 100 scored rows per subject, shim calls 7 (largest 400 prompts), 0.4 s, primary_score 0.4000 (not read against 40.0)
+PROJECTION: full task 0.0 min (F 0 s + T 4643970 tokens / r 7100085.1 tokens/s); fits in 237.99999780456227 min; go
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[transformers] Model config: pad_token_id must be `None` or an integer within the vocabulary (between 0 and 511), got 100277. This may result in unexpected behavior.
+[transformers] Model config: eos_token_id must be `None` or an integer within the vocabulary (between 0 and 511), got 100257. This may result in unexpected behavior.
+GATE G-KNOWN: 40.00 vs 40.0 +- 1.6: pass; deranged 0.00 (failed); identity rescore True; shim calls 1
+CHECK R0 reader returns the aggregate primary_score (40.0) and G-KNOWN passes; derangement rescore < 10 fails it: ok  {"value": 40.0, "pass": true, "deranged": 0.0}
+CHECK R0 path check (A18, A19 second revision): --limit 100 run first, 100 scored rows per subject, reader and rescorer run; the olmes environment puts the shim first on PYTHONPATH; shim calls counted in metrics.json (7 calls, 2,800 prompts); the engine and the shim sha256 named: ok  {"rows": {"algebra": 100, "counting_and_probability": 100, "geometry": 100, "intermediate_algebra": 100, "number_theory": 100, "prealgebra": 100, "precalculus": 100}, "shim": [7, 1], "shim_sha256": "1f6ccee39a8b916dec2ce0f3b950903bc5acad049a55e2f157e3b8c5596526d6"}
+CHECK R0 path check (A19 second revision): batched calls pass (first and largest call 400 prompts, no early stop); the projection is built before the full task from the shim log, each call mapped to its subject in task order (per-subject tokens equal the planted s2setup-06 lengths), T = sum 4 x size_s x tokens_s / n_s, r = tokens / generation seconds, F = wall - generation seconds > 0; it goes at allowance 280: ok  {"batched": {"what": "A19: while olmes runs, the first shim call must have n_prompts >= 2, else olmes is killed within one poll interval; at the end, at least one call with n_prompts >= 2. Failing input: batch size 1, every call n_prompts 1", "first_n_prompts": 400, "max_n_prompts": 400, "stopped_ea
+CHECK R0 banks 5 right and 5 wrong samples with the prompt: ok
+PATH CHECK FAILED: stopped early: the first shim call had n_prompts 1 (olmes at batch size 1), seen 0.299 s after olmes started and 0.03 s after that call returned; the full task is not run
+CHECK A19 early stop, registered failing input (batch size 1: 2,800 calls of 1 prompt, at least 28 s unstopped): the first logged call (n_prompts 1) is seen within one poll interval (0.05 s) of its return; olmes' process group is killed (the log stops growing, so the run_eval child died too); status failed_path_check with the reason; exit 4; no projection, no full task: ok  {"exit": 4, "reason": "stopped early: the first shim call had n_prompts 1 (olmes at batch size 1), seen 0.299 s after olmes started and 0.03 s after that call returned", "lag_s": 0.028954744338989258, "log_lines": [2, 2], "step_s": 0.3}
+PATH CHECK FAILED: olmes exit 0, scored rows {'algebra': 100, 'counting_and_probability': 100, 'geometry': 100, 'intermediate_algebra': 100, 'number_theory': 100, 'prealgebra': 100, 'precalculus': 100}, largest shim call 1 prompts; the full task is not run
+CHECK A19 end-of-check assertion (kept), failing input: a batch-1 path check that exits before the first poll sees its log (2,800 calls of 1 prompt, olmes exit 0) fails at the end: largest call 1 prompt, exit 4, no early stop, no full task: ok  {"exit": 4, "reason": "olmes exit 0, scored rows {'algebra': 100, 'counting_and_probability': 100, 'geometry': 100, 'intermediate_algebra': 100, 'number_theory': 100, 'prealgebra': 100, 'precalculus': 100}, largest shim call 1 prompts", "calls": 2800}
+CHECK A19 full-task generations: the 7 subject test sizes (sum 5,000) x 4 repeats = 20,000; the path check 7 x 100 x 4 = 2,800: ok  {"algebra": 1187, "counting_and_probability": 474, "geometry": 479, "intermediate_algebra": 903, "number_theory": 540, "prealgebra": 871, "precalculus": 546}
+CHECK A19 projection gate failing input (second revision): the s2setup-06 path check, one call per subject (137,386 tokens in 3,030 s of generation, 45.3 tokens/s, F 90 s), parks at allowance 280 with nothing elapsed; its subject-weighted T equals path_check_tokens.py's full-task estimate 4,643,969.85: ok  {"T_full_output_tokens": 4643969.850000001, "r_tokens_per_s": 45.34191419141914, "F_fixed_s": 90.0, "projected_full_min": 1708.5187459056965, "fits_min": 238.0, "parked": true}
+CHECK A19 projection on planted --limit 100 path checks (400 prompts per subject at s2setup-06's per-subject mean lengths, F 132 s, elapsed = setup + wall + rescore): 300 tokens/s parks, 500 and 1,000 tokens/s go: ok  {"300": {"projected_full_min": 260.198325, "fits_min": 187.20163888888888, "elapsed_min": 59.76277777777777, "parked": true}, "500": {"projected_full_min": 156.99899500000004, "fits_min": 200.1769833333333, "elapsed_min": 44.49766666666667, "parked": false}, "1000": {"projected_full_min": 79.5994975
+CHECK A19 projection stops on broken timing: generation seconds above the wall seconds raise: ok  "AssertionError: generation seconds 120.0 outside (0, wall 100.0]: the timing is broken"
+CHECK A19 projection stops unless the path check logged exactly 7 calls, one per subject (6 calls raise): ok  "AssertionError: 6 shim calls in the path check; expected one per subject, 7"
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[transformers] Model config: pad_token_id must be `None` or an integer within the vocabulary (between 0 and 511), got 100277. This may result in unexpected behavior.
+[transformers] Model config: eos_token_id must be `None` or an integer within the vocabulary (between 0 and 511), got 100257. This may result in unexpected behavior.
+PATH CHECK passed: 100 scored rows per subject, shim calls 7 (largest 400 prompts), 2.4 s, primary_score 0.4000 (not read against 40.0)
+PROJECTION: full task 0.2 min (F 0 s + T 4643970 tokens / r 321384.1 tokens/s); fits in 0.1608264207839966 min; PARKED
+CHECK A19 projection gate end to end: a path check whose projection exceeds 85 % of the minutes left (allowance 0.25 min; 7 fake calls of 0.3 s at s2setup-06's per-subject lengths, so T / r = 6.76 x 2.1 s) writes the projection, parks (PARKED marker) and exits 0 before the full task: ok  {"path_check_wall_s": 2.4, "path_check_generate_s": 2.137411117553711, "F_fixed_s": 0.262588882446289, "projected_full_min": 0.24520822034251596, "fits_min": 0.1608264207839966, "elapsed_min": 0.06079244613647461, "parked": true}
+CHECK A19 elapsed clock: pipeline.py writes started_utc at its first write and a step's launch_t0 reads it (within 2 s of the pipeline's start); the 1-h-old steps.json mtime (the old clock: 60 min elapsed) does not move it: ok  {"elapsed_min_new_clock": 0.012002114454905193, "elapsed_min_old_clock": 60.001158845424655, "launch_t0_minus_launch_s": -0.6506538391113281, "started_utc": "2026-11-06T01:03:21Z"}
+PATH CHECK FAILED: olmes exit 0, scored rows {'algebra': 99, 'counting_and_probability': 99, 'geometry': 99, 'intermediate_algebra': 99, 'number_theory': 99, 'prealgebra': 99, 'precalculus': 99}, largest shim call 400 prompts; the full task is not run
+CHECK R0 path check failing input: 99 scored rows per subject stops the step (exit 4) before the full task: ok  {"exit": 4, "status": "failed_path_check", "rows": 99}
+CHECK R0 reader stops on a directory that holds only pass_at_1_micro: ok  "AssertionError: the aggregate row holds no primary_score (keys: ['pass_at_1_micro'])"
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[transformers] Model config: pad_token_id must be `None` or an integer within the vocabulary (between 0 and 511), got 100277. This may result in unexpected behavior.
+[transformers] Model config: eos_token_id must be `None` or an integer within the vocabulary (between 0 and 511), got 100257. This may result in unexpected behavior.
+PATH CHECK passed: 100 scored rows per subject, shim calls 7 (largest 400 prompts), 0.4 s, primary_score 0.4000 (not read against 40.0)
+PROJECTION: full task 0.0 min (F 0 s + T 4643970 tokens / r 7733106.9 tokens/s); fits in 237.99999684194725 min; go
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[transformers] Model config: pad_token_id must be `None` or an integer within the vocabulary (between 0 and 511), got 100277. This may result in unexpected behavior.
+[transformers] Model config: eos_token_id must be `None` or an integer within the vocabulary (between 0 and 511), got 100257. This may result in unexpected behavior.
+GATE G-KNOWN: 30.00 vs 40.0 +- 1.6: FAIL; deranged 0.00 (failed); identity rescore True; shim calls 1
+CHECK G-KNOWN fails (exit 3, the stop rule) on a fabricated base score of 30.0: ok
+CHECK A18 shim: a two-prompt generate(prompt_token_ids=...) call becomes generate([TokensPrompt x 2], ...), the sampling params pass through unchanged (same object), use_tqdm kept, the return value passed back unchanged, a new-signature call untouched; one converted call logged with its wall time (>= the fake's 0.05 s) and output_tokens 10 (planted: 3 + 5 + 2 token ids over three completions, A19 revision): ok  {"seen": {"prompts": [{"prompt_token_ids": [100257, 5, 6]}, {"prompt_token_ids": [7]}], "sp_same": true, "use_tqdm": false, "lora": null, "returned_unchanged": true, "new_signature": [[{"prompt_token_ids": [1]}], true, true]}, "calls": [{"pid": 4040, "n_prompts": 2, "t_start": 1793927004.5968251, "t
+CHECK A18 shim failing input: the same call without the shim raises TypeError: ok  "TypeError: LLM.generate() got an unexpected keyword argument 'prompt_token_ids'"
+INFO  A18 shim file and sha256: {"path": "/Users/abaybektursun/projects/interp_research-n13/infra/aws_pg/jobs/n13_olmes_shim/sitecustomize.py", "sha256": "1f6ccee39a8b916dec2ce0f3b950903bc5acad049a55e2f157e3b8c5596526d6"}
+CHECK A21: the --inner child's environment (n13_gen.child_env, used by main) sets VLLM_USE_FLASHINFER_SAMPLER=0, keeps the venv first on PATH and every other variable; the engine pins attention_backend FLASH_ATTN: ok  {"VLLM_USE_FLASHINFER_SAMPLER": "0", "PATH": "/opt/n13/bin:/usr/bin"}
+CHECK A21 failing input: VllmEngine without VLLM_USE_FLASHINFER_SAMPLER, or with it at 1, stops on the A21 assertion before importing vllm; with it at 0 it passes the assertion and reaches the vllm import (no vLLM on the laptop: ModuleNotFoundError). The engine start without the variable, which raises 'Could not find nvcc' on the instance, cannot run here: ok  {"set": {"returncode": 1, "last_line": "ModuleNotFoundError: No module named 'vllm'"}, "unset": {"returncode": 1, "last_line": "AssertionError: A21: the engine environment differs from {'VLLM_USE_FLASHINFER_SAMPLER': '0'}: {'VLLM_USE_FLASHINFER_SAMPLER': None}"}, "set_to_1": {"returncode": 1, "last_
+CHECK G-PARTITION (stand-in) passes and its failing input fails: ok
+CHECK G-INIT (stand-in): base chosen over stage 2; swapped candidates fail: ok  {"share_main": 0.6841634114583334, "share_other": 0.0017225477430555555, "difference": 0.6824408637152778}
+CHECK the ranker recovers the 8 planted neurons at k = 8: ok  [8, 109, 178, 196, 241, 252, 304, 307]
+CHECK PC-RANK (stand-in) passes (recovery >= 0.99): ok  1.0
+INFO  PC-RANK failing input at stand-in size (top 16 of 384 neurons, chance 0.042): {"what": "planted along rows of down_proj (h = n mod hidden), gate and up untouched", "value": 0.0, "failed": true, "chance": 0.041666666666666664}
+CHECK J_floor = 1 and J_round = 1 on the planted large change at k = 8: ok  {"J_floor": {"k0.1": 1.0, "k0.3": 1.0, "k1": 1.0, "k3": 0.2}, "J_round": {"k0.1": 1.0, "k0.3": 1.0, "k1": 1.0, "k3": 0.5564658337801699}}
+CHECK PC-ART (A2, iid stand-in): the H_artifact rule gives SUPPORTED on P+; its failing input P- (8 neurons moved 8 steps) gives REFUTED: ok  {"P_plus": {"J_floor": 0.0, "J_round": 0.23446886446886445, "J_sp": 0.14285714285714285}, "P_minus": {"J_floor": 1.0, "J_round": 1.0}, "n_planted": 8}
+CHECK G-HASH (R1 hash-only builds): zero = base and id = RL, every tensor; failing input (id with (0,0) reverted) fails: ok
+CHECK G-MASK (R1): every mask arm passes; failing input (down_proj rows) fails: ok  {"pass": true, "n_mask_arms": 20, "failing_input": {"what": "top_k1 built with down_proj rows instead of columns", "failed": true}}
+CHECK DARE realized kept count within 4 binomial sd of P_k (A4), as the builder asserts: ok  {"dare_k1": 0.007161458333333333, "dare_k3": 0.017795138888888888, "dare_k0.3": 0.022135416666666668, "dare_k0.1": 0.033854166666666664, "dare_k1_d2": 0.007161458333333333}
+CHECK rndE realized MLP energy within 5% of E(S_k): ok  {"rndE_k1": 0.0005478591662792133, "rndE_k3": 0.0012483864219438802, "rndE_k0.3": 0.00021512978693177747, "rndE_k0.1": 0.0007068789795702377}
+CHECK rndT reaches E(S_k) at every k (or is labeled short): ok  {"k0.1": [true, 215, false], "k0.3": [false, 380, true], "k1": [false, 376, true], "k3": [false, 360, true]}
+CHECK rndT short branch fires when the top set holds most energy: ok  {"neurons": [1, 2, 3, 4, 5], "m": 5, "E_S": 100.0, "E": 5.0, "short": true, "shortfall": 95.0, "seed": 0}
+CHECK A20: R1 writes block_profile (attention and MLP per block, embedding, head) into metrics.json and sets.json, equal in both, 4 blocks; a separate float64 recount from the stand-in snapshots matches (largest relative difference < 1e-9): ok  {"attn": [0.10023, 0.10032, 0.10019, 0.09905], "mlp": [0.23872, 0.37447, 0.4384, 0.36996], "embed": 0.0, "lm_head": 0.0, "max_rel_diff": 0.0}
+CHECK A20 planted input: block 2's attention and MLP tensors scaled by 2 give attn[2] = mlp[2] = 1 and 0 at every other block, the embedding and the head (largest error < 1e-12); the identity pair (base against itself) gives 0 everywhere, so the planted expectation fails on it: ok  {"planted_attn": [0.0, 0.0, 1.0, 0.0], "planted_mlp": [0.0, 0.0, 1.0, 0.0], "max_abs_err": 0.0}
+[transformers] Model config: pad_token_id must be `None` or an integer within the vocabulary (between 0 and 511), got 100277. This may result in unexpected behavior.
+[transformers] Model config: eos_token_id must be `None` or an integer within the vocabulary (between 0 and 511), got 100257. This may result in unexpected behavior.
+ARM base: math500 91/300 (done); 464 output tok/s; A22 r_full 457.93103448275866, r_all 464.2, tail_s 2.0999980000000003, load_s 0.0
+ARM rl: math500 266/300 (done); 589 output tok/s; A22 r_full 581.7241379310345, r_all 588.8, tail_s 2.0999980000000003, load_s 0.0
+CHECK smoke writes the throughput record (tokens/s, s/problem, histogram, memory, RSS, disk): ok
+CHECK A22 smoke (fake engine, 300 problems, at most 128 running): steps.jsonl written per 10 steps (10 lines for 100 steps), its recount equals throughput.json, its tokens equal the answers' n_generated; 58 steps at 128 running (2.9 s), tail 2.1 s; throughput.json carries r_full, r_all, tail_s, load_s, mean, median and maximum length and the cap count; metrics.json carries engine.load_s: ok  {"base": {"rows": 10, "tokens": [2321, 2321], "r_full": 457.93103448275866, "tail_s": 2.0999980000000003}, "rl": {"rows": 10, "tokens": [2944, 2944], "r_full": 581.7241379310345, "tail_s": 2.0999980000000003}}
+CHECK A22 projection command (python -m infra.pg.n13_plan) on the fake smoke: exit 0, writes projection.json and an S3 manifest whose 4 gate steps parse with n13_gen's parser and carry --cap 16384, the allowance round(1.3 x S3 minutes), --proj-tok-s = the rate and --proj-load-min = F (base, rl) or F + 5 (zero, id): ok  {"exit": 0, "s3_min": 286.20486767121815, "allowance": 372, "tok_s": 457.93103448275866, "stderr": ""}
+CHECK A22 failing input: a planted steps log whose concurrency never reaches 128 (2,000 steps at 100 running) makes the projection command refuse: exit non-zero, the message names r_full, no manifest written: ok  "A22: the base smoke's r_full is undefined: no engine step had at least 128 running sequences (largest running count 100); the projection refuses"
+CHECK A22 planted input: concurrency 300 for 1,005 steps of 0.1 s and 300 tokens, then 200 steps of 0.05 s at 10 running: r_full = 301,500 / 100.5 s = 3,000 tokens/s, tail_s = 10 s, r_all = 303,500 / 110.5 s; the S3 projection equals 20 + 75 + 4 x (F + (500 L + 1,319 x 940) / r / 60) + 2 x 5 min with F = (60 + 10) / 60 min; the manifest is written. Stop rule: with 34.5 GPU-h spent the command exits non-zero and writes no manifest: ok  {"r_full": 3000.0, "tail_s": 10.0, "r_all": 2746.606334841629, "s3_min": 148.45985185185185, "s3_want": 148.45985185185185, "stop": "stop rule (\u00a79.7): spent 34.500 + S3 2.474 GPU-h exceeds 35.0; no manifest written"}
+ARM base: math500 148/500 (done), gsm8k 21/60 (done); 6 output tok/s; A22 r_full 6.688888888888889, r_all 6.4, tail_s 150.0, load_s 0.0
+ARM rl: math500 441/500 (done), gsm8k 53/60 (done); 8 output tok/s; A22 r_full 8.327777777777778, r_all 7.907246376811594, tail_s 150.0, load_s 0.0
+ARM zero: math500 153/500 (done), gsm8k 20/60 (done); 6 output tok/s; A22 r_full 6.692592592592592, r_all 6.426086956521739, tail_s 150.0, load_s 0.0
+ARM id: math500 448/500 (done), gsm8k 55/60 (done); 8 output tok/s; A22 r_full 8.385185185185184, r_all 7.981159420289855, tail_s 150.0, load_s 0.0
+ARM top_k1: math500 374/500 (done), gsm8k 51/60 (done); 8 output tok/s; A22 r_full 7.924074074074074, r_all 7.54927536231884, tail_s 150.0, load_s 0.0
+ARM dare_k1: math500 171/500 (done), gsm8k 25/60 (done); 7 output tok/s; A22 r_full 6.805555555555555, r_all 6.507246376811594, tail_s 150.0, load_s 0.0
+ARM mlp: math500 402/500 (done), gsm8k 51/60 (done); 8 output tok/s; A22 r_full 8.135185185185184, r_all 7.720289855072464, tail_s 150.0, load_s 0.0
+ARM top_k3: math500 417/500 (done); 8 output tok/s; A22 r_full 8.008888888888889, r_all 8.173333333333334, tail_s 150.0, load_s 0.0
+ARM top_k0.3: math500 217/500 (done); 7 output tok/s; A22 r_full 6.84, r_all 6.975, tail_s 150.0, load_s 0.0
+ARM top_k0.1: math500 166/500 (done); 7 output tok/s; A22 r_full 6.582222222222223, r_all 6.73, tail_s 150.0, load_s 0.0
+ARM dare_k3: math500 235/500 (done); 7 output tok/s; A22 r_full 6.928888888888889, r_all 7.071666666666666, tail_s 150.0, load_s 0.0
+ARM dare_k0.3: math500 148/500 (done); 7 output tok/s; A22 r_full 6.506666666666667, r_all 6.631666666666667, tail_s 150.0, load_s 0.0
+ARM dare_k0.1: math500 0/25 (screened); 138 output tok/s; A22 r_full 137.73333333333332, r_all 137.73333333333332, tail_s 0.0, load_s 0.0
+ARM comp_k1: math500 197/500 (done), gsm8k 32/60 (done); 7 output tok/s; A22 r_full 6.909259259259259, r_all 6.62463768115942, tail_s 150.0, load_s 0.0
+ARM comp_k3: math500 184/500 (done); 7 output tok/s; A22 r_full 6.673333333333333, r_all 6.806666666666667, tail_s 150.0, load_s 0.0
+ARM rnd0_k1: math500 154/500 (done); 7 output tok/s; A22 r_full 6.5377777777777775, r_all 6.666666666666667, tail_s 150.0, load_s 0.0
+ARM top_k1_B: math500 386/500 (done); 8 output tok/s; A22 r_full 7.826666666666667, r_all 7.998333333333333, tail_s 150.0, load_s 0.0
+ARM dare_k1_d2: math500 171/500 (done); 7 output tok/s; A22 r_full 6.604444444444445, r_all 6.748333333333333, tail_s 150.0, load_s 0.0
+ARM rndE_k1: math500 161/500 (done), gsm8k 23/60 (done); 6 output tok/s; A22 r_full 6.7555555555555555, r_all 6.463768115942029, tail_s 150.0, load_s 0.0
+ARM rndT_k1: math500 166/500 (done), gsm8k 25/60 (done); 6 output tok/s; A22 r_full 6.787037037037037, r_all 6.491304347826087, tail_s 150.0, load_s 0.0
+ARM attn: math500 154/500 (done), gsm8k 21/60 (done); 6 output tok/s; A22 r_full 6.727777777777778, r_all 6.430434782608696, tail_s 150.0, load_s 0.0
+ARM rndE_k3: math500 166/500 (done); 7 output tok/s; A22 r_full 6.582222222222223, r_all 6.73, tail_s 150.0, load_s 0.0
+ARM rndT_k3: math500 167/500 (done); 7 output tok/s; A22 r_full 6.582222222222223, r_all 6.7316666666666665, tail_s 150.0, load_s 0.0
+ARM rndE_k0.3: math500 161/500 (done); 7 output tok/s; A22 r_full 6.557777777777778, r_all 6.701666666666667, tail_s 150.0, load_s 0.0
+ARM rndT_k0.3: math500 166/500 (done); 7 output tok/s; A22 r_full 6.582222222222223, r_all 6.73, tail_s 150.0, load_s 0.0
+ARM rndE_k0.1: math500 161/500 (done); 7 output tok/s; A22 r_full 6.557777777777778, r_all 6.701666666666667, tail_s 150.0, load_s 0.0
+ARM rndT_k0.1: math500 166/500 (done); 7 output tok/s; A22 r_full 6.582222222222223, r_all 6.73, tail_s 150.0, load_s 0.0
+ARM comp_k0.3: math500 197/500 (done); 7 output tok/s; A22 r_full 6.728888888888889, r_all 6.861666666666666, tail_s 150.0, load_s 0.0
+ARM comp_k0.1: math500 197/500 (done); 7 output tok/s; A22 r_full 6.728888888888889, r_all 6.861666666666666, tail_s 150.0, load_s 0.0
+ARM rndT_k1_d2: math500 166/500 (done); 7 output tok/s; A22 r_full 6.582222222222223, r_all 6.73, tail_s 150.0, load_s 0.0
+ARM topF_k1: math500 367/500 (done); 8 output tok/s; A22 r_full 7.673333333333333, r_all 7.843333333333334, tail_s 150.0, load_s 0.0
+CHECK freeze_thresholds on the gate banks: room true; G-GATE, G-ID, S-BAND pass; each failing input fails: ok  {"sigma": 0.9695359714832659, "delta": 2.742261840160418, "B": 29.599999999999998, "L": 88.2, "G": 58.60000000000001, "L_prime": 89.60000000000001, "S-BAND_deranged": 0.6}
+CHECK verdict_n13 on the dry-run banks: COMPLETE, verdict table written: ok  {"exit": 0, "verdict": "COMPLETE", "hypotheses": {"k_rec": "k1", "H_local": "SUPPORTED", "H_diffuse": "REFUTED", "H_attention": "REFUTED", "H_artifact": "REFUTED", "H_artifact_values": {"J_floor_k1": 1.0, "J_round_k1": 1.0, "J_round_P_plus_k1": 0.23446886446886445, "J_sp_k1": 0.0, "J_sp_P_plus_k1": 
+CHECK every §3.2 arm built at stand-in size; written shards re-read hash equal to the audit: ok  29
+CHECK G-MASK passes for every mask arm (built and written): ok  {"top_k1": true, "top_k3": true, "top_k0.3": true, "top_k0.1": true, "comp_k1": true, "comp_k3": true, "rnd0_k1": true, "top_k1_B": true, "rndE_k1": true, "rndT_k1": true, "rndE_k3": true, "rndT_k3": true, "rndE_k0.3": true, "rndT_k0.3": true, "rndE_k0.1": true, "rndT_k0.1": true, "comp_k0.3": true,
+CHECK G-HASH (written arms): zero = base, id = RL: ok
+CHECK G-HASH failing input fails: id with neuron (0, 0) reverted: ok  {"realized_sq": 3.895649757255816, "changed": 23232, "in_mask": 73536}
+CHECK G-MASK failing input fails: top_k1 built with down_proj rows: ok
+CHECK comp_k + top_k reproduces id bitwise (k = 8): ok
+CHECK PC-RANK at real ratios (8,192 neurons, 23 planted, top 105): recovery >= 0.99: ok  1.0
+CHECK PC-RANK failing input at real ratios: recovery <= 0.05: ok  {"recovery": 0.0, "chance": 0.0128173828125}
+INFO  PC-ART: J_round(synthetic) by weight-scale model: {"iid": {"J_round_synthetic": {"k0.1": 0.45, "k0.3": 0.388095238095238, "k1": 0.3879720279720279, "k3": 0.42328260923137584}, "J_synthetic_vs_spacing_only": {"k0.1": 0.3333333333333333, "k0.3": 0.14285714285714285, "k1": 0.06666666666666667, "k3": 0.17073170731707318}}, "neuron_scale_lognormal_0.5": {"J_round_synthetic": {"k0.1": 0.6666666666666667, "k0.3": 0.7266666666666666, "k1": 0.717777777777
+ARM base: math500 9/13 (done); 1 output tok/s; A22 r_full None, r_all 1.1733333333333333, tail_s None, load_s 0.0
+CHECK scoring path: 13 fabricated answers scored and moded as expected (one empty Answer: line, A10): ok  {}
+CHECK cap hit recorded (n_new = C, finish_reason length): ok
+CHECK samples.jsonl holds problems 0-2, one right, one wrong, one cap hit: ok  ["cap_hit", "fixed_0", "fixed_1", "fixed_2", "lowest_right", "lowest_wrong"]
+CHECK metrics.json rewritten at least three times inside the loop: ok  3
+CHECK answer-line log-probability banked beside every extracted answer: ok
+CHECK G-COMPLETE passes on the bank and fails with one answer removed: ok
+ARM dare_k0.1: math500 0/20 (screened); 4 output tok/s; A22 r_full None, r_all 3.52, tail_s None, load_s 0.0
+ARM base: math500 0/40 (done); 2 output tok/s; A22 r_full None, r_all 2.026666666666667, tail_s None, load_s 0.0
+CHECK damage screen fires on a non-endpoint arm (16/20 cap hits, none correct) and aborts it: ok  {"status": "screened", "screen": {"ready": true, "cap_hits": 16, "correct": 0, "fired": true}, "finished": 20}
+CHECK damage screen is only recorded on base (an endpoint): every answer finishes: ok  {"status": "done", "screen": {"ready": true, "cap_hits": 16, "correct": 0, "fired": true}, "finished": 40}
+CHECK stop rule: a step over its allowance is PARKED, and so is every later step: ok  [{"allowance_min": 60.0, "elapsed_min": 60.00929565032323, "projected_min": 6.0, "earlier_parked": false, "parked": true}, true]
+CHECK figure_n13 renders PNG and PDF from the verdict file: ok  ["/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_dry_a22b/figures/fig_n13.png", "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_dry_a22b/figures/fig_n
+CHECK samples_coverage: every roster arm x benchmark present with a right and a wrong sample (or screened): ok  41
+CHECK recount_n13 reproduces every arm's accuracy from the banks: ok  "RECOUNT_OK"
+CHECK verdict on planted banks 'local_supported': H_local = SUPPORTED: ok  {"k_rec": "k1", "H_local": "SUPPORTED", "H_diffuse": "REFUTED", "H_attention": "REFUTED", "H_artifact": "REFUTED", "H_artifact_values": {"J_floor_k1": 0.95, "J_round_k1": 0.9, "J_round_P_plus_k1": 0.3, "J_sp_k1": 0.1, "J_sp_P_plus_k1": 0.2, "rule_P_plus": "SUPPORTED", "rule_P_minus": "REFUTED"}, "ne
+CHECK verdict on planted banks 'krec_none': H_local = REFUTED (k_rec NONE): ok  {"k_rec": null, "H_local": "REFUTED (k_rec NONE)", "H_diffuse": "REFUTED", "H_attention": "INDETERMINATE (interaction)", "H_artifact": "REFUTED", "H_artifact_values": {"J_floor_k1": 0.95, "J_round_k1": 0.9, "J_round_P_plus_k1": 0.3, "J_sp_k1": 0.1, "J_sp_P_plus_k1": 0.2, "rule_P_plus": "SUPPORTED", 
+CHECK verdict on planted banks 'dare_within': H_local = REFUTED (a control within delta): ok  {"k_rec": "k1", "H_local": "REFUTED (a control within delta)", "H_diffuse": "SUPPORTED (smallest k k1)", "H_attention": "REFUTED", "H_artifact": "REFUTED", "H_artifact_values": {"J_floor_k1": 0.95, "J_round_k1": 0.9, "J_round_P_plus_k1": 0.3, "J_sp_k1": 0.1, "J_sp_P_plus_k1": 0.2, "rule_P_plus": "SU
+CHECK verdict on planted banks 'attention_supported': H_attention = SUPPORTED: ok  {"k_rec": "k1", "H_local": "SUPPORTED", "H_diffuse": "REFUTED", "H_attention": "SUPPORTED", "H_artifact": "REFUTED", "H_artifact_values": {"J_floor_k1": 0.95, "J_round_k1": 0.9, "J_round_P_plus_k1": 0.3, "J_sp_k1": 0.1, "J_sp_P_plus_k1": 0.2, "rule_P_plus": "SUPPORTED", "rule_P_minus": "REFUTED"}, "
+CHECK verdict on planted banks 'dare_within': H_diffuse SUPPORTED: ok  "SUPPORTED (smallest k k1)"
+CHECK verdict on planted banks 'local_supported': H_attention REFUTED: ok  "REFUTED"
+CHECK verdict --failing-input <gate>: each of 13 gates gives its registered effect (CANCELLED, or the S-BAND / GSM8K stamp): ok  {"G-GRADER": "CANCELLED (G-GRADER)", "G-TEMPLATE": "CANCELLED (G-TEMPLATE)", "G-INIT": "CANCELLED (G-INIT)", "G-PARTITION": "CANCELLED (G-PARTITION)", "PC-RANK": "CANCELLED (PC-RANK)", "G-KNOWN": "CANCELLED (G-KNOWN)", "G-HASH": "CANCELLED (G-HASH)", "G-MASK": "CANCELLED (G-MASK)", "G-COMPLETE": "CA
+CHECK verdict exits non-zero (5) when a gate's failing input did not fail: ok  "CANCELLED (PC-RANK: its failing input did not fail)"
+CHECK verdict (A2): H_artifact is decided by the rule with PC-ART passing, and CANCELLED when rule(P-) is not REFUTED: ok  ["REFUTED", "CANCELLED (PC-ART: rule(P+) = SUPPORTED, rule(P-) = SUPPORTED)"]
+CHECK freeze_thresholds: room false on banks where G = 2 delta: ok  {"G": 3.6000000000000014, "bound_2.5delta": 4.47213595499958, "pass": false}
+CHECK manifests parse with pipeline.py's checks and each module's own argparse parser: ok  {"s2setup": 4, "s2smoke": 3, "s3gate": 6, "s4armsA": 15, "s4armsB": 14}
+CHECK each roster arm appears once across s3gate, s4armsA, s4armsB (31 = 30 + 1 conditional; 11 GSM8K): ok  {"math500_runs": 31, "unconditional": 30, "gsm8k_runs": 11, "distinct": true, "steps_A": 14, "steps_B": 13, "pass": true}
+CHECK A22: the committed attempt-8 manifest infra/aws_pg/steps/n13_s2smoke-08.json equals n13_plan.manifest('s2smoke', 8, allowance_min=110): setup, then smoke_base and smoke_rl on MATH-500 problems 0:300 with --allowance-min 110: ok  ["--arm base --bench math500 --problems 0:300 --cap 16384 --sm", "--arm rl --bench math500 --problems 0:300 --cap 16384 --smok"]
+CHECK budget projector reproduces the spec §9.7 totals (25.5 and 37.7 GPU-h, within 0.3): ok  [25.544604166666666, 37.521366666666665]
+97/97 checks ok in 132 s
+N13_DRYRUN_OK
+exit 0

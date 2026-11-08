@@ -1,0 +1,38 @@
+{
+ "arm": "base",
+ "n_answers": 20,
+ "output_tokens": 143,
+ "generation_seconds": 210.0,
+ "output_tokens_per_s": 0.680952380952381,
+ "seconds_per_problem": 10.5,
+ "mean_new_tokens": 6.15,
+ "max_new_tokens": 7,
+ "histogram_edges": [
+  0,
+  128,
+  256,
+  512,
+  1024,
+  2048,
+  4096,
+  8192,
+  16384,
+  32768
+ ],
+ "histogram_counts": [
+  20,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "gpu_memory_used_mib": null,
+ "gpu_memory_total_mib": null,
+ "gpu": "fake",
+ "host_peak_rss_kb": 294400,
+ "free_disk_gb": 89.35794688
+}

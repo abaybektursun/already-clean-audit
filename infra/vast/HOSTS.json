@@ -1,0 +1,21 @@
+{
+  "known_bad": {
+    "note": "machine-level failures observed; avoid for large images",
+    "entries": [
+      {"offer_seen": 47802451, "geo": "Taiwan, TW", "gpu": "2x RTX PRO 6000 WS", "why": "14.5h silent loading wedge (D14) 2026-08-17"},
+      {"offer_seen": 47955575, "geo": "Taiwan, TW", "gpu": "2x RTX PRO 6000 WS", "why": "same cluster as D14 wedge"},
+      {"offer_seen": "attempt3-CA", "geo": "California, US", "gpu": "2x RTX PRO 6000 S", "why": "25min zero-progress pull, daemon-killed 2026-08-17"}
+    ]
+  },
+  "known_good": {
+    "note": "served a full rental cleanly",
+    "entries": [
+      {"geo": "Japan, JP", "gpu": "RTX 6000Ada", "rentals": ["r_v1_14b"]},
+      {"geo": "Massachusetts, US", "gpu": "A100 PCIE", "rentals": ["r_v1_32b"]},
+      {"geo": "Kentucky, US", "gpu": "RTX 4060Ti", "rentals": ["r_v1_anchor_gemma2b"]},
+      {"geo": "Taiwan, TW", "gpu": "RTX 3090", "rentals": ["r_v1_7b"]},
+      {"geo": "South Korea, KR", "gpu": "RTX PRO 6000 WS", "rentals": ["r_v2_mde"]},
+      {"geo": "California, US", "gpu": "2x RTX PRO 6000 S (35445737)", "rentals": ["r_v1_72b attempt2 (loaded+ran; died to D16 not host)"]}
+    ]
+  }
+}

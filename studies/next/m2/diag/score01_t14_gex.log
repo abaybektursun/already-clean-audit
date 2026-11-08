@@ -1,0 +1,26 @@
+{
+ "entries": 477,
+ "subset": {
+  "n": 477,
+  "n_poles": 62,
+  "median_rel": 0.0052419216385804785,
+  "p99_rel": 0.2562705341026918,
+  "max_rel": 1.952766309595231,
+  "exact_share": 0.32914046121593293
+ },
+ "equal": {
+  "n": true,
+  "n_poles": true,
+  "median_rel": true,
+  "p99_rel": true,
+  "max_rel": true,
+  "exact_share": true
+ },
+ "all": {
+  "n": 32000,
+  "median_rel": 0.004310402304972054,
+  "p99_rel": 0.022160044065951408,
+  "max_rel": 1.952766309595231,
+  "exact_share": 0.39525
+ }
+}

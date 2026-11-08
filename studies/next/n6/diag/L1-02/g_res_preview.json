@@ -1,0 +1,169 @@
+{
+ "what": "N6 G-RES preview on L1-02's ten column edits (spec section 3.4; the registered gate reads L2's freeze half)",
+ "source": {
+  "metrics.json": "d80b65d9049c9c9979ea516d76ce9cef8eee4a815e7093c83f9fdfbab6d6a090",
+  "edits.jsonl": "8a526c79cbe9cf97e05f8d4394eec722a614a0380c6c8d4cade1764497aa5438"
+ },
+ "rule": "pass when F_eps <= min(1e-6, 0.01 x q10); F_eps = max |dL| of the fp32 probes; q10 = np.percentile(|dL_col|, 10)",
+ "abs_dL_col_sorted": [
+  6.742334048402918e-07,
+  1.1198187792249223e-06,
+  1.4078957630029795e-06,
+  1.472104982044806e-06,
+  1.7587801536426393e-06,
+  2.715384499048986e-06,
+  4.432524989756344e-06,
+  4.7638391394762974e-06,
+  4.868934518519746e-06,
+  9.763019078131164e-06
+ ],
+ "median_abs_dL_col": 2.237082326345813e-06,
+ "q10": 1.0752602417864593e-06,
+ "bound": 1.0752602417864593e-08,
+ "F_eps": 1.2210622426951182e-08,
+ "F_eps_by_probe": {
+  "P002_late_probe": 1.2210622426951182e-08,
+  "P069_late_probe": 5.6534576204497755e-09
+ },
+ "F_eps_over_bound": 1.13559694224946,
+ "q10_over_F_eps": 88.0594128775249,
+ "pass": false,
+ "path_check": {
+  "note": "the zero edit and the probe run the same path (the progression, read against base pass 1); the zero edit's dL is the path offset, its largest per-token difference equals G_CACHE's",
+  "zero_dL": -3.015144210694043e-11,
+  "zero_max_token_abs": 9.5367431640625e-07,
+  "G_CACHE_max": 9.5367431640625e-07,
+  "zero_dL_over_F_eps": 0.002469279701941354,
+  "probe_R": 5.324150767610333e-06,
+  "probe_top_token": {
+   "abs": 0.0023946762084960938,
+   "window": 36,
+   "target_pos": 195,
+   "dl": -0.0023946762084960938,
+   "base_loss": 8.207762718200684
+  }
+ },
+ "eval_set_noise": {
+  "note": "window-bootstrap sd of D_col over the 96 windows (n6.boot_sd_win, seed 0): the per-pair input of tau_s; R counts pairs with |D_col| > 2 tau_s",
+  "pairs": [
+   {
+    "pair_stage1": "P002",
+    "layer": 3,
+    "early": "L03N6372-",
+    "late": "L03N7574-",
+    "D_col": -3.0246292267533644e-06,
+    "boot_sd_D_col": 5.592676146335223e-06,
+    "abs_D_over_2sd": 0.2704098313233592,
+    "edits": [
+     {
+      "edit": "P002_early_col",
+      "dL": -4.432524989756344e-06,
+      "boot_sd": 4.647551744636513e-06,
+      "abs_dL_over_sd": 0.9537333274173183
+     },
+     {
+      "edit": "P002_late_col",
+      "dL": -1.4078957630029795e-06,
+      "boot_sd": 3.623857127355355e-06,
+      "abs_dL_over_sd": 0.38850752486217466
+     }
+    ]
+   },
+   {
+    "pair_stage1": "P020",
+    "layer": 22,
+    "early": "L22N7990-",
+    "late": "L22N10231+",
+    "D_col": -2.146338386885098e-06,
+    "boot_sd_D_col": 6.6314168968947015e-06,
+    "abs_D_over_2sd": 0.16183105513168425,
+    "edits": [
+     {
+      "edit": "P020_early_col",
+      "dL": -6.742334048402918e-07,
+      "boot_sd": 3.458385655417522e-06,
+      "abs_dL_over_sd": 0.19495610727627002
+     },
+     {
+      "edit": "P020_late_col",
+      "dL": 1.472104982044806e-06,
+      "boot_sd": 5.563890373559968e-06,
+      "abs_dL_over_sd": 0.26458195313127686
+     }
+    ]
+   },
+   {
+    "pair_stage1": "P037",
+    "layer": 8,
+    "early": "L08N9190-",
+    "late": "L08N5063-",
+    "D_col": -4.999179938654867e-06,
+    "boot_sd_D_col": 1.1563029982758768e-05,
+    "abs_D_over_2sd": 0.21617084562216696,
+    "edits": [
+     {
+      "edit": "P037_early_col",
+      "dL": 4.7638391394762974e-06,
+      "boot_sd": 6.216044842985987e-06,
+      "abs_dL_over_sd": 0.7663778592028148
+     },
+     {
+      "edit": "P037_late_col",
+      "dL": 9.763019078131164e-06,
+      "boot_sd": 1.0328066005271383e-05,
+      "abs_dL_over_sd": 0.9452901514328218
+     }
+    ]
+   },
+   {
+    "pair_stage1": "P039",
+    "layer": 15,
+    "early": "L15N10390-",
+    "late": "L15N6531-",
+    "D_col": -4.474164652691626e-06,
+    "boot_sd_D_col": 6.9745496831554515e-06,
+    "abs_D_over_2sd": 0.3207493570156495,
+    "edits": [
+     {
+      "edit": "P039_early_col",
+      "dL": -2.715384499048986e-06,
+      "boot_sd": 5.105208002791227e-06,
+      "abs_dL_over_sd": 0.5318851842205791
+     },
+     {
+      "edit": "P039_late_col",
+      "dL": 1.7587801536426393e-06,
+      "boot_sd": 5.04189967766319e-06,
+      "abs_dL_over_sd": 0.34883283406737586
+     }
+    ]
+   },
+   {
+    "pair_stage1": "P069",
+    "layer": 30,
+    "early": "L30N6280+",
+    "late": "L30N7717-",
+    "D_col": -5.988753297744669e-06,
+    "boot_sd_D_col": 3.4721813699769463e-06,
+    "abs_D_over_2sd": 0.8623906212860694,
+    "edits": [
+     {
+      "edit": "P069_early_col",
+      "dL": -4.868934518519746e-06,
+      "boot_sd": 2.3556466065346347e-06,
+      "abs_dL_over_sd": 2.0669206089797916
+     },
+     {
+      "edit": "P069_late_col",
+      "dL": 1.1198187792249223e-06,
+      "boot_sd": 2.505301166024758e-06,
+      "abs_dL_over_sd": 0.44697970623698496
+     }
+    ]
+   }
+  ],
+  "median_boot_sd_D_col": 6.6314168968947015e-06,
+  "n_resolved_at_2sd": 0,
+  "n_edits_within_1sd_of_zero": 9
+ }
+}

@@ -1,0 +1,3 @@
+.pgvenv/
+__pycache__/
+*.pyc

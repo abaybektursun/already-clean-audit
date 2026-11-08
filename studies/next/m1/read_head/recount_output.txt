@@ -1,0 +1,64 @@
+code+math directories (mask): ['data/finemath-3plus', 'data/stack_edu-CSharp', 'data/stack_edu-JavaScript', 'data/stack_edu-Python', 'data/stack_edu-SQL']
+sha256 prefixes: {'start_a': '8c332d7d', 'start_b': '8c332d7d', 'G': 'f4bc644d', 'R': '667bdfaa', 'M': '399a6231'}
+start_a == start_b counts and filled: True True
+
+C per checkpoint by band (mine | verdict):
+  start_a  [0.123776, 0.110862, 0.076078, 0.054745] | max|diff| vs verdict 4.2e-17
+  start_b  [0.123776, 0.110862, 0.076078, 0.054745] | max|diff| vs verdict 4.2e-17
+  G        [0.112486, 0.093834, 0.058755, 0.038637] | max|diff| vs verdict 1.4e-17
+  R        [0.120164, 0.100653, 0.07021, 0.053614] | max|diff| vs verdict 1.4e-17
+  M        [0.123388, 0.103823, 0.076147, 0.058255] | max|diff| vs verdict 2.8e-17
+
+MG:
+  band 0: mean +0.01090 [+0.01035, +0.01147]  bar 0.00820  kappa 0.183
+  band 1: mean +0.00999 [+0.00955, +0.01046]  bar 0.00656  kappa 0.177
+  band 2: mean +0.01739 [+0.01700, +0.01776]  bar 0.00225  kappa 0.192
+  band 3: mean +0.01962 [+0.01921, +0.02003]  bar 0.00354  kappa 0.202
+
+RG:
+  band 0: mean +0.00768 [+0.00718, +0.00819]  bar 0.00820  kappa 0.183
+  band 1: mean +0.00682 [+0.00636, +0.00723]  bar 0.00656  kappa 0.177
+  band 2: mean +0.01145 [+0.01112, +0.01178]  bar 0.00225  kappa 0.192
+  band 3: mean +0.01498 [+0.01462, +0.01533]  bar 0.00354  kappa 0.202
+
+MR:
+  band 0: mean +0.00322 [+0.00274, +0.00369]  bar 0.00820  kappa 0.183
+  band 1: mean +0.00317 [+0.00281, +0.00353]  bar 0.00656  kappa 0.177
+  band 2: mean +0.00594 [+0.00567, +0.00619]  bar 0.00225  kappa 0.192
+  band 3: mean +0.00464 [+0.00439, +0.00491]  bar 0.00354  kappa 0.202
+
+G-start:
+  band 0: mean -0.01129 [-0.01179, -0.01080]  bar 0.00820  kappa 0.183
+  band 1: mean -0.01703 [-0.01742, -0.01662]  bar 0.00656  kappa 0.177
+  band 2: mean -0.01732 [-0.01764, -0.01699]  bar 0.00225  kappa 0.192
+  band 3: mean -0.01611 [-0.01645, -0.01577]  bar 0.00354  kappa 0.202
+
+R-start:
+  band 0: mean -0.00361 [-0.00408, -0.00315]  bar 0.00820  kappa 0.183
+  band 1: mean -0.01021 [-0.01063, -0.00978]  bar 0.00656  kappa 0.177
+  band 2: mean -0.00587 [-0.00616, -0.00557]  bar 0.00225  kappa 0.192
+  band 3: mean -0.00113 [-0.00143, -0.00085]  bar 0.00354  kappa 0.202
+
+M-start:
+  band 0: mean -0.00039 [-0.00092, +0.00012]  bar 0.00820  kappa 0.183
+  band 1: mean -0.00704 [-0.00746, -0.00659]  bar 0.00656  kappa 0.177
+  band 2: mean +0.00007 [-0.00027, +0.00041]  bar 0.00225  kappa 0.192
+  band 3: mean +0.00351 [+0.00318, +0.00386]  bar 0.00354  kappa 0.202
+
+lead labels ['SUPPORTED', 'SUPPORTED', 'SUPPORTED', 'SUPPORTED'] -> SUPPORTED | verdict SUPPORTED
+between labels ['UNDECIDED', 'UNDECIDED', 'SUPPORTED', 'SUPPORTED'] -> UNDECIDED | verdict UNDECIDED
+lambda = RG/MG by band: [0.7, 0.68, 0.66, 0.76]
+G-ID I by band [0.0, 0.0, 0.0, 0.0] line 0.0005632267441860461 pass True
+
+specificity: code+math Delta_MG | p99 |random| (mine, verdict) | median (mine, verdict)
+  band 0: +0.01090 | 0.00311, 0.00308 | 0.00122, 0.00115
+  band 1: +0.00999 | 0.00374, 0.00344 | 0.00121, 0.00114
+  band 2: +0.01739 | 0.00525, 0.00508 | 0.00219, 0.00207
+  band 3: +0.01962 | 0.00651, 0.00684 | 0.00272, 0.00271
+
+per-directory Delta_MG contribution by band (slots share):
+  data/finemath-3plus          ['-0.00113', '-0.00106', '+0.00122', '+0.00213']
+  data/stack_edu-CSharp        ['+0.00558', '+0.00558', '+0.00478', '+0.00488']
+  data/stack_edu-JavaScript    ['+0.00379', '+0.00333', '+0.00509', '+0.00526']
+  data/stack_edu-Python        ['+0.00100', '+0.00151', '+0.00527', '+0.00510']
+  data/stack_edu-SQL           ['+0.00166', '+0.00063', '+0.00103', '+0.00225']

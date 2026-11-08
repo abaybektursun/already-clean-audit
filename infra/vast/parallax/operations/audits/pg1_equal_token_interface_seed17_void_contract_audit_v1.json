@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-07-19T04:50:03Z",
+  "status": "GREEN_BOUNDED_VOID_CONTRACT_AUDIT",
+  "run_id": "parallax-pg1-primary-interface-s3-v1",
+  "classification": "A_ONE_FIELD_MANIFEST_LABEL_OMISSION",
+  "classification_reason": "The frozen primary source contract has exactly one training-config identity under primary_config, while the reused legacy cell reads the historical label interface_config.",
+  "ambiguity": {
+    "deeper_source_or_identity_ambiguity": false,
+    "interface_config_present_in_frozen_contract": false,
+    "matching_primary_training_config_rows": 1,
+    "matching_row_label": "primary_config",
+    "matching_path": "studies/lineage/cross-lineage/config/parallax_training_interface_control_pg1_primary_v1.yaml",
+    "matching_sha256": "fa5d8ccefeacfbb57fcd223b3b4486d4adef80388ae06d48452221d738e53078",
+    "launch_bound_primary_config_sha256": "fa5d8ccefeacfbb57fcd223b3b4486d4adef80388ae06d48452221d738e53078",
+    "source_contract_sha256": "a95f65a78d5dc6b7f4b80416d40c6b9dcc45cc1c91fde74154da90dd117e5544",
+    "legacy_cell_sha256": "2bdfb7bef9137eccf51211b5708d2bef9f98fe3d2577593479ab2c24f284647e"
+  },
+  "void_evidence": {
+    "raw_terminal_path": "infra/vast/parallax/operations/results/pg1_equal_token_interface_seed17_discovery_v1/raw-terminal.json",
+    "raw_terminal_sha256": "e6a9e00e89aec149dec68cdc4765dcd91728dcf36db30aac0a9dcf3275a1f650",
+    "terminal_status": "RED_JOB_TERMINAL",
+    "job_returncode": 1,
+    "result_present": false,
+    "failure": "KeyError: 'interface_config'",
+    "model_outcome_seen": false
+  },
+  "smallest_fail_closed_correction": {
+    "status": "GREEN_PRIMARY_ONLY_DETERMINISTIC_ALIAS_PREPARED",
+    "behavior": "Derive an in-memory interface_config alias from the exact primary_config row after refusing missing, duplicated, wrong-path, or wrong-hash bindings; write only a disposable runtime contract and leave the frozen source contract unchanged.",
+    "changed_implementation": {
+      "infra/vast/parallax/primary_interface_control_job.py": "164ff5cda536fa1a56d3404e71c44fd252eaca119b1c7dbd7366ee7ef9ce7ad7",
+      "infra/vast/parallax/primary_interface_control_no_create.py": "757c9266f6c04b741f58c192b76fdcdafc7f3a725376d2a0a5dfb7a41f1d3dda"
+    },
+    "science_files_changed": 0,
+    "frozen_source_contract_changed": false,
+    "frozen_primary_config_changed": false,
+    "metric_or_spec_changed": false
+  },
+  "tests": {
+    "focused_command": "pytest -q infra/vast/parallax/tests/test_primary_interface_control_job.py infra/vast/parallax/tests/test_primary_interface_control_launch.py",
+    "focused_status": "GREEN_41_PASSED",
+    "full_command": "pytest -q infra/vast/parallax/tests",
+    "full_status": "GREEN_689_PASSED",
+    "plants": [
+      "missing primary_config refuses",
+      "pre-existing interface_config refuses as ambiguous",
+      "wrong primary_config path refuses",
+      "wrong primary_config hash refuses",
+      "runtime compatibility-contract overwrite refuses",
+      "legacy subprocess receives only the disposable compatibility contract",
+      "voided frozen launch spec refuses the corrected implementation",
+      "no-create validates the unique alias before claim or H100 market selection"
+    ]
+  },
+  "cloud_no_create": {
+    "status": "GREEN_READ_ONLY_CLOUD_AND_ZERO_MUTATION_PLANTS",
+    "live_full_no_create_run": false,
+    "reason": "The failed run identity is consumed and must refuse reuse; no fresh run spec or execution freeze was authorized in this audit.",
+    "source_contract_s3_version_id": "ZQdB_NEakxhgbPP9t8muFWXiU3GRRXRw",
+    "source_contract_s3_encryption": "AES256",
+    "primary_config_s3_version_id": "M7Gu1ab3evPjsGTdwyZlKCRPY5chu7cv",
+    "primary_config_s3_encryption": "AES256",
+    "instances_created": 0,
+    "volumes_created": 0,
+    "claims_created": 0,
+    "s3_objects_written": 0,
+    "gpu_operations": 0
+  },
+  "fresh_identity": {
+    "mechanically_ready": false,
+    "correction_mechanically_ready": true,
+    "missing_before_fresh_identity_can_be_ready": [
+      "new immutable run identity and result keys",
+      "new launch packet binding the corrected implementation hashes",
+      "fresh zero-mutation no-create receipt",
+      "separate execution freeze"
+    ],
+    "new_execution_freeze_created": false,
+    "launch_performed": false,
+    "retry_performed": false
+  },
+  "paid_compute": {
+    "status": "OFF",
+    "vast_instances": 0,
+    "vast_volumes": 0,
+    "vast_zero_observations_utc": [
+      "2026-07-19T04:49:50Z",
+      "2026-07-19T04:49:54Z",
+      "2026-07-19T04:49:58Z"
+    ],
+    "aws_pending_or_running_instances": 0,
+    "aws_parallax_instances_any_state": 0
+  }
+}

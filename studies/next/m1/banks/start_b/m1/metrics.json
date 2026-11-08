@@ -1,0 +1,480 @@
+{
+ "mode": "harvest",
+ "branch": "stage1-step476838",
+ "key": "start",
+ "started_utc": "2026-11-05T17:16:27Z",
+ "gates_pass": true,
+ "same": {
+  "model_key": "O7",
+  "tokname": "olmo3",
+  "max_tokens": 20570743,
+  "snapshot_bands": [
+   1
+  ],
+  "batch": 8,
+  "window": 2048,
+  "n_windows": 10044,
+  "n_tokens_scored": 20560068,
+  "topk_K": 50,
+  "poles_K": 1000,
+  "corpus_manifest_sha256": "0c99a8e86856f1d94f08535b252d541f2ab18c4cbcb486c9e4993d6eb70a305c",
+  "tokens_sha256": "2aca80ca6537f46b8f60a550b4a3f2f13be2d18c5402be8f1af5c00caa86f531",
+  "bos_id": 100257,
+  "model_type": "olmo3",
+  "model_class": "Olmo3ForCausalLM",
+  "act_fn_measured": "silu",
+  "dtype": "torch.bfloat16",
+  "attn": "sdpa",
+  "transformers": "5.9.0",
+  "torch": "2.12.0+cu130"
+ },
+ "nll_band": [
+  2.4,
+  3.2
+ ],
+ "versions": {
+  "torch": "2.12.0+cu130",
+  "transformers": "5.9.0"
+ },
+ "phase": "done",
+ "updated_utc": "2026-11-05T19:09:29Z",
+ "download": {
+  "branch": "stage1-step476838",
+  "commit": "31bf90b3211621ce8154e55e7fec5b5eda08e620",
+  "allow_patterns": [
+   "config.json",
+   "generation_config.json",
+   "model.safetensors.index.json",
+   "special_tokens_map.json",
+   "tokenizer.json",
+   "tokenizer_config.json",
+   "vocab.json",
+   "merges.txt",
+   "model-00001-of-00003.safetensors",
+   "model-00002-of-00003.safetensors",
+   "model-00003-of-00003.safetensors"
+  ],
+  "bytes": 14605764269,
+  "seconds": 230.1,
+  "MB_per_s": 63.5,
+  "xet_disabled": "1",
+  "sha256_s": 9.2,
+  "G_SHARD": {
+   "pass": true,
+   "files": [
+    "model-00001-of-00003.safetensors",
+    "model-00002-of-00003.safetensors",
+    "model-00003-of-00003.safetensors"
+   ],
+   "index_files": [
+    "model-00001-of-00003.safetensors",
+    "model-00002-of-00003.safetensors",
+    "model-00003-of-00003.safetensors"
+   ],
+   "mismatch": [],
+   "stale_present": [],
+   "failing_input": {
+    "pass": false,
+    "files": [
+     "model-00001-of-00003.safetensors",
+     "model-00002-of-00003.safetensors",
+     "model-00003-of-00003.safetensors"
+    ],
+    "index_files": [
+     "model-00001-of-00003.safetensors",
+     "model-00002-of-00003.safetensors",
+     "model-00003-of-00003.safetensors"
+    ],
+    "mismatch": [
+     "model-00001-of-00003.safetensors",
+     "model-00002-of-00003.safetensors",
+     "model-00003-of-00003.safetensors"
+    ],
+    "stale_present": [
+     "model-00001-of-00003.safetensors",
+     "model-00002-of-00003.safetensors",
+     "model-00003-of-00003.safetensors"
+    ]
+   }
+  }
+ },
+ "config": {
+  "rewrite": false,
+  "as_released": {
+   "model_type": "olmo3",
+   "architectures": [
+    "Olmo3ForCausalLM"
+   ],
+   "sliding_window": 4096,
+   "torch_dtype": "bfloat16"
+  },
+  "failing_input": {
+   "pass": false,
+   "diff_keys": [
+    "architectures",
+    "model_type"
+   ],
+   "sliding_window": 4096
+  },
+  "G_CFG": {
+   "pass": true,
+   "diff_keys": [],
+   "sliding_window": 4096
+  }
+ },
+ "load_s": 55.7,
+ "G_CAST": {
+  "pass": true,
+  "param_dtypes": [
+   "torch.bfloat16"
+  ],
+  "tensors": [
+   {
+    "name": "model.layers.0.mlp.gate_proj.weight",
+    "file_dtype": "torch.bfloat16",
+    "shape": [
+     11008,
+     4096
+    ],
+    "equal_rne": true
+   },
+   {
+    "name": "model.layers.0.mlp.up_proj.weight",
+    "file_dtype": "torch.bfloat16",
+    "shape": [
+     11008,
+     4096
+    ],
+    "equal_rne": true
+   },
+   {
+    "name": "model.layers.15.mlp.down_proj.weight",
+    "file_dtype": "torch.bfloat16",
+    "shape": [
+     4096,
+     11008
+    ],
+    "equal_rne": true
+   },
+   {
+    "name": "model.layers.31.mlp.down_proj.weight",
+    "file_dtype": "torch.bfloat16",
+    "shape": [
+     4096,
+     11008
+    ],
+    "equal_rne": true
+   },
+   {
+    "name": "model.layers.16.self_attn.q_proj.weight",
+    "file_dtype": "torch.bfloat16",
+    "shape": [
+     4096,
+     4096
+    ],
+    "equal_rne": true
+   },
+   {
+    "name": "model.layers.31.post_feedforward_layernorm.weight",
+    "file_dtype": "torch.bfloat16",
+    "shape": [
+     4096
+    ],
+    "equal_rne": true
+   },
+   {
+    "name": "model.norm.weight",
+    "file_dtype": "torch.bfloat16",
+    "shape": [
+     4096
+    ],
+    "equal_rne": true
+   }
+  ],
+  "failing_input": {
+   "pass": false,
+   "tensors": [
+    {
+     "name": "model.layers.0.mlp.gate_proj.weight",
+     "against": "model.layers.1.mlp.gate_proj.weight",
+     "equal": false
+    },
+    {
+     "name": "model.layers.0.mlp.up_proj.weight",
+     "against": "model.layers.1.mlp.up_proj.weight",
+     "equal": false
+    },
+    {
+     "name": "model.layers.15.mlp.down_proj.weight",
+     "against": "model.layers.16.mlp.down_proj.weight",
+     "equal": false
+    },
+    {
+     "name": "model.layers.31.mlp.down_proj.weight",
+     "against": "model.layers.0.mlp.down_proj.weight",
+     "equal": false
+    },
+    {
+     "name": "model.layers.16.self_attn.q_proj.weight",
+     "against": "model.layers.17.self_attn.q_proj.weight",
+     "equal": false
+    },
+    {
+     "name": "model.layers.31.post_feedforward_layernorm.weight",
+     "against": "model.layers.0.post_feedforward_layernorm.weight",
+     "equal": false
+    },
+    {
+     "name": "model.norm.weight",
+     "against": "model.layers.0.post_feedforward_layernorm.weight",
+     "equal": false
+    }
+   ]
+  }
+ },
+ "counts": {
+  "n_dirs": 50,
+  "cm_dirs": [
+   "data/finemath-3plus",
+   "data/stack_edu-CSharp",
+   "data/stack_edu-JavaScript",
+   "data/stack_edu-Python",
+   "data/stack_edu-SQL"
+  ],
+  "min_filled": 50
+ },
+ "samples": [
+  {
+   "counted_as": "code+math",
+   "pole": "L00N181+",
+   "rank": 43,
+   "tok": 18135044,
+   "a": 0.7621885538101196,
+   "doc": 12778,
+   "dir": "data/finemath-3plus",
+   "before": "\ufffd\u00c2\u0090\u00c2\u00b4=>? = \u00c3\u00b0\u00c2\u009d\u00c2\u0090\u00c2\u00b4TPW + \u00c3\u00b0\u00c2\u009d\u00c2\u0090\u00c2\u00b4TPW NU? so that the above equation simplifies as follows:\n\u00c3\u00b0\u00c2\u009d\u00c2\u0090\u00c2\u00b9 = \u00c3\u00b0\u00c2\u009d\u00e2\u20ac",
+   "token": "\ufffd",
+   "after": "\ufffd\u00c6\u2019L,=>? \u00c3\u00b0\u00c2\u009d\u00c2\u0090"
+  },
+  {
+   "counted_as": "other",
+   "pole": "L00N181+",
+   "rank": 0,
+   "tok": 6959992,
+   "a": 1.2749065160751343,
+   "doc": 5147,
+   "dir": "data/common_crawl-software_development-0019",
+   "before": "\ufeffGraphicsPath",
+   "token": "Sur",
+   "after": "rogate Members\n\nGraphicsPathSurrogate Members\n\nGraphicsPathSurrogate overview\n\nPublic"
+  }
+ ],
+ "token_share_per_dir": [
+  402300,
+  402137,
+  400802,
+  401726,
+  400939,
+  400131,
+  401593,
+  400209,
+  400265,
+  400170,
+  402305,
+  400073,
+  401423,
+  401714,
+  402054,
+  401060,
+  402708,
+  400626,
+  400060,
+  407616,
+  402008,
+  400079,
+  400720,
+  403647,
+  410058,
+  405874,
+  400341,
+  400238,
+  401010,
+  400006,
+  400049,
+  401126,
+  400316,
+  400106,
+  401057,
+  402451,
+  400659,
+  400054,
+  791610,
+  437393,
+  403049,
+  421228,
+  409395,
+  432309,
+  407568,
+  404182,
+  400236,
+  400890,
+  400508,
+  402034
+ ],
+ "pc_nll": {
+  "windows": {
+   "cm": [
+    3770,
+    3785,
+    3806,
+    3813,
+    3852,
+    4804,
+    4808,
+    4911,
+    4924,
+    4954,
+    5061,
+    8867,
+    8870,
+    8915,
+    8933,
+    8935,
+    8986,
+    9013,
+    9017,
+    9033,
+    9065,
+    9716,
+    9727,
+    9767,
+    9808,
+    9820,
+    9843,
+    9864,
+    9872,
+    9923,
+    9957,
+    9993
+   ],
+   "n_candidates_cm": 1167,
+   "web": [
+    20,
+    122,
+    250,
+    304,
+    558,
+    1301,
+    1308,
+    2002,
+    2062,
+    2284,
+    2933,
+    3741,
+    5121,
+    5370,
+    5455,
+    5492,
+    5836,
+    6029,
+    6054,
+    6152,
+    6320,
+    6751,
+    6762,
+    7024,
+    7369,
+    7398,
+    7634,
+    7638,
+    7710,
+    8109,
+    8283,
+    8543
+   ],
+   "n_candidates_web": 7449
+  },
+  "nll": {
+   "cm": [
+    1.4256618022918701,
+    1.303363561630249,
+    0.011183643713593483,
+    0.011183643713593483,
+    1.4210760593414307,
+    0.8808824419975281,
+    1.332759976387024,
+    1.1699745655059814,
+    0.984734058380127,
+    1.3409415483474731,
+    0.5743577480316162,
+    2.156487464904785,
+    1.8509387969970703,
+    1.4968377351760864,
+    1.381946086883545,
+    1.6381516456604004,
+    2.6968350410461426,
+    1.5196466445922852,
+    0.8731458187103271,
+    1.6069834232330322,
+    1.315804362297058,
+    0.555817723274231,
+    0.7083050012588501,
+    1.206730842590332,
+    1.1821115016937256,
+    1.1098711490631104,
+    0.9283905029296875,
+    1.525629997253418,
+    1.319724678993225,
+    1.1322824954986572,
+    1.0596039295196533,
+    1.007108211517334
+   ],
+   "web": [
+    2.312408447265625,
+    2.618772029876709,
+    2.470944404602051,
+    2.1148791313171387,
+    2.5796210765838623,
+    0.8665273189544678,
+    1.7357826232910156,
+    2.3765316009521484,
+    2.2183618545532227,
+    2.3491241931915283,
+    2.855534315109253,
+    2.422663927078247,
+    4.683765411376953,
+    1.87965989112854,
+    2.1960067749023438,
+    2.261044502258301,
+    2.465561866760254,
+    2.912229537963867,
+    2.7106213569641113,
+    2.315741777420044,
+    2.207831621170044,
+    1.9453539848327637,
+    1.689560890197754,
+    2.198061466217041,
+    2.2034687995910645,
+    2.6502022743225098,
+    2.303051710128784,
+    2.1884875297546387,
+    2.2314083576202393,
+    2.793233633041382,
+    1.995692491531372,
+    1.877482533454895
+   ]
+  }
+ },
+ "fit": {
+  "pass": true,
+  "metrics_ok": true,
+  "nll": 2.781479736328125,
+  "nll_band": [
+   2.4,
+   3.2
+  ],
+  "nll_ok": true,
+  "same_diff": []
+ },
+ "deleted_after_harvest": "/opt/hf-cache/hf/hub/models--allenai--Olmo-3-1025-7B"
+}

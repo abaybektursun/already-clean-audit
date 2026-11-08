@@ -1,0 +1,764 @@
+{
+ "d_check": [
+  {
+   "unit": "L03N7574+:c6",
+   "size": 5,
+   "n_exemplars": 5,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 5,
+   "d_record": 5,
+   "d_real": 5
+  },
+  {
+   "unit": "L03N7574+:c6:pb",
+   "size": 5,
+   "n_exemplars": 5,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 4,
+   "d_record": 4,
+   "d_real": 5
+  },
+  {
+   "unit": "L03N7574+:c6:dt",
+   "size": 5,
+   "n_exemplars": 5,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 5,
+   "d_record": 5,
+   "d_real": 5
+  },
+  {
+   "unit": "L03N7746+:c0",
+   "size": 5,
+   "n_exemplars": 5,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 2,
+   "d_record": 2,
+   "d_real": 2
+  },
+  {
+   "unit": "L06N9844+:c1",
+   "size": 7,
+   "n_exemplars": 7,
+   "n_exemplars_with_2_bracket_pairs": 2,
+   "d_from_text": 2,
+   "d_record": 2,
+   "d_real": 2
+  },
+  {
+   "unit": "L06N9844+:c1:pb",
+   "size": 7,
+   "n_exemplars": 7,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 5,
+   "d_record": 5,
+   "d_real": 2
+  },
+  {
+   "unit": "L06N9844+:c1:dt",
+   "size": 7,
+   "n_exemplars": 7,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 2,
+   "d_record": 2,
+   "d_real": 2
+  },
+  {
+   "unit": "L16N1206+:c1",
+   "size": 9,
+   "n_exemplars": 9,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 9,
+   "d_record": 9,
+   "d_real": 9
+  },
+  {
+   "unit": "L16N1206+:c1:pb",
+   "size": 9,
+   "n_exemplars": 9,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 8,
+   "d_record": 8,
+   "d_real": 9
+  },
+  {
+   "unit": "L16N1206+:c1:dt",
+   "size": 9,
+   "n_exemplars": 9,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 9,
+   "d_record": 9,
+   "d_real": 9
+  },
+  {
+   "unit": "L20N5782+:c1",
+   "size": 15,
+   "n_exemplars": 15,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 7,
+   "d_record": 7,
+   "d_real": 7
+  },
+  {
+   "unit": "L20N5782+:c1:pb",
+   "size": 15,
+   "n_exemplars": 15,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 8,
+   "d_record": 8,
+   "d_real": 7
+  },
+  {
+   "unit": "L20N5782+:c1:dt",
+   "size": 15,
+   "n_exemplars": 15,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 7,
+   "d_record": 7,
+   "d_real": 7
+  },
+  {
+   "unit": "L07N8340+:c4",
+   "size": 5,
+   "n_exemplars": 5,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 4,
+   "d_record": 4,
+   "d_real": 4
+  },
+  {
+   "unit": "L07N8340+:c4:pb",
+   "size": 5,
+   "n_exemplars": 5,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 5,
+   "d_record": 5,
+   "d_real": 4
+  },
+  {
+   "unit": "L07N8340+:c4:dt",
+   "size": 5,
+   "n_exemplars": 5,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 4,
+   "d_record": 4,
+   "d_real": 4
+  },
+  {
+   "unit": "L10N9052+:c2",
+   "size": 5,
+   "n_exemplars": 5,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 1,
+   "d_record": 1,
+   "d_real": 1
+  },
+  {
+   "unit": "L10N9052+:c2:pb",
+   "size": 5,
+   "n_exemplars": 5,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 5,
+   "d_record": 5,
+   "d_real": 1
+  },
+  {
+   "unit": "L10N9052+:c2:dt",
+   "size": 5,
+   "n_exemplars": 5,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 1,
+   "d_record": 1,
+   "d_real": 1
+  },
+  {
+   "unit": "L10N9794+:c2",
+   "size": 12,
+   "n_exemplars": 12,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 9,
+   "d_record": 9,
+   "d_real": 9
+  },
+  {
+   "unit": "L10N9794+:c2:pb",
+   "size": 12,
+   "n_exemplars": 12,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 10,
+   "d_record": 10,
+   "d_real": 9
+  },
+  {
+   "unit": "L10N9794+:c2:dt",
+   "size": 12,
+   "n_exemplars": 12,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 9,
+   "d_record": 9,
+   "d_real": 9
+  },
+  {
+   "unit": "L19N7374-:c1",
+   "size": 10,
+   "n_exemplars": 10,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 4,
+   "d_record": 4,
+   "d_real": 4
+  },
+  {
+   "unit": "L19N7374-:c1:pb",
+   "size": 10,
+   "n_exemplars": 10,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 10,
+   "d_record": 10,
+   "d_real": 4
+  },
+  {
+   "unit": "L19N7374-:c1:dt",
+   "size": 10,
+   "n_exemplars": 10,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 4,
+   "d_record": 4,
+   "d_real": 4
+  },
+  {
+   "unit": "L24N5066-:c1",
+   "size": 15,
+   "n_exemplars": 15,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 3,
+   "d_record": 3,
+   "d_real": 3
+  },
+  {
+   "unit": "L24N5066-:c1:pb",
+   "size": 15,
+   "n_exemplars": 15,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 12,
+   "d_record": 12,
+   "d_real": 3
+  },
+  {
+   "unit": "L24N5066-:c1:dt",
+   "size": 15,
+   "n_exemplars": 15,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 3,
+   "d_record": 3,
+   "d_real": 3
+  },
+  {
+   "unit": "L01N369+:c0",
+   "size": 12,
+   "n_exemplars": 12,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 9,
+   "d_record": 9,
+   "d_real": 9
+  },
+  {
+   "unit": "L01N369+:c0:pb",
+   "size": 12,
+   "n_exemplars": 12,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 9,
+   "d_record": 9,
+   "d_real": 9
+  },
+  {
+   "unit": "L01N369+:c0:dt",
+   "size": 12,
+   "n_exemplars": 12,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 9,
+   "d_record": 9,
+   "d_real": 9
+  },
+  {
+   "unit": "L02N4649+:c3",
+   "size": 7,
+   "n_exemplars": 7,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 1,
+   "d_record": 1,
+   "d_real": 1
+  },
+  {
+   "unit": "L02N4649+:c3:pb",
+   "size": 7,
+   "n_exemplars": 7,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 3,
+   "d_record": 3,
+   "d_real": 1
+  },
+  {
+   "unit": "L02N4649+:c3:dt",
+   "size": 7,
+   "n_exemplars": 7,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 1,
+   "d_record": 1,
+   "d_real": 1
+  },
+  {
+   "unit": "L03N9631+:c3",
+   "size": 10,
+   "n_exemplars": 10,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 8,
+   "d_record": 8,
+   "d_real": 8
+  },
+  {
+   "unit": "L03N9631+:c3:pb",
+   "size": 10,
+   "n_exemplars": 10,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 10,
+   "d_record": 10,
+   "d_real": 8
+  },
+  {
+   "unit": "L03N9631+:c3:dt",
+   "size": 10,
+   "n_exemplars": 10,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 8,
+   "d_record": 8,
+   "d_real": 8
+  },
+  {
+   "unit": "L05N3483+:c3",
+   "size": 7,
+   "n_exemplars": 7,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 7,
+   "d_record": 7,
+   "d_real": 7
+  },
+  {
+   "unit": "L05N3483+:c3:pb",
+   "size": 7,
+   "n_exemplars": 7,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 6,
+   "d_record": 6,
+   "d_real": 7
+  },
+  {
+   "unit": "L05N3483+:c3:dt",
+   "size": 7,
+   "n_exemplars": 7,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 7,
+   "d_record": 7,
+   "d_real": 7
+  },
+  {
+   "unit": "L10N10529-:c3",
+   "size": 7,
+   "n_exemplars": 7,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 6,
+   "d_record": 6,
+   "d_real": 6
+  },
+  {
+   "unit": "L10N10529-:c3:pb",
+   "size": 7,
+   "n_exemplars": 7,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 3,
+   "d_record": 3,
+   "d_real": 6
+  },
+  {
+   "unit": "L10N10529-:c3:dt",
+   "size": 7,
+   "n_exemplars": 7,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 6,
+   "d_record": 6,
+   "d_real": 6
+  },
+  {
+   "unit": "L12N5641+:c0",
+   "size": 10,
+   "n_exemplars": 10,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 6,
+   "d_record": 6,
+   "d_real": 6
+  },
+  {
+   "unit": "L12N5641+:c0:pb",
+   "size": 10,
+   "n_exemplars": 10,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 10,
+   "d_record": 10,
+   "d_real": 6
+  },
+  {
+   "unit": "L12N5641+:c0:dt",
+   "size": 10,
+   "n_exemplars": 10,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 6,
+   "d_record": 6,
+   "d_real": 6
+  },
+  {
+   "unit": "L22N7483-:c5",
+   "size": 7,
+   "n_exemplars": 7,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 6,
+   "d_record": 6,
+   "d_real": 6
+  },
+  {
+   "unit": "L22N7483-:c5:pb",
+   "size": 7,
+   "n_exemplars": 7,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 7,
+   "d_record": 7,
+   "d_real": 6
+  },
+  {
+   "unit": "L22N7483-:c5:dt",
+   "size": 7,
+   "n_exemplars": 7,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 6,
+   "d_record": 6,
+   "d_real": 6
+  },
+  {
+   "unit": "L24N8193-:c1",
+   "size": 27,
+   "n_exemplars": 27,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 3,
+   "d_record": 3,
+   "d_real": 3
+  },
+  {
+   "unit": "L24N8193-:c1:pb",
+   "size": 27,
+   "n_exemplars": 27,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 13,
+   "d_record": 13,
+   "d_real": 3
+  },
+  {
+   "unit": "L24N8193-:c1:dt",
+   "size": 27,
+   "n_exemplars": 27,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 3,
+   "d_record": 3,
+   "d_real": 3
+  },
+  {
+   "unit": "L27N8999-:c1",
+   "size": 6,
+   "n_exemplars": 6,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 1,
+   "d_record": 1,
+   "d_real": 1
+  },
+  {
+   "unit": "L27N8999-:c1:pb",
+   "size": 6,
+   "n_exemplars": 6,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 6,
+   "d_record": 6,
+   "d_real": 1
+  },
+  {
+   "unit": "L27N8999-:c1:dt",
+   "size": 6,
+   "n_exemplars": 6,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 1,
+   "d_record": 1,
+   "d_real": 1
+  },
+  {
+   "unit": "L28N4613+:c0",
+   "size": 8,
+   "n_exemplars": 8,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 6,
+   "d_record": 6,
+   "d_real": 6
+  },
+  {
+   "unit": "L28N4613+:c0:pb",
+   "size": 8,
+   "n_exemplars": 8,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 6,
+   "d_record": 6,
+   "d_real": 6
+  },
+  {
+   "unit": "L28N4613+:c0:dt",
+   "size": 8,
+   "n_exemplars": 8,
+   "n_exemplars_with_2_bracket_pairs": 0,
+   "d_from_text": 6,
+   "d_record": 6,
+   "d_real": 6
+  }
+ ],
+ "record_check": [
+  {
+   "unit": "L03N7574+:c6",
+   "equal": true
+  },
+  {
+   "unit": "L03N7574+:c6:pb",
+   "equal": true
+  },
+  {
+   "unit": "L03N7574+:c6:dt",
+   "equal": true
+  },
+  {
+   "unit": "L03N7746+:c0",
+   "equal": true
+  },
+  {
+   "unit": "L06N9844+:c1",
+   "equal": true
+  },
+  {
+   "unit": "L06N9844+:c1:pb",
+   "equal": true
+  },
+  {
+   "unit": "L06N9844+:c1:dt",
+   "equal": true
+  },
+  {
+   "unit": "L16N1206+:c1",
+   "equal": true
+  },
+  {
+   "unit": "L16N1206+:c1:pb",
+   "equal": true
+  },
+  {
+   "unit": "L16N1206+:c1:dt",
+   "equal": true
+  },
+  {
+   "unit": "L20N5782+:c1",
+   "equal": true
+  },
+  {
+   "unit": "L20N5782+:c1:pb",
+   "equal": true
+  },
+  {
+   "unit": "L20N5782+:c1:dt",
+   "equal": true
+  },
+  {
+   "unit": "L07N8340+:c4",
+   "equal": true
+  },
+  {
+   "unit": "L07N8340+:c4:pb",
+   "equal": true
+  },
+  {
+   "unit": "L07N8340+:c4:dt",
+   "equal": true
+  },
+  {
+   "unit": "L10N9052+:c2",
+   "equal": true
+  },
+  {
+   "unit": "L10N9052+:c2:pb",
+   "equal": true
+  },
+  {
+   "unit": "L10N9052+:c2:dt",
+   "equal": true
+  },
+  {
+   "unit": "L10N9794+:c2",
+   "equal": true
+  },
+  {
+   "unit": "L10N9794+:c2:pb",
+   "equal": true
+  },
+  {
+   "unit": "L10N9794+:c2:dt",
+   "equal": true
+  },
+  {
+   "unit": "L19N7374-:c1",
+   "equal": true
+  },
+  {
+   "unit": "L19N7374-:c1:pb",
+   "equal": true
+  },
+  {
+   "unit": "L19N7374-:c1:dt",
+   "equal": true
+  },
+  {
+   "unit": "L24N5066-:c1",
+   "equal": true
+  },
+  {
+   "unit": "L24N5066-:c1:pb",
+   "equal": true
+  },
+  {
+   "unit": "L24N5066-:c1:dt",
+   "equal": true
+  },
+  {
+   "unit": "L01N369+:c0",
+   "equal": true
+  },
+  {
+   "unit": "L01N369+:c0:pb",
+   "equal": true
+  },
+  {
+   "unit": "L01N369+:c0:dt",
+   "equal": true
+  },
+  {
+   "unit": "L02N4649+:c3",
+   "equal": true
+  },
+  {
+   "unit": "L02N4649+:c3:pb",
+   "equal": true
+  },
+  {
+   "unit": "L02N4649+:c3:dt",
+   "equal": true
+  },
+  {
+   "unit": "L03N9631+:c3",
+   "equal": true
+  },
+  {
+   "unit": "L03N9631+:c3:pb",
+   "equal": true
+  },
+  {
+   "unit": "L03N9631+:c3:dt",
+   "equal": true
+  },
+  {
+   "unit": "L05N3483+:c3",
+   "equal": true
+  },
+  {
+   "unit": "L05N3483+:c3:pb",
+   "equal": true
+  },
+  {
+   "unit": "L05N3483+:c3:dt",
+   "equal": true
+  },
+  {
+   "unit": "L10N10529-:c3",
+   "equal": true
+  },
+  {
+   "unit": "L10N10529-:c3:pb",
+   "equal": true
+  },
+  {
+   "unit": "L10N10529-:c3:dt",
+   "equal": true
+  },
+  {
+   "unit": "L12N5641+:c0",
+   "equal": true
+  },
+  {
+   "unit": "L12N5641+:c0:pb",
+   "equal": true
+  },
+  {
+   "unit": "L12N5641+:c0:dt",
+   "equal": true
+  },
+  {
+   "unit": "L22N7483-:c5",
+   "equal": true
+  },
+  {
+   "unit": "L22N7483-:c5:pb",
+   "equal": true
+  },
+  {
+   "unit": "L22N7483-:c5:dt",
+   "equal": true
+  },
+  {
+   "unit": "L24N8193-:c1",
+   "equal": true
+  },
+  {
+   "unit": "L24N8193-:c1:pb",
+   "equal": true
+  },
+  {
+   "unit": "L24N8193-:c1:dt",
+   "equal": true
+  },
+  {
+   "unit": "L27N8999-:c1",
+   "equal": true
+  },
+  {
+   "unit": "L27N8999-:c1:pb",
+   "equal": true
+  },
+  {
+   "unit": "L27N8999-:c1:dt",
+   "equal": true
+  },
+  {
+   "unit": "L28N4613+:c0",
+   "equal": true
+  },
+  {
+   "unit": "L28N4613+:c0:pb",
+   "equal": true
+  },
+  {
+   "unit": "L28N4613+:c0:dt",
+   "equal": true
+  }
+ ],
+ "n_d_equal": 58,
+ "n_d": 58,
+ "n_dt_d_equals_real": 19,
+ "n_records_equal": 58
+}

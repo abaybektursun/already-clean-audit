@@ -1,0 +1,166 @@
+/* "One neuron's 50 contexts, sorted into groups": styles shared by the walkthrough page and index.html.
+   Every rule is scoped under #ngroups, so nothing reaches the host page. The host defines --bg, --ink,
+   --muted, --rule, --accent, --font-text and --font-mono, light and dark; the tokens below derive from them. */
+#ngroups {
+  --pill: var(--rule);
+  --band: color-mix(in srgb, var(--ink) 6%, transparent);
+  --barfill: color-mix(in srgb, var(--muted) 42%, var(--bg));
+  --th: 26px;
+  font: 400 16px/1.5 var(--font-text);
+  color: var(--ink);
+  position: relative;
+}
+#ngroups, #ngroups * { box-sizing: border-box; }
+#ngroups button, #ngroups select { font: inherit; color: inherit; }
+#ngroups :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+#ngroups .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+#ngroups p { max-width: none; margin: 0; }
+
+/* controls */
+#ngroups .controls { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px 16px; }
+#ngroups .pick { display: flex; gap: 8px; flex-wrap: wrap; min-width: 0; }
+#ngroups .select-wrap { position: relative; min-width: 0; max-width: 100%; }
+#ngroups select {
+  appearance: none; -webkit-appearance: none;
+  background: transparent; border: 1px solid var(--rule); border-radius: 8px;
+  padding: 8px 36px 8px 12px; font-size: 15px; font-family: var(--font-mono);
+  max-width: 100%; cursor: pointer;
+}
+#ngroups .select-wrap::after {
+  content: ""; position: absolute; right: 14px; top: 50%; width: 7px; height: 7px; margin-top: -6px;
+  border-right: 1.5px solid var(--muted); border-bottom: 1.5px solid var(--muted); transform: rotate(45deg);
+  pointer-events: none;
+}
+#ngroups select option, #ngroups select optgroup { background: var(--bg); color: var(--ink); }
+#ngroups .btn {
+  border: 1px solid var(--rule); background: transparent; border-radius: 8px; padding: 8px 14px;
+  font-size: 15px; cursor: pointer;
+}
+#ngroups .btn:hover { background: var(--band); }
+#ngroups .seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 8px; padding: 2px; gap: 2px; }
+#ngroups .seg button {
+  border: 0; background: transparent; border-radius: 6px; padding: 6px 12px; font-size: 15px; cursor: pointer;
+  color: var(--muted); transition: background-color 200ms ease, color 200ms ease;
+}
+#ngroups .seg button:hover { color: var(--ink); }
+#ngroups .seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+
+#ngroups .who { margin-top: 18px; font-size: 15px; color: var(--muted); max-width: 70ch; min-height: 3em; }
+#ngroups .who b { font-weight: 500; color: var(--ink); font-family: var(--font-mono); }
+
+/* the count, and where it sits among the 600 */
+#ngroups .head { margin-top: 18px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 300px); gap: 16px 32px; align-items: end; }
+#ngroups .count { min-width: 0; }
+#ngroups .count .num { font-size: 64px; line-height: 1; font-weight: 700; letter-spacing: -0.02em; }
+#ngroups .count .unit { font-size: 26px; margin-left: 6px; }
+#ngroups .count .fig { transition: opacity 220ms ease; }
+#ngroups .count .fig.fade { opacity: 0; }
+#ngroups .note { margin-top: 8px; font-size: 15px; color: var(--muted); min-height: 1.5em; }
+
+#ngroups .dist { margin: 0; min-width: 0; }
+#ngroups .dist h3 { margin: 0 0 22px; font-size: 13px; font-weight: 400; color: var(--muted); line-height: 1.35; }
+#ngroups .bars { position: relative; height: 64px; display: grid; grid-template-columns: repeat(var(--nb), minmax(0, 1fr)); align-items: end; border-bottom: 1px solid var(--rule); }
+#ngroups .barcell { position: relative; height: 100%; display: flex; align-items: flex-end; justify-content: center; cursor: default; }
+#ngroups .barcell i {
+  display: block; width: min(12px, 70%); border-radius: 3px 3px 0 0; background: var(--barfill);
+  transition: height 520ms cubic-bezier(.3, .7, .2, 1), background-color 220ms ease;
+}
+#ngroups .barcell.cur i { background: var(--accent); }
+#ngroups .barcell:hover i { background: color-mix(in srgb, var(--ink) 55%, var(--bg)); }
+#ngroups .barcell.cur:hover i { background: var(--accent); }
+#ngroups .barlab {
+  position: absolute; bottom: 100%; left: 50%; transform: translate(-50%, -3px); font-size: 12px; font-weight: 700;
+  white-space: nowrap; pointer-events: none; transition: bottom 520ms cubic-bezier(.3, .7, .2, 1);
+}
+#ngroups .axis { display: grid; grid-template-columns: repeat(var(--nb), minmax(0, 1fr)); margin-top: 4px; }
+#ngroups .axis span { text-align: center; font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+#ngroups .axis .cur { color: var(--ink); font-weight: 700; }
+
+/* the board: 50 tiles and the group rows, all absolutely placed by groups.js */
+#ngroups .board { position: relative; margin-top: 28px; border-top: 1px solid var(--rule); transition: height 520ms cubic-bezier(.3, .7, .2, 1); overflow: hidden; }
+#ngroups .board.still, #ngroups .board.still * { transition: none !important; }
+#ngroups .pilehead {
+  position: absolute; left: 0; top: 12px; font-size: 13px; color: var(--muted); transition: opacity 260ms ease;
+}
+#ngroups .pilehead.off { opacity: 0; }
+#ngroups .row {
+  position: absolute; left: 0; right: 0; top: 0; border-bottom: 1px solid var(--rule); cursor: pointer;
+  transition: opacity 320ms ease, background-color 200ms ease; opacity: 0;
+}
+#ngroups .row.in { opacity: 1; }
+#ngroups .row:hover { background: color-mix(in srgb, var(--ink) 3%, transparent); }
+#ngroups .row.sel { background: var(--band); }
+#ngroups .row:focus-visible { outline-offset: -2px; }
+#ngroups .lab { position: absolute; left: 0; display: grid; grid-template-columns: 3ch minmax(0, 1fr); gap: 0 10px; font-size: 14px; line-height: 1.35; padding-left: 4px; }
+#ngroups .lab .n { font-variant-numeric: tabular-nums; color: var(--muted); text-align: right; }
+#ngroups .lab .name { overflow-wrap: anywhere; }
+
+#ngroups .tile {
+  position: absolute; left: 0; top: 0; height: var(--th); max-width: 15ch;
+  display: flex; align-items: center; padding: 0 7px; border-radius: 6px;
+  font: 500 12.5px/1 var(--font-mono); white-space: pre; overflow: hidden; text-overflow: ellipsis;
+  background: var(--pill); color: var(--ink); cursor: pointer; user-select: none; -webkit-user-select: none;
+  will-change: transform;
+  transition: transform 720ms cubic-bezier(.22, .8, .24, 1), opacity 320ms ease, background-color 260ms ease, color 260ms ease;
+}
+#ngroups .tile span { overflow: hidden; text-overflow: ellipsis; }
+#ngroups .tile.on { background: var(--accent); color: var(--bg); }
+#ngroups .tile.hl { box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--ink); }
+#ngroups .tile.gone { opacity: 0; pointer-events: none; }
+
+/* the reading list: the selected group's contexts, as the slider shows them */
+#ngroups .pane { margin-top: 32px; }
+#ngroups .pane h3 { margin: 0; font-size: 14px; font-weight: 700; line-height: 1.4; padding-bottom: 8px; border-bottom: 1px solid var(--rule); }
+#ngroups .pane h3 .v { float: right; font-weight: 400; color: var(--muted); font-size: 13px; margin-left: 12px; }
+#ngroups .ctxs { margin-top: 4px; }
+#ngroups .ctx {
+  height: 30px; display: grid; grid-template-columns: minmax(0, 1fr) 12ch minmax(0, .62fr) 6ch; align-items: center;
+  font-family: var(--font-mono); font-size: 13px; line-height: 1; white-space: pre; border-radius: 6px;
+  transition: background-color 300ms ease;
+}
+#ngroups .ctx.hl { background: var(--band); }
+#ngroups .ctx .b { display: flex; justify-content: flex-end; overflow: hidden; color: var(--muted);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 56px); mask-image: linear-gradient(to right, transparent, #000 56px); }
+#ngroups .ctx .t { display: flex; justify-content: center; min-width: 0; padding: 0 6px; }
+#ngroups .ctx .a { overflow: hidden; color: var(--muted);
+  -webkit-mask-image: linear-gradient(to left, transparent, #000 40px); mask-image: linear-gradient(to left, transparent, #000 40px); }
+#ngroups .ctx .v { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; font-size: 12px; padding-right: 4px; }
+#ngroups .nl { color: var(--muted); opacity: 0.7; }
+#ngroups .pill {
+  display: block; max-width: 100%; overflow: hidden; text-overflow: ellipsis;
+  padding: 5px 7px 6px; border-radius: 6px; background: var(--accent); color: var(--bg); font-weight: 500;
+}
+
+#ngroups details { margin-top: 24px; font-size: 13px; color: var(--muted); }
+#ngroups summary { cursor: pointer; width: max-content; max-width: 100%; }
+#ngroups .tablewrap { overflow-x: auto; margin-top: 10px; }
+#ngroups table { border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; min-width: 100%; }
+#ngroups th, #ngroups td { text-align: right; padding: 4px 8px; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+#ngroups th:first-child, #ngroups td:first-child { text-align: left; padding-left: 0; }
+#ngroups th { font-family: inherit; font-size: 13px; font-weight: 700; color: var(--ink); letter-spacing: 0; }
+
+#ngroups .caption { margin: 32px 0 16px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 14px; color: var(--muted); max-width: 72ch; }
+#ngroups .missing { margin: 24px 0 0; font-size: 16px; }
+
+#ngroups .tip {
+  position: absolute; z-index: 5; pointer-events: none; background: var(--ink); color: var(--bg);
+  font: 12px/1.45 var(--font-mono); padding: 8px 10px; border-radius: 8px; white-space: pre-wrap; max-width: min(52ch, 92%);
+  opacity: 0; transition: opacity 120ms ease;
+}
+#ngroups .tip.on { opacity: 1; }
+#ngroups .tip b { font-family: var(--font-text); font-weight: 700; }
+
+@media (max-width: 640px) {
+  #ngroups .head { grid-template-columns: minmax(0, 1fr); }
+  #ngroups .count .num { font-size: 52px; }
+  #ngroups .count .unit { font-size: 22px; }
+  #ngroups .ctx { grid-template-columns: minmax(0, 1fr) 11ch minmax(0, .4fr) 5ch; font-size: 11.5px; }
+  #ngroups .ctx .t { padding: 0 3px; }
+  #ngroups .ctx .v { font-size: 11px; }
+  #ngroups .pill { padding: 4px 5px 5px; }
+  #ngroups .axis span.minor { visibility: hidden; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #ngroups .tile { transition: opacity 160ms linear, background-color 160ms linear; }
+  #ngroups .board, #ngroups .barcell i, #ngroups .barlab { transition: none; }
+}

@@ -1,0 +1,471 @@
+{
+ "n_examples": 10,
+ "examples": [
+  {
+   "unit": "L01N369+:c0",
+   "t": 11,
+   "n_exemplars": 12,
+   "max_abs_diff_record_vs_recount_over_pairs_and_fields": 0.0,
+   "carrier_top5_equal_to_npz": true,
+   "i0_first_window": 986,
+   "carrier_top5_at_or_after_i0": true
+  },
+  {
+   "unit": "L02N4649+:c3",
+   "t": 14,
+   "n_exemplars": 7,
+   "max_abs_diff_record_vs_recount_over_pairs_and_fields": 0.0,
+   "carrier_top5_equal_to_npz": true,
+   "i0_first_window": 1885,
+   "carrier_top5_at_or_after_i0": true
+  },
+  {
+   "unit": "L03N9631+:c3",
+   "t": 12,
+   "n_exemplars": 10,
+   "max_abs_diff_record_vs_recount_over_pairs_and_fields": 0.0,
+   "carrier_top5_equal_to_npz": true,
+   "i0_first_window": 1888,
+   "carrier_top5_at_or_after_i0": true
+  },
+  {
+   "unit": "L05N3483+:c3",
+   "t": 12,
+   "n_exemplars": 7,
+   "max_abs_diff_record_vs_recount_over_pairs_and_fields": 0.0,
+   "carrier_top5_equal_to_npz": true,
+   "i0_first_window": 473,
+   "carrier_top5_at_or_after_i0": true
+  },
+  {
+   "unit": "L10N10529-:c3",
+   "t": 12,
+   "n_exemplars": 7,
+   "max_abs_diff_record_vs_recount_over_pairs_and_fields": 0.0,
+   "carrier_top5_equal_to_npz": true,
+   "i0_first_window": 495,
+   "carrier_top5_at_or_after_i0": true
+  },
+  {
+   "unit": "L12N5641+:c0",
+   "t": 12,
+   "n_exemplars": 10,
+   "max_abs_diff_record_vs_recount_over_pairs_and_fields": 0.0,
+   "carrier_top5_equal_to_npz": true,
+   "i0_first_window": 1160,
+   "carrier_top5_at_or_after_i0": true
+  },
+  {
+   "unit": "L22N7483-:c5",
+   "t": 12,
+   "n_exemplars": 6,
+   "max_abs_diff_record_vs_recount_over_pairs_and_fields": 0.0,
+   "carrier_top5_equal_to_npz": true,
+   "i0_first_window": 1313,
+   "carrier_top5_at_or_after_i0": true
+  },
+  {
+   "unit": "L24N8193-:c1",
+   "t": 7,
+   "n_exemplars": 27,
+   "max_abs_diff_record_vs_recount_over_pairs_and_fields": 0.0,
+   "carrier_top5_equal_to_npz": true,
+   "i0_first_window": 1531,
+   "carrier_top5_at_or_after_i0": true
+  },
+  {
+   "unit": "L27N8999-:c1",
+   "t": 11,
+   "n_exemplars": 6,
+   "max_abs_diff_record_vs_recount_over_pairs_and_fields": 0.0,
+   "carrier_top5_equal_to_npz": true,
+   "i0_first_window": 410,
+   "carrier_top5_at_or_after_i0": true
+  },
+  {
+   "unit": "L28N4613+:c0",
+   "t": 9,
+   "n_exemplars": 8,
+   "max_abs_diff_record_vs_recount_over_pairs_and_fields": 0.0,
+   "carrier_top5_equal_to_npz": true,
+   "i0_first_window": 485,
+   "carrier_top5_at_or_after_i0": true
+  }
+ ],
+ "smallest_all": {
+  "unit": "L01N369+:c0",
+  "pole": "L01N2347+",
+  "rank": 3,
+  "t": 11,
+  "record": {
+   "pred_bf16": -0.011226125061511993,
+   "meas_bf16": 3.024658203125,
+   "dL": -0.011319691082462668,
+   "dL_own": -0.007549405097961426,
+   "dL_fd": -0.001360013906378299,
+   "dL_fd_own": -0.0007295459508895874,
+   "pred_jvp": -0.011535447876617866,
+   "pred_jvp_own": -0.007508643400797155,
+   "probe": 0.0004354914999566972,
+   "probe_own": 1.55717134475708e-05
+  },
+  "recount": {
+   "pred_bf16": -0.011226125061511993,
+   "meas_bf16": 3.024658203125,
+   "dL": -0.011319691082462668,
+   "dL_own": -0.007549405097961426,
+   "dL_fd": -0.001360013906378299,
+   "dL_fd_own": -0.0007295459508895874,
+   "pred_jvp": -0.011535447876617866,
+   "pred_jvp_own": -0.007508643400797155,
+   "probe": 0.0004354914999566972,
+   "probe_own": 1.55717134475708e-05
+  },
+  "abs_dL_minus_pred_bf16": 9.356602095067501e-05,
+  "exemplar_first": "he app has 2.1 million fans, and the 17-year-old is gaining fame for her upbeat dance videos and related content.\n\nHowever, rumors and internet trolls about her [[ breakup]]  with Addison Ray at Bryce Hall in January have haunted her to become a star.\n\n",
+  "n_exemplars": 12,
+  "zero_row_top5_changes_all_windows": [
+   {
+    "window": 5949,
+    "j": 863,
+    "dl": -0.004460811614990234,
+    "clean_loss": 0.7643404603004456,
+    "i0": 861,
+    "at_or_after_i0": true
+   },
+   {
+    "window": 5909,
+    "j": 802,
+    "dl": -0.002784252166748047,
+    "clean_loss": 1.7874469757080078,
+    "i0": 626,
+    "at_or_after_i0": true
+   },
+   {
+    "window": 5949,
+    "j": 885,
+    "dl": -0.002647876739501953,
+    "clean_loss": 4.653806209564209,
+    "i0": 861,
+    "at_or_after_i0": true
+   },
+   {
+    "window": 5949,
+    "j": 1029,
+    "dl": -0.0023987293243408203,
+    "clean_loss": 3.9937784671783447,
+    "i0": 861,
+    "at_or_after_i0": true
+   },
+   {
+    "window": 926,
+    "j": 756,
+    "dl": -0.0023450851440429688,
+    "clean_loss": 8.29555606842041,
+    "i0": 749,
+    "at_or_after_i0": true
+   }
+  ],
+  "carrier_zero_top5_record": null
+ },
+ "largest_all": {
+  "unit": "L10N10529-:c3",
+  "pole": "L10N8869+",
+  "rank": 1,
+  "t": 12,
+  "record": {
+   "pred_bf16": -0.3990864157676697,
+   "meas_bf16": -0.143310546875,
+   "dL": -0.2834540351323085,
+   "dL_own": 0.07249229028820992,
+   "dL_fd": -0.040044549929916684,
+   "dL_fd_own": 0.007301378529518843,
+   "pred_jvp": -0.4083107453846484,
+   "pred_jvp_own": 0.07276898235431872,
+   "probe": -0.00016760533617343754,
+   "probe_own": 6.323214620351791e-06
+  },
+  "recount": {
+   "pred_bf16": -0.3990864157676697,
+   "meas_bf16": -0.143310546875,
+   "dL": -0.2834540351323085,
+   "dL_own": 0.07249229028820992,
+   "dL_fd": -0.040044549929916684,
+   "dL_fd_own": 0.007301378529518843,
+   "pred_jvp": -0.4083107453846484,
+   "pred_jvp_own": 0.07276898235431872,
+   "probe": -0.00016760533617343754,
+   "probe_own": 6.323214620351791e-06
+  },
+  "abs_dL_minus_pred_bf16": 0.11563238063536119,
+  "exemplar_first": "ript.\n\nThe Rapa Nui people may have been one of the few civilisations on Earth to have independently invented writing, or they may not. That they had the Rongor [[ongo]]  script before the 1860s is not disputed. Whether it was true writing",
+  "n_exemplars": 7,
+  "zero_row_top5_changes_all_windows": [
+   {
+    "window": 3117,
+    "j": 810,
+    "dl": 0.1840963363647461,
+    "clean_loss": 8.144739151000977,
+    "i0": 802,
+    "at_or_after_i0": true
+   },
+   {
+    "window": 3117,
+    "j": 811,
+    "dl": -0.15595579147338867,
+    "clean_loss": 6.012279987335205,
+    "i0": 802,
+    "at_or_after_i0": true
+   },
+   {
+    "window": 3117,
+    "j": 814,
+    "dl": -0.13529682159423828,
+    "clean_loss": 8.153230667114258,
+    "i0": 802,
+    "at_or_after_i0": true
+   },
+   {
+    "window": 3117,
+    "j": 804,
+    "dl": 0.13111840188503265,
+    "clean_loss": 0.16785068809986115,
+    "i0": 802,
+    "at_or_after_i0": true
+   },
+   {
+    "window": 3117,
+    "j": 808,
+    "dl": 0.12790298461914062,
+    "clean_loss": 4.331491470336914,
+    "i0": 802,
+    "at_or_after_i0": true
+   }
+  ],
+  "carrier_zero_top5_record": null
+ },
+ "smallest_carrier": {
+  "unit": "L03N9631+:c3",
+  "pole": "L03N9631+",
+  "rank": 0,
+  "t": 12,
+  "record": {
+   "pred_bf16": 0.00763440877199173,
+   "meas_bf16": -1.29833984375,
+   "dL": 0.007518269325373694,
+   "dL_own": 0.010934154561255127,
+   "dL_fd": 0.0004726822080556303,
+   "dL_fd_own": 0.0010819478193297982,
+   "pred_jvp": 0.0074136501099157925,
+   "pred_jvp_own": 0.010913417111623858,
+   "probe": 0.00023366991081275046,
+   "probe_own": -9.967945516109467e-06
+  },
+  "recount": {
+   "pred_bf16": 0.00763440877199173,
+   "meas_bf16": -1.29833984375,
+   "dL": 0.007518269325373694,
+   "dL_own": 0.010934154561255127,
+   "dL_fd": 0.0004726822080556303,
+   "dL_fd_own": 0.0010819478193297982,
+   "pred_jvp": 0.0074136501099157925,
+   "pred_jvp_own": 0.010913417111623858,
+   "probe": 0.00023366991081275046,
+   "probe_own": -9.967945516109467e-06
+  },
+  "abs_dL_minus_pred_bf16": 0.00011613944661803544,
+  "exemplar_first": "he 1,917 Australians that were killed, 1,299 had no known grave, many having lain undisturbed in No-Man’s Land until the end of the War, and their names are ins [[cribed]]  on the wall in the VC Corner Cemetery Memorial (photograph above). In",
+  "n_exemplars": 10,
+  "zero_row_top5_changes_all_windows": [
+   {
+    "window": 4163,
+    "j": 345,
+    "dl": 0.007613658905029297,
+    "clean_loss": 5.180732250213623,
+    "i0": 345,
+    "at_or_after_i0": true
+   },
+   {
+    "window": 4163,
+    "j": 347,
+    "dl": 0.005745649337768555,
+    "clean_loss": 2.747290849685669,
+    "i0": 345,
+    "at_or_after_i0": true
+   },
+   {
+    "window": 4163,
+    "j": 350,
+    "dl": -0.00567626953125,
+    "clean_loss": 5.351263523101807,
+    "i0": 345,
+    "at_or_after_i0": true
+   },
+   {
+    "window": 4162,
+    "j": 1848,
+    "dl": -0.005156517028808594,
+    "clean_loss": 5.870212554931641,
+    "i0": 1487,
+    "at_or_after_i0": true
+   },
+   {
+    "window": 4163,
+    "j": 392,
+    "dl": 0.003971099853515625,
+    "clean_loss": 4.418622016906738,
+    "i0": 345,
+    "at_or_after_i0": true
+   }
+  ],
+  "carrier_zero_top5_record": [
+   {
+    "window": 1960,
+    "j": 1895,
+    "dl": -0.0005481243133544922,
+    "clean_loss": 3.571044683456421,
+    "predicts": "ed, 1,299 had no known grave, many having lain undisturbed in No-Man’s Land until the end of the War, and their names are inscribed on the wall in the VC Corner [[ Cemetery]]  Memorial (photograph above). In the cemetery, which is situated in the"
+   },
+   {
+    "window": 1960,
+    "j": 1890,
+    "dl": -0.0003571510314941406,
+    "clean_loss": 3.959487199783325,
+    "predicts": "ralians that were killed, 1,299 had no known grave, many having lain undisturbed in No-Man’s Land until the end of the War, and their names are inscribed on the [[ wall]]  in the VC Corner Cemetery Memorial (photograph above). In the cemetery,"
+   },
+   {
+    "window": 1960,
+    "j": 1896,
+    "dl": -0.00025844573974609375,
+    "clean_loss": 8.163557052612305,
+    "predicts": " had no known grave, many having lain undisturbed in No-Man’s Land until the end of the War, and their names are inscribed on the wall in the VC Corner Cemetery [[ Memorial]]  (photograph above). In the cemetery, which is situated in the old"
+   },
+   {
+    "window": 1960,
+    "j": 1893,
+    "dl": 0.00018799304962158203,
+    "clean_loss": 1.4611873626708984,
+    "predicts": " were killed, 1,299 had no known grave, many having lain undisturbed in No-Man’s Land until the end of the War, and their names are inscribed on the wall in the [[ VC]]  Corner Cemetery Memorial (photograph above). In the cemetery, which is situated"
+   },
+   {
+    "window": 1960,
+    "j": 1892,
+    "dl": 0.0001774132251739502,
+    "clean_loss": 0.28739479184150696,
+    "predicts": "that were killed, 1,299 had no known grave, many having lain undisturbed in No-Man’s Land until the end of the War, and their names are inscribed on the wall in [[ the]]  VC Corner Cemetery Memorial (photograph above). In the cemetery, which is"
+   }
+  ]
+ },
+ "largest_carrier": {
+  "unit": "L12N5641+:c0",
+  "pole": "L12N5641+",
+  "rank": 0,
+  "t": 12,
+  "record": {
+   "pred_bf16": 0.35449495911598206,
+   "meas_bf16": -0.18994140625,
+   "dL": 0.2967974340535875,
+   "dL_own": 0.15467029670253396,
+   "dL_fd": 0.034245533403009176,
+   "dL_fd_own": 0.022624103585258126,
+   "pred_jvp": 0.3422647470683708,
+   "pred_jvp_own": 0.22883398553403822,
+   "probe": -0.00019909842376364395,
+   "probe_own": -2.030748873949051e-06
+  },
+  "recount": {
+   "pred_bf16": 0.35449495911598206,
+   "meas_bf16": -0.18994140625,
+   "dL": 0.2967974340535875,
+   "dL_own": 0.15467029670253396,
+   "dL_fd": 0.034245533403009176,
+   "dL_fd_own": 0.022624103585258126,
+   "pred_jvp": 0.3422647470683708,
+   "pred_jvp_own": 0.22883398553403822,
+   "probe": -0.00019909842376364395,
+   "probe_own": -2.030748873949051e-06
+  },
+  "abs_dL_minus_pred_bf16": 0.05769752506239456,
+  "exemplar_first": "enetics, sacred sex and conscious relating which will help us create the life we were born to live!\n\n Wholistic Living Webinar 1 Replay \n\nhttps://meetings.webex [[.com]] /collabs/files/playRecording?encryptedDocID=0_F59CBC6",
+  "n_exemplars": 10,
+  "zero_row_top5_changes_all_windows": [
+   {
+    "window": 1626,
+    "j": 1162,
+    "dl": 0.13327455520629883,
+    "clean_loss": 4.780327320098877,
+    "i0": 1160,
+    "at_or_after_i0": true
+   },
+   {
+    "window": 1626,
+    "j": 1160,
+    "dl": 0.10528373718261719,
+    "clean_loss": 5.251161575317383,
+    "i0": 1160,
+    "at_or_after_i0": true
+   },
+   {
+    "window": 1626,
+    "j": 1163,
+    "dl": 0.06617069244384766,
+    "clean_loss": 6.05116605758667,
+    "i0": 1160,
+    "at_or_after_i0": true
+   },
+   {
+    "window": 6106,
+    "j": 983,
+    "dl": 0.0385279655456543,
+    "clean_loss": 7.063164234161377,
+    "i0": 983,
+    "at_or_after_i0": true
+   },
+   {
+    "window": 1626,
+    "j": 1194,
+    "dl": -0.02589130401611328,
+    "clean_loss": 4.797739028930664,
+    "i0": 1160,
+    "at_or_after_i0": true
+   }
+  ],
+  "carrier_zero_top5_record": [
+   {
+    "window": 1626,
+    "j": 1162,
+    "dl": 0.13327455520629883,
+    "clean_loss": 4.780327320098877,
+    "predicts": "sacred sex and conscious relating which will help us create the life we were born to live!\n\n Wholistic Living Webinar 1 Replay \n\nhttps://meetings.webex.com/coll [[abs]] /files/playRecording?encryptedDocID=0_F59CBC6B52D"
+   },
+   {
+    "window": 1626,
+    "j": 1160,
+    "dl": 0.10528373718261719,
+    "clean_loss": 5.251161575317383,
+    "predicts": "ics, sacred sex and conscious relating which will help us create the life we were born to live!\n\n Wholistic Living Webinar 1 Replay \n\nhttps://meetings.webex.com [[/c]] ollabs/files/playRecording?encryptedDocID=0_F59CBC6B"
+   },
+   {
+    "window": 1626,
+    "j": 1163,
+    "dl": 0.06617069244384766,
+    "clean_loss": 6.05116605758667,
+    "predicts": "red sex and conscious relating which will help us create the life we were born to live!\n\n Wholistic Living Webinar 1 Replay \n\nhttps://meetings.webex.com/collabs [[/files]] /playRecording?encryptedDocID=0_F59CBC6B52D79"
+   },
+   {
+    "window": 1626,
+    "j": 1194,
+    "dl": -0.02589130401611328,
+    "clean_loss": 4.797739028930664,
+    "predicts": "re born to live!\n\n Wholistic Living Webinar 1 Replay \n\nhttps://meetings.webex.com/collabs/files/playRecording?encryptedDocID=0_F59CBC6B52D79C3472CBA7E8A5A44F315 [[E]] 8E31EA519FBD4928249109E0F9A"
+   },
+   {
+    "window": 1626,
+    "j": 1164,
+    "dl": -0.023960590362548828,
+    "clean_loss": 7.967161178588867,
+    "predicts": "x and conscious relating which will help us create the life we were born to live!\n\n Wholistic Living Webinar 1 Replay \n\nhttps://meetings.webex.com/collabs/files [[/play]] Recording?encryptedDocID=0_F59CBC6B52D79C"
+   }
+  ]
+ }
+}

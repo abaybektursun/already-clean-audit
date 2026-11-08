@@ -1,0 +1,22 @@
+[
+ {
+  "name": "scrC_lr5e-6_ep6_n64",
+  "module": "infra.aws_pg.jobs.w17_cell",
+  "args": "--controls-s3 s3://pg-lineage-769063704696/results/w17_controls_a3/out/w17_controls.json --decoder random --arm cap --rank 512 --n 64 --seed 1337 --eval-split bucket --lr 5e-6 --epochs 6 --batch 8 --warmup 0.03 --alpha 1024"
+ },
+ {
+  "name": "scrC_lr5e-6_ep6_n256",
+  "module": "infra.aws_pg.jobs.w17_cell",
+  "args": "--controls-s3 s3://pg-lineage-769063704696/results/w17_controls_a3/out/w17_controls.json --decoder random --arm cap --rank 512 --n 256 --seed 1337 --eval-split bucket --lr 5e-6 --epochs 6 --batch 8 --warmup 0.03 --alpha 1024"
+ },
+ {
+  "name": "scrC_lr5e-6_ep6_n1000",
+  "module": "infra.aws_pg.jobs.w17_cell",
+  "args": "--controls-s3 s3://pg-lineage-769063704696/results/w17_controls_a3/out/w17_controls.json --decoder random --arm cap --rank 512 --n 1000 --seed 1337 --eval-split bucket --lr 5e-6 --epochs 6 --batch 8 --warmup 0.03 --alpha 1024"
+ },
+ {
+  "name": "scrC_lr5e-6_ep6_n4000",
+  "module": "infra.aws_pg.jobs.w17_cell",
+  "args": "--controls-s3 s3://pg-lineage-769063704696/results/w17_controls_a3/out/w17_controls.json --decoder random --arm cap --rank 512 --n 4000 --seed 1337 --eval-split bucket --lr 5e-6 --epochs 6 --batch 8 --warmup 0.03 --alpha 1024"
+ }
+]

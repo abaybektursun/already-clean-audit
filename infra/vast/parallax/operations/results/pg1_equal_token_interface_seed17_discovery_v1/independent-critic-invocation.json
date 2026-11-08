@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-07-19T04:40:36Z",
+  "run_id": "parallax-pg1-primary-interface-s3-v1",
+  "experiment_id": "pg1_equal_token_interface_seed17_discovery_v1",
+  "model_outcome_seen": false,
+  "integrated_adjudication": {
+    "status": "VOID_INFRASTRUCTURE_CONTRACT_FAILURE",
+    "scientific_verdict": null,
+    "reason": "The job terminated before producing a result or candidate rows because the frozen input contract lacked artifacts.interface_config."
+  },
+  "raw_terminal": {
+    "local_path": "infra/vast/parallax/operations/results/pg1_equal_token_interface_seed17_discovery_v1/raw-terminal.json",
+    "sha256": "e6a9e00e89aec149dec68cdc4765dcd91728dcf36db30aac0a9dcf3275a1f650",
+    "s3_bucket": "pg-lineage-769063704696",
+    "s3_key": "parallax/results/parallax-pg1-primary-interface-s3-v1/terminal.json",
+    "s3_version_id": "3qdyJrMIn88FyS5y4LIUt.ZLzSiRqQ1k",
+    "s3_etag": "400d0f58b4a1c6ef0d6e8ead1f5dbe06",
+    "s3_server_side_encryption": "AES256"
+  },
+  "independent_critic": {
+    "status": "TERMINAL_NOT_ADJUDICABLE",
+    "scientific_verdict": null,
+    "invoked": true,
+    "exit_code": 1,
+    "failure_class": "IndependentPrimaryAuditError",
+    "failure_message": "run identity disagreement: ['', 'parallax-pg1-primary-interface-s3-v1']",
+    "interpretation": "The frozen critic correctly cannot adjudicate a terminal with no producer result identity or candidate rows.",
+    "source_commit": "b1ad4f86b1926c7d0fda6020267672b57adf1c8f",
+    "source_path": "infra/vast/parallax/audit_primary_interface_independent.py",
+    "source_sha256": "d6b03945ed389a48b764fdeef509aa22818c0051654534f789559c4ba05ee8c4"
+  },
+  "retry": {
+    "automatic_retry": false,
+    "manual_retry_performed": false,
+    "additional_paid_attempt_authorized": false
+  },
+  "paid_compute": {
+    "status": "OFF",
+    "vast_instances": 0,
+    "vast_volumes": 0,
+    "vast_zero_observations_utc": [
+      "2026-07-19T04:39:31Z",
+      "2026-07-19T04:39:36Z",
+      "2026-07-19T04:39:42Z"
+    ],
+    "aws_experiment_compute": 0,
+    "note": "The fuelos account has one unrelated stopped gpu-l40s-dev instance and its attached root volume, both created 2026-03-31; neither belongs to this experiment."
+  }
+}

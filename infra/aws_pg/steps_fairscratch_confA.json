@@ -1,0 +1,12 @@
+[
+ {
+  "name": "scr_lr5e-6_ep6_conf_s1337",
+  "module": "infra.aws_pg.jobs.w17_cell",
+  "args": "--controls-s3 s3://pg-lineage-769063704696/results/w17_controls_a3/out/w17_controls.json --decoder random --arm cap --rank 512 --n 16000 --seed 1337 --eval-split confirmation --lr 5e-6 --epochs 6 --batch 8 --warmup 0.03 --alpha 1024"
+ },
+ {
+  "name": "scr_lr5e-6_ep6_conf_s1338",
+  "module": "infra.aws_pg.jobs.w17_cell",
+  "args": "--controls-s3 s3://pg-lineage-769063704696/results/w17_controls_a3/out/w17_controls.json --decoder random --arm cap --rank 512 --n 16000 --seed 1338 --eval-split confirmation --lr 5e-6 --epochs 6 --batch 8 --warmup 0.03 --alpha 1024"
+ }
+]

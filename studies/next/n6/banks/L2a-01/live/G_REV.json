@@ -1,0 +1,40 @@
+{
+ "seen_utc": "2026-11-07T20:11:22Z",
+ "gate": "G_REV",
+ "record": {
+  "pass": true,
+  "failing_input": {
+   "pass": false
+  },
+  "got": "373bad25002f1624757a73235c5ca844c6375c25",
+  "want": "373bad25002f1624757a73235c5ca844c6375c25"
+ },
+ "metrics_at_sight": {
+  "stage": "L2",
+  "half": "freeze",
+  "pg_git_sha": "d5554e2ad921",
+  "started_utc": "2026-11-07T20:11:01Z",
+  "updated_utc": "2026-11-07T20:11:01Z",
+  "elapsed_s": 0.0,
+  "w_eval": 1024,
+  "batch": 4,
+  "chunk": 96,
+  "pairs_sha256": "c837fe89a32aa9fd5dbdef837a7a79c6962112b39c176d113be798a35db5666b",
+  "eval_windows_sha256": "5822191728d49aba45817f8479058c266bcaaa057dc1037fa0d5509507d1b223",
+  "eval_tokens_sha256": "d7a854f506f2062e8098cb2f2a66efe7db06ac94bd0ca17fef0e7ae43f77705d",
+  "host_mem": {
+   "available_gib_at_start": 59.67,
+   "needed_gib": 40.02
+  },
+  "versions": {
+   "torch": "2.12.0+cu130",
+   "transformers": "5.9.0",
+   "device": "NVIDIA L40S"
+  },
+  "load_s": 188.7,
+  "n_done": 0,
+  "parked": [],
+  "complete": false
+ },
+ "measured_at_sight": {}
+}

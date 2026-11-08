@@ -1,0 +1,21 @@
+{
+  "rung": "Qwen/Qwen2.5-72B",
+  "need": 12,
+  "checked": 13,
+  "aligned_count": 12,
+  "aligned": [
+    "Qwen/Qwen2.5-72B-Instruct",
+    "moonshotai/Kimi-Dev-72B",
+    "Qwen/Qwen2.5-Math-72B",
+    "Unbabel/Tower-Plus-72B",
+    "AI-MO/Kimina-Prover-72B",
+    "EVA-UNIT-01/EVA-Qwen2.5-72B-v0.2",
+    "GeoGPT-Research-Project/Qwen2.5-72B-GeoGPT",
+    "GeoGPT-Research-Project/GeoGPT-R1-Preview",
+    "arcee-ai/Virtuoso-Large",
+    "pfnet/Preferred-MedLLM-Qwen-72B",
+    "YiXin-AILab/YiXin-Distill-Qwen-72B",
+    "ZhongMingTech/Ming1.0-Base"
+  ],
+  "verdict": "PASS"
+}

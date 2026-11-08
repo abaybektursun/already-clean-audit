@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Already clean: the data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='5' fill='%233346d3'/%3E%3C/svg%3E">
+</head>
+<body>
+<header class="bar" id="bar">
+  <div class="brand" data-noterm>Already clean <span>data</span></div>
+  <div class="theta">
+    <span class="theta-label">θ<sub>s</sub></span>
+    <div class="rail" id="rail" role="slider" tabindex="0" aria-label="Strong threshold θs" aria-valuemin="0.05" aria-valuemax="0.6">
+      <div class="rail-track"></div><div class="rail-fill" id="rail-fill"></div>
+      <div id="rail-ticks"></div>
+      <div class="rail-handle" id="rail-handle"></div>
+    </div>
+    <div class="theta-read"><span class="theta-value" id="theta-value"></span><span class="theta-state" id="theta-state"></span></div>
+  </div>
+  <div class="search">
+    <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5"/></svg>
+    <input id="q" type="search" placeholder="Search poles, texts, prompts, journal" autocomplete="off" spellcheck="false" aria-label="Search">
+    <div class="results" id="results" role="listbox"></div>
+  </div>
+</header>
+<main id="app"></main>
+<div id="tip" role="tooltip"></div>
+<script src="data/core.js"></script>
+<script src="glossary.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

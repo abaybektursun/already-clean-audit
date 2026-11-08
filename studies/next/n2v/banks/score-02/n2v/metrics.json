@@ -1,0 +1,2065 @@
+{
+ "started_utc": "2026-11-07T18:51:57Z",
+ "complete": true,
+ "gates": {
+  "G_SAME": {
+   "pass": true,
+   "versions": {
+    "torch": "2.12.0+cu130",
+    "transformers": "5.9.0"
+   },
+   "device": "NVIDIA L40S",
+   "registered": [
+    {
+     "torch": "2.12.0+cu130",
+     "transformers": "5.9.0"
+    },
+    "NVIDIA L40S"
+   ],
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "INPUTS": {
+   "pass": true,
+   "mismatch": [],
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "G_CORPUS": {
+   "pass": true,
+   "got": "2aca80ca6537f46b8f60a550b4a3f2f13be2d18c5402be8f1af5c00caa86f531",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t14_G_REV": {
+   "pass": true,
+   "commit": "cb286dcdaaf3f92b3c419dd77439078fdebffe53",
+   "registered": "cb286dcdaaf3f92b3c419dd77439078fdebffe53",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t14_G_CFG": {
+   "pass": true,
+   "diff_keys": [],
+   "sliding_window": 4096,
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "model_type"
+    ],
+    "sliding_window": 4096
+   }
+  },
+  "K_A": {
+   "pass": true,
+   "units": [
+    "L00N9356-:c8",
+    "L02N1367-:c7",
+    "L02N4649+:c3",
+    "L02N7380+:c2",
+    "L03N6372+:c10",
+    "L03N7746+:c0",
+    "L04N7919-:c0",
+    "L05N8714-:c5",
+    "L06N2185+:c5",
+    "L06N9844+:c1"
+   ],
+   "n_pairs": 40,
+   "max_abs_diff": 0.0,
+   "n_exact": 40,
+   "tol": 1e-06,
+   "failing_input": {
+    "what": "N12's banked dL with the poles rolled inside each unit",
+    "pass": false,
+    "min_abs_diff": 0.0166015625
+   }
+  },
+  "t14_G_FP32": {
+   "pass": true,
+   "dtypes": [
+    "torch.float32"
+   ],
+   "failing_input": {
+    "what": "the parameter dtypes before the cast",
+    "dtypes": [
+     "torch.bfloat16"
+    ],
+    "pass": false
+   }
+  },
+  "t14_G_CAUSAL": {
+   "pass": true,
+   "n_rows": 963,
+   "n_bitwise_before_i0": 963,
+   "tol": 0.0,
+   "max_abs_before_i0": 0.0,
+   "n_over_tol": 0,
+   "n_over_tol_by_slot_parity": {
+    "same_as_clean": 0,
+    "other": 0
+   },
+   "worst10": [
+    {
+     "unit": "L00N9356-:c8",
+     "window": 4441,
+     "kind": "zero",
+     "q": 0,
+     "i0": 1382,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L00N9356-:c8",
+     "window": 4441,
+     "kind": "zero",
+     "q": 1,
+     "i0": 1382,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 2,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L00N9356-:c8",
+     "window": 4441,
+     "kind": "zero",
+     "q": 2,
+     "i0": 1382,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 3,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L00N9356-:c8",
+     "window": 4441,
+     "kind": "zero",
+     "q": 3,
+     "i0": 1382,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 0,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L00N9356-:c8",
+     "window": 4441,
+     "kind": "fd",
+     "q": 0,
+     "i0": 1382,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L00N9356-:c8",
+     "window": 4441,
+     "kind": "fd",
+     "q": 1,
+     "i0": 1382,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 2,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L00N9356-:c8",
+     "window": 4441,
+     "kind": "fd",
+     "q": 2,
+     "i0": 1382,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 3,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L00N9356-:c8",
+     "window": 4441,
+     "kind": "fd",
+     "q": 3,
+     "i0": 1382,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 0,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L00N9356-:c8",
+     "window": 4441,
+     "kind": "probe",
+     "q": 0,
+     "i0": 1382,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L02N1367-:c7",
+     "window": 7474,
+     "kind": "zero",
+     "q": 0,
+     "i0": 1972,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 3,
+     "clean_batch": 2,
+     "clean_slot": 2
+    }
+   ],
+   "failing_input": {
+    "what": "zero rows compared through j = i0",
+    "pass": false,
+    "n_equal": 10
+   }
+  },
+  "t13_G_REV": {
+   "pass": true,
+   "commit": "db8c654b5cbe06311f92e86d68cd4f7d31642a5a",
+   "registered": "db8c654b5cbe06311f92e86d68cd4f7d31642a5a",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t13_G_CFG": {
+   "pass": true,
+   "diff_keys": [],
+   "sliding_window": 4096,
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "model_type"
+    ],
+    "sliding_window": 4096
+   }
+  },
+  "t13_G_FP32": {
+   "pass": true,
+   "dtypes": [
+    "torch.float32"
+   ],
+   "failing_input": {
+    "what": "the parameter dtypes before the cast",
+    "dtypes": [
+     "torch.bfloat16"
+    ],
+    "pass": false
+   }
+  },
+  "t13_G_CAUSAL": {
+   "pass": true,
+   "n_rows": 1683,
+   "n_bitwise_before_i0": 1683,
+   "tol": 0.0,
+   "max_abs_before_i0": 0.0,
+   "n_over_tol": 0,
+   "n_over_tol_by_slot_parity": {
+    "same_as_clean": 0,
+    "other": 0
+   },
+   "worst10": [
+    {
+     "unit": "L00N2968-:c1",
+     "window": 685,
+     "kind": "zero",
+     "q": 0,
+     "i0": 1769,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L00N2968-:c1",
+     "window": 685,
+     "kind": "zero",
+     "q": 1,
+     "i0": 1769,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 2,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L00N2968-:c1",
+     "window": 685,
+     "kind": "zero",
+     "q": 2,
+     "i0": 1769,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 3,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L00N2968-:c1",
+     "window": 685,
+     "kind": "zero",
+     "q": 3,
+     "i0": 1769,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 0,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L00N2968-:c1",
+     "window": 685,
+     "kind": "fd",
+     "q": 0,
+     "i0": 1769,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L00N2968-:c1",
+     "window": 685,
+     "kind": "fd",
+     "q": 1,
+     "i0": 1769,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 2,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L00N2968-:c1",
+     "window": 685,
+     "kind": "fd",
+     "q": 2,
+     "i0": 1769,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 3,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L00N2968-:c1",
+     "window": 685,
+     "kind": "fd",
+     "q": 3,
+     "i0": 1769,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 0,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L00N2968-:c1",
+     "window": 685,
+     "kind": "probe",
+     "q": 0,
+     "i0": 1769,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L00N2968-:c1",
+     "window": 3348,
+     "kind": "zero",
+     "q": 0,
+     "i0": 1074,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 3,
+     "clean_batch": 2,
+     "clean_slot": 2
+    }
+   ],
+   "failing_input": {
+    "what": "zero rows compared through j = i0",
+    "pass": false,
+    "n_equal": 20
+   }
+  },
+  "I_FWD": {
+   "pass": true,
+   "n": 187,
+   "n_bitwise": 187,
+   "max_abs_diff": 0.0,
+   "failing_input": {
+    "what": "each clean row against its window's first zero row",
+    "pass": false
+   }
+  },
+  "I_JVP": {
+   "pass": true,
+   "n": 32,
+   "n_bitwise": 32,
+   "max_abs_diff": 0.0,
+   "failing_input": {
+    "what": "pole 1's tangent against pole 0's",
+    "pass": false
+   }
+  },
+  "t12_G_REV": {
+   "pass": true,
+   "commit": "af83fc98693475b503de0a86407f0260a7281786",
+   "registered": "af83fc98693475b503de0a86407f0260a7281786",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t12_G_CFG": {
+   "pass": true,
+   "diff_keys": [],
+   "sliding_window": 4096,
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "model_type"
+    ],
+    "sliding_window": 4096
+   }
+  },
+  "t12_G_FP32": {
+   "pass": true,
+   "dtypes": [
+    "torch.float32"
+   ],
+   "failing_input": {
+    "what": "the parameter dtypes before the cast",
+    "dtypes": [
+     "torch.bfloat16"
+    ],
+    "pass": false
+   }
+  },
+  "t12_G_CAUSAL": {
+   "pass": true,
+   "n_rows": 1827,
+   "n_bitwise_before_i0": 1827,
+   "tol": 0.0,
+   "max_abs_before_i0": 0.0,
+   "n_over_tol": 0,
+   "n_over_tol_by_slot_parity": {
+    "same_as_clean": 0,
+    "other": 0
+   },
+   "worst10": [
+    {
+     "unit": "L01N7380-:c7",
+     "window": 2622,
+     "kind": "zero",
+     "q": 0,
+     "i0": 1489,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N7380-:c7",
+     "window": 2622,
+     "kind": "zero",
+     "q": 1,
+     "i0": 1489,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 2,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N7380-:c7",
+     "window": 2622,
+     "kind": "zero",
+     "q": 2,
+     "i0": 1489,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 3,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N7380-:c7",
+     "window": 2622,
+     "kind": "zero",
+     "q": 3,
+     "i0": 1489,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 0,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N7380-:c7",
+     "window": 2622,
+     "kind": "fd",
+     "q": 0,
+     "i0": 1489,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N7380-:c7",
+     "window": 2622,
+     "kind": "fd",
+     "q": 1,
+     "i0": 1489,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 2,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N7380-:c7",
+     "window": 2622,
+     "kind": "fd",
+     "q": 2,
+     "i0": 1489,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 3,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N7380-:c7",
+     "window": 2622,
+     "kind": "fd",
+     "q": 3,
+     "i0": 1489,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 0,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N7380-:c7",
+     "window": 2622,
+     "kind": "probe",
+     "q": 0,
+     "i0": 1489,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L02N4436-:c5",
+     "window": 14,
+     "kind": "zero",
+     "q": 0,
+     "i0": 1530,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 3,
+     "clean_batch": 2,
+     "clean_slot": 2
+    }
+   ],
+   "failing_input": {
+    "what": "zero rows compared through j = i0",
+    "pass": false,
+    "n_equal": 6
+   }
+  },
+  "t11_G_REV": {
+   "pass": true,
+   "commit": "c515906cd0f5e30e9e2f56f5f28870c375d8bef0",
+   "registered": "c515906cd0f5e30e9e2f56f5f28870c375d8bef0",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t11_G_CFG": {
+   "pass": true,
+   "diff_keys": [],
+   "sliding_window": 4096,
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "model_type"
+    ],
+    "sliding_window": 4096
+   }
+  },
+  "t11_G_FP32": {
+   "pass": true,
+   "dtypes": [
+    "torch.float32"
+   ],
+   "failing_input": {
+    "what": "the parameter dtypes before the cast",
+    "dtypes": [
+     "torch.bfloat16"
+    ],
+    "pass": false
+   }
+  },
+  "t11_G_CAUSAL": {
+   "pass": true,
+   "n_rows": 1782,
+   "n_bitwise_before_i0": 1782,
+   "tol": 0.0,
+   "max_abs_before_i0": 0.0,
+   "n_over_tol": 0,
+   "n_over_tol_by_slot_parity": {
+    "same_as_clean": 0,
+    "other": 0
+   },
+   "worst10": [
+    {
+     "unit": "L01N369+:c0",
+     "window": 909,
+     "kind": "zero",
+     "q": 0,
+     "i0": 986,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N369+:c0",
+     "window": 909,
+     "kind": "zero",
+     "q": 1,
+     "i0": 986,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 2,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N369+:c0",
+     "window": 909,
+     "kind": "zero",
+     "q": 2,
+     "i0": 986,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 3,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N369+:c0",
+     "window": 909,
+     "kind": "zero",
+     "q": 3,
+     "i0": 986,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 0,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N369+:c0",
+     "window": 909,
+     "kind": "fd",
+     "q": 0,
+     "i0": 986,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N369+:c0",
+     "window": 909,
+     "kind": "fd",
+     "q": 1,
+     "i0": 986,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 2,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N369+:c0",
+     "window": 909,
+     "kind": "fd",
+     "q": 2,
+     "i0": 986,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 3,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N369+:c0",
+     "window": 909,
+     "kind": "fd",
+     "q": 3,
+     "i0": 986,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 0,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N369+:c0",
+     "window": 909,
+     "kind": "probe",
+     "q": 0,
+     "i0": 986,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N369+:c0",
+     "window": 926,
+     "kind": "zero",
+     "q": 0,
+     "i0": 749,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 3,
+     "clean_batch": 2,
+     "clean_slot": 2
+    }
+   ],
+   "failing_input": {
+    "what": "zero rows compared through j = i0",
+    "pass": false,
+    "n_equal": 8
+   }
+  },
+  "t10_G_REV": {
+   "pass": true,
+   "commit": "1d074dbc15d91544abe47d5508ac1670ef8c7129",
+   "registered": "1d074dbc15d91544abe47d5508ac1670ef8c7129",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t10_G_CFG": {
+   "pass": true,
+   "diff_keys": [],
+   "sliding_window": 4096,
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "model_type"
+    ],
+    "sliding_window": 4096
+   }
+  },
+  "t10_G_FP32": {
+   "pass": true,
+   "dtypes": [
+    "torch.float32"
+   ],
+   "failing_input": {
+    "what": "the parameter dtypes before the cast",
+    "dtypes": [
+     "torch.bfloat16"
+    ],
+    "pass": false
+   }
+  },
+  "t10_G_CAUSAL": {
+   "pass": true,
+   "n_rows": 1098,
+   "n_bitwise_before_i0": 1098,
+   "tol": 0.0,
+   "max_abs_before_i0": 0.0,
+   "n_over_tol": 0,
+   "n_over_tol_by_slot_parity": {
+    "same_as_clean": 0,
+    "other": 0
+   },
+   "worst10": [
+    {
+     "unit": "L01N8975+:c2",
+     "window": 1676,
+     "kind": "zero",
+     "q": 0,
+     "i0": 1262,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N8975+:c2",
+     "window": 1676,
+     "kind": "zero",
+     "q": 1,
+     "i0": 1262,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 2,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N8975+:c2",
+     "window": 1676,
+     "kind": "zero",
+     "q": 2,
+     "i0": 1262,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 3,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N8975+:c2",
+     "window": 1676,
+     "kind": "zero",
+     "q": 3,
+     "i0": 1262,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 0,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N8975+:c2",
+     "window": 1676,
+     "kind": "fd",
+     "q": 0,
+     "i0": 1262,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N8975+:c2",
+     "window": 1676,
+     "kind": "fd",
+     "q": 1,
+     "i0": 1262,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 2,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N8975+:c2",
+     "window": 1676,
+     "kind": "fd",
+     "q": 2,
+     "i0": 1262,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 3,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N8975+:c2",
+     "window": 1676,
+     "kind": "fd",
+     "q": 3,
+     "i0": 1262,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 0,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N8975+:c2",
+     "window": 1676,
+     "kind": "probe",
+     "q": 0,
+     "i0": 1262,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L01N8975+:c2",
+     "window": 3581,
+     "kind": "zero",
+     "q": 0,
+     "i0": 1603,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 3,
+     "clean_batch": 2,
+     "clean_slot": 2
+    }
+   ],
+   "failing_input": {
+    "what": "zero rows compared through j = i0",
+    "pass": false,
+    "n_equal": 5
+   }
+  },
+  "t09_G_REV": {
+   "pass": true,
+   "commit": "08b5da69ff99e0858f18d9870ac87f43d7602cf0",
+   "registered": "08b5da69ff99e0858f18d9870ac87f43d7602cf0",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t09_G_CFG": {
+   "pass": true,
+   "diff_keys": [],
+   "sliding_window": 4096,
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "model_type"
+    ],
+    "sliding_window": 4096
+   }
+  },
+  "t09_G_FP32": {
+   "pass": true,
+   "dtypes": [
+    "torch.float32"
+   ],
+   "failing_input": {
+    "what": "the parameter dtypes before the cast",
+    "dtypes": [
+     "torch.bfloat16"
+    ],
+    "pass": false
+   }
+  },
+  "t09_G_CAUSAL": {
+   "pass": true,
+   "n_rows": 540,
+   "n_bitwise_before_i0": 540,
+   "tol": 0.0,
+   "max_abs_before_i0": 0.0,
+   "n_over_tol": 0,
+   "n_over_tol_by_slot_parity": {
+    "same_as_clean": 0,
+    "other": 0
+   },
+   "worst10": [
+    {
+     "unit": "L03N7155+:c0",
+     "window": 989,
+     "kind": "zero",
+     "q": 0,
+     "i0": 1289,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N7155+:c0",
+     "window": 989,
+     "kind": "zero",
+     "q": 1,
+     "i0": 1289,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 2,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N7155+:c0",
+     "window": 989,
+     "kind": "zero",
+     "q": 2,
+     "i0": 1289,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 3,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N7155+:c0",
+     "window": 989,
+     "kind": "zero",
+     "q": 3,
+     "i0": 1289,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 0,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N7155+:c0",
+     "window": 989,
+     "kind": "fd",
+     "q": 0,
+     "i0": 1289,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N7155+:c0",
+     "window": 989,
+     "kind": "fd",
+     "q": 1,
+     "i0": 1289,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 2,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N7155+:c0",
+     "window": 989,
+     "kind": "fd",
+     "q": 2,
+     "i0": 1289,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 3,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N7155+:c0",
+     "window": 989,
+     "kind": "fd",
+     "q": 3,
+     "i0": 1289,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 0,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N7155+:c0",
+     "window": 989,
+     "kind": "probe",
+     "q": 0,
+     "i0": 1289,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N7155+:c0",
+     "window": 1449,
+     "kind": "zero",
+     "q": 0,
+     "i0": 1991,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 3,
+     "clean_batch": 2,
+     "clean_slot": 2
+    }
+   ],
+   "failing_input": {
+    "what": "zero rows compared through j = i0",
+    "pass": false,
+    "n_equal": 0
+   }
+  },
+  "t08_G_REV": {
+   "pass": true,
+   "commit": "d1dbb0e2d4d3fbdc9c185a34c4e99f13ef6ae2a6",
+   "registered": "d1dbb0e2d4d3fbdc9c185a34c4e99f13ef6ae2a6",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t08_G_CFG": {
+   "pass": true,
+   "diff_keys": [],
+   "sliding_window": 4096,
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "model_type"
+    ],
+    "sliding_window": 4096
+   }
+  },
+  "t08_G_FP32": {
+   "pass": true,
+   "dtypes": [
+    "torch.float32"
+   ],
+   "failing_input": {
+    "what": "the parameter dtypes before the cast",
+    "dtypes": [
+     "torch.bfloat16"
+    ],
+    "pass": false
+   }
+  },
+  "t08_G_CAUSAL": {
+   "pass": true,
+   "n_rows": 459,
+   "n_bitwise_before_i0": 459,
+   "tol": 0.0,
+   "max_abs_before_i0": 0.0,
+   "n_over_tol": 0,
+   "n_over_tol_by_slot_parity": {
+    "same_as_clean": 0,
+    "other": 0
+   },
+   "worst10": [
+    {
+     "unit": "L03N10451+:c3",
+     "window": 813,
+     "kind": "zero",
+     "q": 0,
+     "i0": 1516,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N10451+:c3",
+     "window": 813,
+     "kind": "zero",
+     "q": 1,
+     "i0": 1516,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 2,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N10451+:c3",
+     "window": 813,
+     "kind": "zero",
+     "q": 2,
+     "i0": 1516,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 3,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N10451+:c3",
+     "window": 813,
+     "kind": "zero",
+     "q": 3,
+     "i0": 1516,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 0,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N10451+:c3",
+     "window": 813,
+     "kind": "fd",
+     "q": 0,
+     "i0": 1516,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N10451+:c3",
+     "window": 813,
+     "kind": "fd",
+     "q": 1,
+     "i0": 1516,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 2,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N10451+:c3",
+     "window": 813,
+     "kind": "fd",
+     "q": 2,
+     "i0": 1516,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 3,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N10451+:c3",
+     "window": 813,
+     "kind": "fd",
+     "q": 3,
+     "i0": 1516,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 0,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N10451+:c3",
+     "window": 813,
+     "kind": "probe",
+     "q": 0,
+     "i0": 1516,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N10451+:c3",
+     "window": 821,
+     "kind": "zero",
+     "q": 0,
+     "i0": 1162,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 3,
+     "clean_batch": 2,
+     "clean_slot": 2
+    }
+   ],
+   "failing_input": {
+    "what": "zero rows compared through j = i0",
+    "pass": false,
+    "n_equal": 0
+   }
+  },
+  "t07_G_REV": {
+   "pass": true,
+   "commit": "04eeee4fa74f9f3d2cb11c31e155545dad32365e",
+   "registered": "04eeee4fa74f9f3d2cb11c31e155545dad32365e",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t07_G_CFG": {
+   "pass": true,
+   "diff_keys": [],
+   "sliding_window": 4096,
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "model_type"
+    ],
+    "sliding_window": 4096
+   }
+  },
+  "t07_G_FP32": {
+   "pass": true,
+   "dtypes": [
+    "torch.float32"
+   ],
+   "failing_input": {
+    "what": "the parameter dtypes before the cast",
+    "dtypes": [
+     "torch.bfloat16"
+    ],
+    "pass": false
+   }
+  },
+  "t07_G_CAUSAL": {
+   "pass": true,
+   "n_rows": 486,
+   "n_bitwise_before_i0": 486,
+   "tol": 0.0,
+   "max_abs_before_i0": 0.0,
+   "n_over_tol": 0,
+   "n_over_tol_by_slot_parity": {
+    "same_as_clean": 0,
+    "other": 0
+   },
+   "worst10": [
+    {
+     "unit": "L03N9245+:c5",
+     "window": 6490,
+     "kind": "zero",
+     "q": 0,
+     "i0": 1008,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N9245+:c5",
+     "window": 6490,
+     "kind": "zero",
+     "q": 1,
+     "i0": 1008,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 2,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N9245+:c5",
+     "window": 6490,
+     "kind": "zero",
+     "q": 2,
+     "i0": 1008,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 3,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N9245+:c5",
+     "window": 6490,
+     "kind": "zero",
+     "q": 3,
+     "i0": 1008,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 0,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N9245+:c5",
+     "window": 6490,
+     "kind": "fd",
+     "q": 0,
+     "i0": 1008,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N9245+:c5",
+     "window": 6490,
+     "kind": "fd",
+     "q": 1,
+     "i0": 1008,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 2,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N9245+:c5",
+     "window": 6490,
+     "kind": "fd",
+     "q": 2,
+     "i0": 1008,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 3,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N9245+:c5",
+     "window": 6490,
+     "kind": "fd",
+     "q": 3,
+     "i0": 1008,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 0,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N9245+:c5",
+     "window": 6490,
+     "kind": "probe",
+     "q": 0,
+     "i0": 1008,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N9245+:c5",
+     "window": 6588,
+     "kind": "zero",
+     "q": 0,
+     "i0": 1470,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 3,
+     "clean_batch": 2,
+     "clean_slot": 2
+    }
+   ],
+   "failing_input": {
+    "what": "zero rows compared through j = i0",
+    "pass": false,
+    "n_equal": 3
+   }
+  },
+  "t05_G_REV": {
+   "pass": true,
+   "commit": "ebfe7b62b31bfadff464a8926a48a256c9431db7",
+   "registered": "ebfe7b62b31bfadff464a8926a48a256c9431db7",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t05_G_CFG": {
+   "pass": true,
+   "diff_keys": [],
+   "sliding_window": 4096,
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "model_type"
+    ],
+    "sliding_window": 4096
+   }
+  },
+  "t05_G_FP32": {
+   "pass": true,
+   "dtypes": [
+    "torch.float32"
+   ],
+   "failing_input": {
+    "what": "the parameter dtypes before the cast",
+    "dtypes": [
+     "torch.bfloat16"
+    ],
+    "pass": false
+   }
+  },
+  "t05_G_CAUSAL": {
+   "pass": true,
+   "n_rows": 45,
+   "n_bitwise_before_i0": 45,
+   "tol": 0.0,
+   "max_abs_before_i0": 0.0,
+   "n_over_tol": 0,
+   "n_over_tol_by_slot_parity": {
+    "same_as_clean": 0,
+    "other": 0
+   },
+   "worst10": [
+    {
+     "unit": "L03N9245+:c4",
+     "window": 8205,
+     "kind": "zero",
+     "q": 0,
+     "i0": 1772,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N9245+:c4",
+     "window": 8205,
+     "kind": "zero",
+     "q": 1,
+     "i0": 1772,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 2,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N9245+:c4",
+     "window": 8205,
+     "kind": "zero",
+     "q": 2,
+     "i0": 1772,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 0,
+     "slot": 3,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N9245+:c4",
+     "window": 8205,
+     "kind": "zero",
+     "q": 3,
+     "i0": 1772,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 0,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N9245+:c4",
+     "window": 8205,
+     "kind": "fd",
+     "q": 0,
+     "i0": 1772,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N9245+:c4",
+     "window": 8205,
+     "kind": "fd",
+     "q": 1,
+     "i0": 1772,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 2,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N9245+:c4",
+     "window": 8205,
+     "kind": "fd",
+     "q": 2,
+     "i0": 1772,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 1,
+     "slot": 3,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N9245+:c4",
+     "window": 8205,
+     "kind": "fd",
+     "q": 3,
+     "i0": 1772,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 0,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N9245+:c4",
+     "window": 8205,
+     "kind": "probe",
+     "q": 0,
+     "i0": 1772,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 1,
+     "clean_batch": 0,
+     "clean_slot": 0
+    },
+    {
+     "unit": "L03N9245+:c4",
+     "window": 8209,
+     "kind": "zero",
+     "q": 0,
+     "i0": 1173,
+     "bitwise": true,
+     "max_abs": 0.0,
+     "n_positions_differ": 0,
+     "batch": 2,
+     "slot": 3,
+     "clean_batch": 2,
+     "clean_slot": 2
+    }
+   ],
+   "failing_input": {
+    "what": "zero rows compared through j = i0",
+    "pass": false,
+    "n_equal": 0
+   }
+  }
+ },
+ "points": {
+  "14": {
+   "t": 14,
+   "units": 23,
+   "unit_windows": 107,
+   "plain_rows": 1070,
+   "jvp_rows": 428,
+   "download": {
+    "branch": "stage1-step1000000",
+    "commit": "cb286dcdaaf3f92b3c419dd77439078fdebffe53",
+    "bytes": 14605764269,
+    "seconds": 230.4,
+    "MB_per_s": 63.4
+   },
+   "fixed_s": 296.1,
+   "plain_s": 1087.8,
+   "jvp_s": 1123.1,
+   "jvp_max_mem_gb": 36.62
+  },
+  "13": {
+   "t": 13,
+   "units": 33,
+   "unit_windows": 187,
+   "plain_rows": 1870,
+   "jvp_rows": 748,
+   "download": {
+    "branch": "stage1-step560000",
+    "commit": "db8c654b5cbe06311f92e86d68cd4f7d31642a5a",
+    "bytes": 14605764269,
+    "seconds": 192.5,
+    "MB_per_s": 75.9
+   },
+   "fixed_s": 194.2,
+   "plain_s": 1875.5,
+   "jvp_s": 2081.3,
+   "jvp_max_mem_gb": 36.62
+  },
+  "12": {
+   "t": 12,
+   "units": 30,
+   "unit_windows": 203,
+   "plain_rows": 2030,
+   "jvp_rows": 812,
+   "download": {
+    "branch": "stage1-step320000",
+    "commit": "af83fc98693475b503de0a86407f0260a7281786",
+    "bytes": 14605764269,
+    "seconds": 96.7,
+    "MB_per_s": 151.1
+   },
+   "fixed_s": 98.4,
+   "plain_s": 2054.3,
+   "jvp_s": 2016.3,
+   "jvp_max_mem_gb": 36.62
+  },
+  "11": {
+   "t": 11,
+   "units": 31,
+   "unit_windows": 198,
+   "plain_rows": 1980,
+   "jvp_rows": 792,
+   "download": {
+    "branch": "stage1-step180000",
+    "commit": "c515906cd0f5e30e9e2f56f5f28870c375d8bef0",
+    "bytes": 14605764269,
+    "seconds": 47.7,
+    "MB_per_s": 306.3
+   },
+   "fixed_s": 49.4,
+   "plain_s": 1984.0,
+   "jvp_s": 2049.2,
+   "jvp_max_mem_gb": 36.62
+  },
+  "10": {
+   "t": 10,
+   "units": 17,
+   "unit_windows": 122,
+   "plain_rows": 1220,
+   "jvp_rows": 488,
+   "download": {
+    "branch": "stage1-step100000",
+    "commit": "1d074dbc15d91544abe47d5508ac1670ef8c7129",
+    "bytes": 14605764269,
+    "seconds": 47.7,
+    "MB_per_s": 306.5
+   },
+   "fixed_s": 49.4,
+   "plain_s": 1228.3,
+   "jvp_s": 1137.1,
+   "jvp_max_mem_gb": 36.62
+  },
+  "9": {
+   "t": 9,
+   "units": 8,
+   "unit_windows": 60,
+   "plain_rows": 600,
+   "jvp_rows": 240,
+   "download": {
+    "branch": "stage1-step60000",
+    "commit": "08b5da69ff99e0858f18d9870ac87f43d7602cf0",
+    "bytes": 14605764269,
+    "seconds": 45.3,
+    "MB_per_s": 322.1
+   },
+   "fixed_s": 47.1,
+   "plain_s": 606.1,
+   "jvp_s": 479.9,
+   "jvp_max_mem_gb": 36.62
+  },
+  "8": {
+   "t": 8,
+   "units": 4,
+   "unit_windows": 51,
+   "plain_rows": 510,
+   "jvp_rows": 204,
+   "download": {
+    "branch": "stage1-step35000",
+    "commit": "d1dbb0e2d4d3fbdc9c185a34c4e99f13ef6ae2a6",
+    "bytes": 14605764269,
+    "seconds": 48.1,
+    "MB_per_s": 303.7
+   },
+   "fixed_s": 49.8,
+   "plain_s": 513.7,
+   "jvp_s": 518.0,
+   "jvp_max_mem_gb": 36.62
+  },
+  "7": {
+   "t": 7,
+   "units": 6,
+   "unit_windows": 54,
+   "plain_rows": 540,
+   "jvp_rows": 216,
+   "download": {
+    "branch": "stage1-step20000",
+    "commit": "04eeee4fa74f9f3d2cb11c31e155545dad32365e",
+    "bytes": 14605764269,
+    "seconds": 71.8,
+    "MB_per_s": 203.3
+   },
+   "fixed_s": 73.5,
+   "plain_s": 536.6,
+   "jvp_s": 471.4,
+   "jvp_max_mem_gb": 36.62
+  },
+  "5": {
+   "t": 5,
+   "units": 1,
+   "unit_windows": 5,
+   "plain_rows": 50,
+   "jvp_rows": 20,
+   "download": {
+    "branch": "stage1-step8000",
+    "commit": "ebfe7b62b31bfadff464a8926a48a256c9431db7",
+    "bytes": 14605764269,
+    "seconds": 48.9,
+    "MB_per_s": 298.6
+   },
+   "fixed_s": 50.6,
+   "plain_s": 52.8,
+   "jvp_s": 67.1,
+   "jvp_max_mem_gb": 36.62
+  }
+ },
+ "parked": [],
+ "phase": "done",
+ "parts": [
+  "core",
+  "fd",
+  "jvp"
+ ],
+ "updated_utc": "2026-11-08T00:44:37Z",
+ "elapsed_s": 21160.5,
+ "reports": {
+  "bf16_probe_KA_units": {
+   "per_unit_window_window_sum": [
+    -0.29919713098934153,
+    0.086254705383908,
+    -0.14218792572501116,
+    -0.35818141127947456,
+    -0.5033222102567834,
+    0.11287378801625891,
+    1.60414362378242,
+    0.06031327369873907,
+    0.04608572978031589,
+    -0.23666874702735186,
+    0.5525118515579379,
+    0.6958884688347098,
+    -0.21975580765752056,
+    -0.14528357877134113,
+    0.13478061845012235,
+    0.5300364443464787,
+    -0.41623250796692446,
+    0.34409055838605695,
+    -0.13115464699529866,
+    -0.019381025943630448,
+    0.047303001997079264,
+    -0.15855519503628557,
+    -0.2985481097043703,
+    -0.01424470763959107,
+    -0.9587013549614767,
+    -0.45595431483525317,
+    -1.3613982348281581,
+    -0.4573114484273688,
+    -1.2520592529346857,
+    1.9608680461392396,
+    -0.28415850513147234
+   ],
+   "median_abs": 0.2985481097043703
+  },
+  "slot_control": {
+   "window": 4441,
+   "dtype": "torch.float32",
+   "vocab": 100278,
+   "view_offset_mod16_bytes": [
+    0,
+    8,
+    0,
+    8
+   ],
+   "logits_max_abs_vs_slot0": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "copy_max_abs_vs_slot0": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "view_max_abs_vs_slot0": [
+    0.0,
+    9.5367431640625e-07,
+    0.0,
+    9.5367431640625e-07
+   ]
+  }
+ },
+ "measured": {
+  "fixed_s": 326.1,
+  "plain_s": 1.0166,
+  "jvp_s": 2.6241
+ },
+ "projection": {
+  "at": 5,
+  "elapsed_s": 20989,
+  "remaining_s": 429,
+  "budget_s": 42000.0
+ },
+ "n_pairs": {
+  "freeze": 328,
+  "test": 284
+ }
+}

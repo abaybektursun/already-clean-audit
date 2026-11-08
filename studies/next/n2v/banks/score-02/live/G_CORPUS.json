@@ -1,0 +1,7 @@
+{
+ "pass": true,
+ "got": "2aca80ca6537f46b8f60a550b4a3f2f13be2d18c5402be8f1af5c00caa86f531",
+ "failing_input": {
+  "pass": false
+ }
+}

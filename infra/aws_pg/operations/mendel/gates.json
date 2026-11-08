@@ -1,0 +1,29 @@
+{
+  "g4_reproduces_m8_activation_baseline": {
+    "_required": true,
+    "abs_diff": 0.0,
+    "banked": 0.41597866552692153,
+    "n_cells": 72,
+    "note": "the spec's 'Jaccard 0.416-class' target is the ACTIVATION-MAGNITUDE mean (freeze A6), not the predictor's 0.3068",
+    "ok": true,
+    "ours": 0.41597866552692153,
+    "tol": 0.02
+  },
+  "g4_reproduces_m8_predictor": {
+    "_required": false,
+    "abs_diff": 0.0,
+    "banked": 0.30682528035793794,
+    "n_cells": 72,
+    "ok": true,
+    "ours": 0.30682528035793794,
+    "tol": 0.02
+  },
+  "g4_reproduces_m8_refuter_direction": {
+    "_required": false,
+    "beats_banked": 12,
+    "beats_ours": 12,
+    "n_cells": 72,
+    "note": "M-8's refuter fired in the banked run; the reproduction must fire too",
+    "ok": true
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "program": "mendeleev",
+  "s3_results": "s3://pg-lineage-769063704696/results/mdl",
+  "ledger": "infra/vast/operations/probe_session_20261027/spend.json",
+  "box_profile": "mendeleev-box",
+  "_why": "The vast harness namespaces every S3 prefix, instance label and spend ledger by program. SHACKLETON hardcoded its own name; AMUNDSEN reads it from this file so the BRANCH determines the namespace (an env var can be forgotten; a committed file cannot). Layers that must agree: controller.py (label + ship + ledger + box creds), watchdog.py (label filter + S3 paths + ledger), lifecycle.sh (S3 prefix + self-destroy label lookup, via the rent-time env), reaper_lambda.py (label prefix -> S3 base table). MENDELEEV (2026-09-03): s3_results = results/mdl (rentals land at results/mdl/mendeleev_<rental>/, inside the scoped IAM user's prefix), labels mendeleev_*, ledger studies/lineage/cross-lineage/research/mendeleev_spend.json, box_profile = the local AWS profile whose keys ship to the box (IAM user mendeleev-box: put/get under results/mdl/* only \u2014 infra/vast/iam/mendeleev_box_policy.json)."
+}

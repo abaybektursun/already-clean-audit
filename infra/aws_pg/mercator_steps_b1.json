@@ -1,0 +1,6 @@
+[
+  {"name": "b1_attn", "module": "infra.aws_pg.jobs.mercator_b1",
+   "args": "--types q_proj,k_proj,v_proj,o_proj,down_proj,gate_proj --budget-gb 45"},
+  {"name": "b1_up",   "module": "infra.aws_pg.jobs.mercator_b1",
+   "args": "--types up_proj --budget-gb 45"}
+]

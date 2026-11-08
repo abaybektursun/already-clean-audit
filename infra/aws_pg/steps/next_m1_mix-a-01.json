@@ -1,0 +1,17 @@
+[
+  {
+    "name": "start_a",
+    "module": "infra.aws_pg.jobs.m1_harvest",
+    "args": "--mode harvest --branch stage1-step476838 --corpus s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus --inputs s3://pg-lineage-769063704696/results/next_m1/inputs"
+  },
+  {
+    "name": "M",
+    "module": "infra.aws_pg.jobs.m1_harvest",
+    "args": "--mode harvest --branch stage2-step47684-mix-math-code-reasoning-web-from-2T-ckpt --corpus s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus --inputs s3://pg-lineage-769063704696/results/next_m1/inputs"
+  },
+  {
+    "name": "R",
+    "module": "infra.aws_pg.jobs.m1_harvest",
+    "args": "--mode harvest --branch stage2-step47684-mix-round5-from-2T-ckpt --corpus s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus --inputs s3://pg-lineage-769063704696/results/next_m1/inputs"
+  }
+]

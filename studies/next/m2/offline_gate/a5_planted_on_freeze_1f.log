@@ -1,0 +1,18 @@
+[m2] gate G_SAME
+[m2] gate INPUTS
+[m2] gate G_CORPUS
+[m2] gate t15_G_REV
+[m2] gate t15_G_CFG
+[m2] gate t15_G0
+Traceback (most recent call last):
+  File "<string>", line 6, in <module>
+  File "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/m2g/old1f/infra/aws_pg/jobs/m2_dryrun.py", line 433, in child
+    J.main(spec["argv"])
+  File "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/m2g/old1f/infra/aws_pg/jobs/m2_score.py", line 440, in main
+    run(a, reg, out)
+  File "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/m2g/old1f/infra/aws_pg/jobs/m2_score.py", line 302, in run
+    R.gate(f"t{t:02d}_G0", {"pass": NH.g0_pass(r0), "max_ratio": max(r0), "failing_input": {"pass": NH.g0_pass(r1),
+  File "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/m2g/old1f/infra/aws_pg/jobs/m2_score.py", line 81, in gate
+    assert "failing_input" not in g or not g["failing_input"]["pass"], f"{name}: its failing input passed"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: t15_G0: its failing input passed

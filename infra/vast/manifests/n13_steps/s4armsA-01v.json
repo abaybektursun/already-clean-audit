@@ -1,0 +1,77 @@
+[
+ {
+  "name": "setup",
+  "module": "infra.aws_pg.jobs.n13_setup",
+  "args": "--pair pair1 --models base,rl"
+ },
+ {
+  "name": "top_k1",
+  "module": "infra.aws_pg.jobs.n13_gen",
+  "args": "--arm top_k1 --bench math500,gsm8k --problems 0:500 --sets s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/sets.json --setup-dir /work/out/setup --cap-from s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/thresholds.json --allowance-min 1090 --proj-tok-s 500.0 --proj-mean-math 2500.0 --proj-mean-gsm 940.0 --proj-load-min 5.0"
+ },
+ {
+  "name": "dare_k1",
+  "module": "infra.aws_pg.jobs.n13_gen",
+  "args": "--arm dare_k1 --bench math500,gsm8k --problems 0:500 --sets s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/sets.json --setup-dir /work/out/setup --cap-from s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/thresholds.json --allowance-min 1090 --proj-tok-s 500.0 --proj-mean-math 2500.0 --proj-mean-gsm 940.0 --proj-load-min 5.0"
+ },
+ {
+  "name": "mlp",
+  "module": "infra.aws_pg.jobs.n13_gen",
+  "args": "--arm mlp --bench math500,gsm8k --problems 0:500 --sets s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/sets.json --setup-dir /work/out/setup --cap-from s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/thresholds.json --allowance-min 1090 --proj-tok-s 500.0 --proj-mean-math 2500.0 --proj-mean-gsm 940.0 --proj-load-min 5.0"
+ },
+ {
+  "name": "top_k3",
+  "module": "infra.aws_pg.jobs.n13_gen",
+  "args": "--arm top_k3 --bench math500 --problems 0:500 --sets s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/sets.json --setup-dir /work/out/setup --cap-from s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/thresholds.json --allowance-min 1090 --proj-tok-s 500.0 --proj-mean-math 2500.0 --proj-mean-gsm 940.0 --proj-load-min 5.0"
+ },
+ {
+  "name": "top_k0.3",
+  "module": "infra.aws_pg.jobs.n13_gen",
+  "args": "--arm top_k0.3 --bench math500 --problems 0:500 --sets s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/sets.json --setup-dir /work/out/setup --cap-from s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/thresholds.json --allowance-min 1090 --proj-tok-s 500.0 --proj-mean-math 2500.0 --proj-mean-gsm 940.0 --proj-load-min 5.0"
+ },
+ {
+  "name": "top_k0.1",
+  "module": "infra.aws_pg.jobs.n13_gen",
+  "args": "--arm top_k0.1 --bench math500 --problems 0:500 --sets s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/sets.json --setup-dir /work/out/setup --cap-from s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/thresholds.json --allowance-min 1090 --proj-tok-s 500.0 --proj-mean-math 2500.0 --proj-mean-gsm 940.0 --proj-load-min 5.0"
+ },
+ {
+  "name": "dare_k3",
+  "module": "infra.aws_pg.jobs.n13_gen",
+  "args": "--arm dare_k3 --bench math500 --problems 0:500 --sets s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/sets.json --setup-dir /work/out/setup --cap-from s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/thresholds.json --allowance-min 1090 --proj-tok-s 500.0 --proj-mean-math 2500.0 --proj-mean-gsm 940.0 --proj-load-min 5.0"
+ },
+ {
+  "name": "dare_k0.3",
+  "module": "infra.aws_pg.jobs.n13_gen",
+  "args": "--arm dare_k0.3 --bench math500 --problems 0:500 --sets s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/sets.json --setup-dir /work/out/setup --cap-from s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/thresholds.json --allowance-min 1090 --proj-tok-s 500.0 --proj-mean-math 2500.0 --proj-mean-gsm 940.0 --proj-load-min 5.0"
+ },
+ {
+  "name": "dare_k0.1",
+  "module": "infra.aws_pg.jobs.n13_gen",
+  "args": "--arm dare_k0.1 --bench math500 --problems 0:500 --sets s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/sets.json --setup-dir /work/out/setup --cap-from s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/thresholds.json --allowance-min 1090 --proj-tok-s 500.0 --proj-mean-math 2500.0 --proj-mean-gsm 940.0 --proj-load-min 5.0"
+ },
+ {
+  "name": "comp_k1",
+  "module": "infra.aws_pg.jobs.n13_gen",
+  "args": "--arm comp_k1 --bench math500,gsm8k --problems 0:500 --sets s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/sets.json --setup-dir /work/out/setup --cap-from s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/thresholds.json --allowance-min 1090 --proj-tok-s 500.0 --proj-mean-math 2500.0 --proj-mean-gsm 940.0 --proj-load-min 5.0"
+ },
+ {
+  "name": "comp_k3",
+  "module": "infra.aws_pg.jobs.n13_gen",
+  "args": "--arm comp_k3 --bench math500 --problems 0:500 --sets s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/sets.json --setup-dir /work/out/setup --cap-from s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/thresholds.json --allowance-min 1090 --proj-tok-s 500.0 --proj-mean-math 2500.0 --proj-mean-gsm 940.0 --proj-load-min 5.0"
+ },
+ {
+  "name": "rnd0_k1",
+  "module": "infra.aws_pg.jobs.n13_gen",
+  "args": "--arm rnd0_k1 --bench math500 --problems 0:500 --sets s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/sets.json --setup-dir /work/out/setup --cap-from s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/thresholds.json --allowance-min 1090 --proj-tok-s 500.0 --proj-mean-math 2500.0 --proj-mean-gsm 940.0 --proj-load-min 5.0"
+ },
+ {
+  "name": "top_k1_B",
+  "module": "infra.aws_pg.jobs.n13_gen",
+  "args": "--arm top_k1_B --bench math500 --problems 0:500 --sets s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/sets.json --setup-dir /work/out/setup --cap-from s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/thresholds.json --allowance-min 1090 --proj-tok-s 500.0 --proj-mean-math 2500.0 --proj-mean-gsm 940.0 --proj-load-min 5.0"
+ },
+ {
+  "name": "dare_k1_d2",
+  "module": "infra.aws_pg.jobs.n13_gen",
+  "args": "--arm dare_k1_d2 --bench math500 --problems 0:500 --sets s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/sets.json --setup-dir /work/out/setup --cap-from s3://pg-lineage-769063704696/results/next_n13/s4armsA-01v/inputs/thresholds.json --allowance-min 1090 --proj-tok-s 500.0 --proj-mean-math 2500.0 --proj-mean-gsm 940.0 --proj-load-min 5.0"
+ }
+]

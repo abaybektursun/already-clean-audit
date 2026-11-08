@@ -1,0 +1,360 @@
+{
+ "s2setup06_replay": {
+  "rule": "park when projected_full_min > 0.85 x (allowance_min - elapsed_min); projected = F + T / r, T = sum over subjects of 4 x size_s x tokens_s / n_s",
+  "path_check_wall_s": 3120.0,
+  "path_check_generate_s": 3030.0,
+  "path_check_output_tokens": 137386,
+  "path_check_generations": 560,
+  "full_generations": 20000,
+  "per_subject": {
+   "algebra": {
+    "n_prompts": 80,
+    "output_tokens": 11074,
+    "generate_s": 242.0,
+    "mean_tokens": 138.425,
+    "full_generations": 4748,
+    "T_s": 657241.9
+   },
+   "counting_and_probability": {
+    "n_prompts": 80,
+    "output_tokens": 17341,
+    "generate_s": 376.0,
+    "mean_tokens": 216.7625,
+    "full_generations": 1896,
+    "T_s": 410981.7
+   },
+   "geometry": {
+    "n_prompts": 80,
+    "output_tokens": 17399,
+    "generate_s": 377.0,
+    "mean_tokens": 217.4875,
+    "full_generations": 1916,
+    "T_s": 416706.05
+   },
+   "intermediate_algebra": {
+    "n_prompts": 80,
+    "output_tokens": 27054,
+    "generate_s": 586.0,
+    "mean_tokens": 338.175,
+    "full_generations": 3612,
+    "T_s": 1221488.1
+   },
+   "number_theory": {
+    "n_prompts": 80,
+    "output_tokens": 21681,
+    "generate_s": 469.0,
+    "mean_tokens": 271.0125,
+    "full_generations": 2160,
+    "T_s": 585387.0
+   },
+   "prealgebra": {
+    "n_prompts": 80,
+    "output_tokens": 11244,
+    "generate_s": 245.0,
+    "mean_tokens": 140.55,
+    "full_generations": 3484,
+    "T_s": 489676.2
+   },
+   "precalculus": {
+    "n_prompts": 80,
+    "output_tokens": 31593,
+    "generate_s": 735.0,
+    "mean_tokens": 394.9125,
+    "full_generations": 2184,
+    "T_s": 862488.9
+   }
+  },
+  "T_full_output_tokens": 4643969.850000001,
+  "r_tokens_per_s": 45.34191419141914,
+  "F_fixed_s": 90.0,
+  "projected_full_s": 102511.12475434178,
+  "projected_full_min": 1708.5187459056965,
+  "allowance_min": 280.0,
+  "elapsed_min": 0.0,
+  "left_min": 280.0,
+  "fits_min": 238.0,
+  "parked": true,
+  "first_revision_unweighted_min": 1805.0714285714284,
+  "first_revision_parked": true
+ },
+ "limit100_300_tok_s": {
+  "rule": "park when projected_full_min > 0.85 x (allowance_min - elapsed_min); projected = F + T / r, T = sum over subjects of 4 x size_s x tokens_s / n_s",
+  "path_check_wall_s": 2421.7666666666664,
+  "path_check_generate_s": 2289.7666666666664,
+  "path_check_output_tokens": 686930,
+  "path_check_generations": 2800,
+  "full_generations": 20000,
+  "per_subject": {
+   "algebra": {
+    "n_prompts": 400,
+    "output_tokens": 55370,
+    "generate_s": 184.56666666666666,
+    "mean_tokens": 138.425,
+    "full_generations": 4748,
+    "T_s": 657241.9
+   },
+   "counting_and_probability": {
+    "n_prompts": 400,
+    "output_tokens": 86705,
+    "generate_s": 289.01666666666665,
+    "mean_tokens": 216.7625,
+    "full_generations": 1896,
+    "T_s": 410981.7
+   },
+   "geometry": {
+    "n_prompts": 400,
+    "output_tokens": 86995,
+    "generate_s": 289.9833333333333,
+    "mean_tokens": 217.4875,
+    "full_generations": 1916,
+    "T_s": 416706.05
+   },
+   "intermediate_algebra": {
+    "n_prompts": 400,
+    "output_tokens": 135270,
+    "generate_s": 450.9000000000001,
+    "mean_tokens": 338.175,
+    "full_generations": 3612,
+    "T_s": 1221488.1
+   },
+   "number_theory": {
+    "n_prompts": 400,
+    "output_tokens": 108405,
+    "generate_s": 361.3499999999999,
+    "mean_tokens": 271.0125,
+    "full_generations": 2160,
+    "T_s": 585387.0
+   },
+   "prealgebra": {
+    "n_prompts": 400,
+    "output_tokens": 56220,
+    "generate_s": 187.4000000000001,
+    "mean_tokens": 140.55,
+    "full_generations": 3484,
+    "T_s": 489676.2
+   },
+   "precalculus": {
+    "n_prompts": 400,
+    "output_tokens": 157965,
+    "generate_s": 526.5499999999997,
+    "mean_tokens": 394.9125,
+    "full_generations": 2184,
+    "T_s": 862488.9
+   }
+  },
+  "T_full_output_tokens": 4643969.850000001,
+  "r_tokens_per_s": 300.00000000000006,
+  "F_fixed_s": 132.0,
+  "projected_full_s": 15611.8995,
+  "projected_full_min": 260.198325,
+  "allowance_min": 280.0,
+  "elapsed_min": 59.76277777777777,
+  "left_min": 220.23722222222221,
+  "fits_min": 187.20163888888888,
+  "parked": true,
+  "first_revision_unweighted_min": 274.79126984126987,
+  "first_revision_parked": true
+ },
+ "limit100_500_tok_s": {
+  "rule": "park when projected_full_min > 0.85 x (allowance_min - elapsed_min); projected = F + T / r, T = sum over subjects of 4 x size_s x tokens_s / n_s",
+  "path_check_wall_s": 1505.8600000000001,
+  "path_check_generate_s": 1373.8600000000001,
+  "path_check_output_tokens": 686930,
+  "path_check_generations": 2800,
+  "full_generations": 20000,
+  "per_subject": {
+   "algebra": {
+    "n_prompts": 400,
+    "output_tokens": 55370,
+    "generate_s": 110.74,
+    "mean_tokens": 138.425,
+    "full_generations": 4748,
+    "T_s": 657241.9
+   },
+   "counting_and_probability": {
+    "n_prompts": 400,
+    "output_tokens": 86705,
+    "generate_s": 173.40999999999997,
+    "mean_tokens": 216.7625,
+    "full_generations": 1896,
+    "T_s": 410981.7
+   },
+   "geometry": {
+    "n_prompts": 400,
+    "output_tokens": 86995,
+    "generate_s": 173.99,
+    "mean_tokens": 217.4875,
+    "full_generations": 1916,
+    "T_s": 416706.05
+   },
+   "intermediate_algebra": {
+    "n_prompts": 400,
+    "output_tokens": 135270,
+    "generate_s": 270.5400000000001,
+    "mean_tokens": 338.175,
+    "full_generations": 3612,
+    "T_s": 1221488.1
+   },
+   "number_theory": {
+    "n_prompts": 400,
+    "output_tokens": 108405,
+    "generate_s": 216.80999999999995,
+    "mean_tokens": 271.0125,
+    "full_generations": 2160,
+    "T_s": 585387.0
+   },
+   "prealgebra": {
+    "n_prompts": 400,
+    "output_tokens": 56220,
+    "generate_s": 112.44000000000005,
+    "mean_tokens": 140.55,
+    "full_generations": 3484,
+    "T_s": 489676.2
+   },
+   "precalculus": {
+    "n_prompts": 400,
+    "output_tokens": 157965,
+    "generate_s": 315.93000000000006,
+    "mean_tokens": 394.9125,
+    "full_generations": 2184,
+    "T_s": 862488.9
+   }
+  },
+  "T_full_output_tokens": 4643969.850000001,
+  "r_tokens_per_s": 499.99999999999994,
+  "F_fixed_s": 132.0,
+  "projected_full_s": 9419.939700000003,
+  "projected_full_min": 156.99899500000004,
+  "allowance_min": 280.0,
+  "elapsed_min": 44.49766666666667,
+  "left_min": 235.50233333333333,
+  "fits_min": 200.1769833333333,
+  "parked": false,
+  "first_revision_unweighted_min": 165.75476190476192,
+  "first_revision_parked": false
+ },
+ "limit100_1000_tok_s": {
+  "rule": "park when projected_full_min > 0.85 x (allowance_min - elapsed_min); projected = F + T / r, T = sum over subjects of 4 x size_s x tokens_s / n_s",
+  "path_check_wall_s": 818.9300000000001,
+  "path_check_generate_s": 686.9300000000001,
+  "path_check_output_tokens": 686930,
+  "path_check_generations": 2800,
+  "full_generations": 20000,
+  "per_subject": {
+   "algebra": {
+    "n_prompts": 400,
+    "output_tokens": 55370,
+    "generate_s": 55.37,
+    "mean_tokens": 138.425,
+    "full_generations": 4748,
+    "T_s": 657241.9
+   },
+   "counting_and_probability": {
+    "n_prompts": 400,
+    "output_tokens": 86705,
+    "generate_s": 86.70499999999998,
+    "mean_tokens": 216.7625,
+    "full_generations": 1896,
+    "T_s": 410981.7
+   },
+   "geometry": {
+    "n_prompts": 400,
+    "output_tokens": 86995,
+    "generate_s": 86.995,
+    "mean_tokens": 217.4875,
+    "full_generations": 1916,
+    "T_s": 416706.05
+   },
+   "intermediate_algebra": {
+    "n_prompts": 400,
+    "output_tokens": 135270,
+    "generate_s": 135.27000000000004,
+    "mean_tokens": 338.175,
+    "full_generations": 3612,
+    "T_s": 1221488.1
+   },
+   "number_theory": {
+    "n_prompts": 400,
+    "output_tokens": 108405,
+    "generate_s": 108.40499999999997,
+    "mean_tokens": 271.0125,
+    "full_generations": 2160,
+    "T_s": 585387.0
+   },
+   "prealgebra": {
+    "n_prompts": 400,
+    "output_tokens": 56220,
+    "generate_s": 56.22000000000003,
+    "mean_tokens": 140.55,
+    "full_generations": 3484,
+    "T_s": 489676.2
+   },
+   "precalculus": {
+    "n_prompts": 400,
+    "output_tokens": 157965,
+    "generate_s": 157.96500000000003,
+    "mean_tokens": 394.9125,
+    "full_generations": 2184,
+    "T_s": 862488.9
+   }
+  },
+  "T_full_output_tokens": 4643969.850000001,
+  "r_tokens_per_s": 999.9999999999999,
+  "F_fixed_s": 132.0,
+  "projected_full_s": 4775.969850000001,
+  "projected_full_min": 79.59949750000003,
+  "allowance_min": 280.0,
+  "elapsed_min": 33.048833333333334,
+  "left_min": 246.95116666666667,
+  "fits_min": 209.90849166666666,
+  "parked": false,
+  "first_revision_unweighted_min": 83.97738095238097,
+  "first_revision_parked": false
+ },
+ "boundary_at_F_132_s": {
+  "slowest_r_tokens_per_s_that_goes": 400.71286715109153,
+  "path_check_generate_s": 1714.26988328026,
+  "per_subject_s": 244.89569761146572,
+  "projected_full_min": 195.35450998686298,
+  "elapsed_min": 50.17116472133766
+ },
+ "inputs": {
+  "allowance_min": 280.0,
+  "source": "studies/next/n13/r0/s2setup-06/path_check_tokens.json",
+  "s2setup06_full_task_tokens_estimate": 4643969.850000001,
+  "planted_F_s": 132.0,
+  "setup_min": 15.9,
+  "rescore_min": 3.5,
+  "path_check_calls": [
+   [
+    400,
+    55370
+   ],
+   [
+    400,
+    86705
+   ],
+   [
+    400,
+    86995
+   ],
+   [
+    400,
+    135270
+   ],
+   [
+    400,
+    108405
+   ],
+   [
+    400,
+    56220
+   ],
+   [
+    400,
+    157965
+   ]
+  ],
+  "elapsed_rule": "planted rows: setup + the path-check wall + rescore; s2setup-06 row: 0, the whole allowance left"
+ }
+}

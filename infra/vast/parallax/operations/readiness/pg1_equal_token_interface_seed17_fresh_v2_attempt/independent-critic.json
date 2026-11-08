@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-07-19T06:13:43Z",
+  "run_id": "parallax-pg1-primary-interface-s3-v2",
+  "status": "TERMINAL_NOT_ADJUDICABLE_PRE_SCIENCE",
+  "scientific_verdict": null,
+  "model_outcome_seen": false,
+  "raw_terminal": {
+    "path": "infra/vast/parallax/operations/readiness/pg1_equal_token_interface_seed17_fresh_v2_attempt/terminal.json",
+    "sha256": "ebf586b54047a5faf4550a0a1976fd6ecf2207f98cb070f8a971bc60935a4da4",
+    "s3_bucket": "pg-lineage-769063704696",
+    "s3_key": "parallax/results/parallax-pg1-primary-interface-s3-v2/terminal.json",
+    "s3_version_id": "z8jDUARxpzc.zvZ9YlZT2SLW54rUNxjq"
+  },
+  "integrated": {
+    "status": "RED_PRIMARY_PG1_INTERFACE_EXECUTION",
+    "scientific_verdict": null,
+    "interface_adjudication": null,
+    "science_started": false,
+    "failure": "InterfaceJobError: interface source contract escaped its boundary"
+  },
+  "independent_critic": {
+    "invoked": true,
+    "exit_code": 1,
+    "status": "TERMINAL_NOT_ADJUDICABLE",
+    "scientific_verdict": null,
+    "failure_class": "IndependentPrimaryAuditError",
+    "failure_message": "run identity disagreement: ['', 'parallax-pg1-primary-interface-s3-v2']",
+    "reason": "The pre-science terminal contains no producer result identity or raw candidate rows.",
+    "commit": "b1ad4f86b1926c7d0fda6020267672b57adf1c8f",
+    "path": "infra/vast/parallax/audit_primary_interface_independent.py",
+    "sha256": "d6b03945ed389a48b764fdeef509aa22818c0051654534f789559c4ba05ee8c4"
+  },
+  "retry": {
+    "automatic_retry": false,
+    "manual_retry_performed": false,
+    "additional_paid_attempt_authorized": false
+  },
+  "paid_compute": {
+    "status": "OFF",
+    "vast_instances": 0,
+    "vast_volumes": 0,
+    "vast_zero_observations_utc": [
+      "2026-07-19T06:13:23Z",
+      "2026-07-19T06:13:27Z",
+      "2026-07-19T06:13:31Z"
+    ],
+    "aws_pending_or_running_instances": 0
+  }
+}

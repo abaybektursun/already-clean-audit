@@ -1,0 +1,11 @@
+rows 2465, non-echo 2454
+mismatches vs q2_clusters.jsonl (non-echo rows), independent code: {'birth_pct': 0, 'birth_raw': 0, 'is_main': 0, 'late_pct': 0, 'late_raw': 0, 'status': 0, 'matched': 0}
+mismatches vs q2_clusters.jsonl (non-echo rows), repo cluster_table: {'birth_pct': 0, 'birth_raw': 0, 'is_main': 0, 'late_pct': 0, 'late_raw': 0, 'status': 0, 'matched': 0}
+max |med - banked med|: {'mine': 0.0, 'repo': 0.0}
+broken-input check, birth_pct mismatches under deliberately wrong rules: {'no_next_point_rule': 155, 'q999_shifted_one_point': 1469}
+b independent: 0.475610 on 574 poles
+b repo birth_order_test recomputed: b 0.475610 ci [0.4355400696864111, 0.5174216027874564] n 574 perm mean 0.414060 perm 97.5 0.449477
+b metrics.json: b 0.475610 ci [0.4355400696864111, 0.5174216027874564] n 574 perm mean 0.414060 perm 97.5 0.449477
+births hist recomputed == metrics.json: True
+status counts recomputed: {'never_born': 0, 'earliest': 919, 'formed_before_step_1000': 0, 'readings_disagree': 244, 'unmatched_in_sample_1': 53, 'late_primary': 1238}
+status counts metrics.json: {'never_born': 0, 'earliest': 919, 'formed_before_step_1000': 0, 'readings_disagree': 244, 'unmatched_in_sample_1': 53, 'late_primary': 1238}

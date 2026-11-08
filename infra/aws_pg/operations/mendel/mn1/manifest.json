@@ -1,0 +1,45 @@
+{
+  "bucket": "pg-lineage-769063704696",
+  "entries": {
+    "g2b_actstats": {
+      "bytes": 2220295,
+      "kind": "object",
+      "local": "/work/hum_cache_mendel_mn1/g2b_actstats",
+      "sha256": "fe7b22312ba9daa0f9ed4b33690e6c3ee25a687aba0bf3ddc7d7f8b01c9e159e",
+      "uri": "s3://pg-lineage-769063704696/results/shackleton_r_v1_anchor_gemma2b/cells/anchor_gemma2b_actstats/actstats.npz"
+    },
+    "g2b_banks": {
+      "bytes": 18878976,
+      "kind": "prefix",
+      "local": "/work/hum_cache_mendel_mn1/g2b_banks",
+      "n_files": 36,
+      "sha256": "4a2d89066f01a9a905e77902061953d02d04192259d347adb1f3c48e1ca13a31",
+      "uri": "s3://pg-lineage-769063704696/results/shackleton_census_g2b/out/banks"
+    },
+    "g4_metrics": {
+      "bytes": 171703,
+      "kind": "object",
+      "local": "/work/hum_cache_mendel_mn1/g4_metrics",
+      "sha256": "0bad4351de6482fc4a5631cb222381049aa9b8c9e28c1258f98d9a7b756695bb",
+      "uri": "s3://pg-lineage-769063704696/results/mendel_g4_v1/out/metrics.json"
+    },
+    "g4_vectors": {
+      "bytes": 12434688,
+      "kind": "prefix",
+      "local": "/work/hum_cache_mendel_mn1/g4_vectors",
+      "n_files": 378,
+      "sha256": "e5edd365503a80ca166238e4773100bc6c6826dedc89470cb330472292ee24ff",
+      "uri": "s3://pg-lineage-769063704696/results/mendel_g4_v1/out/vectors"
+    }
+  },
+  "provenance": {
+    "branch": "science/mendel",
+    "commit_sha": "e2c92abef3e186546ca0086b1dd9b659d8c8ebb9",
+    "dirty": false,
+    "dirty_files": [],
+    "program": "mendel",
+    "source": "scripts/mendel_stamp.py",
+    "stamped_utc": "2026-08-19T17:49:21Z",
+    "tags_at_head": []
+  }
+}

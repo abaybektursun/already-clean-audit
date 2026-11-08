@@ -1,0 +1,170 @@
+{
+ "started_utc": "2026-11-07T16:08:39Z",
+ "complete": false,
+ "gates": {
+  "G_SAME": {
+   "pass": true,
+   "versions": {
+    "torch": "2.12.0+cu130",
+    "transformers": "5.9.0"
+   },
+   "device": "NVIDIA L40S",
+   "registered": [
+    {
+     "torch": "2.12.0+cu130",
+     "transformers": "5.9.0"
+    },
+    "NVIDIA L40S"
+   ],
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "INPUTS": {
+   "pass": true,
+   "mismatch": [],
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "G_CORPUS": {
+   "pass": true,
+   "got": "2aca80ca6537f46b8f60a550b4a3f2f13be2d18c5402be8f1af5c00caa86f531",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t14_G_REV": {
+   "pass": true,
+   "commit": "cb286dcdaaf3f92b3c419dd77439078fdebffe53",
+   "registered": "cb286dcdaaf3f92b3c419dd77439078fdebffe53",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t14_G_CFG": {
+   "pass": true,
+   "diff_keys": [],
+   "sliding_window": 4096,
+   "failing_input": {
+    "pass": false,
+    "diff_keys": [
+     "model_type"
+    ],
+    "sliding_window": 4096
+   }
+  },
+  "K_A": {
+   "pass": true,
+   "units": [
+    "L00N9356-:c8",
+    "L02N1367-:c7",
+    "L02N4649+:c3",
+    "L02N7380+:c2",
+    "L03N6372+:c10",
+    "L03N7746+:c0",
+    "L04N7919-:c0",
+    "L05N8714-:c5",
+    "L06N2185+:c5",
+    "L06N9844+:c1"
+   ],
+   "n_pairs": 40,
+   "max_abs_diff": 0.0,
+   "n_exact": 40,
+   "tol": 1e-06,
+   "failing_input": {
+    "what": "N12's banked dL with the poles rolled inside each unit",
+    "pass": false,
+    "min_abs_diff": 0.0166015625
+   }
+  },
+  "t14_G_FP32": {
+   "pass": true,
+   "dtypes": [
+    "torch.float32"
+   ],
+   "failing_input": {
+    "what": "the parameter dtypes before the cast",
+    "dtypes": [
+     "torch.bfloat16"
+    ],
+    "pass": false
+   }
+  },
+  "t14_G_CAUSAL": {
+   "pass": false,
+   "n_rows": 963,
+   "n_bitwise_before_i0": 428,
+   "failing_input": {
+    "what": "zero rows compared through j = i0",
+    "pass": false,
+    "n_equal": 2
+   }
+  }
+ },
+ "points": {
+  "14": {
+   "t": 14,
+   "units": 23,
+   "unit_windows": 107,
+   "plain_rows": 1070,
+   "jvp_rows": 428,
+   "download": {
+    "branch": "stage1-step1000000",
+    "commit": "cb286dcdaaf3f92b3c419dd77439078fdebffe53",
+    "bytes": 14605764269,
+    "seconds": 935.4,
+    "MB_per_s": 15.6
+   },
+   "fixed_s": 1001.6,
+   "plain_s": 1089.3
+  }
+ },
+ "parked": [],
+ "phase": "gate t14_G_CAUSAL",
+ "parts": [
+  "core",
+  "fd",
+  "jvp"
+ ],
+ "updated_utc": "2026-11-07T16:44:28Z",
+ "elapsed_s": 2148.9,
+ "reports": {
+  "bf16_probe_KA_units": {
+   "per_unit_window_window_sum": [
+    -0.29919713098934153,
+    0.086254705383908,
+    -0.14218792572501116,
+    -0.35818141127947456,
+    -0.5033222102567834,
+    0.11287378801625891,
+    1.60414362378242,
+    0.06031327369873907,
+    0.04608572978031589,
+    -0.23666874702735186,
+    0.5525118515579379,
+    0.6958884688347098,
+    -0.21975580765752056,
+    -0.14528357877134113,
+    0.13478061845012235,
+    0.5300364443464787,
+    -0.41623250796692446,
+    0.34409055838605695,
+    -0.13115464699529866,
+    -0.019381025943630448,
+    0.047303001997079264,
+    -0.15855519503628557,
+    -0.2985481097043703,
+    -0.01424470763959107,
+    -0.9587013549614767,
+    -0.45595431483525317,
+    -1.3613982348281581,
+    -0.4573114484273688,
+    -1.2520592529346857,
+    1.9608680461392396,
+    -0.28415850513147234
+   ],
+   "median_abs": 0.2985481097043703
+  }
+ }
+}

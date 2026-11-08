@@ -1,0 +1,26 @@
+{
+  "rental": "am5b_cont5000",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:v2-gauge",
+  "disk": 80,
+  "gpu_query": "gpu_ram>=88 num_gpus=1 cuda_vers>=12.8 compute_cap>=800",
+  "expected_gpu": "",
+  "bound": "compute",
+  "env": {
+    "HF_ONLINE": "1"
+  },
+  "_comment": "AM-5b: the \u00a76.5 PRE-AUTHORISED continuation. AM-5 returned AMBIGUOUS-EXTEND at 3000 (ratio 1.341, not at a plateau), and the frozen rule authorises exactly ONE extension to 5000. Fresh 0->5000 with identical configs: the 0->3000 run reproduced the banked V2b trajectory to 0.00e+00 at every matched step, so a longer fresh run IS the continuation. Its first 3000 steps are also a second reproduction check.",
+  "cells": [
+    {
+      "id": "am5b_cont",
+      "module": "infra.vast.cells.v2b_continuation",
+      "gauges": "unrotated,hadamard",
+      "seeds": "2026,2027,2028",
+      "steps": 5000,
+      "ckpt_every": 120
+    }
+  ],
+  "watch": {
+    "load_backstop_min": 90,
+    "max_billed_h": 4
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "created_utc": "2026-07-19T04:37:42.061188+00:00",
+  "durability_contract": {
+    "archive_durable": false,
+    "archive_key": "parallax/results/parallax-pg1-primary-interface-s3-v1/artifacts.tar",
+    "archive_proof": null,
+    "bucket": "pg-lineage-769063704696",
+    "durable_provider": "amazon_s3",
+    "post_terminal_action": "stop",
+    "pre_science": false,
+    "pre_science_report_complete": false,
+    "region": "us-east-1",
+    "terminal_key": "parallax/results/parallax-pg1-primary-interface-s3-v1/terminal.json",
+    "terminal_upload_failure_action": "stop",
+    "vast_persistent_storage": "FORBIDDEN"
+  },
+  "instance_id": 45283867,
+  "job": {
+    "log_tail": "Traceback (most recent call last):\n  File \"/opt/parallax/primary_interface_control_job.py\", line 322, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/opt/parallax/primary_interface_control_job.py\", line 316, in main\n    packet = run(args.input_contract.resolve(), args.artifact_post.resolve())\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/parallax/primary_interface_control_job.py\", line 305, in run\n    return legacy.run(input_contract_path, artifact_post_path)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/parallax/ephemeral_interface_control_job.py\", line 589, in run\n    control, control_run = _run_control(contract, tokenizer_result)\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/parallax/primary_interface_control_job.py\", line 266, in _run_primary_control\n    run = legacy.base._run_command(\n          ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/parallax/ephemeral_optimizer_scale_job.py\", line 423, in _run_command\n    raise OptimizerJobError(f\"{label} failed with {completed.returncode}: {tail}\")\nephemeral_optimizer_scale_job.OptimizerJobError: primary PG1 three-codebook interface control failed with 1: \nTraceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/workspace/parallax/source/infra/vast/parallax/training_interface_control_primary_cell.py\", line 178, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/workspace/parallax/source/infra/vast/parallax/training_interface_control_primary_cell.py\", line 153, in main\n    result = run(\n             ^^^^\n  File \"/workspace/parallax/source/infra/vast/parallax/training_interface_control_primary_cell.py\", line 122, in run\n    packet = legacy_cell.run(\n             ^^^^^^^^^^^^^^^^\n  File \"/workspace/parallax/source/infra/vast/parallax/training_interface_control_cell.py\", line 234, in run\n    if config_path != (root / contract[\"artifacts\"][\"interface_config\"][\"path\"]).resolve():\n                              ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\nKeyError: 'interface_config'\n\n",
+    "result": {
+      "present": false
+    },
+    "result_error": null,
+    "returncode": 1,
+    "timed_out": false
+  },
+  "phase": {
+    "created_utc": "2026-07-19T04:37:34.691512+00:00",
+    "phase": "SCIENCE_STARTED",
+    "run_id": "parallax-pg1-primary-interface-s3-v1",
+    "schema_version": 1,
+    "science_started": true,
+    "weight_objects_downloaded": 3
+  },
+  "provider": "vast.ai",
+  "run_id": "parallax-pg1-primary-interface-s3-v1",
+  "schema_version": 1,
+  "stage": "training_interface_control",
+  "started_utc": "2026-07-19T04:34:54.557277+00:00",
+  "status": "RED_JOB_TERMINAL",
+  "wall_seconds": 167.50395228201523
+}

@@ -1,0 +1,90 @@
+{
+ "local_supported": {
+  "exit": 0,
+  "verdict": "COMPLETE",
+  "hyp": {
+   "k_rec": "k1",
+   "H_local": "SUPPORTED",
+   "H_diffuse": "REFUTED",
+   "H_attention": "REFUTED",
+   "H_artifact": "REFUTED",
+   "H_artifact_values": {
+    "J_floor_k1": 0.95,
+    "J_round_k1": 0.9,
+    "J_round_synthetic_k1": 0.1
+   },
+   "necessity": {
+    "k0.1": "NECESSARY",
+    "k0.3": "NECESSARY",
+    "k1": "NECESSARY",
+    "k3": "NECESSARY"
+   }
+  }
+ },
+ "krec_none": {
+  "exit": 0,
+  "verdict": "COMPLETE",
+  "hyp": {
+   "k_rec": null,
+   "H_local": "REFUTED (k_rec NONE)",
+   "H_diffuse": "REFUTED",
+   "H_attention": "INDETERMINATE (interaction)",
+   "H_artifact": "REFUTED",
+   "H_artifact_values": {
+    "J_floor_k1": 0.95,
+    "J_round_k1": 0.9,
+    "J_round_synthetic_k1": 0.1
+   },
+   "necessity": {
+    "k0.1": "NECESSARY",
+    "k0.3": "NECESSARY",
+    "k1": "NECESSARY",
+    "k3": "NECESSARY"
+   }
+  }
+ },
+ "dare_within": {
+  "exit": 0,
+  "verdict": "COMPLETE",
+  "hyp": {
+   "k_rec": "k1",
+   "H_local": "REFUTED (a control within delta)",
+   "H_diffuse": "SUPPORTED (smallest k k1)",
+   "H_attention": "REFUTED",
+   "H_artifact": "REFUTED",
+   "H_artifact_values": {
+    "J_floor_k1": 0.95,
+    "J_round_k1": 0.9,
+    "J_round_synthetic_k1": 0.1
+   },
+   "necessity": {
+    "k0.1": "NECESSARY",
+    "k0.3": "NECESSARY",
+    "k1": "NECESSARY",
+    "k3": "NECESSARY"
+   }
+  }
+ },
+ "attention_supported": {
+  "exit": 0,
+  "verdict": "COMPLETE",
+  "hyp": {
+   "k_rec": "k1",
+   "H_local": "SUPPORTED",
+   "H_diffuse": "REFUTED",
+   "H_attention": "SUPPORTED",
+   "H_artifact": "REFUTED",
+   "H_artifact_values": {
+    "J_floor_k1": 0.95,
+    "J_round_k1": 0.9,
+    "J_round_synthetic_k1": 0.1
+   },
+   "necessity": {
+    "k0.1": "NECESSARY",
+    "k0.3": "NECESSARY",
+    "k1": "NECESSARY",
+    "k3": "NECESSARY"
+   }
+  }
+ }
+}

@@ -1,0 +1,29 @@
+{
+  "rental": "rehearsal",
+  "image": "shackleton-rehearsal",
+  "disk": 10,
+  "gpu_query": "",
+  "cells": [
+    {
+      "id": "rehearsal_smoke",
+      "module": "infra.vast.cells.smoke_stats",
+      "model_dir": "/models/EleutherAI_pythia-70m",
+      "probe_text": "The capital of France is"
+    },
+    {
+      "id": "rehearsal_burn",
+      "module": "infra.vast.cells.slow_burn",
+      "seconds": 45
+    },
+    {
+      "id": "rehearsal_smoke2",
+      "module": "infra.vast.cells.smoke_stats",
+      "model_dir": "/models/EleutherAI_pythia-70m",
+      "probe_text": "Water boils at a temperature of"
+    }
+  ],
+  "watch": {
+    "load_backstop_min": 30,
+    "max_billed_h": 1
+  }
+}

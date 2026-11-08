@@ -1,0 +1,5 @@
+#!/bin/sh
+# neurons_explain / neurons_verdict runner in the explain worktree: ne explain <args> | ne verdict <args>
+cd /Users/abaybektursun/projects/interp_research-neurons-explain-pin9a6562ac || exit 1
+mod="infra.pg.neurons_$1"; shift
+exec /Users/abaybektursun/.local/bin/uv run --no-project --with transformers --with tokenizers --with anthropic --with numpy python -m "$mod" "$@"

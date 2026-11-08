@@ -1,0 +1,211 @@
+{
+  "arm": "MN-1",
+  "atlas": {
+    "n_rows": 1884,
+    "n_vectors": 0,
+    "path": "/work/out/atlas.parquet"
+  },
+  "control_trinity": {
+    "transport_jaccard": [
+      "haar",
+      "shuffle",
+      "structured",
+      "treatment"
+    ]
+  },
+  "excluded_types": [
+    "down_proj"
+  ],
+  "exclusion_reason": "freeze A3 (LOO eigh cost at 16384^2)",
+  "g4_reference": {
+    "activation_magnitude": {
+      "abs_diff": 0.0,
+      "banked": 0.41597866552692153,
+      "n_cells": 72,
+      "ours": 0.41597866552692153
+    },
+    "gradient_magnitude": {
+      "abs_diff": 0.0,
+      "banked": 0.27899202802871786,
+      "n_cells": 72,
+      "ours": 0.27899202802871786
+    },
+    "predictor": {
+      "abs_diff": 0.0,
+      "banked": 0.30682528035793794,
+      "n_cells": 72,
+      "ours": 0.30682528035793794
+    },
+    "random": {
+      "abs_diff": 0.0004622518063378267,
+      "banked": 0.007090231552597143,
+      "n_cells": 72,
+      "ours": 0.0066279797462593165
+    }
+  },
+  "hops": {
+    "g2b->pg1@k32": {
+      "ci_hi": -0.07650930130736532,
+      "ci_lo": -0.1970318722279944,
+      "ci_method": "percentile_bootstrap",
+      "clears_zero": false,
+      "control_mean": 0.3999143188066424,
+      "delta_mean": -0.13509375053295103,
+      "hop_id": "g2b->pg1",
+      "k": 32,
+      "n": 18,
+      "n_boot": 2000,
+      "n_cells": 18,
+      "n_excluded": 0,
+      "n_kept": 18,
+      "seed": 1337,
+      "shuffle_mean": 0.17541824409585935,
+      "shuffle_p_value": 0.058194180581941805,
+      "shuffle_perm_method": "sampled",
+      "treatment_mean": 0.26482056827369127,
+      "void_instrument": false
+    },
+    "g2b->pg1@k8": {
+      "ci_hi": -0.08052540052540061,
+      "ci_lo": -0.23158545158545163,
+      "ci_method": "percentile_bootstrap",
+      "clears_zero": false,
+      "control_mean": 0.36537166537166527,
+      "delta_mean": -0.1573981573981574,
+      "hop_id": "g2b->pg1",
+      "k": 8,
+      "n": 18,
+      "n_boot": 2000,
+      "n_cells": 18,
+      "n_excluded": 0,
+      "n_kept": 18,
+      "seed": 1337,
+      "shuffle_mean": 0.12706552706552707,
+      "shuffle_p_value": 0.0341965803419658,
+      "shuffle_perm_method": "sampled",
+      "treatment_mean": 0.207973507973508,
+      "void_instrument": false
+    },
+    "pg1->pi05@k32": {
+      "ci_hi": 0.04254443504405226,
+      "ci_lo": 0.0057531536132122444,
+      "ci_method": "percentile_bootstrap",
+      "clears_zero": true,
+      "control_mean": 0.33291602747942217,
+      "delta_mean": 0.024160589165672517,
+      "hop_id": "pg1->pi05",
+      "k": 32,
+      "n": 106,
+      "n_boot": 2000,
+      "n_cells": 108,
+      "n_excluded": 2,
+      "n_kept": 106,
+      "seed": 1337,
+      "shuffle_mean": 0.24002231792352516,
+      "shuffle_p_value": 0.00029997000299970003,
+      "shuffle_perm_method": "sampled",
+      "treatment_mean": 0.3570766166450946,
+      "void_instrument": false
+    },
+    "pg1->pi05@k8": {
+      "ci_hi": 0.056237400420092704,
+      "ci_lo": -0.012926058983751293,
+      "ci_method": "percentile_bootstrap",
+      "clears_zero": false,
+      "control_mean": 0.31474999359614747,
+      "delta_mean": 0.021400821400821397,
+      "hop_id": "pg1->pi05",
+      "k": 8,
+      "n": 104,
+      "n_boot": 2000,
+      "n_cells": 108,
+      "n_excluded": 4,
+      "n_kept": 104,
+      "seed": 1337,
+      "shuffle_mean": 0.17076235730081885,
+      "shuffle_p_value": 9.999000099990002e-05,
+      "shuffle_perm_method": "sampled",
+      "treatment_mean": 0.3361508149969688,
+      "void_instrument": false
+    },
+    "pg1->pi0@k32": {
+      "ci_hi": 0.07345945725277071,
+      "ci_lo": 0.031127374876364345,
+      "ci_method": "percentile_bootstrap",
+      "clears_zero": true,
+      "control_mean": 0.3340534250897412,
+      "delta_mean": 0.05267566537433522,
+      "hop_id": "pg1->pi0",
+      "k": 32,
+      "n": 104,
+      "n_boot": 2000,
+      "n_cells": 108,
+      "n_excluded": 4,
+      "n_kept": 104,
+      "seed": 1337,
+      "shuffle_mean": 0.2371224513377384,
+      "shuffle_p_value": 9.999000099990002e-05,
+      "shuffle_perm_method": "sampled",
+      "treatment_mean": 0.3867290904640764,
+      "void_instrument": false
+    },
+    "pg1->pi0@k8": {
+      "ci_hi": 0.11208247198346209,
+      "ci_lo": 0.042833195407452826,
+      "ci_method": "percentile_bootstrap",
+      "clears_zero": true,
+      "control_mean": 0.26006402838086,
+      "delta_mean": 0.07667052419527667,
+      "hop_id": "pg1->pi0",
+      "k": 8,
+      "n": 101,
+      "n_boot": 2000,
+      "n_cells": 108,
+      "n_excluded": 7,
+      "n_kept": 101,
+      "seed": 1337,
+      "shuffle_mean": 0.1802243960659802,
+      "shuffle_p_value": 9.999000099990002e-05,
+      "shuffle_perm_method": "sampled",
+      "treatment_mean": 0.33673455257613677,
+      "void_instrument": false
+    }
+  },
+  "k_primary": 32,
+  "k_secondary": 8,
+  "n_haar": 64,
+  "provenance": {
+    "branch": "science/mendel",
+    "commit_sha": "e2c92abef3e186546ca0086b1dd9b659d8c8ebb9",
+    "dirty": false,
+    "dirty_files": [],
+    "program": "mendel",
+    "source": "scripts/mendel_stamp.py",
+    "stamped_utc": "2026-08-19T17:49:21Z",
+    "tags_at_head": []
+  },
+  "queue_item": "26a",
+  "rule": "INHERITED-BEYOND-TRAFFIC iff the paired CI clears 0 at >=2 independent hops",
+  "seed": 1337,
+  "traffic_null": "parent activation RMS \u2014 M-8's named incumbent, mean Jaccard 0.4160 against PG1 core32 in mercator_w0gpu4, which BEAT the predictor",
+  "types": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj"
+  ],
+  "verdict": "INHERITED-BEYOND-TRAFFIC",
+  "verdict_detail": {
+    "clearing_hops": [
+      "pg1->pi05@k32",
+      "pg1->pi0@k32"
+    ],
+    "clears": true,
+    "k_required": 2,
+    "n_clearing": 2,
+    "n_hops": 3,
+    "verdict": "INHERITED-BEYOND-TRAFFIC"
+  }
+}

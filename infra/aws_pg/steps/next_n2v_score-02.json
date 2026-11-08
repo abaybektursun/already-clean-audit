@@ -1,0 +1,7 @@
+[
+  {
+    "name": "score",
+    "module": "infra.aws_pg.jobs.n2v_score",
+    "args": "--inputs s3://pg-lineage-769063704696/results/next_n2v/inputs --corpus s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus --parts core,fd,jvp --budget-min 700"
+  }
+]

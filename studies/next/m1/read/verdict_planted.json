@@ -1,0 +1,23 @@
+{
+ "G_missing": {
+  "headline": "DOES NOT COUNT: missing ['G']",
+  "PC_NLL_pass": null,
+  "lead_labels": [],
+  "H_lead": null,
+  "H_order": null,
+  "H_specific": null
+ },
+ "G_M_swapped": {
+  "headline": "DOES NOT COUNT: harvest gates [], G_ID True, PC_NLL False, failing input that did not fail []",
+  "PC_NLL_pass": false,
+  "lead_labels": [
+   "REFUTED",
+   "REFUTED",
+   "REFUTED",
+   "REFUTED"
+  ],
+  "H_lead": "REFUTED",
+  "H_order": "REFUTED",
+  "H_specific": "REFUTED"
+ }
+}

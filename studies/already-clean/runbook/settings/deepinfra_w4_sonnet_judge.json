@@ -1,0 +1,16 @@
+{
+ "backend": "openai_compat",
+ "base_url": "https://api.deepinfra.com/v1/openai",
+ "key_env": "NEURONS_API_KEY_1",
+ "models": {
+  "explainer": "anthropic/claude-sonnet-5-5",
+  "second_reader": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "writer": "anthropic/claude-sonnet-5-5",
+  "writer_job": "anthropic/claude-sonnet-5-5",
+  "clusterer": "anthropic/claude-sonnet-5-5",
+  "judge": "anthropic/claude-sonnet-5-5"
+ },
+ "temperature": 1.0,
+ "response_format": "json_schema",
+ "notes": "W4 judge gate trial on S_gate (2026-10-21): clusterer and judge on anthropic/claude-sonnet-5-5 after the Flash judge failed the gate (a_ctrl 0.673 and 0.716). Key in ~/.config/interp_research/keys.env as NEURONS_API_KEY_1."
+}

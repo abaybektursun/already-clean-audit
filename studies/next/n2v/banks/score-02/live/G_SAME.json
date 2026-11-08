@@ -1,0 +1,18 @@
+{
+ "pass": true,
+ "versions": {
+  "torch": "2.12.0+cu130",
+  "transformers": "5.9.0"
+ },
+ "device": "NVIDIA L40S",
+ "registered": [
+  {
+   "torch": "2.12.0+cu130",
+   "transformers": "5.9.0"
+  },
+  "NVIDIA L40S"
+ ],
+ "failing_input": {
+  "pass": false
+ }
+}

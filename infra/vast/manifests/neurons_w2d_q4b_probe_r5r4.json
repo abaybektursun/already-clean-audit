@@ -1,0 +1,36 @@
+{
+  "rental": "neurons_w2d_q4b_probe_r5r4",
+  "session": "W2-D",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+  "disk": 60,
+  "gpu_query": "gpu_ram>=40 num_gpus=1 compute_cap>=890 cuda_vers>=13.0",
+  "expected_gpu": "",
+  "bound": "overhead",
+  "weights_mode": "s3",
+  "weights_s3_base": "s3://pg-lineage-769063704696/weights/hf/",
+  "weights_s3_models": "models--Qwen--Qwen3-4B-Base",
+  "env": {
+    "HF_HUB_CACHE": "/workspace/hf/hub",
+    "HF_HUB_DISABLE_XET": "1"
+  },
+  "cells": [
+    {
+      "id": "probe_r5",
+      "module": "infra.vast.cells.pipeline_job",
+      "pg_git_sha": "e4278745",
+      "steps_s3": "s3://pg-lineage-769063704696/results/mdl/neurons/w2d/q4b_probe/5/steps.json"
+    },
+    {
+      "id": "probe_r4",
+      "module": "infra.vast.cells.pipeline_job",
+      "pg_git_sha": "e4278745",
+      "steps_s3": "s3://pg-lineage-769063704696/results/mdl/neurons/w2d/q4b_probe/4/steps.json"
+    }
+  ],
+  "watch": {
+    "max_billed_h": 1.5,
+    "load_backstop_min": 30,
+    "progress_stall_min": 20
+  },
+  "_comment": "W2-D probe rounds 5 (round d2w texts rescored under the 62d865d3 probe rule) and 4 (prompt v3 texts) on vast.ai because AWS g6e capacity was absent 2026-10-20. Inputs are mirrored from results/neurons/ into results/mdl/neurons/ because the box user is scoped to results/mdl/*; outputs are copied back to results/neurons/w2d/q4b_probe/<n>/out/ from the laptop. Same job module and steps as the AWS lane (infra/aws_pg/steps/neurons_w2d_q4b_probe.json with the mirrored paths). pg_git_sha names commit A, which holds the shipped code; this manifest was added in the next commit and is the only infra/ difference."
+}

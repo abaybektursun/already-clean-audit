@@ -1,0 +1,29 @@
+{
+  "program": "gutenberg",
+  "commit_sha": "5a515723292bcb39cb1765561d9fb12b94391512",
+  "branch": "science/gutenberg",
+  "infra_tree": "3301041de918c8d0e5e8d5ed86358974d1761486",
+  "infra_worktree_sha256": "392a42465c437608a29512cdf57d39a0382ac582b4a5475fb4429f740e8910d1",
+  "tags_at_head": [],
+  "dirty": true,
+  "dirty_files": [
+    "papers/highenergy-lowgain/out/audit_draft/p-01.png",
+    "papers/highenergy-lowgain/out/audit_draft/p-02.png",
+    "papers/highenergy-lowgain/out/audit_draft/p-03.png",
+    "papers/highenergy-lowgain/out/audit_draft/p-04.png",
+    "papers/highenergy-lowgain/out/audit_draft/p-05.png",
+    "papers/highenergy-lowgain/out/audit_draft/p-06.png",
+    "papers/highenergy-lowgain/out/audit_draft/p-07.png",
+    "papers/highenergy-lowgain/out/audit_draft/p-08.png",
+    "papers/highenergy-lowgain/out/audit_draft/p-09.png",
+    "papers/highenergy-lowgain/out/audit_draft/p-10.png",
+    "papers/highenergy-lowgain/out/audit_draft/p-11.png",
+    "papers/highenergy-lowgain/out/audit_draft/p-12.png",
+    "papers/highenergy-lowgain/out/draft.pdf",
+    "papers/highenergy-lowgain/out/draft.tex",
+    "infra/vast/operations/",
+    "studies/lineage/paligemma1-pi0/research/gutenberg_spend.json"
+  ],
+  "stamped_utc": "2026-08-19T23:51:57Z",
+  "source": "scripts/gutenberg_stamp.py"
+}

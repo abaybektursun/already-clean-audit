@@ -1,0 +1,61 @@
+{
+  "queried_utc": "2026-10-27T23:15:22.855299+00:00",
+  "instance_id": 58022910,
+  "items": [
+    {
+      "amount": 0.105,
+      "description": "Instance 58022910 Charges - 1 day",
+      "end": 1793059200,
+      "items": [
+        {
+          "amount": 0.102,
+          "description": "0.139 hours at $0.733/hour",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "gpu"
+        },
+        {
+          "amount": 0.003,
+          "description": "0.148 hours at $0.022/hour",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "disk"
+        },
+        {
+          "amount": 0.0,
+          "description": "16.5 GB Downloaded at $0.000/GB",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "bwd"
+        },
+        {
+          "amount": 0.0,
+          "description": "Bandwidth (upload)",
+          "end": 1793059200,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1793059200,
+          "type": "bwu"
+        }
+      ],
+      "metadata": {
+        "label": "mendeleev_neuron_combo_20261027_a1"
+      },
+      "source": "instance-58022910",
+      "start": 1793059200,
+      "type": "instance"
+    }
+  ],
+  "pages": 1,
+  "total_count": 10
+}

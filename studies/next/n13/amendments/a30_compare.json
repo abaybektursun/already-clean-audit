@@ -1,0 +1,102 @@
+{
+ "sets_json_equal": true,
+ "sets_sha256": [
+  "b359090850fd3246f2325c946eb3ad9d5c9baa68dfc54a0738e4b2cc7f663730",
+  "b359090850fd3246f2325c946eb3ad9d5c9baa68dfc54a0738e4b2cc7f663730"
+ ],
+ "arm_hash_equal": {
+  "attn": true,
+  "comp_k0.1": true,
+  "comp_k0.3": true,
+  "comp_k1": true,
+  "comp_k3": true,
+  "dare_k0.1": true,
+  "dare_k0.3": true,
+  "dare_k1": true,
+  "dare_k1_d2": true,
+  "dare_k3": true,
+  "id": true,
+  "mlp": true,
+  "rnd0_k1": true,
+  "rndE_k0.1": false,
+  "rndE_k0.3": false,
+  "rndE_k1": false,
+  "rndE_k3": false,
+  "rndT_k0.1": true,
+  "rndT_k0.3": true,
+  "rndT_k1": true,
+  "rndT_k1_d2": true,
+  "rndT_k3": true,
+  "topF_k1": true,
+  "top_k0.1": true,
+  "top_k0.3": true,
+  "top_k1": true,
+  "top_k1_B": true,
+  "top_k3": true,
+  "zero": true
+ },
+ "changed": [
+  "rndE_k0.1",
+  "rndE_k0.3",
+  "rndE_k1",
+  "rndE_k3"
+ ],
+ "rndE": {
+  "rndE_k0.1": {
+   "before_ratio": 0.9992931210204298,
+   "after_ratio": 1.0004481035767927,
+   "energy_passes": [
+    {
+     "c": 972.9231727973237,
+     "realized": 1.0650367432168082,
+     "ratio": 1.0004481035767927
+    }
+   ],
+   "c_built": 972.9231727973237
+  },
+  "rndE_k0.3": {
+   "before_ratio": 1.0002151297869317,
+   "after_ratio": 0.999503167158494,
+   "energy_passes": [
+    {
+     "c": 785.3323552479186,
+     "realized": 2.0556790379916947,
+     "ratio": 0.999503167158494
+    }
+   ],
+   "c_built": 785.3323552479186
+  },
+  "rndE_k1": {
+   "before_ratio": 0.9994521408337208,
+   "after_ratio": 1.0000020774529146,
+   "energy_passes": [
+    {
+     "c": 778.8480491439257,
+     "realized": 3.8953717501544816,
+     "ratio": 1.0000020774529146
+    }
+   ],
+   "c_built": 778.8480491439257
+  },
+  "rndE_k3": {
+   "before_ratio": 0.9987516135780561,
+   "after_ratio": 1.0000995400931445,
+   "energy_passes": [
+    {
+     "c": 485.8339086371868,
+     "realized": 3.8957706780962216,
+     "ratio": 1.0000995400931445
+    }
+   ],
+   "c_built": 485.8339086371868
+  }
+ },
+ "rndT": {
+  "rndT_k0.1": 1.3294495670130457,
+  "rndT_k0.3": 0.8941259011772519,
+  "rndT_k1": 7.361050956176573e-05,
+  "rndT_k1_d2": 7.361050956176573e-05,
+  "rndT_k3": 6.866234000145886e-05
+ },
+ "pass": true
+}

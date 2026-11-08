@@ -1,0 +1,283 @@
+{
+ "gates": {
+  "pass": true,
+  "problems": [],
+  "complete": true
+ },
+ "test": {
+  "n_pairs": 284,
+  "n_units": 71,
+  "window": {
+   "room": {
+    "readout": "window",
+    "median_rho": 0.9999020344870037,
+    "q05": 0.9998784598983149,
+    "rho_min": 0.9,
+    "pass": true,
+    "median_abs_noise": 0.00014701201871503145,
+    "median_abs_pred": 0.021910516545176506,
+    "noise": "probe"
+   },
+   "validation": {
+    "n_pairs": 284,
+    "n_units": 71,
+    "rho": 0.9599593469315053,
+    "lo": 0.9154658749444953,
+    "hi": 0.9902214770449351,
+    "shuffle_q975": 0.1176192677732753,
+    "slope_through_origin": 0.8371010207569126,
+    "rho_min": 0.7,
+    "ceiling": 0.999,
+    "pass": true,
+    "above_ceiling": false,
+    "failing_input": {
+     "what": "the prediction with its sign flipped",
+     "rho": -0.9599593469315053,
+     "pass": false
+    },
+    "readout": "window",
+    "prediction": "pred_bf16",
+    "measurement": "dL",
+    "scale": 1.0,
+    "sign_agreement": 0.954225352112676,
+    "median_abs_meas": 0.022396403559469036,
+    "median_abs_pred": 0.021910516545176506
+   },
+   "inspection": null
+  },
+  "fd": {
+   "room": {
+    "readout": "fd",
+    "median_rho": 0.9957125681371097,
+    "q05": 0.9950896489219864,
+    "rho_min": 0.9,
+    "pass": true,
+    "median_abs_noise": 0.00014701201871503145,
+    "median_abs_pred": 0.00219105165451765,
+    "noise": "probe"
+   },
+   "validation": {
+    "n_pairs": 284,
+    "n_units": 71,
+    "rho": 0.9874693202922201,
+    "lo": 0.9711686334925069,
+    "hi": 0.9947460544951044,
+    "shuffle_q975": 0.11629657618390267,
+    "slope_through_origin": 0.9884224018434107,
+    "rho_min": 0.7,
+    "ceiling": 0.999,
+    "pass": true,
+    "above_ceiling": false,
+    "failing_input": {
+     "what": "the prediction with its sign flipped",
+     "rho": -0.9874693202922201,
+     "pass": false
+    },
+    "readout": "fd",
+    "prediction": "pred_bf16",
+    "measurement": "dL_fd",
+    "scale": 0.09999999999999998,
+    "ceiling_rule": "every |dL_fd - 0.1 pred| / |0.1 pred| < 1e-06",
+    "max_rel_dev": 80.12309216607777,
+    "sign_agreement": 0.954225352112676,
+    "median_abs_meas": 0.0022739987889508484,
+    "median_abs_pred": 0.00219105165451765
+   },
+   "inspection": null
+  },
+  "own": {
+   "room": {
+    "readout": "own",
+    "median_rho": 0.9999973806012568,
+    "q05": 0.9999958089620108,
+    "rho_min": 0.9,
+    "pass": true,
+    "median_abs_noise": 2.6561319828033447e-06,
+    "median_abs_pred": 0.009871653179288842,
+    "noise": "probe"
+   },
+   "validation": {
+    "n_pairs": 284,
+    "n_units": 71,
+    "rho": 0.9863571235858521,
+    "lo": 0.9692836183375799,
+    "hi": 0.9963950275756942,
+    "shuffle_q975": 0.11789286397200383,
+    "slope_through_origin": 0.9762777850713442,
+    "rho_min": 0.7,
+    "ceiling": 0.999,
+    "pass": true,
+    "above_ceiling": false,
+    "failing_input": {
+     "what": "the prediction with its sign flipped",
+     "rho": -0.9863571235858521,
+     "pass": false
+    },
+    "readout": "own",
+    "prediction": "pred_jvp_own",
+    "measurement": "dL_own",
+    "scale": 1.0,
+    "sign_agreement": 0.9823943661971831,
+    "median_abs_meas": 0.01033356852713041,
+    "median_abs_pred": 0.009871653179288842
+   },
+   "inspection": null
+  },
+  "window_jvp": {
+   "room": {
+    "readout": "window_jvp",
+    "median_rho": 0.9999167031199657,
+    "q05": 0.9999009867275065,
+    "rho_min": 0.9,
+    "pass": true,
+    "median_abs_noise": 0.00014701201871503145,
+    "median_abs_pred": 0.02209076727608661,
+    "noise": "probe"
+   },
+   "validation": {
+    "n_pairs": 284,
+    "n_units": 71,
+    "rho": 0.9666058093025326,
+    "lo": 0.9231851981129574,
+    "hi": 0.9941457287419984,
+    "shuffle_q975": 0.11886205460398619,
+    "slope_through_origin": 0.8540898888757535,
+    "rho_min": 0.7,
+    "ceiling": 0.999,
+    "pass": true,
+    "above_ceiling": false,
+    "failing_input": {
+     "what": "the prediction with its sign flipped",
+     "rho": -0.9666058093025326,
+     "pass": false
+    },
+    "readout": "window_jvp",
+    "prediction": "pred_jvp",
+    "measurement": "dL",
+    "scale": 1.0,
+    "sign_agreement": 0.971830985915493,
+    "median_abs_meas": 0.022396403559469036,
+    "median_abs_pred": 0.02209076727608661
+   },
+   "inspection": null
+  },
+  "room_failing_input": {
+   "readout": "window",
+   "median_rho": 0.07619071318369582,
+   "q05": -0.015980742180439895,
+   "rho_min": 0.9,
+   "pass": false,
+   "median_abs_noise": 0.69140625,
+   "median_abs_pred": 0.021910516545176506,
+   "noise": "planted"
+  },
+  "bf16_vs_jvp_prediction": {
+   "spearman": 0.9950540512930661,
+   "median_rel_diff": 0.026347674367160463
+  },
+  "probe_median_abs": 0.00014701201871503145,
+  "probe_own_median_abs": 2.6561319828033447e-06
+ },
+ "labels_freeze": {
+  "window": "PASS",
+  "fd": "PASS",
+  "own": "PASS",
+  "window_jvp": "PASS"
+ },
+ "labels_test": {
+  "window": "PASS",
+  "fd": "PASS",
+  "own": "PASS",
+  "window_jvp": "PASS"
+ },
+ "labels": {
+  "window": "PASS",
+  "fd": "PASS",
+  "own": "PASS",
+  "window_jvp": "PASS"
+ },
+ "thresholds_sha256": "cdd2ed26f5c22316e9d6cadb38f74cdec6607f4bd11f338366c57b4262def311",
+ "decision": {
+  "branch": "A",
+  "reading": "N12's banked bf16 first-order prediction tracks single-neuron zero ablation read in fp32",
+  "next": "re-read N12's gradient labels from N12's banked records under N12's frozen rules"
+ },
+ "n12_reread": {
+  "what": "N12's gradient labels re-read with the fp32 window measurement in place of the bf16 one; N12's frozen rules and code; status: a dated re-reading (N12's test half was read on 2026-11-06)",
+  "ceiling_cleared_by_inspection": false,
+  "headline": "H_cf OWN_RISE; H_away_sel_pb BELOW_SELECTION; H_signal REFUTED; H_bridge UNDECIDED; H_dt SUPPORTED",
+  "labels": {
+   "H_signal": {
+    "label": "REFUTED",
+    "n": 71,
+    "mean": 0.5267605633802817,
+    "lo": 0.4514084507042254,
+    "hi": 0.6,
+    "bar": 0.422520385470719
+   },
+   "H_sel_signal_pb": {
+    "label": "AT_SELECTION",
+    "n": 70,
+    "diff": -0.03857142857142856,
+    "lo": -0.13357142857142856,
+    "hi": 0.05714285714285714,
+    "x_only": 30,
+    "y_only": 34
+   },
+   "H_sel_signal_dt": {
+    "label": "AT_SELECTION",
+    "n": 67,
+    "diff": -0.020149253731343283,
+    "lo": -0.12388059701492536,
+    "hi": 0.08360074626865648,
+    "x_only": 30,
+    "y_only": 30
+   },
+   "H_bridge": {
+    "label": "UNDECIDED",
+    "n": 71,
+    "mean": -0.012589810468198745,
+    "lo": -0.07179758311973704,
+    "hi": 0.04589910889496183,
+    "n_undefined": 0
+   }
+  },
+  "validation_freeze": {
+   "n_pairs": 328,
+   "n_units": 82,
+   "rho": 0.9705852747158576,
+   "lo": 0.9404890430041513,
+   "hi": 0.9922729259713261,
+   "shuffle_q975": 0.10910128266252964,
+   "slope_through_origin": 1.11032288785188,
+   "rho_min": 0.7,
+   "ceiling": 0.999,
+   "pass": true,
+   "above_ceiling": false,
+   "failing_input": {
+    "what": "the prediction with its sign flipped",
+    "rho": -0.9705852747158576,
+    "pass": false
+   }
+  },
+  "validation_test": {
+   "n_pairs": 284,
+   "n_units": 71,
+   "rho": 0.9599593469315053,
+   "lo": 0.9154658749444953,
+   "hi": 0.9902214770449351,
+   "shuffle_q975": 0.1176192677732753,
+   "slope_through_origin": 0.8371010207569126,
+   "rho_min": 0.7,
+   "ceiling": 0.999,
+   "pass": true,
+   "above_ceiling": false,
+   "failing_input": {
+    "what": "the prediction with its sign flipped",
+    "rho": -0.9599593469315053,
+    "pass": false
+   }
+  }
+ },
+ "headline": "G-VAL window PASS; G-FD PASS; G-VAL own PASS; branch A; N12 re-read: H_cf OWN_RISE; H_away_sel_pb BELOW_SELECTION; H_signal REFUTED; H_bridge UNDECIDED; H_dt SUPPORTED"
+}

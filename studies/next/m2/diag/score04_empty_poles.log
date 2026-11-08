@@ -1,0 +1,98 @@
+5 3 empty 0 dead 0 calls 5
+6 3 empty 0 dead 0 calls 5
+7 3 empty 0 dead 0 calls 5
+7 4 empty 0 dead 0 calls 5
+7 7 empty 0 dead 0 calls 5
+7 19 empty 0 dead 0 calls 5
+7 24 empty 0 dead 0 calls 5
+8 3 empty 0 dead 0 calls 5
+8 4 empty 0 dead 0 calls 5
+8 7 empty 1 dead 1 calls 5
+8 11 empty 0 dead 0 calls 5
+8 19 empty 0 dead 0 calls 5
+8 22 empty 0 dead 0 calls 5
+8 24 empty 0 dead 0 calls 5
+8 26 empty 0 dead 0 calls 5
+9 3 empty 0 dead 0 calls 5
+9 4 empty 0 dead 0 calls 5
+9 10 empty 0 dead 0 calls 5
+9 11 empty 0 dead 0 calls 5
+9 22 empty 0 dead 0 calls 5
+9 26 empty 0 dead 0 calls 5
+9 27 empty 0 dead 0 calls 5
+9 28 empty 0 dead 0 calls 5
+9 29 empty 0 dead 0 calls 5
+10 1 empty 0 dead 0 calls 5
+10 2 empty 0 dead 0 calls 5
+10 3 empty 0 dead 0 calls 5
+10 4 empty 0 dead 0 calls 5
+10 7 empty 0 dead 0 calls 5
+10 8 empty 0 dead 0 calls 5
+10 10 empty 0 dead 0 calls 5
+10 19 empty 0 dead 0 calls 5
+10 20 empty 0 dead 0 calls 5
+10 21 empty 0 dead 0 calls 5
+10 23 empty 0 dead 0 calls 5
+10 24 empty 1 dead 1 calls 5
+10 26 empty 0 dead 0 calls 5
+10 27 empty 0 dead 0 calls 5
+10 28 empty 0 dead 0 calls 5
+10 29 empty 0 dead 0 calls 5
+{
+ "5": {
+  "empty": {},
+  "dead": {},
+  "first": [
+   "L03N9245+:c4",
+   "pre"
+  ]
+ },
+ "6": {
+  "empty": {},
+  "dead": {},
+  "first": [
+   "L03N9245+:c4",
+   "birth"
+  ]
+ },
+ "7": {
+  "empty": {},
+  "dead": {},
+  "first": [
+   "L03N9245+:c5",
+   "pre"
+  ]
+ },
+ "8": {
+  "empty": {
+   "7": 1
+  },
+  "dead": {
+   "7": 1
+  },
+  "first": [
+   "L03N9245+:c5",
+   "birth"
+  ]
+ },
+ "9": {
+  "empty": {},
+  "dead": {},
+  "first": [
+   "L03N7155+:c0",
+   "pre"
+  ]
+ },
+ "10": {
+  "empty": {
+   "24": 1
+  },
+  "dead": {
+   "24": 1
+  },
+  "first": [
+   "L01N8975+:c2",
+   "pre"
+  ]
+ }
+}

@@ -1,0 +1,22 @@
+{
+  "bucket": "pg-lineage-769063704696",
+  "entries": {
+    "g4_metrics": {
+      "bytes": 171703,
+      "kind": "object",
+      "local": "/work/hum_cache_mendel_g4b/g4_metrics",
+      "sha256": "0bad4351de6482fc4a5631cb222381049aa9b8c9e28c1258f98d9a7b756695bb",
+      "uri": "s3://pg-lineage-769063704696/results/mendel_g4_v1/out/metrics.json"
+    }
+  },
+  "provenance": {
+    "branch": "science/mendel",
+    "commit_sha": "0f15effa801e6c718e55852c3e7e07c36162dd78",
+    "dirty": false,
+    "dirty_files": [],
+    "program": "mendel",
+    "source": "scripts/mendel_stamp.py",
+    "stamped_utc": "2026-08-19T18:30:14Z",
+    "tags_at_head": []
+  }
+}

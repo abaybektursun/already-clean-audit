@@ -1,0 +1,104 @@
+{
+ "step": "r0_known",
+ "status": "done",
+ "suite": "minerva_math::olmes:n4:v2",
+ "target": 40.0,
+ "tol": 1.6,
+ "tolerance": {
+  "se_one_reading": 0.37421220512259656,
+  "se_difference": 0.5292159756899187,
+  "three_se_difference": 1.587647927069756,
+  "tol": 1.6
+ },
+ "park": {
+  "allowance_min": null,
+  "elapsed_min": 4.54862912495931e-05,
+  "projected_min": 171.66666666666666,
+  "earlier_parked": false,
+  "parked": false
+ },
+ "command": [
+  "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_venv/bin/python",
+  "-c",
+  "import time; time.sleep(0.2)"
+ ],
+ "updated_utc": "2026-11-05T16:07:39Z",
+ "elapsed_s": 0.2,
+ "olmes_files": [
+  "metrics-all.jsonl",
+  "task-000-minerva_math_algebra-metrics.json",
+  "task-000-minerva_math_algebra-predictions.jsonl",
+  "task-000-minerva_math_algebra-requests.jsonl",
+  "task-001-minerva_math_counting_and_probability-metrics.json",
+  "task-001-minerva_math_counting_and_probability-predictions.jsonl",
+  "task-001-minerva_math_counting_and_probability-requests.jsonl",
+  "task-002-minerva_math_geometry-metrics.json",
+  "task-002-minerva_math_geometry-predictions.jsonl",
+  "task-002-minerva_math_geometry-requests.jsonl",
+  "task-003-minerva_math_intermediate_algebra-metrics.json",
+  "task-003-minerva_math_intermediate_algebra-predictions.jsonl",
+  "task-003-minerva_math_intermediate_algebra-requests.jsonl",
+  "task-004-minerva_math_number_theory-metrics.json",
+  "task-004-minerva_math_number_theory-predictions.jsonl",
+  "task-004-minerva_math_number_theory-requests.jsonl",
+  "task-005-minerva_math_prealgebra-metrics.json",
+  "task-005-minerva_math_prealgebra-predictions.jsonl",
+  "task-005-minerva_math_prealgebra-requests.jsonl",
+  "task-006-minerva_math_precalculus-metrics.json",
+  "task-006-minerva_math_precalculus-predictions.jsonl",
+  "task-006-minerva_math_precalculus-requests.jsonl"
+ ],
+ "olmes_returncode": 0,
+ "read": {
+  "primary_score": 0.4,
+  "primary_score_macro": 0.4,
+  "pass_at_1_micro": 0.41000000000000003,
+  "per_subject": {
+   "algebra": 0.4,
+   "counting_and_probability": 0.4,
+   "geometry": 0.4,
+   "intermediate_algebra": 0.4,
+   "number_theory": 0.4,
+   "prealgebra": 0.4,
+   "precalculus": 0.4
+  },
+  "num_instances": {
+   "algebra": 1187,
+   "counting_and_probability": 474,
+   "geometry": 479,
+   "intermediate_algebra": 903,
+   "number_theory": 540,
+   "prealgebra": 871,
+   "precalculus": 546
+  },
+  "sizes_match": true,
+  "n_total": 5000
+ },
+ "rescore": {
+  "deranged_macro": 0.0,
+  "identity_macro": 0.4,
+  "identity_docs_equal": true,
+  "n_docs": 70,
+  "scorer": "string",
+  "context_tokens": {
+   "over_1024": 0,
+   "n": 70,
+   "max": 15
+  }
+ },
+ "G-KNOWN": {
+  "value": 40.0,
+  "target": 40.0,
+  "tol": 1.6,
+  "pass": true,
+  "failing_input": {
+   "what": "the same predictions rescored by olmes' scorer against a derangement of the golds within each subject (seed 0)",
+   "value": 0.0,
+   "failed": true
+  },
+  "identity": {
+   "what": "the same rescorer with the true golds reproduces olmes' per-document pass_at_1",
+   "pass": true
+  }
+ }
+}

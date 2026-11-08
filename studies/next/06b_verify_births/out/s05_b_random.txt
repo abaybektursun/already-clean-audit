@@ -1,0 +1,6 @@
+b real 0.4756 on 574 poles (bootstrap 95% [0.4355400696864111, 0.5174216027874564])
+b random regrouping, set A (300 draws): mean 0.5303, 2.5th 0.4973, 97.5th 0.5627, min 0.4843, max 0.5767; draws <= real: 0/300
+b random regrouping, set B (300 draws): mean 0.5291, 2.5th 0.4948, 97.5th 0.5662; draws <= real: 3/300
+one-sided p (real at or below random, 600 draws): 0.0067
+registered reference, births permuted within pole (repo birth_order_test, 10,000, seed 0): mean 0.4141, 97.5th 0.4495, p 0.00050; exact mean 0.4143
+share of poles whose main is at least the pole's median cluster size: 0.784

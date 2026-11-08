@@ -1,0 +1,28 @@
+{
+ "n_golds": 500,
+ "registered": {
+  "self_equal": 392,
+  "self_unequal": 108,
+  "gold_parses_to_nothing": 51,
+  "examples_unequal": [
+   "\\left( 3, \\frac{\\pi}{2} \\right)",
+   "p - q",
+   "\\text{Evelyn}",
+   "3\\sqrt{13}",
+   "\\sqrt{51}",
+   "6 - 5i",
+   "\\pi",
+   "6+9i",
+   "1,-2",
+   "-2 + 7i",
+   "11\\sqrt2",
+   "3, 5, 7"
+  ]
+ },
+ "dollar_both": {
+  "self_equal": 500,
+  "self_unequal": 0,
+  "gold_parses_to_nothing": 0,
+  "examples_unequal": []
+ }
+}

@@ -1,0 +1,246 @@
+{
+ "prefix": "s4armsA2-01",
+ "step": "dare_k1",
+ "arm": "dare_k1",
+ "seed_set": "A",
+ "benches": [
+  "math500",
+  "gsm8k"
+ ],
+ "projection_min": 295.4,
+ "allowance_min": 2146.0,
+ "build": {
+  "build_seconds": 159.2,
+  "n_neurons_in_set": 0,
+  "spec": {
+   "name": "dare_k1",
+   "kind": "dare",
+   "q": 0.010001249091569768,
+   "seed": 32,
+   "c": 99.9875106443372,
+   "non_mlp": "before"
+  },
+  "families": {
+   "mlp": {
+    "realized_sq": 1115.7905851722176,
+    "changed": 18936067,
+    "in_mask": 43288867
+   },
+   "attn": {
+    "realized_sq": 0.0,
+    "changed": 0,
+    "in_mask": 0
+   },
+   "norm": {
+    "realized_sq": 0.0,
+    "changed": 0,
+    "in_mask": 0
+   },
+   "embed": {
+    "realized_sq": 0.0,
+    "changed": 0,
+    "in_mask": 0
+   }
+  },
+  "G-MASK": null,
+  "kept": 43288867,
+  "kept_expected": 43290624.0,
+  "kept_rel_err": 4.058615556107484e-05,
+  "kept_sd_units": -0.2683845524111594,
+  "kept_pass": true,
+  "intended_mlp_energy": 1118.6508606940909,
+  "energy_rel_err": 0.002556897439920237,
+  "energy_flag": false,
+  "energy_passes": null,
+  "c_built": null,
+  "hashes_vs_R1_stage6": {
+   "n_tensors": 355,
+   "n_equal": 355,
+   "same_names": true,
+   "all_equal": true
+  },
+  "R1_stage6_note": null
+ },
+ "bench": {
+  "math500": {
+   "status": "done",
+   "started_utc": "2026-11-06T18:27:20Z",
+   "finished_utc": "2026-11-06T23:12:22Z",
+   "wall_min": 285.0,
+   "template": {
+    "pass": true,
+    "first_id_is_bos": [
+     false
+    ],
+    "n": 500
+   },
+   "cap": 16384,
+   "park": {
+    "allowance_min": 2146.0,
+    "elapsed_min": 8.920970022678375,
+    "projected_min": 295.3881006264661,
+    "earlier_parked": false,
+    "parked": false
+   },
+   "condition": null,
+   "screen_fired": false,
+   "screen_cap_hits_0_19": 4,
+   "G-COMPLETE_job": {
+    "n": 500,
+    "distinct": 500,
+    "covers": true,
+    "seeded": true,
+    "generated": true,
+    "finish_reason": true,
+    "n_empty": 0,
+    "pass": true,
+    "expected_n": 500
+   },
+   "G-COMPLETE_recount": {
+    "n": 500,
+    "distinct": 500,
+    "covers": true,
+    "seeded": true,
+    "generated": true,
+    "finish_reason": true,
+    "n_empty": 0,
+    "pass": true
+   },
+   "G-COMPLETE_failing_input_failed": true,
+   "n_records": 500,
+   "cap_hits": 52,
+   "mean_new_tokens": 4666.686,
+   "modes": {
+    "answer_line": 6,
+    "boxed": 453,
+    "none": 41
+   },
+   "metrics_build": {
+    "arm": "dare_k1",
+    "from": null,
+    "G-HASH": null,
+    "kept_rel_err": 4.058615556107484e-05,
+    "kept_sd_units": -0.2683845524111594,
+    "energy_rel_err": 0.002556897439920237,
+    "energy_flag": false,
+    "energy_passes": null,
+    "c_built": null,
+    "build_seconds": 159.2,
+    "G-MASK": null
+   },
+   "engine": {
+    "vllm": "0.32.0",
+    "max_num_seqs": 128,
+    "max_num_batched_tokens": 2048,
+    "num_gpu_blocks": 12817,
+    "attention_backend": "FLASH_ATTN",
+    "env": {
+     "VLLM_USE_FLASHINFER_SAMPLER": "0"
+    },
+    "load_s": 73.06782412528992
+   },
+   "throughput": {
+    "generation_seconds": 16864.776664733887,
+    "step_s": 17101.693527936935,
+    "r_sat": 278.2208303530937,
+    "mean_new_tokens": 2549.0665200659705,
+    "median_new_tokens": 948.0,
+    "max_new_tokens": 16384,
+    "n_cap_hits": 112,
+    "mean_output_tokens": 2550.004947773502,
+    "n_answers": 1819,
+    "load_s": 73.06782412528992
+   }
+  },
+  "gsm8k": {
+   "status": "done",
+   "started_utc": "2026-11-06T18:27:20Z",
+   "finished_utc": "2026-11-06T23:12:22Z",
+   "wall_min": 285.0,
+   "template": {
+    "pass": true,
+    "first_id_is_bos": [
+     false
+    ],
+    "n": 1319
+   },
+   "cap": 16384,
+   "park": {
+    "allowance_min": 2146.0,
+    "elapsed_min": 8.920970022678375,
+    "projected_min": 295.3881006264661,
+    "earlier_parked": false,
+    "parked": false
+   },
+   "condition": null,
+   "screen_fired": false,
+   "screen_cap_hits_0_19": 4,
+   "G-COMPLETE_job": {
+    "n": 1319,
+    "distinct": 1319,
+    "covers": true,
+    "seeded": true,
+    "generated": true,
+    "finish_reason": true,
+    "n_empty": 0,
+    "pass": true,
+    "expected_n": 1319
+   },
+   "G-COMPLETE_recount": {
+    "n": 1319,
+    "distinct": 1319,
+    "covers": true,
+    "seeded": true,
+    "generated": true,
+    "finish_reason": true,
+    "n_empty": 0,
+    "pass": true
+   },
+   "G-COMPLETE_failing_input_failed": true,
+   "n_records": 1319,
+   "cap_hits": 60,
+   "mean_new_tokens": 1746.3297952994692,
+   "modes": {
+    "answer_line": 361,
+    "boxed": 897,
+    "none": 61
+   },
+   "metrics_build": {
+    "arm": "dare_k1",
+    "from": null,
+    "G-HASH": null,
+    "kept_rel_err": 4.058615556107484e-05,
+    "kept_sd_units": -0.2683845524111594,
+    "energy_rel_err": 0.002556897439920237,
+    "energy_flag": false,
+    "energy_passes": null,
+    "c_built": null,
+    "build_seconds": 159.2,
+    "G-MASK": null
+   },
+   "engine": {
+    "vllm": "0.32.0",
+    "max_num_seqs": 128,
+    "max_num_batched_tokens": 2048,
+    "num_gpu_blocks": 12817,
+    "attention_backend": "FLASH_ATTN",
+    "env": {
+     "VLLM_USE_FLASHINFER_SAMPLER": "0"
+    },
+    "load_s": 73.06782412528992
+   },
+   "throughput": {
+    "generation_seconds": 16864.776664733887,
+    "step_s": 17101.693527936935,
+    "r_sat": 278.2208303530937,
+    "mean_new_tokens": 2549.0665200659705,
+    "median_new_tokens": 948.0,
+    "max_new_tokens": 16384,
+    "n_cap_hits": 112,
+    "mean_output_tokens": 2550.004947773502,
+    "n_answers": 1819,
+    "load_s": 73.06782412528992
+   }
+  }
+ }
+}

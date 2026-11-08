@@ -1,0 +1,32 @@
+{
+ "model": "allenai/Olmo-3-1025-7B",
+ "source": "https://huggingface.co/allenai/Olmo-3-1025-7B (model card, fetched 2026-11-02)",
+ "source_lines": [
+  "#### Stage 1: Initial Pretraining",
+  "* Dataset: [dolma3_6T-mix-1025](https://huggingface.co/datasets/allenai/dolma3_mix-6T-1025)",
+  "* 5.93T tokens",
+  "* Coverage: 97.53%+ of total pretraining budget",
+  "For pretraining, the naming convention is `stage1-stepXXX`."
+ ],
+ "stated": "The card states 5.93T stage-1 tokens and the stage1-step<N> revision names. It does not state the batch size, the sequence length, the tokens per step, or whether the tokens per step are constant over stage 1 (its table's 65,536 is the context length, its 4096 the hidden size).",
+ "tokens_per_step": null,
+ "rule": "Steps only. SPEC8 §2 reads log-tokens as log-steps up to a constant, which holds only if the tokens per step are constant over stage 1; the card does not say. T_0 (step 0) has no log-step, so log-rates start at the pair (T_1, T_2).",
+ "grid": [
+  {"t": "T_0", "revision": "stage1-step0", "step": 0, "tokens": null},
+  {"t": "T_1", "revision": "stage1-step1000", "step": 1000, "tokens": null},
+  {"t": "T_2", "revision": "stage1-step2000", "step": 2000, "tokens": null},
+  {"t": "T_3", "revision": "stage1-step3000", "step": 3000, "tokens": null},
+  {"t": "T_4", "revision": "stage1-step5000", "step": 5000, "tokens": null},
+  {"t": "T_5", "revision": "stage1-step8000", "step": 8000, "tokens": null},
+  {"t": "T_6", "revision": "stage1-step12000", "step": 12000, "tokens": null},
+  {"t": "T_7", "revision": "stage1-step20000", "step": 20000, "tokens": null},
+  {"t": "T_8", "revision": "stage1-step35000", "step": 35000, "tokens": null},
+  {"t": "T_9", "revision": "stage1-step60000", "step": 60000, "tokens": null},
+  {"t": "T_10", "revision": "stage1-step100000", "step": 100000, "tokens": null},
+  {"t": "T_11", "revision": "stage1-step180000", "step": 180000, "tokens": null},
+  {"t": "T_12", "revision": "stage1-step320000", "step": 320000, "tokens": null},
+  {"t": "T_13", "revision": "stage1-step560000", "step": 560000, "tokens": null},
+  {"t": "T_14", "revision": "stage1-step1000000", "step": 1000000, "tokens": null},
+  {"t": "T_15", "revision": "stage1-step1413814", "step": 1413814, "tokens": null}
+ ]
+}

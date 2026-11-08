@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/pg/repo/infra/aws_pg/jobs/mendel_mn13_arrangement.py", line 287, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/opt/pg/repo/infra/aws_pg/jobs/mendel_mn13_arrangement.py", line 188, in main
+    c = cell_controls(U, ev, ea, U.shape[1], H.cell_seed(a.seed, ARM, t, L, k))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/pg/repo/infra/aws_pg/jobs/mendel_mn13_arrangement.py", line 118, in cell_controls
+    V, e = np.asarray(evecs, dtype=np.float64)[:, order], np.asarray(evals,
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+IndexError: index 512 is out of bounds for axis 1 with size 512
+Completed 720 Bytes/720 Bytes (15.3 KiB/s) with 1 file(s) remainingupload: ../../../var/log/pg-heartbeat.jsonl to s3://pg-lineage-769063704696/results/mendel_mn13_v1/heartbeat.jsonl

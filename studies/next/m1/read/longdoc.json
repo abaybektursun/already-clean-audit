@@ -1,0 +1,110 @@
+{
+ "long_doc": 12793,
+ "long_doc_tokens": 398967,
+ "long_doc_tok_range": [
+  18168683,
+  18567650
+ ],
+ "finemath_tokens_bands12_without_long_doc": 392643,
+ "dir_delta_MG_cm_dirs": {
+  "data/finemath-3plus": [
+   -0.0011267941497093252,
+   -0.0010601380813953583,
+   0.0012235419694767579,
+   0.0021331077398255905
+  ],
+  "data/stack_edu-CSharp": [
+   0.00557991914970877,
+   0.005584007085755072,
+   0.004783566497092648,
+   0.004877929687499569
+  ],
+  "data/stack_edu-JavaScript": [
+   0.0037879269622090156,
+   0.003329056140988247,
+   0.005087209302325128,
+   0.005262876998546022
+  ],
+  "data/stack_edu-Python": [
+   0.0010007494549419274,
+   0.0015075399709302696,
+   0.005265715843022639,
+   0.005096066497092502
+  ],
+  "data/stack_edu-SQL": [
+   0.0016593613735465245,
+   0.0006286337209302311,
+   0.0010315225290697789,
+   0.002248591933139546
+  ]
+ },
+ "layer_20": {
+  "M": {
+   "cm_share": 0.07451762354651163,
+   "long_doc_share": 0.0035628633720930234,
+   "cm_share_without_long_doc": 0.07095476017441861,
+   "share_poles_with_any_slot_in_long_doc": 0.043968023255813955
+  },
+  "G": {
+   "cm_share": 0.058609193313953485,
+   "long_doc_share": 0.0032794331395348836,
+   "cm_share_without_long_doc": 0.0553297601744186,
+   "share_poles_with_any_slot_in_long_doc": 0.04119731104651163
+  },
+  "Delta_MG": 0.015908430232558148,
+  "Delta_MG_without_long_doc": 0.015625000000000007,
+  "Delta_MG_long_doc_only": 0.0002834302325581397
+ },
+ "layer_26": {
+  "M": {
+   "cm_share": 0.045363372093023255,
+   "long_doc_share": 0.003287609011627907,
+   "cm_share_without_long_doc": 0.04207576308139535,
+   "share_poles_with_any_slot_in_long_doc": 0.03729106104651163
+  },
+  "G": {
+   "cm_share": 0.03406795058139535,
+   "long_doc_share": 0.003184047965116279,
+   "cm_share_without_long_doc": 0.03088390261627907,
+   "share_poles_with_any_slot_in_long_doc": 0.0344749273255814
+  },
+  "Delta_MG": 0.011295421511627907,
+  "Delta_MG_without_long_doc": 0.01119186046511628,
+  "Delta_MG_long_doc_only": 0.00010356104651162773
+ },
+ "M_grid_slots_in_long_doc": 57,
+ "M_grid_slot_examples_in_long_doc": [
+  {
+   "pole": "L00N1929-",
+   "rank": 23,
+   "tok": 18198826,
+   "before": " d     4 4 4 4(500) 0.238 in . 3 3 (15000) Vd A      ns ______________ __________________ __________________",
+   "token": "____________",
+   "after": " _____________ _ _ 3-43 1 0 11 "
+  },
+  {
+   "pole": "L00N1929-",
+   "rank": 39,
+   "tok": 18550890,
+   "before": "_____________________________________ 2-15 Note to the Instructor: In the first printing of the 9th edition, the l/d ratio and the ill be _ 1 __________________",
+   "token": "____________",
+   "after": "_ 1 lubrication constant  were omitted. The values to use"
+  }
+ ],
+ "pc_cm_windows_in_long_doc": 8,
+ "pc_d_cm_without_long_doc_windows": -0.1924237695056945,
+ "pc_n_clusters": {
+  "cm": 23,
+  "web": 32
+ },
+ "pc_cluster_boot": {
+  "d_cm_ci": [
+   -0.24041975887306033,
+   -0.08164063688256898
+  ],
+  "d_dd_ci": [
+   -0.3339362039862444,
+   -0.17299785152306116
+  ]
+ }
+}

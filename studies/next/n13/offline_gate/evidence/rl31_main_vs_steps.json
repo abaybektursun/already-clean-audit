@@ -1,0 +1,10 @@
+{
+ "main_shard_oids": {
+  "model-00001-of-00003.safetensors": "c2cc7984cd63582ca6f813e87022140556bd1c5d007015a301b350dfb2a96dcf",
+  "model-00002-of-00003.safetensors": "bc03dcc0a9291a476902e675a0a0215ef423f032f9fa283e8ee4016a08575bf9",
+  "model-00003-of-00003.safetensors": "cad83510bc384ac2ec7f58fd57d76819d8d5da486c342fb11e3537548a7461db"
+ },
+ "branches_with_equal_shards": [
+  "step_2800"
+ ]
+}

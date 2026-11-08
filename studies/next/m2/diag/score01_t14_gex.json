@@ -1,0 +1,153 @@
+{
+ "what": "Cause of the score-01 stop (2026-11-06): t14_G_EX failed (p99 0.2563 against the cross-device 0.0444).",
+ "entries": 477,
+ "1c_vs_1b_on_job_entries": {
+  "pass": false,
+  "n": 477,
+  "n_poles": 62,
+  "median_rel": 0.0052419216385804785,
+  "p99_rel": 0.2562705341026918,
+  "max_rel": 1.952766309595231,
+  "exact_share": 0.32914046121593293,
+  "tol": {
+   "median": 0.0086,
+   "p99": 0.0444
+  }
+ },
+ "equal_to_job_digit_for_digit": {
+  "n": true,
+  "n_poles": true,
+  "median_rel": true,
+  "p99_rel": true,
+  "max_rel": true,
+  "exact_share": true
+ },
+ "1c_vs_1b_all_32000": {
+  "pass": true,
+  "n": 32000,
+  "n_poles": null,
+  "median_rel": 0.004310402304972054,
+  "p99_rel": 0.022160044065951408,
+  "max_rel": 1.952766309595231,
+  "exact_share": 0.39525,
+  "tol": {
+   "median": 0.0086,
+   "p99": 0.0444
+  }
+ },
+ "abs_a_quantiles_10_25_50_75_90": {
+  "job_entries": [
+   0.07605755925178528,
+   0.17122705280780792,
+   0.30897587537765503,
+   0.7652601003646851,
+   6.151579475402839
+  ],
+  "all_32000": [
+   0.27313923835754395,
+   0.5432044714689255,
+   1.9474776983261108,
+   8.371863842010498,
+   19.02651596069336
+  ]
+ },
+ "p99_by_size_of_max_abs_pair": {
+  "[0, 0.01)": {
+   "subset_n": 12,
+   "subset_p99": 1.8603946130791051,
+   "all_n": 47,
+   "all_p99": 1.5664846696187023
+  },
+  "[0.01, 0.1)": {
+   "subset_n": 58,
+   "subset_p99": 0.05087971136144138,
+   "all_n": 316,
+   "all_p99": 0.3094303372849273
+  },
+  "[0.1, inf)": {
+   "subset_n": 407,
+   "subset_p99": 0.043767802607187184,
+   "all_n": 31637,
+   "all_p99": 0.020389382112436835
+  }
+ },
+ "small_share_by_point": {
+  "5": {
+   "bank_device": "NVIDIA L40S",
+   "entries": 10,
+   "share_below_0.01": 0.0,
+   "share_below_0.1": 0.0,
+   "median_abs": 43.67625045776367
+  },
+  "6": {
+   "bank_device": "NVIDIA L40S",
+   "entries": 5,
+   "share_below_0.01": 0.0,
+   "share_below_0.1": 0.0,
+   "median_abs": 28.028467178344727
+  },
+  "7": {
+   "bank_device": "NVIDIA RTX PRO 5000 Blackwell",
+   "entries": 116,
+   "share_below_0.01": 0.008620689655172414,
+   "share_below_0.1": 0.017241379310344827,
+   "median_abs": 265.15625
+  },
+  "8": {
+   "bank_device": "NVIDIA RTX PRO 5000 Blackwell",
+   "entries": 147,
+   "share_below_0.01": 0.006802721088435374,
+   "share_below_0.1": 0.06802721088435375,
+   "median_abs": 64.88936614990234
+  },
+  "9": {
+   "bank_device": "NVIDIA RTX PRO 5000 Blackwell",
+   "entries": 243,
+   "share_below_0.01": 0.0,
+   "share_below_0.1": 0.012345679012345678,
+   "median_abs": 36.318702697753906
+  },
+  "10": {
+   "bank_device": "NVIDIA RTX PRO 5000 Blackwell",
+   "entries": 397,
+   "share_below_0.01": 0.0025188916876574307,
+   "share_below_0.1": 0.04785894206549118,
+   "median_abs": 10.303092002868652
+  },
+  "11": {
+   "bank_device": "NVIDIA RTX PRO 5000 Blackwell",
+   "entries": 643,
+   "share_below_0.01": 0.02177293934681182,
+   "share_below_0.1": 0.16329704510108864,
+   "median_abs": 1.6069644689559937
+  },
+  "12": {
+   "bank_device": "NVIDIA RTX PRO 5000 Blackwell",
+   "entries": 717,
+   "share_below_0.01": 0.009762900976290097,
+   "share_below_0.1": 0.09344490934449093,
+   "median_abs": 0.9604776501655579
+  },
+  "13": {
+   "bank_device": "NVIDIA RTX PRO 5000 Blackwell",
+   "entries": 717,
+   "share_below_0.01": 0.01813110181311018,
+   "share_below_0.1": 0.17573221757322174,
+   "median_abs": 0.38713911175727844
+  },
+  "14": {
+   "bank_device": "NVIDIA RTX PRO 5000 Blackwell",
+   "entries": 477,
+   "share_below_0.01": 0.025157232704402517,
+   "share_below_0.1": 0.1488469601677149,
+   "median_abs": 0.3077187240123749
+  },
+  "15": {
+   "bank_device": "NVIDIA L40S",
+   "entries": 2295,
+   "share_below_0.01": 0.0,
+   "share_below_0.1": 0.0,
+   "median_abs": 1.1261943578720093
+  }
+ }
+}

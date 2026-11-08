@@ -1,0 +1,14 @@
+original_load_order {"ours": {"own_clean_nll_mean": 1.3222833396191709, "own_dnll_mean": 0.3149409272358753}, "pass": false}
+flash_only {"ours": {"own_clean_nll_mean": 1.3222833396191709, "own_dnll_mean": 0.3149409272358753}, "pass": false}
+math_only {"ours": {"own_clean_nll_mean": 1.3191640777583233, "own_dnll_mean": 0.31562074173474686}, "pass": false}
+
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]
+Loading weights:   9%|▊         | 34/398 [00:00<00:01, 337.85it/s]
+Loading weights:  21%|██        | 82/398 [00:00<00:00, 411.31it/s]
+Loading weights:  33%|███▎      | 132/398 [00:00<00:00, 449.38it/s]
+Loading weights:  44%|████▍     | 177/398 [00:00<00:00, 447.82it/s]
+Loading weights:  56%|█████▌    | 223/398 [00:00<00:00, 445.53it/s]
+Loading weights:  68%|██████▊   | 269/398 [00:00<00:00, 442.65it/s]
+Loading weights:  81%|████████  | 322/398 [00:00<00:00, 459.32it/s]
+Loading weights:  92%|█████████▏| 368/398 [00:00<00:00, 457.26it/s]
+Loading weights: 100%|██████████| 398/398 [00:00<00:00, 453.62it/s]

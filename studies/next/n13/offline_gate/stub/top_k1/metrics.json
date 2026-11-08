@@ -1,0 +1,126 @@
+{
+ "step": "gen",
+ "arm": "top_k1",
+ "pair": "pair1",
+ "seed_set": "A",
+ "status": "done",
+ "started_utc": "2026-11-05T16:07:46Z",
+ "smoke": false,
+ "grade_rule": "dollar_both",
+ "bench": "math500",
+ "park": {
+  "allowance_min": null,
+  "elapsed_min": -5.362033843994141e-05,
+  "projected_min": 48.54666666666667,
+  "earlier_parked": false,
+  "parked": false
+ },
+ "cap": 256,
+ "updated_utc": "2026-11-05T16:07:48Z",
+ "template": {
+  "pass": true,
+  "first_id_is_bos": [
+   false
+  ],
+  "n": 500
+ },
+ "build": {
+  "arm": "top_k1",
+  "from": null,
+  "G-HASH": null,
+  "kept_rel_err": null,
+  "energy_rel_err": null,
+  "energy_flag": null,
+  "build_seconds": 0.2,
+  "G-MASK": true
+ },
+ "engine": {
+  "vllm": null,
+  "fake": true
+ },
+ "sampling_effective": {
+  "n": 1,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": -1,
+  "min_p": 0.0,
+  "repetition_penalty": 1.0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "stop_token_ids": [
+   100257
+  ],
+  "logprobs": 0,
+  "max_tokens": 256,
+  "seed": 1000000
+ },
+ "submitted": 500,
+ "screen": {
+  "ready": true,
+  "cap_hits": 0,
+  "correct": 14,
+  "fired": false
+ },
+ "counts": {
+  "finished": 500,
+  "correct": 374,
+  "cap_hits": 0,
+  "modes": {
+   "answer_line": 454,
+   "boxed": 31,
+   "none": 15
+  },
+  "output_tokens": 4728,
+  "acc": 74.8
+ },
+ "elapsed_s": 690.0,
+ "n_metrics_writes": 23,
+ "G-COMPLETE": {
+  "n": 500,
+  "distinct": 500,
+  "covers": true,
+  "seeded": true,
+  "empty": 0,
+  "pass": true,
+  "expected_n": 500
+ },
+ "throughput": {
+  "arm": "top_k1",
+  "n_answers": 560,
+  "output_tokens": 5209,
+  "generation_seconds": 690.0,
+  "output_tokens_per_s": 7.54927536231884,
+  "seconds_per_problem": 1.2321428571428572,
+  "mean_new_tokens": 8.301785714285714,
+  "max_new_tokens": 37,
+  "histogram_edges": [
+   0,
+   128,
+   256,
+   512,
+   1024,
+   2048,
+   4096,
+   8192,
+   16384,
+   32768
+  ],
+  "histogram_counts": [
+   560,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "gpu_memory_used_mib": null,
+  "gpu_memory_total_mib": null,
+  "gpu": "fake",
+  "host_peak_rss_kb": 367664,
+  "free_disk_gb": 89.34703104
+ },
+ "finished_utc": "2026-11-05T16:07:48Z"
+}

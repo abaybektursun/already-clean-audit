@@ -1,0 +1,36 @@
+{
+  "rental": "r_v2b",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:v2-gauge",
+  "disk": 80,
+  "gpu_query": "gpu_ram>=88 num_gpus=1 cuda_vers>=12.8 compute_cap>=800",
+  "expected_gpu": "",
+  "bound": "compute",
+  "env": {
+    "HF_ONLINE": "1"
+  },
+  "watch": {
+    "max_billed_h": 8,
+    "load_backstop_min": 90
+  },
+  "_comment": "V2b attractor-vs-scar: 10x horizon continuation (same fresh seeds re-enter deterministically per E15), checkpoint stats every 120 steps. Smoke exercises the full new instrument incl. checkpoint SVD/vhat path for pennies.",
+  "cells": [
+    {
+      "id": "v2b_smoke",
+      "module": "infra.vast.cells.v2b_continuation",
+      "gauges": "unrotated",
+      "seeds": "2026",
+      "steps": 4,
+      "ckpt_every": 2,
+      "n_train": 24,
+      "n_eval": 8
+    },
+    {
+      "id": "v2b_cont",
+      "module": "infra.vast.cells.v2b_continuation",
+      "gauges": "unrotated,hadamard",
+      "seeds": "2026,2027,2028",
+      "steps": 1200,
+      "ckpt_every": 120
+    }
+  ]
+}

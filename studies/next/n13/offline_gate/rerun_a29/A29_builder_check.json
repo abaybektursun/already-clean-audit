@@ -1,0 +1,68 @@
+{
+ "cases": [
+  {
+   "case": "exact",
+   "before": "0x3c4a",
+   "after": "0x3c4d",
+   "formula": "0x3c4d",
+   "built": "0x3c4d",
+   "inexact": false
+  },
+  {
+   "case": "inexact, big to tiny",
+   "before": "0x3c4a",
+   "after": "0x325f",
+   "formula": "0x3260",
+   "built": "0x325f",
+   "inexact": true
+  },
+  {
+   "case": "inexact, tiny to big",
+   "before": "0x325f",
+   "after": "0x3c4a",
+   "formula": "0x3c4a",
+   "built": "0x3c4a",
+   "inexact": true
+  },
+  {
+   "case": "to -0",
+   "before": "0x3c4a",
+   "after": "0x8000",
+   "formula": "0x0",
+   "built": "0x8000",
+   "inexact": false
+  },
+  {
+   "case": "inexact, gap 18",
+   "before": "0x3f00",
+   "after": "0x3643",
+   "formula": "0x3644",
+   "built": "0x3643",
+   "inexact": true
+  },
+  {
+   "case": "from +0",
+   "before": "0x0",
+   "after": "0x3e80",
+   "formula": "0x3e80",
+   "built": "0x3e80",
+   "inexact": false
+  },
+  {
+   "case": "exact, negative",
+   "before": "0xbf40",
+   "after": "0xbf33",
+   "formula": "0xbf33",
+   "built": "0xbf33",
+   "inexact": false
+  }
+ ],
+ "built_equals_after": true,
+ "old_assertion_holds": false,
+ "formula_off_entries": 3,
+ "inexact_entries": 3,
+ "wrong_input_delta_scaled": {
+  "returncode": 1,
+  "last_stderr_line": "AssertionError: model.layers.0.mlp.down_proj.weight: the formula does not return theta_a"
+ }
+}

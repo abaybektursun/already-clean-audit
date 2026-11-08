@@ -1,0 +1,113 @@
+{
+ "never128": {
+  "returncode": 1,
+  "stdout": "",
+  "last_stderr_line": "A22: the base smoke's r_full is undefined: no engine step had at least 128 running sequences (largest running count 100); the projection refuses"
+ },
+ "conc300": {
+  "returncode": 0,
+  "stdout": "{\n \"rate\": \"r_full\",\n \"cap\": 16384,\n \"sets_the_rate\": \"base\",\n \"tok_s\": 3000.0,\n \"s3_min\": 148.45985185185185,\n \"s3_gpu_h\": 2.474330864197531,\n \"s3_allowance_min\": 193,\n \"s4_gpu_h\": {\n  \"s4armsA\": 2.887139506172839,\n  \"s4armsB\": 2.6227234567901236\n },\n \"spent_gpu_h\": 4.843,\n \"left_for_s4_gpu_h\": 27.68266913580247,\n \"s4_fits_through_priority\": 7\n}\nwrote /private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_dry_a22b/e2e/a22/conc300/manifest.json: 6 steps, cap 16384, allowance 193 min\n",
+  "last_stderr_line": ""
+ },
+ "stop_rule": {
+  "returncode": 1,
+  "stdout": "{\n \"rate\": \"r_full\",\n \"cap\": 16384,\n \"sets_the_rate\": \"base\",\n \"tok_s\": 3000.0,\n \"s3_min\": 148.45985185185185,\n \"s3_gpu_h\": 2.474330864197531,\n \"s3_allowance_min\": 193,\n \"s4_gpu_h\": {\n  \"s4armsA\": 2.887139506172839,\n  \"s4armsB\": 2.6227234567901236\n },\n \"spent_gpu_h\": 34.5,\n \"left_for_s4_gpu_h\": -1.974330864197531,\n \"s4_fits_through_priority\": 0\n}\n",
+  "last_stderr_line": "stop rule (\u00a79.7): spent 34.500 + S3 2.474 GPU-h exceeds 35.0; no manifest written"
+ },
+ "projection": {
+  "amendment": "N13_SPEC.md A22",
+  "rate": "r_full",
+  "cap": 16384,
+  "per_smoke": {
+   "base": {
+    "rate": 3000.0,
+    "mean_math": 1011.6666666666666,
+    "load_s": 60.0,
+    "tail_s": 10.0,
+    "s_per_answer": 0.3372222222222222,
+    "r_full": 3000.0,
+    "r_wait": null,
+    "r_all": 2746.606334841629
+   },
+   "rl": {
+    "rate": 3000.0,
+    "mean_math": 1011.6666666666666,
+    "load_s": 60.0,
+    "tail_s": 10.0,
+    "s_per_answer": 0.3372222222222222,
+    "r_full": 3000.0,
+    "r_wait": null,
+    "r_all": 2746.606334841629
+   }
+  },
+  "sets_the_rate": "base",
+  "tok_s": 3000.0,
+  "assumptions": {
+   "tok_s": [
+    800.0,
+    500.0
+   ],
+   "mean_math": 1011.6666666666666,
+   "mean_gsm": 940.0,
+   "load_min": 1.1666666666666667,
+   "setup_min": 20.0,
+   "olmes_venv_min": 10.0,
+   "olmes_load_min": 5.0,
+   "r0_tokens": 5000000.0,
+   "r1_min": 75.0,
+   "smoke_problems": 20,
+   "build_min": 5.0
+  },
+  "flags": [
+   "mean_gsm is the spec's 940 (not measured)",
+   "build_min is the spec's 5 min per built arm (not measured)",
+   "setup_min 20 and r1_min 75 are the spec's (A14)"
+  ],
+  "s3_min": 148.45985185185185,
+  "s3_gpu_h": 2.474330864197531,
+  "s3_allowance_min": 193,
+  "s4_gpu_h": {
+   "s4armsA": 2.887139506172839,
+   "s4armsB": 2.6227234567901236
+  },
+  "s4_by_priority": [
+   {
+    "through_priority": 1,
+    "gpu_h": 1.7243308641975308
+   },
+   {
+    "through_priority": 2,
+    "gpu_h": 2.253162962962963
+   },
+   {
+    "through_priority": 3,
+    "gpu_h": 3.001233950617284
+   },
+   {
+    "through_priority": 4,
+    "gpu_h": 4.048533333333333
+   },
+   {
+    "through_priority": 5,
+    "gpu_h": 4.761791975308642
+   },
+   {
+    "through_priority": 6,
+    "gpu_h": 5.360248765432099
+   },
+   {
+    "through_priority": 7,
+    "gpu_h": 5.509862962962964
+   }
+  ],
+  "spent_gpu_h": 4.843,
+  "ceiling_gpu_h": 35.0,
+  "left_for_s4_gpu_h": 27.68266913580247,
+  "s3_fits": true,
+  "s4_fits_through_priority": 7
+ },
+ "s3_want_min": 148.45985185185185,
+ "r_full_want": 3000.0,
+ "tail_s_want": 10.0,
+ "r_all_want": 2746.606334841629
+}

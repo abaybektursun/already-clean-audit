@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-07-19T04:25:50Z",
+  "status": "FROZEN_ONE_SHOT_PRIMARY_PG1_INTERFACE_AFTER_NO_CREATE_GREEN",
+  "run_id": "parallax-pg1-primary-interface-s3-v1",
+  "cell_id": "pg1_equal_token_interface_seed17_discovery_v1",
+  "scope": "ONE_PRIMARY_PG1_EQUAL_TOKEN_SEED17_DISCOVERY_CELL_ONLY_NO_CONFIRMATION_SECOND_SEED_BROAD_RUN_OR_RETRY",
+  "source_commit_before_freeze": "340ec9c",
+  "automatic_paid_retry": false,
+  "authorization": {
+    "create_one_guardian_and_one_h100": true,
+    "create_vast_volumes": false,
+    "h100": true,
+    "external_processor_gate_replay": true,
+    "model_weight_reads_after_external_processor_gate": true,
+    "train_data_reads": true,
+    "discovery_evaluation": true,
+    "training": true,
+    "confirmation": false,
+    "promotion": false,
+    "PG1": true,
+    "PG2": false,
+    "paired_or_shared_range_claim": false,
+    "broad_run": false,
+    "automatic_retry": false
+  },
+  "launch_spec": {
+    "path": "studies/lineage/cross-lineage/config/parallax_pg1_primary_interface_control_s3_launch_v5.json",
+    "sha256": "eb3e53611bde17192c8270f67fca1abcac84e65649cb7f99b0cc2a0c5b6554b8"
+  },
+  "current_green_gate": {
+    "path": "infra/vast/parallax/operations/readiness/pg1_equal_token_interface_seed17_current_gate_180m_recheck_v1.json",
+    "sha256": "0186574a5b6736271aa9129113a93b3105c3459ff544c96d73257579c47c2c96",
+    "status": "GREEN_PG1_EQUAL_TOKEN_CURRENT_GATE_REQUIRES_SEPARATE_NO_CREATE",
+    "selected_dph_total": 2.2465185185185184,
+    "frozen_price_ceiling_dph": 2.25,
+    "mutation_zero": true
+  },
+  "no_create_rehearsal": {
+    "path": "infra/vast/parallax/operations/readiness/pg1_equal_token_interface_seed17_final_no_create_v1.json",
+    "sha256": "d55e5229ddaa12a2e28301338f0964846041747bfd9def52f3a5e2b2f1fd1427",
+    "status": "GREEN_PRIMARY_PG1_INTERFACE_CONTROL_NO_CREATE",
+    "instances_created": 0,
+    "volumes_created": 0,
+    "claims_created": 0,
+    "s3_objects_written": 0,
+    "gpu_operations": 0,
+    "initial_account_zero_observations": 3,
+    "terminal_account_zero_observations": 3
+  },
+  "planted_tests": {
+    "path": "studies/lineage/cross-lineage/results/readiness/parallax_pg1_primary_interface_control_plants_v4.json",
+    "sha256": "9649bc784bce4593a23584669eff7bcd39415637e855897e4e81769805432e18",
+    "status": "GREEN",
+    "exit_code": 0,
+    "tests_passed": 486,
+    "focused_primary_tests_passed": 40,
+    "paid_action": false,
+    "confirmation_items_read": 0,
+    "vast_persistent_volumes_created": 0
+  },
+  "processor_gate": {
+    "status": "GREEN_PRIMARY_PG1_PROCESSOR_PREFLIGHT_EXECUTED",
+    "terminal_path": "studies/lineage/cross-lineage/results/readiness/parallax_pg1_primary_processor_preflight_v1/terminal.json",
+    "terminal_sha256": "f751ef90acd6a96cafe3dea4b491ab8df9d06d6f7faa8388ebda798c5f4b2ba9",
+    "terminal_s3_key": "parallax/results/parallax-pg1-primary-processor-preflight-v1/terminal.json",
+    "terminal_s3_version_id": "DcMFOhnKRi9raBdh8723ZeDUX2wqjXwC",
+    "h100_instances_created": 0,
+    "model_weight_urls": 0,
+    "model_loads": 0,
+    "gpu_operations": 0,
+    "confirmation_items_read": 0
+  },
+  "science_design": {
+    "primary_spec": {
+      "path": "studies/lineage/cross-lineage/research/2026-07-18_parallax_pg1_primary_interface_control_spec.md",
+      "sha256": "e2623b5220c5c86aca3f84580e637d0f98f3fc147e2d5e2941f757f0659cc3d2"
+    },
+    "primary_metric_spec": {
+      "path": "studies/lineage/cross-lineage/research/2026-07-18_parallax_interface_interaction_metric_spec.md",
+      "sha256": "a92181ec909d12942a59b5e6f11ac63575f3d9fd0a63bbba7b4fc5b94ec6ecba"
+    },
+    "primary_config": {
+      "path": "studies/lineage/cross-lineage/config/parallax_training_interface_control_pg1_primary_v1.yaml",
+      "sha256": "fa5d8ccefeacfbb57fcd223b3b4486d4adef80388ae06d48452221d738e53078"
+    },
+    "primary_metric_config": {
+      "path": "studies/lineage/cross-lineage/config/parallax_interface_interaction_metric_v1.yaml",
+      "sha256": "5bffe282c29def40828add88b7d2158fd8a41f3e16b166e02e641bbae3bcf608"
+    },
+    "unchanged": true
+  },
+  "source_identity": {
+    "source_contract": {
+      "path": "studies/lineage/cross-lineage/config/parallax_training_interface_control_source_contract_pg1_primary_v1.json",
+      "sha256": "a95f65a78d5dc6b7f4b80416d40c6b9dcc45cc1c91fde74154da90dd117e5544"
+    },
+    "exact_S3_versions": 27,
+    "exact_S3_bytes": 11728612811,
+    "canonical_verified_identity_rows_sha256": "c7c24bf42b24a25f236c885468677dba41388849883829930178cd4dd1b90bc0",
+    "confirmation_items_read": 0
+  },
+  "independent_critic": {
+    "commit": "b1ad4f86b1926c7d0fda6020267672b57adf1c8f",
+    "path": "infra/vast/parallax/audit_primary_interface_independent.py",
+    "sha256": "d6b03945ed389a48b764fdeef509aa22818c0051654534f789559c4ba05ee8c4",
+    "freeze_memo": {
+      "path": "studies/lineage/cross-lineage/research/2026-07-19_parallax_primary_critic_freeze.md",
+      "sha256": "ff016face127f54a35a82170893d52872474c675b2978874cd6e247137cdf4af"
+    },
+    "imports_producer_metric": false,
+    "must_run_from_raw_terminal_before_interpretation": true
+  },
+  "implementation": {
+    "launcher_sha256": "1737352830666b6f4d23fe0e06210b770efae86aeb04b85efa0d70ad4848a5b8",
+    "no_create_sha256": "b9bd2fa66d078c422759ecbe9cb6064d8614b4cccc8c67bf9c3830089ea08fec",
+    "job_sha256": "1c890ad198d9d3c7badf1f7225e1213c57de08f94fdcd679fe3cc8fdf8099210",
+    "worker_sha256": "a4287e5a126ba45f90a1d16429af8593fa84abf91473a264a1b8ffbec4ebb75b"
+  },
+  "storage": {
+    "durable_provider": "amazon_s3",
+    "vast_persistent_volumes": "FORBIDDEN",
+    "vast_instance_scratch": "EXACT_80_GB_DISPOSABLE_ONLY",
+    "archive_and_terminal_exact_version_readback_before_destroy": true
+  },
+  "one_shot": {
+    "claim_path": "studies/lineage/cross-lineage/results/readiness/claims/parallax_pg1_primary_interface_control_s3_v5.json",
+    "claim_status_before_freeze": "GREEN_ABSENT",
+    "maximum_cells": 1,
+    "automatic_retry": false,
+    "next_paid_action_after_any_terminal": "REQUIRES_NEW_FREEZE"
+  },
+  "stop_before_create_on": [
+    "any_bound_hash_or_source_identity_drift",
+    "any_nonzero_account_state",
+    "any_claim_local_output_archive_or_terminal_presence",
+    "any_confirmation_source_presence_or_read",
+    "any_live_cheapest_eligible_H100_price_above_2_25_DPH"
+  ],
+  "post_result_boundary": "INDEPENDENT_CRITIC_MUST_RECOMPUTE_RAW_TERMINAL_AND_AGREE_BEFORE_INTERPRETATION",
+  "claim_boundary": "EXACT_ONE_SHOT_PRIMARY_PG1_DISCOVERY_EXECUTION_AUTHORITY_NOT_A_RESULT_OR_PROMOTION"
+}

@@ -1,0 +1,121 @@
+PASS A1 critic's within-layer Spearman(age, ln max|a|) reproduced (-0.592, age_energy_out.txt)  [-0.5915283299521876]
+PASS A2 critic's Spearman(age, ln density) reproduced (+0.502)  [0.5018415090637923]
+PASS A3 pairs.json rebuilt from the banks equals the committed file  [74 pairs]
+PASS A4 balance gate pass side: |rho_pair| <= 0.10 and |SMD| <= 0.10 on ln max|a| and ln density  [{'ln_max_abs': (0.027, 0.005), 'ln_density': (0.027, -0.004)}]
+PASS A5 balance gate failing input (unmatched pairs) fails  [{'ln_max_abs': (-0.739, 1.488), 'ln_density': (0.659, -1.135)}]
+PASS A6 every pair: same layer, different neurons, |d age| >= 3, early younger in index
+PASS A7 every pole in at most one pair  [148]
+PASS A8 every pair inside the chosen calipers  [{'ln_density': 0.5, 'ln_max_abs': 0.1}]
+PASS A15 the L1 inputs' sha256 registered in the job equal the committed files
+PASS A9 Wilson(5, 10) = [0.2366, 0.7634]  [(0.236593090512564, 0.7634069094874361)]
+PASS A10 Wilson(0, 10) upper = 0.2775  [0.2775327998628892]
+PASS A13 stage 2 on planted L1 arrays (a simulation, not data): balanced on all four quantities, >= 40 pairs, a subset of the graph  [(67, {'ln_density': 0.5, 'ln_max_abs': 0.1, 'ln_E_plus': 1.0, 'ln_colnorm': 0.3}, {'ln_colnorm': -0.079, 'ln_E_plus': 0.016})]
+PASS A14 stage 2 planted: column norm a function of age leaves no balanced point, L2 does not launch  [no instance grid point gives a balanced matched set: L2 does not launch (spec section 9.5)]
+PASS A16 A3: pairs_L2.json rebuilt from L1-02's banks equals the committed file (floats within rel 1e-6: the file was written under numpy 2.4.3, this venv has 1.26.4, and float32 sums differ in the 8th digit; every string and integer exact)  [(45, 21, 24)]
+PASS A16 A3: 45 pairs, 24 test and 21 freeze; the pairs holding an L1-edited pole are freeze; every other pair is test iff its early member's neuron index is even  [['P003', 'P008', 'P025', 'P039']]
+PASS A16 A3: the freeze half still holds the probes and the ten raw examples (>= 5 layers, two probe poles)  [(['L01N8975-', 'L30N9731+'], ['P005', 'P035', 'P025', 'P008', 'P015'])]
+PASS A17 the L2 inputs' sha256 registered in the job equal the committed files  [{'pairs_L2.json': '7e3a99480b3a2b939ca6eb0a8ae6fe43ee0e8bad22bee302c1a37ca1e4e1755b', 'e1_known.json': '79da230cc099e6981dad1df00bee7c46dfd3b6e890cb9ca7e9a174937e27db61'}]
+PASS A18 A3 planted: marking a test pair's late pole as L1-edited moves that pair, and only it, to the freeze half  [P000]
+PASS A11 eval windows: 96 distinct, wholly in band 3  [(10045, 24525)]
+PASS A19 A4: pairs_L2.json's eval set is the registered rule at 1,024 windows (n6.eval_windows(1024)): distinct, ascending, wholly in band 3, after the grid harvest's windows 0-10,043; the list's sha256 is the registered one; inst_windows (G-INST) are pairs.json's 96 windows  [(10045, 24663, '5822191728d4', 32)]
+PASS A20 A4: the L2 plan holds 209 edits: the positive control (col, rand, col_half) in the 8 layers 0, 4, ..., 28; the probes on the positive controls of layers 0 and 31 and on two pair poles; the zero edit; col and rand of both members of all 45 pairs in both halves  [{'pc': 24, 'probe_pc': 2, 'pair': 180, 'probe_pair': 2, 'zero': 1}]
+PASS A21 A4: G-PC needs 6 of 8 layers; P(X >= 6 | n = 8, p = 0.5) = 37/256 = 0.1445  [0.14453125]
+PASS A12 pair-stratified Spearman = 1 - 2f (f = share of pairs whose earlier member has the larger value)
+PASS B the tiny model was trained (last training loss below ln 256 - 1)  [1.9306429624557495]
+PASS B G_SAME: pass side passes and its failing input fails  [{}]
+PASS B G_REV: pass side passes and its failing input fails  [{}]
+PASS B K1: pass side passes and its failing input fails  [{'value': -0.22333523631095886, 'target': -0.22333523631095886}]
+PASS B K2: pass side passes and its failing input fails  [{'value': 2.2208583374023436, 'target': 2.2208583374023436}]
+PASS B G_POLE: pass side passes and its failing input fails  [{'value': 0.0, 'failing_input_min': 0.9614127803566935}]
+PASS B G_FP32: pass side passes and its failing input fails  [{}]
+PASS B K3: pass side passes and its failing input fails  [{'value': 2.220648341878255, 'bf16': 2.2208583374023436, 'failing_value_off_by_one': 7.983666902669271}]
+PASS B G_INST: pass side passes and its failing input fails  [{'value': 0.0, 'failing_input_min': 0.006216701511831624}]
+PASS B G_ID: pass side passes and its failing input fails  [{'value_max_abs': 0.0}]
+PASS B G_CACHE: pass side passes and its failing input fails  [{'value_max_abs': 0.0}]
+PASS B G_EPS: pass side passes and its failing input fails  [{'value': 1.895841705845669e-08, 'bf16': {'P000_late_probe': -0.0001491478037678462, 'P010_late_probe': 4.686885858973255e-06}}]
+PASS B G_ZN: pass side passes and its failing input fails  [{'value_max_abs': 0.0}]
+PASS B G_NORM: pass side passes and its failing input fails  [{'max_E_rel_err': 1.077274215835295e-07}]
+PASS B G_SAMPLES: pass side passes and its failing input fails  [{'n': 10}]
+PASS B A1 g_pole.npz: per pole the recomputed g, u, a of the neuron and of n + 1 beside the bank's a at the 10 positions; a = act(g) u; the bank's a and positions equal the pairs file; the statistic from the file equals metrics' per_pole  [((24, 10, 2), 0.0)]
+PASS B A1 peak GPU memory recorded per phase in metrics.json (None on the CPU)  [{'load_K1': None, 'K2': None, 'G_POLE': None, 'bf16_probes': None, 'cast': None, 'K3': None, 'pass1': None, 'inst': None, 'pass2': None, 'progression': None}]
+PASS B A1 G_POLE planted 0.03 of max|a|: value 0.03, passes at the tolerance 0.05  [(0.030000000000000006, True)]
+PASS B A1 G_POLE planted 0.06 of max|a| stops the job (tolerance 0.05)  [G_POLE FAILED: {"pass": false, "failing_input": {"pass": false}, "value": 0.060000000000000005, "tol": 0.05, "n_poles": 24, "n_exemplars": 10, "failing_input_mi]
+PASS B A1 G_POLE planted 0.06 of max|a|: value 0.06, fails at the tolerance 0.05  [(0.060000000000000005, False)]
+PASS B A2 G_ZN planted zero edit dL 5e-08: passes at 1.221e-07; failing input (first col edit dL 0.0204) fails  [(5e-08, True)]
+PASS B A2 G_ZN planted zero edit dL 5e-07: fails at 1.221e-07; failing input (first col edit dL 0.0204) fails  [(5e-07, False)]
+PASS B A2 G_ZN planted failing input: a first column edit at 5e-8 passes the bar, so the failing side registers it
+PASS B A2 G_CACHE planted largest per-token difference 5e-06: passes at 1e-05; failing input fails  [(4.76837158203125e-06, 5.820766091346741e-10)]
+PASS B A2 G_CACHE planted largest per-token difference 5e-05: fails at 1e-05; failing input fails  [(5.0067901611328125e-05, 6.111804395914078e-09)]
+PASS B A2 G_CACHE planted uniform offset 2e-7 (largest 2e-7, under 1e-5): the mean condition fails it  [(1.99999999995912e-07, 2.0000000056086265e-07)]
+PASS B A2 the head's input shapes of the two paths are recorded: base pass 1 a batch, the progression one window  [{'base_pass1 (model forward)': [[2, 2049, 32]], 'progression (head per window)': [[1, 2049, 32]]}]
+PASS B A2 G_CACHE records the mean and the largest per-token difference and its failing input's values  [{'value_mean': 0.0, 'value_max_abs': 0.0}]
+PASS B K2: the job's corpus NLL equals a second implementation (one window at a time)  [(2.2208583374023436, 2.2208583374023436)]
+PASS B G_EPS: the bf16 probe moves the loss by more than the bound, the fp32 probe by less (the floor is the precision's)  [({'P000_late_probe': -0.0001491478037678462, 'P010_late_probe': 4.686885858973255e-06}, {'PC00_probe': 1.0838903108378872e-08, 'P000_late_probe': 1.895841705845669e-08, 'PC05_probe': -1.05501385405659]
+PASS B G_PC and G_DOSE computed on the positive-control layers (A4: every fourth, layers 0 and 4 of 6; values only; a tiny model need not pass)  [(2, 2)]
+PASS B every planned edit has one record, in plan order  [59]
+PASS B m['complete'] and nothing parked
+PASS B the job's E+ equals an independent fp32 loop over the same windows (rel 1e-5)  [0.0048828125]
+PASS B the job's column norms equal the independent ones
+PASS B zero-norm edit: bitwise equal to base, dL exactly 0
+PASS B every col edit changes the loss (not bitwise equal to base)
+PASS B pair edit size c = min of the two column norms; equal within each pair
+PASS B kappa = c / ||w|| and kappa = 1 on the smaller-norm member
+PASS B realized: the hook's E equals pass 1's E+ (rel 1e-4) on every edit  [1.077274215835295e-07]
+PASS B every edit read 50 eval exemplars and the KL is >= 0
+PASS B ten raw examples: pole, partner, c, dL, rand dL, 5 tokens with context
+PASS B col edit (kappa 1) equals zero written into the pole's own-sign inputs (E1's operator restricted to the sign), fp32  [4.76837158203125e-06]
+PASS B forward from a kept residual (layer 0) equals the model's forward bitwise
+PASS B its failing input (layer 0 skipped) differs  [16.177640914916992]
+PASS B G_SAME planted wrong torch version stops  [G_SAME FAILED: {"pass": false, "failing_input": {"pass": false}, "got": {"torch": "wrong", "transformers": "x", "device": "cpu"}, "want": {"torch": "t", "transf]
+PASS B G_REV planted wrong snapshot stops  [G_REV FAILED: {"pass": false, "failing_input": {"pass": false}, "got": "0000000000000000000000000000000000000000", "want": "tiny"}]
+PASS B K1 planted wrong banked value stops  [K1 FAILED: {"pass": false, "failing_input": {"pass": false, "value": 0.27666476368904114}, "value": -0.22333523631095886, "target": -0.12333523631095886, "tol":]
+PASS B K1 failing input planted equal to the target stops  [K1: its failing input passed: {"pass": true, "failing_input": {"pass": true, "value": -0.22333523631095886}, "value": -0.22333523631095886, "target": -0.2233352]
+PASS B K2 planted wrong target stops  [K2 FAILED: {"pass": false, "failing_input": {"pass": false}, "value": 2.2208583374023436, "target": 2.2308583374023434, "tol": 0.001, "failing_value_T14": 2.260]
+PASS B G_POLE planted wrong bank (0.7 x a, the T_14 analog) stops  [G_POLE FAILED: {"pass": false, "failing_input": {"pass": false}, "value": 0.42857142857142877, "tol": 0.05, "n_poles": 24, "n_exemplars": 10, "failing_input_min]
+PASS B G_INST planted: column norms 1.1 x L1's stop L2  [G_INST FAILED: {"pass": false, "failing_input": {"pass": false}, "value": 0.09090909090909105, "tol": 1e-05, "failing_input_min": 0.07937280202205543}]
+PASS B a stage-1 pairs file given to L2 stops  [pairs file of stage L1 given to stage L2]
+PASS B G_NORM failing input: the neighbouring neuron's E differs from the pole's by more than 1e-4  [(71.16006630914288, 849.3573913574219)]
+PASS B stop rule: a short budget parks the remaining edits and the job ends normally  [(45, 14)]
+PASS B L1 runs the 10 raw column edits, 2 probes and the zero edit; the ten raw examples written  [13]
+PASS B L1 and L2 give the same dL for the same edits (bit for bit)
+PASS B A4 chunks: L1 (one chunk of 4 windows) and L2 (two chunks of 2) give equal records for the same edits, field by field (dL, per-window dL, R, E+, KL, top-5 tokens, bitwise flag, hook calls)  [13]
+PASS B A4 an L2 eval set of 8 windows (two chunks of 4) beside L1's 4: G-INST reads L1's 4 windows (inst_windows) and passes, its failing input fails; every record has 8 per-window values; pass 1's E+ is over the 8 windows (differs from L1's)  [(0.0, 59)]
+PASS B A4 G-INST planted on L2's eval set (8 windows) instead of L1's 4 stops the job  [G_INST FAILED: {"pass": false, "failing_input": {"pass": false}, "value": 1.171513534739729, "tol": 1e-05, "failing_input_min": 0.6734081284776428}]
+PASS B G_PC / G_DOSE planted: col > rand everywhere passes, its swapped labels fail
+PASS B G_PC planted: col > rand only in the odd layers, none of the 8 positive-control layers (A4), fails  [0]
+PASS B A4 G_PC planted: col > rand in 6 of the 8 positive-control layers passes (need 6); the swapped labels fail  [(6, 2)]
+PASS B A4 G_DOSE planted: full > half in 6 of 8 passes  [6]
+PASS B A4 G_PC planted: col > rand in 5 of the 8 positive-control layers fails (need 6); the swapped labels fail  [(5, 3)]
+PASS B A4 G_DOSE planted: full > half in 5 of 8 fails  [5]
+PASS C label branch SUPPORTED  [('SUPPORTED', 1.0, [0.9010990076755959, 0.9999999999999999])]
+PASS C label branch SUPPORTED_UNSPECIFIC  [('SUPPORTED_UNSPECIFIC', 1.0, [0.9010990076755959, 0.9999999999999999])]
+PASS C label branch REVERSED  [('REVERSED', 0.0, [6.938893903907228e-18, 0.09890099232440402])]
+PASS C label branch FLAT  [('FLAT', 0.486, [0.32994236002509725, 0.6443119540413141])]
+PASS C label branch UNDECIDED_NO_POWER  [('UNDECIDED_NO_POWER', 0.486, [0.32994236002509725, 0.6443119540413141])]
+PASS C label branch UNDECIDED  [('UNDECIDED', 0.657, [0.4915194951399626, 0.7916830501295105])]
+PASS C ABOVE_CEILING when the age ordering is more reliable than the positive control's (8 of 32)  [[0.9010990076755959, 0.9999999999999999]]
+PASS C a failed gate makes every label DOES NOT COUNT (realized label kept beside it)
+PASS C a failing input that passed makes every label DOES NOT COUNT
+PASS C G_RES fails when the rounding floor exceeds min(1e-6, 0.02 x q10 |dL_col|) of the freeze half (A4: the factor 50)  [(5e-05, 1e-06)]
+PASS C A4 G_RES planted floor 0.015 x q10 (q10 1.02e-06): passes at q10 / 50 (it would fail at freeze 1's q10 / 100)  [(1.5365226250323473e-08, 2.048696833376463e-08)]
+PASS C A4 G_RES planted floor 0.05 x q10 (q10 1.02e-06): fails at q10 / 50 (the registered failing input)  [(5.1217420834411583e-08, 2.048696833376463e-08)]
+PASS C room: at 35 test pairs the FLAT band is reachable and 24 wins lift the lower bound above 0.5  [([0.34275735921480777, 0.6572426407851922], 24)]
+PASS C A3 room at 24 test pairs (21 freeze): FLAT reachable, SUPPORTED needs 17 wins, REVERSED at most 7; freeze reads 21 pairs (tau_s and G-RES's q10 from 42 column edits)  [([0.3142742581957335, 0.6857257418042665], 2.0225248395655517e-06)]
+PASS C A3 room at 28 test pairs (17 freeze): FLAT reachable, SUPPORTED needs 20 wins, REVERSED at most 8; freeze reads 17 pairs (tau_s and G-RES's q10 from 34 column edits)  [([0.32633127457293465, 0.6736687254270654], 1.9964303062405384e-06)]
+PASS C A3 room at 17 test pairs (28 freeze): FLAT unreachable, SUPPORTED needs 13 wins, REVERSED at most 4; freeze reads 28 pairs (tau_s and G-RES's q10 from 56 column edits)  [([0.28533856016458625, 0.7146614398354137], 2.0127675358239404e-06)]
+PASS C one parked test pair is listed; the label still reads (1 of 35 <= 0.2)
+PASS C parked above 0.2 of the test half: DOES NOT COUNT (G_PARK)
+PASS C a run parked before every positive control was read: DOES NOT COUNT (G_PC_missing)
+PASS C H_eff reads the collateral per unit efficacy: an early pole ten times as effective at 3e-4 nats per token more cost is REVERSED  [{'label': 'REVERSED', 'p': 0.0, 'ci': [6.938893903907228e-18, 0.09890099232440402], 'n': 35, 'resolved': 1.0}]
+PASS C practical: the age pick saves D/2 against a random pick  [{'gain_vs_random_pick': 0.00014999999999999996, 'ci': [0.00014999999999999996, 0.00014999999999999996], 'gain_vs_energy_pick': 0.0, 'ci_E': [0.0, 0.0]}]
+PASS C freeze reads only the freeze half (test D planted at +3e-4 does not move the freeze median)  [3.012921765535581e-05]
+PASS C A4 G_POWER planted: window-bootstrap sd of D_col at 0.4 x the median |D_col| over the 21 freeze pairs passes (bar 0.5)  [(3.2578746424601766e-05, 8.14468660615044e-05, 0.4)]
+PASS C A4 G_POWER passes: the verdict reads the test half (planted SUPPORTED)  [H_age SUPPORTED; H_adj SUPPORTED; H_eff SUPPORTED]
+PASS C A4 G_POWER planted: window-bootstrap sd of D_col at 0.6 x the median |D_col| over the 21 freeze pairs fails (bar 0.5)  [(4.886811963690264e-05, 8.14468660615044e-05, 0.6)]
+PASS C A4 G_POWER fails: H_age, H_adj and H_eff read UNDECIDED_NO_POWER and no test pair is read  [H_age UNDECIDED_NO_POWER; H_adj UNDECIDED_NO_POWER; H_eff UNDECIDED_NO_POWER]
+PASS C A4 G_POWER fails: with every test record removed the verdict is the same (the test half is not read; no G_PARK)  [[]]
+PASS C A4 G_POWER fails and a gate failed: DOES NOT COUNT, UNDECIDED_NO_POWER kept as the realized label
+117 checks, 0 failed
+N6_DRYRUN_OK 117 checks
+PYTHONPATH=. $SP/m1_venv/bin/python -m infra.aws_pg.jobs.n6_dryrun --out   740.34s user 37.76s system 522% cpu 2:28.80 total
+rc=0

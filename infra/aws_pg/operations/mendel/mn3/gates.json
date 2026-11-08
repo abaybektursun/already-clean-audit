@@ -1,0 +1,56 @@
+{
+  "mn3_core_beats_highway": {
+    "_required": false,
+    "ci_hi": -0.08064982574396688,
+    "ci_lo": -0.14631741312993632,
+    "ci_method": "percentile_bootstrap",
+    "clears_zero": false,
+    "control_mean": 0.20092798435371098,
+    "delta_mean": -0.11194440748093164,
+    "n": 24,
+    "n_boot": 2000,
+    "note": "freeze A9: the KILL is written against the STRUCTURED control, not haar",
+    "ok": false,
+    "seed": 1337,
+    "treatment_mean": 0.08898357687277941
+  },
+  "mn3_readout_valid_L14": {
+    "_required": false,
+    "base_score": 0.02,
+    "ft_score": 0.748908009150976,
+    "higher_is_better": true,
+    "margin": 0.0,
+    "model_id": "google/paligemma-3b-pt-224",
+    "ok": true,
+    "outcome": null,
+    "passed": true,
+    "signed_improvement": 0.728908009150976,
+    "task": "top32-token"
+  },
+  "mn3_readout_valid_L4": {
+    "_required": false,
+    "base_score": 0.02,
+    "ft_score": 0.8089596283516491,
+    "higher_is_better": true,
+    "margin": 0.0,
+    "model_id": "google/paligemma-3b-pt-224",
+    "ok": true,
+    "outcome": null,
+    "passed": true,
+    "signed_improvement": 0.7889596283516491,
+    "task": "top32-token"
+  },
+  "mn3_readout_valid_L9": {
+    "_required": false,
+    "base_score": 0.02,
+    "ft_score": 0.7398142720487384,
+    "higher_is_better": true,
+    "margin": 0.0,
+    "model_id": "google/paligemma-3b-pt-224",
+    "ok": true,
+    "outcome": null,
+    "passed": true,
+    "signed_improvement": 0.7198142720487384,
+    "task": "top32-token"
+  }
+}

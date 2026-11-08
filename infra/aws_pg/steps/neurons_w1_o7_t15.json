@@ -1,0 +1,7 @@
+[
+ {
+  "name": "o7_t15",
+  "module": "infra.aws_pg.jobs.neurons_harvest",
+  "args": "--model-key O7 --repo allenai/Olmo-3-1025-7B --revision stage1-step1413814 --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus --tokname olmo3 --max-tokens all --sample-neurons 320 --seed 0"
+ }
+]

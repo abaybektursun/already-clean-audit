@@ -1,0 +1,44 @@
+== test 1: b1 320-row neighbour, eager 32 rows as the new known-number run (expect: N 1.9455010, does not count by rows; gate fails)
+neighbour studies/next/pilot0/batch_100000/loss_check_sdpa_b1_320rows.json
+  rows_done 320  complete False  revision stage1-step100000  attn sdpa
+  N (file field) 1.9455010  N (recount from per-row sums) 1.9455010  |diff| 4.4e-16
+  non-pad targets 2,602,495  pad targets 18,625 (both equal tokens.npy)
+  every position mean_ce 2.0572999  top-1 0.56798
+target studies/next/pilot0/batch_100001/loss_check_sdpa.json: S 2.0355981 rows_done 512 complete True revision stage1-step100000
+W 2.0262222290039062  S - W +0.0093759  N - W -0.0807213  |S - W| 0.0093759  |N - W| 0.0807213
+step 100,001 under the frozen rule: does not count branch (fewer than 400 rows scored)
+known number /var/folders/9j/yjj9b3jj47v01_299q09_nc40000gn/T/tmp.TUfcQ48feJ/eager32.json against studies/next/pilot0/batch_60001/loss_check_sdpa.json
+  rows 32  revision stage1-step60000  attn eager  complete True
+  per-row pad target counts equal on the 32 rows: True
+  max |diff| per_row_mean_ce 7.39e-03 at row 29 (11.1829661 vs 11.1903605); mean |diff| 4.35e-04
+  mean of per_row_mean_ce over rows 0-31: new 2.3792745  banked 2.3794286
+  registered gate (max |diff| <= 1e-4): fails;  prediction (<= 0.001 per row): fails
+  max |diff| per_row_top1 (top-1 hits per row) 6
+  pad-excluded per-row: the new file has no per_row_mean_ce_excluding_pad_targets field
+stack neighbour: gpu NVIDIA L40S  instance g6e.2xlarge  torch 2.12.0+cu130  transformers 5.9.0  dtype torch.bfloat16  attn sdpa
+stack target: gpu NVIDIA L40S  instance g6e.2xlarge  torch 2.12.0+cu130  transformers 5.9.0  dtype torch.bfloat16  attn sdpa
+stack known new: gpu NVIDIA L40S  instance g6e.2xlarge  torch 2.12.0+cu130  transformers 5.9.0  dtype torch.bfloat16  attn eager
+stack known banked: gpu NVIDIA L40S  instance g6e.2xlarge  torch 2.12.0+cu130  transformers 5.9.0  dtype torch.bfloat16  attn sdpa
+== test 2: identity, banked sdpa 32 rows against itself; target file as its own neighbour (expect: gate holds, diff 0; dS = dN both within 0.0124 -> does not count)
+neighbour studies/next/pilot0/batch_100001/loss_check_sdpa.json
+  rows_done 512  complete True  revision stage1-step100000  attn sdpa
+  N (file field) 2.0355981  N (recount from per-row sums) 2.0355981  |diff| 0.0e+00
+  non-pad targets 4,154,976  pad targets 38,816 (both equal tokens.npy)
+  every position mean_ce 2.1765206  top-1 0.54943
+target studies/next/pilot0/batch_100001/loss_check_sdpa.json: S 2.0355981 rows_done 512 complete True revision stage1-step100000
+W 2.0262222290039062  S - W +0.0093759  N - W +0.0093759  |S - W| 0.0093759  |N - W| 0.0093759
+step 100,001 under the frozen rule: does not count branch (neighbour also within 0.0124)
+known number /var/folders/9j/yjj9b3jj47v01_299q09_nc40000gn/T/tmp.TUfcQ48feJ/sdpa32.json against studies/next/pilot0/batch_60001/loss_check_sdpa.json
+  rows 32  revision stage1-step60000  attn sdpa  complete True
+  per-row pad target counts equal on the 32 rows: True
+  max |diff| per_row_mean_ce 0.00e+00 at row 0 (2.8602122 vs 2.8602122); mean |diff| 0.00e+00
+  mean of per_row_mean_ce over rows 0-31: new 2.3794286  banked 2.3794286
+  registered gate (max |diff| <= 1e-4): holds;  prediction (<= 0.001 per row): holds
+  max |diff| per_row_top1 (top-1 hits per row) 0
+  pad-excluded per-row: the new file has no per_row_mean_ce_excluding_pad_targets field
+stack neighbour: gpu NVIDIA L40S  instance g6e.2xlarge  torch 2.12.0+cu130  transformers 5.9.0  dtype torch.bfloat16  attn sdpa
+stack target: gpu NVIDIA L40S  instance g6e.2xlarge  torch 2.12.0+cu130  transformers 5.9.0  dtype torch.bfloat16  attn sdpa
+stack known new: gpu NVIDIA L40S  instance g6e.2xlarge  torch 2.12.0+cu130  transformers 5.9.0  dtype torch.bfloat16  attn sdpa
+stack known banked: gpu NVIDIA L40S  instance g6e.2xlarge  torch 2.12.0+cu130  transformers 5.9.0  dtype torch.bfloat16  attn sdpa
+== test 3: wrong tokens.npy for the neighbour, batch_100001/ tokens with the batch_100000/ file (expect: assert on non-pad counts)
+AssertionError: non-pad target counts differ from tokens.npy

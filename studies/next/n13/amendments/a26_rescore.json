@@ -1,0 +1,706 @@
+{
+ "old_code": "f55da49b6:infra/pg/n13_score.py",
+ "old_sha256": "b836b923178af0f86662d2926aeeddd4efa720ebb9b8e68d53e4e5eb622eb69f",
+ "base": {
+  "n_records": 300,
+  "identity_old_code_reproduces_recorded": 300,
+  "correct_old": 153,
+  "correct_new": 177,
+  "acc_old": 0.51,
+  "acc_new": 0.59,
+  "wrong_to_right": [
+   0,
+   8,
+   16,
+   37,
+   44,
+   71,
+   117,
+   158,
+   180,
+   185,
+   199,
+   206,
+   215,
+   229,
+   231,
+   241,
+   249,
+   251,
+   257,
+   259,
+   261,
+   262,
+   269,
+   297
+  ],
+  "right_to_wrong": [],
+  "changed_same_score": [
+   14,
+   20,
+   22,
+   50,
+   61,
+   69,
+   80,
+   92,
+   95,
+   106,
+   112,
+   190,
+   202,
+   220,
+   247,
+   256,
+   273
+  ],
+  "modes_old": {
+   "answer_line": 97,
+   "boxed": 102,
+   "none": 101
+  },
+  "modes_new": {
+   "answer_line": 138,
+   "boxed": 87,
+   "none": 75
+  },
+  "changes": [
+   {
+    "problem_index": 0,
+    "gold": "\\left( 3, \\frac{\\pi}{2} \\right)",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "(3, π/2)",
+     1
+    ]
+   },
+   {
+    "problem_index": 8,
+    "gold": "3\\sqrt{13}",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "$3\\sqrt{13}$",
+     1
+    ]
+   },
+   {
+    "problem_index": 14,
+    "gold": "\\sqrt{51}",
+    "old": [
+     "boxed",
+     "\\sqrt{51}",
+     1
+    ],
+    "new": [
+     "answer_line",
+     "\\boxed{\\sqrt{51}}",
+     1
+    ]
+   },
+   {
+    "problem_index": 16,
+    "gold": "-50",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "-50",
+     1
+    ]
+   },
+   {
+    "problem_index": 20,
+    "gold": "6+9i",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "$117 + 41i$",
+     0
+    ]
+   },
+   {
+    "problem_index": 22,
+    "gold": "5",
+    "old": [
+     "boxed",
+     "5",
+     1
+    ],
+    "new": [
+     "answer_line",
+     "5",
+     1
+    ]
+   },
+   {
+    "problem_index": 37,
+    "gold": "72",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "72",
+     1
+    ]
+   },
+   {
+    "problem_index": 44,
+    "gold": "1.25",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "1.25",
+     1
+    ]
+   },
+   {
+    "problem_index": 50,
+    "gold": "203",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "$Answer: 256$",
+     0
+    ]
+   },
+   {
+    "problem_index": 61,
+    "gold": "-256",
+    "old": [
+     "boxed",
+     "-256",
+     1
+    ],
+    "new": [
+     "answer_line",
+     "\\boxed{-256}",
+     1
+    ]
+   },
+   {
+    "problem_index": 69,
+    "gold": "-1",
+    "old": [
+     "boxed",
+     "-1",
+     1
+    ],
+    "new": [
+     "answer_line",
+     "\\boxed{-1}",
+     1
+    ]
+   },
+   {
+    "problem_index": 71,
+    "gold": "2516_8",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "\\(2516_8\\)",
+     1
+    ]
+   },
+   {
+    "problem_index": 80,
+    "gold": "501",
+    "old": [
+     "boxed",
+     "501",
+     1
+    ],
+    "new": [
+     "answer_line",
+     "\\boxed{501}",
+     1
+    ]
+   },
+   {
+    "problem_index": 92,
+    "gold": "\\frac{448}{15625}",
+    "old": [
+     "boxed",
+     "\\dfrac{448}{15625}",
+     1
+    ],
+    "new": [
+     "answer_line",
+     "$\\boxed{\\dfrac{448}{15625}}$",
+     1
+    ]
+   },
+   {
+    "problem_index": 95,
+    "gold": "-4",
+    "old": [
+     "boxed",
+     "-4",
+     1
+    ],
+    "new": [
+     "answer_line",
+     "$y = -4$",
+     1
+    ]
+   },
+   {
+    "problem_index": 106,
+    "gold": "\\frac43",
+    "old": [
+     "boxed",
+     "\\frac{4}{3}",
+     1
+    ],
+    "new": [
+     "answer_line",
+     "\\(\\boxed{\\frac{4}{3}}\\)",
+     1
+    ]
+   },
+   {
+    "problem_index": 112,
+    "gold": "13",
+    "old": [
+     "boxed",
+     "13",
+     1
+    ],
+    "new": [
+     "answer_line",
+     "\\(\\boxed{13}\\)",
+     1
+    ]
+   },
+   {
+    "problem_index": 117,
+    "gold": "3",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "3",
+     1
+    ]
+   },
+   {
+    "problem_index": 158,
+    "gold": "2107",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "2107",
+     1
+    ]
+   },
+   {
+    "problem_index": 180,
+    "gold": "3",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "3",
+     1
+    ]
+   },
+   {
+    "problem_index": 185,
+    "gold": "1",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "1",
+     1
+    ]
+   },
+   {
+    "problem_index": 190,
+    "gold": "\\frac{13}{18}",
+    "old": [
+     "boxed",
+     "\\dfrac{13}{18}",
+     1
+    ],
+    "new": [
+     "answer_line",
+     "The probability that the sum of the numbers chosen by Paul and Jesse is even is \\boxed{\\dfrac{13}{18}}.",
+     1
+    ]
+   },
+   {
+    "problem_index": 199,
+    "gold": "17",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "$17$",
+     1
+    ]
+   },
+   {
+    "problem_index": 202,
+    "gold": "\\frac{2}{3}",
+    "old": [
+     "boxed",
+     "\\dfrac{2}{3}",
+     1
+    ],
+    "new": [
+     "answer_line",
+     "\\boxed{\\dfrac{2}{3}}",
+     1
+    ]
+   },
+   {
+    "problem_index": 206,
+    "gold": "\\left( \\frac{3}{2}, -13 \\right)",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "(3/2, -13)",
+     1
+    ]
+   },
+   {
+    "problem_index": 215,
+    "gold": "2",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "$2$",
+     1
+    ]
+   },
+   {
+    "problem_index": 220,
+    "gold": "\\frac{16}{27}",
+    "old": [
+     "boxed",
+     "\\dfrac{16}{27}",
+     1
+    ],
+    "new": [
+     "answer_line",
+     "$\\boxed{\\dfrac{16}{27}}$",
+     1
+    ]
+   },
+   {
+    "problem_index": 229,
+    "gold": "90",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "90",
+     1
+    ]
+   },
+   {
+    "problem_index": 231,
+    "gold": "10",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "10",
+     1
+    ]
+   },
+   {
+    "problem_index": 241,
+    "gold": "17",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "$17$",
+     1
+    ]
+   },
+   {
+    "problem_index": 247,
+    "gold": "\\frac{10}{11}",
+    "old": [
+     "boxed",
+     "\\dfrac{10}{11}",
+     1
+    ],
+    "new": [
+     "answer_line",
+     "$\\boxed{\\dfrac{10}{11}}$",
+     1
+    ]
+   },
+   {
+    "problem_index": 249,
+    "gold": "17",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "17",
+     1
+    ]
+   },
+   {
+    "problem_index": 251,
+    "gold": "540",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "540",
+     1
+    ]
+   },
+   {
+    "problem_index": 256,
+    "gold": "\\frac{8}{21}",
+    "old": [
+     "boxed",
+     "\\dfrac{8}{21}",
+     1
+    ],
+    "new": [
+     "answer_line",
+     "\\(\\boxed{\\dfrac{8}{21}}\\)",
+     1
+    ]
+   },
+   {
+    "problem_index": 257,
+    "gold": "864 \\mbox{ inches}^2",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "864",
+     1
+    ]
+   },
+   {
+    "problem_index": 259,
+    "gold": "22",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "22",
+     1
+    ]
+   },
+   {
+    "problem_index": 261,
+    "gold": "76^\\circ",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "76",
+     1
+    ]
+   },
+   {
+    "problem_index": 262,
+    "gold": "4",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "$4$",
+     1
+    ]
+   },
+   {
+    "problem_index": 269,
+    "gold": "6",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "6",
+     1
+    ]
+   },
+   {
+    "problem_index": 273,
+    "gold": "1250",
+    "old": [
+     "boxed",
+     "1250",
+     1
+    ],
+    "new": [
+     "answer_line",
+     "$1250",
+     1
+    ]
+   },
+   {
+    "problem_index": 297,
+    "gold": "103",
+    "old": [
+     "none",
+     null,
+     0
+    ],
+    "new": [
+     "answer_line",
+     "$103$",
+     1
+    ]
+   }
+  ],
+  "G-COMPLETE_on_300_submitted": {
+   "old_rule": {
+    "n": 300,
+    "distinct": 300,
+    "covers": true,
+    "seeded": true,
+    "empty": 7,
+    "pass": false
+   },
+   "new_rule": {
+    "n": 300,
+    "distinct": 300,
+    "covers": true,
+    "seeded": true,
+    "generated": true,
+    "finish_reason": true,
+    "n_empty": 7,
+    "pass": true
+   }
+  }
+ },
+ "rl": {
+  "n_records": 142,
+  "identity_old_code_reproduces_recorded": 142,
+  "correct_old": 131,
+  "correct_new": 131,
+  "acc_old": 0.9225352112676056,
+  "acc_new": 0.9225352112676056,
+  "wrong_to_right": [],
+  "right_to_wrong": [],
+  "changed_same_score": [],
+  "modes_old": {
+   "answer_line": 0,
+   "boxed": 139,
+   "none": 3
+  },
+  "modes_new": {
+   "answer_line": 0,
+   "boxed": 139,
+   "none": 3
+  },
+  "changes": [],
+  "G-COMPLETE_on_300_submitted": {
+   "old_rule": {
+    "n": 142,
+    "distinct": 142,
+    "covers": false,
+    "seeded": true,
+    "empty": 0,
+    "pass": false
+   },
+   "new_rule": {
+    "n": 142,
+    "distinct": 142,
+    "covers": false,
+    "seeded": true,
+    "generated": true,
+    "finish_reason": true,
+    "n_empty": 0,
+    "pass": false
+   }
+  }
+ }
+}

@@ -1,0 +1,17 @@
+[
+ {
+  "name": "t12",
+  "module": "infra.aws_pg.jobs.instruments_e5",
+  "args": "--stage t12 --t T_15 --revision stage1-step1413814 --items s3://pg-lineage-769063704696/results/instruments/inputs/e1_items.json --corpus s3://pg-lineage-769063704696/results/mdl/neurons/w1/q4b/1/out/corpus/corpus"
+ },
+ {
+  "name": "t4",
+  "module": "infra.aws_pg.jobs.instruments_e5",
+  "args": "--stage t4 --items s3://pg-lineage-769063704696/results/instruments/e5/inputs/e5_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus"
+ },
+ {
+  "name": "t5",
+  "module": "infra.aws_pg.jobs.instruments_e5",
+  "args": "--stage t5 --items s3://pg-lineage-769063704696/results/instruments/e5/inputs/e5_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus --olmo-step t12"
+ }
+]

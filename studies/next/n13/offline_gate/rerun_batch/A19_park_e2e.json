@@ -1,0 +1,136 @@
+{
+ "step": "r0_known",
+ "status": "parked",
+ "suite": "minerva_math::olmes:n4:v2",
+ "target": 40.0,
+ "tol": 1.6,
+ "tolerance": {
+  "se_one_reading": 0.37421220512259656,
+  "se_difference": 0.5292159756899187,
+  "three_se_difference": 1.587647927069756,
+  "tol": 1.6
+ },
+ "engine": {
+  "vllm": "0.11.0",
+  "lm_eval": "0.4.3",
+  "olmes_commit": "5a51f502d463b8cdc4a2dcad7d7096c41ff1197e",
+  "model_args": "{\"trust_remote_code\": false}",
+  "batch_size": "auto",
+  "shim": "/Users/abaybektursun/projects/interp_research-n13/infra/aws_pg/jobs/n13_olmes_shim/sitecustomize.py",
+  "shim_sha256": "f39d888a3c4e688464cc6df26dd17bc42d46d00008dc25a5e17bd4011415d148",
+  "amendment": "N13_SPEC.md A18 (b), A19"
+ },
+ "path_check": {
+  "what": "olmes --limit 20 on the same task, model and model-args; a path check, not a gate",
+  "command": [
+   "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_venv/bin/python",
+   "-I",
+   "-c",
+   "import json, os, shutil, sys, time; time.sleep(float(sys.argv[5])); shutil.copytree(sys.argv[1], sys.argv[2], dirs_exist_ok=True); open(os.environ['N13_VLLM_SHIM_LOG'], 'a').write(''.join(json.dumps({'pid': os.getpid(), 'n_prompts': int(sys.argv[4]), 'pythonpath': os.environ['PYTHONPATH']}) + '\\n' for _ in range(int(sys.argv[3]))))",
+   "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_dry_a19/e2e/olmes_src_p20",
+   "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_dry_a19/e2e/r0_park/r0_known/olmes_limit20",
+   "7",
+   "80",
+   "1.0"
+  ],
+  "started_utc": "2026-11-05T21:19:03Z",
+  "elapsed_s": 1.1,
+  "olmes_files": [
+   "metrics-all.jsonl",
+   "task-000-minerva_math_algebra-metrics.json",
+   "task-000-minerva_math_algebra-predictions.jsonl",
+   "task-000-minerva_math_algebra-requests.jsonl",
+   "task-001-minerva_math_counting_and_probability-metrics.json",
+   "task-001-minerva_math_counting_and_probability-predictions.jsonl",
+   "task-001-minerva_math_counting_and_probability-requests.jsonl",
+   "task-002-minerva_math_geometry-metrics.json",
+   "task-002-minerva_math_geometry-predictions.jsonl",
+   "task-002-minerva_math_geometry-requests.jsonl",
+   "task-003-minerva_math_intermediate_algebra-metrics.json",
+   "task-003-minerva_math_intermediate_algebra-predictions.jsonl",
+   "task-003-minerva_math_intermediate_algebra-requests.jsonl",
+   "task-004-minerva_math_number_theory-metrics.json",
+   "task-004-minerva_math_number_theory-predictions.jsonl",
+   "task-004-minerva_math_number_theory-requests.jsonl",
+   "task-005-minerva_math_prealgebra-metrics.json",
+   "task-005-minerva_math_prealgebra-predictions.jsonl",
+   "task-005-minerva_math_prealgebra-requests.jsonl",
+   "task-006-minerva_math_precalculus-metrics.json",
+   "task-006-minerva_math_precalculus-predictions.jsonl",
+   "task-006-minerva_math_precalculus-requests.jsonl"
+  ],
+  "olmes_returncode": 0,
+  "shim": {
+   "log": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_dry_a19/e2e/r0_park/r0_known/shim_calls_limit20.jsonl",
+   "calls": 7,
+   "prompts": 560,
+   "max_n_prompts": 80
+  },
+  "rows_per_subject": {
+   "algebra": 20,
+   "counting_and_probability": 20,
+   "geometry": 20,
+   "intermediate_algebra": 20,
+   "number_theory": 20,
+   "prealgebra": 20,
+   "precalculus": 20
+  },
+  "batched": {
+   "what": "at least one shim call with n_prompts >= 2 (A19); failing input: batch size 1, every call n_prompts 1",
+   "max_n_prompts": 80,
+   "pass": true
+  },
+  "pass": true,
+  "read": {
+   "primary_score": 0.4,
+   "primary_score_macro": 0.4,
+   "pass_at_1_micro": 0.41000000000000003,
+   "per_subject": {
+    "algebra": 0.4,
+    "counting_and_probability": 0.4,
+    "geometry": 0.4,
+    "intermediate_algebra": 0.4,
+    "number_theory": 0.4,
+    "prealgebra": 0.4,
+    "precalculus": 0.4
+   },
+   "num_instances": {
+    "algebra": 1187,
+    "counting_and_probability": 474,
+    "geometry": 479,
+    "intermediate_algebra": 903,
+    "number_theory": 540,
+    "prealgebra": 871,
+    "precalculus": 546
+   },
+   "sizes_match": true,
+   "n_total": 5000
+  },
+  "rescore": {
+   "deranged_macro": 0.0,
+   "identity_macro": 0.4,
+   "identity_docs_equal": true,
+   "n_docs": 140,
+   "scorer": "string",
+   "context_tokens": {
+    "over_1024": 0,
+    "n": 140,
+    "max": 15
+   }
+  }
+ },
+ "updated_utc": "2026-11-05T21:19:05Z",
+ "projection": {
+  "rule": "park when projected_full_min > 0.85 x (allowance_min - elapsed_min)",
+  "path_check_wall_s": 1.1,
+  "path_check_generations": 560,
+  "full_generations": 20000,
+  "projected_full_s": 39.28571428571429,
+  "projected_full_min": 0.6547619047619049,
+  "allowance_min": 0.5,
+  "elapsed_min": 1.633167266845703e-06,
+  "left_min": 0.49999836683273313,
+  "fits_min": 0.42499861180782317,
+  "parked": true
+ }
+}

@@ -1,0 +1,34 @@
+{
+  "rental": "r_v2_mde",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:v2-gauge",
+  "disk": 80,
+  "gpu_query": "gpu_ram>=88 num_gpus=1 cuda_vers>=12.8 compute_cap>=800",
+  "expected_gpu": "",
+  "bound": "compute",
+  "env": {
+    "HF_ONLINE": "1"
+  },
+  "_comment": "V2a MDE (spec 3, replication register): fresh seeds 2026/2027/2028 (job invariant >=3), gauges unrotated+hadamard, recipe A (steps=120, lr=1e-5, codeparrot completion, ExactAdam fp32). Smoke first: 1 gauge x 1 seed x 2 steps exercises fold+gates+train+banks end-to-end for cents. Anchor pre-logged in shackleton_expectations.jsonl from results/mercator_mq2. V2b continues from these runs by checkpoint-resume in a later manifest.",
+  "cells": [
+    {
+      "id": "v2_smoke",
+      "module": "infra.vast.cells.v2_gauge",
+      "gauges": "unrotated",
+      "seeds": "2026,2027,2028",
+      "steps": 2,
+      "n_train": 24,
+      "n_eval": 8
+    },
+    {
+      "id": "v2a_mde",
+      "module": "infra.vast.cells.v2_gauge",
+      "gauges": "unrotated,hadamard",
+      "seeds": "2026,2027,2028",
+      "steps": 120
+    }
+  ],
+  "watch": {
+    "load_backstop_min": 90,
+    "max_billed_h": 4
+  }
+}

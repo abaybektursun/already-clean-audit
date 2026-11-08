@@ -1,0 +1,233 @@
+EQUAL	-0.0113	-0.011290084484011628	m1 verdict exploratory.shift_from_start.G
+EQUAL	-0.017	-0.017027956940406982	m1 verdict exploratory.shift_from_start.G
+EQUAL	-0.0173	-0.017323083212209305	m1 verdict exploratory.shift_from_start.G
+EQUAL	-0.0161	-0.016108511991279075	m1 verdict exploratory.shift_from_start.G
+EQUAL	-0.0004	-0.0003889216933139533	m1 verdict exploratory.shift_from_start.M
+EQUAL	-0.007	-0.007038858103197675	m1 verdict exploratory.shift_from_start.M
+EQUAL	0.0001	6.847292877906962e-05	m1 verdict exploratory.shift_from_start.M
+EQUAL	0.0035	0.0035100608648255816	m1 verdict exploratory.shift_from_start.M
+EQUAL	0.0109	0.010901162790697676	m1 verdict lead.mean
+EQUAL	0.01	0.009989098837209304	m1 verdict lead.mean
+EQUAL	0.0174	0.017391556140988373	m1 verdict lead.mean
+EQUAL	0.0196	0.01961857285610465	m1 verdict lead.mean
+EQUAL	0.0082	0.008198923510174372	m1 verdict bar
+EQUAL	0.0066	0.006556368095930229	m1 verdict bar
+EQUAL	0.0023	0.0022529069767441845	m1 verdict bar
+EQUAL	0.0035	0.0035377679869185857	m1 verdict bar
+EQUAL	0.7	0.7042708333333322	lambda from m1 verdict exploratory.C
+EQUAL	0.68	0.6826459621680614	lambda from m1 verdict exploratory.C
+EQUAL	0.66	0.6586509268267194	lambda from m1 verdict exploratory.C
+EQUAL	0.76	0.7634297819631997	lambda from m1 verdict exploratory.C
+DERIVED	66-76 %	65.87-76.34 %	lambda
+DERIVED	about one top-50 slot in fifty (0.02)	G-start 0.0113-0.0173; slots of 50: 0.56-0.87; one slot in 58-89; band mean 0.0154 = one in 65	m1 verdict exploratory.shift_from_start.G
+MISMATCH	1.0	0.8661541606104652	abstract 'about one slot in fifty': the largest band's G-start shift in slots of 50
+EQUAL	0.0	0.0	m1 verdict G_ID.I
+EQUAL	42 of 71	(42, 71)	m2 labels.H_B
+EQUAL	0.592	0.5915492957746479	m2 labels.H_B.p
+EQUAL	0.475	0.475387817588352	m2 labels.H_B.lo
+EQUAL	0.698	0.6983126980659319	m2 labels.H_B.hi
+EQUAL	0.0122	0.012195121951219513	m2 labels.H_B.bar
+EQUAL	59	59.154929577464785	abstract 59 % = 42/71
+EQUAL	0.05	0.045421511627906974	abstract chance 0.05 % = 10/22,016
+EQUAL	53 of 70	(53, 70)	m2 test.pb_pre_B
+EQUAL	0.757	0.7571428571428571	m2 test.pb_pre_B
+EQUAL	76	75.71428571428571	abstract 76 %
+EQUAL	-0.171	-0.17142857142857143	m2 labels.H_sel_B
+EQUAL	-0.286	-0.2857142857142857	m2 labels.H_sel_B
+EQUAL	-0.057	-0.05714285714285714	m2 labels.H_sel_B
+EQUAL	-0.014	-0.014084507042253521	m2 read/r5b both.real_share_ge_0.67 (varied)
+EQUAL	-0.113	-0.11267605633802817	m2 read/r5b both.real_share_ge_0.67 (varied)
+EQUAL	0.085	0.08450704225352113	m2 read/r5b both.real_share_ge_0.67 (varied)
+EQUAL	-0.397	-0.3974358974358974	m2 read/r5b both.real_share_lt_0.67 (repeated)
+EQUAL	-0.513	-0.5128205128205128	m2 read/r5b both.real_share_lt_0.67 (repeated)
+EQUAL	-0.282	-0.28205128205128205	m2 read/r5b both.real_share_lt_0.67 (repeated)
+EQUAL	0.951	0.9507105072726026	n12 labels.H_cf
+EQUAL	0.738	0.7375227618636505	n12 labels.H_cf
+EQUAL	1.18	1.1800887473516393	n12 labels.H_cf
+EQUAL	0.77	0.7651026203186794	n12 test.F_pb
+EQUAL	0.94	0.9421894503050431	n12 test.F_dt
+EQUAL	0.939	0.9385968055938921	n12 test.drop_real
+EQUAL	1.164	1.1638699569240831	n12 test.drop_pb
+EQUAL	-0.226	-0.22565347978432626	n12 labels.H_away_sel_pb
+EQUAL	-0.408	-0.40773626327554363	n12 labels.H_away_sel_pb
+EQUAL	-0.056	-0.05613047790917146	n12 labels.H_away_sel_pb
+EQUAL	dt 41 of 67	41.0	n12 test.hits.dt.pre
+EQUAL	-0.03	-0.029850746268656716	n12 labels.H_sel_dt
+EQUAL	-0.149	-0.14925373134328357	n12 labels.H_sel_dt
+EQUAL	0.09	0.08955223880597014	n12 labels.H_sel_dt
+EQUAL	G-VAL bf16 0.100 freeze, 0.043 test	G-VAL failed (freeze rho 0.100, test rho 0.043)	n12 labels.H_signal.reason
+EQUAL	0.96	0.9599593469315053	n2v test.window.validation
+EQUAL	0.915	0.9154658749444953	n2v test.window.validation
+EQUAL	0.99	0.9902214770449351	n2v test.window.validation
+EQUAL	0.118	0.1176192677732753	n2v test.window.validation
+EQUAL	284 pairs, 71 units	(284, 71)	n2v
+NOTE	the instrument's prediction	pred_bf16 against dL	n2v test.window.validation
+EQUAL	0.971	0.9705852747158576	n2v thresholds freeze.window.validation
+EQUAL	0.939	0.93902557313149	n2v thresholds freeze.window.validation
+EQUAL	0.993	0.9930211454358575	n2v thresholds freeze.window.validation
+EQUAL	0.987	0.9874693202922201	n2v test.fd.validation
+EQUAL	0.971	0.9711686334925069	n2v test.fd.validation
+EQUAL	0.995	0.9947460544951044	n2v test.fd.validation
+EQUAL	0.986	0.9863571235858521	n2v test.own.validation
+EQUAL	0.969	0.9692836183375799	n2v test.own.validation
+EQUAL	0.996	0.9963950275756942	n2v test.own.validation
+EQUAL	0.967	0.9666058093025326	n2v test.window_jvp.validation
+EQUAL	0.923	0.9231851981129574	n2v test.window_jvp.validation
+EQUAL	0.994	0.9941457287419984	n2v test.window_jvp.validation
+EQUAL	65 of 71 (top pole)	65.0	r6 a.test.window.top_abs_pole_match
+EQUAL	0.915	0.9154929577464789	r6 a.test.window.top_abs_pole_match
+EQUAL	0.845	0.8450704225352113	r6 a.test.window.top_abs_pole_match
+EQUAL	0.972	0.971830985915493	r6 a.test.window.top_abs_pole_match
+DERIVED	units whose four poles are ordered as zero ablation orders them	signed Kendall tau = 1 in 60 of 71; absolute in 50 of 71	r6 a.test.window.kendall_*.share_tau_1
+MISMATCH	65	60.0	abstract 'orders a unit's poles as zero ablation does in 65 of 71'
+EQUAL	0.286	0.28590475342289934	r6 a.test.window.within_unit_perm
+DERIVED	dL/pred 0.94-1.06 by decile	0.936-1.056 (both halves)	r6 c
+EQUAL	0.988	0.9884224018434106	r6 c.test.slope_fd_over_0.1
+EQUAL	1.008	1.007604703874535	r6 c.freeze.slope_fd_over_0.1
+DERIVED	second-order share 0.18-0.20	0.1754 test, 0.2031 freeze	r6 c
+EQUAL	0.527	0.5267605633802817	n2v n12_reread.H_signal
+EQUAL	0.451	0.4514084507042254	n2v n12_reread.H_signal
+EQUAL	0.6	0.6	n2v n12_reread.H_signal
+EQUAL	0.4225	0.422520385470719	n2v n12_reread.H_signal
+EQUAL	-0.039	-0.03857142857142856	n2v n12_reread.H_sel_signal_pb
+EQUAL	-0.134	-0.13357142857142856	n2v n12_reread.H_sel_signal_pb
+EQUAL	0.057	0.05714285714285714	n2v n12_reread.H_sel_signal_pb
+EQUAL	-0.02	-0.020149253731343283	n2v n12_reread.H_sel_signal_dt
+EQUAL	-0.124	-0.12388059701492536	n2v n12_reread.H_sel_signal_dt
+EQUAL	0.084	0.08360074626865648	n2v n12_reread.H_sel_signal_dt
+EQUAL	-0.013	-0.012589810468198745	n2v n12_reread.H_bridge
+EQUAL	-0.072	-0.07179758311973704	n2v n12_reread.H_bridge
+EQUAL	0.046	0.04589910889496183	n2v n12_reread.H_bridge
+EQUAL	-0.432	-0.431690645387025	n1 test.pair_in_real_dt
+EQUAL	-0.817	-0.8167042994542787	n1 test.pair_in_real_dt
+EQUAL	-0.059	-0.058966995285517645	n1 test.pair_in_real_dt
+EQUAL	-0.43	-0.431690645387025	n1 test.pair_in_real_dt (abstract)
+EQUAL	-0.82	-0.8167042994542787	n1 test.pair_in_real_dt (abstract)
+EQUAL	-0.06	-0.058966995285517645	n1 test.pair_in_real_dt (abstract)
+EQUAL	67 pairs, 23 above, 44 below	(67, 23, 44)	n1 test.pair_in_real_dt
+DERIVED	margin two births	drop-one flips 0; drop two most negative: upper +0.041	n1 read_n1/fragility.json
+EQUAL	-0.217	-0.21659728951040022	n1 thresholds.json discovery.pair_in_real_dt (freeze half)
+EQUAL	-0.638	-0.6378762782650264	n1 thresholds.json discovery.pair_in_real_dt (freeze half)
+EQUAL	0.204	0.2041733379778312	n1 thresholds.json discovery.pair_in_real_dt (freeze half)
+EQUAL	-0.32	-0.3195348241084992	n1 read_n1/verdict_recount.json confounds.c_halves.in.pooled_both_halves
+EQUAL	-0.604	-0.6040290158579165	n1 read_n1/verdict_recount.json confounds.c_halves.in.pooled_both_halves
+EQUAL	-0.035	-0.03535319579234286	n1 read_n1/verdict_recount.json confounds.c_halves.in.pooled_both_halves
+EQUAL	-0.258	-0.2581166238291286	n1 test.pair_out_real_dt
+EQUAL	-0.654	-0.6544997394058643	n1 test.pair_out_real_dt
+EQUAL	0.13	0.13015422251983336	n1 test.pair_out_real_dt
+EQUAL	-0.297	-0.29701650087891324	n1 labels.floor_in
+EQUAL	-0.55	-0.5497955968095612	n1 labels.floor_in
+EQUAL	-0.059	-0.05871611813454572	n1 labels.floor_in
+EQUAL	-0.053	-0.0533957141349311	n1 labels.floor_in
+EQUAL	-0.039	-0.03891254573951922	n1 labels.floor_out
+EQUAL	-0.276	-0.27622186759556183	n1 labels.floor_out
+EQUAL	0.202	0.20229398849307695	n1 labels.floor_out
+EQUAL	0.147	0.14679461476632907	n1 labels.floor_out
+EQUAL	-1.6	-1.5670669532069859	n1 read_n1/scale.json test_pair_mean_log_r_window_in.as_relative
+EQUAL	-3.2	-3.2161427147923694	n1 read_n1/scale.json test_pair_mean_log_r_window_in.as_relative
+EQUAL	0.03	0.03478581638303169	n1 read_n1/scale.json test_pair_mean_log_r_window_in.as_relative
+EQUAL	57.2	57.199999999999996	n13 thresholds.B
+EQUAL	92.0	92.0	n13 thresholds.L
+EQUAL	55.4	55.400000000000006	n13 thresholds.B_prime
+EQUAL	91.2	91.2	n13 thresholds.L_prime
+EQUAL	34.8	34.800000000000004	n13 thresholds.G
+EQUAL	74.6	74.6	n13 thresholds.H
+EQUAL	13.6	13.601470508735442	n13 thresholds.room.bound_2.5delta
+EQUAL	1.924	1.9235384061671343	n13 thresholds.sigma
+EQUAL	39.96	39.963934564541645	n13 verdict gates.G-KNOWN
+EQUAL	57.6	57.599999999999994	n13 arms.top_k0.1.acc (NONE)
+EQUAL	61.4	61.4	n13 arms.top_k0.3.acc (NONE)
+EQUAL	61.8	61.8	n13 arms.top_k1.acc (NONE)
+EQUAL	63.8	63.800000000000004	n13 arms.top_k3.acc (NONE)
+EQUAL	58.8	58.8	n13 arms.rndE_k0.1.acc (NONE)
+EQUAL	59.8	59.8	n13 arms.rndE_k0.3.acc (NONE)
+EQUAL	59.2	59.199999999999996	n13 arms.rndE_k1.acc (NONE)
+EQUAL	63.8	63.800000000000004	n13 arms.rndE_k3.acc (NONE)
+EQUAL	59.4	59.4	n13 arms.rndT_k0.1.acc (NONE)
+EQUAL	58.0	57.99999999999999	n13 arms.rndT_k0.3.acc (NONE)
+EQUAL	60.0	60.0	n13 arms.rndT_k1.acc (NONE)
+EQUAL	62.8	62.8	n13 arms.rndT_k3.acc (NONE)
+EQUAL	85.2	85.2	n13 arms.dare_k0.1.acc (REC)
+EQUAL	86.8	86.8	n13 arms.dare_k0.3.acc (REC)
+EQUAL	85.8	85.8	n13 arms.dare_k1.acc (REC)
+EQUAL	86.2	86.2	n13 arms.dare_k3.acc (REC)
+EQUAL	86.4	86.4	n13 arms.mlp.acc (REC)
+EQUAL	83.0	83.0	n13 arms.attn.acc (REC)
+EQUAL	90.4	90.4	n13 arms.comp_k0.1.acc (REC)
+EQUAL	90.8	90.8	n13 arms.comp_k0.3.acc (REC)
+EQUAL	91.6	91.60000000000001	n13 arms.comp_k1.acc (REC)
+EQUAL	90.6	90.60000000000001	n13 arms.comp_k3.acc (REC)
+DERIVED	top - control -1.2 to +3.4	-1.8 to +3.4	n13 comparisons top_k*|rndE_k*, rndT_k*
+MISMATCH	-1.2	-1.8000000000000043	table row N13 energy-matched: low end of top - control
+EQUAL	3.4	3.4000000000000057	table row N13 energy-matched: high end of top - control
+EQUAL	0.107	0.10657872763302727	n13 smallest BH p, top vs rndE/rndT
+DERIVED	top - dare -27.6 to -22.4	-27.6 to -22.4	n13 comparisons top_k*|dare_k*
+DERIVED	BH p <= 2.6e-21	max 2.537e-21	n13 comparisons
+EQUAL	3.4	3.4000000000000057	n13 comparisons mlp|attn
+EQUAL	0.107	0.10657872763302727	n13 comparisons mlp|attn bh_p
+DERIVED	dare - mlp within 1.2	-1.2 to +0.4; dare_k1_d2 - mlp +1.4	n13 checks_read j_other.dare_vs_mlp
+DERIVED	DARE 33-1,000 times the change's energy	1000.1, 333.2, 99.8, 33.1	n13 checks_read d_matching.*.dare.over_full
+EQUAL	-23.7	-23.730098559514786	n13 gsm8k.top_k1|dare_k1
+EQUAL	-26.5	-26.535253980288086	n13 gsm8k.top_k1|dare_k1
+EQUAL	-21.1	-21.076573161485967	n13 gsm8k.top_k1|dare_k1
+EQUAL	2.1	2.122820318423045	n13 gsm8k.top_k1|rndE_k1
+EQUAL	0.2	0.22744503411674666	n13 gsm8k.top_k1|rndE_k1
+EQUAL	3.9	3.942380591357087	n13 gsm8k.top_k1|rndE_k1
+EQUAL	1.9	1.895375284306283	n13 gsm8k.top_k1|rndT_k1
+EQUAL	0.1	0.07581501137225999	n13 gsm8k.top_k1|rndT_k1
+EQUAL	3.6	3.6391205458680798	n13 gsm8k.top_k1|rndT_k1
+EQUAL	89.8	89.76497346474602	n13 checks_read i_gsm8k.dare_k1 (q = 1 %, not 0.1 %)
+EQUAL	92.3	92.34268385140257	n13 checks_read i_gsm8k.rl
+NOTE	GSM8K arms run	attn, base, comp_k1, dare_k1, id, mlp, rl, rndE_k1, rndT_k1, top_k1, zero	n13 checks_read i_gsm8k (no dare_k0.1)
+MISMATCH	next step: DARE's 0.1 % sample reads 89.8 on GSM8K	no GSM8K reading for dare_k0.1; 89.8 is dare_k1 (89.765)	n13 checks_read i_gsm8k
+LABEL	H_local	REFUTED (k_rec NONE)	n13 hypotheses
+LABEL	H_diffuse	SUPPORTED (smallest k k0.1)	n13 hypotheses
+LABEL	H_attention	REFUTED (BOTH)	n13 hypotheses
+LABEL	H_artifact	INDETERMINATE	n13 hypotheses
+LABEL	necessity	['NOT NECESSARY']	n13 hypotheses.necessity
+EQUAL	0.642	0.6420414821719879	n13 H_artifact_values.J_floor_k1
+EQUAL	0.534	0.5341453089295043	n13 H_artifact_values.J_round_k1
+DERIVED	S4 step wall, MATH-500 only (h)	n 20, 2.00-2.62, median 2.33	n13 s4 */*/arm_record.json
+DERIVED	S4 step wall, MATH-500 + GSM8K (h)	n 7, 3.43-4.83	n13 s4 */*/arm_record.json
+EQUAL	76.511	76.511	operations note S4 total
+DERIVED	s4armsA2-01 launch-to-STATUS per arm (h)	3.07 over 7 arms (2 with GSM8K); overhead beyond step walls 0.18 h	operations note + arm records
+DERIVED	s4armsA1-01 launch-to-STATUS per arm (h)	2.95 over 7 arms (2 with GSM8K); overhead beyond step walls 0.17 h	operations note + arm records
+DERIVED	s4armsB1-02 launch-to-STATUS per arm (h)	2.74 over 7 arms (2 with GSM8K); overhead beyond step walls 0.17 h	operations note + arm records
+DERIVED	s4armsB2-02 launch-to-STATUS per arm (h)	2.24 over 5 arms (0 with GSM8K); overhead beyond step walls 0.16 h	operations note + arm records
+DERIVED	s4armsB2-01 launch-to-STATUS per arm (h)	3.71 over 1 arms (1 with GSM8K); overhead beyond step walls 0.26 h	operations note + arm records
+DERIVED	S4 GPU-h per arm, all launches	2.83 over 27 arms	operations note + arm records
+DRAFT4	---	---	draft 4 checks start
+DERIVED	draft 4: G moved 0.6-0.9 of a slot (per pole)	0.5645, 0.8514, 0.8662, 0.8054	m1 verdict shift_from_start.G x 50
+EQUAL	0.6	0.5645042242005814	draft 4: low end of G shift in slots of 50
+EQUAL	0.9	0.8661541606104652	draft 4: high end of G shift in slots of 50
+DERIVED	draft 4: M moved at most 0.35 of a slot	0.0194, 0.3519, 0.0034, 0.1755	m1 verdict shift_from_start.M x 50
+EQUAL	0.35	0.35194290515988375	draft 4: largest |M shift| in slots of 50
+EQUAL	draft 4: ranks 284 fp32 zero ablations	n_pairs 284, measurement dL (fp32), prediction pred_bf16	n2v test.window.validation
+EQUAL	draft 4: the freeze half alone at selection level	-0.217 [-0.638, 0.204] -> AT	n1 thresholds.json discovery.pair_in_real_dt
+EQUAL	90.4	90.4	draft 4: without its top sets, low end
+EQUAL	91.6	91.60000000000001	draft 4: without its top sets, high end
+DERIVED	draft 4: 'No neuron subset carries the gain'	0.1-3 % subsets: ['NONE']; complements comp_k: ['REC', 'REC', 'REC', 'REC'] (90.4-91.60000000000001); mlp REC	n13 arms
+EQUAL	draft 4: full signed order 60 of 71	60.0	r6 a.test.window.kendall_signed.share_tau_1
+EQUAL	-1.8	-1.8000000000000043	draft 4: top - control low end
+EQUAL	2.0	1.995	draft 4: MATH-500 arm, low end (h)
+EQUAL	2.6	2.615	draft 4: MATH-500 arm, high end (h)
+EQUAL	3.4	3.4316666666666666	draft 4: arm with GSM8K, low end (h)
+EQUAL	4.8	4.826666666666667	draft 4: arm with GSM8K, high end (h)
+DERIVED	draft 4: six arms at the stated 2.0-2.6	12.0-15.6; at the banked walls 12.0-15.7	6 x rate
+MISMATCH	13	12.0	draft 4: six arms, low end of '13-16 GPU-h' at the stated rate
+EQUAL	16	15.600000000000001	draft 4: six arms, high end of '13-16 GPU-h' at the stated rate
+DERIVED	draft 4: GSM8K on the rank-64 pair	stated rates 14.8-20.0; banked walls 14.8-20.1	4 x MATH-500 arm + 2 x GSM8K arm
+EQUAL	89.8	89.76497346474602	draft 4: the 1 % sample on GSM8K
+DRAFT5	---	---	draft 5 checks start
+EQUAL	draft 5: M moved at most 0.36 of a slot	max 0.3519	m1 verdict shift_from_start.M x 50
+EQUAL	12	12.0	draft 5: six arms, low end of '12-16 GPU-h'
+EQUAL	16	15.600000000000001	draft 5: six arms, high end of '12-16 GPU-h'
+EQUAL	15	14.8	draft 5: low end of '15-20 with GSM8K on the rank-64 pair'
+EQUAL	20	20.0	draft 5: high end of '15-20 with GSM8K on the rank-64 pair'
+EQUAL	0.915	0.9154929577464789	draft 5 n2v/READ_head: fp32 forward-mode pass (window_jvp) names the same largest-effect pole
+MISMATCH	0.845	0.8732394366197183	draft 5 n2v/READ_head: fp32 forward-mode pass (window_jvp) full signed order
+NOTE	0.845 is the bf16 prediction's readout	window share_tau_1 0.8451	r6 a.test.window
+COUNT	abstract words (len(text.split()))	300	20_ABSTRACT.md
+BANNED	banned word 4 letters	[]	20_ABSTRACT.md lines
+BANNED	banned word 6 letters	[]	20_ABSTRACT.md lines
+BANNED	banned word 4 letters	[]	20_ABSTRACT.md lines

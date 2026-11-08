@@ -1,0 +1,45 @@
+{
+ "note": "setup/problems.json and setup/prompt_ids.json of each S4 launch, equal across the launches; kept on S3, not in git",
+ "files": {
+  "s4armsA1-01/setup/problems.json": {
+   "bytes": 756782,
+   "sha256": "fda877c1260b6755474bc6e57f8467304a55e01de1a9fd4ec4250d6567f91831",
+   "s3": "s3://pg-lineage-769063704696/results/next_n13/s4armsA1-01/out/setup/problems.json"
+  },
+  "s4armsA1-01/setup/prompt_ids.json": {
+   "bytes": 522699,
+   "sha256": "3c2e95d95ba7bd6fa3c5f8f0c70b8f68d1b326c3a33a084d26d1a16090dbecbb",
+   "s3": "s3://pg-lineage-769063704696/results/next_n13/s4armsA1-01/out/setup/prompt_ids.json"
+  },
+  "s4armsA2-01/setup/problems.json": {
+   "bytes": 756782,
+   "sha256": "fda877c1260b6755474bc6e57f8467304a55e01de1a9fd4ec4250d6567f91831",
+   "s3": "s3://pg-lineage-769063704696/results/next_n13/s4armsA2-01/out/setup/problems.json"
+  },
+  "s4armsA2-01/setup/prompt_ids.json": {
+   "bytes": 522699,
+   "sha256": "3c2e95d95ba7bd6fa3c5f8f0c70b8f68d1b326c3a33a084d26d1a16090dbecbb",
+   "s3": "s3://pg-lineage-769063704696/results/next_n13/s4armsA2-01/out/setup/prompt_ids.json"
+  },
+  "s4armsB1-01/setup/problems.json": {
+   "bytes": 756782,
+   "sha256": "fda877c1260b6755474bc6e57f8467304a55e01de1a9fd4ec4250d6567f91831",
+   "s3": "s3://pg-lineage-769063704696/results/next_n13/s4armsB1-01/out/setup/problems.json"
+  },
+  "s4armsB1-01/setup/prompt_ids.json": {
+   "bytes": 522699,
+   "sha256": "3c2e95d95ba7bd6fa3c5f8f0c70b8f68d1b326c3a33a084d26d1a16090dbecbb",
+   "s3": "s3://pg-lineage-769063704696/results/next_n13/s4armsB1-01/out/setup/prompt_ids.json"
+  },
+  "s4armsB2-01/setup/problems.json": {
+   "bytes": 756782,
+   "sha256": "fda877c1260b6755474bc6e57f8467304a55e01de1a9fd4ec4250d6567f91831",
+   "s3": "s3://pg-lineage-769063704696/results/next_n13/s4armsB2-01/out/setup/problems.json"
+  },
+  "s4armsB2-01/setup/prompt_ids.json": {
+   "bytes": 522699,
+   "sha256": "3c2e95d95ba7bd6fa3c5f8f0c70b8f68d1b326c3a33a084d26d1a16090dbecbb",
+   "s3": "s3://pg-lineage-769063704696/results/next_n13/s4armsB2-01/out/setup/prompt_ids.json"
+  }
+ }
+}

@@ -1,0 +1,8 @@
+[
+  {"name": "w1_a_smoke", "module": "infra.aws_pg.jobs.darwin_w1_icl",
+   "args": "--arm W1-A --smoke --run-id darwin_w1_a_smoke --s3-prefix darwin/darwin_w1_a_smoke"},
+  {"name": "w1_b_smoke", "module": "infra.aws_pg.jobs.darwin_w1_icl",
+   "args": "--arm W1-B --smoke --run-id darwin_w1_b_smoke --s3-prefix darwin/darwin_w1_b_smoke"},
+  {"name": "w2_a_smoke", "module": "infra.aws_pg.jobs.darwin_w2_envelope",
+   "args": "--arm W2-A --smoke --run-id darwin_w2_a_smoke --s3-prefix darwin/darwin_w2_a_smoke"}
+]

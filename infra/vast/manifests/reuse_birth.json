@@ -1,0 +1,31 @@
+{
+  "rental": "reuse_birth",
+  "image": "769063704696.dkr.ecr.us-east-1.amazonaws.com/shackleton:mdl-v1",
+  "disk": 80,
+  "gpu_query": "gpu_ram>=32 num_gpus=1 compute_cap>=800 cuda_vers>=13.0 cpu_ram>=32",
+  "expected_gpu": "",
+  "bound": "compute",
+  "weights_mode": "download",
+  "env": {
+    "HF_ONLINE": "1",
+    "HF_HOME": "/workspace/hf",
+    "HF_HUB_CACHE": "/workspace/hf/hub",
+    "HF_HUB_DISABLE_XET": "1"
+  },
+  "cells": [
+    {
+      "id": "birth",
+      "module": "infra.vast.cells.pipeline_job",
+      "pg_git_sha": "a4031bebc",
+      "steps_s3": "s3://pg-lineage-769063704696/results/mdl/reuse_birth/1/steps.json"
+    }
+  ],
+  "watch": {
+    "max_billed_h": 3.9,
+    "load_backstop_min": 30,
+    "progress_stall_min": 20,
+    "progress_kill_min": 45
+  },
+  "_comment": "SPEC4 BIRTH (studies/reuse/SPEC4_birth.md §9), O7 allenai/Olmo-3-1025-7B, ten checkpoint loads (T_15, T_5, T_6..T_13) run by infra.aws_pg.jobs.pipeline on infra/aws_pg/steps/reuse_birth.json, uploaded to steps_s3 unchanged (every S3 path in it is already under results/mdl/, and --from-step names /workspace/out/birth/t15, this cell's T_15 step directory, because run_cells.py uploads a cell's outputs only when the cell ends). Estimate about 123,500 forwards (87,974 readouts and 35,567 captures counted from the items; SPEC4 §11), 10 loads, about 0.8 h billed; max_billed_h 3 is the spec's cap. gpu_query holds the hard requirements of §9 that vast's query can express (GPU memory >= 32 GB, one GPU, compute capability >= 8.0, CUDA >= 13.0, host RAM >= 32 GB; the query compares gpu_ram and cpu_ram in GB, the raw offer JSON reports them in MB); the controller adds the base filter and disk_space; the CMP exclusion and the frozen price rule are applied to the raw offers by studies/reuse/scripts/offers_birth.py. Checkpoints (14.9 GB each) are downloaded in-run into HF_HUB_CACHE and deleted after each load; weights_mode download requires inet_down >= 800. pg_git_sha a4031bebc is the merge commit that holds every job module shipped; this manifest commit changes no code.",
+  "_watch_amendment": "2026-11-02 17:45Z, coordinator: max_billed_h raised from 3 to 3.9 h during the run because the host's downloads run 6 to 15 minutes per checkpoint (probe 28.6 MB/s); 3.9 h x $0.756/h = $2.95, inside the $3.00 cap of SPEC4 section 9; no other field changed."
+}

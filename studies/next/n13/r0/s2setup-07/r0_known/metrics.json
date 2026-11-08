@@ -1,0 +1,335 @@
+{
+ "step": "r0_known",
+ "status": "done",
+ "suite": "minerva_math::olmes:n4:v2",
+ "target": 40.0,
+ "tol": 1.6,
+ "tolerance": {
+  "se_one_reading": 0.37421220512259656,
+  "se_difference": 0.5292159756899187,
+  "three_se_difference": 1.587647927069756,
+  "tol": 1.6
+ },
+ "engine": {
+  "vllm": "0.11.0",
+  "lm_eval": "0.4.3",
+  "olmes_commit": "5a51f502d463b8cdc4a2dcad7d7096c41ff1197e",
+  "model_args": "{\"trust_remote_code\": false}",
+  "batch_size": "auto",
+  "shim": "/opt/pg/repo/infra/aws_pg/jobs/n13_olmes_shim/sitecustomize.py",
+  "shim_sha256": "1f6ccee39a8b916dec2ce0f3b950903bc5acad049a55e2f157e3b8c5596526d6",
+  "amendment": "N13_SPEC.md A18 (b), A19"
+ },
+ "path_check": {
+  "what": "olmes --limit 100 on the same task, model and model-args; a path check, not a gate",
+  "command": [
+   "/opt/olmes-venv/bin/olmes",
+   "--model",
+   "allenai/Olmo-3-1025-7B",
+   "--revision",
+   "a81bae42db3975be1671e27b9c9a56da1a9f980f",
+   "--model-type",
+   "vllm",
+   "--model-args",
+   "{\"trust_remote_code\": false}",
+   "--task",
+   "minerva_math::olmes:n4:v2",
+   "--gpus",
+   "1",
+   "--batch-size",
+   "auto",
+   "--output-dir",
+   "/work/out/r0_known/olmes_limit100",
+   "--limit",
+   "100"
+  ],
+  "started_utc": "2026-11-05T22:49:47Z",
+  "elapsed_s": 780.0,
+  "olmes_files": [
+   "metrics-all.jsonl",
+   "metrics.json",
+   "task-000-minerva_math_algebra-metrics.json",
+   "task-000-minerva_math_algebra-predictions.jsonl",
+   "task-000-minerva_math_algebra-recorded-inputs.jsonl",
+   "task-000-minerva_math_algebra-requests.jsonl",
+   "task-001-minerva_math_counting_and_probability-metrics.json",
+   "task-001-minerva_math_counting_and_probability-predictions.jsonl",
+   "task-001-minerva_math_counting_and_probability-recorded-inputs.jsonl",
+   "task-001-minerva_math_counting_and_probability-requests.jsonl",
+   "task-002-minerva_math_geometry-metrics.json",
+   "task-002-minerva_math_geometry-predictions.jsonl",
+   "task-002-minerva_math_geometry-recorded-inputs.jsonl",
+   "task-002-minerva_math_geometry-requests.jsonl",
+   "task-003-minerva_math_intermediate_algebra-metrics.json",
+   "task-003-minerva_math_intermediate_algebra-predictions.jsonl",
+   "task-003-minerva_math_intermediate_algebra-recorded-inputs.jsonl",
+   "task-003-minerva_math_intermediate_algebra-requests.jsonl",
+   "task-004-minerva_math_number_theory-metrics.json",
+   "task-004-minerva_math_number_theory-predictions.jsonl",
+   "task-004-minerva_math_number_theory-recorded-inputs.jsonl",
+   "task-004-minerva_math_number_theory-requests.jsonl",
+   "task-005-minerva_math_prealgebra-metrics.json",
+   "task-005-minerva_math_prealgebra-predictions.jsonl",
+   "task-005-minerva_math_prealgebra-recorded-inputs.jsonl",
+   "task-005-minerva_math_prealgebra-requests.jsonl",
+   "task-006-minerva_math_precalculus-metrics.json",
+   "task-006-minerva_math_precalculus-predictions.jsonl",
+   "task-006-minerva_math_precalculus-recorded-inputs.jsonl",
+   "task-006-minerva_math_precalculus-requests.jsonl"
+  ],
+  "olmes_returncode": 0,
+  "shim": {
+   "log": "/work/out/r0_known/shim_calls_limit100.jsonl",
+   "calls": 7,
+   "prompts": 2800,
+   "max_n_prompts": 400,
+   "generate_s": 506.5300135612488,
+   "output_tokens": 705692
+  },
+  "rows_per_subject": {
+   "algebra": 100,
+   "counting_and_probability": 100,
+   "geometry": 100,
+   "intermediate_algebra": 100,
+   "number_theory": 100,
+   "prealgebra": 100,
+   "precalculus": 100
+  },
+  "batched": {
+   "what": "A19: while olmes runs, the first shim call must have n_prompts >= 2, else olmes is killed within one poll interval; at the end, at least one call with n_prompts >= 2. Failing input: batch size 1, every call n_prompts 1",
+   "first_n_prompts": 400,
+   "max_n_prompts": 400,
+   "stopped_early": false,
+   "pass": true
+  },
+  "pass": true,
+  "read": {
+   "primary_score": 0.38892857142857146,
+   "primary_score_macro": 0.38892857142857146,
+   "pass_at_1_micro": 0.3889285714285714,
+   "per_subject": {
+    "algebra": 0.5925,
+    "counting_and_probability": 0.4125,
+    "geometry": 0.3725,
+    "intermediate_algebra": 0.2,
+    "number_theory": 0.2925,
+    "prealgebra": 0.5875,
+    "precalculus": 0.265
+   },
+   "num_instances": {
+    "algebra": 100,
+    "counting_and_probability": 100,
+    "geometry": 100,
+    "intermediate_algebra": 100,
+    "number_theory": 100,
+    "prealgebra": 100,
+    "precalculus": 100
+   },
+   "sizes_match": false,
+   "n_total": 700
+  },
+  "rescore": {
+   "deranged_macro": 0.009285714285714286,
+   "identity_macro": 0.38892857142857146,
+   "identity_docs_equal": true,
+   "n_docs": 700,
+   "scorer": "olmes",
+   "context_tokens": {
+    "over_1024": 5,
+    "n": 700,
+    "max": 1494
+   }
+  }
+ },
+ "updated_utc": "2026-11-06T00:22:48Z",
+ "projection": {
+  "rule": "park when projected_full_min > 0.85 x (allowance_min - elapsed_min); projected = F + T / r, T = sum over subjects of 4 x size_s x tokens_s / n_s",
+  "path_check_wall_s": 780.0,
+  "path_check_generate_s": 506.5300135612488,
+  "path_check_output_tokens": 705692,
+  "path_check_generations": 2800,
+  "full_generations": 20000,
+  "per_subject": {
+   "algebra": {
+    "n_prompts": 400,
+    "output_tokens": 73125,
+    "generate_s": 52.46386504173279,
+    "mean_tokens": 182.8125,
+    "full_generations": 4748,
+    "T_s": 867993.75
+   },
+   "counting_and_probability": {
+    "n_prompts": 400,
+    "output_tokens": 69641,
+    "generate_s": 50.3444561958313,
+    "mean_tokens": 174.1025,
+    "full_generations": 1896,
+    "T_s": 330098.34
+   },
+   "geometry": {
+    "n_prompts": 400,
+    "output_tokens": 83540,
+    "generate_s": 58.588746547698975,
+    "mean_tokens": 208.85,
+    "full_generations": 1916,
+    "T_s": 400156.6
+   },
+   "intermediate_algebra": {
+    "n_prompts": 400,
+    "output_tokens": 154902,
+    "generate_s": 116.30779218673706,
+    "mean_tokens": 387.255,
+    "full_generations": 3612,
+    "T_s": 1398765.06
+   },
+   "number_theory": {
+    "n_prompts": 400,
+    "output_tokens": 107637,
+    "generate_s": 68.78654932975769,
+    "mean_tokens": 269.0925,
+    "full_generations": 2160,
+    "T_s": 581239.8
+   },
+   "prealgebra": {
+    "n_prompts": 400,
+    "output_tokens": 54417,
+    "generate_s": 42.86855864524841,
+    "mean_tokens": 136.0425,
+    "full_generations": 3484,
+    "T_s": 473972.07
+   },
+   "precalculus": {
+    "n_prompts": 400,
+    "output_tokens": 162430,
+    "generate_s": 117.17004561424255,
+    "mean_tokens": 406.075,
+    "full_generations": 2184,
+    "T_s": 886867.8
+   }
+  },
+  "T_full_output_tokens": 4939093.42,
+  "r_tokens_per_s": 1393.188914983552,
+  "F_fixed_s": 273.4699864387512,
+  "projected_full_s": 3818.641331746441,
+  "projected_full_min": 63.64402219577402,
+  "allowance_min": 280.0,
+  "elapsed_min": 28.090823364257812,
+  "left_min": 251.9091766357422,
+  "fits_min": 214.12280014038086,
+  "parked": false
+ },
+ "command": [
+  "/opt/olmes-venv/bin/olmes",
+  "--model",
+  "allenai/Olmo-3-1025-7B",
+  "--revision",
+  "a81bae42db3975be1671e27b9c9a56da1a9f980f",
+  "--model-type",
+  "vllm",
+  "--model-args",
+  "{\"trust_remote_code\": false}",
+  "--task",
+  "minerva_math::olmes:n4:v2",
+  "--gpus",
+  "1",
+  "--batch-size",
+  "auto",
+  "--output-dir",
+  "/work/out/r0_known/olmes"
+ ],
+ "started_utc": "2026-11-05T23:06:03Z",
+ "elapsed_s": 3600.0,
+ "olmes_files": [
+  "metrics-all.jsonl",
+  "metrics.json",
+  "task-000-minerva_math_algebra-metrics.json",
+  "task-000-minerva_math_algebra-predictions.jsonl",
+  "task-000-minerva_math_algebra-recorded-inputs.jsonl",
+  "task-000-minerva_math_algebra-requests.jsonl",
+  "task-001-minerva_math_counting_and_probability-metrics.json",
+  "task-001-minerva_math_counting_and_probability-predictions.jsonl",
+  "task-001-minerva_math_counting_and_probability-recorded-inputs.jsonl",
+  "task-001-minerva_math_counting_and_probability-requests.jsonl",
+  "task-002-minerva_math_geometry-metrics.json",
+  "task-002-minerva_math_geometry-predictions.jsonl",
+  "task-002-minerva_math_geometry-recorded-inputs.jsonl",
+  "task-002-minerva_math_geometry-requests.jsonl",
+  "task-003-minerva_math_intermediate_algebra-metrics.json",
+  "task-003-minerva_math_intermediate_algebra-predictions.jsonl",
+  "task-003-minerva_math_intermediate_algebra-recorded-inputs.jsonl",
+  "task-003-minerva_math_intermediate_algebra-requests.jsonl",
+  "task-004-minerva_math_number_theory-metrics.json",
+  "task-004-minerva_math_number_theory-predictions.jsonl",
+  "task-004-minerva_math_number_theory-recorded-inputs.jsonl",
+  "task-004-minerva_math_number_theory-requests.jsonl",
+  "task-005-minerva_math_prealgebra-metrics.json",
+  "task-005-minerva_math_prealgebra-predictions.jsonl",
+  "task-005-minerva_math_prealgebra-recorded-inputs.jsonl",
+  "task-005-minerva_math_prealgebra-requests.jsonl",
+  "task-006-minerva_math_precalculus-metrics.json",
+  "task-006-minerva_math_precalculus-predictions.jsonl",
+  "task-006-minerva_math_precalculus-recorded-inputs.jsonl",
+  "task-006-minerva_math_precalculus-requests.jsonl"
+ ],
+ "olmes_returncode": 0,
+ "shim": {
+  "log": "/work/out/r0_known/shim_calls.jsonl",
+  "calls": 7,
+  "prompts": 20000,
+  "max_n_prompts": 4748,
+  "generate_s": 2761.8001997470856,
+  "output_tokens": 4972904
+ },
+ "read": {
+  "primary_score": 0.3996393456454165,
+  "primary_score_macro": 0.3996393456454165,
+  "pass_at_1_micro": 0.43065,
+  "per_subject": {
+   "algebra": 0.5996208930075821,
+   "counting_and_probability": 0.37183544303797467,
+   "geometry": 0.3496868475991649,
+   "intermediate_algebra": 0.23754152823920266,
+   "number_theory": 0.33194444444444443,
+   "prealgebra": 0.6426521239954076,
+   "precalculus": 0.2641941391941392
+  },
+  "num_instances": {
+   "algebra": 1187,
+   "counting_and_probability": 474,
+   "geometry": 479,
+   "intermediate_algebra": 903,
+   "number_theory": 540,
+   "prealgebra": 871,
+   "precalculus": 546
+  },
+  "sizes_match": true,
+  "n_total": 5000
+ },
+ "rescore": {
+  "deranged_macro": 0.011171001582977288,
+  "identity_macro": 0.3996393456454165,
+  "identity_docs_equal": true,
+  "n_docs": 5000,
+  "scorer": "olmes",
+  "context_tokens": {
+   "over_1024": 36,
+   "n": 5000,
+   "max": 1884
+  }
+ },
+ "G-KNOWN": {
+  "value": 39.963934564541645,
+  "target": 40.0,
+  "tol": 1.6,
+  "pass": true,
+  "failing_input": {
+   "what": "the same predictions rescored by olmes' scorer against a derangement of the golds within each subject (seed 0)",
+   "value": 1.1171001582977287,
+   "failed": true
+  },
+  "identity": {
+   "what": "the same rescorer with the true golds reproduces olmes' per-document pass_at_1",
+   "pass": true
+  }
+ }
+}

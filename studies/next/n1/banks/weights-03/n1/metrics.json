@@ -1,0 +1,865 @@
+{
+ "started_utc": "2026-11-07T15:58:29Z",
+ "complete": true,
+ "gates": {
+  "G_SAME": {
+   "pass": true,
+   "versions": {
+    "torch": "2.12.0"
+   },
+   "registered": {
+    "torch": "2.12.0"
+   },
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "INPUTS": {
+   "pass": true,
+   "mismatch": [],
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t00_G_REV": {
+   "pass": true,
+   "commit": "f129a5d178fd784d802a521d6f388c6df6988fd6",
+   "registered": "f129a5d178fd784d802a521d6f388c6df6988fd6",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t00_G_SHAPE": {
+   "pass": true,
+   "bad_layers": [],
+   "n_layers": 32,
+   "failing_input": {
+    "what": "the down tensor transposed",
+    "pass": false
+   }
+  },
+  "t01_G_REV": {
+   "pass": true,
+   "commit": "d82e70ec28daa79d25405cd128e127c52bb10516",
+   "registered": "d82e70ec28daa79d25405cd128e127c52bb10516",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t01_G_SHAPE": {
+   "pass": true,
+   "bad_layers": [],
+   "n_layers": 32,
+   "failing_input": {
+    "what": "the down tensor transposed",
+    "pass": false
+   }
+  },
+  "t02_G_REV": {
+   "pass": true,
+   "commit": "6a238f66840f4db2deff7049b12fbc608267e14f",
+   "registered": "6a238f66840f4db2deff7049b12fbc608267e14f",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t02_G_SHAPE": {
+   "pass": true,
+   "bad_layers": [],
+   "n_layers": 32,
+   "failing_input": {
+    "what": "the down tensor transposed",
+    "pass": false
+   }
+  },
+  "t02_PC": {
+   "pass": true,
+   "in": 1.0,
+   "out": 1.0,
+   "in_size0": 0.044921875,
+   "out_size0": 0.044921875,
+   "min": 0.9,
+   "failing_input": {
+    "what": "planted size 0",
+    "pass": false
+   }
+  },
+  "t03_G_REV": {
+   "pass": true,
+   "commit": "9de48909b402a200848e5cba488dbfd04b6227a3",
+   "registered": "9de48909b402a200848e5cba488dbfd04b6227a3",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t03_G_SHAPE": {
+   "pass": true,
+   "bad_layers": [],
+   "n_layers": 32,
+   "failing_input": {
+    "what": "the down tensor transposed",
+    "pass": false
+   }
+  },
+  "t03_PC": {
+   "pass": true,
+   "in": 1.0,
+   "out": 1.0,
+   "in_size0": 0.0458984375,
+   "out_size0": 0.0478515625,
+   "min": 0.9,
+   "failing_input": {
+    "what": "planted size 0",
+    "pass": false
+   }
+  },
+  "t04_G_REV": {
+   "pass": true,
+   "commit": "825e84ed82eb78b1b395d0aa0164378f64544f92",
+   "registered": "825e84ed82eb78b1b395d0aa0164378f64544f92",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t04_G_SHAPE": {
+   "pass": true,
+   "bad_layers": [],
+   "n_layers": 32,
+   "failing_input": {
+    "what": "the down tensor transposed",
+    "pass": false
+   }
+  },
+  "t04_PC": {
+   "pass": true,
+   "in": 1.0,
+   "out": 1.0,
+   "in_size0": 0.044921875,
+   "out_size0": 0.0380859375,
+   "min": 0.9,
+   "failing_input": {
+    "what": "planted size 0",
+    "pass": false
+   }
+  },
+  "t05_G_REV": {
+   "pass": true,
+   "commit": "ebfe7b62b31bfadff464a8926a48a256c9431db7",
+   "registered": "ebfe7b62b31bfadff464a8926a48a256c9431db7",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t05_G_SHAPE": {
+   "pass": true,
+   "bad_layers": [],
+   "n_layers": 32,
+   "failing_input": {
+    "what": "the down tensor transposed",
+    "pass": false
+   }
+  },
+  "t05_PC": {
+   "pass": true,
+   "in": 1.0,
+   "out": 1.0,
+   "in_size0": 0.0458984375,
+   "out_size0": 0.0595703125,
+   "min": 0.9,
+   "failing_input": {
+    "what": "planted size 0",
+    "pass": false
+   }
+  },
+  "t06_G_REV": {
+   "pass": true,
+   "commit": "a1cbaea430374e12c8e7b463d33ecbf8da657dea",
+   "registered": "a1cbaea430374e12c8e7b463d33ecbf8da657dea",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t06_G_SHAPE": {
+   "pass": true,
+   "bad_layers": [],
+   "n_layers": 32,
+   "failing_input": {
+    "what": "the down tensor transposed",
+    "pass": false
+   }
+  },
+  "t06_PC": {
+   "pass": true,
+   "in": 1.0,
+   "out": 1.0,
+   "in_size0": 0.046875,
+   "out_size0": 0.0517578125,
+   "min": 0.9,
+   "failing_input": {
+    "what": "planted size 0",
+    "pass": false
+   }
+  },
+  "t07_G_REV": {
+   "pass": true,
+   "commit": "04eeee4fa74f9f3d2cb11c31e155545dad32365e",
+   "registered": "04eeee4fa74f9f3d2cb11c31e155545dad32365e",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t07_G_SHAPE": {
+   "pass": true,
+   "bad_layers": [],
+   "n_layers": 32,
+   "failing_input": {
+    "what": "the down tensor transposed",
+    "pass": false
+   }
+  },
+  "t07_PC": {
+   "pass": true,
+   "in": 1.0,
+   "out": 1.0,
+   "in_size0": 0.0439453125,
+   "out_size0": 0.04296875,
+   "min": 0.9,
+   "failing_input": {
+    "what": "planted size 0",
+    "pass": false
+   }
+  },
+  "t08_G_REV": {
+   "pass": true,
+   "commit": "d1dbb0e2d4d3fbdc9c185a34c4e99f13ef6ae2a6",
+   "registered": "d1dbb0e2d4d3fbdc9c185a34c4e99f13ef6ae2a6",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t08_G_SHAPE": {
+   "pass": true,
+   "bad_layers": [],
+   "n_layers": 32,
+   "failing_input": {
+    "what": "the down tensor transposed",
+    "pass": false
+   }
+  },
+  "t08_PC": {
+   "pass": true,
+   "in": 1.0,
+   "out": 1.0,
+   "in_size0": 0.0478515625,
+   "out_size0": 0.0498046875,
+   "min": 0.9,
+   "failing_input": {
+    "what": "planted size 0",
+    "pass": false
+   }
+  },
+  "t09_G_REV": {
+   "pass": true,
+   "commit": "08b5da69ff99e0858f18d9870ac87f43d7602cf0",
+   "registered": "08b5da69ff99e0858f18d9870ac87f43d7602cf0",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t09_G_SHAPE": {
+   "pass": true,
+   "bad_layers": [],
+   "n_layers": 32,
+   "failing_input": {
+    "what": "the down tensor transposed",
+    "pass": false
+   }
+  },
+  "t09_PC": {
+   "pass": true,
+   "in": 1.0,
+   "out": 1.0,
+   "in_size0": 0.0595703125,
+   "out_size0": 0.0478515625,
+   "min": 0.9,
+   "failing_input": {
+    "what": "planted size 0",
+    "pass": false
+   }
+  },
+  "t10_G_REV": {
+   "pass": true,
+   "commit": "1d074dbc15d91544abe47d5508ac1670ef8c7129",
+   "registered": "1d074dbc15d91544abe47d5508ac1670ef8c7129",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t10_G_SHAPE": {
+   "pass": true,
+   "bad_layers": [],
+   "n_layers": 32,
+   "failing_input": {
+    "what": "the down tensor transposed",
+    "pass": false
+   }
+  },
+  "t10_PC": {
+   "pass": true,
+   "in": 1.0,
+   "out": 1.0,
+   "in_size0": 0.0380859375,
+   "out_size0": 0.0556640625,
+   "min": 0.9,
+   "failing_input": {
+    "what": "planted size 0",
+    "pass": false
+   }
+  },
+  "t11_G_REV": {
+   "pass": true,
+   "commit": "c515906cd0f5e30e9e2f56f5f28870c375d8bef0",
+   "registered": "c515906cd0f5e30e9e2f56f5f28870c375d8bef0",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t11_G_SHAPE": {
+   "pass": true,
+   "bad_layers": [],
+   "n_layers": 32,
+   "failing_input": {
+    "what": "the down tensor transposed",
+    "pass": false
+   }
+  },
+  "t11_PC": {
+   "pass": true,
+   "in": 1.0,
+   "out": 1.0,
+   "in_size0": 0.060546875,
+   "out_size0": 0.0576171875,
+   "min": 0.9,
+   "failing_input": {
+    "what": "planted size 0",
+    "pass": false
+   }
+  },
+  "t12_G_REV": {
+   "pass": true,
+   "commit": "af83fc98693475b503de0a86407f0260a7281786",
+   "registered": "af83fc98693475b503de0a86407f0260a7281786",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t12_G_SHAPE": {
+   "pass": true,
+   "bad_layers": [],
+   "n_layers": 32,
+   "failing_input": {
+    "what": "the down tensor transposed",
+    "pass": false
+   }
+  },
+  "t12_PC": {
+   "pass": true,
+   "in": 1.0,
+   "out": 1.0,
+   "in_size0": 0.0439453125,
+   "out_size0": 0.05078125,
+   "min": 0.9,
+   "failing_input": {
+    "what": "planted size 0",
+    "pass": false
+   }
+  },
+  "t13_G_REV": {
+   "pass": true,
+   "commit": "db8c654b5cbe06311f92e86d68cd4f7d31642a5a",
+   "registered": "db8c654b5cbe06311f92e86d68cd4f7d31642a5a",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t13_G_SHAPE": {
+   "pass": true,
+   "bad_layers": [],
+   "n_layers": 32,
+   "failing_input": {
+    "what": "the down tensor transposed",
+    "pass": false
+   }
+  },
+  "t13_PC": {
+   "pass": true,
+   "in": 1.0,
+   "out": 1.0,
+   "in_size0": 0.05859375,
+   "out_size0": 0.052734375,
+   "min": 0.9,
+   "failing_input": {
+    "what": "planted size 0",
+    "pass": false
+   }
+  },
+  "t14_G_REV": {
+   "pass": true,
+   "commit": "cb286dcdaaf3f92b3c419dd77439078fdebffe53",
+   "registered": "cb286dcdaaf3f92b3c419dd77439078fdebffe53",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t14_G_SHAPE": {
+   "pass": true,
+   "bad_layers": [],
+   "n_layers": 32,
+   "failing_input": {
+    "what": "the down tensor transposed",
+    "pass": false
+   }
+  },
+  "t14_PC": {
+   "pass": true,
+   "in": 1.0,
+   "out": 1.0,
+   "in_size0": 0.05859375,
+   "out_size0": 0.0458984375,
+   "min": 0.9,
+   "failing_input": {
+    "what": "planted size 0",
+    "pass": false
+   }
+  },
+  "t15_G_REV": {
+   "pass": true,
+   "commit": "373bad25002f1624757a73235c5ca844c6375c25",
+   "registered": "373bad25002f1624757a73235c5ca844c6375c25",
+   "failing_input": {
+    "pass": false
+   }
+  },
+  "t15_G_SHAPE": {
+   "pass": true,
+   "bad_layers": [],
+   "n_layers": 32,
+   "failing_input": {
+    "what": "the down tensor transposed",
+    "pass": false
+   }
+  },
+  "t15_PC": {
+   "pass": true,
+   "in": 1.0,
+   "out": 1.0,
+   "in_size0": 0.068359375,
+   "out_size0": 0.0595703125,
+   "min": 0.9,
+   "failing_input": {
+    "what": "planted size 0",
+    "pass": false
+   }
+  },
+  "I_ID": {
+   "pass": true,
+   "norms_bitwise": true,
+   "self_change_zero": true,
+   "failing_input": {
+    "what": "the change of T_14 against T_15",
+    "pass": false
+   }
+  }
+ },
+ "points": {
+  "0": {
+   "t": 0,
+   "download": {
+    "branch": "stage1-step0",
+    "commit": "f129a5d178fd784d802a521d6f388c6df6988fd6",
+    "bytes": 14605764269,
+    "seconds": 102.7,
+    "MB_per_s": 142.2
+   },
+   "seconds": 116.3
+  },
+  "1": {
+   "t": 1,
+   "download": {
+    "branch": "stage1-step1000",
+    "commit": "d82e70ec28daa79d25405cd128e127c52bb10516",
+    "bytes": 14605764269,
+    "seconds": 200.3,
+    "MB_per_s": 72.9
+   },
+   "seconds": 227.3
+  },
+  "2": {
+   "t": 2,
+   "download": {
+    "branch": "stage1-step2000",
+    "commit": "6a238f66840f4db2deff7049b12fbc608267e14f",
+    "bytes": 14605764269,
+    "seconds": 239.9,
+    "MB_per_s": 60.9
+   },
+   "seconds": 280.4
+  },
+  "3": {
+   "t": 3,
+   "download": {
+    "branch": "stage1-step3000",
+    "commit": "9de48909b402a200848e5cba488dbfd04b6227a3",
+    "bytes": 14605764269,
+    "seconds": 543.1,
+    "MB_per_s": 26.9
+   },
+   "seconds": 582.6
+  },
+  "4": {
+   "t": 4,
+   "download": {
+    "branch": "stage1-step5000",
+    "commit": "825e84ed82eb78b1b395d0aa0164378f64544f92",
+    "bytes": 14605764269,
+    "seconds": 748.7,
+    "MB_per_s": 19.5
+   },
+   "seconds": 788.7
+  },
+  "5": {
+   "t": 5,
+   "download": {
+    "branch": "stage1-step8000",
+    "commit": "ebfe7b62b31bfadff464a8926a48a256c9431db7",
+    "bytes": 14605764269,
+    "seconds": 767.8,
+    "MB_per_s": 19.0
+   },
+   "seconds": 807.3
+  },
+  "6": {
+   "t": 6,
+   "download": {
+    "branch": "stage1-step12000",
+    "commit": "a1cbaea430374e12c8e7b463d33ecbf8da657dea",
+    "bytes": 14605764269,
+    "seconds": 1033.0,
+    "MB_per_s": 14.1
+   },
+   "seconds": 1073.1
+  },
+  "7": {
+   "t": 7,
+   "download": {
+    "branch": "stage1-step20000",
+    "commit": "04eeee4fa74f9f3d2cb11c31e155545dad32365e",
+    "bytes": 14605764269,
+    "seconds": 871.0,
+    "MB_per_s": 16.8
+   },
+   "seconds": 911.4
+  },
+  "8": {
+   "t": 8,
+   "download": {
+    "branch": "stage1-step35000",
+    "commit": "d1dbb0e2d4d3fbdc9c185a34c4e99f13ef6ae2a6",
+    "bytes": 14605764269,
+    "seconds": 1035.8,
+    "MB_per_s": 14.1
+   },
+   "seconds": 1074.9
+  },
+  "9": {
+   "t": 9,
+   "download": {
+    "branch": "stage1-step60000",
+    "commit": "08b5da69ff99e0858f18d9870ac87f43d7602cf0",
+    "bytes": 14605764269,
+    "seconds": 1350.1,
+    "MB_per_s": 10.8
+   },
+   "seconds": 1389.9
+  },
+  "10": {
+   "t": 10,
+   "download": {
+    "branch": "stage1-step100000",
+    "commit": "1d074dbc15d91544abe47d5508ac1670ef8c7129",
+    "bytes": 14605764269,
+    "seconds": 966.5,
+    "MB_per_s": 15.1
+   },
+   "seconds": 1006.2
+  },
+  "11": {
+   "t": 11,
+   "download": {
+    "branch": "stage1-step180000",
+    "commit": "c515906cd0f5e30e9e2f56f5f28870c375d8bef0",
+    "bytes": 14605764269,
+    "seconds": 991.3,
+    "MB_per_s": 14.7
+   },
+   "seconds": 1031.5
+  },
+  "12": {
+   "t": 12,
+   "download": {
+    "branch": "stage1-step320000",
+    "commit": "af83fc98693475b503de0a86407f0260a7281786",
+    "bytes": 14605764269,
+    "seconds": 997.2,
+    "MB_per_s": 14.6
+   },
+   "seconds": 1036.7
+  },
+  "13": {
+   "t": 13,
+   "download": {
+    "branch": "stage1-step560000",
+    "commit": "db8c654b5cbe06311f92e86d68cd4f7d31642a5a",
+    "bytes": 14605764269,
+    "seconds": 1289.8,
+    "MB_per_s": 11.3
+   },
+   "seconds": 1329.3
+  },
+  "14": {
+   "t": 14,
+   "download": {
+    "branch": "stage1-step1000000",
+    "commit": "cb286dcdaaf3f92b3c419dd77439078fdebffe53",
+    "bytes": 14605764269,
+    "seconds": 345.7,
+    "MB_per_s": 42.2
+   },
+   "seconds": 385.8
+  },
+  "15": {
+   "t": 15,
+   "download": {
+    "branch": "stage1-step1413814",
+    "commit": "373bad25002f1624757a73235c5ca844c6375c25",
+    "bytes": 14605764269,
+    "seconds": 665.3,
+    "MB_per_s": 22.0
+   },
+   "seconds": 728.2
+  }
+ },
+ "parked": [],
+ "phase": "done",
+ "updated_utc": "2026-11-07T19:31:55Z",
+ "elapsed_s": 12806.4,
+ "reports": {
+  "t05_K_B": {
+   "pass": true,
+   "n": 2,
+   "max_rel": 2.0382321098830398e-08,
+   "n_exact_fp32": 0,
+   "max_rel_fp32_cpu": 2.8133318763235618e-06,
+   "tol": 0.00013,
+   "failing_input": {
+    "what": "our column norms of T_(t-1) against the bank's T_t values",
+    "pass": false,
+    "max_rel": 0.11796312288332131
+   }
+  },
+  "t06_K_B": {
+   "pass": true,
+   "n": 2,
+   "max_rel": 3.33378923032374e-08,
+   "n_exact_fp32": 0,
+   "max_rel_fp32_cpu": 1.5271723129768347e-06,
+   "tol": 0.00013,
+   "failing_input": {
+    "what": "our column norms of T_(t-1) against the bank's T_t values",
+    "pass": false,
+    "max_rel": 0.10314374381583467
+   }
+  },
+  "t06_TRI": {
+   "holds": true,
+   "n": 2,
+   "min_margin": 0.33109097349989614,
+   "rolled_holds": true
+  },
+  "t07_K_B": {
+   "pass": true,
+   "n": 17,
+   "max_rel": 4.6654679648750644e-08,
+   "n_exact_fp32": 0,
+   "max_rel_fp32_cpu": 2.3752655992302238e-06,
+   "tol": 0.00013,
+   "failing_input": {
+    "what": "our column norms of T_(t-1) against the bank's T_t values",
+    "pass": false,
+    "max_rel": 0.13562629551428007
+   }
+  },
+  "t07_TRI": {
+   "holds": true,
+   "n": 1,
+   "min_margin": 0.3811806989419376,
+   "rolled_holds": true
+  },
+  "t08_K_B": {
+   "pass": true,
+   "n": 26,
+   "max_rel": 6.250761670176565e-08,
+   "n_exact_fp32": 0,
+   "max_rel_fp32_cpu": 2.7610756301093173e-06,
+   "tol": 0.00013,
+   "failing_input": {
+    "what": "our column norms of T_(t-1) against the bank's T_t values",
+    "pass": false,
+    "max_rel": 0.11047087488390403
+   }
+  },
+  "t08_TRI": {
+   "holds": true,
+   "n": 17,
+   "min_margin": 0.45020540069289494,
+   "rolled_holds": true
+  },
+  "t09_K_B": {
+   "pass": true,
+   "n": 28,
+   "max_rel": 6.896332756400552e-08,
+   "n_exact_fp32": 0,
+   "max_rel_fp32_cpu": 3.128416165277146e-06,
+   "tol": 0.00013,
+   "failing_input": {
+    "what": "our column norms of T_(t-1) against the bank's T_t values",
+    "pass": false,
+    "max_rel": 0.08617521680556989
+   }
+  },
+  "t09_TRI": {
+   "holds": true,
+   "n": 10,
+   "min_margin": 0.5159976319234587,
+   "rolled_holds": true
+  },
+  "t10_K_B": {
+   "pass": true,
+   "n": 61,
+   "max_rel": 8.569603561278287e-08,
+   "n_exact_fp32": 0,
+   "max_rel_fp32_cpu": 3.484256285495861e-06,
+   "tol": 0.00013,
+   "failing_input": {
+    "what": "our column norms of T_(t-1) against the bank's T_t values",
+    "pass": false,
+    "max_rel": 0.1264453817287803
+   }
+  },
+  "t10_TRI": {
+   "holds": true,
+   "n": 22,
+   "min_margin": 0.4964803933232425,
+   "rolled_holds": true
+  },
+  "t11_K_B": {
+   "pass": true,
+   "n": 98,
+   "max_rel": 8.610272382148745e-08,
+   "n_exact_fp32": 0,
+   "max_rel_fp32_cpu": 3.5926515526967294e-06,
+   "tol": 0.00013,
+   "failing_input": {
+    "what": "our column norms of T_(t-1) against the bank's T_t values",
+    "pass": false,
+    "max_rel": 0.06179751258692366
+   }
+  },
+  "t11_TRI": {
+   "holds": true,
+   "n": 47,
+   "min_margin": 0.5876009779492259,
+   "rolled_holds": true
+  },
+  "t12_K_B": {
+   "pass": true,
+   "n": 125,
+   "max_rel": 1.1100166698487963e-07,
+   "n_exact_fp32": 0,
+   "max_rel_fp32_cpu": 3.558697885788707e-06,
+   "tol": 0.00013,
+   "failing_input": {
+    "what": "our column norms of T_(t-1) against the bank's T_t values",
+    "pass": false,
+    "max_rel": 0.08535222911523957
+   }
+  },
+  "t12_TRI": {
+   "holds": true,
+   "n": 78,
+   "min_margin": 0.513371437929872,
+   "rolled_holds": true
+  },
+  "t13_K_B": {
+   "pass": true,
+   "n": 123,
+   "max_rel": 6.153040871774683e-08,
+   "n_exact_fp32": 0,
+   "max_rel_fp32_cpu": 2.8209644103193764e-06,
+   "tol": 0.00013,
+   "failing_input": {
+    "what": "our column norms of T_(t-1) against the bank's T_t values",
+    "pass": false,
+    "max_rel": 0.19691219229685927
+   }
+  },
+  "t13_TRI": {
+   "holds": true,
+   "n": 86,
+   "min_margin": 0.359823433459565,
+   "rolled_holds": true
+  },
+  "t14_K_B": {
+   "pass": true,
+   "n": 85,
+   "max_rel": 7.057021336237423e-08,
+   "n_exact_fp32": 0,
+   "max_rel_fp32_cpu": 3.881649221005933e-06,
+   "tol": 0.00013,
+   "failing_input": {
+    "what": "our column norms of T_(t-1) against the bank's T_t values",
+    "pass": false,
+    "max_rel": 0.39297910132781355
+   }
+  },
+  "t14_TRI": {
+   "holds": true,
+   "n": 71,
+   "min_margin": 0.2344557149475362,
+   "rolled_holds": true
+  },
+  "t15_K_B": {
+   "pass": true,
+   "n": 352464,
+   "max_rel": 1.4919310756407772e-07,
+   "n_exact_fp32": 29,
+   "max_rel_fp32_cpu": 4.079042860085001e-06,
+   "tol": 0.00013,
+   "failing_input": {
+    "what": "our column norms of T_(t-1) against the bank's T_t values",
+    "pass": false,
+    "max_rel": 0.7926846558782824
+   }
+  },
+  "t15_TRI": {
+   "holds": true,
+   "n": 85,
+   "min_margin": 0.11661244195390036,
+   "rolled_holds": true
+  }
+ },
+ "n_records": {
+  "freeze": 234,
+  "test": 208
+ }
+}

@@ -1,0 +1,5 @@
+[
+  {"name": "b1", "module": "infra.aws_pg.jobs.humboldt_b1", "args": "--run-id humboldt_b1"},
+  {"name": "b3", "module": "infra.aws_pg.jobs.humboldt_b3", "args": "--run-id humboldt_b3"},
+  {"name": "b4", "module": "infra.aws_pg.jobs.humboldt_b4", "args": "--run-id humboldt_b4 --budget-h 3.0"}
+]

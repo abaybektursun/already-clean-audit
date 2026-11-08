@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- macOS launchd agent: tick the pg reconciler every 10 min, survives terminal/session end.
+     Install:
+       cp infra/aws_pg/com.pglineage.reconcile.plist ~/Library/LaunchAgents/
+       launchctl load ~/Library/LaunchAgents/com.pglineage.reconcile.plist
+     Disable:
+       launchctl unload ~/Library/LaunchAgents/com.pglineage.reconcile.plist
+     Notify-only (no autonomous agent spawn): set PG_RECONCILE_AUTONOMOUS=0 in the env block. -->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.pglineage.reconcile</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/abaybektursun/projects/interp_research-w15/infra/aws_pg/reconcile_tick.sh</string>
+  </array>
+  <key>StartInterval</key><integer>600</integer>
+  <key>RunAtLoad</key><true/>
+  <key>StandardOutPath</key><string>/Users/abaybektursun/projects/interp_research-w15/.pg_reconcile.launchd.log</string>
+  <key>StandardErrorPath</key><string>/Users/abaybektursun/projects/interp_research-w15/.pg_reconcile.launchd.log</string>
+</dict>
+</plist>

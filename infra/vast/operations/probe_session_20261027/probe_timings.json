@@ -1,0 +1,10 @@
+{
+  "requests": 75,
+  "successful": 74,
+  "rejected": 1,
+  "generated_samples": 64,
+  "server_elapsed_s": 102.387,
+  "median_three_model_steer_s": 2.3745000000000003,
+  "median_three_model_inspect_s": 0.0805,
+  "definition": "Server-reported elapsed time; excludes startup, transport and human/agent thinking time."
+}

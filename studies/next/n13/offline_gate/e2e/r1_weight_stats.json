@@ -1,0 +1,84 @@
+{
+ "families": {
+  "mlp": {
+   "entries": 73728,
+   "unchanged": 50442,
+   "one_step": 21754,
+   "above_floor": 1532,
+   "energy": 3.8956503974236707,
+   "inexact": 0,
+   "signed_zero_swaps": 0
+  },
+  "attn": {
+   "entries": 65536,
+   "unchanged": 1166,
+   "one_step": 2388,
+   "above_floor": 61982,
+   "energy": 0.2605042983623945,
+   "inexact": 0,
+   "signed_zero_swaps": 0
+  },
+  "norm": {
+   "entries": 1088,
+   "unchanged": 880,
+   "one_step": 208,
+   "above_floor": 0,
+   "energy": 0.004364013671875,
+   "inexact": 0,
+   "signed_zero_swaps": 0
+  },
+  "embed": {
+   "entries": 65536,
+   "unchanged": 65536,
+   "one_step": 0,
+   "above_floor": 0,
+   "energy": 0.0,
+   "inexact": 0,
+   "signed_zero_swaps": 0
+  }
+ },
+ "mlp_unchanged_share": 0.6841634114583334,
+ "energy_share": {
+  "mlp": 0.9363376707254903,
+  "attn": 0.06261341831493283,
+  "norm": 0.0010489109595768582,
+  "embed": 0.0
+ },
+ "ks": [
+  2,
+  4,
+  8,
+  24
+ ],
+ "n_neurons": 384,
+ "J_floor": {
+  "k0.1": 1.0,
+  "k0.3": 1.0,
+  "k1": 1.0,
+  "k3": 0.2
+ },
+ "rndT_m": {
+  "k0.1": 215,
+  "k0.3": 380,
+  "k1": 376,
+  "k3": 360
+ },
+ "rndT_short": {
+  "k0.1": false,
+  "k0.3": true,
+  "k1": true,
+  "k3": true
+ },
+ "rndE_c": {
+  "k0.1": 972.9231727973237,
+  "k0.3": 785.3323552479186,
+  "k1": 778.8480491439257,
+  "k3": 485.8339086371868
+ },
+ "layer_hist_k1": [
+  1,
+  2,
+  3,
+  2
+ ]
+}

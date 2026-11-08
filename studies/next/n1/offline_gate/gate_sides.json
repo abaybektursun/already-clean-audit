@@ -1,0 +1,101 @@
+{
+ "kb_bank": {
+  "n_values": 775,
+  "points": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15
+  ],
+  "n_per_point": {
+   "5": 2,
+   "6": 2,
+   "7": 17,
+   "8": 26,
+   "9": 28,
+   "10": 61,
+   "11": 98,
+   "12": 125,
+   "13": 123,
+   "14": 85,
+   "15": 208
+  },
+  "sha256": "401c6134fc9bd5bc068c364026b2843382033ff3c0b3b33d6acbf1f0072fe988"
+ },
+ "n6_t15": {
+  "shape": [
+   32,
+   11008
+  ],
+  "sha256": "dff570e3d32059eeb5edb6036fa4abf40a60a6dfeffecc92cf9e8036ffe5beb1",
+  "lfs_oid_registered": true
+ },
+ "control_pairs_bank_path": {
+  "m2_vs_n12": {
+   "n": 458,
+   "max_abs": 0.0,
+   "n_bitwise": 458
+  },
+  "m2_vs_n6_t15": {
+   "n": 184,
+   "max_abs": 0.0,
+   "n_bitwise": 184
+  },
+  "n12_vs_n6_t15": {
+   "n": 122,
+   "max_abs": 0.0,
+   "n_bitwise": 122
+  }
+ },
+ "K_B": {
+  "tol": 0.00013,
+  "tol_reason": "the fp32 rounding bound of the bank's 4,096-term norm in any order",
+  "failing_input_adjacent_point": {
+   "n": 419,
+   "min_rel": 0.0015472180490872546,
+   "q01": 0.0027680617832626024,
+   "median": 0.1400419086527658,
+   "n_within_tol": 0
+  },
+  "pass_side": "not banked: no CPU fp64 norm of these columns exists; the bound holds for any summation order, so a path difference cannot exceed it"
+ },
+ "units": {
+  "n": 442,
+  "real_with_matched": 153,
+  "matched_min": 98
+ },
+ "room": {
+  "pass": true,
+  "labels": {
+   "above": "ABOVE_SELECTION",
+   "below": "BELOW_SELECTION",
+   "at": "AT_SELECTION"
+  },
+  "hypotheses": [
+   "COLUMN_FIRST",
+   "NEITHER",
+   "NEITHER (H_0: both at selection)",
+   "ROWS_FIRST",
+   "TOGETHER"
+  ]
+ },
+ "windows": {
+  "k_min": 6,
+  "reference_of_k_min": [
+   2,
+   3
+  ],
+  "window_of_k_min": [
+   4,
+   5,
+   6
+  ]
+ }
+}

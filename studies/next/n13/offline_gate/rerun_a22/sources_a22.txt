@@ -1,0 +1,217 @@
+Source lines read for N13_SPEC.md A22 (the engine-step log, the concurrency limit and the KV capacity), 2026-11-06, by the seventh N13 executor.
+Each file was fetched raw from GitHub at tag v0.32.0 (the n13 venv's vllm==0.32.0). sha256 of the fetched bytes, then the quoted lines (line number: text).
+
+== https://raw.githubusercontent.com/vllm-project/vllm/v0.32.0/vllm/v1/engine/llm_engine.py
+sha256 b3a9df98e2f0f1cd29fcbb7b079c292f680902a9b578d0d1002015a9a7d6cf15
+174:     def from_engine_args(
+175:         cls,
+176:         engine_args: EngineArgs,
+177:         usage_context: UsageContext = UsageContext.ENGINE_CONTEXT,
+178:         stat_loggers: list[StatLoggerFactory] | None = None,
+179:         enable_multiprocessing: bool = False,
+180:     ) -> "LLMEngine":
+181:         """Creates an LLM engine from the engine arguments."""
+182:         # Create the engine configs.
+183:         vllm_config = engine_args.create_engine_config(usage_context)
+184:         executor_class = Executor.get_class(vllm_config)
+185: 
+186:         if envs.VLLM_ENABLE_V1_MULTIPROCESSING:
+187:             logger.debug("Enabling multiprocessing for LLMEngine.")
+188:             enable_multiprocessing = True
+189: 
+190:         # Create the LLMEngine.
+191:         return cls(
+192:             vllm_config=vllm_config,
+193:             executor_class=executor_class,
+194:             log_stats=not engine_args.disable_log_stats,
+195:             usage_context=usage_context,
+196:             stat_loggers=stat_loggers,
+197:             multiprocess_mode=enable_multiprocessing,
+  ...
+200:     def get_num_unfinished_requests(self) -> int:
+201:         return self.output_processor.get_num_unfinished_requests()
+  ...
+319:     def step(self) -> list[RequestOutput | PoolingRequestOutput]:
+320:         if self.should_execute_dummy_batch:
+321:             self.should_execute_dummy_batch = False
+322:             self.engine_core.execute_dummy_batch()
+323:             return []
+324: 
+325:         # 1) Get EngineCoreOutput from the EngineCore.
+326:         with record_function_or_nullcontext("llm_engine step: get_output"):
+327:             outputs = self.engine_core.get_output()
+328: 
+329:         # 2) Process EngineCoreOutputs.
+330:         with record_function_or_nullcontext("llm_engine step: process_outputs"):
+331:             iteration_stats = (
+332:                 IterationStats() if self.log_stats and outputs.outputs else None
+333:             )
+334:             processed_outputs = self.output_processor.process_outputs(
+335:                 outputs.outputs,
+336:                 engine_core_timestamp=outputs.timestamp,
+337:                 iteration_stats=iteration_stats,
+338:                 weight_version=outputs.weight_version,
+339:             )
+340: 
+341:             mm_processor_cache = self.renderer.mm_processor_cache
+342:             if mm_processor_cache is not None:
+343:                 for engine_core_output in outputs.outputs:
+344:                     if engine_core_output.mm_cache_miss_hashes:
+345:                         for mm_hash in engine_core_output.mm_cache_miss_hashes:
+346:                             mm_processor_cache.invalidate(mm_hash)
+347: 
+348:             self.output_processor.update_scheduler_stats(outputs.scheduler_stats)
+349: 
+350:         # 3) Abort any reqs that finished due to stop strings.
+351:         with record_function_or_nullcontext("llm_engine step: abort_requests"):
+352:             self.engine_core.abort_requests(processed_outputs.reqs_to_abort)
+353: 
+354:         # 4) Record stats
+355:         with record_function_or_nullcontext("llm_engine step: record_stats"):
+356:             if self.logger_manager is not None and outputs.scheduler_stats is not None:
+357:                 # Record even when this step produced no request outputs.
+358:                 self.logger_manager.record(
+359:                     scheduler_stats=outputs.scheduler_stats,
+360:                     iteration_stats=iteration_stats,
+361:                     mm_cache_stats=self.renderer.stat_mm_cache(),
+362:                 )
+363:                 if outputs.outputs:
+364:                     self.do_log_stats_with_interval()
+365: 
+366:         return processed_outputs.request_outputs
+  ...
+
+== https://raw.githubusercontent.com/vllm-project/vllm/v0.32.0/vllm/engine/arg_utils.py
+sha256 c10281277fd9a90dc8b22670db4f1af53708c5caa2aefee7aa861fa579329219
+2943:         else:
+2944:             # TODO(woosuk): Tune the default values for other hardware.
+2945:             default_max_num_batched_tokens = {
+2946:                 UsageContext.LLM_CLASS: 8192,
+2947:                 UsageContext.OPENAI_API_SERVER: 2048,
+2948:             }
+2949:             default_max_num_seqs = {
+2950:                 UsageContext.LLM_CLASS: 256,
+2951:                 UsageContext.OPENAI_API_SERVER: 256,
+2952:             }
+  ...
+3123:         if self.max_num_seqs is None:
+3124:             self.max_num_seqs = default_max_num_seqs.get(
+3125:                 usage_context,
+3126:                 SchedulerConfig.DEFAULT_MAX_NUM_SEQS,
+3127:             )
+  ...
+
+== https://raw.githubusercontent.com/vllm-project/vllm/v0.32.0/vllm/config/scheduler.py
+sha256 2fb86b1572a4925be59f304d13b4f6ec03d496b67a7c4abbb976ecda2232839a
+43:     DEFAULT_MAX_NUM_SEQS: ClassVar[int] = 128
+  ...
+62:     max_num_seqs: int = Field(default=DEFAULT_MAX_NUM_SEQS, ge=1)
+  ...
+
+== https://raw.githubusercontent.com/vllm-project/vllm/v0.32.0/vllm/v1/engine/output_processor.py
+sha256 e78c5af6b0db10c93f19af359d4cb003a82f7ddfde1ae2c58084a53a56d0adb4
+307:     def make_request_output(
+308:         self,
+309:         new_token_ids: list[int],
+310:         pooling_output: torch.Tensor | None,
+311:         finish_reason: FinishReason | None,
+312:         stop_reason: int | str | None,
+313:         kv_transfer_params: dict[str, Any] | None = None,
+314:         ec_transfer_params: dict[str, Any] | None = None,
+315:         error: RequestError | None = None,
+316:     ) -> RequestOutput | PoolingRequestOutput | None:
+317:         finished = finish_reason is not None
+318:         final_only = self.output_kind == RequestOutputKind.FINAL_ONLY
+319: 
+320:         if not finished and final_only:
+321:             # Only the final output is required in FINAL_ONLY mode.
+322:             return None
+323: 
+  ...
+440:         text = self.detokenizer.get_next_output_text(finished, delta)
+441:         if not delta:
+  ...
+526:     def get_num_unfinished_requests(self):
+527:         return len(self.request_states)
+  ...
+787:             # 4) Create and handle RequestOutput objects.
+788:             if request_output := req_state.make_request_output(
+789:                 new_token_ids,
+790:                 pooling_output,
+791:                 finish_reason,
+792:                 stop_reason,
+793:                 kv_transfer_params,
+794:                 ec_transfer_params,
+795:                 error=request_error,
+796:             ):
+797:                 if req_state.streaming_input:
+798:                     request_output.finished = False
+799: 
+800:                 if req_state.queue is not None:
+  ...
+
+== https://raw.githubusercontent.com/vllm-project/vllm/v0.32.0/vllm/v1/core/kv_cache_utils.py
+sha256 af4164bca819f1cdc416077522a7019936fd38a523a482283eb91b08dae0e57a
+1195: def get_max_concurrency_for_kv_cache_config(
+1196:     vllm_config: VllmConfig, kv_cache_config: KVCacheConfig
+1197: ) -> float:
+1198:     """Get the maximum concurrency for the given KV cache configuration.
+1199: 
+1200:     A request at max_model_len consumes whole blocks from each group's block
+1201:     table — cdiv(per-request bytes, page bytes) of the group's spec — and all
+1202:     device groups draw those block ids from one shared pool, so the per-request
+1203:     total is the sum over groups. The memory/page ratio is identical whether
+1204:     a group carries an aggregated UniformTypeKVCacheSpecs (worker config) or
+1205:     a representative per-layer spec (scheduler config), so both capacity
+1206:     call sites agree.
+1207: 
+1208:     Host groups use a separate pool; the smaller concurrency limit applies.
+1209:     """
+1210:     num_blocks_per_request = 0
+1211:     host_blocks_per_request = 0
+1212:     for group in kv_cache_config.kv_cache_groups:
+1213:         required = cdiv(
+1214:             group.kv_cache_spec.max_memory_usage_bytes(vllm_config),
+1215:             group.kv_cache_spec.page_size_bytes,
+1216:         )
+1217:         if group.host_resident:
+1218:             host_blocks_per_request += required
+1219:         else:
+1220:             num_blocks_per_request += required
+1221:     limits = [kv_cache_config.num_blocks / num_blocks_per_request]
+1222:     if host_blocks_per_request:
+1223:         assert kv_cache_config.hisparse_host_num_blocks is not None
+1224:         limits.append(
+1225:             kv_cache_config.hisparse_host_num_blocks / host_blocks_per_request
+1226:         )
+1227:     return min(limits)
+  ...
+2309: 
+2310: 
+2311: def _kv_cache_device_name(vllm_config: VllmConfig) -> str:
+2312:     device_type = vllm_config.device_config.device_type
+2313:     return "GPU" if device_type == "cuda" else device_type.upper()
+2314: 
+2315: 
+2316: def update_kv_cache_capacity(
+2317:     vllm_config: VllmConfig, kv_cache_config: KVCacheConfig
+2318: ) -> None:
+2319:     """Store and log the resolved KV cache capacity."""
+2320:     num_tokens, max_concurrency = get_kv_cache_capacity(vllm_config, kv_cache_config)
+2321:     vllm_config.cache_config.kv_cache_size_tokens = num_tokens
+2322:     vllm_config.cache_config.kv_cache_max_concurrency = max_concurrency
+2323:     max_model_len = vllm_config.model_config.max_model_len
+2324:     pools = _kv_cache_device_name(vllm_config)
+2325:     if vllm_config.attention_config.hisparse_config is not None:
+2326:         pools += " + host"
+2327:     logger.info_once(
+2328:         "%s KV cache size: %s tokens, "
+2329:         "Maximum concurrency for %s tokens per request: %.2fx",
+2330:         pools,
+2331:         f"{num_tokens:,}",
+2332:         f"{max_model_len:,}",
+2333:         max_concurrency,
+2334:     )
+2335: 
+  ...
+

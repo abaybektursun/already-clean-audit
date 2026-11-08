@@ -1,0 +1,17 @@
+{
+ "retired": "2026-10-20, no Opus through the API",
+ "backend": "openai_compat",
+ "base_url": "https://api.deepinfra.com/v1/openai",
+ "key_env": "NEURONS_API_KEY_1",
+ "models": {
+  "explainer": "anthropic/claude-opus-5-5",
+  "second_reader": "anthropic/claude-opus-5-5",
+  "writer": "anthropic/claude-opus-5-5",
+  "writer_job": "anthropic/claude-opus-5-5",
+  "clusterer": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "judge": "deepseek-ai/DeepSeek-V4.1-Flash-1017"
+ },
+ "temperature": 1.0,
+ "response_format": "json_schema",
+ "notes": "Key in ~/.config/interp_research/keys.env as NEURONS_API_KEY_1 (mode 600); export it into the environment, never into this file."
+}

@@ -1,0 +1,22 @@
+{
+ "checks": 76,
+ "passed": 76,
+ "failed": [],
+ "projection": {
+  "core": {
+   "gpu_h_center": 2.61,
+   "gpu_h_high": 3.56,
+   "budget_min_hard_kill": 278
+  },
+  "core,fd": {
+   "gpu_h_center": 3.9,
+   "gpu_h_high": 5.1,
+   "budget_min_hard_kill": 398
+  },
+  "core,fd,jvp": {
+   "gpu_h_center": 6.53,
+   "gpu_h_high": 9.78,
+   "budget_min_hard_kill": 763
+  }
+ }
+}

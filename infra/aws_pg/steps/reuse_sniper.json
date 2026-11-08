@@ -1,0 +1,12 @@
+[
+ {
+  "name": "s1",
+  "module": "infra.aws_pg.jobs.reuse_ablate",
+  "args": "--stage sniper --arms s1 --t T_15 --revision stage1-step1413814 --items s3://pg-lineage-769063704696/results/reuse/inputs/a5d212c82485/sniper_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus"
+ },
+ {
+  "name": "s2",
+  "module": "infra.aws_pg.jobs.reuse_ablate",
+  "args": "--stage sniper --arms s2 --t T_10 --revision stage1-step100000 --items s3://pg-lineage-769063704696/results/reuse/inputs/a5d212c82485/sniper_items.json --corpus s3://pg-lineage-769063704696/results/neurons/w1/q4b/1/out/corpus/corpus --from-step /work/out/s1"
+ }
+]

@@ -1,0 +1,46 @@
+# N13 samples coverage
+
+| arm | benchmark | samples | rows | roles |
+|---|---|---|---|---|
+| base | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| base | gsm8k | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| rl | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| rl | gsm8k | present | 5 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| zero | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| zero | gsm8k | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| id | math500 | present | 5 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| id | gsm8k | present | 5 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| top_k1 | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| top_k1 | gsm8k | present | 5 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| mlp | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| mlp | gsm8k | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| top_k0.3 | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| dare_k3 | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| dare_k0.1 | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| comp_k3 | math500 | present | 5 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| top_k1_B | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| dare_k1 | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| dare_k1 | gsm8k | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| top_k3 | math500 | present | 3 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| top_k0.1 | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| dare_k0.3 | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| comp_k1 | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| comp_k1 | gsm8k | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| rnd0_k1 | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| dare_k1_d2 | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| rndE_k1 | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| rndE_k1 | gsm8k | present | 5 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| attn | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| attn | gsm8k | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| rndT_k3 | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| rndT_k0.3 | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| rndT_k0.1 | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| comp_k0.1 | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| topF_k1 | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| rndT_k1 | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| rndT_k1 | gsm8k | present | 5 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| rndE_k3 | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| rndE_k0.3 | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| rndE_k0.1 | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| comp_k0.3 | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |
+| rndT_k1_d2 | math500 | present | 4 | cap_hit,fixed_0,fixed_1,fixed_2,lowest_right,lowest_wrong |

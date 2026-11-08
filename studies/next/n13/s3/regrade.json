@@ -1,0 +1,154 @@
+{
+ "base/math500": {
+  "sha256": "d6a54809c0ca33e289e54accaddddb6ff270f69ae6e98d5262d99039c9d73913",
+  "n": 500,
+  "correct": 286,
+  "acc": 57.199999999999996,
+  "metrics_correct": 286,
+  "regrade_mismatches": 0,
+  "examples": [],
+  "G-COMPLETE": {
+   "n": 500,
+   "distinct": 500,
+   "covers": true,
+   "seeded": true,
+   "generated": true,
+   "finish_reason": true,
+   "n_empty": 7,
+   "pass": true
+  }
+ },
+ "base/gsm8k": {
+  "sha256": "e35fa07001d9c246015ad8cccb98f84469bb189133e3e8c0ce7966f7b73f262a",
+  "n": 1319,
+  "correct": 839,
+  "acc": 63.60879454131918,
+  "metrics_correct": 839,
+  "regrade_mismatches": 0,
+  "examples": [],
+  "G-COMPLETE": {
+   "n": 1319,
+   "distinct": 1319,
+   "covers": true,
+   "seeded": true,
+   "generated": true,
+   "finish_reason": true,
+   "n_empty": 71,
+   "pass": true
+  }
+ },
+ "rl/math500": {
+  "sha256": "1e7c6bf90f93a1915388fbbf6c97928fbd7881068240b1bff798821586b88b6f",
+  "n": 500,
+  "correct": 460,
+  "acc": 92.0,
+  "metrics_correct": 460,
+  "regrade_mismatches": 0,
+  "examples": [],
+  "G-COMPLETE": {
+   "n": 500,
+   "distinct": 500,
+   "covers": true,
+   "seeded": true,
+   "generated": true,
+   "finish_reason": true,
+   "n_empty": 0,
+   "pass": true
+  }
+ },
+ "rl/gsm8k": {
+  "sha256": "3d8b9e0dd1caf01af3bf503c802dc235a456ede8cbb434af09450f711de13d23",
+  "n": 1319,
+  "correct": 1218,
+  "acc": 92.34268385140257,
+  "metrics_correct": 1218,
+  "regrade_mismatches": 0,
+  "examples": [],
+  "G-COMPLETE": {
+   "n": 1319,
+   "distinct": 1319,
+   "covers": true,
+   "seeded": true,
+   "generated": true,
+   "finish_reason": true,
+   "n_empty": 0,
+   "pass": true
+  }
+ },
+ "zero/math500": {
+  "sha256": "aee78314216bddeffb18c5ce5933149fa1d952601bdfc48a7d1ef6450836a70a",
+  "n": 500,
+  "correct": 277,
+  "acc": 55.400000000000006,
+  "metrics_correct": 277,
+  "regrade_mismatches": 0,
+  "examples": [],
+  "G-COMPLETE": {
+   "n": 500,
+   "distinct": 500,
+   "covers": true,
+   "seeded": true,
+   "generated": true,
+   "finish_reason": true,
+   "n_empty": 11,
+   "pass": true
+  }
+ },
+ "zero/gsm8k": {
+  "sha256": "87e91124386b1f4e19cb43b5b900795f17387d0c87d226644e3edb26842e04ec",
+  "n": 1319,
+  "correct": 847,
+  "acc": 64.2153146322972,
+  "metrics_correct": 847,
+  "regrade_mismatches": 0,
+  "examples": [],
+  "G-COMPLETE": {
+   "n": 1319,
+   "distinct": 1319,
+   "covers": true,
+   "seeded": true,
+   "generated": true,
+   "finish_reason": true,
+   "n_empty": 83,
+   "pass": true
+  }
+ },
+ "id/math500": {
+  "sha256": "326263fa6ea4f216d558d0e837904bcd7607bfe89c58f72bbb5d37db05c1cdcd",
+  "n": 500,
+  "correct": 456,
+  "acc": 91.2,
+  "metrics_correct": 456,
+  "regrade_mismatches": 0,
+  "examples": [],
+  "G-COMPLETE": {
+   "n": 500,
+   "distinct": 500,
+   "covers": true,
+   "seeded": true,
+   "generated": true,
+   "finish_reason": true,
+   "n_empty": 0,
+   "pass": true
+  }
+ },
+ "id/gsm8k": {
+  "sha256": "417eef6e37967fb82cae61e8596b4bd31b08f71810bc7ed5d47a8e3917736fce",
+  "n": 1319,
+  "correct": 1214,
+  "acc": 92.03942380591357,
+  "metrics_correct": 1214,
+  "regrade_mismatches": 0,
+  "examples": [],
+  "G-COMPLETE": {
+   "n": 1319,
+   "distinct": 1319,
+   "covers": true,
+   "seeded": true,
+   "generated": true,
+   "finish_reason": true,
+   "n_empty": 0,
+   "pass": true
+  }
+ }
+}

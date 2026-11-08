@@ -1,0 +1,204 @@
+{
+ "step": "r0_known",
+ "status": "parked",
+ "suite": "minerva_math::olmes:n4:v2",
+ "target": 40.0,
+ "tol": 1.6,
+ "tolerance": {
+  "se_one_reading": 0.37421220512259656,
+  "se_difference": 0.5292159756899187,
+  "three_se_difference": 1.587647927069756,
+  "tol": 1.6
+ },
+ "engine": {
+  "vllm": "0.11.0",
+  "lm_eval": "0.4.3",
+  "olmes_commit": "5a51f502d463b8cdc4a2dcad7d7096c41ff1197e",
+  "model_args": "{\"trust_remote_code\": false}",
+  "batch_size": "auto",
+  "shim": "/Users/abaybektursun/projects/interp_research-n13/infra/aws_pg/jobs/n13_olmes_shim/sitecustomize.py",
+  "shim_sha256": "1f6ccee39a8b916dec2ce0f3b950903bc5acad049a55e2f157e3b8c5596526d6",
+  "amendment": "N13_SPEC.md A18 (b), A19"
+ },
+ "path_check": {
+  "what": "olmes --limit 100 on the same task, model and model-args; a path check, not a gate",
+  "command": [
+   "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_venv/bin/python",
+   "-I",
+   "-c",
+   "import subprocess, sys; sys.exit(subprocess.run([sys.executable, '-I', '-c', *sys.argv[1:]]).returncode)",
+   "import json, os, shutil, sys, time\nsrc, od, calls, sleep_s, call_s = sys.argv[1], sys.argv[2], json.loads(sys.argv[3]), float(sys.argv[4]), float(sys.argv[5])\ntime.sleep(sleep_s)\nfor n, tok in calls:\n    t0 = time.time(); time.sleep(call_s); t1 = time.time()\n    open(os.environ['N13_VLLM_SHIM_LOG'], 'a').write(json.dumps({'pid': os.getpid(), 'n_prompts': n, 't_start': t0, 't_end': t1, 'output_tokens': tok, 'pythonpath': os.environ['PYTHONPATH']}) + '\\n')\nshutil.copytree(src, od, dirs_exist_ok=True)\n",
+   "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_dry_a19r2/e2e/olmes_src_path",
+   "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_dry_a19r2/e2e/r0_park/r0_known/olmes_limit100",
+   "[[400, 55370], [400, 86705], [400, 86995], [400, 135270], [400, 108405], [400, 56220], [400, 157965]]",
+   "0.2",
+   "0.3"
+  ],
+  "started_utc": "2026-11-05T22:01:37Z",
+  "elapsed_s": 2.4,
+  "olmes_files": [
+   "metrics-all.jsonl",
+   "task-000-minerva_math_algebra-metrics.json",
+   "task-000-minerva_math_algebra-predictions.jsonl",
+   "task-000-minerva_math_algebra-requests.jsonl",
+   "task-001-minerva_math_counting_and_probability-metrics.json",
+   "task-001-minerva_math_counting_and_probability-predictions.jsonl",
+   "task-001-minerva_math_counting_and_probability-requests.jsonl",
+   "task-002-minerva_math_geometry-metrics.json",
+   "task-002-minerva_math_geometry-predictions.jsonl",
+   "task-002-minerva_math_geometry-requests.jsonl",
+   "task-003-minerva_math_intermediate_algebra-metrics.json",
+   "task-003-minerva_math_intermediate_algebra-predictions.jsonl",
+   "task-003-minerva_math_intermediate_algebra-requests.jsonl",
+   "task-004-minerva_math_number_theory-metrics.json",
+   "task-004-minerva_math_number_theory-predictions.jsonl",
+   "task-004-minerva_math_number_theory-requests.jsonl",
+   "task-005-minerva_math_prealgebra-metrics.json",
+   "task-005-minerva_math_prealgebra-predictions.jsonl",
+   "task-005-minerva_math_prealgebra-requests.jsonl",
+   "task-006-minerva_math_precalculus-metrics.json",
+   "task-006-minerva_math_precalculus-predictions.jsonl",
+   "task-006-minerva_math_precalculus-requests.jsonl"
+  ],
+  "olmes_returncode": 0,
+  "shim": {
+   "log": "/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad/n13_dry_a19r2/e2e/r0_park/r0_known/shim_calls_limit100.jsonl",
+   "calls": 7,
+   "prompts": 2800,
+   "max_n_prompts": 400,
+   "generate_s": 2.138955593109131,
+   "output_tokens": 686930
+  },
+  "rows_per_subject": {
+   "algebra": 100,
+   "counting_and_probability": 100,
+   "geometry": 100,
+   "intermediate_algebra": 100,
+   "number_theory": 100,
+   "prealgebra": 100,
+   "precalculus": 100
+  },
+  "batched": {
+   "what": "A19: while olmes runs, the first shim call must have n_prompts >= 2, else olmes is killed within one poll interval; at the end, at least one call with n_prompts >= 2. Failing input: batch size 1, every call n_prompts 1",
+   "first_n_prompts": 400,
+   "max_n_prompts": 400,
+   "stopped_early": false,
+   "pass": true
+  },
+  "pass": true,
+  "read": {
+   "primary_score": 0.4,
+   "primary_score_macro": 0.4,
+   "pass_at_1_micro": 0.41000000000000003,
+   "per_subject": {
+    "algebra": 0.4,
+    "counting_and_probability": 0.4,
+    "geometry": 0.4,
+    "intermediate_algebra": 0.4,
+    "number_theory": 0.4,
+    "prealgebra": 0.4,
+    "precalculus": 0.4
+   },
+   "num_instances": {
+    "algebra": 1187,
+    "counting_and_probability": 474,
+    "geometry": 479,
+    "intermediate_algebra": 903,
+    "number_theory": 540,
+    "prealgebra": 871,
+    "precalculus": 546
+   },
+   "sizes_match": true,
+   "n_total": 5000
+  },
+  "rescore": {
+   "deranged_macro": 0.0,
+   "identity_macro": 0.4,
+   "identity_docs_equal": true,
+   "n_docs": 700,
+   "scorer": "string",
+   "context_tokens": {
+    "over_1024": 0,
+    "n": 700,
+    "max": 15
+   }
+  }
+ },
+ "updated_utc": "2026-11-05T22:01:40Z",
+ "projection": {
+  "rule": "park when projected_full_min > 0.85 x (allowance_min - elapsed_min); projected = F + T / r, T = sum over subjects of 4 x size_s x tokens_s / n_s",
+  "path_check_wall_s": 2.4,
+  "path_check_generate_s": 2.138955593109131,
+  "path_check_output_tokens": 686930,
+  "path_check_generations": 2800,
+  "full_generations": 20000,
+  "per_subject": {
+   "algebra": {
+    "n_prompts": 400,
+    "output_tokens": 55370,
+    "generate_s": 0.306318998336792,
+    "mean_tokens": 138.425,
+    "full_generations": 4748,
+    "T_s": 657241.9
+   },
+   "counting_and_probability": {
+    "n_prompts": 400,
+    "output_tokens": 86705,
+    "generate_s": 0.30208802223205566,
+    "mean_tokens": 216.7625,
+    "full_generations": 1896,
+    "T_s": 410981.7
+   },
+   "geometry": {
+    "n_prompts": 400,
+    "output_tokens": 86995,
+    "generate_s": 0.3056149482727051,
+    "mean_tokens": 217.4875,
+    "full_generations": 1916,
+    "T_s": 416706.05
+   },
+   "intermediate_algebra": {
+    "n_prompts": 400,
+    "output_tokens": 135270,
+    "generate_s": 0.3079366683959961,
+    "mean_tokens": 338.175,
+    "full_generations": 3612,
+    "T_s": 1221488.1
+   },
+   "number_theory": {
+    "n_prompts": 400,
+    "output_tokens": 108405,
+    "generate_s": 0.3014509677886963,
+    "mean_tokens": 271.0125,
+    "full_generations": 2160,
+    "T_s": 585387.0
+   },
+   "prealgebra": {
+    "n_prompts": 400,
+    "output_tokens": 56220,
+    "generate_s": 0.31002211570739746,
+    "mean_tokens": 140.55,
+    "full_generations": 3484,
+    "T_s": 489676.2
+   },
+   "precalculus": {
+    "n_prompts": 400,
+    "output_tokens": 157965,
+    "generate_s": 0.3055238723754883,
+    "mean_tokens": 394.9125,
+    "full_generations": 2184,
+    "T_s": 862488.9
+   }
+  },
+  "T_full_output_tokens": 4643969.850000001,
+  "r_tokens_per_s": 321152.06234903465,
+  "F_fixed_s": 0.26104440689086905,
+  "projected_full_s": 14.7213901260874,
+  "projected_full_min": 0.24535650210145665,
+  "allowance_min": 0.25,
+  "elapsed_min": 0.061344265937805176,
+  "left_min": 0.18865573406219482,
+  "fits_min": 0.1603573739528656,
+  "parked": true
+ }
+}
