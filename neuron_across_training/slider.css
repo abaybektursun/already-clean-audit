@@ -1,7 +1,7 @@
-/* "One neuron across training": the slider's styles, shared by the walkthrough page and index.html.
+/* "One neuron across training": the slider's own layout, shared by the walkthrough page and index.html.
    Every rule is scoped under #nat (n-a-t, neuron across training), so nothing reaches the host page.
-   The host defines --bg, --ink, --muted, --rule, --accent, --font-text and --font-mono, light and dark;
-   the slider's own tokens below are derived from them. */
+   The host page defines --bg, --ink, --muted, --rule, --accent, --font-text and --font-mono, light and dark
+   (the standalone page through ../site.css); the slider's own tokens below are derived from them. */
 #nat {
   --own: var(--accent);
   --other: #a85a14;
@@ -189,7 +189,6 @@
 #nat .pill.other { background: var(--other); color: var(--bg); }
 
 #nat .caption { margin: 44px 0 0; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 14px; color: var(--muted); max-width: 72ch; }
-#nat .missing { margin: 24px 0 0; font-size: 16px; }
 
 @media (max-width: 860px) {
   #nat .readout { grid-template-columns: minmax(0, 1fr) auto; }

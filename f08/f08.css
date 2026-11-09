@@ -1,0 +1,127 @@
+/* f08: each condition's score on 500 competition problems. Every rule is scoped under #f08; tokens come from site.css. */
+#f08 { font-size: var(--step-cap); line-height: 1.45; color: var(--ink); }
+#f08 *, #f08 *::before, #f08 *::after { box-sizing: border-box; }
+#f08 p { margin: 0; max-width: none; }
+#f08 .f08-wrap { display: grid; gap: 1.25rem; container: f08w / inline-size; }
+#f08 .f08-wrap > * { min-width: 0; }
+#f08 .f08-h { margin: 0 0 0.4rem; font-size: var(--step-0); font-weight: 700; line-height: 1.3; }
+#f08 .f08-note { margin: 0.6rem 0 0; color: var(--muted); max-width: 68ch; font-size: var(--step--1); }
+
+#f08 .f08-facts { display: flex; flex-wrap: wrap; gap: 1rem 2.5rem; }
+#f08 .f08-fact { display: grid; gap: 0.2rem; max-width: 18rem; }
+#f08 .f08-fact b { font-size: 2rem; line-height: 1.1; font-weight: 700; }
+#f08 .f08-fact span { color: var(--muted); }
+
+#f08 .f08-controls { margin: 0; }
+#f08 .f08-pick { display: flex; align-items: center; gap: 0.6rem; min-width: 0; max-width: 100%; flex: 1 1 auto; }
+#f08 .f08-select {
+  flex: 1 1 auto; min-width: 0; max-width: 34rem; min-height: 40px; padding: 0 0.6rem;
+  border: 1px solid var(--rule); border-radius: 8px; background: var(--bg); color: var(--ink);
+  font: 400 var(--step-cap) var(--font-text); text-overflow: ellipsis;
+}
+#f08 .f08-select option, #f08 .f08-select optgroup { background: var(--bg); color: var(--ink); }
+
+#f08 .f08-legend { display: flex; flex-wrap: wrap; gap: 0.3rem 1.25rem; font-size: var(--step--1); color: var(--muted); }
+#f08 .f08-legend span { display: inline-flex; align-items: center; gap: 0.45rem; }
+#f08 .f08-key { display: inline-block; flex: none; }
+#f08 .f08-key.bar { width: 16px; height: 11px; border-radius: 0 3px 3px 0; background: var(--bar); }
+#f08 .f08-key.pairbar { width: 16px; height: 11px; border-radius: 0 3px 3px 0; background: var(--claim); }
+#f08 .f08-key.whisker { width: 16px; height: 2px; background: var(--ink); }
+#f08 .f08-key.base { width: 2px; height: 14px; background: var(--control); }
+#f08 .f08-key.math { width: 0; height: 14px; border-left: 2px dashed var(--control); }
+#f08 .f08-key.right, #f08 .f08-pm.right { width: 12px; height: 12px; border-radius: 2px; background: var(--ink); }
+#f08 .f08-key.wrong, #f08 .f08-pm.wrong { width: 12px; height: 12px; border-radius: 2px; box-shadow: inset 0 0 0 1.5px var(--ink); }
+
+/* the list and the panel: side by side when the picture is wide */
+#f08 .f08-main { display: grid; gap: 1.5rem; }
+#f08 .f08-listbox { min-width: 0; container: f08l / inline-size; }
+@container f08w (min-width: 860px) {
+  #f08 .f08-main { grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); align-items: start; }
+  #f08 .f08-panel { position: sticky; top: 1rem; max-height: calc(100vh - 2rem); overflow-y: auto; }
+}
+
+#f08 .f08-row { display: grid; grid-template-columns: minmax(0, 1fr) 3rem auto; grid-template-areas: "name name name" "track val marks"; column-gap: 0.6rem; align-items: center; padding: 3px 4px; border-radius: 4px; }
+#f08 .f08-name { grid-area: name; font-size: var(--step--1); line-height: 1.3; padding-top: 2px; }
+#f08 .f08-track { grid-area: track; position: relative; height: 22px; }
+#f08 .f08-row[data-id] .f08-track { align-self: stretch; height: auto; min-height: 22px; }
+#f08 .f08-val { grid-area: val; text-align: right; font-variant-numeric: tabular-nums; }
+#f08 .f08-marks, #f08 .f08-phead { grid-area: marks; display: inline-flex; gap: 4px; }
+#f08 .f08-phead span { width: 12px; text-align: center; font-size: 12px; line-height: 1; color: var(--muted); }
+@container f08l (min-width: 520px) {
+  #f08 .f08-row { grid-template-columns: minmax(0, 13rem) minmax(0, 1fr) 3rem auto; grid-template-areas: "name track val marks"; }
+  #f08 .f08-name { padding-top: 0; }
+}
+#f08 .f08-axisrow { padding-bottom: 0; }
+#f08 .f08-axisrow .f08-name { padding: 0; }
+#f08 .f08-axis { height: 18px; }
+#f08 .f08-tick { position: absolute; bottom: 2px; transform: translateX(-50%); font-size: 12px; line-height: 1; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+#f08 .f08-list { outline-offset: 3px; border-top: 1px solid var(--rule); }
+#f08 .f08-list:focus-visible { outline: 2px solid var(--accent); }
+#f08 .f08-group { margin: 0.6rem 0 0.1rem; padding: 0 4px; font-size: var(--step--1); font-weight: 700; color: var(--muted); }
+#f08 .f08-row[data-id] { cursor: pointer; }
+#f08 .f08-row[data-id]:hover { background: var(--band); }
+#f08 .f08-row.cur { background: var(--band); box-shadow: inset 3px 0 0 var(--ink); }
+#f08 .f08-row.cur .f08-name { font-weight: 700; }
+#f08 .f08-ref { position: absolute; top: -3px; bottom: -3px; width: 0; border-left: 2px solid var(--control); transform: translateX(-1px); }
+#f08 .f08-ref.math { border-left-style: dashed; }
+#f08 .f08-bar { position: absolute; left: 0; top: calc(50% - 6px); height: 12px; border-radius: 0 4px 4px 0; background: var(--bar); }
+#f08 .f08-row.pair .f08-bar { background: var(--claim); }
+#f08 .f08-row.cur .f08-bar { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--ink); }
+#f08 .f08-whisker { position: absolute; top: calc(50% - 1px); height: 2px; background: var(--ink); }
+#f08 .f08-whisker::before, #f08 .f08-whisker::after { content: ""; position: absolute; top: -4px; width: 2px; height: 10px; background: var(--ink); }
+#f08 .f08-whisker::before { left: 0; }
+#f08 .f08-whisker::after { right: 0; }
+#f08 .f08-pm { display: inline-block; flex: none; }
+
+/* the panel */
+#f08 .f08-panel { display: grid; gap: 0.6rem; padding: 0.85rem 1rem; border-left: 2px solid var(--rule); min-width: 0; }
+#f08 .f08-pfam { font-size: var(--step--1); color: var(--muted); }
+#f08 .f08-ph { margin: 0; font-size: var(--step-0); line-height: 1.3; }
+#f08 .f08-pscore b { font-size: 2rem; line-height: 1.1; }
+#f08 .f08-pscore span { color: var(--muted); }
+#f08 .f08-dl { margin: 0; display: grid; grid-template-columns: minmax(0, 9rem) minmax(0, 1fr); gap: 0.25rem 0.75rem; font-size: var(--step--1); }
+#f08 .f08-dl dt { color: var(--muted); }
+#f08 .f08-dl dd { margin: 0; overflow-wrap: anywhere; }
+#f08 .f08-plabel { margin-top: 0.4rem; font-size: var(--step--1); font-weight: 700; color: var(--muted); }
+#f08 .f08-pcomps { margin: 0; padding-left: 1.1rem; font-size: var(--step--1); display: grid; gap: 0.2rem; }
+#f08 .f08-prob { display: grid; gap: 0.35rem; padding-top: 0.6rem; border-top: 1px solid var(--rule); }
+#f08 .f08-probhead .f08-pm { vertical-align: -1px; }
+#f08 .f08-stmt { font-family: var(--font-mono); font-size: var(--step--1); line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; }
+#f08 .f08-ans { font-size: var(--step--1); overflow-wrap: anywhere; }
+#f08 .f08-ans code { font-size: var(--step--1); }
+#f08 .f08-meta { font-size: var(--step--1); color: var(--muted); }
+#f08 .f08-det summary { cursor: pointer; font-size: var(--step--1); color: var(--muted); min-height: 40px; display: flex; align-items: center; }
+#f08 .f08-det summary::before { content: "\25B8"; margin-right: 0.4rem; }
+#f08 .f08-det[open] summary::before { content: "\25BE"; }
+#f08 .f08-det summary::-webkit-details-marker { display: none; }
+#f08 .f08-text { max-height: 22rem; overflow: auto; padding: 0.6rem 0.75rem; border: 1px solid var(--rule); border-radius: 6px; font-family: var(--font-mono); font-size: var(--step--1); line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; }
+
+/* the paired differences */
+#f08 .f08-diffs { padding-top: 1.25rem; border-top: 1px solid var(--rule); container: f08d / inline-size; }
+#f08 .f08-drow { display: grid; grid-template-columns: minmax(0, 1fr) 3.5rem; grid-template-areas: "name name" "track val"; column-gap: 0.6rem; align-items: center; padding: 2px 4px; border-radius: 4px; }
+@container f08d (min-width: 640px) {
+  #f08 .f08-drow { grid-template-columns: minmax(0, 22rem) minmax(0, 1fr) 3.5rem; grid-template-areas: "name track val"; }
+}
+#f08 .f08-dname { grid-area: name; font-size: var(--step--1); line-height: 1.3; }
+#f08 .f08-drow.held .f08-dname { color: var(--muted); padding-left: 1rem; }
+#f08 .f08-drow.cur .f08-dname { font-weight: 700; }
+#f08 .f08-dtrack { grid-area: track; position: relative; height: 22px; }
+#f08 .f08-drow:not(.f08-daxis) .f08-dtrack { align-self: stretch; height: auto; min-height: 22px; }
+#f08 .f08-daxis .f08-dtrack { height: 18px; }
+#f08 .f08-dval { grid-area: val; text-align: right; font-variant-numeric: tabular-nums; }
+#f08 .f08-drow:not(.f08-daxis):hover, #f08 .f08-drow:focus-visible { background: var(--band); }
+#f08 .f08-drow:focus-visible { outline: 2px solid var(--accent); }
+#f08 .f08-dband { position: absolute; top: -2px; bottom: -2px; background: var(--band); }
+#f08 .f08-dzero { position: absolute; top: -2px; bottom: -2px; width: 0; border-left: 1px solid var(--muted); }
+#f08 .f08-dwhisker { position: absolute; top: calc(50% - 1px); height: 2px; background: var(--muted); }
+#f08 .f08-ddot { position: absolute; top: calc(50% - 5px); width: 10px; height: 10px; margin-left: -5px; border-radius: 50%; background: var(--muted); box-shadow: 0 0 0 2px var(--bg); }
+#f08 .f08-drow.held .f08-ddot { border-radius: 1px; transform: rotate(45deg); width: 9px; height: 9px; margin-left: -4.5px; top: calc(50% - 4.5px); }
+#f08 .f08-drow.cur .f08-ddot { background: var(--ink); }
+#f08 .f08-drow.cur .f08-dwhisker { background: var(--ink); }
+#f08 .f08-drow.pair .f08-ddot { background: var(--claim); }
+#f08 .f08-tick.odd { display: none; }
+@container f08d (min-width: 640px) { #f08 .f08-tick.odd { display: inline; } }
+
+@media (max-width: 560px) {
+  #f08 .f08-fact b, #f08 .f08-pscore b { font-size: 1.6rem; }
+}

@@ -1,0 +1,84 @@
+/* m08: switching a side off at its group's positions. Every rule is scoped under #m08; tokens come from site.css. */
+#m08 { font-size: var(--step-cap); line-height: 1.45; color: var(--ink); --gut: 2.6rem; }
+#m08 *, #m08 *::before, #m08 *::after { box-sizing: border-box; }
+#m08 p { margin: 0; max-width: none; }
+#m08 .m08-wrap { display: grid; gap: 2.5rem; }
+#m08 .m08-wrap > section { min-width: 0; }
+#m08 .m08-sum, #m08 .m08-floor { padding-top: 1.25rem; border-top: 1px solid var(--rule); }
+#m08 .m08-h { margin: 0 0 0.6rem; font-size: var(--step-0); font-weight: 700; line-height: 1.3; }
+#m08 .m08-note { margin: 0.5rem 0 0.75rem; color: var(--muted); max-width: 68ch; }
+#m08 .m08-formula { margin: 0.75rem 0; font-family: var(--font-mono); font-size: var(--step--1); overflow-wrap: anywhere; }
+#m08 .control-row { margin: 1rem 0 0.75rem; }
+#m08 .m08-win { display: flex; flex-wrap: wrap; }
+#m08 .m08-win > button { padding: 0 0.6rem; font-variant-numeric: tabular-nums; }
+
+#m08 .m08-legend { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; margin: 0.25rem 0 0.5rem; font-size: var(--step--1); color: var(--muted); }
+#m08 .m08-legend span { display: inline-flex; align-items: center; gap: 0.45rem; }
+#m08 .m08-key { display: inline-block; flex: none; }
+#m08 .m08-key.clean { width: 16px; height: 1.5px; background: var(--ink); }
+#m08 .m08-key.off { width: 16px; height: 4px; border-radius: 2px; background: var(--claim); }
+#m08 .m08-key.pos { width: 2px; height: 14px; background: var(--claim); }
+#m08 .m08-key.dif { width: 1px; height: 12px; background: var(--ink); }
+
+/* the two plots share the x axis */
+#m08 .m08-chart { display: flow-root; position: relative; margin: 0.5rem 0 0 var(--gut); border-radius: 4px; outline-offset: 6px; touch-action: pan-y; cursor: crosshair; }
+#m08 .m08-plot { position: relative; }
+#m08 .m08-plot.loss { height: 210px; margin-top: 2.6rem; }
+#m08 .m08-plot.dif { height: 130px; margin-top: 2.4rem; }
+#m08 .m08-plot svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+#m08 .m08-plot svg * { vector-effect: non-scaling-stroke; }
+#m08 .m08-plot > :not(svg) { position: absolute; }
+#m08 .m08-yname { left: calc(-1 * var(--gut)); top: auto; bottom: calc(100% + 0.4rem); font-size: var(--step--1); line-height: 1.2; color: var(--muted); white-space: nowrap; }
+#m08 .m08-plot.loss .m08-yname { bottom: calc(100% + 1.5rem); }
+#m08 .m08-grid { stroke: var(--grid); stroke-width: 1; }
+#m08 .m08-zero { stroke: var(--muted); stroke-width: 1; }
+#m08 .m08-cleanline { fill: none; stroke: var(--ink); stroke-width: 1; stroke-linejoin: round; }
+#m08 .m08-offline { fill: none; stroke: var(--claim); stroke-width: 4; stroke-linejoin: round; stroke-linecap: round; }
+#m08 .m08-needles { fill: none; stroke: var(--ink); stroke-width: 1; }
+#m08 .m08-ytick { left: 0; transform: translate(calc(-100% - 6px), -50%); font-size: 12px; line-height: 1; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+#m08 .m08-posline { top: 0; bottom: 0; width: 2px; margin-left: -1px; background: var(--claim); pointer-events: none; }
+#m08 .m08-poslab { bottom: calc(100% + 0.3rem); transform: translateX(-2px); font-size: var(--step--1); line-height: 1.1; color: var(--ink); white-space: nowrap; pointer-events: none; }
+#m08 .m08-poslab.left { transform: translateX(calc(-100% + 2px)); }
+#m08 .m08-xaxis { position: relative; height: 1.2rem; margin-top: 10px; }
+#m08 .m08-xtick { position: absolute; top: 0; transform: translateX(-50%); font-size: 12px; line-height: 1; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+#m08 .m08-xname { display: block; text-align: center; font-size: var(--step--1); color: var(--muted); }
+#m08 .m08-cross { position: absolute; top: 2.6rem; height: calc(210px + 2.4rem + 130px); width: 1px; background: var(--muted); pointer-events: none; }
+#m08 .m08-cross[hidden], #m08 .m08-dot[hidden] { display: none; }
+#m08 .m08-dot { width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%; box-shadow: 0 0 0 2px var(--bg); pointer-events: none; }
+#m08 .m08-dot.clean, #m08 .m08-dot.dif { background: var(--ink); }
+#m08 .m08-dot.off { background: var(--claim); width: 12px; height: 12px; margin: -6px 0 0 -6px; }
+
+#m08 .m08-out { margin-top: 1rem; }
+#m08 .m08-outhead { font-weight: 700; font-variant-numeric: tabular-nums; }
+#m08 .m08-how { margin-top: 0; }
+
+/* tables */
+#m08 .table-scroll { margin: 0.5rem 0 0.5rem; }
+#m08 .m08-tab { border-collapse: collapse; font-size: var(--step-cap); }
+#m08 .m08-tab th, #m08 .m08-tab td { padding: 0.35rem 0.75rem 0.35rem 0; border-bottom: 1px solid var(--rule); text-align: left; font-weight: 400; vertical-align: top; }
+#m08 .m08-tab tr:first-child th { color: var(--muted); font-size: var(--step--1); }
+#m08 .m08-tab .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+#m08 .m08-sum .m08-tab tr:not(:first-child):not(.tot):not(.tot2) { cursor: pointer; }
+#m08 .m08-tab tr.cur td { background: var(--band); font-weight: 700; }
+#m08 .m08-tab tr.tot th, #m08 .m08-tab tr.tot td, #m08 .m08-tab tr.tot2 th, #m08 .m08-tab tr.tot2 td { font-weight: 700; }
+#m08 .m08-tab tr.tot th, #m08 .m08-tab tr.tot td { border-top: 2px solid var(--ink); }
+#m08 .m08-sidename { display: block; }
+#m08 .m08-role { display: block; color: var(--muted); font-size: var(--step--1); }
+
+/* the rounding check against this birth's ΔL, on one log axis */
+#m08 .m08-strip { max-width: 40rem; margin: 1rem 0 1.25rem; }
+#m08 .m08-srow { display: grid; gap: 0.2rem; padding: 0.35rem 0; border-radius: 4px; outline-offset: 2px; }
+#m08 .m08-sname { color: var(--ink); }
+#m08 .m08-strack { position: relative; height: 22px; border-bottom: 1px solid var(--grid); }
+#m08 .m08-sdot { position: absolute; top: 50%; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; box-shadow: 0 0 0 2px var(--bg); }
+#m08 .m08-sdot.ink { background: var(--ink); }
+#m08 .m08-sdot.control { background: var(--control); }
+#m08 .m08-sdot.control.ring { background: var(--bg); box-shadow: inset 0 0 0 2.5px var(--control), 0 0 0 2px var(--bg); }
+#m08 .m08-sval { position: absolute; top: 50%; transform: translate(10px, -50%); font-size: var(--step--1); line-height: 1; color: var(--ink); white-space: nowrap; font-variant-numeric: tabular-nums; }
+#m08 .m08-sval.left { transform: translate(calc(-100% - 10px), -50%); }
+#m08 .m08-saxis { position: relative; height: 1.2rem; margin-top: 6px; }
+
+#m08 .m08-facts { display: flex; flex-wrap: wrap; gap: 1rem 2.5rem; margin: 0.75rem 0 1rem; }
+#m08 .m08-fact { display: grid; gap: 0.2rem; max-width: 22rem; }
+#m08 .m08-fact b { font-size: 2rem; line-height: 1.1; font-weight: 700; font-variant-numeric: tabular-nums; }
+#m08 .m08-fact span { color: var(--muted); }

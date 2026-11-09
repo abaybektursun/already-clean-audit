@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Already Clean Study, first edition</title>
+<meta name="description" content="A plain-English walkthrough of an independent test of the essay Neural Networks Are Already Clean: the claim, the test, the results, and where the question stands.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="../neuron_across_training/slider.css">
+<link rel="stylesheet" href="../top_contexts/top_contexts.css">
+<link rel="stylesheet" href="../explanation_test/explanation_test.css">
+<link rel="stylesheet" href="../one_job/one_job.css">
+<link rel="stylesheet" href="../groups/groups.css">
+<link rel="stylesheet" href="../births/births.css">
+<link rel="stylesheet" href="../judge/judge.css">
+<style>
+/* Layout: one left-aligned reading column (prose at most 66ch), figures up to the page width, hairlines between sections, no cards. */
+:root {
+  --bg: #f4f6f4;
+  --ink: #18211f;
+  --muted: #56625e;
+  --rule: #d3dad7;
+  --grid: #e1e6e3;
+  --bar: #b3bfbb;
+  --accent: #0a6b5d;
+  --font-text: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --step--1: 0.8125rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.3125rem;
+  --step-2: clamp(1.75rem, 4.5vw, 2.5rem);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #101514;
+    --ink: #e3e9e6;
+    --muted: #9aa7a3;
+    --rule: #29322f;
+    --grid: #1d2523;
+    --bar: #4a5754;
+    --accent: #4cc3ae;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #101514;
+  --ink: #e3e9e6;
+  --muted: #9aa7a3;
+  --rule: #29322f;
+  --grid: #1d2523;
+  --bar: #4a5754;
+  --accent: #4cc3ae;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-text);
+  font-size: var(--step-0);
+  line-height: 1.6;
+}
+.page {
+  max-width: 47.5rem;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 3rem 4rem;
+}
+p, li, .lede, figcaption, aside.bg > * { max-width: 66ch; }
+p { margin: 0 0 1rem; }
+a { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+h1, h2, h3 { text-wrap: balance; line-height: 1.2; }
+h1 { font-size: var(--step-2); font-weight: 700; margin: 0.4rem 0 1rem; letter-spacing: -0.01em; }
+h2 { font-size: var(--step-1); font-weight: 700; margin: 0 0 1rem; }
+h3 { font-size: var(--step-0); font-weight: 700; margin: 1.75rem 0 0.5rem; }
+section { border-top: 1px solid var(--rule); padding-top: 2rem; margin-top: 2.5rem; }
+.eyebrow, .lbl, .src, .kind, .figtitle, .mono {
+  font-family: var(--font-mono);
+}
+.eyebrow { font-size: var(--step--1); color: var(--muted); letter-spacing: 0.04em; margin: 0; }
+.lede { font-size: 1.1875rem; color: var(--ink); margin: 0 0 1.5rem; }
+.status {
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding-block: 0.85rem;
+  font-size: 0.9375rem;
+  max-width: 66ch;
+}
+.status strong { font-weight: 700; }
+.src {
+  font-size: 0.72em;
+  color: var(--muted);
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+@media (max-width: 640px) {
+  .src { white-space: normal; }
+}
+.src::before { content: "["; }
+.src::after { content: "]"; }
+ol, ul { padding-left: 1.4rem; margin: 0 0 1rem; }
+li { margin-bottom: 0.45rem; }
+li::marker { color: var(--muted); }
+aside.bg {
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding-block: 1rem 0.5rem;
+  margin: 1.5rem 0;
+  font-size: 0.96875rem;
+}
+.lbl {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+dl.defs { margin: 0; }
+dl.defs dt { font-weight: 700; }
+dl.defs dd { margin: 0 0 0.6rem; }
+
+/* tables */
+.tablewrap { overflow-x: auto; margin: 0.75rem 0 1.25rem; }
+table { border-collapse: collapse; font-size: 0.9375rem; min-width: 100%; }
+th, td { text-align: left; padding: 0.45rem 0.9rem 0.45rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-family: var(--font-mono); font-size: 0.75rem; font-weight: 500; color: var(--muted); letter-spacing: 0.02em; }
+td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* figures: the page's own bar charts sit under figure.fig, so the pictures' modules keep their .bars, .row and .lab */
+figure.fig { margin: 1.75rem 0 2rem; }
+.figtitle { font-size: 0.8125rem; color: var(--ink); margin-bottom: 0.9rem; font-weight: 500; }
+figcaption { font-size: 0.875rem; color: var(--muted); margin-top: 0.75rem; }
+
+figure.fig .bars { display: grid; gap: 0.35rem; }
+figure.fig .row, figure.fig .axisrow {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr) 9rem;
+  grid-template-areas: "lab track val";
+  column-gap: 0.85rem;
+  align-items: center;
+}
+figure.fig .row .lab { grid-area: lab; font-size: 0.9375rem; }
+figure.fig .row .val { grid-area: val; font-family: var(--font-mono); font-size: 0.75rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+figure.fig .row .val .sub { color: var(--muted); }
+figure.fig .track {
+  grid-area: track;
+  position: relative;
+  height: 1.5rem;
+  background-image: repeating-linear-gradient(90deg, var(--grid) 0 1px, transparent 1px 25%);
+  border-right: 1px solid var(--grid);
+}
+figure.fig .fill {
+  position: absolute;
+  left: 0;
+  top: 0.3rem;
+  height: 0.6rem;
+  background: var(--bar);
+  border-radius: 0 3px 3px 0;
+}
+figure.fig .row.hi .fill { background: var(--accent); }
+figure.fig .ci {
+  position: absolute;
+  top: 1.15rem;
+  height: 1px;
+  background: var(--ink);
+}
+figure.fig .ci::before, figure.fig .ci::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  width: 1px;
+  height: 7px;
+  background: var(--ink);
+}
+figure.fig .ci::before { left: 0; }
+figure.fig .ci::after { right: 0; }
+figure.fig .ref {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 1.2rem;
+  margin-left: -1px;
+  background: var(--ink);
+}
+figure.fig .axisrow .ticks { grid-area: track; position: relative; height: 1.1rem; }
+figure.fig .axisrow .ticks i {
+  position: absolute;
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--muted);
+  transform: translateX(-50%);
+  font-variant-numeric: tabular-nums;
+}
+figure.fig .axisrow .ticks i:first-child { transform: none; }
+figure.fig .axisrow .ticks i:last-child { transform: translateX(-100%); }
+@media (max-width: 560px) {
+  figure.fig .row, figure.fig .axisrow {
+    grid-template-columns: minmax(0, 1fr) 8.75rem;
+    grid-template-areas: "lab lab" "track val";
+  }
+  figure.fig .axisrow { grid-template-areas: "track ."; }
+  figure.fig .row { row-gap: 0.1rem; margin-bottom: 0.35rem; }
+}
+
+/* timeline (the 16 training points) */
+.scroll { overflow-x: auto; }
+.scroll svg { display: block; width: 100%; min-width: 640px; height: auto; }
+.tl-line { stroke: var(--muted); stroke-width: 1; fill: none; }
+.tl-grid { stroke: var(--grid); stroke-width: 1; }
+.tl-brk { stroke: var(--muted); stroke-width: 1; }
+.tl-done { fill: var(--accent); stroke: var(--bg); stroke-width: 2; }
+.tl-t { font-family: var(--font-mono); font-size: 11px; fill: var(--ink); }
+.tl-ax { font-family: var(--font-mono); font-size: 10.5px; fill: var(--muted); }
+
+.next li { margin-bottom: 0.6rem; }
+.record { color: var(--muted); font-size: 0.9375rem; }
+sub { font-size: 0.7em; }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
+</style>
+
+
+<main class="page">
+
+<header>
+  <p class="eyebrow">Interpretability study · walkthrough</p>
+  <h1>Does “already clean” hold, and did it grow that way?</h1>
+<p class="edition-note" style="border:1px solid var(--rule, #888);padding:12px 16px;margin:0 0 24px">First edition, published 6 November 2026 (gh-pages commit 2dca1e037), kept here verbatim as the dated record. One reading in it was corrected before publication and is marked in its own paragraph below: on 5 November “the strongest group is the oldest” was retagged not supported. The second edition is <a href="../index.html">here</a>.</p>
+  <p class="lede">An independent test of one essay’s claims about the neurons inside language models.</p>
+  <p class="status"><strong>Status, 4 Nov 2026.</strong> The results are in. <a href="#found">What we found</a>: six results. From the essay to <a href="#across">One neuron across training</a>: the method, planned on 21 October, with pictures drawn from the saved data. <a href="#after">What happened next</a>: the results and the studies after them, to 4 November; <a href="#stands">Where the question stands</a> gives the current answer. A grey note such as <span class="src">journal 20 Oct 18:40Z</span> names the record a number comes from. <strong>Corrected 5 Nov 2026:</strong> the birth-order result had been compared with the wrong chance level; against the right one it does not point to growth (<a href="#birthorder">the correction</a>).</p>
+</header>
+
+<section id="found">
+  <h2>What we found</h2>
+  <p class="lede">Six results, each measured. The rest of the page is the evidence.</p>
+  <ol class="next">
+    <li><strong>One neuron added what it fires on in a chain that can be read token by token.</strong> A layer-3 neuron of OLMo-3-7B fired on “Got” at the start of a clause by step 5,000 of training, added “gotta” and “gonna” by step 20,000, the piece “ot” inside “got” by 35,000 and “gettin’” by 100,000; for each addition, a judge shown the neuron’s earlier strongest contexts picked them over a random neuron’s in 4 of 4 calls <span class="src">A_training_dynamics.md §5</span>.</li>
+    <li><strong>About a quarter of the later additions cannot be traced to the neuron’s past.</strong> Across 1,238 groups of contexts that appeared after a neuron’s first, the judge could not trace a share of 0.265 [0.211, 0.321] to the neuron’s earlier record. These groups sit mostly on neurons whose groups all appear late; inside one neuron, later groups are traced as well as earlier ones (299 pairs against 309) <span class="src">already-clean RESULTS.md, Q2; E_skeptic.md §3.1</span>.</li>
+    <li><strong>A neuron’s groups share wiring.</strong> On 91 fresh cases, two groups of one neuron share 0.120 [0.080, 0.160] of the 50 earlier neurons that feed them most, where two unrelated neurons share 0.06 or less. Switching off one group’s 50 inputs lowers the neuron on the other group by a quarter to a third of what switching off its own does, and on groups defined from the wiring alone the overlap of the two input sets predicts that fall with a correlation of 0.87 <span class="src">reuse RESULTS.md Results 29, 53 to 58; instruments RESULTS.md Results 7, 21</span>.</li>
+    <li><strong>A flaw in a standard tool, found and fixed.</strong> A few dozen mid-layer OLMo neurons have average activations about 145 times their layer’s typical value, so switching neurons off by writing in their average disturbs every later neuron through them. Excluding those neurons and writing zero lowers the score a fake neuron, made by adding two unrelated neurons, reaches by chance from 0.384 to 0.210, and the real cases do not move <span class="src">instruments RESULTS.md Results 6 to 9</span>.</li>
+    <li><strong>A language model’s groups follow the marked token.</strong> When a language model sorts a neuron’s strongest contexts into groups, it rarely puts one marked token in two groups (in its first sorting, 383 of 18,148 neuron-and-token pairs, on 196 of the 600 neurons), so the token alone predicts a held-out context’s group 74% of the time. Yet 1,964 of its 2,454 groups hold more than one token, and the neuron’s own inputs see the split about as well as the token does <span class="src">instruments RESULTS.md Results 12 to 14; the sorting model’s record</span>.</li>
+    <li><strong>Some neurons have a buried past.</strong> One neuron’s 20 strongest contexts were 20 of 20 “ lithium” at step 60,000 and 19 of 20 at step 320,000; by the end it had lost the top 20 to the endings of famous names, some of which were already above its line while lithium held the top. A description written from the final contexts alone cannot see this <span class="src">A_training_dynamics.md §2; E_skeptic.md §3.4</span>.</li>
+  </ol>
+  <p>Every wiring number is from one model, OLMo-3-7B, at 16 saved points of training; the flaw in the fourth result does not appear in the two other models tested. The groups come from a language model’s sorting, so the wiring results hold over the cases as a group, not case by case.</p>
+</section>
+
+<section id="claim">
+  <h2>An essay says most neurons have one job</h2>
+  <p>In 2026, Nick Cammarata of Goodfire published the essay “Neural Networks Are Already Clean”. This study tests it.</p>
+  <p>A neuron is <em>polysemantic</em> when it seems to respond to several unrelated things. The leading account was <em>superposition</em>: a network packs unrelated things into one neuron because they rarely occur together. If packing were common, a neuron could not be read directly; a second model, a <em>decomposition method</em>, would first have to separate the packed parts.</p>
+  <p>The essay argues that packing is rare, and that most apparent mixtures come from weak tools, flawed model designs and <em>recursive generalization</em>: a neuron’s job extends to related cases, which extend again, as in a neuron that fired on “iy”, then “diy”, then “do it yourself”. From preliminary audits of Qwen3-32B it estimates that about 90% of neurons have one main job, about 7% two related jobs, and 2–4% are not yet understood <span class="src">essay, The Short Version</span>. It says the way to tell growth from packing is to watch neurons during training, which its authors could not do for a large model <span class="src">essay, Is Recursive Generalization Hard to Vary?</span>.</p>
+
+  <aside class="bg">
+    <span class="lbl">Background · tokens, neurons, activations</span>
+    <dl class="defs">
+      <dt>Token</dt>
+      <dd>A word or a piece of a word, the unit a language model reads.</dd>
+      <dt>Neuron</dt>
+      <dd>Each layer of these language models has an MLP block, a set of neurons that each compute one number per token.</dd>
+      <dt>Activation</dt>
+      <dd>That number. It can be positive or negative.</dd>
+      <dt>Two sides</dt>
+      <dd>The study treats a neuron’s positive values and its negative values separately, and this page counts each side as one neuron, so the 300 neurons drawn from a model count as 600. L03N7155+ means layer 3, neuron 7155, positive side.</dd>
+      <dt>Corpus</dt>
+      <dd>About 50 million tokens of OLMo-3’s training text, which every model reads with its own tokenizer. The explanations and their test scores come from a scoring of all of it at the end of training; each of the 16 training points was scored on its first 20,560,068 tokens.</dd>
+    </dl>
+  </aside>
+</section>
+
+<section id="topcontexts">
+  <h2>What a top context is</h2>
+  <p>A neuron’s top contexts are the 50 tokens, out of 20,560,068 scored at the end of training, where it fired hardest, each shown with the text around it.</p>
+  <div id="topctx"></div>
+  <p class="record">Source: the top-50 contexts saved at the final training point (step 1,413,814) of the 20,560,068-token scoring used at all 16 points, with each context’s position; the menu holds the lithium and “got” neurons and 18 drawn at random from the 600 studied.</p>
+</section>
+
+<section id="questions">
+  <h2>Two questions</h2>
+  <p>The study asks two questions. Q1: what share of neurons have one job? Q2: when a neuron’s strongest contexts fall into several groups, did the later groups grow out of the earlier ones? Q2 decides, and it can be tested on OLMo-3-1025-7B’s 600 audited neurons because that model published 1,421 checkpoints from training <span class="src">spec §1</span>.</p>
+  <p>A decision written before any data depends on the answer: whether the team’s next five studies use the model’s own neurons or decomposition methods <span class="src">spec §1</span>.</p>
+</section>
+
+<section id="test">
+  <h2>A test the explanation can fail</h2>
+  <p>An explanation passes only if texts written from it alone fire the neuron and its near misses do not; drag the strong line to see where pass turns to fail.</p>
+  <div id="xtest"></div>
+  <p class="record">Source: the audit’s saved explanations, test texts and scores for 600 sides of 300 OLMo-3 7B neurons, and the scoring run’s record of the token where each text peaked; the page recomputes pass or fail from those scores with the study’s rule.</p>
+</section>
+
+<section id="discovery">
+  <h2>What the discovery set taught us</h2>
+  <p>All tuning used a separate <em>discovery set</em> of 120 (60 Qwen3-4B-Base neurons, both sides); prompts, models and the strong line were fixed there before any audit neuron was scored <span class="src">journal 20 Oct 07:25Z</span>. The strong line, 0.3153, is the 99th percentile of 1,785 scores of texts at a random neuron of the same layer <span class="src">journal 20 Oct 16:48Z</span>.</p>
+  <p>The explainer’s own label is not evidence: in the first round it claimed one job for 110 of the 120, and the test confirmed 23 <span class="src">journal 20 Oct 07:50Z</span>. Replacing that explainer, DeepSeek-V4.1-Flash, with Opus 5.5 raised the pass rate from 22.7% to 45.4%, and Opus as the text writer raised it to 58.8% <span class="src">journal 20 Oct 08:38Z</span>.</p>
+
+  <figure class="fig" id="fig2">
+    <div class="figtitle">Share of texts that were strong, by kind · final discovery round</div>
+    <div class="bars" role="img" aria-label="Final discovery round: positives 65.4 percent strong, essay 76; near misses 10.0 percent, essay 11; distant 1.0 percent, essay about 1; texts at a random neuron 1.0 percent, no essay value.">
+      <div class="row hi" title="Positives: 65.4% strong. Essay: 76%.">
+        <span class="lab">Positives</span>
+        <span class="track"><span class="fill" style="width:65.4%"></span><span class="ref" style="left:76%"></span></span>
+        <span class="val">65.4% <span class="sub">· essay 76</span></span>
+      </div>
+      <div class="row" title="Near misses: 10.0% strong. Essay: 11%.">
+        <span class="lab">Near misses</span>
+        <span class="track"><span class="fill" style="width:10%"></span><span class="ref" style="left:11%"></span></span>
+        <span class="val">10.0% <span class="sub">· essay 11</span></span>
+      </div>
+      <div class="row" title="Distant texts: 1.0% strong. Essay: about 1%.">
+        <span class="lab">Distant texts</span>
+        <span class="track"><span class="fill" style="width:1%"></span><span class="ref" style="left:1%"></span></span>
+        <span class="val">1.0% <span class="sub">· essay ≈1</span></span>
+      </div>
+      <div class="row" title="Texts scored at a random neuron: 1.0% strong. The essay has no such control.">
+        <span class="lab">At a random neuron</span>
+        <span class="track"><span class="fill" style="width:1%"></span></span>
+        <span class="val">1.0% <span class="sub">· essay none</span></span>
+      </div>
+      <div class="axisrow"><span class="ticks"><i style="left:0">0</i><i style="left:25%">25</i><i style="left:50%">50</i><i style="left:75%">75</i><i style="left:100%">100%</i></span></div>
+    </div>
+    <figcaption>Bars: the final discovery round, Opus 5.5 in every role; thin ticks: the essay’s own rates on Qwen3-32B, under its fixed threshold of 0.30. At the same strong line the Sonnet 5.5 round gave 60.3%, 4.4%, 0.5% and 0.6%. <span class="src">journal 20 Oct 16:48Z; rescored 21 Oct</span></figcaption>
+  </figure>
+
+  <figure class="fig" id="fig1">
+    <div class="figtitle">Pass rate by model · the same 120 discovery neurons, final prompt</div>
+    <div class="bars" role="img" aria-label="At the strong line: Opus 5.5 61.9 percent, interval 52.9 to 70.1, 0.17 dollars per neuron. Sonnet 5.5 60.2 percent, 51.2 to 68.5, 0.084 dollars. Gemini 3.7 Flash 38.7 percent, 30.4 to 47.6, 0.04 dollars. DeepSeek-V4-Pro 14.3 percent, 9.1 to 21.7, about 0.05 dollars.">
+      <div class="row" title="Opus 5.5: 73 of 118 = 61.9%, 95% interval 52.9–70.1%, $0.17 per neuron">
+        <span class="lab">Opus 5.5</span>
+        <span class="track"><span class="fill" style="width:61.9%"></span><span class="ci" style="left:52.9%;width:17.2%"></span></span>
+        <span class="val">61.9% <span class="sub">$0.17</span></span>
+      </div>
+      <div class="row hi" title="Sonnet 5.5: 71 of 118 = 60.2%, 95% interval 51.2–68.5%, $0.084 per neuron">
+        <span class="lab">Sonnet 5.5</span>
+        <span class="track"><span class="fill" style="width:60.2%"></span><span class="ci" style="left:51.2%;width:17.3%"></span></span>
+        <span class="val">60.2% <span class="sub">$0.084</span></span>
+      </div>
+      <div class="row" title="Gemini 3.7 Flash: 46 of 119 = 38.7%, 95% interval 30.4–47.6%, $0.04 per neuron">
+        <span class="lab">Gemini 3.7 Flash</span>
+        <span class="track"><span class="fill" style="width:38.7%"></span><span class="ci" style="left:30.4%;width:17.2%"></span></span>
+        <span class="val">38.7% <span class="sub">$0.04</span></span>
+      </div>
+      <div class="row" title="DeepSeek-V4-Pro: 17 of 119 = 14.3%, 95% interval 9.1–21.7%, about $0.05 per neuron">
+        <span class="lab">DeepSeek-V4-Pro</span>
+        <span class="track"><span class="fill" style="width:14.3%"></span><span class="ci" style="left:9.1%;width:12.6%"></span></span>
+        <span class="val">14.3% <span class="sub">≈$0.05</span></span>
+      </div>
+      <div class="axisrow"><span class="ticks"><i style="left:0">0</i><i style="left:25%">25</i><i style="left:50%">50</i><i style="left:75%">75</i><i style="left:100%">100%</i></span></div>
+    </div>
+    <figcaption>Bars: share of scored neurons whose explanation passed at the strong line 0.3153, with Wilson 95% intervals; right column: cost per neuron for all four roles. The accented bar, Sonnet 5.5, was chosen for the audit: it passed as often as Opus 5.5 at half the cost. <span class="src">rescored 21 Oct; journal 20 Oct 18:40Z</span></figcaption>
+  </figure>
+
+  <p>The audit mixes explainers: Opus 5.5 wrote 1,344 of its explanations and Sonnet 5.5 the other 496, and Sonnet wrote every test text <span class="src">journal 20 Oct 18:36Z</span>.</p>
+</section>
+
+<section id="count">
+  <h2>How many neurons have one job</h2>
+  <p>Each dot is one of the 600 neurons tested in a model, placed by the class its test scores give it; drag the strong line to see how many keep one job.</p>
+  <div id="onejob"></div>
+  <p class="record">Source: the audit’s saved explanations and test-text scores, 600 neurons in each of three models; the page recomputes every class from those scores with the study’s rule.</p>
+</section>
+
+<section id="points">
+  <h2>The 16 training points</h2>
+  <p>OLMo-3-1025-7B saved 1,421 copies of its weights in its first stage of training, one every 1,000 steps of about 4.19 million tokens, and the study uses 16 of them, packed into the start <span class="src">spec §4.1, §4.3</span>.</p>
+  <figure class="fig" id="fig3">
+    <div class="scroll">
+      <svg viewBox="0 56 780 136" role="img" aria-labelledby="fig3t fig3d">
+        <title id="fig3t">The 16 OLMo-3 training points on a log scale of training tokens</title>
+        <desc id="fig3d">T0 at zero tokens; T1 at 4.2 billion through T15 at 5.93 trillion. Seven points lie in the first 1% of training, and none lies between step 560,000 and step 1,000,000.</desc>
+        <!-- token gridlines -->
+        <line class="tl-grid" x1="184.3" y1="64" x2="184.3" y2="140"/>
+        <line class="tl-grid" x1="381.2" y1="64" x2="381.2" y2="140"/>
+        <line class="tl-grid" x1="578.1" y1="64" x2="578.1" y2="140"/>
+        <!-- axis with break -->
+        <line class="tl-line" x1="30" y1="90" x2="66" y2="90"/>
+        <line class="tl-brk" x1="70" y1="96" x2="78" y2="84"/>
+        <line class="tl-brk" x1="78" y1="96" x2="86" y2="84"/>
+        <line class="tl-line" x1="90" y1="90" x2="745" y2="90"/>
+        <!-- markers -->
+        <g>
+          <circle class="tl-done" cx="40" cy="90" r="6"><title>T0 · step 0 · random initial weights</title></circle>
+          <circle class="tl-done" cx="110" cy="90" r="6"><title>T1 · step 1,000 · 4.2B tokens</title></circle>
+          <circle class="tl-done" cx="169.3" cy="90" r="6"><title>T2 · step 2,000 · 8.4B tokens</title></circle>
+          <circle class="tl-done" cx="203.9" cy="90" r="6"><title>T3 · step 3,000 · 12.6B tokens</title></circle>
+          <circle class="tl-done" cx="247.6" cy="90" r="6"><title>T4 · step 5,000 · 21B tokens</title></circle>
+          <circle class="tl-done" cx="287.8" cy="90" r="6"><title>T5 · step 8,000 · 34B tokens</title></circle>
+          <circle class="tl-done" cx="322.4" cy="90" r="6"><title>T6 · step 12,000 · 50B tokens</title></circle>
+          <circle class="tl-done" cx="366.1" cy="90" r="6"><title>T7 · step 20,000 · 84B tokens</title></circle>
+          <circle class="tl-done" cx="414.0" cy="90" r="6"><title>T8 · step 35,000 · 147B tokens</title></circle>
+          <circle class="tl-done" cx="460.0" cy="90" r="6"><title>T9 · step 60,000 · 252B tokens</title></circle>
+          <circle class="tl-done" cx="503.8" cy="90" r="6"><title>T10 · step 100,000 · 419B tokens</title></circle>
+          <circle class="tl-done" cx="554.0" cy="90" r="6"><title>T11 · step 180,000 · 755B tokens</title></circle>
+          <circle class="tl-done" cx="603.2" cy="90" r="6"><title>T12 · step 320,000 · 1.34T tokens</title></circle>
+          <circle class="tl-done" cx="651.0" cy="90" r="6"><title>T13 · step 560,000 · 2.35T tokens</title></circle>
+          <circle class="tl-done" cx="700.6" cy="90" r="6"><title>T14 · step 1,000,000 · 4.19T tokens</title></circle>
+          <circle class="tl-done" cx="730.2" cy="90" r="6"><title>T15 · step 1,413,814 · 5.93T tokens · the end of the first stage</title></circle>
+        </g>
+        <!-- point ids -->
+        <g class="tl-t" text-anchor="middle">
+          <text x="40" y="116">T0</text><text x="110" y="116">T1</text><text x="169.3" y="116">T2</text><text x="203.9" y="116">T3</text>
+          <text x="247.6" y="116">T4</text><text x="287.8" y="116">T5</text><text x="322.4" y="116">T6</text><text x="366.1" y="116">T7</text>
+          <text x="414.0" y="116">T8</text><text x="460.0" y="116">T9</text><text x="503.8" y="116">T10</text><text x="554.0" y="116">T11</text>
+          <text x="603.2" y="116">T12</text><text x="651.0" y="116">T13</text><text x="700.6" y="116">T14</text><text x="730.2" y="116">T15</text>
+        </g>
+        <!-- token axis labels -->
+        <g class="tl-ax" text-anchor="middle">
+          <text x="40" y="158">0</text>
+          <text x="110" y="158">4.2B</text>
+          <text x="184.3" y="158">10B</text>
+          <text x="381.2" y="158">100B</text>
+          <text x="578.1" y="158">1T</text>
+          <text x="730.2" y="158">5.93T</text>
+          <text x="390" y="182">training tokens, log scale (T0 sits left of the break)</text>
+        </g>
+      </svg>
+    </div>
+    <figcaption>Seven of the 16 points lie in the first 1% of training, and none lies between step 560,000 (39.6%) and step 1,000,000 (70.7%), so a group first seen at step 1,000,000 may have appeared anywhere in that span. On a narrow screen this figure scrolls sideways. <span class="src">spec §4.3</span></figcaption>
+  </figure>
+</section>
+
+<section id="groups">
+  <h2>One neuron’s 50 contexts, sorted into groups</h2>
+  <p>Before the study could ask whether a neuron’s later groups grew out of its earlier ones, it needed the groups. A language model, Claude Sonnet 5.5, made them. For each of the 600 neurons it read the neuron’s 50 strongest contexts and sorted them by what the neuron responds to <span class="src">spec §2.4</span>.</p>
+
+  <h3>What the model was given</h3>
+  <p>One request per neuron. The request held the neuron’s 50 top contexts from the end of training (step 1,413,814), numbered 0 to 49, strongest first. Each context is the text around one token where the neuron fired: up to 256 tokens before that token and 16 after it, with the token marked ⟦ ⟧, and the activation there as a share of the neuron’s largest activation. The picture below shows a shorter piece of each context.</p>
+
+  <h3>What it was asked to do</h3>
+  <ul>
+    <li>Put each of the 50 contexts in exactly one group, with one group for each thing the neuron responds to.</li>
+    <li>Group by what makes the neuron fire, not by topic alone. Contexts on different topics that are followed by the same word belong in one group.</li>
+    <li>A small offshoot of a group may become its own group, marked as related to it.</li>
+    <li>Do not make a new group just to hold one weak context.</li>
+    <li>Name each group, and say for every pair of groups whether they are related or unrelated.</li>
+  </ul>
+  <p>One more rule comes from how these neurons are built. A neuron’s activation is the product of two numbers computed from the text, and it can fire when both of those numbers are negative. The essay treats such contexts as an echo of the neuron’s other side, not a job of their own, so the model put them in one separate group, and the study leaves that group out of every count (11 such groups in each sorting).</p>
+  <p>The answer is a list of named groups, each listing which of the 50 contexts it holds <span class="src">prompt infra/pg/neurons_prompts/clusterer.md</span>.</p>
+
+  <h3>Why there are two sortings</h3>
+  <p>Asked the same question twice, the model can give two different answers. To measure how much, the study asked twice for every neuron: the same model, the same instructions and the same 50 contexts, with two independent answers. The <em>first sorting</em> is the first answer and the <em>second sorting</em> is the second.</p>
+  <p>The study uses the first sorting. The second sorting is a check on it, and it changes one thing: a group from the first sorting counts only if a single group of the second sorting holds more than half of its contexts. 116 of the first sorting’s 2,454 groups failed that test and were left out of the main result <span class="src">spec §8, B4; verdict q2.B4_unmatched_share</span>.</p>
+  <p>Over the 600 neurons the first sorting made 2,454 groups, 4.1 per neuron, and the second made 2,025, 3.4 per neuron. The two counts were equal for 182 neurons and within one of each other for 407 (68%) <span class="src">verdict q2.B4_m_within_1; groups/README.md, checks</span>.</p>
+
+  <h3>The lithium neuron: 15 groups, then 3</h3>
+  <p>The lithium neuron, L03N6372+, is the most extreme case. It is named for what it fired on earlier in training: at steps 60,000 and 320,000, 20 and 19 of its 20 strongest contexts were “ lithium”. By the end of training its 50 strongest contexts are other things: the second piece of a multi-word name (“Palo⟦ Alto⟧”, “Santa⟦ Cruz⟧”, “David⟦ Beckham⟧”), pieces of code and web addresses (“licenses⟦/MIT⟧”), and “baking⟦ parchment⟧”.</p>
+  <p>The first sorting split these 50 contexts into 15 small groups, mostly one per name: “Palo Alto” (5 contexts), “UC Santa Cruz” (4), “David Beckham surname” (3), “HuggingFace” (3) and eleven more. The second sorting made 3 broad groups: “second token of multi-token proper names and terms in prose” (28 contexts), “mid-identifier tokens in license URLs, tool and package names, code” (19) and “parchment after baking” (3). Each of the 15 small groups lies wholly inside one of the 3 broad ones. So the two answers agree on which contexts go together and differ in how finely they cut. No other neuron got more than 12 groups in the first sorting <span class="src">the sorting model’s record, L03N6372+</span>.</p>
+  <p>The number of groups therefore depends partly on how finely the model chose to cut, not only on the neuron, and one neuron’s count should not be read on its own. The results below are reported over many groups together, and a later study compared these groups with groups built from the neuron’s own inputs, without reading any text (<a href="#ingroups">Are the groups in the neuron, or only in the text?</a>).</p>
+
+  <h3>How to read the picture</h3>
+  <p>Pick a neuron from the menu. Its 50 contexts appear as tiles in one list, strongest first, each showing the token the neuron fired on. The tiles then move into rows, one row per group, labelled with the group’s name from the model’s answer. The switch changes between the first sorting (used by the study) and the second (the repeat). The bar chart shows how many groups each of the 600 neurons got under the sorting shown, with this neuron’s count marked. Click a row to list that group’s contexts underneath.</p>
+  <div id="ngroups"></div>
+  <p class="record">Source: the sorting model’s record, two sortings of each of the 600 neurons by Claude Sonnet 5.5, and the top-50 contexts saved at the end of training.</p>
+</section>
+
+<section id="readout">
+  <h2>The decisive readout: did the late groups grow from the early ones?</h2>
+  <p>A group born after the neuron’s first group is <em>late-born</em>, and a judge tries to trace each late-born group to the neuron’s record from just before its birth (both pictures below). The share it cannot trace is 0 when it does as well as on control groups whose answer is known, and 1 when it does no better than a coin. The rule was written before any data: growth if the whole 95% interval lies below 0.10, packing if it lies above 0.20, mixed otherwise <span class="src">spec §2.4, §6.3</span>.</p>
+
+  <h3>Predictions made in advance</h3>
+  <p>These were written before any audit or training-point result existed <span class="src">journal 20 Oct 02:58Z</span>.</p>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>readout</th><th>predicted</th><th>stated probability</th></tr></thead>
+      <tbody>
+        <tr><td>Share of late-born groups the judge cannot trace</td><td>Growth: upper end below 0.10</td><td class="num">0.65 (mixed 0.30, packing 0.05)</td></tr>
+        <tr><td>Birth order: is the strongest group at the end the oldest?</td><td>Not reliably; inside the range random orderings give</td><td class="num">0.60</td></tr>
+        <tr><td>Groups born no later than the strongest one and shrinking after step 320,000</td><td>Below 0.30</td><td class="num">0.85</td></tr>
+        <tr><td>Neurons whose strongest group is late-born and not linked by the judge</td><td>Fewer than 30 of 600</td><td class="num">none given</td></tr>
+        <tr><td>OLMo audit: one job, and cannot tell</td><td>45–65%, and 20–40%</td><td class="num">none given</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="births">
+  <h2>When a neuron’s groups are born</h2>
+  <p>Each row is one group of a neuron’s 50 strongest contexts at the end of training; it is present at a training point when the median activation of its contexts is in the neuron’s top 0.1% there, and born at the first point where it is present and still present at the next.</p>
+  <div id="nbirths"></div>
+  <p class="record">Source: the per-group record of the 600 OLMo-3 7B neurons of the training-point test, its births per training point, and the saved activations of each group’s contexts at the 16 training points.</p>
+</section>
+
+<section id="judge">
+  <h2>The judge’s calls</h2>
+  <p>A judge saw up to ten of a late-born group’s contexts beside two records of up to 20 contexts from the training point before the group’s birth, one from its own neuron and one from a random neuron of the same layer, and picked the record the group grew from; each dot is one call, coloured by whether it picked the neuron’s own.</p>
+  <div id="judgecalls"></div>
+  <p class="record">Source: the judge’s record of 7,352 calls on OLMo-3 7B against a random neuron, and the per-group record, which holds the text the judge saw.</p>
+</section>
+
+<section id="meaning">
+  <h2>What each result would mean</h2>
+  <p>The four outcomes were written on 21 October, before any result; the examples are the got and lithium neurons in the pictures above.</p>
+
+  <h3>If later jobs grow out of earlier ones</h3>
+  <p>The got neuron is this case: each new group is a step from the last, and the judge traced each to the record before its birth in 4 of 4 calls <span class="src">A_training_dynamics.md §5</span>. If most neurons with several groups looked like this, a neuron could be read directly, as the got neuron’s explanation is tested above, and the team’s next five studies would use the model’s own neurons.</p>
+
+  <h3>If unrelated jobs are packed into one neuron</h3>
+  <p>The lithium neuron is the nearest case: it lost its lithium top 20 to the second halves of famous names such as “Palo⟦ Alto⟧”, and the judge called 9 of its 12 late groups unrelated to the lithium record <span class="src">A_training_dynamics.md §2</span>. Some name groups were already above its line during the lithium period (“Palo Alto” at step 60,000), so lithium may have sat on top of a name-completion neuron rather than been replaced <span class="src">E_skeptic.md §3.4</span>. If most neurons looked like this, a description written from a neuron’s final contexts could not be trusted, and the team’s next five studies would keep decomposition methods.</p>
+
+  <h3>If the result is mixed</h3>
+  <p>This is what the rules written in advance reported: the share the judge cannot trace, 0.265, is above 0.20, which the rule calls packing, while the strongest group was among the first born more often than shuffled birth points give, which was read as growth <span class="src">already-clean RESULTS.md, Q2</span>. On 5 November the second reading was corrected: random groups of the same sizes are first born even more often, so birth order gives no support to growth (<a href="#birthorder">below</a>) <span class="src">next 10_RECOUNT2.md §7</span>. The question then becomes when each account holds, which is why the later studies measured wiring.</p>
+
+  <h3>If the judge fails its control</h3>
+  <p>It did not: the judge was right on 91.0% of control calls on 39 tuning neurons before the 600 were judged, and on 92.4% on the 600 <span class="src">already-clean RESULTS.md, Q2</span>.</p>
+</section>
+
+<section id="across">
+  <h2>One neuron across training</h2>
+  <p>Pick a neuron and drag through training: at each of 16 saved points you see its 20 strongest contexts among the 20,560,068 tokens scored at every point, with the word it fired on marked.</p>
+  <div id="nat"></div>
+  <p class="record">Source: the saved top-50 contexts at 16 training points; the menu holds the 17 neurons whose strongest group at the end was late-born and not linked by the judge to the neuron’s earlier record, and 24 drawn at random.</p>
+</section>
+
+<section id="next">
+  <h2>What happens next</h2>
+  <p>The sorting, the judging and the one planned reading of the results all ran by 24 October; the next section reports them.</p>
+</section>
+
+<section id="after">
+  <h2>What happened next, 24 October to 4 November 2026</h2>
+
+  <h3>The result of the training-point test, 24 October</h3>
+  <p>By the rule written in advance the result is labelled packing: the share of the 1,238 late-born groups the judge could not trace is 0.265, with a 95% interval from 0.211 to 0.321, wholly above 0.20 <span class="src">already-clean RESULTS.md, Q2</span>.</p>
+  <p id="birthorder">One other measurement was read as pointing toward growth; on 5 November a check showed that it does not. It asked whether a neuron’s strongest group at the end of training is also its first born. That holds in 273 of the 574 neurons with two or more groups, a share of 0.476 [0.436, 0.516], counting a tie for the earliest point as first born <span class="src">next 10_recount2/out/04_b.json; already-clean RESULTS.md, Retag</span>. The rule written in advance compared this share with shuffling the birth points among each neuron’s groups, which exceeds 0.449 only 2.5% of the time, and so read the strongest group as the oldest more often than chance. That shuffle keeps each neuron’s real birth points and asks only which group gets which; it does not ask what birth point a group of the same size would get anyway. The fair comparison replaces each group with a random set of the same size drawn from the same neuron’s 50 strongest contexts, gives the strongest group’s random set the neuron’s top context, since holding it is what makes a group the strongest, and dates each set by the same rule. Random sets are first born in 0.530 [0.495, 0.568] of neurons, so the real 0.476 is below chance, not above it <span class="src">next 10_RECOUNT2.md §7; 06b_VERIFY_BIRTHS.md §5; 06_CRITIC.md Finding 0.2</span>. Why random sets are first born so often is not settled: the three checks point to ties for the earliest point, to the strongest group’s size, and to its higher median activation. What still holds: the birth points follow the rule, 2,454 of 2,454 when recomputed from the saved activations, and some groups are dated beyond chance. Most groups, 2,115 of 2,428, fall within the range of birth points of their random sets, but 153 are born later than 95% of their random sets and 160 earlier, where chance gives 22.4 and 29.6 <span class="src">next 10_recount2/out/03_compare.json, 05_chance.json, 06_predictability.json</span>. The births picture above now draws this chance level on every row.</p>
+  <p>Another measurement points toward growth: groups born before the strongest one that later shrank are rare, 0.035 [0.026, 0.044] against the 0.30 limit predicted <span class="src">already-clean RESULTS.md, Q2 grid</span>.</p>
+  <p>Only 17 of the 600 neurons (2.8%) ended with a strongest group that was late-born and not linked by the judge to the neuron’s earlier record, where fewer than 30 had been predicted; if the strongest group is chosen by size instead of peak activation, 8 of the 17 remain <span class="src">already-clean RESULTS.md, Q2 grid; E_skeptic.md §3.4</span>.</p>
+  <p>Of the five predictions, two came true (the shrinking groups and the 17), the audit prediction was right on one job and 1.5 points off on cannot tell (41.5% against 20% to 40%), and the two predictions about growth were wrong by the rules written in advance, in opposite directions <span class="src">already-clean RESULTS.md, §11 grid</span>. Against the fair comparison above, the strongest group is not reliably the oldest, as predicted, though the share lies below the chance range rather than inside it.</p>
+  <p>After the API spending limit was reached, most of the sorting and all of the judging ran as Claude Code subagents of Sonnet 5.5 instead of through the API; re-answering the lines that failed an audit of the agents’ reading moved the share from 0.260 to 0.262 and changed no label <span class="src">already-clean RESULTS.md, footnotes; journal 24 Oct 01:05Z</span>.</p>
+
+  <h3>What the saved data show beyond the rules</h3>
+  <p>These readings were made after the data were seen, so they are observations, not tested predictions <span class="src">stories E_skeptic.md</span>. The untraced share is near zero for groups born by step 60,000, the first 4% of training, and 0.42 for groups born at step 1,000,000 or later <span class="src">A_training_dynamics.md §1</span>. Inside one neuron there is no such rise: in 1,029 pairs of its late-born groups the earlier was traced better 299 times and the later 309 times, with 421 ties, so the rise belongs to neurons whose groups all appear late <span class="src">E_skeptic.md §3.1</span>.</p>
+  <p>Adjusted for the controls being easier, the overall share is 0.206 [0.132, 0.271], at the packing line <span class="src">E_skeptic.md §3.1</span>. By step 560,000, about 40% of training, nine in ten of the strongest groups had first crossed the birth line, and only 1 of the 2,454 groups had by step 1,000 <span class="src">A_training_dynamics.md §3; E_skeptic.md §3.2</span>.</p>
+
+  <h3>Looking at the wiring instead of the text, 31 October to 1 November</h3>
+  <p>For 841 late-born groups, a score of how far the earlier-layer neurons feeding the new group overlap those feeding the neuron’s older group read 0.356, between fake neurons made by adding two unrelated neurons (0.159) and two halves of one group (0.805) <span class="src">unite RESULTS.md §1</span>. A review found that the score hardly changed when computed for a different neuron (0.332 against 0.339), so it measured how alike the texts are, not this neuron’s wiring, and the result was left open <span class="src">unite REVIEW_2026-11-01.md</span>.</p>
+
+  <h3>Switching the old group’s inputs off, 1 November</h3>
+  <p>On 150 cases on 104 OLMo neurons, each a neuron with an older and a newer group that share no document or marked token, the study replaced the older group’s 50 <em>main inputs</em>, the earlier-layer neurons that contribute most, with their average, and measured how far the neuron fell on the newer group’s contexts. That fall divided by the fall when the newer group’s own 50 are replaced is the reuse score <span class="src">reuse POST.md</span>.</p>
+  <p>Against fake neurons measured at the same points (0.031, 95th percentile 0.288) and two halves of one group (0.65), the cases’ median of 0.226 [0.170, 0.308] says the newer group does use the older group’s inputs; against fake neurons measured at the end of training (0.174), the rule written first had said no <span class="src">reuse POST.md; RESULTS.md Results 1, 13</span>. In absolute terms, replacing the older group’s 50 inputs lowered the neuron by 11% on the median, its own 50 by 53%, and control sets of 50 by under 1% <span class="src">reuse POST.md</span>.</p>
+  <p>Two variants could not be read: with attention heads as the inputs, the fake neurons scored above the two halves (95th percentile 1.175 against 0.872), and downstream, the later neurons a switched-off neuron points at changed by 10% against 8% for random ones <span class="src">reuse RESULTS.md Results 21 to 23</span>.</p>
+
+  <figure class="fig" id="fig5">
+    <div class="figtitle">The reuse score at the point where the newer group first appears, with its two references · 1 November, before the exclusion below</div>
+    <div class="bars" role="img" aria-label="The reuse score at the point where the newer group first appears, measured on 1 November: fake neurons 0.031; real cases 0.226, 95% interval 0.170 to 0.308; two halves of one group 0.65.">
+      <div class="row" title="Fake neurons: median 0.031.">
+        <span class="lab">Fake neurons</span>
+        <span class="track"><span class="fill" style="width:3.1%"></span></span>
+        <span class="val">0.031</span>
+      </div>
+      <div class="row hi" title="Real cases: median 0.226, 95% interval 0.170–0.308.">
+        <span class="lab">Real cases</span>
+        <span class="track"><span class="fill" style="width:22.6%"></span><span class="ci" style="left:17%;width:13.8%"></span></span>
+        <span class="val">0.226 <span class="sub">0.170–0.308</span></span>
+      </div>
+      <div class="row" title="Two halves of one group: median 0.65.">
+        <span class="lab">Two halves of one group</span>
+        <span class="track"><span class="fill" style="width:65%"></span></span>
+        <span class="val">0.65</span>
+      </div>
+      <div class="axisrow"><span class="ticks"><i style="left:0">0</i><i style="left:25%">0.25</i><i style="left:50%">0.5</i><i style="left:75%">0.75</i><i style="left:100%">1</i></span></div>
+    </div>
+    <figcaption>Bars: medians; whisker: the 95% interval of the real cases. These were measured before the always-on neurons described next were excluded. <span class="src">studies/reuse/POST.md; results/amend2/verdict2.json</span></figcaption>
+  </figure>
+
+  <h3>A finding in the saved data: the always-on neurons</h3>
+  <p>Some neurons are active on nearly every token at levels far above the rest; the study took the 1% of earlier-layer neurons with the largest average activation, 3,412 neurons, and called them always-on. Inside a group’s own 50 main inputs they carry about 3% of the set’s effect on the neuron, but inside an unrelated neuron’s inputs about two thirds, so they inflate any measurement made by replacement <span class="src">reuse SPEC4_birth.md §0</span>. The one cut takes 8% to 14% of the last layer and almost nothing below layer 20; the members that enter input sets are a few dozen neurons in layers 8 to 25 at 129 to 639 times their layer’s typical value <span class="src">reuse sanity/SANITY_science.md item 4</span>.</p>
+
+  <h3>The fourth study, 2 November: the always-on neurons excluded</h3>
+  <p>With the always-on neurons removed from the candidates, the 150 cases still score above the fake neurons: 0.207 [0.156, 0.291] against 0.012 [0.002, 0.024] at the point where the newer group first appears, and 0.294 [0.229, 0.345] against 0.065 [0.034, 0.088] at the end of training <span class="src">reuse RESULTS.md Results 24, 25</span>. The exclusion removed three fifths of the fake neurons’ rise over training (0.132 to 0.053); the rule’s two wordings disagree on whether the rest counts, so that outcome is recorded as not decided <span class="src">reuse RESULTS.md Result 27</span>.</p>
+  <p>On 91 fresh cases on 58 neurons no earlier study had touched, a neuron’s two groups share 0.120 [0.080, 0.160] of their 50 main inputs, against 0.06 or less for two unrelated neurons 95% of the time and 0.38 for two halves of one group. It is the one result of the program predicted in advance and confirmed on untouched cases <span class="src">reuse RESULTS.md Result 29</span>.</p>
+  <p>The moment of birth could not be read: one point before the birth, the neuron already responds to the newer group’s contexts at 0.95 [0.85, 1.11] of its birth level on the original cases and 0.86 [0.77, 1.05] on the fresh ones, where the validity check required under 0.5 <span class="src">reuse RESULTS.md Result 30</span>. The sorting model named the newer group with a leftover label such as “miscellaneous” or “other” in 46 of the 150 original cases and 23 of the 93 fresh ones, so these measurements hold over the cases as a group, not for every case <span class="src">reuse sanity/SANITY_science.md items 1, 6</span>.</p>
+
+  <h3>Is anything special about the moment a group appears? 2 and 3 November</h3>
+  <p>Three studies looked for a mark of an event at the birth, mostly with the neuron’s activation on the newer group divided by its activation on the older one, which needs no other divisor <span class="src">reuse SPEC5_dating.md, SPEC8_birthobject.md, SPEC12_lowlayer.md</span>. That ratio rises through the whole of training, from 0.37 to 0.60 at the early points to 0.97 at the end, and on the fresh cases its rise into the birth is 0.97 [0.85, 1.06] times its rise elsewhere <span class="src">reuse RESULTS.md Results 32 to 37</span>.</p>
+  <p>On 127 new cases the point of sharpest change sat within one point of the birth in 0.307 [0.225, 0.395] of cases, against a 0.283 that shuffled births exceed 5% of the time; in the first four layers it was 0.440 [0.329, 0.545] against 0.405 for shuffled births, with a steeper rise into the birth, 1.37 [1.09, 1.75] times the rise elsewhere <span class="src">reuse RESULTS.md Results 44 to 49, 59 to 65</span>. At this spacing of 16 points a birth is the crossing of the neuron’s top-0.1% line and nothing else marks it; a different dating rule would move the reuse scores, which were measured at the points the rule names.</p>
+
+  <h3>Do the always-on neurons act through the normalization step? 2 November</h3>
+  <p>Each layer divides its output by the output’s own size, so replacing a very large neuron changes that divisor. Holding the divisor fixed made the model’s arithmetic run away in 209 of 1,730 readouts, and on the rest the always-on neurons still lowered the neuron by 0.086, so the divisor is not the route and the sentence of 2 November, that replacing one always-on neuron changes almost any later neuron, is withdrawn <span class="src">reuse SPEC6_generic.md; RESULTS.md Results 38, 39</span>. A neuron’s input weights alone pick out 0.12 [0.10, 0.14] of its 50 main inputs <span class="src">reuse RESULTS.md Result 42</span>.</p>
+
+  <h3>Is the shared wiring just the neuron’s own weights? 3 November</h3>
+  <p>Contexts borrowed from other neurons’ groups, read through the same neuron, share 0.013 of their 50 main inputs with the neuron’s own groups, where its two groups share 0.140 (original cases) and 0.160 (fresh), so the objection as written is refuted <span class="src">reuse RESULTS.md Results 50, 51</span>. But the neuron is nearly silent on borrowed contexts, and against its own other groups the newer group shares 0.125, against 0.140 with the older group, a paired difference of 0.000 [−0.020, 0.040] on 107 cases <span class="src">reuse RESULTS.md Result 52</span>.</p>
+  <p>By replacement, on the 43 fresh cases the newer group depends on the older group’s inputs at 0.255 [0.156, 0.363] of its dependence on its own, and on a third group’s at 0.332 [0.168, 0.433], a paired difference of −0.046 [−0.091, 0.030]: the older group is not preferred <span class="src">reuse RESULTS.md Results 53 to 55</span>. The dependence follows how many main inputs two groups share; 127 of the 135 third groups had been linked to the newer one by the sorting model, and the 8 that were not scored 0.061, at the level of the fake neurons <span class="src">sharedinputs/read/READ_sharedinputs.md</span>.</p>
+
+  <figure class="fig" id="fig6">
+    <div class="figtitle">The reuse score at the end of training, always-on neurons excluded, when the replaced inputs belong to the older group or to another group of the same neuron</div>
+    <div class="bars" role="img" aria-label="At the end of training with the always-on neurons excluded: fake neurons 0.065, 95% interval 0.034 to 0.088; the older group's inputs 0.255, 95% interval 0.156 to 0.363; another linked group's inputs 0.332, 95% interval 0.168 to 0.433; two halves of one group 0.672.">
+      <div class="row" title="Fake neurons: median 0.065, 95% interval 0.034–0.088.">
+        <span class="lab">Fake neurons</span>
+        <span class="track"><span class="fill" style="width:6.5%"></span><span class="ci" style="left:3.4%;width:5.4%"></span></span>
+        <span class="val">0.065 <span class="sub">0.034–0.088</span></span>
+      </div>
+      <div class="row hi" title="The older group’s inputs replaced, 43 fresh cases: median 0.255, 95% interval 0.156–0.363.">
+        <span class="lab">Older group’s inputs</span>
+        <span class="track"><span class="fill" style="width:25.5%"></span><span class="ci" style="left:15.6%;width:20.7%"></span></span>
+        <span class="val">0.255 <span class="sub">0.156–0.363</span></span>
+      </div>
+      <div class="row hi" title="Another linked group’s inputs replaced, 43 fresh cases: median 0.332, 95% interval 0.168–0.433.">
+        <span class="lab">Another group’s inputs</span>
+        <span class="track"><span class="fill" style="width:33.2%"></span><span class="ci" style="left:16.8%;width:26.5%"></span></span>
+        <span class="val">0.332 <span class="sub">0.168–0.433</span></span>
+      </div>
+      <div class="row" title="Two halves of one group, 150 original cases: median 0.672.">
+        <span class="lab">Two halves of one group</span>
+        <span class="track"><span class="fill" style="width:67.2%"></span></span>
+        <span class="val">0.672</span>
+      </div>
+      <div class="axisrow"><span class="ticks"><i style="left:0">0</i><i style="left:25%">0.25</i><i style="left:50%">0.5</i><i style="left:75%">0.75</i><i style="left:100%">1</i></span></div>
+    </div>
+    <figcaption>Bars: medians; whiskers: 95% intervals from resampling neurons; the accented bars are the 43 fresh cases, with a paired difference of −0.046 [−0.091, 0.030]. The fake neurons (56) and the halves (150 original cases) were measured the same way at the end of training, with the average written into the replaced neurons. <span class="src">results/sharedinputs/verdict_sharedinputs.json; results/birth/verdict_birth.json</span></figcaption>
+  </figure>
+
+  <h3>The always-on neurons in another model, 2 and 3 November</h3>
+  <p>A public blog post, “Sparks of Weight-Space Programming” by Takehi and colleagues, stops Qwen3.5-0.8B repeating itself on mathematics problems by editing the output weights of 64 neurons in each of two of its 24 blocks, chosen partly by activity <span class="src">alwayson SPEC_qwen_alwayson.md</span>. Only 11 of those 128 neurons are among the top 1% of their block by average activation, against a line of 32 set in advance, where chance gives about 1.3 <span class="src">alwayson RESULTS.md Results 1 to 6</span>. The planned edit test could not be read, because 193 to 200 of 200 answers ran to the 4,096-token limit; by a count registered after the first 40 samples, the published edit lowers the share of answers repeating a ten-token sequence by 0.305 [0.220, 0.385] and the same edit on the always-on columns by 0.090 [0.000, 0.175], whose advantage over random columns, 0.040 [−0.050, 0.130], includes zero <span class="src">alwayson RESULTS.md Results 7 to 12</span>.</p>
+
+  <h3 id="tools">Checking the tools themselves, 3 and 4 November</h3>
+  <p>Every wiring number above rests on three untested choices: writing the average into each switched-off neuron, ranking a group’s main inputs by a one-pass estimate, and taking the groups from a language model’s sorting. The next study tested each against a known answer <span class="src">instruments SPEC_instruments.md; results/RESULTS.md</span>.</p>
+
+  <h3>Does the value you write in matter?</h3>
+  <p>On the 56 fake neurons and the 150 real cases at the end of training, with the always-on neurons excluded, four values were written into the replaced neurons: the average, the median, zero, and a random draw from the neuron’s own record. The fake neurons score 0.067, 0.049, 0.007 and 0.147, and the real cases 0.294, 0.300, 0.293 and 0.362, so most of the fake neurons’ score came from the value written and the dependence between groups did not <span class="src">instruments RESULTS.md Results 5 to 8; verdict_e1.json</span>. The equality is of the pooled median, since under zero the deepest cases fall by about half and the shallow ones rise a little; from here on the program writes zero, with the exclusion.</p>
+  <p>The always-on neurons on their own still lower a neuron by 0.086 under the average, 0.091 under the random draw and 0.044 under zero, and the one-pass estimate predicts almost none of that (0.0004 against 0.066 measured), so their effect reaches the neuron through the rest of the passage, not the marked token <span class="src">instruments RESULTS.md Results 9, 10</span>. On gemma-3-4b-pt and Qwen3-4B-Base the fake neurons score 0.004 under the average, against OLMo’s 0.163, and a code audit found no bug that forces this; OLMo’s push is carried by 34 neurons in layers 7 to 25 at 145 times their layer’s typical value, and one short OLMo run of the new models’ construction is still needed <span class="src">instruments RESULTS.md Results 18, 19; e1b/read/BUGCHECK_e1b.md</span>.</p>
+
+  <figure class="fig" id="fig7">
+    <div class="figtitle">What the fake neurons and the real cases score under four written values · end of training, always-on neurons excluded</div>
+    <div class="bars" role="img" aria-label="Fake neurons: 0.067 with the average written, 0.049 with the median, 0.007 with zero, 0.147 with a random draw. Real cases: 0.294 with the average, 0.300 with the median, 0.293 with zero, 0.362 with a random draw. Axis from 0 to 0.5.">
+      <div class="row" title="Fake neurons, average written: 0.067, 95% interval 0.034–0.089.">
+        <span class="lab">Fake neurons, average</span>
+        <span class="track"><span class="fill" style="width:13.4%"></span><span class="ci" style="left:6.8%;width:11%"></span></span>
+        <span class="val">0.067 <span class="sub">0.034–0.089</span></span>
+      </div>
+      <div class="row" title="Fake neurons, median written: 0.049, 95% interval 0.024–0.081.">
+        <span class="lab">Fake neurons, median</span>
+        <span class="track"><span class="fill" style="width:9.8%"></span><span class="ci" style="left:4.8%;width:11.4%"></span></span>
+        <span class="val">0.049 <span class="sub">0.024–0.081</span></span>
+      </div>
+      <div class="row" title="Fake neurons, zero written: 0.007, 95% interval below 0 to 0.032.">
+        <span class="lab">Fake neurons, zero</span>
+        <span class="track"><span class="fill" style="width:1.4%"></span><span class="ci" style="left:0;width:6.4%"></span></span>
+        <span class="val">0.007 <span class="sub">−0.002–0.032</span></span>
+      </div>
+      <div class="row" title="Fake neurons, a random draw from the neuron’s own record: 0.147, 95% interval 0.119–0.196.">
+        <span class="lab">Fake neurons, random draw</span>
+        <span class="track"><span class="fill" style="width:29.4%"></span><span class="ci" style="left:23.8%;width:15.4%"></span></span>
+        <span class="val">0.147 <span class="sub">0.119–0.196</span></span>
+      </div>
+      <div class="row hi" title="Real cases, average written: 0.294, 95% interval 0.229–0.345.">
+        <span class="lab">Real cases, average</span>
+        <span class="track"><span class="fill" style="width:58.8%"></span><span class="ci" style="left:45.8%;width:23.2%"></span></span>
+        <span class="val">0.294 <span class="sub">0.229–0.345</span></span>
+      </div>
+      <div class="row hi" title="Real cases, median written: 0.300, 95% interval 0.233–0.360.">
+        <span class="lab">Real cases, median</span>
+        <span class="track"><span class="fill" style="width:60%"></span><span class="ci" style="left:46.6%;width:25.4%"></span></span>
+        <span class="val">0.300 <span class="sub">0.233–0.360</span></span>
+      </div>
+      <div class="row hi" title="Real cases, zero written: 0.293, 95% interval 0.216–0.356.">
+        <span class="lab">Real cases, zero</span>
+        <span class="track"><span class="fill" style="width:58.6%"></span><span class="ci" style="left:43.2%;width:28%"></span></span>
+        <span class="val">0.293 <span class="sub">0.216–0.356</span></span>
+      </div>
+      <div class="row hi" title="Real cases, random draw: 0.362, 95% interval 0.318–0.423.">
+        <span class="lab">Real cases, random draw</span>
+        <span class="track"><span class="fill" style="width:72.4%"></span><span class="ci" style="left:63.6%;width:21%"></span></span>
+        <span class="val">0.362 <span class="sub">0.318–0.423</span></span>
+      </div>
+      <div class="axisrow"><span class="ticks"><i style="left:0">0</i><i style="left:25%">0.125</i><i style="left:50%">0.25</i><i style="left:75%">0.375</i><i style="left:100%">0.5</i></span></div>
+    </div>
+    <figcaption>Bars: medians; whiskers: 95% intervals from resampling pairs (fake neurons) or neurons (real cases). The accented bars are the 150 real cases: the value written moves the fake neurons and not the cases. <span class="src">studies/instruments/results/e1/verdict_e1.json</span></figcaption>
+  </figure>
+
+  <h3 id="ingroups">Are the groups in the neuron, or only in the text?</h3>
+  <p>For each of a neuron’s 50 strongest contexts, the list of how much each earlier neuron contributed is its input profile. Grouping contexts by profile, without reading any text, can be compared with the sorting model’s groups by the adjusted Rand index, which is 1 for identical groupings and 0 for chance; random groupings of the same sizes score below 0.06 in 95% of draws, and the sorting model agrees with itself at 0.65 <span class="src">instruments RESULTS.md Results 11, 12</span>.</p>
+  <p>On 351 neurons the input profiles agree with the sorting model at 0.25 and grouping by marked token at 0.22; a balanced grouping method, chosen after that result was seen, reaches 0.44, a reading still to be confirmed on new neurons <span class="src">instruments RESULTS.md Results 12 to 14</span>. The marked token predicts a held-out context’s group 74% of the time because the sorting model rarely puts one token in two groups (in its first sorting, 383 of 18,148 neuron-and-token pairs, on 196 of the 600 neurons), yet 1,964 of its 2,454 groups hold more than one token, so they are not simply token groups <span class="src">instruments RESULTS.md Result 13; the sorting model’s record</span>.</p>
+  <p>A reader called groups made from input profiles one role 21% of the time and the sorting model’s groups 36%; groups whose contexts all carry one token were called one role 80% of the time under either <span class="src">instruments RESULTS.md Results 1 to 3, 17</span>.</p>
+
+  <figure class="fig" id="fig8">
+    <div class="figtitle">How well each grouping of a neuron’s 50 contexts agrees with the sorting model’s groups · 351 neurons, end of training</div>
+    <div class="bars" role="img" aria-label="Agreement with the sorting model’s groups, adjusted Rand index: random groupings of the same sizes below 0.06 in 95 percent of draws; grouped by input profile 0.25; grouped by marked token 0.22; input profile with the balanced method, chosen after the fact, 0.44; the sorting model with itself 0.65.">
+      <div class="row" title="Random groupings of the same sizes: 95% of draws score below 0.06.">
+        <span class="lab">Random groupings</span>
+        <span class="track"><span class="fill" style="width:6.1%"></span></span>
+        <span class="val">0.06 <span class="sub">95% below</span></span>
+      </div>
+      <div class="row hi" title="Grouped by input profile, the rule fixed in advance: 0.253, 95% interval 0.206–0.294.">
+        <span class="lab">By input profile</span>
+        <span class="track"><span class="fill" style="width:25.3%"></span><span class="ci" style="left:20.6%;width:8.8%"></span></span>
+        <span class="val">0.25 <span class="sub">0.206–0.294</span></span>
+      </div>
+      <div class="row" title="Grouped by marked token: 0.220, 95% interval 0.175–0.250.">
+        <span class="lab">By marked token</span>
+        <span class="track"><span class="fill" style="width:22%"></span><span class="ci" style="left:17.5%;width:7.5%"></span></span>
+        <span class="val">0.22 <span class="sub">0.175–0.250</span></span>
+      </div>
+      <div class="row hi" title="Grouped by input profile with the balanced method, chosen after the result was seen: 0.441, 95% interval 0.406–0.476.">
+        <span class="lab">Input profile, balanced method</span>
+        <span class="track"><span class="fill" style="width:44.1%"></span><span class="ci" style="left:40.6%;width:7%"></span></span>
+        <span class="val">0.44 <span class="sub">0.406–0.476</span></span>
+      </div>
+      <div class="row" title="The sorting model asked twice: 0.645, 95% interval 0.615–0.696.">
+        <span class="lab">Sorting model with itself</span>
+        <span class="track"><span class="fill" style="width:64.5%"></span><span class="ci" style="left:61.5%;width:8.1%"></span></span>
+        <span class="val">0.65 <span class="sub">0.615–0.696</span></span>
+      </div>
+      <div class="axisrow"><span class="ticks"><i style="left:0">0</i><i style="left:25%">0.25</i><i style="left:50%">0.5</i><i style="left:75%">0.75</i><i style="left:100%">1</i></span></div>
+    </div>
+    <figcaption>Bars: medians over neurons; whiskers: 95% intervals from resampling neurons. The balanced-method bar was computed after the fixed rule’s result was seen. <span class="src">studies/instruments/results/e3/verdict_e3.json; results/e3/read/recount_e3.json</span></figcaption>
+  </figure>
+
+  <h3>A forecast that follows</h3>
+  <p>For 277 neurons, the share of 50 main inputs that two input-defined groups hold in common predicts the fall of one when the other’s inputs are zeroed, with a correlation of 0.87, and a cheaper ranking that skips the contribution estimate predicts it at 0.81 <span class="src">instruments RESULTS.md Results 20, 21</span>. The grouping rule was chosen on these same neurons, and two identical sets give a dependence of 1 by arithmetic, so the slope is partly built in.</p>
+
+  <h3>The input ranking against a known edit</h3>
+  <p>On 300 problems for Qwen3.5-0.8B, columns chosen by the input ranking from the published loop edit’s direction lowered the share of answers repeating a ten-token sequence by 0.25 at 64 columns and 0.38 at 256, against 0.32 for the published edit and 0.08 to 0.09 for random columns <span class="src">instruments RESULTS.md Results 22 to 27</span>. These are observations under a rule registered after the first batch, and the direction was taken from the published edit itself, so they do not show that the columns can be found from the weights alone <span class="src">e2/read/READ_e2.md</span>.</p>
+
+  <h3>Three short studies on single neurons, 25 to 27 October</h3>
+  <p><strong>Turning one neuron off</strong> in Qwen3-4B-Base and Gemma-3-4B changes the next-token loss on its own contexts by 0.003 to 0.009 nats on the median; the planned comparison of understood and not-understood neurons was cancelled because a check that the removal changes anything failed for 42% and 37% of neurons, above the 30% limit <span class="src">neuronoff README.md; RESULTS.md</span>.</p>
+  <p><strong>Whether a neuron writes what it reads</strong> has no result under the rules written in advance, because the validity checks failed; after the fact, a blind judge accepted a neuron’s explanation as a description of its top 20 output tokens for 18% to 20% of neurons, against 0.5% to 6.5% for shuffled explanations <span class="src">neuronrw RESULTS.md §1; CLOSEOUT.md</span>.</p>
+  <p><strong>Pushing one neuron while the model writes</strong> was a hand-run exploration: pushing OLMo’s “laboratory” neuron at every position makes the model write “laboratory” again and again, at 81% <span class="src">neuronshow ARTIFACT_REVIEW2.md</span>.</p>
+
+  <h3>Outside this question</h3>
+  <p>A study of PaliGemma’s attention weights found that random subspaces matched on how much they disturb the attention queries cost 0.45 as much to remove as one subspace earlier found costly, but subspaces matched in three other ways cost the same per unit of disturbance, so the subspace is not shown to be special <span class="src">realizednull README.md</span>.</p>
+
+  <h3 id="stands">Where the question stands, 4 November</h3>
+  <p>Groups born in the first 4% of training are traced to the neuron’s past as reliably as the controls, as in the got neuron’s chain. Late-born groups, mostly on neurons whose groups all appear late, are traced less often, the overall untraced share is 0.265, and 17 of the 600 neurons ended with a strongest group that was late-born and not linked by the judge.</p>
+  <p>Underneath the text, a neuron’s groups are wired together: they share about an eighth of their main inputs, switching off one group’s inputs lowers the neuron on another by a quarter to a third of its own loss, and the overlap of the input sets predicts that dependence at 0.87. The dependence is the same for the oldest group as for any other, so a neuron’s groups use inputs they hold in common, whichever came first.</p>
+  <p>The birth of a group is a line crossing, not an event: the neuron already responds to the new group’s contexts before its birth point, and the response rises through the whole of training.</p>
+  <p>Writing zero, with the few dozen always-on OLMo neurons excluded, gives a reference near zero, and that is now the program’s rule. The sorting model’s groups follow the marked token closely, rarely splitting one token across groups, and the balanced grouping offers a way to define groups from the wiring instead.</p>
+  <p>Open: the balanced grouping on fresh neurons; the short OLMo run of the two-model construction; whether the shared dependence extends to groups the sorting model did not link; whether the next comparison uses the raw score or the score per shared input; and the independent review of the first wiring score.</p>
+  <p>Costs: the training-point study used 33.2 billed GPU-hours on rented GPUs ($30.27), AWS hours that were not tallied, and about $250 of API calls; the wiring studies used 11.66 GPU-hours against a first-plan limit of 5.0, an overrun that awaits the study owner’s confirmation; the two Qwen studies 1.61 GPU-hours; and the tools study 12.2 GPU-hours against its 12-hour limit, with $5.19 of API calls <span class="src">already-clean RESULTS.md, Cost; reuse README.md; alwayson RESULTS.md; instruments README.md</span>.</p>
+  <p class="record">The full record, with the source artifact for every number, is each study folder’s JOURNAL.md and RESULTS.md.</p>
+</section>
+
+</main>
+<script src="../site.js"></script>
+<script src="../neuron_across_training/data.js"></script>
+<script src="../neuron_across_training/slider.js"></script>
+<script src="../top_contexts/data.js"></script>
+<script src="../top_contexts/top_contexts.js"></script>
+<script src="../explanation_test/data.js"></script>
+<script src="../explanation_test/explanation_test.js"></script>
+<script src="../one_job/data.js"></script>
+<script src="../one_job/one_job.js"></script>
+<script src="../groups/data.js"></script>
+<script src="../groups/groups.js"></script>
+<script src="../births/data.js"></script>
+<script src="../births/births.js"></script>
+<script src="../judge/data.js"></script>
+<script src="../judge/judge.js"></script>

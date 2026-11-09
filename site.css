@@ -1,0 +1,337 @@
+/* site.css: the one stylesheet of the walkthrough (BUILD.md §1).
+   Tokens, type, the page column, the chapter structure, the picture frame and its caption, the value box,
+   controls, tables and footnotes. A picture's own css holds only its own layout, scoped under its id.
+
+   Colour has one meaning on every page (BUILD.md §2):
+     --ink      the thing measured; body text
+     --claim    the claim or the carrier
+     --control  the control or the baseline
+     --muted    everything else: secondary text, axes, marks that are none of the three
+     --accent   links and the keyboard focus ring; the first edition's highlight
+   --claim and --control pass the dataviz palette validator in both themes against --bg (two slots, all pairs:
+   light CVD dE 19.4, normal dE 25.9; dark CVD dE 16.8, normal dE 25.0; each >= 3:1 on --bg), and each stays at
+   CVD dE >= 12 from --ink and from --muted. README_BUILD.md has the numbers.
+
+   The fonts are optional. Every family has a system fallback, and no rule needs the network. */
+
+:root {
+  --bg: #f4f6f4;
+  --ink: #18211f;
+  --muted: #56625e;
+  --rule: #d3dad7;
+  --grid: #e1e6e3;
+  --bar: #b3bfbb;
+  --accent: #0a6b5d;
+  --claim: #0792b1;
+  --control: #c9690c;
+  --band: color-mix(in srgb, var(--ink) 6%, transparent);
+
+  --font-text: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* type scale; 14px is the smallest text anywhere (BUILD.md §2) */
+  --step--1: 0.875rem;              /* 14px: labels, footnotes, the value box */
+  --step-cap: 0.9375rem;            /* 15px: captions, controls, tables */
+  --step-0: 1.0625rem;              /* 17px: prose */
+  --step-1: 1.3125rem;              /* 21px: chapter headings, a picture page's title */
+  --step-2: clamp(1.75rem, 4.5vw, 2.5rem); /* the article's title */
+
+  --measure: 68ch;                  /* prose */
+  --wide: 960px;                    /* a picture */
+  --page-pad-l: max(16px, env(safe-area-inset-left, 0px));
+  --page-pad-r: max(16px, env(safe-area-inset-right, 0px));
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #101514;
+    --ink: #e3e9e6;
+    --muted: #9aa7a3;
+    --rule: #29322f;
+    --grid: #1d2523;
+    --bar: #4a5754;
+    --accent: #4cc3ae;
+    --claim: #0388a5;
+    --control: #cb7229;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #101514;
+  --ink: #e3e9e6;
+  --muted: #9aa7a3;
+  --rule: #29322f;
+  --grid: #1d2523;
+  --bar: #4a5754;
+  --accent: #4cc3ae;
+  --claim: #0388a5;
+  --control: #cb7229;
+  color-scheme: dark;
+}
+
+/* ---------- base ---------- */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-text);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+code, kbd { font-family: var(--font-mono); font-size: 0.9em; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}
+
+/* ---------- the page column ----------
+   One left-aligned column: prose at most 68ch, a picture at most 960px. Prose rules reach only the direct
+   children of the page, the article header and a chapter, so nothing here reaches inside a picture. */
+.page {
+  box-sizing: border-box;
+  max-width: calc(var(--wide) + var(--page-pad-l) + var(--page-pad-r));
+  margin: 0 auto;
+  padding: 3rem var(--page-pad-r) 4rem var(--page-pad-l);
+}
+:where(.page, .article-head, .chapter) > :where(p, ul, ol, dl, blockquote) {
+  max-width: var(--measure);
+  margin: 0 0 1rem;
+  overflow-wrap: break-word;
+}
+:where(.page, .article-head, .chapter) > :where(ul, ol) { padding-left: 1.4rem; }
+:where(.page, .article-head, .chapter) > :where(ul, ol) > li { margin-bottom: 0.4rem; }
+:where(.page, .article-head, .chapter) > :where(ul, ol) > li::marker { color: var(--muted); }
+:where(.page, .article-head, .chapter) > blockquote { padding-left: 1rem; border-left: 2px solid var(--rule); }
+.lede { font-size: 1.1875rem; }
+
+/* the article's title block */
+.article-head { margin-bottom: 2.5rem; }
+.article-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.25rem; margin: 0 0 1.5rem; font-size: var(--step-cap); }
+.article-head h1 {
+  font-size: var(--step-2); font-weight: 700; line-height: 1.15; letter-spacing: -0.01em;
+  margin: 0 0 1rem; max-width: 24ch; text-wrap: balance;
+}
+
+/* a picture page's title row: the title, the link back to the article, the theme switch */
+.page-head {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 0.5rem 1rem; margin: 0 0 1.75rem;
+}
+.page-head h1 { font-size: var(--step-1); font-weight: 700; line-height: 1.2; margin: 0; text-wrap: balance; }
+.page-head nav { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; font-size: var(--step-cap); }
+
+/* ---------- chapters ----------
+   <section class="chapter" id="..."><h2><span class="chapter-num">4</span>The question</h2>
+   <p class="chapter-date">5 November</p> ... </section> */
+.chapter {
+  border-top: 1px solid var(--rule);
+  margin-top: 3rem;
+  padding-top: 2rem;
+  scroll-margin-top: 1rem;
+}
+.chapter > h2 {
+  display: flex; align-items: baseline; gap: 0.6em;
+  max-width: var(--measure);
+  margin: 0 0 0.35rem;
+  font-size: var(--step-1); font-weight: 700; line-height: 1.25; text-wrap: balance;
+}
+.chapter > h3 { max-width: var(--measure); margin: 1.75rem 0 0.5rem; font-size: var(--step-0); font-weight: 700; line-height: 1.3; }
+.chapter-num {
+  flex: none; min-width: 1.4em;
+  font-size: var(--step-0); font-weight: 400; color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.chapter-date { margin: 0 0 1.25rem; font-size: var(--step--1); color: var(--muted); }
+
+/* ---------- the chapter list ----------
+   A short list at the top of the page; a sticky column beside the article on screens wider than 1,100px.
+   <div class="site"><nav class="toc" aria-label="Chapters"><ol><li><a href="#ch1"><span class="chapter-num">1</span>
+   Title</a></li>...</ol></nav><main class="page">...</main></div> */
+.toc {
+  box-sizing: border-box; max-width: calc(var(--measure) + var(--page-pad-l) + var(--page-pad-r)); margin: 0 auto;
+  padding: 1.25rem var(--page-pad-r) 0 var(--page-pad-l);
+  font-size: var(--step--1); line-height: 1.4;
+}
+.toc ol { list-style: none; margin: 0; padding: 0; }
+.toc a { display: flex; align-items: baseline; gap: 0.5em; padding: 0.15rem 0; color: var(--muted); text-decoration: none; }
+.toc a:hover { color: var(--ink); }
+.toc .chapter-num { min-width: 1.2em; font-size: inherit; }
+@media (min-width: 1100px) {
+  .site {
+    display: grid;
+    grid-template-columns: 12rem minmax(0, var(--wide));
+    column-gap: 3rem;
+    justify-content: center;
+    padding: 0 2rem;
+  }
+  .site > .page { max-width: none; margin: 0; padding-left: 0; padding-right: 0; }
+  .toc {
+    max-width: none; margin: 0;
+    position: sticky; top: 0; align-self: start;
+    max-height: 100vh; overflow-y: auto;
+    padding: 3rem 0 2rem;
+    font-size: var(--step-cap); line-height: 1.35;
+  }
+  .toc ol { list-style: none; margin: 0; padding: 0; }
+  .toc a {
+    display: flex; align-items: baseline; gap: 0.5em;
+    padding: 0.3rem 0 0.3rem 0.6rem;
+    color: var(--muted); text-decoration: none;
+    box-shadow: inset 2px 0 0 transparent;
+  }
+  .toc a:hover { color: var(--ink); }
+  .toc a[aria-current="true"] { color: var(--ink); box-shadow: inset 2px 0 0 var(--ink); }
+  .toc .chapter-num { min-width: 1.2em; font-size: inherit; }
+}
+
+/* ---------- definition boxes ----------
+   <aside class="def" data-source="studies/.../SPEC.md"><p><code>one formula line</code></p><p>One sentence.</p></aside> */
+.def {
+  box-sizing: border-box; max-width: var(--measure);
+  margin: 1.5rem 0; padding: 0.85rem 1rem;
+  border-left: 2px solid var(--rule);
+  font-size: var(--step-cap); line-height: 1.5; color: var(--ink);
+}
+.def p { margin: 0; }
+.def p + p { margin-top: 0.45rem; }
+.def code { display: block; font-size: var(--step--1); line-height: 1.5; white-space: pre-wrap; overflow-wrap: break-word; }
+.open-list { max-width: var(--measure); padding-left: 1.4rem; margin: 0 0 1rem; }
+.open-list li { margin-bottom: 0.5rem; }
+.open-list li::marker { color: var(--muted); }
+
+/* ---------- the picture frame ----------
+   <figure class="figure" data-source="data.js"><div id="picture"></div>
+   <figcaption class="figure-caption">One sentence that states what the picture shows. <a class="data-link">data</a>
+   </figcaption></figure>
+   site.js fills the data link from the picture's meta.sources and meta.commit. */
+.figure { min-width: 0; max-width: var(--wide); margin: 2rem 0 2.5rem; }
+.figure-caption {
+  max-width: var(--measure);
+  margin-top: 1.25rem;
+  overflow-wrap: break-word;
+  font-size: var(--step-cap); line-height: 1.5; color: var(--ink);
+}
+.figure-caption code, .open-list code, .footnotes code { font-size: var(--step--1); }
+.data-link { margin-left: 0.3em; color: var(--muted); white-space: nowrap; }
+.data-link:hover { color: var(--ink); }
+.walk-missing { margin: 1.5rem 0 0; font-size: 1rem; }
+.figure-note { max-width: var(--measure); margin: 0.5rem 0 0; font-size: var(--step--1); line-height: 1.5; color: var(--muted); }
+
+/* ---------- the value box ----------
+   One element for the whole page, made by site.js; hover, tap or keyboard focus on a mark shows it. */
+.value-box {
+  position: fixed; left: 0; top: 0; z-index: 100;
+  box-sizing: border-box; max-width: min(20rem, calc(100vw - 16px));
+  padding: 0.45rem 0.65rem 0.5rem; border-radius: 6px;
+  background: var(--ink); color: var(--bg);
+  font: 400 var(--step--1)/1.45 var(--font-text);
+  pointer-events: none;
+}
+.value-box[hidden] { display: none; }
+.value-box .vb-title { display: block; font-weight: 700; }
+.value-box .vb-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1.25rem; }
+.value-box .vb-value { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.value-box .vb-key {
+  display: inline-block; width: 10px; height: 10px; margin-right: 0.4em; border-radius: 2px;
+  box-shadow: 0 0 0 1px var(--bg); vertical-align: -1px;
+}
+
+/* ---------- controls ----------
+   Every control is at least 40px tall. A button: <button class="button" type="button">.
+   A toggle of one condition: <div class="toggle" role="group" aria-label="..."><button type="button"
+   aria-pressed="true">Half precision</button><button type="button" aria-pressed="false">Full precision</button></div>.
+   A drag through snapshots: <input class="scrub" type="range" min="0" max="15" step="1">. */
+.control-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem; margin: 0 0 1rem; }
+.control-label { font-size: var(--step--1); color: var(--muted); }
+.button {
+  box-sizing: border-box; min-height: 40px;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0 0.9rem; border: 1px solid var(--rule); border-radius: 8px;
+  background: transparent; color: var(--ink);
+  font: inherit; font-size: var(--step-cap); line-height: 1.2;
+  cursor: pointer;
+}
+.button:hover { background: var(--band); }
+.toggle {
+  display: inline-flex; gap: 2px; padding: 2px;
+  border: 1px solid var(--rule); border-radius: 9px;
+}
+.toggle > button {
+  box-sizing: border-box; min-height: 40px;
+  padding: 0 0.85rem; border: 0; border-radius: 7px;
+  background: transparent; color: var(--muted);
+  font: inherit; font-size: var(--step-cap); line-height: 1.2;
+  cursor: pointer;
+}
+.toggle > button:hover { color: var(--ink); }
+.toggle > button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+input[type="range"].scrub {
+  -webkit-appearance: none; appearance: none;
+  display: block; width: 100%; height: 40px; margin: 0;
+  background: transparent; cursor: pointer; touch-action: pan-y;
+}
+input[type="range"].scrub:focus-visible { outline: none; }
+input[type="range"].scrub::-webkit-slider-runnable-track { height: 2px; border-radius: 1px; background: var(--rule); }
+input[type="range"].scrub::-moz-range-track { height: 2px; border-radius: 1px; background: var(--rule); }
+input[type="range"].scrub::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  box-sizing: border-box; width: 22px; height: 22px; margin-top: -10px;
+  border: 3px solid var(--bg); border-radius: 50%; background: var(--ink);
+}
+input[type="range"].scrub::-moz-range-thumb {
+  box-sizing: border-box; width: 22px; height: 22px;
+  border: 3px solid var(--bg); border-radius: 50%; background: var(--ink);
+}
+input[type="range"].scrub:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 2px var(--accent); }
+input[type="range"].scrub:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 2px var(--accent); }
+
+/* ---------- tables ----------
+   <div class="table-scroll"><table class="data-table">...</table></div>; numeric cells take class "num". */
+.table-scroll { max-width: var(--wide); overflow-x: auto; margin: 1rem 0 1.5rem; }
+.data-table { border-collapse: collapse; min-width: 100%; font-size: var(--step-cap); line-height: 1.4; }
+.data-table caption { caption-side: bottom; padding-top: 0.6rem; text-align: left; font-size: var(--step--1); color: var(--muted); }
+.data-table th, .data-table td {
+  padding: 0.45rem 1rem 0.45rem 0; border-bottom: 1px solid var(--rule);
+  text-align: left; vertical-align: baseline;
+}
+.data-table th { font-size: var(--step--1); font-weight: 700; color: var(--muted); }
+.data-table .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.data-table code { font-size: var(--step--1); }  /* 14px: the smallest text anywhere */
+.data-table tbody tr:hover { background: var(--band); }
+/* On narrow screens each row stacks: the first cell, then the value, then the file; the caption wraps at full width.
+   A cell may carry data-th="column name" to show its column name before its value. */
+@media (max-width: 640px) {
+  .table-scroll { overflow-x: visible; }
+  .data-table, .data-table caption, .data-table tbody, .data-table tr, .data-table td { display: block; }
+  .data-table { min-width: 0; width: 100%; }
+  .data-table thead { display: none; }
+  .data-table tr { padding: 0.5rem 0; border-bottom: 1px solid var(--rule); }
+  .data-table td { padding: 0.1rem 0; border: 0; text-align: left; }
+  .data-table .num { text-align: left; white-space: normal; font-weight: 700; }
+  .data-table td code { overflow-wrap: anywhere; }
+  .data-table td[data-th]::before { content: attr(data-th) ": "; color: var(--muted); font-weight: 400; }
+  .data-table caption { padding-top: 0.6rem; }
+}
+
+/* ---------- footnotes ----------
+   <sup class="fn-ref"><a href="#fn1" id="fn1-ref">1</a></sup> ... <section class="footnotes"><ol><li id="fn1">...
+   <a href="#fn1-ref">back</a></li></ol></section> */
+.fn-ref { font-size: var(--step--1); line-height: 0; vertical-align: super; }
+.fn-ref a { padding: 0 0.1em; text-decoration: none; }
+.footnotes {
+  max-width: var(--measure);
+  margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule);
+  font-size: var(--step--1); line-height: 1.5; color: var(--muted);
+}
+.footnotes ol { margin: 0; padding-left: 1.4rem; }
+.footnotes li { margin-bottom: 0.5rem; }
+.footnotes li:target { color: var(--ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

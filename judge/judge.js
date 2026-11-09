@@ -384,7 +384,7 @@
     const q = document.createElement('q');
     q.textContent = name;
     who.append(b, ' Layer ' + id.layer + ', neuron ' + id.neuron + ', ' + id.sign + ' activations. Its group ', q,
-      ' (' + plural(size, 'context', 'contexts') + ', named by the sorting model) ' +
+      ' (' + plural(size, 'context', 'contexts') + ', named by the model that sorted the contexts) ' +
       (control
         ? 'is the neuron’s strongest at the end of training, so this call is a control: the records come from step ' +
           step(E.t) + ', the last saved point before the end. '

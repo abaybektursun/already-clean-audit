@@ -1,0 +1,88 @@
+/* m05: the birth rule on one unit. Every rule is scoped under #m05; tokens come from site.css. */
+#m05 { font-size: var(--step-cap); line-height: 1.45; color: var(--ink); --gut: 2.6rem; }
+#m05 *, #m05 *::before, #m05 *::after { box-sizing: border-box; }
+#m05 p { margin: 0; max-width: none; }
+#m05 .m05-wrap { display: grid; gap: 2.5rem; }
+#m05 .m05-wrap > section { min-width: 0; }
+#m05 .m05-all { padding-top: 1.25rem; border-top: 1px solid var(--rule); }
+#m05 .m05-h { margin: 0 0 0.6rem; font-size: var(--step-0); font-weight: 700; line-height: 1.3; }
+#m05 .m05-note { margin: 0.5rem 0 1rem; color: var(--muted); max-width: 68ch; }
+#m05 .m05-legend { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; margin: 0.25rem 0 0.75rem; font-size: var(--step--1); color: var(--muted); }
+#m05 .m05-legend span { display: inline-flex; align-items: center; gap: 0.45rem; }
+#m05 .m05-key { display: inline-block; flex: none; }
+#m05 .m05-key.med { width: 16px; height: 2px; background: var(--ink); }
+#m05 .m05-key.thr { width: 16px; height: 2px; background: var(--control); }
+#m05 .m05-key.birth { width: 2px; height: 14px; background: var(--claim); }
+#m05 .m05-key.fill { width: 9px; height: 9px; border-radius: 50%; background: var(--ink); }
+#m05 .m05-key.on { width: 11px; height: 11px; border-radius: 3px; background: var(--ink); }
+#m05 .m05-key.off { width: 11px; height: 11px; border-radius: 3px; box-shadow: inset 0 0 0 1.5px var(--muted); }
+#m05 .m05-key.ring { width: 9px; height: 9px; border-radius: 50%; box-shadow: inset 0 0 0 2px var(--ink); }
+
+/* the chart: a log scale with a separate row for zeros */
+#m05 .m05-plot { position: relative; height: 240px; margin: 1.5rem 0 0 var(--gut); }
+#m05 .m05-plot svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+#m05 .m05-plot svg * { vector-effect: non-scaling-stroke; }
+#m05 .m05-plot > :not(svg) { position: absolute; }
+#m05 .m05-grid { stroke: var(--grid); stroke-width: 1; }
+#m05 .m05-thrline { fill: none; stroke: var(--control); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+#m05 .m05-medline { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+#m05 .m05-birthline { stroke: var(--claim); stroke-width: 2; }
+#m05 .m05-ytick { transform: translate(calc(-100% - 6px), -50%); font-size: 12px; line-height: 1; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+#m05 .m05-dot { width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%; box-shadow: 0 0 0 2px var(--bg); pointer-events: none; }
+#m05 .m05-dot.thr { background: var(--control); }
+#m05 .m05-dot.med { background: var(--ink); }
+#m05 .m05-birthlab { transform: translate(-50%, calc(-100% - 4px)); font-size: var(--step--1); line-height: 1; font-weight: 700; white-space: nowrap; color: var(--ink); }
+#m05 .m05-direct { font-size: var(--step--1); line-height: 1; white-space: nowrap; color: var(--ink); pointer-events: none; }
+#m05 .m05-direct.thr.above { transform: translate(-30%, calc(-100% - 8px)); }
+#m05 .m05-direct.med.below { transform: translate(-50%, 10px); }
+#m05 .m05-cursor { top: 0; bottom: 0; background: var(--band); border-radius: 4px; pointer-events: none; }
+#m05 .m05-col { top: 0; bottom: 0; transform: translateX(-50%); cursor: pointer; }
+
+#m05 .m05-row-lab { position: relative; margin-left: var(--gut); }
+#m05 .m05-xname { display: block; text-align: center; font-size: var(--step--1); color: var(--muted); }
+#m05 .m05-present { display: grid; grid-template-columns: repeat(16, minmax(0, 1fr)); justify-items: center; padding: 10px 0 6px; }
+#m05 .m05-cell { display: block; width: 12px; height: 12px; border-radius: 3px; box-shadow: inset 0 0 0 1.5px var(--muted); }
+#m05 .m05-cell.on { background: var(--ink); box-shadow: none; }
+#m05 .m05-cell.birth { outline: 2px solid var(--claim); outline-offset: 2px; }
+#m05 .m05-cell.pair { transform: scale(1.25); }
+#m05 .m05-xlab { display: grid; grid-template-columns: repeat(16, minmax(0, 1fr)); justify-items: center; font-size: 12px; line-height: 1; color: var(--muted); font-variant-numeric: tabular-nums; padding: 2px 0; }
+#m05 .m05-scrubwrap { margin-left: var(--gut); }
+#m05 .m05-scrubwrap input { width: calc(100% * 15 / 16 + 22px); margin-left: calc(100% / 32 - 11px); }
+
+/* the rule at the chosen snapshot */
+#m05 .m05-out { margin-top: 1rem; }
+#m05 .m05-outhead { font-weight: 700; margin-bottom: 0.35rem; font-variant-numeric: tabular-nums; }
+#m05 .m05-tab { border-collapse: collapse; font-size: var(--step-cap); }
+#m05 .m05-tab th, #m05 .m05-tab td { padding: 0.25rem 1rem 0.25rem 0; border-bottom: 1px solid var(--rule); text-align: left; font-weight: 400; }
+#m05 .m05-tab tr:first-child th { color: var(--muted); font-size: var(--step--1); }
+#m05 .m05-tab .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+#m05 .m05-verdict { margin-top: 0.6rem; max-width: 68ch; }
+#m05 .m05-pos { margin-top: 0.5rem; }
+#m05 .m05-poshead { margin-bottom: 0.4rem; }
+#m05 .m05-pgrid { display: grid; grid-template-columns: 2.2em minmax(0, 1fr) minmax(0, max-content) 5em; font-family: var(--font-mono); font-size: var(--step--1); line-height: 1.3; }
+#m05 .m05-prow { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; align-items: baseline; padding: 0.3rem 0; border-bottom: 1px solid var(--grid); }
+#m05 .m05-rank { color: var(--muted); font-variant-numeric: tabular-nums; }
+#m05 .m05-before { display: flex; justify-content: flex-end; overflow: hidden; white-space: pre; color: var(--muted); }
+#m05 .m05-before > span { flex: none; }
+#m05 .m05-tok { white-space: pre; overflow: hidden; text-overflow: ellipsis; font-weight: 500; background: var(--band); box-shadow: inset 0 -2px 0 var(--ink); padding: 0 1px; }
+#m05 .m05-pval { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* all births */
+#m05 .m05-facts { display: flex; flex-wrap: wrap; gap: 1rem 2.5rem; margin: 0.5rem 0 0.25rem; }
+#m05 .m05-fact { display: grid; gap: 0.2rem; max-width: 20rem; }
+#m05 .m05-fact b { font-size: 2rem; line-height: 1.1; font-weight: 700; }
+#m05 .m05-fact span { color: var(--muted); }
+#m05 .m05-dots { max-width: 34rem; margin-top: 1.25rem; border-radius: 6px; outline-offset: 4px; }
+#m05 .m05-dplot { --d: 10px; position: relative; display: grid; grid-auto-rows: 12px; margin-left: var(--gut); padding-right: 0; }
+#m05 .m05-drow { display: flex; align-items: center; gap: 2px; min-width: 0; }
+#m05 .m05-bdot { flex: none; width: var(--d); height: var(--d); border-radius: 50%; background: var(--ink); cursor: default; }
+#m05 .m05-bdot.ring { background: transparent; box-shadow: inset 0 0 0 2px var(--ink); }
+#m05 .m05-bdot.cur { outline: 2px solid var(--accent); outline-offset: 1px; }
+#m05 .m05-dtick { position: absolute; left: 0; transform: translate(calc(-100% - 6px), -50%); font-size: 12px; line-height: 1; color: var(--muted); font-variant-numeric: tabular-nums; }
+#m05 .m05-dplot::before { content: ""; position: absolute; left: -3px; top: 0; bottom: 0; width: 1px; background: var(--muted); }
+#m05 .m05-dline { position: absolute; left: -3px; right: 0; height: 0; pointer-events: none; }
+#m05 .m05-dline.thr { border-top: 2px solid var(--control); }
+#m05 .m05-dline.med { border-top: 1px solid var(--ink); }
+#m05 .m05-dlab { position: absolute; right: 0; transform: translateY(calc(-100% - 2px)); font-size: var(--step--1); line-height: 1; color: var(--ink); background: var(--bg); padding: 0 0 0 0.3rem; white-space: nowrap; }
+#m05 .m05-dline.med .m05-dlab { transform: translateY(3px); }
+@media (max-width: 480px) { #m05 .m05-dplot { --d: 8px; grid-auto-rows: 11px; } }

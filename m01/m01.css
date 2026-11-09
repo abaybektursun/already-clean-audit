@@ -1,0 +1,86 @@
+/* m01: the model and the snapshots. Every rule is scoped under #m01; tokens come from site.css. */
+#m01 { font-size: var(--step-cap); line-height: 1.45; color: var(--ink); }
+#m01 *, #m01 *::before, #m01 *::after { box-sizing: border-box; }
+#m01 p { margin: 0; max-width: none; }
+#m01 .m01-h { margin: 0 0 1rem; font-size: var(--step-0); font-weight: 700; line-height: 1.3; overflow-wrap: anywhere; }
+#m01 .m01-h4 { margin: 0 0 0.5rem; font-size: var(--step-cap); font-weight: 700; }
+#m01 .m01-note { margin-top: 0.6rem; color: var(--muted); max-width: 68ch; }
+#m01 .m01-wrap { display: grid; gap: 2.5rem; }
+
+/* the column of layers beside the inside of one layer */
+#m01 .m01-cols { display: grid; gap: 2rem; }
+@media (min-width: 760px) { #m01 .m01-cols { grid-template-columns: 15rem minmax(0, 1fr); gap: 2.5rem; } }
+#m01 .m01-stack { display: flex; flex-direction: column; gap: 6px; max-width: 22rem; }
+#m01 .m01-flow { color: var(--muted); font-size: var(--step--1); }
+#m01 .m01-outer {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 0.75rem; flex-wrap: wrap;
+  padding: 0.35rem 0.6rem; border: 1px solid var(--rule); border-radius: 6px; cursor: default;
+}
+#m01 .m01-outer:hover, #m01 .m01-outer:focus-visible { background: var(--band); }
+#m01 .m01-outer-name { font-weight: 700; }
+#m01 .m01-tshape { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+#m01 .m01-layers { display: grid; gap: 0; padding: 2px 0; }
+#m01 .m01-layer { display: grid; grid-template-columns: 1.75rem minmax(0, 1fr); align-items: center; height: 12px; cursor: default; }
+#m01 .m01-lnum { font-size: 12px; line-height: 1; color: var(--muted); text-align: right; padding-right: 0.4rem; font-variant-numeric: tabular-nums; }
+#m01 .m01-lbar { display: block; height: 9px; border-radius: 2px; background: var(--bar); }
+#m01 .m01-layer.full .m01-lbar { background: var(--ink); }
+#m01 .m01-layer:hover .m01-lbar, #m01 .m01-layer:focus-visible .m01-lbar { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px var(--muted); }
+#m01 .m01-legend { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; margin-top: 0.25rem; font-size: var(--step--1); color: var(--muted); }
+#m01 .m01-legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
+#m01 .m01-key { display: inline-block; width: 14px; height: 9px; border-radius: 2px; }
+#m01 .m01-key.full { background: var(--ink); }
+#m01 .m01-key.sliding { background: var(--bar); }
+
+/* inside one layer: tensors to true shape; --u is the drawn length of 4,096 */
+#m01 .m01-inside { container-type: inline-size; min-width: 0; }
+#m01 .m01-inside, #m01 .m01-inside * { --u: min(64px, (100cqw - 36px) / 5.7); }
+#m01 .m01-h-line { margin-bottom: 0.4rem; }
+#m01 .m01-op { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+#m01 .m01-formula { font-family: var(--font-mono); font-size: var(--step-cap); font-weight: 500; margin-bottom: 0.75rem; overflow-wrap: anywhere; }
+#m01 .m01-trow { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0.9rem 1rem; }
+#m01 .m01-t { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; cursor: default; }
+#m01 .m01-t:hover .m01-mat, #m01 .m01-t:focus-visible .m01-mat,
+#m01 .m01-t:hover .m01-vec, #m01 .m01-t:focus-visible .m01-vec { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px var(--muted); }
+#m01 .m01-mat { background: var(--bar); border-radius: 2px; }
+#m01 .m01-vec { height: 3px; border-radius: 2px; background: var(--muted); margin-top: 6px; }
+#m01 .m01-hvec { background: var(--ink); }
+#m01 .m01-tcap { font-weight: 700; line-height: 1.2; }
+#m01 .m01-t .m01-tshape { line-height: 1.2; }
+
+/* the timeline */
+#m01 .m01-tl { position: relative; height: 200px; margin: 2.75rem 0 0.5rem; }
+#m01 .m01-tl svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+#m01 .m01-tl line { vector-effect: non-scaling-stroke; }
+#m01 .m01-axis { stroke: var(--muted); stroke-width: 1; }
+#m01 .m01-conn { stroke: var(--rule); stroke-width: 1; }
+#m01 .m01-conn.off { stroke: var(--muted); stroke-dasharray: 3 3; }
+#m01 .m01-sep { stroke: var(--rule); stroke-width: 1; }
+#m01 .m01-tl > * { position: absolute; }
+#m01 .m01-tick { transform: translateX(-50%); font-size: 12px; line-height: 1; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+#m01 .m01-tick.left, #m01 .m01-axis-name.left { transform: translateX(-4px); }
+#m01 .m01-axis-name { font-size: var(--step--1); color: var(--muted); white-space: nowrap; transform: translateY(-100%); }
+#m01 .m01-tick.top-name { font-size: var(--step--1); }
+@media (max-width: 559px) { #m01 .m01-tick.minor { display: none; } }
+#m01 .m01-dot {
+  position: absolute; left: 50%; top: 50%; width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px;
+  border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 2px var(--bg);
+}
+#m01 .m01-dot.low { left: auto; top: auto; margin: -4.5px 0 0 -4.5px; }
+#m01 .m01-hit { height: 36px; transform: translate(-50%, -50%); cursor: default; border-radius: 6px; }
+#m01 .m01-hit:hover .m01-dot, #m01 .m01-hit:focus-visible .m01-dot { transform: scale(1.4); }
+#m01 .m01-hit.off { width: 30px; }
+#m01 .m01-off {
+  position: absolute; left: 50%; top: 50%; width: 10px; height: 10px; margin: -5px 0 0 -5px;
+  border: 2px solid var(--muted); background: var(--bg); transform: rotate(45deg);
+}
+#m01 .m01-off.low { left: auto; top: auto; }
+#m01 .m01-hit.off:hover .m01-off, #m01 .m01-hit.off:focus-visible .m01-off { background: var(--muted); }
+#m01 .m01-letter { position: absolute; left: 50%; top: -6px; transform: translate(-50%, -100%); font-size: var(--step--1); line-height: 1; color: var(--ink); font-weight: 700; }
+#m01 .m01-hit.below .m01-letter { top: auto; bottom: -6px; transform: translate(-50%, 100%); }
+#m01 .m01-zone { transform: translateX(-100%); font-size: var(--step--1); line-height: 1; color: var(--muted); white-space: nowrap; }
+#m01 .m01-offkeys { list-style: none; margin: 1.5rem 0 0; padding: 0; display: grid; gap: 0.35rem; max-width: 68ch; }
+#m01 .m01-offkeys li { padding-left: 1.6rem; text-indent: -1.6rem; }
+#m01 .m01-keyoff {
+  display: inline-block; width: 9px; height: 9px; margin: 0 0.55rem 0 0.25rem; border: 2px solid var(--muted);
+  transform: rotate(45deg); vertical-align: 1px;
+}

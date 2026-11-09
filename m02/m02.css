@@ -1,0 +1,57 @@
+/* m02: a unit and its two sides. Every rule is scoped under #m02; tokens come from site.css. */
+#m02 { font-size: var(--step-cap); line-height: 1.45; color: var(--ink); }
+#m02 *, #m02 *::before, #m02 *::after { box-sizing: border-box; }
+#m02 p { margin: 0; max-width: none; }
+#m02 .m02-wrap { display: grid; gap: 2rem; }
+#m02 .m02-h { margin: 0 0 1rem; font-size: var(--step-0); font-weight: 700; line-height: 1.3; overflow-wrap: anywhere; }
+#m02 .m02-note { margin-top: 0.6rem; color: var(--muted); max-width: 68ch; }
+
+/* the matrices; --u is the drawn length of 4,096 */
+#m02 .m02-mats-sec { container-type: inline-size; min-width: 0; }
+#m02 .m02-mats { --u: min(80px, (100cqw - 40px) / 4.6875); display: flex; align-items: flex-end; gap: 20px; flex-wrap: wrap; }
+#m02 .m02-m { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
+#m02 .m02-frame { position: relative; margin-bottom: 6px; }
+#m02 .m02-box { position: absolute; inset: 0; background: var(--bar); border-radius: 2px; cursor: default; }
+#m02 .m02-box:hover, #m02 .m02-box:focus-visible { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px var(--muted); }
+#m02 .m02-hl { position: absolute; cursor: default; }
+#m02 .m02-hl.row { left: -6px; right: -6px; height: 16px; margin-top: -8px; }
+#m02 .m02-hl.col { top: -6px; bottom: -6px; width: 16px; margin-left: -8px; }
+#m02 .m02-hl::before { content: ""; position: absolute; background: var(--ink); border-radius: 1px; }
+#m02 .m02-hl.row::before { left: 6px; right: 6px; top: 7px; height: 2px; }
+#m02 .m02-hl.col::before { top: 6px; bottom: 6px; left: 7px; width: 2px; }
+#m02 .m02-hl:hover::before, #m02 .m02-hl:focus-visible::before { box-shadow: 0 0 0 2px var(--bg); }
+#m02 .m02-hl.row:hover::before, #m02 .m02-hl.row:focus-visible::before { top: 6px; height: 4px; }
+#m02 .m02-hl.col:hover::before, #m02 .m02-hl.col:focus-visible::before { left: 6px; width: 4px; }
+#m02 .m02-mname { font-weight: 700; line-height: 1.25; }
+#m02 .m02-mshape, #m02 .m02-mown { color: var(--muted); line-height: 1.25; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* the formula */
+#m02 .m02-formula, #m02 .m02-write { display: grid; gap: 0.5rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+#m02 .m02-eq { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.15rem 1rem; }
+#m02 .m02-eq code { font-family: var(--font-mono); font-size: var(--step-cap); font-weight: 500; white-space: pre-wrap; overflow-wrap: anywhere; }
+#m02 .m02-eqnote { color: var(--muted); }
+
+/* the two sides: a list of contexts aligned on the token */
+#m02 .m02-ctx { padding-top: 1rem; border-top: 1px solid var(--rule); min-width: 0; }
+#m02 .m02-summary { margin-bottom: 0.25rem; }
+#m02 .m02-signs { margin: 0 0 1rem; }
+#m02 .m02-kwic {
+  display: grid; grid-template-columns: 2.2em minmax(0, 1fr) minmax(0, max-content) minmax(0, 0.75fr) 4.4em;
+  column-gap: 0; font-family: var(--font-mono); font-size: var(--step--1); line-height: 1.3;
+}
+#m02 .m02-khead, #m02 .m02-row { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; align-items: baseline; }
+#m02 .m02-khead { font-family: var(--font-text); color: var(--muted); padding-bottom: 0.35rem; border-bottom: 1px solid var(--rule); }
+#m02 .m02-k-ctx { grid-column: 2 / 5; }
+#m02 .m02-k-a, #m02 .m02-a { text-align: right; }
+#m02 .m02-row { padding: 0.3rem 0; border-bottom: 1px solid var(--grid); cursor: default; }
+#m02 .m02-row:hover, #m02 .m02-row:focus-visible { background: var(--band); }
+#m02 .m02-rank { color: var(--muted); font-variant-numeric: tabular-nums; }
+#m02 .m02-before { display: flex; justify-content: flex-end; overflow: hidden; white-space: pre; color: var(--muted); }
+#m02 .m02-before > span { flex: none; }
+#m02 .m02-tok {
+  white-space: pre; overflow: hidden; text-overflow: ellipsis; font-weight: 500; color: var(--ink);
+  background: var(--band); box-shadow: inset 0 -2px 0 var(--ink); padding: 0 1px;
+}
+#m02 .m02-after { overflow: hidden; white-space: pre; color: var(--muted); }
+#m02 .m02-a { font-variant-numeric: tabular-nums; white-space: nowrap; }
+#m02 .m02-more { margin-top: 0.75rem; }

@@ -21,8 +21,8 @@
       <button class="btn" id="ngroups-random" type="button">Random neuron</button>
     </div>
     <div class="seg" role="group" aria-label="Which sorting">
-      <button type="button" data-s="0" aria-pressed="true">First sorting</button>
-      <button type="button" data-s="1" aria-pressed="false">Second sorting</button>
+      <button type="button" data-s="0" aria-pressed="true">First (used)</button>
+      <button type="button" data-s="1" aria-pressed="false">Second (repeat)</button>
     </div>
   </div>
   <p class="who" id="ngroups-who"></p>
@@ -385,7 +385,7 @@
 
   function caption() {
     $('caption').textContent =
-      'The sorting model, ' + D.sorter + ', was told to make one group per job, but a second model asked about 129 ' +
+      'The model that sorted the contexts, ' + D.sorter + ', was told to make one group per job, but a second model asked about 129 ' +
       'of its groups said 109 were not about one thing, so a group is not a job. It sorted each of the ' + D.n_study +
       ' neurons twice, making ' + int(D.total[0]) + ' groups the first time and ' + int(D.total[1]) + ' the second, ' +
       'with the same count for ' + D.same + ' neurons.';

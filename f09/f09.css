@@ -1,0 +1,70 @@
+/* f09: the 16-bit prediction against the 16-bit or 32-bit switch-off measurement. The mount puts the class f09-pic on
+   its root, so the two mounts (#f09 and #f09-32) share these rules; every rule is scoped under .f09-pic. */
+.f09-pic { font-size: var(--step-cap); line-height: 1.45; color: var(--ink); --gut: 3rem; }
+.f09-pic *, .f09-pic *::before, .f09-pic *::after { box-sizing: border-box; }
+.f09-pic p { margin: 0; max-width: none; }
+.f09-pic .f09-wrap { display: grid; gap: 1.5rem; }
+.f09-pic .f09-controls { gap: 0.75rem 1.5rem; margin: 0; }
+.f09-pic .f09-control { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.75rem; }
+.f09-pic .f09-main { display: grid; gap: 2rem; }
+.f09-pic .f09-main > section { min-width: 0; }
+@media (min-width: 760px) { .f09-pic .f09-main { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); align-items: start; } }
+.f09-pic .f09-h { margin: 0 0 0.5rem; font-size: var(--step-0); font-weight: 700; line-height: 1.3; }
+.f09-pic .f09-note { margin: 0.5rem 0 0; color: var(--muted); max-width: 68ch; }
+
+.f09-pic .f09-legend { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; margin: 0 0 0.75rem; font-size: var(--step--1); color: var(--muted); }
+.f09-pic .f09-legend span { display: inline-flex; align-items: center; gap: 0.45rem; }
+.f09-pic .f09-key { display: inline-block; flex: none; }
+.f09-pic .f09-key.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ink); }
+.f09-pic .f09-key.ring { width: 10px; height: 10px; border-radius: 50%; box-shadow: inset 0 0 0 2px var(--ink); }
+.f09-pic .f09-key.diag { width: 14px; height: 1px; background: var(--muted); transform: rotate(-45deg); }
+.f09-pic .f09-key.adot { width: 10px; height: 10px; border-radius: 50%; background: var(--ink); }
+.f09-pic .f09-key.band { width: 16px; height: 4px; border-radius: 2px; background: color-mix(in srgb, var(--ink) 35%, transparent); }
+.f09-pic .f09-key.shuf { width: 2px; height: 14px; background: var(--control); }
+.f09-pic .f09-key.bar { width: 2px; height: 14px; background: var(--muted); }
+
+/* the scatter: percentage positions, so it follows the column's width */
+.f09-pic .f09-yname { margin: 0 0 0.6rem; font-size: var(--step--1); color: var(--muted); }
+.f09-pic .f09-plot { position: relative; aspect-ratio: 1 / 1; max-width: 34rem; margin-left: var(--gut); border-radius: 2px; outline-offset: 6px; touch-action: pan-y; }
+.f09-pic .f09-plot svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.f09-pic .f09-plot svg * { vector-effect: non-scaling-stroke; }
+.f09-pic .f09-plot > :not(svg) { position: absolute; }
+.f09-pic .f09-grid { stroke: var(--grid); stroke-width: 1; }
+.f09-pic .f09-zero { stroke: var(--muted); stroke-width: 1; }
+.f09-pic .f09-diag { stroke: var(--muted); stroke-width: 1; }
+.f09-pic .f09-xtick { top: calc(100% + 6px); transform: translateX(-50%); font-size: 12px; line-height: 1; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.f09-pic .f09-ytick { left: 0; transform: translate(calc(-100% - 6px), -50%); font-size: 12px; line-height: 1; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+@media (max-width: 759px) { .f09-pic .f09-plot .minor { display: none; } }
+.f09-pic .f09-dot { width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 2px var(--bg); pointer-events: none; }
+.f09-pic .f09-dot.ring { width: 10px; height: 10px; margin: -5px 0 0 -5px; background: var(--bg); box-shadow: inset 0 0 0 2px var(--ink), 0 0 0 1.5px var(--bg); }
+.f09-pic .f09-dot.cur { outline: 2px solid var(--accent); outline-offset: 2px; z-index: 1; }
+.f09-pic .f09-dot[hidden] { display: none; }
+.f09-pic .f09-xname { margin: 1.9rem 0 0 var(--gut); max-width: 34rem; text-align: center; font-size: var(--step--1); color: var(--muted); }
+
+/* the rank agreement on one axis, both measurements, with the threshold and the shuffle reference */
+.f09-pic .f09-big { font-size: 2.6rem; line-height: 1.05; font-weight: 700; font-variant-numeric: tabular-nums; }
+.f09-pic .f09-bigwhat { margin-top: 0.25rem; }
+.f09-pic .f09-strip { position: relative; margin: 1.25rem 0 0.75rem; padding: 0 0.25rem; }
+.f09-pic .f09-srow { position: relative; padding: 0.3rem 0; border-radius: 4px; outline-offset: 2px; }
+.f09-pic .f09-shead { display: flex; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap; }
+.f09-pic .f09-sname { color: var(--muted); }
+.f09-pic .f09-srow.on .f09-sname { color: var(--ink); font-weight: 700; }
+.f09-pic .f09-sval { font-variant-numeric: tabular-nums; }
+.f09-pic .f09-srow.on .f09-sval { font-weight: 700; }
+.f09-pic .f09-strack { position: relative; height: 22px; margin: 0.2rem 0 0.2rem; }
+.f09-pic .f09-strack > i { position: absolute; top: 50%; }
+.f09-pic .f09-band { height: 4px; margin-top: -2px; border-radius: 2px; background: color-mix(in srgb, var(--ink) 35%, transparent); }
+.f09-pic .f09-shuf { width: 2px; height: 18px; margin: -9px 0 0 -1px; background: var(--control); }
+.f09-pic .f09-adot { width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 2px var(--bg); }
+.f09-pic .f09-strack > i[hidden] { display: none; }
+.f09-pic .f09-strack > .f09-tzero { top: 0; bottom: 0; width: 1px; background: var(--rule); }
+.f09-pic .f09-strack > .f09-tbar { top: 0; bottom: 0; width: 2px; margin-left: -1px; background: var(--muted); }
+.f09-pic .f09-saxis { position: relative; height: 1.4rem; margin-top: 0.3rem; border-top: 1px solid var(--rule); }
+.f09-pic .f09-saxis .f09-xtick { position: absolute; top: 6px; }
+
+/* the contexts of the chosen birth */
+.f09-pic .f09-ctx { padding-top: 1.25rem; border-top: 1px solid var(--rule); }
+.f09-pic .f09-ctxlist { margin: 0.75rem 0 0; padding: 0; list-style: none; display: grid; gap: 0; max-width: 68ch; }
+.f09-pic .f09-ctxrow { padding: 0.4rem 0; border-bottom: 1px solid var(--grid); font-family: var(--font-mono); font-size: var(--step--1); line-height: 1.4; overflow-wrap: anywhere; }
+.f09-pic .f09-cbefore, .f09-pic .f09-cafter { color: var(--muted); white-space: pre-wrap; }
+.f09-pic .f09-ctok { white-space: pre-wrap; font-weight: 500; color: var(--ink); background: var(--band); box-shadow: inset 0 -2px 0 var(--ink); padding: 0 1px; }
