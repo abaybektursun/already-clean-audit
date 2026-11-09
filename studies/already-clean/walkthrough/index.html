@@ -128,19 +128,19 @@
 
   <figure class="figure" id="fig-nat" data-source="neuron_across_training/data.js">
     <div id="nat" data-keys="page" data-load="neuron_across_training/slider.css neuron_across_training/data.js neuron_across_training/slider.js"></div>
-    <figcaption class="figure-caption">Pick a unit and drag through training: at each of the sixteen snapshots its twenty strongest contexts among the 20,560,068 tokens scored at every snapshot, with the token it responded to marked. <a class="data-link" href="https://github.com/abaybektursun/already-clean-audit/blob/2e43474ae1bbfa353e222993cb706283a47bee7b/studies/already-clean/walkthrough/neuron_across_training/README.md" title="neuron_across_training/README.md names the files this picture is built from">data</a></figcaption>
+    <figcaption class="figure-caption">Pick a unit and drag through training: at each of the sixteen snapshots its twenty strongest contexts among the 20,560,068 tokens scored at every snapshot, with the token it responded to marked. <a class="data-link" href="https://github.com/abaybektursun/already-clean-audit/blob/4247cc20113032ec749b6c32a457ce475a3276f9/studies/already-clean/walkthrough/neuron_across_training/README.md" title="neuron_across_training/README.md names the files this picture is built from">data</a></figcaption>
   </figure>
 
   <p>A published essay from Goodfire (already-clean.goodfire.com) had claimed that about 90 % of a model’s units have one job. We harvested the sixteen snapshots for 600 sides of 300 units and recorded each side’s fifty contexts. A separate model sorted each side’s fifty into groups and named them. For each group a second model wrote an explanation and tested it on new texts. We dated each group’s birth by the rule in chapter 0. For each group born late, a judge model took the parent test: shown the group and two records from the snapshot before its birth, could it tell which record belonged to the group’s own side? Before the run we wrote down what we expected: growth from earlier groups 0.65, a mixture 0.30, packing 0.05.</p>
 
   <figure class="figure" id="fig-topctx" data-source="top_contexts/data.js">
     <div id="topctx" data-load="top_contexts/top_contexts.css top_contexts/data.js top_contexts/top_contexts.js"></div>
-    <figcaption class="figure-caption">A side’s fifty contexts are the 50 tokens, out of 20,560,068 scored at the end of training, where its activation was largest, each shown with the text around it. <a class="data-link" href="https://github.com/abaybektursun/already-clean-audit/blob/2e43474ae1bbfa353e222993cb706283a47bee7b/studies/already-clean/walkthrough/top_contexts/README.md" title="top_contexts/README.md names the files this picture is built from">data</a></figcaption>
+    <figcaption class="figure-caption">A side’s fifty contexts are the 50 tokens, out of 20,560,068 scored at the end of training, where its activation was largest, each shown with the text around it. <a class="data-link" href="https://github.com/abaybektursun/already-clean-audit/blob/4247cc20113032ec749b6c32a457ce475a3276f9/studies/already-clean/walkthrough/top_contexts/README.md" title="top_contexts/README.md names the files this picture is built from">data</a></figcaption>
   </figure>
 
   <figure class="figure" id="fig-ngroups" data-source="groups/data.js">
     <div id="ngroups" data-load="groups/groups.css groups/data.js groups/groups.js"></div>
-    <figcaption class="figure-caption">A separate language model sorted each side’s fifty strongest contexts into named groups, and asked a second time it often made a different number: the lithium unit got 15 groups the first time and 3 the second. <a class="data-link" href="https://github.com/abaybektursun/already-clean-audit/blob/2e43474ae1bbfa353e222993cb706283a47bee7b/studies/already-clean/walkthrough/groups/README.md" title="groups/README.md names the files this picture is built from">data</a></figcaption>
+    <figcaption class="figure-caption">A separate language model sorted each side’s fifty strongest contexts into named groups, and asked a second time it often made a different number: the lithium unit got 15 groups the first time and 3 the second. <a class="data-link" href="https://github.com/abaybektursun/already-clean-audit/blob/4247cc20113032ec749b6c32a457ce475a3276f9/studies/already-clean/walkthrough/groups/README.md" title="groups/README.md names the files this picture is built from">data</a></figcaption>
   </figure>
 
   <aside class="def" data-source="studies/already-clean/SPEC_D1.md">
@@ -150,17 +150,17 @@
 
   <figure class="figure" id="fig-xtest" data-source="explanation_test/data.js">
     <div id="xtest" data-load="explanation_test/explanation_test.css explanation_test/data.js explanation_test/explanation_test.js"></div>
-    <figcaption class="figure-caption">An explanation passes only if texts written from it alone give the side a strong activation and its near misses do not; drag the strong line to see where a pass turns into a failure. <a class="data-link" href="https://github.com/abaybektursun/already-clean-audit/blob/2e43474ae1bbfa353e222993cb706283a47bee7b/studies/already-clean/walkthrough/explanation_test/README.md" title="explanation_test/README.md names the files this picture is built from">data</a></figcaption>
+    <figcaption class="figure-caption">An explanation passes only if texts written from it alone give the side a strong activation and its near misses do not; drag the strong line to see where a pass turns into a failure. <a class="data-link" href="https://github.com/abaybektursun/already-clean-audit/blob/4247cc20113032ec749b6c32a457ce475a3276f9/studies/already-clean/walkthrough/explanation_test/README.md" title="explanation_test/README.md names the files this picture is built from">data</a></figcaption>
   </figure>
 
   <figure class="figure" id="fig-onejob" data-source="one_job/data.js studies/already-clean/SPEC_D1.md">
     <div id="onejob" data-load="one_job/one_job.css one_job/data.js one_job/one_job.js"></div>
-    <figcaption class="figure-caption">Each dot is one of 600 sides of 300 units tested in a model, placed by the class its test scores give it; drag the strong line to see how many keep one job. <a class="data-link" href="https://github.com/abaybektursun/already-clean-audit/blob/2e43474ae1bbfa353e222993cb706283a47bee7b/studies/already-clean/walkthrough/one_job/README.md" title="one_job/README.md names the files this picture is built from">data</a></figcaption>
+    <figcaption class="figure-caption">Each dot is one of 600 sides of 300 units tested in a model, placed by the class its test scores give it; drag the strong line to see how many keep one job. <a class="data-link" href="https://github.com/abaybektursun/already-clean-audit/blob/4247cc20113032ec749b6c32a457ce475a3276f9/studies/already-clean/walkthrough/one_job/README.md" title="one_job/README.md names the files this picture is built from">data</a></figcaption>
   </figure>
 
   <figure class="figure" id="fig-nbirths" data-source="births/data.js studies/next/10_RECOUNT2.md">
     <div id="nbirths" data-keys="page" data-load="births/births.css births/data.js births/births.js"></div>
-    <figcaption class="figure-caption">Each row is one group of a side’s fifty contexts at the end of training, for 600 sides of 300 units; the group is present at a snapshot when the median activation over its positions is in the side’s top 0.1 % there, and born at the first snapshot where it is present and still present at the next; the chance level on each row is the birth snapshot of random groups of the same size; on 5 November the reading that the strongest group is the oldest was retagged as not supported, 0.476 of sides against 0.530 for random groups. <a class="data-link" href="https://github.com/abaybektursun/already-clean-audit/blob/2e43474ae1bbfa353e222993cb706283a47bee7b/studies/already-clean/walkthrough/births/README.md" title="births/README.md names the files this picture is built from">data</a></figcaption>
+    <figcaption class="figure-caption">Each row is one group of a side’s fifty contexts at the end of training, for 600 sides of 300 units; the group is present at a snapshot when the median activation over its positions is in the side’s top 0.1 % there, and born at the first snapshot where it is present and still present at the next; the chance level on each row is the birth snapshot of random groups of the same size; on 5 November the reading that the strongest group is the oldest was retagged as not supported, 0.476 of sides against 0.530 for random groups. <a class="data-link" href="https://github.com/abaybektursun/already-clean-audit/blob/4247cc20113032ec749b6c32a457ce475a3276f9/studies/already-clean/walkthrough/births/README.md" title="births/README.md names the files this picture is built from">data</a></figcaption>
   </figure>
 
   <aside class="def" data-source="studies/already-clean/results/RESULTS.md studies/already-clean/SPEC_D1.md">
@@ -170,7 +170,7 @@
 
   <figure class="figure" id="fig-judge" data-source="judge/data.js">
     <div id="judgecalls" data-load="judge/judge.css judge/data.js judge/judge.js"></div>
-    <figcaption class="figure-caption">A judge model saw each late-born group of a side’s contexts beside two records from the snapshot before its birth, the side’s own and a random side’s of the same layer, and picked the one the group came from; each dot is one call, coloured by whether it picked the side’s own record. <a class="data-link" href="https://github.com/abaybektursun/already-clean-audit/blob/2e43474ae1bbfa353e222993cb706283a47bee7b/studies/already-clean/walkthrough/judge/README.md" title="judge/README.md names the files this picture is built from">data</a></figcaption>
+    <figcaption class="figure-caption">A judge model saw each late-born group of a side’s contexts beside two records from the snapshot before its birth, the side’s own and a random side’s of the same layer, and picked the one the group came from; each dot is one call, coloured by whether it picked the side’s own record. <a class="data-link" href="https://github.com/abaybektursun/already-clean-audit/blob/4247cc20113032ec749b6c32a457ce475a3276f9/studies/already-clean/walkthrough/judge/README.md" title="judge/README.md names the files this picture is built from">data</a></figcaption>
   </figure>
 
   <div class="table-scroll">

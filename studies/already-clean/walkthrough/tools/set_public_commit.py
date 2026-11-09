@@ -25,7 +25,9 @@ def set_data_js(path, sha):
     m = re.match(r"\s*window\.\w+\s*=\s*", text)
     assert m and text.rstrip().endswith(";"), f"{path}: expected `window.NAME = {{...}};`"
     i = text.find('"meta"')
-    assert i >= 0, f"{path}: no meta object"
+    if i < 0:  # a first-edition data file: no meta object, its page carries a hand-written link instead
+        print(f"{path}: no meta object, skipped")
+        return False
     c = re.compile(r'("commit"\s*:\s*")([0-9a-f]{7,40})(")')
     mm = c.search(text, i)
     assert mm, f"{path}: no meta.commit"
