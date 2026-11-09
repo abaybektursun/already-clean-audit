@@ -249,7 +249,7 @@
       return 'The explainer, ' + ex + ', said it has unrelated jobs. That class needs at least 2 of them to have 3 or more ' +
         'strong texts out of 5 written from that job alone; here ' + u.sup + ' of ' + u.n + ' do.';
     }
-    if (r.fixed) return 'The explainer, ' + ex + ', called it ' + LABEL[n.l] + ', but its list of jobs does not match that label, so the test gives it no class.';
+    if (r.fixed) return 'The explainer, ' + ex + ', called it ' + LABEL[n.l] + ', but its list of jobs does not match that name, so the test gives it no class.';
     return 'The explanation ' + (r.passes ? 'passed' : 'failed') + ': ' + r.pos + ' of 5 texts written from it alone were strong ' +
       '(at least 3 needed), ' + r.near + ' of 5 near misses (at most 2 allowed) and ' + r.dist + ' of 5 distant texts ' +
       '(at most 1). The explainer, ' + ex + ', called it ' + LABEL[n.l] + '.';

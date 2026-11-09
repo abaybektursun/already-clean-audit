@@ -5,7 +5,7 @@ the neuron's 20 strongest contexts at that point, with the token it fired on mar
 for all 16 points: how many of the top 20 fire on one token, and the strongest activation (log scale).
 
 It has two hosts: the section "One neuron across training" of the walkthrough page (`../index.html`) and
-`index.html` here. Both load the same three files.
+`index.html` here. Both load `../site.js` and the same three files.
 
 ## Status on 2026-11-04
 
@@ -14,19 +14,28 @@ The checks below are from that run. Re-run from this folder on 2026-11-04, it wr
 the one built earlier in `studies/already-clean/pages/neuron_across_training` of the `neuronslider` worktree (sha256
 `c6c81ef1e7b9ab0812cefe9cee69d515b8b18ae60d55dd6ae68fba58dff03a06`, 2,659,905 bytes, 41 poles).
 
+2026-11-08: `extract.py` now also writes `meta` (each of the 35 inputs with its sha256, the public repository's
+commit and the page's data link) and prints each input's `path sha256`. Re-run that day, `data.js` is the earlier
+file with the `meta` block added at its end and every other byte unchanged (sha256 `c7d820461e0e26220ca0f89266fd6b73b6bffa4f5e079cd0263b6720a825f740`,
+2,666,255 bytes); the checks block below came out unchanged.
+
 ## Files
 
 - `slider.css`: the styles, every rule scoped under `#nat`. It reads the host's color and font tokens
   (`--bg`, `--ink`, `--muted`, `--rule`, `--accent`, `--font-text`, `--font-mono`, light and dark).
-- `slider.js`: builds the viewer inside `<div id="nat">` and does nothing if that element is absent. It
+- `slider.js`: registers its mount with `../site.js` under the id `nat`; site.js builds the viewer inside
+  `<div id="nat">` when that element is on the page, and shows a message and throws when data.js is missing. It
   plays through the 16 points once when the chart first comes into view (not under prefers-reduced-motion);
   a click inside the viewer or any key press stops it. Arrow keys act while focus is inside the viewer, or
   anywhere on the page when `#nat` has `data-keys="page"` (as in `index.html`).
-- `index.html`: the standalone page. It defines the walkthrough's tokens and loads the three files. No
-  framework, no JS library; the fonts are Atkinson Hyperlegible and IBM Plex Mono from Google Fonts. The
-  data is loaded with a script tag, because Chrome refuses `fetch()` of local JSON from a page opened from
-  disk.
-- `data.js`: sets `window.NEURON_DATA`. Written by `extract.py`. Stored through Git LFS.
+- `index.html`: the standalone page. It links `../site.css` (the tokens and the picture frame) and loads
+  `../site.js` and the three files; site.js builds the caption's data link from `meta` in data.js. No
+  framework, no JS library; the fonts are Atkinson Hyperlegible and IBM Plex Mono from Google Fonts, loaded
+  without blocking the page, with system fonts as the fallback. The data is loaded with a script tag, because
+  Chrome refuses `fetch()` of local JSON from a page opened from disk.
+- `data.js`: sets `window.NEURON_DATA`, with `meta.sources` (each input's path and sha256), `meta.commit` and
+  `meta.link` (this README in the public repository, since the inputs are on S3). Written by `extract.py`.
+  Stored through Git LFS.
 - `extract.py`: reads the saved JSON, writes `data.js`, prints its checks and rewrites the checks block
   below. Run `python3 extract.py` from this folder. No model, no download, no network.
 

@@ -1,0 +1,145 @@
+/* m11: copying changed weights, and how each condition is built. Every rule is scoped under #m11; tokens come from site.css. */
+#m11 { font-size: var(--step-cap); line-height: 1.45; color: var(--ink); --gut: 3.6rem; }
+#m11 *, #m11 *::before, #m11 *::after { box-sizing: border-box; }
+#m11 p { margin: 0; max-width: none; }
+#m11 .m11-wrap { display: grid; gap: 1.25rem; container: m11w / inline-size; }
+#m11 .m11-wrap > * { min-width: 0; }
+#m11 .m11-sec { padding-top: 1.25rem; border-top: 1px solid var(--rule); min-width: 0; }
+#m11 .m11-h { margin: 0 0 0.5rem; font-size: var(--step-0); font-weight: 700; line-height: 1.3; }
+#m11 .m11-note { margin: 0.4rem 0 0.6rem; color: var(--muted); max-width: 68ch; font-size: var(--step--1); }
+#m11 .m11-text { max-width: 68ch; margin-bottom: 0.75rem; }
+#m11 .m11-xname { margin: 0.2rem 0 0 var(--gut); font-size: var(--step--1); color: var(--muted); }
+
+/* the formula */
+#m11 .m11-formula { display: grid; gap: 0.3rem; padding: 0.85rem 1rem; border-left: 2px solid var(--rule); font-family: var(--font-mono); font-size: var(--step--1); line-height: 1.5; }
+#m11 .m11-fline { overflow-wrap: anywhere; }
+
+/* controls */
+#m11 .m11-controls { margin: 0; }
+#m11 .m11-pick { display: flex; align-items: center; gap: 0.6rem; min-width: 0; max-width: 100%; flex: 1 1 18rem; }
+#m11 .m11-select {
+  flex: 1 1 auto; min-width: 0; max-width: 30rem; min-height: 40px; padding: 0 0.6rem;
+  border: 1px solid var(--rule); border-radius: 8px; background: var(--bg); color: var(--ink);
+  font: 400 var(--step-cap) var(--font-text); text-overflow: ellipsis;
+}
+#m11 .m11-select option { background: var(--bg); color: var(--ink); }
+#m11 .m11-size { display: flex; align-items: center; gap: 0.6rem; }
+#m11 .m11-size.off { opacity: 0.45; }
+#m11 .m11-size .toggle > button:disabled { cursor: default; }
+
+/* the chosen condition, in numbers */
+#m11 .m11-sum { display: grid; gap: 0.5rem; }
+#m11 .m11-sumhead { font-weight: 700; font-size: var(--step-0); }
+#m11 .m11-dl { margin: 0; display: grid; grid-template-columns: minmax(0, 10rem) minmax(0, 1fr); gap: 0.3rem 1rem; max-width: 52rem; }
+#m11 .m11-dl dt { color: var(--muted); font-size: var(--step--1); padding-top: 1px; }
+#m11 .m11-dl dd { margin: 0; overflow-wrap: anywhere; }
+
+#m11 .m11-legend { display: flex; flex-wrap: wrap; gap: 0.3rem 1.25rem; margin: 0 0 0.6rem; font-size: var(--step--1); color: var(--muted); }
+#m11 .m11-legend span { display: inline-flex; align-items: center; gap: 0.45rem; }
+#m11 .m11-key { display: inline-block; flex: none; }
+#m11 .m11-key.pt { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); }
+#m11 .m11-key.ptc { width: 8px; height: 8px; border-radius: 50%; background: var(--claim); }
+#m11 .m11-key.band { width: 18px; height: 10px; border-radius: 2px; background: var(--claim); }
+#m11 .m11-key.bandr { width: 18px; height: 10px; border-radius: 2px; background: repeating-linear-gradient(45deg, var(--claim) 0 2px, transparent 2px 6px); box-shadow: inset 0 0 0 1.5px var(--claim); }
+#m11 .m11-key.edot { width: 10px; height: 10px; border-radius: 50%; background: var(--ink); }
+#m11 .m11-key.ering { width: 10px; height: 10px; border-radius: 50%; box-shadow: inset 0 0 0 2px var(--ink); }
+#m11 .m11-key.whole { width: 2px; height: 14px; background: var(--control); }
+#m11 .m11-key.f0 { width: 14px; height: 10px; border-radius: 2px; background: var(--bar); }
+#m11 .m11-key.f1 { width: 14px; height: 10px; border-radius: 2px; background: var(--muted); }
+#m11 .m11-key.f2 { width: 14px; height: 10px; border-radius: 2px; background: var(--ink); }
+
+/* the ranking */
+#m11 .m11-plot { position: relative; height: 220px; margin: 1.6rem 0 0 var(--gut); touch-action: pan-y; }
+#m11 .m11-plot:focus-visible, #m11 .m11-lplot:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
+#m11 .m11-plot::after, #m11 .m11-lplot::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; border-top: 1px solid var(--muted); pointer-events: none; }
+#m11 .m11-grid { position: absolute; left: 0; right: 0; height: 0; border-top: 1px solid var(--grid); }
+#m11 .m11-ytick { position: absolute; right: 100%; transform: translate(-6px, -50%); font-size: 12px; line-height: 1; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+#m11 .m11-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+#m11 .m11-pt { stroke: var(--muted); stroke-width: 6px; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+#m11 .m11-pt.in { stroke: var(--claim); stroke-width: 8px; }
+#m11 .m11-vline { position: absolute; top: 0; bottom: 0; width: 0; border-left: 2px solid var(--ink); transform: translateX(-1px); pointer-events: none; }
+#m11 .m11-vlab { position: absolute; top: 0; margin-left: 8px; font-size: var(--step--1); line-height: 1.2; color: var(--ink); white-space: nowrap; pointer-events: none; background: var(--bg); padding: 0 3px; border-radius: 3px; }
+#m11 .m11-vlab.left { margin-left: -8px; transform: translateX(-100%); }
+#m11 .m11-cursor { position: absolute; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; box-shadow: 0 0 0 2px var(--ink); pointer-events: none; }
+#m11 .m11-xaxis, #m11 .m11-eaxis, #m11 .m11-sxaxis, #m11 .m11-nlaxis { position: relative; height: 20px; }
+#m11 .m11-xaxis, #m11 .m11-sxaxis { margin-left: var(--gut); }
+#m11 .m11-xtick { position: absolute; top: 5px; transform: translateX(-50%); font-size: 12px; line-height: 1; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+#m11 .m11-xtick.end { transform: translateX(-100%); }
+#m11 .m11-xtick.start { transform: none; }
+#m11 .m11-masklane { position: relative; height: 16px; margin: 0.7rem 0 0 var(--gut); border-radius: 3px; background: var(--grid); }
+#m11 .m11-maskband { position: absolute; top: 0; bottom: 0; border-radius: 3px; }
+#m11 .m11-maskband.exact { background: var(--claim); }
+#m11 .m11-maskband.random { background: repeating-linear-gradient(45deg, var(--claim) 0 2px, transparent 2px 7px); box-shadow: inset 0 0 0 1.5px var(--claim); }
+#m11 .m11-maskband.entries { background: repeating-linear-gradient(135deg, var(--claim) 0 1px, transparent 1px 9px); box-shadow: inset 0 0 0 1.5px var(--claim); }
+#m11 .m11-masktext { margin: 0.4rem 0 0 var(--gut); max-width: 64ch; }
+
+/* the energies */
+#m11 .m11-eplot { position: relative; display: grid; }
+#m11 .m11-erow { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-areas: "name" "track"; padding: 3px 4px; border-radius: 4px; cursor: pointer; }
+#m11 .m11-erow:hover, #m11 .m11-erow:focus-visible { background: var(--band); }
+#m11 .m11-erow:focus-visible { outline: 2px solid var(--accent); }
+#m11 .m11-erow.cur { box-shadow: inset 3px 0 0 var(--ink); background: var(--band); }
+#m11 .m11-erow.cur .m11-ename { font-weight: 700; }
+#m11 .m11-ename { grid-area: name; font-size: var(--step--1); line-height: 1.3; }
+#m11 .m11-etrack { grid-area: track; position: relative; height: 22px; }
+#m11 .m11-edot { position: absolute; top: calc(50% - 5px); width: 10px; height: 10px; margin-left: -5px; border-radius: 50%; background: var(--muted); box-shadow: 0 0 0 2px var(--bg); }
+#m11 .m11-edot.ring { background: var(--bg); box-shadow: inset 0 0 0 2px var(--muted); }
+#m11 .m11-erow.cur .m11-edot { background: var(--ink); }
+#m11 .m11-erow.cur .m11-edot.ring { background: var(--bg); box-shadow: inset 0 0 0 2px var(--ink); }
+#m11 .m11-eval { position: absolute; top: 50%; transform: translate(10px, -50%); font-size: var(--step--1); line-height: 1; font-weight: 700; white-space: nowrap; color: var(--ink); font-variant-numeric: tabular-nums; }
+#m11 .m11-eval.left { transform: translate(calc(-100% - 10px), -50%); }
+#m11 .m11-ewhole { position: absolute; top: -3px; bottom: -3px; width: 0; border-left: 2px solid var(--control); transform: translateX(-1px); pointer-events: none; }
+#m11 .m11-erow .m11-etrack { align-self: stretch; height: auto; min-height: 22px; }
+#m11 .m11-ename.m11-xname { margin-left: 0; }
+@container m11w (min-width: 640px) {
+  #m11 .m11-erow { grid-template-columns: minmax(0, 20rem) minmax(0, 1fr); grid-template-areas: "name track"; align-items: center; }
+  #m11 .m11-eaxis, #m11 .m11-ename.m11-xname { margin-left: calc(20rem + 4px); }
+}
+#m11 .m11-eplot .m11-etrack { overflow: visible; }
+
+/* where the units sit */
+#m11 .m11-lplot { position: relative; height: 150px; margin: 1.4rem 0 0 var(--gut); touch-action: pan-y; }
+#m11 .m11-lgrid, #m11 .m11-lcols { position: absolute; inset: 0; }
+#m11 .m11-lcols { display: grid; grid-template-columns: repeat(32, minmax(0, 1fr)); }
+#m11 .m11-lcol { position: relative; height: 100%; border-radius: 3px; }
+#m11 .m11-lcol.hov { background: var(--band); }
+#m11 .m11-lbar { position: absolute; bottom: 0; left: 50%; width: min(70%, 18px); transform: translateX(-50%); background: var(--claim); border-radius: 3px 3px 0 0; }
+#m11 .m11-lxaxis { display: grid; grid-template-columns: repeat(32, minmax(0, 1fr)); margin-left: var(--gut); padding-top: 5px; }
+#m11 .m11-lxtick { text-align: center; font-size: 12px; line-height: 1; color: var(--muted); font-variant-numeric: tabular-nums; }
+#m11 .m11-striphead { margin: 1.2rem 0 0.4rem; max-width: 68ch; }
+#m11 .m11-strip { position: relative; height: 28px; margin-left: var(--gut); border-radius: 3px; background: var(--grid); overflow: hidden; }
+#m11 .m11-strip svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+#m11 .m11-spath { stroke: var(--claim); stroke-width: 1px; vector-effect: non-scaling-stroke; fill: none; }
+
+/* the change by tensor family */
+#m11 .m11-fams { display: grid; gap: 0.9rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
+#m11 .m11-fam { display: grid; gap: 0.35rem; min-width: 0; }
+#m11 .m11-famhead { font-size: var(--step--1); }
+#m11 .m11-famhead b { font-size: var(--step-cap); }
+#m11 .m11-fbar { display: flex; gap: 2px; height: 12px; }
+#m11 .m11-fbar:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+#m11 .m11-fseg { flex-basis: 0; min-width: 2px; border-radius: 2px; }
+#m11 .m11-fseg.f0 { background: var(--bar); }
+#m11 .m11-fseg.f1 { background: var(--muted); }
+#m11 .m11-fseg.f2 { background: var(--ink); }
+#m11 .m11-famfrom { font-size: var(--step--1); color: var(--muted); }
+
+/* the score's noise on a line of points */
+#m11 .m11-nl { margin: 2.6rem 0.5rem 0 var(--gut); }
+#m11 .m11-nltrack { position: relative; height: 34px; border-bottom: 1px solid var(--muted); }
+#m11 .m11-nlband { position: absolute; left: 0; top: 8px; bottom: 0; background: var(--band); border-radius: 2px 2px 0 0; }
+#m11 .m11-nlmark { position: absolute; bottom: 0; width: 2px; height: 22px; margin-left: -1px; background: var(--ink); }
+#m11 .m11-nlmark::after { content: ""; position: absolute; inset: -6px -8px; }
+#m11 .m11-nlmark:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+#m11 .m11-nllab { position: absolute; left: 50%; bottom: calc(100% + 3px); transform: translateX(-50%); font-size: var(--step--1); font-weight: 700; line-height: 1; white-space: nowrap; color: var(--ink); font-variant-numeric: tabular-nums; }
+#m11 .m11-nlmark.hi { height: 42px; }
+#m11 .m11-nlist { margin: 0.6rem 0 0 var(--gut); padding-left: 1.1rem; display: grid; gap: 0.2rem; max-width: 64ch; font-size: var(--step--1); }
+
+@media (max-width: 560px) {
+  #m11 { --gut: 3.1rem; }
+  #m11 .m11-xtick.odd { display: none; }
+  #m11 .m11-lxtick.minor { visibility: hidden; }
+  #m11 .m11-dl { grid-template-columns: minmax(0, 1fr); gap: 0 0; }
+  #m11 .m11-dl dd { margin-bottom: 0.45rem; }
+  #m11 .m11-nlist { margin-left: 0; }
+}

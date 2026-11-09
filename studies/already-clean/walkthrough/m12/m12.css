@@ -1,0 +1,42 @@
+/* m12: an edit along a direction, on one side. Every rule is scoped under #m12; colours come from site.css. */
+#m12 { font-size: var(--step-cap); line-height: 1.45; color: var(--ink); }
+#m12 *, #m12 *::before, #m12 *::after { box-sizing: border-box; }
+#m12 p { margin: 0; max-width: none; }
+#m12 .m12-wrap { display: grid; gap: 1rem; min-width: 0; }
+#m12 .m12-wrap > * { min-width: 0; }
+#m12 .control-row { margin: 0; }
+#m12 .m12-select {
+  min-height: 40px; max-width: 100%; padding: 0 0.75rem;
+  border: 1px solid var(--rule); border-radius: 8px;
+  background: var(--bg); color: var(--ink);
+  font: inherit; font-size: var(--step-cap); cursor: pointer;
+}
+#m12 .m12-who, #m12 .m12-p, #m12 .m12-sum { max-width: 68ch; }
+#m12 .m12-who b, #m12 .m12-edit b { font-weight: 700; }
+#m12 .m12-edits { display: grid; gap: 0.4rem; max-width: 68ch; }
+#m12 .m12-edit { padding-left: 1.4rem; text-indent: -1.4rem; }
+#m12 .m12-key { display: inline-block; flex: none; width: 10px; height: 10px; margin-right: 0.5rem; vertical-align: 0; text-indent: 0; }
+#m12 .m12-key.own { border-radius: 50%; background: var(--claim); }
+#m12 .m12-key.rand { border-radius: 1px; background: var(--control); }
+#m12 .m12-key.half { width: 10px; height: 10px; border-radius: 50%; box-shadow: inset 0 0 0 2px var(--claim); }
+#m12 .m12-chain { display: grid; gap: 1.25rem; max-width: 48rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+#m12 .m12-group { display: grid; gap: 0.3rem; }
+#m12 .m12-h { margin: 0 0 0.25rem; font-size: var(--step-cap); font-weight: 700; line-height: 1.35; max-width: 68ch; }
+#m12 .m12-row {
+  display: grid; grid-template-columns: 6.5rem minmax(0, 1fr) 6.5rem; align-items: center; column-gap: 0.75rem;
+  min-height: 28px; border-radius: 4px; cursor: default;
+}
+#m12 .m12-row:hover { background: var(--band); }
+#m12 .m12-name { display: inline-flex; align-items: center; color: var(--muted); white-space: nowrap; }
+#m12 .m12-track { position: relative; height: 14px; }
+#m12 .m12-bar { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 0 4px 4px 0; }
+#m12 .m12-bar.own { background: var(--claim); }
+#m12 .m12-bar.rand { background: var(--control); }
+#m12 .m12-bar.half { background: transparent; box-shadow: inset 0 0 0 2px var(--claim); }
+#m12 .m12-val { font-variant-numeric: tabular-nums; white-space: nowrap; }
+#m12 .m12-note { color: var(--muted); max-width: 68ch; }
+#m12 .m12-sum { padding-top: 1rem; border-top: 1px solid var(--rule); }
+#m12 .m12-block { display: grid; gap: 0.5rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+@media (max-width: 520px) {
+  #m12 .m12-row { grid-template-columns: 5.8rem minmax(0, 1fr) 5.2rem; column-gap: 0.5rem; }
+}

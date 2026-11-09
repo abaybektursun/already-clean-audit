@@ -1,0 +1,55 @@
+/* m13: the checks each study ran before its result could count. Every rule is scoped under #m13; tokens come from site.css. */
+#m13 { font-size: var(--step-cap); line-height: 1.45; color: var(--ink); --cell: 32px; --gap: 3px; }
+#m13 *, #m13 *::before, #m13 *::after { box-sizing: border-box; }
+#m13 p { margin: 0; max-width: none; }
+#m13 .m13-wrap { display: grid; gap: 1rem; }
+#m13 .m13-wrap > * { min-width: 0; }
+#m13 .m13-note { color: var(--muted); max-width: 68ch; }
+
+#m13 .m13-legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; font-size: var(--step--1); color: var(--muted); }
+#m13 .m13-legend span { display: inline-flex; align-items: center; gap: 0.45rem; }
+
+/* the four glyphs: told apart by shape, not by colour */
+#m13 .m13-glyph { position: relative; display: inline-block; flex: none; width: 18px; height: 18px; border-radius: 4px; }
+#m13 .m13-glyph.pass { background: var(--ink); }
+#m13 .m13-glyph.pass::after { content: ""; position: absolute; left: 6px; top: 2.5px; width: 5px; height: 9px; border: solid var(--bg); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+#m13 .m13-glyph.fail { box-shadow: inset 0 0 0 2px var(--ink); }
+#m13 .m13-glyph.fail::before, #m13 .m13-glyph.fail::after { content: ""; position: absolute; left: 4px; right: 4px; top: 8px; height: 2px; background: var(--ink); transform: rotate(45deg); }
+#m13 .m13-glyph.fail::after { transform: rotate(-45deg); }
+#m13 .m13-glyph.na { box-shadow: inset 0 0 0 1px var(--rule); }
+#m13 .m13-glyph.na::after { content: ""; position: absolute; left: 5px; right: 5px; top: 8px; height: 2px; background: var(--muted); }
+#m13 .m13-glyph.nr { border: 1.5px dashed var(--muted); }
+#m13 .m13-glyph.nr::after { content: "?"; position: absolute; inset: 0; display: grid; place-items: center; font: 700 12px/1 var(--font-text); color: var(--muted); }
+
+#m13 .m13-checks { margin: 0; padding-left: 1.8rem; display: grid; gap: 0.2rem; max-width: 68ch; }
+#m13 .m13-checks li::marker { color: var(--muted); font-variant-numeric: tabular-nums; }
+#m13 .m13-cname { margin-right: 0.5rem; }
+#m13 .m13-ccount { color: var(--muted); font-size: var(--step--1); white-space: nowrap; }
+
+/* the grid: a label column, then nine cells; on a phone the label takes its own line above the cells */
+#m13 .m13-scroll { overflow-x: auto; padding: 4px 2px; }
+#m13 .m13-grid { display: grid; grid-template-columns: minmax(12rem, 1fr) repeat(9, var(--cell)); gap: var(--gap); align-items: center; max-width: 52rem; }
+#m13 .m13-corner { display: block; }
+#m13 .m13-colh { text-align: center; font-size: var(--step--1); font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; padding-bottom: 2px; border-bottom: 1px solid var(--rule); }
+#m13 .m13-rowh { padding: 0.35rem 0.75rem 0.35rem 0; font-size: var(--step--1); line-height: 1.3; border-top: 1px solid var(--grid); align-self: stretch; display: flex; align-items: center; }
+#m13 .m13-cell { display: grid; place-items: center; width: var(--cell); height: var(--cell); border-radius: 6px; cursor: pointer; }
+#m13 .m13-cell:hover { background: var(--band); }
+#m13 .m13-cell.cur { background: var(--band); box-shadow: inset 0 0 0 2px var(--ink); }
+#m13 .m13-cell:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+/* the chosen cell */
+#m13 .m13-panel { display: grid; gap: 0.35rem; padding: 0.85rem 1rem; border-left: 2px solid var(--rule); max-width: 68ch; }
+#m13 .m13-phead .m13-glyph { vertical-align: -3px; margin-right: 0.2rem; }
+#m13 .m13-pstudy { color: var(--muted); }
+#m13 .m13-plabel { margin-top: 0.25rem; font-size: var(--step--1); color: var(--muted); }
+#m13 .m13-files { margin: 0; padding-left: 1.2rem; display: grid; gap: 0.15rem; }
+#m13 .m13-files code, #m13 .m13-pline code { font-size: var(--step--1); overflow-wrap: anywhere; }
+#m13 .m13-pline { overflow-wrap: anywhere; }
+
+@media (max-width: 640px) {
+  #m13 .m13-grid { grid-template-columns: repeat(9, var(--cell)); row-gap: 2px; }
+  #m13 .m13-corner { display: none; }
+  #m13 .m13-rowh { grid-column: 1 / -1; padding: 0.6rem 0 0.1rem; border-top: 1px solid var(--grid); }
+  #m13 .m13-checks { padding-left: 1.6rem; gap: 0.4rem; }
+  #m13 .m13-ccount { display: block; }
+}

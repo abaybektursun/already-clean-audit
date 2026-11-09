@@ -1,0 +1,77 @@
+/* m09: the gradient prediction, and what 16-bit broke. Every rule is scoped under #m09; tokens come from site.css. */
+#m09 { font-size: var(--step-cap); line-height: 1.45; color: var(--ink); --gut: 3rem; }
+#m09 *, #m09 *::before, #m09 *::after { box-sizing: border-box; }
+#m09 p { margin: 0; max-width: none; }
+#m09 .m09-wrap { display: grid; gap: 2.5rem; }
+#m09 .m09-wrap > *, #m09 .m09-two > section { min-width: 0; }
+#m09 .m09-main, #m09 .m09-two, #m09 .m09-mem { padding-top: 1.25rem; border-top: 1px solid var(--rule); }
+#m09 .m09-h { margin: 0 0 0.6rem; font-size: var(--step-0); font-weight: 700; line-height: 1.3; }
+#m09 .m09-note { margin: 0.5rem 0 0; color: var(--muted); max-width: 68ch; }
+#m09 .m09-formula { margin: 0.5rem 0 0.75rem; font-family: var(--font-mono); font-size: var(--step-0); overflow-wrap: anywhere; }
+#m09 .control-row { margin: 0.75rem 0 1rem; }
+
+#m09 .m09-cols { display: grid; gap: 1.75rem; }
+#m09 .m09-two { display: grid; gap: 2.5rem; }
+@media (min-width: 760px) {
+  #m09 .m09-cols { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); align-items: start; }
+  #m09 .m09-two { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+}
+#m09 .m09-col { min-width: 0; }
+
+#m09 .m09-legend { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; margin: 0 0 0.75rem; font-size: var(--step--1); color: var(--muted); }
+#m09 .m09-legend span { display: inline-flex; align-items: center; gap: 0.45rem; }
+#m09 .m09-key { display: inline-block; flex: none; }
+#m09 .m09-key.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ink); }
+#m09 .m09-key.diag { width: 14px; height: 1px; background: var(--muted); transform: rotate(-45deg); }
+
+/* the scatters: percentage positions, so they follow the column's width */
+#m09 .m09-yname { margin: 0 0 0.6rem; font-size: var(--step--1); color: var(--muted); }
+#m09 .m09-plot { position: relative; aspect-ratio: 1 / 1; max-width: 34rem; margin-left: var(--gut); border-radius: 2px; outline-offset: 6px; touch-action: pan-y; }
+#m09 .m09-pa .m09-plot { max-width: 24rem; }
+#m09 .m09-plot svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+#m09 .m09-plot svg * { vector-effect: non-scaling-stroke; }
+#m09 .m09-plot > :not(svg) { position: absolute; }
+#m09 .m09-gl { stroke: var(--grid); stroke-width: 1; }
+#m09 .m09-zero { stroke: var(--muted); stroke-width: 1; }
+#m09 .m09-diag { stroke: var(--muted); stroke-width: 1; }
+#m09 .m09-xtick { top: calc(100% + 6px); transform: translateX(-50%); font-size: 12px; line-height: 1; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+#m09 .m09-ytick { left: 0; transform: translate(calc(-100% - 6px), -50%); font-size: 12px; line-height: 1; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+@media (max-width: 759px) { #m09 .m09-plot .minor { display: none; } }
+#m09 .m09-pa .m09-plot .minor { display: none; }
+#m09 .m09-dot { width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 2px var(--bg); pointer-events: none; }
+#m09 .m09-dot.cur { outline: 2px solid var(--accent); outline-offset: 2px; z-index: 1; }
+#m09 .m09-xname { margin: 1.9rem 0 0 var(--gut); max-width: 34rem; text-align: center; font-size: var(--step--1); color: var(--muted); }
+#m09 .m09-pa .m09-xname { max-width: 24rem; }
+
+/* the rank agreements for the shown measurement */
+#m09 .m09-read { display: grid; gap: 1rem; align-content: start; }
+#m09 .m09-facts { display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin: 1rem 0 0; }
+#m09 .m09-fact { display: grid; gap: 0.2rem; max-width: 22rem; }
+#m09 .m09-fact b { font-size: 2.2rem; line-height: 1.05; font-weight: 700; font-variant-numeric: tabular-nums; }
+#m09 .m09-fact.small b { font-size: 1.6rem; }
+#m09 .m09-fact span { color: var(--muted); }
+
+/* sizes on one log axis */
+#m09 .m09-strip { margin: 1rem 0 0.5rem; }
+#m09 .m09-srow { display: grid; gap: 0.2rem; padding: 0.35rem 0; border-radius: 4px; outline-offset: 2px; }
+#m09 .m09-sname { color: var(--ink); }
+#m09 .m09-strack { position: relative; height: 26px; }
+#m09 .m09-strack svg { position: absolute; left: 0; right: 0; top: 4px; width: 100%; height: 18px; overflow: visible; }
+#m09 .m09-strack svg * { vector-effect: non-scaling-stroke; }
+#m09 .m09-ticks { fill: none; stroke: var(--ink); stroke-width: 1; stroke-opacity: 0.3; }
+#m09 .m09-mdot { position: absolute; top: 50%; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 2px var(--bg); }
+#m09 .m09-mlab { position: absolute; top: calc(100% + 2px); transform: translateX(-4px); font-size: var(--step--1); line-height: 1; color: var(--ink); white-space: nowrap; font-variant-numeric: tabular-nums; }
+#m09 .m09-mlab.left { transform: translateX(calc(-100% + 4px)); }
+#m09 .m09-srow { padding-bottom: 1.3rem; }
+#m09 .m09-saxis { position: relative; height: 1.2rem; margin-top: 4px; border-top: 1px solid var(--rule); }
+#m09 .m09-saxis .m09-xtick { position: absolute; top: 6px; }
+#m09 .m09-strip .m09-xname { margin: 0.4rem 0 0; max-width: none; }
+
+/* memory */
+#m09 .m09-bars { display: grid; gap: 0.5rem; max-width: 40rem; margin: 0.5rem 0 0.75rem; }
+#m09 .m09-brow { display: grid; gap: 0.2rem; padding: 0.25rem 0; border-radius: 4px; outline-offset: 2px; }
+#m09 .m09-bname { color: var(--ink); }
+#m09 .m09-btrack { position: relative; height: 10px; }
+#m09 .m09-bar { display: block; height: 10px; border-radius: 0 4px 4px 0; }
+#m09 .m09-bar.ink { background: var(--ink); }
+#m09 .m09-bar.control { background: var(--control); }

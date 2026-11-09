@@ -2,11 +2,13 @@
 
 Reads saved JSON only: the 16 grid steps' samples/contexts.jsonl and metrics.json, the W5 verdict
 metrics.json (the 17 poles at q2.H_MIG.poles) and the W3 draw (S.json, S_gate.json). Writes data.js
-next to this file, prints the checks, and rewrites the checks block of README.md with them.
+next to this file, prints the checks, and rewrites the checks block of README.md with them. Prints
+`path sha256` for every input; the same pairs go into data.js under meta.sources (BUILD.md §2).
 
     python3 extract.py
 """
 import argparse
+import hashlib
 import json
 import math
 import random
@@ -20,6 +22,15 @@ BANK = Path("/Users/abaybektursun/projects/interp_research_banks/neurons")
 HARVEST = BANK / "w3/grid"
 VERDICT = BANK / "w5/verdict/metrics.json"
 DRAW = BANK / "w3/o7/draw"
+# BANK is the laptop copy of this S3 prefix (same relative paths, sizes checked 2026-11-08). The two draw files
+# were rebuilt on the laptop and are on no S3 path (README.md, Inputs), so they keep their local path.
+S3_BANK = "s3://pg-lineage-769063704696/results/neurons"
+LOCAL_ONLY = {DRAW / "S.json", DRAW / "S_gate.json"}
+# meta.commit: the public repository's commit that holds this folder (abaybektursun/already-clean-audit main,
+# a copy of borrowed-geometry clean-neurons 512951ce9 with equal blob hashes). The inputs are not in that
+# repository, so the page's data link opens this folder's README.md, which names every input.
+PUBLIC_COMMIT = "2e43474ae1bbfa353e222993cb706283a47bee7b"
+LINK = "studies/already-clean/walkthrough/neuron_across_training/README.md"
 
 MODEL = "OLMo-3 7B"
 LITHIUM, LITHIUM_TOKEN = "L03N6372+", " lithium"
@@ -39,6 +50,21 @@ CHECKS_START, CHECKS_END = "<!-- checks:start -->", "<!-- checks:end -->"
 
 def sig3(x):
     return float(f"{x:.3g}")
+
+
+def sha256(path):
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for block in iter(lambda: f.read(1 << 20), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def source(path):
+    """{path, sha256} for one input: its S3 URI when it is the copy of an S3 object, else its local path."""
+    path = path.resolve()
+    shown = str(path) if path in LOCAL_ONLY else f"{S3_BANK}/{path.relative_to(BANK)}"
+    return {"path": shown, "sha256": sha256(path)}
 
 
 def step_dirs(harvest):
@@ -137,9 +163,15 @@ def main():
                                  "counts": [[tok, n] for tok, n in counts]})
             neurons.append({"pole": p, "group": group, "ctx": ctx, "steps": per_step})
 
+    inputs = [p for _, _, d in steps for p in (d / "samples/contexts.jsonl", d / "metrics.json")]
+    inputs += [a.verdict, a.draw / "S.json", a.draw / "S_gate.json"]
+    sources = [source(p) for p in inputs]
+    for s in sources:
+        print(s["path"], s["sha256"])
     data = {"model": MODEL, "n_tokens_scored": n_scored, "k": K, "top": TOP,
             "steps": [{"t": t, "step": s, "pct": round(100 * s / FINAL_STEP, 4)} for t, s, _ in steps],
-            "neurons": neurons}
+            "neurons": neurons,
+            "meta": {"commit": PUBLIC_COMMIT, "link": LINK, "sources": sources}}
     out = a.out / "data.js"
     out.write_text("window.NEURON_DATA = " + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";\n")
     size = out.stat().st_size

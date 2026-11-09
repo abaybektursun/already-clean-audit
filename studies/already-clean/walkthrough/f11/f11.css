@@ -1,0 +1,48 @@
+/* f11: the carrier's weight-change statistic against a matched unit's, 67 pairs. Every rule is scoped under #f11;
+   colours come from site.css. */
+#f11 { font-size: var(--step-cap); line-height: 1.45; color: var(--ink); }
+#f11 *, #f11 *::before, #f11 *::after { box-sizing: border-box; }
+#f11 p { margin: 0; max-width: none; }
+#f11 .f11-wrap { display: grid; gap: 0.75rem; min-width: 0; }
+#f11 .f11-wrap > * { min-width: 0; }
+#f11 .f11-facts { display: flex; flex-wrap: wrap; gap: 0.75rem 2.5rem; }
+#f11 .f11-fact { display: grid; gap: 0.15rem; max-width: 16rem; }
+#f11 .f11-fact b { font-size: 1.75rem; line-height: 1.15; font-weight: 700; }
+#f11 .f11-fact span { color: var(--muted); }
+#f11 .f11-note { max-width: 68ch; color: var(--muted); }
+#f11 .f11-more { margin-top: 0.5rem; }
+#f11 .f11-hint { font-size: var(--step--1); color: var(--muted); }
+#f11 .f11-legend { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; font-size: var(--step--1); color: var(--muted); }
+#f11 .f11-legend span { display: inline-flex; align-items: center; gap: 0.45rem; }
+#f11 .f11-key { display: inline-block; flex: none; }
+#f11 .f11-key.carrier { width: 9px; height: 9px; border-radius: 50%; background: var(--claim); }
+#f11 .f11-key.matched { width: 9px; height: 9px; border-radius: 50%; box-shadow: inset 0 0 0 2px var(--control); }
+#f11 .f11-key.diff { width: 9px; height: 9px; border-radius: 50%; background: var(--ink); }
+#f11 .f11-key.mean { width: 2px; height: 14px; background: var(--claim); }
+#f11 .f11-key.band { width: 14px; height: 14px; border-radius: 2px; background: color-mix(in srgb, var(--claim) 20%, transparent); }
+#f11 .f11-heads { display: grid; grid-template-columns: 45fr 55fr; column-gap: 18px; margin-top: 0.25rem; }
+#f11 .f11-h { font-weight: 700; line-height: 1.3; }
+#f11 .f11-plot { position: relative; width: 100%; border-radius: 4px; outline-offset: 4px; touch-action: pan-y; cursor: default; }
+#f11 .f11-plot svg { display: block; overflow: visible; font-family: var(--font-text); }
+
+#f11 .f11-grid { stroke: var(--grid); stroke-width: 1; }
+#f11 .f11-axis { stroke: var(--muted); stroke-width: 1; }
+#f11 .f11-tick { fill: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+#f11 .f11-row { fill: var(--band); }
+#f11 .f11-band { fill: var(--claim); fill-opacity: 0.2; }
+#f11 .f11-zero { stroke: var(--muted); stroke-width: 1; }
+#f11 .f11-mean { stroke: var(--claim); stroke-width: 2; }
+#f11 .f11-divider { stroke: var(--muted); stroke-width: 1; }
+#f11 .f11-link { stroke: var(--bar); stroke-width: 1.5; }
+#f11 .f11-stem { stroke: var(--bar); stroke-width: 1.5; }
+#f11 .f11-matched { fill: var(--bg); stroke: var(--control); stroke-width: 2; }
+#f11 .f11-carrier { fill: var(--claim); stroke: var(--bg); stroke-width: 1.5; }
+#f11 .f11-diff { fill: var(--ink); stroke: var(--bg); stroke-width: 1.5; }
+#f11 .f11-carrier.cur, #f11 .f11-diff.cur { r: 5px; }
+#f11 .f11-count { fill: var(--ink); font-size: 14px; paint-order: stroke; stroke: var(--bg); stroke-width: 4px; stroke-linejoin: round; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) #f11 .f11-band { fill-opacity: 0.38; }
+  :root:not([data-theme="light"]) #f11 .f11-key.band { background: color-mix(in srgb, var(--claim) 38%, transparent); }
+}
+:root[data-theme="dark"] #f11 .f11-band { fill-opacity: 0.38; }
+:root[data-theme="dark"] #f11 .f11-key.band { background: color-mix(in srgb, var(--claim) 38%, transparent); }

@@ -4,60 +4,29 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The judge’s calls</title>
+<!-- The fonts are optional: this stylesheet loads without blocking the page, and site.css falls back to system fonts. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
-<style>
-/* The same tokens and reading column as the walkthrough page (../index.html), which will host the same picture. */
-:root {
-  --bg: #f4f6f4;
-  --ink: #18211f;
-  --muted: #56625e;
-  --rule: #d3dad7;
-  --grid: #e1e6e3;
-  --bar: #b3bfbb;
-  --accent: #0a6b5d;
-  --font-text: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #101514;
-    --ink: #e3e9e6;
-    --muted: #9aa7a3;
-    --rule: #29322f;
-    --grid: #1d2523;
-    --bar: #4a5754;
-    --accent: #4cc3ae;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #101514;
-  --ink: #e3e9e6;
-  --muted: #9aa7a3;
-  --rule: #29322f;
-  --grid: #1d2523;
-  --bar: #4a5754;
-  --accent: #4cc3ae;
-  color-scheme: dark;
-}
-html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-text); font-size: 1.0625rem; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-.page { max-width: 47.5rem; margin: 0 auto; padding: 3rem max(16px, env(safe-area-inset-right, 0px)) 4rem max(16px, env(safe-area-inset-left, 0px)); }
-h1 { font-size: 1.3125rem; font-weight: 700; line-height: 1.2; margin: 0 0 1rem; }
-p { max-width: 66ch; margin: 0 0 1rem; }
-.record { color: var(--muted); font-size: 0.9375rem; margin-top: 1rem; }
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="../site.css">
 <link rel="stylesheet" href="judge.css">
 </head>
 <body>
 <main class="page">
-  <h1>The judge’s calls</h1>
-  <p>A judge saw each late-born group of a neuron’s contexts beside two records from earlier in training, its own neuron’s and a random neuron’s, and picked the one it grew from; each dot is one call, coloured by whether it picked the neuron’s own.</p>
-  <div id="judgecalls"></div>
-  <p class="record">Source: the judge’s record of 7,352 calls on OLMo-3 7B against a random neuron, and the verdict’s per-group record, which holds the text the judge saw.</p>
+  <header class="page-head">
+    <h1>The judge’s calls</h1>
+    <nav aria-label="Site">
+      <a href="../index.html">The walkthrough</a>
+      <button class="button" type="button" data-theme-toggle>Dark theme</button>
+    </nav>
+  </header>
+  <figure class="figure" data-source="data.js">
+    <div id="judgecalls"></div>
+    <figcaption class="figure-caption">A judge model saw each late-born group of a side’s contexts beside two records from the snapshot before its birth, the side’s own and a random side’s of the same layer, and picked the one the group came from; each dot is one call, coloured by whether it picked the side’s own record. <a class="data-link" href="https://github.com/abaybektursun/already-clean-audit/blob/2e43474ae1bbfa353e222993cb706283a47bee7b/studies/already-clean/walkthrough/judge/README.md" title="judge/README.md names the files this picture is built from">data</a></figcaption>
+    <p class="figure-note">This picture is from the first edition of this site: its text says neuron for unit and training point for snapshot.</p>
+  </figure>
 </main>
+<script src="../site.js"></script>
 <script src="data.js"></script>
 <script src="judge.js"></script>
 </body>

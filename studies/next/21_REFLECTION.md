@@ -61,7 +61,7 @@ Without the readers, four wrong numbers would be in the abstract now.
 
 | what broke | where | the rule now written |
 |---|---|---|
-| first-order predictions in bf16 ranked zero ablations at Spearman 0.10 | N12 (`n12/READ_n12.md` G-VAL) | compute first-order predictions in fp32, forward mode where the backward does not fit; report the finite-difference check beside the zero ablation (`n2v/READ_head.md`) |
+| the bf16 measurement of a single neuron's switch-off, summed over a window, did not resolve the loss change: prediction against measurement read Spearman 0.10, and the measured change was unrelated to the predicted size (the bf16 prediction itself agrees with the fp32 prediction at 0.995) | N12 (`n12/READ_n12.md` G-VAL; `JOURNAL.md` 2026-11-06 08:10 and 2026-11-07 19:05) | measure a single neuron's ablation loss change in fp32 and on the exemplar's own next-token loss; report the finite-difference check beside it (`n2v/READ_head.md`). Corrected 2026-11-08 16:15 CST: the earlier row blamed the prediction; the record blames the measurement |
 | bit-for-bit equality across two computation paths failed | N13's A30 on summation order (`HANDOFF_2026-11-07.md`), N2V G-CAUSAL (`n2v/READ_n2v.md`) | freeze a tolerance on a control pair; never gate on bitwise equality between paths |
 | the positive control inverted: the random edit moved the residual 1.3–2.5 times more than the neuron's own write | N6 (`n6/STATE.md`, "What L2a measured") | match controls on realized residual change, not on weight energy; audit realized effects, not intended ones |
 | the power preview said 0.435 and the run said 1.186 | N6 (`n6/STATE.md`) | preview power at the registered window count, or scale both the noise and the effect with the count; a preview that holds one side fixed is not a preview |
@@ -75,8 +75,9 @@ Without the readers, four wrong numbers would be in the abstract now.
   edits in 18.9 GPU-h; `n6/banks/L2a-01/metrics.json`, `edits.jsonl`), about four GPU-hours. Run first, on their own,
   they would have cancelled the study before the other fifteen (`infra/aws_pg/operations/2026-11-07_next_n6.md`). The
   rule from now on: the positive control is its own first job, and the main run waits for it.
-- **N12 was run in bf16 with the prior at 0.6 that the instrument would validate.** The fp32 instrument then had to be
-  built and run as N2V. A small fp32 validation on a few units before the main run would have cost a fraction of that.
+- **N12 measured its switch-offs in bf16 with the prior at 0.6 that the validation would pass.** The fp32 measurement
+  then had to be built and run as N2V. A small fp32 check on a few units before the main run would have cost a fraction
+  of that. (Corrected 2026-11-08 16:15 CST: "instrument" above meant the measurement side, not the prediction.)
 - **A practical card was proposed to the user before the deciding measurement.** The top-1 % transplant idea went out on
   the Friday; N13's result withdrew it two days later (top 0.1–3 % reads 57.6–63.8 against the base's 57.2). Practical
   proposals wait for the measurement that decides them.
@@ -89,8 +90,11 @@ Without the readers, four wrong numbers would be in the abstract now.
 - **The RL math gain is diffuse and cheaply estimable.** A random 0.1 % of MLP entries, scaled by 1,000, reads 85.2 of
   the RL model's 92.0 on MATH-500 (`n13/verdict_n13.json`); attention with norms alone reads 83.0. No 0.1–3 % neuron
   subset does any of this. This is the practical result, and the rank test of the delta is the next measurement.
-- **A gradient instrument that works, with its failure mode measured.** In fp32 it ranks 284 zero ablations at Spearman
-  0.960 (`n2v/verdict_n2v.json`); in bf16 it does not work at all. Both numbers are now banked side by side.
+- **A gradient instrument that works, with its failure mode measured.** Against fp32 switch-offs it ranks 284 of them at
+  Spearman 0.960 (`n2v/verdict_n2v.json`); against the same switch-offs measured in bf16 it read 0.04, because the bf16
+  measurement does not resolve a change of a few hundredths of a nat summed over a window, not because the prediction
+  fails (bf16 and fp32 predictions agree at 0.995; `JOURNAL.md` 2026-11-07 19:05). Both numbers are banked side by side.
+  (Corrected 2026-11-08 16:15 CST; the earlier sentence said the instrument "does not work at all" in bf16.)
 - **A twin baseline that beats the prediction it was meant to floor.** A dated random group of another pole's future
   contexts names its pole more often than the carrier's own contexts do (`m2/verdict_m2.json`). Any future "predict the
   carrier" claim here is measured against that floor.

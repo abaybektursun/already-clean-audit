@@ -570,3 +570,217 @@ stay tracked. A new file in these directories now needs `git add -f`.
 
 After the `.gitignore` change, `git status --porcelain --untracked-files=all | grep -c '^??'` prints 1:
 `studies/instruments/explainer.html`, left untracked as asked.
+
+## 2026-11-08 final cleanup
+
+Done by an Opus worker on the head's list of actions. `git fetch origin --prune` ran first; it printed nothing.
+The only remote is `origin` (`git@github.com:abaybektursun/borrowed-geometry.git`).
+
+### Step 1. Record before any action
+
+`git worktree list`:
+
+```
+/Users/abaybektursun/projects/interp_research                cd031af32 [main]
+/Users/abaybektursun/projects/interp_research-bg-arms        11a77a5ef [bg/arms]
+/Users/abaybektursun/projects/interp_research-bg-core        1caf360e0 [bg/core]
+/Users/abaybektursun/projects/interp_research-bg-harness     fe441a2ca [bg/harness]
+/Users/abaybektursun/projects/interp_research-bytegraft      bd24152a1 [research/bytegraft]
+/Users/abaybektursun/projects/interp_research-clean-neurons  2aca2fd75 [clean-neurons]
+/Users/abaybektursun/projects/interp_research-ghpages        2dca1e037 [gh-pages]
+```
+
+Every local branch. "Merged" is `git merge-base --is-ancestor <name> clean-neurons` at clean-neurons
+`2aca2fd75`. "origin" is `refs/remotes/origin/<name>` from `git for-each-ref refs/heads refs/remotes/origin`
+after the fetch.
+
+| Branch | Local sha | Merged into clean-neurons | `origin/<name>` |
+|---|---|---|---|
+| `bg/arms` | `11a77a5ef` | no | none |
+| `bg/core` | `1caf360e0` | no | none |
+| `bg/harness` | `fe441a2ca` | no | none |
+| `clean-neurons` | `2aca2fd75` | yes | `2aca2fd75` |
+| `depthanchor` | `a0658e159` | no | none |
+| `gh-pages` | `2dca1e037` | no | `2dca1e037` |
+| `main` | `cd031af32` | yes | `cd031af32` |
+| `postcheck` | `a2bd47041` | no | none |
+| `research/bytegraft` | `bd24152a1` | no | `bd24152a1` |
+
+`origin/HEAD` points at `cd031af32` (`origin/main`).
+
+### Step 2. The gh-pages worktree: removed
+
+`git -C /Users/abaybektursun/projects/interp_research-ghpages status --porcelain` printed nothing (also nothing
+with `--ignored`). `gh-pages` and `origin/gh-pages` were both `2dca1e037`. `git worktree remove` exited 0; the
+directory is gone. The local branch `gh-pages` stays at `2dca1e037` as the deploy branch of the walkthrough
+site. The repo has one remote, `origin`; no second remote exists in this clone.
+
+### Step 3. `depthanchor` and `postcheck`: pushed to origin, kept as local branches
+
+Neither branch existed on origin (`git ls-remote origin` returned nothing for both). Both were pushed with
+`git push origin <name>`. After a second fetch, `origin/<name>` equals the local sha for both. They are not
+merged into clean-neurons, so `git branch -d` would refuse; they stay as local branches for the head to decide.
+`depthanchor` is not an ancestor of `postcheck`; each is 2 commits past its merge-base with clean-neurons.
+
+| Branch | Sha | On origin before | On origin now | `git diff --stat clean-neurons...<name>` |
+|---|---|---|---|---|
+| `depthanchor` | `a0658e159` | no | yes, `a0658e159` | 4 files changed, 82 insertions(+), 4 deletions(-) |
+| `postcheck` | `a2bd47041` | no | yes, `a2bd47041` | 3 files changed, 67 insertions(+), 9 deletions(-) |
+
+`git log --oneline -3 depthanchor`:
+
+```
+a0658e159 depthanchor: correct the file count — 379 data files, not the hand-typed 378
+f65e35431 depthanchor: correct the initial-state probe — the episodes DO start from the shipped init states
+9255751ce repo index: DEPTHANCHOR closed as H_epi
+```
+
+`git log --oneline -3 postcheck`:
+
+```
+a2bd47041 postcheck: P4 re-measured over all 379 files — 373 off by one, nothing absent
+02c224332 postcheck: retag P4 — the scan used a hard-coded 378-file count and never opened file-378
+a9ecaa89c postcheck: repo index entry — the follow-up study, closed
+```
+
+What each holds: `depthanchor` holds two corrections to the closed DEPTHANCHOR study (initial-state probe,
+379-file count). `postcheck` holds the closed follow-up study's repo-index entry and its P4 retag and re-measure
+over all 379 files.
+
+### Step 4. Fast-forward of `main`: refused by git, nothing forced
+
+`git merge-base --is-ancestor main clean-neurons` returned true (clean-neurons is 642 commits ahead of `main`).
+`git -C /Users/abaybektursun/projects/interp_research merge --ff-only clean-neurons` refused:
+
+```
+Updating cd031af32..2aca2fd75
+error: The following untracked working tree files would be overwritten by merge:
+	studies/depthanchor/SPEC.md
+	studies/depthopen/SPEC.md
+	studies/postcheck/SPEC.md
+Please move or remove them before you merge.
+Aborting
+```
+
+The three colliding paths are untracked files in the main worktree that clean-neurons tracks. Nothing was
+moved, removed or forced. `main` and `origin/main` are both still `cd031af32`; nothing was pushed. The main
+worktree has 0 tracked changes and 78 untracked entries (`git status --porcelain | grep -c '^??'`), the same
+before and after the attempt.
+
+### Step 5. `studies/instruments/explainer.html`: committed
+
+12,460 bytes, dated 2026-11-04. It is a standalone HTML page titled "INSTRUMENTS, explained with the math"
+that loads KaTeX 0.16.11 from cdnjs. `grep -c -E 'AKIA|PRIVATE KEY|hf_[A-Za-z0-9]{20}|ghp_'` printed 0. The
+earlier section left it untracked; on the head's decision for this cleanup it was committed by name as
+`961c8f44c` ("instruments: explainer.html (untracked file committed in the final cleanup)").
+
+### Step 6. Python caches in the clean-neurons worktree: 9 directories removed
+
+`find /Users/abaybektursun/projects/interp_research-clean-neurons -type d -name __pycache__ -prune` listed 9
+directories, 2,832 KB in all. All 9 were git-ignored, held no tracked file and held only `.pyc` files. Each was
+removed with `rm -r`; a second `find` lists 0. Nothing else was deleted.
+
+```
+infra/__pycache__
+infra/aws_pg/__pycache__
+infra/pg/__pycache__
+infra/neurons/__pycache__
+infra/aws_pg/jobs/__pycache__
+infra/pg/tests/__pycache__
+studies/already-clean/runbook/__pycache__
+studies/mechanics/scripts/next0_control_forward/__pycache__
+studies/reproductions/alwayson/code/pg/__pycache__
+```
+
+### State after this cleanup
+
+`git worktree list`:
+
+```
+/Users/abaybektursun/projects/interp_research                cd031af32 [main]
+/Users/abaybektursun/projects/interp_research-bg-arms        11a77a5ef [bg/arms]
+/Users/abaybektursun/projects/interp_research-bg-core        1caf360e0 [bg/core]
+/Users/abaybektursun/projects/interp_research-bg-harness     fe441a2ca [bg/harness]
+/Users/abaybektursun/projects/interp_research-bytegraft      bd24152a1 [research/bytegraft]
+/Users/abaybektursun/projects/interp_research-clean-neurons  (this commit) [clean-neurons]
+```
+
+The four worktrees and branches of the other agent were not entered or changed. Read-only state
+(`git --no-optional-locks -C <worktree> status --porcelain`, no index lock taken):
+
+| Worktree | Branch | Sha | Against origin | Working tree |
+|---|---|---|---|---|
+| `interp_research-bytegraft` | `research/bytegraft` | `bd24152a1` | ahead 0, behind 0 of `origin/research/bytegraft` | 11 porcelain lines (not clean) |
+| `interp_research-bg-arms` | `bg/arms` | `11a77a5ef` | no `origin/bg/arms`; 0 commits outside origin refs | clean |
+| `interp_research-bg-core` | `bg/core` | `1caf360e0` | no `origin/bg/core`; 0 commits outside origin refs | clean |
+| `interp_research-bg-harness` | `bg/harness` | `fe441a2ca` | no `origin/bg/harness`; 0 commits outside origin refs | clean |
+
+Left for the head: the three untracked `SPEC.md` files that block the fast-forward of `main`; the local
+branches `depthanchor` and `postcheck` (now safe on origin).
+
+## 2026-11-08 temporary files removed
+
+Done by an Opus worker on the head's list. No tracked file was deleted. No git command that writes was run.
+
+### Step 1. Session scratchpad: 445 entries deleted, 22,228,840 KiB (22.8 GB)
+
+Path: `/private/tmp/claude-501/-Users-abaybektursun-projects-interp-research/5fa97882-3e2c-4d6c-9dab-49b9a1604fdb/scratchpad`.
+`du -sk` before: 22,228,844 KiB; after: 4 KiB. Every one of the 445 top-level entries was removed with `rm -rf`.
+The largest, in KiB: `bio2` 4,468,620; `n12` 2,262,624; `n22` 1,512,636; `n12dl` 1,063,896; `m2c` 1,031,092;
+`m2` 958,392; `pub` 844,940; `m1_gate` 696,968; `m1_venv` 633,360; `hk` 560,100; `n13read` 402,264; `s5` 401,940;
+`n13_venv` 241,928. Also `head/`, `m1_rescue/` (the six copies of Step 2 above, byte-identical to committed LFS
+files), `n2vread/` and about 430 smaller files and folders.
+
+Checks before deletion:
+
+- `head/21_REFLECTION.md` and `head/abs6.txt`: `studies/next/21_REFLECTION.md` and `studies/next/20_ABSTRACT.md`
+  exist and are tracked. The committed reflection is a later edit of the draft (one line differs). The abstract
+  contains the text of `abs6.txt`.
+- `pub/already-clean-audit`: `git status --porcelain` empty; local HEAD `2e43474ae1bbfa353e222993cb706283a47bee7b`
+  equals `gh api repos/abaybektursun/already-clean-audit/commits/main`.
+
+Not touched: `pycache_list.txt` (840 bytes, 13:36), which another worker wrote after the deletion. An orphaned
+`tail -F` process (PID 64754, started 2026-11-07 07:31, parent launchd) was following
+`scratchpad/bio2/n1l2/poll/poll.log`; it was not killed.
+
+### Step 2. Python environments: none deleted
+
+No entry of `/Users/abaybektursun/projects/` has `venv` in its name. The only `.pgvenv` in a remaining worktree is
+the symbolic link `interp_research-clean-neurons/.pgvenv -> /Users/abaybektursun/projects/interp_research/.pgvenv`
+(the main worktree, not touched). `interp_research-ghpages` no longer exists.
+
+### Step 3. Local copies of old-program results: 9,062 files deleted, 3,843,683,051 bytes (3.84 GB)
+
+S3 calls: six `list-objects-v2` listings of bucket `pg-lineage-769063704696`, none failed. The object counts equal
+those of the Step 6 table above (22,342; 5,508; 1,790; 445; 1,001; 3,506). Local paths were mapped to keys by the
+Step 6 rules. `q14_smoke_a1` and `e3/failing_input_*` were not mapped.
+
+A file counted as verified only if the S3 object at its key has the same size and its ETag equals the local MD5
+(single-part ETag) or equals the multipart ETag recomputed locally with 8 MiB parts. All 64 multipart objects
+matched that way, so no file was deleted on size alone. Negative control: the 38 `q14_smoke_a1` sample files
+against the same-named objects of the second smoke attempt (`cells/q14_smoke/`): 0 of 38 equal in size, 0 equal
+in MD5. Three MD5 values were checked against `md5 -q`: equal.
+
+Tracked files were excluded with a fresh `git ls-files` of the five directories (22,902 paths). None of the deleted
+files was tracked, and all 22,902 tracked paths still exist. 136 directories became empty and were removed; none
+was empty before. The 12 tracked symbolic links in `studies/reproductions/instruments_e2/results/bank/` still
+resolve. `du -sk` of the five directories: 4,556,244 KiB before, 784,764 KiB after.
+
+| Directory | Ignored files before | Deleted (MD5 / multipart ETag) | Bytes deleted | Kept |
+|---|---|---|---|---|
+| `studies/reuse/results/` | 6,743 | 6,736 (6,723 / 13) | 2,199,173,100 | 7 |
+| `studies/instruments/results/` | 1,452 | 1,442 (1,402 / 40) | 855,749,572 | 10 |
+| `studies/realizednull/results/` | 876 | 846 (846 / 0) | 486,895,509 | 30 |
+| `studies/reproductions/instruments_e2/` | 34 | 34 (25 / 9) | 196,218,589 | 0 |
+| `studies/mechanics/results/` | 4 | 4 (2 / 2) | 105,646,281 | 0 |
+| total | 9,109 | 9,062 | 3,843,683,051 | 47 |
+
+Kept (47 files, still git-ignored on disk):
+
+- `studies/reuse/results/` (7, 5,308 bytes): no S3 object at the mapped key. `amend2/1/watch.log`,
+  `amend2/judge/collect.log`, `amend2/judge_v2/collect.log`, `phase0/coherence/collect.log`,
+  `phase0/relatedness/collect.log`, `sniper/2/launch.json`, `sniper/2/run.json`.
+- `studies/instruments/results/` (10, 77,665 bytes): local verdict outputs with no S3 copy.
+  `e3/failing_input_{ac,ceiling,known,samples,sanity}/{GRID_e3.md,verdict_e3.json}`.
+- `studies/realizednull/results/` (30, 17,408,285 bytes): `q14_smoke_a1/samples/smoke/*.json`, the only copies. S3
+  `cells/q14_smoke/` holds the second attempt.

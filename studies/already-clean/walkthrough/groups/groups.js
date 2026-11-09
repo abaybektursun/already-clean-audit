@@ -385,7 +385,7 @@
 
   function caption() {
     $('caption').textContent =
-      'The sorting model, ' + D.sorter + ', was told to make one group per job, but a second model asked about 129 ' +
+      'The model that sorted the contexts, ' + D.sorter + ', was told to make one group per job, but a second model asked about 129 ' +
       'of its groups said 109 were not about one thing, so a group is not a job. It sorted each of the ' + D.n_study +
       ' neurons twice, making ' + int(D.total[0]) + ' groups the first time and ' + int(D.total[1]) + ' the second, ' +
       'with the same count for ' + D.same + ' neurons.';

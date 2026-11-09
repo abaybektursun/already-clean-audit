@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The gradient prediction</title>
+<!-- The fonts are optional: this stylesheet loads without blocking the page, and site.css falls back to system fonts. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="m09.css">
+</head>
+<body>
+<main class="page">
+  <header class="page-head">
+    <h1>The gradient prediction, and what 16-bit broke</h1>
+    <nav aria-label="Site">
+      <a href="../index.html">The walkthrough</a>
+      <button class="button" type="button" data-theme-toggle>Dark theme</button>
+    </nav>
+  </header>
+  <figure class="figure" data-source="data.js">
+    <div id="m09"></div>
+    <figcaption class="figure-caption">The first-order prediction of switching off, ΔL̂ = Σ −h·∂L/∂h over the group's positions, computed in <span data-nocheck>16-bit</span> and in <span data-nocheck>32-bit</span> (rank agreement 0.995; rank agreement is the rank correlation of two readings over the same pairs, 1 when they order the pairs alike and 0 when unrelated), against the measured ΔL in <span data-nocheck>16-bit</span> (rank agreement 0.100 on the rule-setting half, 0.043 held out) and in <span data-nocheck>32-bit</span> (0.960 held out, band 0.915 to 0.990). <a class="data-link">data</a></figcaption>
+  </figure>
+</main>
+<script src="../site.js"></script>
+<script src="data.js"></script>
+<script src="m09.js"></script>
+</body>
+</html>

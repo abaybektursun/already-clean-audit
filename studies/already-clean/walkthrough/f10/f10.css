@@ -1,0 +1,81 @@
+/* f10: naming the carrier one snapshot before the birth. Every rule is scoped under #f10; tokens come from site.css. */
+#f10 { font-size: var(--step-cap); line-height: 1.5; color: var(--ink); }
+#f10, #f10 * { box-sizing: border-box; }
+#f10 .f10-part + .f10-part { margin-top: 2.25rem; }
+#f10 h3 { margin: 0 0 0.5rem; font-size: var(--step-0); font-weight: 700; line-height: 1.3; }
+#f10 .f10-text { max-width: 68ch; margin: 0 0 0.75rem; overflow-wrap: break-word; }
+#f10 .f10-head { margin: 1rem 0 0.35rem; font-size: var(--step--1); color: var(--muted); }
+#f10 .f10-mono { font-family: var(--font-mono); font-weight: 500; }
+
+/* the legend and the dot plot */
+#f10 .f10-legend { list-style: none; margin: 0 0 0.5rem; padding: 0; max-width: 68ch; }
+#f10 .f10-legend li { margin: 0.15rem 0; padding-left: 1.4em; text-indent: -1.4em; }
+#f10 .f10-key { display: inline-block; width: 10px; height: 10px; margin-right: 0.5em; border-radius: 50%; vertical-align: -1px; text-indent: 0; }
+#f10 .f10-key-claim { background: var(--claim); }
+#f10 .f10-key-control { background: var(--control); }
+#f10 .f10-key-control-ring { background: var(--bg); box-shadow: inset 0 0 0 2px var(--control); }
+#f10 .f10-plot { width: 100%; outline-offset: 3px; }
+#f10 .f10-plot svg { display: block; }
+#f10 .f10-top { fill: var(--band); }
+#f10 .f10-grid { stroke: var(--grid); stroke-width: 1; }
+#f10 .f10-rule { stroke: var(--rule); stroke-width: 1; }
+#f10 .f10-axis { stroke: var(--muted); stroke-width: 1; }
+#f10 .f10-topline { stroke: var(--ink); stroke-width: 1; }
+#f10 .f10-tick { font: 400 12px var(--font-text); fill: var(--muted); font-variant-numeric: tabular-nums; }
+#f10 .f10-axt { font: 400 14px var(--font-text); fill: var(--muted); }
+#f10 .f10-lab { font: 400 14px var(--font-text); fill: var(--ink); }
+#f10 .f10-dot-claim { fill: var(--claim); }
+#f10 .f10-dot-control { fill: var(--control); }
+#f10 .f10-dot-control-ring { fill: var(--bg); stroke: var(--control); stroke-width: 2; }
+#f10 .f10-raw { fill: none; stroke: var(--ink); stroke-width: 1.5; }
+#f10 .f10-cur { fill: none; stroke: var(--ink); stroke-width: 2; pointer-events: none; }
+
+/* the differences */
+#f10 .f10-forest { max-width: 640px; }
+#f10 .f10-forest-head { margin: 1.25rem 0 0.25rem; font-size: var(--step--1); color: var(--muted); }
+#f10 .f10-frow { padding: 0.35rem 0.35rem 0.5rem; border-radius: 6px; cursor: default; }
+#f10 .f10-frow:hover, #f10 .f10-frow:focus-visible { background: var(--band); }
+#f10 .f10-flabel { margin: 0; }
+#f10 .f10-fsub { margin: 0 0 0.35rem; font-size: var(--step--1); color: var(--muted); }
+#f10 .f10-track { position: relative; height: 16px; margin: 0 8px; }
+#f10 .f10-zero { position: absolute; top: -4px; bottom: -4px; width: 1px; background: var(--muted); }
+#f10 .f10-band { position: absolute; top: 6px; height: 4px; border-radius: 2px; background: var(--ink); opacity: 0.35; }
+#f10 .f10-fdot { position: absolute; top: 3px; width: 10px; height: 10px; margin-left: -5px; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 2px var(--bg); }
+#f10 .f10-faxis { position: relative; height: 20px; margin: 0.25rem 8px 0; border-top: 1px solid var(--muted); }
+#f10 .f10-ftick { position: absolute; top: 2px; transform: translateX(-50%); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+#f10 .f10-fcap { margin: 0.25rem 8px 0; font-size: var(--step--1); color: var(--muted); }
+
+/* the raw examples */
+#f10 .f10-controls { flex-wrap: nowrap; }
+#f10 .f10-select {
+  flex: 1 1 auto; min-width: 0; max-width: 40rem; min-height: 40px; padding: 0 0.6rem;
+  border: 1px solid var(--rule); border-radius: 8px; background: var(--bg); color: var(--ink);
+  font: 400 var(--step-cap) var(--font-text); text-overflow: ellipsis;
+}
+#f10 .f10-select option { background: var(--bg); color: var(--ink); }
+#f10 .f10-list { border-top: 1px solid var(--rule); outline-offset: 3px; }
+#f10 .f10-ctx {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center;
+  height: 30px; border-bottom: 1px solid var(--grid);
+  font: 400 0.875rem/1 var(--font-mono); white-space: pre; cursor: default;
+}
+#f10 .f10-ctx.f10-ctx-a { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto; }
+#f10 .f10-ctx.is-cur { background: var(--band); }
+#f10 .f10-b {
+  display: flex; justify-content: flex-end; overflow: hidden; color: var(--muted);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 28px); mask-image: linear-gradient(to right, transparent, #000 28px);
+}
+#f10 .f10-b > span { flex: none; }
+#f10 .f10-t {
+  max-width: 13ch; overflow: hidden; text-overflow: ellipsis; margin: 0 4px; padding: 4px 5px;
+  border-radius: 4px; box-shadow: inset 0 0 0 1px var(--muted); color: var(--ink); font-weight: 500;
+}
+#f10 .f10-a {
+  overflow: hidden; color: var(--muted);
+  -webkit-mask-image: linear-gradient(to left, transparent, #000 28px); mask-image: linear-gradient(to left, transparent, #000 28px);
+}
+#f10 .f10-v { padding-left: 0.5rem; text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+#f10 .f10-details { margin-top: 1rem; }
+#f10 .f10-details summary { padding: 0.55rem 0; cursor: pointer; }
+#f10 .f10-side { margin-top: 0.75rem; }
+#f10 .f10-side-head { margin: 0 0 0.2rem; }

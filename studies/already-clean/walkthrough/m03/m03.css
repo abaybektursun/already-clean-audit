@@ -1,0 +1,89 @@
+/* m03: the corpus and a side's fifty contexts. Every rule is scoped under #m03; tokens come from site.css. */
+#m03 { font-size: var(--step-cap); line-height: 1.45; color: var(--ink); }
+#m03 *, #m03 *::before, #m03 *::after { box-sizing: border-box; }
+#m03 p { margin: 0; max-width: none; }
+#m03 .m03-wrap { display: grid; gap: 2.5rem; }
+#m03 .m03-wrap > section { min-width: 0; }
+#m03 .m03-wrap > section + section { padding-top: 1.25rem; border-top: 1px solid var(--rule); }
+#m03 .m03-h { margin: 0 0 0.75rem; font-size: var(--step-0); font-weight: 700; line-height: 1.3; }
+#m03 .m03-h4 { margin: 0 0 0.5rem; font-size: var(--step-cap); font-weight: 700; line-height: 1.35; }
+#m03 .m03-note { margin: 0.5rem 0 1rem; color: var(--muted); max-width: 68ch; }
+#m03 .m03-legend { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; margin-top: 0.5rem; font-size: var(--step--1); color: var(--muted); }
+#m03 .m03-legend span { display: inline-flex; align-items: center; gap: 0.45rem; }
+#m03 .m03-key { display: inline-block; width: 12px; height: 12px; border-radius: 2px; }
+#m03 .m03-key.cm { background: var(--ink); }
+#m03 .m03-key.other { background: var(--bar); }
+#m03 .m03-key.bar { height: 8px; background: var(--ink); }
+#m03 .m03-key.end { width: 2px; height: 14px; border-radius: 1px; background: var(--muted); }
+
+/* the corpus: numbered steps */
+#m03 .m03-step { display: grid; grid-template-columns: 1.75rem minmax(0, 1fr); gap: 0 0.5rem; padding: 0.6rem 0; }
+#m03 .m03-num {
+  display: inline-flex; align-items: center; justify-content: center; width: 1.5rem; height: 1.5rem; border-radius: 50%;
+  border: 1px solid var(--rule); font-size: var(--step--1); color: var(--muted); font-variant-numeric: tabular-nums;
+}
+#m03 .m03-steptext { min-width: 0; overflow-wrap: anywhere; }
+#m03 .m03-dirs { display: grid; grid-template-columns: repeat(10, minmax(0, 24px)); gap: 3px; margin-top: 0.6rem; }
+#m03 .m03-dir { display: block; aspect-ratio: 1; border-radius: 3px; background: var(--bar); cursor: default; }
+#m03 .m03-dir.cm { background: var(--ink); }
+#m03 .m03-dir:hover, #m03 .m03-dir:focus-visible { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px var(--muted); }
+#m03 .m03-window { display: flex; gap: 3px; margin-top: 0.6rem; max-width: 30rem; }
+#m03 .m03-cell { display: flex; flex-direction: column; justify-content: center; min-height: 52px; padding: 0.3rem 0.5rem; border-radius: 4px; line-height: 1.25; }
+#m03 .m03-cell.off { flex: none; border: 1px dashed var(--muted); color: var(--muted); }
+#m03 .m03-cell.on { flex: 1; min-width: 0; background: var(--band); box-shadow: inset 0 -3px 0 var(--ink); }
+#m03 .m03-cell-top { font-weight: 700; }
+#m03 .m03-cell-sub { font-size: var(--step--1); color: var(--muted); }
+#m03 .m03-result { margin-top: 0.6rem; }
+
+/* one side's fifty */
+#m03 .m03-strip { margin: 0.25rem 0 1.25rem; }
+#m03 .m03-strip-plot { position: relative; height: 28px; border-bottom: 1px solid var(--muted); }
+#m03 .m03-wtick { position: absolute; bottom: 0; width: 12px; height: 28px; margin-left: -6px; cursor: default; }
+#m03 .m03-wtick::before { content: ""; position: absolute; left: 5px; bottom: 0; width: 2px; height: 14px; border-radius: 1px; background: var(--muted); }
+#m03 .m03-wtick.new::before { height: 26px; background: var(--ink); box-shadow: 0 0 0 1px var(--bg); }
+#m03 .m03-wtick.new { z-index: 1; }
+#m03 .m03-wtick:hover::before, #m03 .m03-wtick:focus-visible::before { background: var(--ink); width: 3px; }
+#m03 .m03-strip-axis { display: flex; justify-content: space-between; gap: 0.5rem; margin-top: 4px; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+#m03 .m03-strip-name { font-size: var(--step--1); }
+#m03 .m03-kwic {
+  display: grid; grid-template-columns: 2.2em minmax(0, 1fr) minmax(0, max-content) minmax(0, 0.75fr) 4.2em;
+  font-family: var(--font-mono); font-size: var(--step--1); line-height: 1.3;
+}
+#m03 .m03-khead, #m03 .m03-row { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; align-items: baseline; }
+#m03 .m03-khead { font-family: var(--font-text); color: var(--muted); padding-bottom: 0.35rem; border-bottom: 1px solid var(--rule); }
+#m03 .m03-k-ctx { grid-column: 2 / 5; }
+#m03 .m03-k-a, #m03 .m03-a { text-align: right; }
+#m03 .m03-row { padding: 0.3rem 0; border-bottom: 1px solid var(--grid); cursor: default; }
+#m03 .m03-row.new { background: var(--band); }
+#m03 .m03-row:hover, #m03 .m03-row:focus-visible { background: var(--band); }
+#m03 .m03-rank { color: var(--muted); font-variant-numeric: tabular-nums; }
+#m03 .m03-before { display: flex; justify-content: flex-end; overflow: hidden; white-space: pre; color: var(--muted); }
+#m03 .m03-before > span { flex: none; }
+#m03 .m03-tok { white-space: pre; overflow: hidden; text-overflow: ellipsis; font-weight: 500; background: var(--band); box-shadow: inset 0 -2px 0 var(--ink); padding: 0 1px; }
+#m03 .m03-after { overflow: hidden; white-space: pre; color: var(--muted); }
+#m03 .m03-a { font-variant-numeric: tabular-nums; white-space: nowrap; }
+#m03 .button:disabled { opacity: 0.45; cursor: default; }
+#m03 .button:disabled:hover { background: transparent; }
+
+/* fixed positions at an earlier snapshot */
+#m03 .m03-scrub { position: relative; margin: 0.5rem 0 1.75rem; }
+#m03 .m03-scrub-label { display: block; font-weight: 700; font-variant-numeric: tabular-nums; }
+#m03 .m03-sticks { position: relative; height: 14px; margin: 0 11px; }
+#m03 .m03-stick { position: absolute; top: 0; transform: translateX(-50%); font-size: 12px; line-height: 1; color: var(--muted); font-variant-numeric: tabular-nums; }
+@media (max-width: 559px) { #m03 .m03-stick.minor { display: none; } }
+#m03 .m03-panel { margin-top: 1.25rem; }
+#m03 .m03-bgrid {
+  display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, max-content) minmax(5rem, 1.5fr) 4.6em;
+  font-family: var(--font-mono); font-size: var(--step--1); line-height: 1.3;
+}
+#m03 .m03-brow {
+  grid-column: 1 / -1; display: grid; grid-template-columns: subgrid;
+  align-items: center; padding: 0.3rem 0; border-bottom: 1px solid var(--grid); cursor: default;
+}
+#m03 .m03-brow > .m03-track { margin: 0 0.5rem; }
+#m03 .m03-brow:hover, #m03 .m03-brow:focus-visible { background: var(--band); }
+#m03 .m03-track { position: relative; height: 12px; border-left: 1px solid var(--muted); }
+#m03 .m03-bar { position: absolute; left: 0; top: 2px; height: 8px; max-width: 100%; border-radius: 0 3px 3px 0; background: var(--ink); }
+#m03 .m03-end { position: absolute; top: -3px; width: 2px; height: 18px; margin-left: -1px; border-radius: 1px; background: var(--muted); box-shadow: 0 0 0 1px var(--bg); }
+#m03 .m03-bval { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+#m03 .m03-scale { margin: 0.4rem 0 0; font-size: var(--step--1); }
