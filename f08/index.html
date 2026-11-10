@@ -14,7 +14,7 @@
 <body>
 <main class="page">
   <header class="page-head">
-    <h1>What each condition scored on competition problems</h1>
+    <h1>What each condition scored on MATH-500</h1>
     <nav aria-label="Site">
       <a href="../index.html">The walkthrough</a>
       <button class="button" type="button" data-theme-toggle>Dark theme</button>
@@ -22,7 +22,7 @@
   </header>
   <figure class="figure" data-source="data.js">
     <div id="f08"></div>
-    <figcaption class="figure-caption">Each condition’s score on 500 competition problems: copy the 0.1 % of units that changed most and the score is 57.6 against the base’s 57.2; copy a random 0.1 % of the MLP’s entries, scaled up a thousandfold, and it is 85.2 of the mathematics model’s 92.0. <a class="data-link">data</a></figcaption>
+    <figcaption class="figure-caption">We scored each condition on the 500 MATH-500 problems: copying the delta of the top 0.1 % of neurons by weight-delta norm onto the base model <code>Olmo-3-1025-7B</code> scores 57.6 against the base model’s 57.2, while DARE on the same number of MLP entries (a random 0.1 %, rescaled a thousandfold) scores 85.2 of the 92.0 that <code>Olmo-3.1-7B-RL-Zero-Math</code> scores. <a class="data-link">data</a></figcaption>
   </figure>
 </main>
 <script src="../site.js"></script>

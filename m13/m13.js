@@ -46,7 +46,7 @@
     root.appendChild(wrap);
 
     // ---------- legend ----------
-    wrap.appendChild(el('p', 'm13-note', NS + ' studies as rows, ' + NC + ' checks as columns: ' + NS * NC + ' cells, each the status the study’s files record.'));
+    wrap.appendChild(el('p', 'm13-note', NS + ' studies as rows, ' + NC + ' checks as columns: ' + NS * NC + ' cells. Each check names one thing a study does; each cell shows the status that the study’s files record for it.'));
     const legend = el('p', 'm13-legend');
     STATUS.forEach((st) => {
       const s = el('span');

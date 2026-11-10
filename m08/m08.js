@@ -1,7 +1,7 @@
-// m08: switching a side off at its group's positions. Registers the mount "m08" with site.js; reads window.M08_DATA
-// (m08/data.js). One held-out birth read in 32-bit at the snapshot before its birth: for the chosen one of its five
-// corpus windows, the clean and the switched-off loss at each of the 2,048 positions, their difference, and the sum;
-// the five window sums added beside the banked value; the rounding check and the rank agreement's definition.
+// m08: zero-ablating a neuron at its cluster's tokens. Registers the mount "m08" with site.js; reads window.M08_DATA
+// (m08/data.js). One held-out late-onset cluster, measured in float32 at the checkpoint before its onset: for the chosen
+// one of its five corpus windows, the clean and the ablated loss at each of the 2,048 positions, their difference, and
+// the sum; the five window sums added beside the saved value; the rounding check and the Spearman correlation.
 (() => {
   'use strict';
 
@@ -20,7 +20,7 @@
   };
   const sideOf = (id) => {
     const m = /^L(\d+)N(\d+)([+-])$/.exec(id);
-    if (!m) throw new Error('m08: cannot read the side ' + id);
+    if (!m) throw new Error('m08: cannot read the pole ' + id);
     return { layer: Number(m[1]), unit: Number(m[2]), sign: m[3] === '+' ? 'positive' : 'negative' };
   };
   const WINDOW = 2048; // losses per window: input j predicts input j + 1, j = 0 ... 2,047
@@ -32,11 +32,12 @@
     const B = D.birth;
     const W = D.windows;
     const who = sideOf(B.side);
-    const sideName = (s) => 'layer ' + s.layer + ', unit ' + F.int(s.unit) + ', ' + s.sign + ' side';
+    const sideName = (s) => 'L' + s.layer + '.N' + s.unit + (s.sign === 'positive' ? '+' : '-') + ' (layer ' + s.layer + ', neuron ' + F.int(s.unit) + ', ' + s.sign + ' pole)';
+    const branch = (step) => 'stage1-step' + step;
 
     // ---------- self-checks: the data must say what the caption and the panels say ----------
-    if (W.length !== B.unit_windows) throw new Error('m08: ' + W.length + ' windows, the birth has ' + B.unit_windows);
-    if (B.measured_at_snapshot !== B.birth_snapshot - 1) throw new Error('m08: the switch-off is not read at the snapshot before the birth');
+    if (W.length !== B.unit_windows) throw new Error('m08: ' + W.length + ' windows, the cluster has ' + B.unit_windows);
+    if (B.measured_at_snapshot !== B.birth_snapshot - 1) throw new Error('m08: the ablation is not measured at the checkpoint before the onset');
     const fromCorpus = new Map();
     B.group_positions_in_corpus.forEach((tok) => {
       const w = Math.floor(tok / WINDOW);
@@ -50,7 +51,7 @@
       if (pos.join() !== w.group_positions.join()) throw new Error('m08: window ' + w.window + ' positions do not follow from the corpus indices');
       if (w.loss_clean.length !== WINDOW) throw new Error('m08: window ' + w.window + ' has ' + w.loss_clean.length + ' losses, not 2,048');
       const i0 = w.first_changed_loss_index;
-      if (i0 !== w.group_positions[0] || i0 < 1) throw new Error('m08: window ' + w.window + ' first changed index is not the first group position');
+      if (i0 !== w.group_positions[0] || i0 < 1) throw new Error('m08: window ' + w.window + ' first changed index is not the first cluster token');
       const off = w.loss_switched_off_from_first_position;
       const dif = w.difference_from_first_position;
       if (off.length !== WINDOW - i0 || dif.length !== WINDOW - i0) throw new Error('m08: window ' + w.window + ' rows have the wrong length');
@@ -59,7 +60,7 @@
       let first = -1;
       dif.forEach((d, k) => {
         // the banked difference is the float64 difference of two float32 losses: recompute it exactly
-        if (Math.fround(off[k]) - Math.fround(w.loss_clean[i0 + k]) !== d) throw new Error('m08: window ' + w.window + ' difference at ' + (i0 + k) + ' does not equal switched off minus clean');
+        if (Math.fround(off[k]) - Math.fround(w.loss_clean[i0 + k]) !== d) throw new Error('m08: window ' + w.window + ' difference at ' + (i0 + k) + ' does not equal ablated minus clean');
         s += d;
         if (d !== 0) { changed++; if (first < 0) first = i0 + k; }
       });
@@ -70,18 +71,18 @@
     });
     const T = D.loss_change_summed_over_windows;
     const carrier = D.sides_switched_off[0];
-    if (carrier.side !== B.side || carrier.place_in_list !== 0) throw new Error('m08: the first switched-off side is not the carrier');
+    if (carrier.side !== B.side || carrier.place_in_list !== 0) throw new Error('m08: the first ablated pole is not the cluster’s own pole');
     if (total !== T.banked || T.recomputed !== T.banked || carrier.loss_change_32bit.banked !== T.banked) {
-      throw new Error('m08: the five window sums add to ' + total + ', the banked value is ' + T.banked);
+      throw new Error('m08: the five window sums add to ' + total + ', the saved value is ' + T.banked);
     }
     const RC = D.rounding_check_summed_over_windows;
     if (Math.abs(rounding - RC.banked) > 1e-12) throw new Error('m08: the rounding check sums to ' + rounding + ', the data says ' + RC.banked);
     const RA = D.rank_agreement_held_out;
     const MED = D.rounding_check_median_held_out;
-    if (F.fixed(RA.value, 3) !== '0.960' || F.fixed(RA.band_low, 3) !== '0.915' || F.fixed(RA.band_high, 3) !== '0.990') throw new Error('m08: the rank agreement is not 0.960 [0.915, 0.990]');
-    if (F.fixed(RA.shuffle_reference, 3) !== '0.118') throw new Error('m08: the shuffle reference is not 0.118');
+    if (F.fixed(RA.value, 3) !== '0.960' || F.fixed(RA.band_low, 3) !== '0.915' || F.fixed(RA.band_high, 3) !== '0.990') throw new Error('m08: the Spearman correlation is not 0.960 [0.915, 0.990]');
+    if (F.fixed(RA.shuffle_reference, 3) !== '0.118') throw new Error('m08: the permutation baseline is not 0.118');
     if (sig(MED.banked, 3) !== '0.000147' || MED.recomputed !== MED.banked) throw new Error('m08: the median rounding check is not 1.47e-4 nats');
-    if (RA.n_pairs !== 4 * RA.n_births || D.sides_switched_off.length !== 4) throw new Error('m08: a birth does not give four pairs');
+    if (RA.n_pairs !== 4 * RA.n_births || D.sides_switched_off.length !== 4) throw new Error('m08: a cluster does not give four ablations');
 
     root.replaceChildren();
     const wrap = el('div', 'm08-wrap');
@@ -90,15 +91,16 @@
     // ---------- one window, token by token ----------
     const one = el('section', 'm08-one');
     wrap.appendChild(one);
-    one.appendChild(el('h3', 'm08-h', sideName(who).replace(/^l/, 'L') + ', group ' + B.id.split(':c')[1]));
-    one.appendChild(el('p', 'm08-note', 'The group is ' + B.group_size + ' of the side’s fifty contexts, named “' + B.group_name +
-      '”. It is born at snapshot ' + B.birth_snapshot + ' (step ' + F.int(B.birth_step) + ') and is switched off here at snapshot ' +
-      B.measured_at_snapshot + ' (step ' + F.int(B.measured_at_step) + '), the snapshot before the birth, in 32-bit. It is in the held-out half. ' +
-      'Its positions fall in ' + W.length + ' corpus windows of the start-of-text token and 2,048 tokens; in each, the unit’s input to the down matrix is set to 0 at the group’s positions and nowhere else, and the window is run again.'));
+    one.appendChild(el('h3', 'm08-h', sideName(who) + ', cluster ' + B.id.split(':c')[1]));
+    one.appendChild(el('p', 'm08-note', 'A pole is one sign of a neuron’s activations; this is the neuron’s positive pole. Its cluster is ' + B.group_size +
+      ' of the pole’s top-50 activating tokens, which an LLM grouped and named “' + B.group_name + '”. ' +
+      'The cluster’s onset is the checkpoint at step ' + F.int(B.birth_step) + ' (' + branch(B.birth_step) + '): there the pole’s median activation on the cluster’s tokens first enters the pole’s own top 0.1 % of activations, and it stays there at the next checkpoint. ' +
+      'We zero-ablate the neuron at the checkpoint before the onset, step ' + F.int(B.measured_at_step) + ' (' + branch(B.measured_at_step) + '), in float32. The cluster is in the held-out split. ' +
+      'Its tokens fall in ' + W.length + ' corpus windows, each a start-of-text token followed by 2,048 tokens. In each window we set the neuron’s activation (its input to down_proj) to 0 at the cluster’s tokens and nowhere else, and run the window again.'));
     const formula = el('p', 'm08-formula');
-    formula.textContent = 'ΔL = Σ over the windows, Σ over j = 0 … 2,047 of [loss switched off(j) − loss clean(j)], in nats';
+    formula.textContent = 'ΔL = Σ over the windows, Σ over j = 0 … 2,047 of [loss ablated(j) − loss clean(j)], in nats';
     one.appendChild(formula);
-    one.appendChild(el('p', 'm08-note', 'The loss at position j is the loss of predicting token j + 1. ΔL is a sum over every position, not a mean. The window’s text is not in the published files, so positions are indices.'));
+    one.appendChild(el('p', 'm08-note', 'The loss at position j is the next-token loss of predicting token j + 1. ΔL is a sum over every position, not a mean. The published files do not hold the window’s text, so the chart names positions by index.'));
 
     const controls = el('div', 'control-row');
     controls.appendChild(el('span', 'control-label', 'Corpus window'));
@@ -118,7 +120,7 @@
 
     const legend = el('p', 'm08-legend');
     const key = (cls, text) => { const s = el('span'); s.append(el('i', 'm08-key ' + cls), text); return s; };
-    legend.append(key('clean', 'loss, clean'), key('off', 'loss, switched off (wide line, under the clean one)'), key('pos', 'the group’s position'), key('dif', 'switched off minus clean'));
+    legend.append(key('clean', 'loss, clean'), key('off', 'loss, zero-ablated (wide line, under the clean one)'), key('pos', 'the cluster’s token'), key('dif', 'ablated minus clean'));
     one.appendChild(legend);
 
     const chart = el('div', 'm08-chart');
@@ -137,7 +139,7 @@
       return { p, svg, g: svgEl(svg, 'g', {}) };
     };
     const lossP = makePlot('loss', 'loss per position, nats');
-    const difP = makePlot('dif', 'switched off minus clean, nats');
+    const difP = makePlot('dif', 'ablated minus clean, nats');
     const xAxis = el('div', 'm08-xaxis');
     xAxis.setAttribute('aria-hidden', 'true');
     [0, 500, 1000, 1500, 2000].forEach((v) => {
@@ -178,8 +180,8 @@
       const v = lossAt(w, j);
       const before = j < w.first_changed_loss_index;
       return {
-        title: 'Window ' + F.int(w.window) + ', position ' + F.int(j) + (w.group_positions.includes(j) ? ' (the group’s position)' : ''),
-        rows: [['loss, clean', F.fixed(v.clean, 5), 'ink'], ['loss, switched off', F.fixed(v.off, 5), 'claim'],
+        title: 'Window ' + F.int(w.window) + ', position ' + F.int(j) + (w.group_positions.includes(j) ? ' (the cluster’s token)' : ''),
+        rows: [['loss, clean', F.fixed(v.clean, 5), 'ink'], ['loss, zero-ablated', F.fixed(v.off, 5), 'claim'],
           ['difference', before ? '0, bitwise equal' : sig(v.dif, 3)]],
       };
     };
@@ -236,7 +238,7 @@
       posMarks.forEach((m) => m.remove());
       posMarks.length = 0;
       yTicks(lossP, LOSS_TICKS, yL, 0);
-      // switched off first and wider, the clean loss on top: before the group's position the two are bitwise equal
+      // ablated first and wider, the clean loss on top: before the cluster's token the two are bitwise equal
       let d = '';
       w.loss_switched_off_from_first_position.forEach((v, k) => { d += (k ? 'L' : 'M') + (i0 + k + 0.5) + ' ' + yL(v).toFixed(3); });
       svgEl(lossP.g, 'path', { d, class: 'm08-offline' });
@@ -259,7 +261,7 @@
           p.p.appendChild(m);
           posMarks.push(m);
         });
-        const lab = el('span', 'm08-poslab', 'group’s position ' + F.int(i));
+        const lab = el('span', 'm08-poslab', 'cluster’s token at ' + F.int(i));
         lab.style.left = xp(i) + '%';
         if (xp(i) > 60) lab.classList.add('left');
         lossP.p.appendChild(lab);
@@ -269,9 +271,11 @@
       out.replaceChildren();
       const pos = w.group_positions.map(F.int).join(', ');
       out.appendChild(el('p', 'm08-outhead', 'Window ' + F.int(w.window) + ': sum of the 2,048 differences = ' + sig(w.window_sum, 4) + ' nats'));
-      out.appendChild(el('p', 'm08-note', 'The group’s position in this window is ' + pos + '. Every loss before it is bitwise equal in the two runs. From it on, ' +
-        F.int(w.tokens_changed) + ' of the ' + F.int(WINDOW - i0) + ' losses changed. The 32-bit prediction for this window is ' + sig(w.window_sum_32bit_prediction, 4) +
-        ' nats; the rounding check (below) reads ' + sig(w.window_sum_rounding_check, 3) + ' nats.'));
+      const one1 = w.group_positions.length === 1;
+      out.appendChild(el('p', 'm08-note', 'The cluster’s ' + (one1 ? 'token in this window is at position ' : 'tokens in this window are at positions ') + pos +
+        '. Every loss before ' + (one1 ? 'it' : 'the first') + ' is bitwise equal in the two runs. From there on, ' +
+        F.int(w.tokens_changed) + ' of the ' + F.int(WINDOW - i0) + ' losses changed. Gradient × activation attribution in float32 (the first-order estimate of the ablation’s loss change) predicts ' +
+        sig(w.window_sum_32bit_prediction, 4) + ' nats for this window; the rounding check (below) gives ' + sig(w.window_sum_rounding_check, 3) + ' nats.'));
       rows.forEach((r, k) => r.classList.toggle('cur', k === cur));
       if (at >= 0) show(at, 'key');
     }
@@ -283,15 +287,15 @@
       draw();
     }
 
-    // ---------- the birth's ΔL: the five window sums ----------
+    // ---------- the ablation's ΔL: the five window sums ----------
     const sum = el('section', 'm08-sum');
     wrap.appendChild(sum);
-    sum.appendChild(el('h3', 'm08-h', 'The birth’s ΔL: the ' + W.length + ' window sums added'));
+    sum.appendChild(el('h3', 'm08-h', 'The ablation’s ΔL: the ' + W.length + ' window sums added'));
     const tab = el('table', 'm08-tab');
     const head = el('tr');
     ['window', 'position', 'changed', 'sum, nats'].forEach((h, i) => head.appendChild(el('th', i > 0 ? 'num' : '', h)));
     tab.appendChild(head);
-    sum.appendChild(el('p', 'm08-note', 'Position: the group’s position in the window. Changed: the losses that differ between the two runs.'));
+    sum.appendChild(el('p', 'm08-note', 'Position: where the cluster’s token sits in the window. Changed: the number of losses that differ between the two runs.'));
     const rows = W.map((w, k) => {
       const r = el('tr');
       r.append(el('td', '', F.int(w.window)), el('td', 'num', w.group_positions.map(F.int).join(', ')), el('td', 'num', F.int(w.tokens_changed)), el('td', 'num', sig(w.window_sum, 4)));
@@ -307,20 +311,20 @@
       return r;
     };
     const tr1 = totRow('tot', 'the ' + W.length + ' sums added here', total);
-    const tr2 = totRow('tot2', 'the banked ΔL of the carrier', T.banked);
+    const tr2 = totRow('tot2', 'ΔL in the study’s results file', T.banked);
     tab.append(tr1, tr2);
     const tabWrap = el('div', 'table-scroll');
     tabWrap.appendChild(tab);
     sum.appendChild(tabWrap);
-    sum.appendChild(el('p', 'm08-note', 'The sum added on this page equals the banked value exactly (the page stops with an error if it does not). ' +
-      'Select a row, or a window above, to draw it.'));
+    sum.appendChild(el('p', 'm08-note', 'The sum on this page equals the value in the study’s results file exactly; the page stops with an error if it does not. ' +
+      'Select a row, or a window above, to draw that window.'));
 
-    // ---------- the measurement's floor and the rank agreement ----------
+    // ---------- the measurement's floor and the Spearman correlation ----------
     const floor = el('section', 'm08-floor');
     wrap.appendChild(floor);
-    floor.appendChild(el('h3', 'm08-h', 'The rounding check, and rank agreement'));
-    floor.appendChild(el('p', 'm08-note', 'The rounding check runs the same window with the carrier’s change to the layer’s output added and then subtracted in the same forward pass. ' +
-      'In exact arithmetic it changes nothing, so the loss change it reads is rounding: the smallest change the measurement can resolve.'));
+    floor.appendChild(el('h3', 'm08-h', 'The rounding check, and the Spearman correlation with the attribution'));
+    floor.appendChild(el('p', 'm08-note', 'For the rounding check we run the same window, add the neuron’s contribution to the layer’s output (its activation times its down_proj column) at the cluster’s tokens, and subtract it again in the same forward pass. ' +
+      'In exact arithmetic this changes nothing, so any loss change is float32 rounding: the smallest change the measurement can resolve.'));
     const strip = el('div', 'm08-strip');
     floor.appendChild(strip);
     const LO = -5, HI = 0; // log10 nats
@@ -336,12 +340,12 @@
       if (xs(v) > 70) val.classList.add('left');
       track.append(d, val);
       r.appendChild(track);
-      WALK.hover(r, { title: name, rows: [['reads, nats', sig(v, 4)], ['size, nats', sig(Math.abs(v), 4), cls === 'ink' ? 'ink' : 'control']] });
+      WALK.hover(r, { title: name, rows: [['value, nats', sig(v, 4)], ['size, nats', sig(Math.abs(v), 4), cls === 'ink' ? 'ink' : 'control']] });
       strip.appendChild(r);
     };
-    stripRow('Median size of the rounding check over the ' + RA.n_births + ' held-out births', MED.banked, 'control');
-    stripRow('Size of this birth’s rounding check, ' + W.length + ' windows (it reads ' + sig(RC.banked, 3) + ')', RC.banked, 'control ring');
-    stripRow('Size of this birth’s ΔL (it reads ' + sig(T.banked, 3) + ')', T.banked, 'ink');
+    stripRow('Median size of the rounding check over the ' + RA.n_births + ' held-out clusters', MED.banked, 'control');
+    stripRow('Size of this cluster’s rounding check over ' + W.length + ' windows (signed value ' + sig(RC.banked, 3) + ')', RC.banked, 'control ring');
+    stripRow('Size of this ablation’s ΔL (signed value ' + sig(T.banked, 3) + ')', T.banked, 'ink');
     const sax = el('div', 'm08-saxis');
     sax.setAttribute('aria-hidden', 'true');
     for (let p = -4; p <= 0; p++) {
@@ -352,31 +356,33 @@
     strip.appendChild(sax);
     strip.appendChild(el('span', 'm08-xname', 'size in nats, log scale'));
 
-    floor.appendChild(el('p', 'm08-note', 'Rank agreement. Each held-out birth gives four pairs: the carrier, and the three other sides of its layer that ranked highest one snapshot before the birth, each switched off in turn. ' +
-      RA.n_births + ' births give ' + RA.n_pairs + ' pairs. The pairs are ranked once by the prediction and once by the measured ΔL; the rank agreement is the correlation of the two rankings, 1 when the orders match and near 0 when they are unrelated.'));
+    floor.appendChild(el('p', 'm08-note', 'Spearman correlation. Each held-out cluster gives four zero-ablations, one at a time: its own pole, and the three other poles of its layer that ranked highest on the cluster’s tokens at the checkpoint before the onset ' +
+      '(ranked by where the median activation on those tokens falls among each pole’s own activations). ' +
+      RA.n_births + ' clusters give ' + RA.n_pairs + ' ablations. We rank the ablations once by the attribution and once by the measured ΔL; the Spearman correlation of the two rankings is 1 when the orders match and near 0 when they are unrelated.'));
     const facts = el('div', 'm08-facts');
     const fact = (big, text) => { const f = el('p', 'm08-fact'); f.append(el('b', '', big), el('span', '', text)); facts.appendChild(f); };
-    fact(F.fixed(RA.value, 3), 'rank agreement of the 16-bit gradient prediction with this 32-bit ΔL over the ' + RA.n_pairs + ' held-out pairs; band ' +
-      F.fixed(RA.band_low, 3) + ' to ' + F.fixed(RA.band_high, 3) + ', the range consistent with the data when the births are resampled');
-    fact(F.fixed(RA.shuffle_reference, 3), 'the shuffle reference: with the prediction shuffled across the pairs 1,000 times, 97.5 % of the shuffles agree less than this');
+    fact(F.fixed(RA.value, 3), 'Spearman correlation between gradient × activation attribution in bfloat16 and the float32 ΔL over the ' + RA.n_pairs + ' held-out ablations; bootstrap 95 % confidence interval ' +
+      F.fixed(RA.band_low, 3) + ' to ' + F.fixed(RA.band_high, 3) + ', resampling the clusters');
+    fact(F.fixed(RA.shuffle_reference, 3), 'permutation baseline: we shuffled the attribution across the ablations 1,000 times, and 97.5 % of the shuffles gave a lower Spearman correlation than this');
     floor.appendChild(facts);
 
-    floor.appendChild(el('p', 'm08-note', 'This birth’s four pairs:'));
+    floor.appendChild(el('p', 'm08-note', 'This cluster’s four ablations:'));
     const t4 = el('table', 'm08-tab');
     const h4 = el('tr');
-    ['switched-off side', '16-bit prediction', '32-bit ΔL'].forEach((h, i) => h4.appendChild(el('th', i ? 'num' : '', h)));
+    ['zero-ablated pole', 'attribution', 'ΔL'].forEach((h, i) => h4.appendChild(el('th', i ? 'num' : '', h)));
     t4.appendChild(h4);
     D.sides_switched_off.forEach((s) => {
       const r = el('tr');
       const name = el('td');
-      name.append(el('span', 'm08-sidename', sideName(sideOf(s.side))), el('span', 'm08-role', s.place_in_list === 0 ? 'the carrier' : s.role.replace(/^other side/, 'another side,')));
+      const p = sideOf(s.side);
+      name.append(el('span', 'm08-sidename', 'L' + p.layer + '.N' + p.unit + (p.sign === 'positive' ? '+' : '-') + ', ' + p.sign + ' pole'), el('span', 'm08-role', s.place_in_list === 0 ? 'the cluster’s own pole' : s.role));
       r.append(name, el('td', 'num', sig(s.prediction_16bit, 3)), el('td', 'num', sig(s.loss_change_32bit.banked, 3)));
       t4.appendChild(r);
     });
     const t4w = el('div', 'table-scroll');
     t4w.appendChild(t4);
     floor.appendChild(t4w);
-    floor.appendChild(el('p', 'm08-note', 'Values in nats, summed over the birth’s ' + W.length + ' windows.'));
+    floor.appendChild(el('p', 'm08-note', 'Values in nats, summed over the cluster’s ' + W.length + ' windows. We computed the attribution in bfloat16 and ΔL in float32.'));
 
     choose(0);
   }

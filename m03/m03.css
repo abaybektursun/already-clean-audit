@@ -71,6 +71,8 @@
 #m03 .m03-sticks { position: relative; height: 14px; margin: 0 11px; }
 #m03 .m03-stick { position: absolute; top: 0; transform: translateX(-50%); font-size: 12px; line-height: 1; color: var(--muted); font-variant-numeric: tabular-nums; }
 @media (max-width: 559px) { #m03 .m03-stick.minor { display: none; } }
+#m03 .m03-stick.last { transform: translateX(-100%); }
+#m03 .m03-sname { margin: 0.4rem 0 0; font-size: var(--step--1); color: var(--muted); }
 #m03 .m03-panel { margin-top: 1.25rem; }
 #m03 .m03-bgrid {
   display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, max-content) minmax(5rem, 1.5fr) 4.6em;

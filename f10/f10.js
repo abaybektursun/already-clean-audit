@@ -1,8 +1,8 @@
-// f10: naming the carrier one snapshot before the birth (PLAN_PUBLIC_2026-11-08.md §4 row F10, chapter 5).
-// Builds inside #f10 from window.F10_DATA (f10/data.js): across the 71 held-out births, the rank of the carrier among
-// its layer's 22,016 sides one snapshot before the birth, beside the two comparison groups' own sides, as dots in
-// half-decade rank bins with the top-ten line; the paired differences and the share over chance; and the ten banked
-// raw examples (the group's contexts and the layer's ten highest-scoring sides with their strongest contexts).
+// f10: ranking the cluster's own pole at the checkpoint before the onset (PLAN_PUBLIC_2026-11-08.md §4 row F10,
+// chapter 5). Builds inside #f10 from window.F10_DATA (f10/data.js): across the 71 held-out late-onset clusters, the rank
+// of the cluster's own pole among its layer's 22,016 poles at the checkpoint before the onset, beside the two comparison
+// groups' poles, as dots in half-decade rank bins with the top-ten line; the paired differences and the share against
+// the random baseline; and the ten saved texts (the cluster's tokens and the layer's ten highest-scoring poles).
 (() => {
   'use strict';
 
@@ -30,8 +30,14 @@
   }
   function sideName(id) {
     const m = /^L(\d+)N(\d+)([+-])$/.exec(id);
-    if (!m) throw new Error('f10: unexpected side id ' + id);
-    return 'layer ' + +m[1] + ', unit ' + WALK.fmt.int(+m[2]) + ', ' + (m[3] === '+' ? 'positive' : 'negative') + ' side';
+    if (!m) throw new Error('f10: unexpected pole id ' + id);
+    return 'layer ' + +m[1] + ', neuron ' + WALK.fmt.int(+m[2]) + ', ' + (m[3] === '+' ? 'positive' : 'negative') + ' pole';
+  }
+  // the pole id as the site writes it: L00N828+ -> L0.N828+
+  function pid(id) {
+    const m = /^L(\d+)N(\d+)([+-])$/.exec(id);
+    if (!m) throw new Error('f10: unexpected pole id ' + id);
+    return 'L' + +m[1] + '.N' + +m[2] + m[3];
   }
   // A banked context: up to 160 characters before, the marked token between [[ and ]], then the text after.
   function splitContext(text) {
@@ -101,12 +107,14 @@
     const TOP = D.top;
     const S = D.summary.held_out;
     const births = D.births.filter((b) => b.half === 'held_out');
+    const STEPS = D.snapshot_steps;
+    if (!STEPS || STEPS.length !== 16) throw new Error('f10: the data does not hold the sixteen checkpoint steps');
     const series = [
-      { key: 'carrier', cls: 'claim', name: 'The carrier', legend: 'the carrier', row: 'carrier' },
-      { key: 'comparison_group', cls: 'control', name: 'A random group of another side’s contexts, same size and birth snapshot: its own side',
-        legend: 'the comparison group’s own side', row: 'comparison side' },
-      { key: 'comparison_group_distinct_tokens', cls: 'control-ring', name: 'The same, also matched on the number of distinct tokens: its own side',
-        legend: 'the distinct-token comparison group’s own side', row: 'distinct-token comparison side' },
+      { key: 'carrier', cls: 'claim', name: 'The cluster’s own pole', legend: 'the cluster’s own pole', row: 'own pole' },
+      { key: 'comparison_group', cls: 'control', name: 'A random group of tokens from another pole’s top-50, same size and same onset checkpoint: that pole',
+        legend: 'the comparison group’s pole', row: 'comparison pole' },
+      { key: 'comparison_group_distinct_tokens', cls: 'control-ring', name: 'The same, also matched on the number of distinct tokens: that pole',
+        legend: 'the distinct-token comparison group’s pole', row: 'distinct-token comparison pole' },
     ];
     for (const sr of series) {
       sr.items = births.filter((b) => b[sr.key]).map((b) => ({ birth: b, side: b[sr.key] }));
@@ -125,8 +133,11 @@
 
     // ---------- the ranks ----------
     const top = h('section', 'f10-part', root);
-    h('h3', null, top, 'Rank one snapshot before the birth, ' + births.length + ' held-out births');
-    h('p', 'f10-text', top, 'Each dot is one birth: the rank of a side among the ' + f.int(N) + ' sides of its layer, by its own percentile on the group’s positions at the snapshot before the birth. Rank 1 is the highest score. Carrier dots with a ring have raw examples below; tap or click one to open it there.');
+    h('h3', null, top, 'Rank at the checkpoint before the onset, ' + births.length + ' held-out clusters');
+    h('p', 'f10-text', top, 'A pole is one sign of a neuron’s activations, so a layer’s 11,008 neurons give ' + f.int(N) + ' poles. A cluster is a group of a pole’s top-50 activating tokens that an LLM named; ' +
+      'its onset is the first checkpoint at which the pole’s median activation on those tokens is in the pole’s own top 0.1 % and stays there. ' +
+      'Each dot is one late-onset cluster: the rank of a pole among the ' + f.int(N) + ' poles of its layer at the checkpoint before the onset. The score is the pole’s own percentile at the cluster’s tokens: ' +
+      'the share of the pole’s own-sign activations that lie below its median activation on those tokens. Rank 1 is the highest score. Own-pole dots with a ring have their text saved below; tap or click one to open it there.');
     const legend = h('ul', 'f10-legend', top);
     series.forEach((sr) => {
       const li = h('li', null, legend);
@@ -192,7 +203,7 @@
         }
       }
       s('line', { x1: lx(1), x2: lx(N), y1: yAxis, y2: yAxis, class: 'f10-axis' }, svg);
-      s('text', { x: lx(1), y: yAxis + 38, class: 'f10-axt' }, svg, 'rank among the layer’s ' + f.int(N) + ' sides, log scale');
+      s('text', { x: lx(1), y: yAxis + 38, class: 'f10-axt' }, svg, 'rank among the layer’s ' + f.int(N) + ' poles, log scale');
       s('circle', { class: 'f10-cur', r: 7.5, cx: -20, cy: -20 }, svg);
       if (cur >= 0) ring(cur);
     }
@@ -200,19 +211,19 @@
     function content(m) {
       const b = m.item.birth;
       const [side, c] = b.birth.split(':c');
-      const rows = [['birth', sideName(side) + ', group ' + c], ['group', b.group_name],
-        ['contexts', b.group_size + ', ' + b.distinct_tokens + ' distinct tokens'],
-        ['born at snapshot', String(b.birth_snapshot)], ['the carrier’s rank', f.int(b.carrier.rank) + ' of ' + f.int(N), 'claim']];
+      const rows = [['cluster', 'cluster ' + c + ' of ' + sideName(side)], ['its name', b.group_name],
+        ['tokens', b.group_size + ', ' + b.distinct_tokens + ' distinct'],
+        ['onset at the checkpoint of step', f.int(STEPS[b.birth_snapshot])], ['the own pole’s rank', f.int(b.carrier.rank) + ' of ' + f.int(N), 'claim']];
       if (m.sr.key !== 'carrier') {
-        rows.push([m.sr.legend, m.item.side.side_id + ', rank ' + f.int(m.item.side.rank), 'control']);
+        rows.push([m.sr.legend, pid(m.item.side.side_id) + ', rank ' + f.int(m.item.side.rank), 'control']);
         if (m.item.side.distinct_tokens != null) rows.push(['its distinct tokens', String(m.item.side.distinct_tokens)]);
       }
       const e = raw.get(b.birth);
       if (e) {
         e.group_contexts.slice(0, 4).forEach((g) => rows.push([short(g.text), '']));
-        if (e.group_contexts.length > 4) rows.push(['and ' + (e.group_contexts.length - 4) + ' more contexts in the raw examples below', '']);
+        if (e.group_contexts.length > 4) rows.push(['and ' + (e.group_contexts.length - 4) + ' more tokens in the saved text below', '']);
       }
-      return { title: side + ', group ' + c + (m.sr.key === 'carrier' ? '' : ': ' + m.sr.legend), rows };
+      return { title: pid(side) + ', cluster ' + c + (m.sr.key === 'carrier' ? '' : ': ' + m.sr.legend), rows };
     }
     function ring(i) {
       const g = plot.querySelector('.f10-cur');
@@ -276,29 +287,29 @@
     // ---------- the differences ----------
     const B = D.banked;
     const diff = h('section', 'f10-part', root);
-    h('h3', null, diff, 'The differences, paired by birth');
+    h('h3', null, diff, 'The differences, paired by cluster');
     const ratio = h('p', 'f10-text', diff);
-    ratio.textContent = 'The carrier is in the top ten in ' + S.carrier_in_top_ten + ' of ' + S.births + ' births, ' +
-      f.fixed(S.carrier_in_top_ten / S.births, 3) + ' (range consistent with the data ' + f.fixed(B.carrier_share_range[0], 3) + ' to ' +
-      f.fixed(B.carrier_share_range[1], 3) + '). A side picked at random is in the top ten with probability ' + TOP + ' / ' + f.int(N) + ' = ' +
-      f.fixed(B.chance_level, 5) + ', so the carrier is named at ' + f.fixed(B.carrier_share_over_chance, 1) +
-      ' times chance. The threshold set in advance was ' + f.fixed(B.threshold_set_in_advance, 4) + '.';
+    ratio.textContent = 'The cluster’s own pole is in the top ten for ' + S.carrier_in_top_ten + ' of ' + S.births + ' clusters, a share of ' +
+      f.fixed(S.carrier_in_top_ten / S.births, 3) + ' (95 % confidence interval ' + f.fixed(B.carrier_share_range[0], 3) + ' to ' +
+      f.fixed(B.carrier_share_range[1], 3) + '). A pole picked at random is in the top ten with probability ' + TOP + ' / ' + f.int(N) + ' = ' +
+      f.fixed(B.chance_level, 5) + ', the random baseline, so the own pole reaches the top ten ' + f.fixed(B.carrier_share_over_chance, 1) +
+      ' times as often as a random pole. The threshold set in advance was ' + f.fixed(B.threshold_set_in_advance, 4) + '.';
     const near = (a, b, what) => { if (Math.abs(a - b) > 0.05) throw new Error('f10: ' + what + ' ' + a + ' against ' + b); };
-    near((S.carrier_in_top_ten / S.births) / B.chance_level, B.carrier_share_over_chance, 'share over chance');
+    near((S.carrier_in_top_ten / S.births) / B.chance_level, B.carrier_share_over_chance, 'share over the random baseline');
     const P = D.post_hoc_split;
     const rows = [
-      { label: 'Carrier minus the comparison group’s own side, ' + B.carrier_minus_comparison_group.n + ' births',
-        sub: 'in the top ten only for the carrier: ' + B.carrier_minus_comparison_group.x_only + '; only for the comparison side: ' +
+      { label: 'Own pole minus the comparison group’s pole, ' + B.carrier_minus_comparison_group.n + ' clusters',
+        sub: 'in the top ten only for the own pole: ' + B.carrier_minus_comparison_group.x_only + '; only for the comparison pole: ' +
           B.carrier_minus_comparison_group.y_only, d: B.carrier_minus_comparison_group },
-      { label: 'Carrier minus the distinct-token comparison group’s own side, ' + B.carrier_minus_distinct_token_comparison_group.n + ' births',
-        sub: 'only for the carrier: ' + B.carrier_minus_distinct_token_comparison_group.x_only + '; only for the comparison side: ' +
+      { label: 'Own pole minus the distinct-token comparison group’s pole, ' + B.carrier_minus_distinct_token_comparison_group.n + ' clusters',
+        sub: 'only for the own pole: ' + B.carrier_minus_distinct_token_comparison_group.x_only + '; only for the comparison pole: ' +
           B.carrier_minus_distinct_token_comparison_group.y_only, d: B.carrier_minus_distinct_token_comparison_group },
-      { head: 'Found after the data were seen, both halves, births with a comparison group' },
-      { label: 'Contexts that repeat one token (distinct tokens under two thirds of the group), ' + P.repeated_token.births.recomputed + ' births',
-        sub: 'carrier ' + P.repeated_token.carrier_in_top_ten.recomputed + ', comparison side ' + P.repeated_token.comparison_group_in_top_ten.recomputed +
+      { head: 'Found after we saw the data, both splits, clusters with a comparison group' },
+      { label: 'Clusters that repeat one token (distinct tokens under two thirds of the cluster’s tokens), ' + P.repeated_token.births.recomputed + ' clusters',
+        sub: 'own pole ' + P.repeated_token.carrier_in_top_ten.recomputed + ', comparison pole ' + P.repeated_token.comparison_group_in_top_ten.recomputed +
           ' in the top ten', d: { diff: P.repeated_token.difference, lo: P.repeated_token.difference_range[0], hi: P.repeated_token.difference_range[1] } },
-      { label: 'Contexts with varied tokens, ' + P.varied_token.births.recomputed + ' births',
-        sub: 'carrier ' + P.varied_token.carrier_in_top_ten.recomputed + ', comparison side ' + P.varied_token.comparison_group_in_top_ten.recomputed +
+      { label: 'Clusters with varied tokens, ' + P.varied_token.births.recomputed + ' clusters',
+        sub: 'own pole ' + P.varied_token.carrier_in_top_ten.recomputed + ', comparison pole ' + P.varied_token.comparison_group_in_top_ten.recomputed +
           ' in the top ten', d: { diff: P.varied_token.difference, lo: P.varied_token.difference_range[0], hi: P.varied_token.difference_range[1] } },
     ];
     // the paired differences must be the counts' differences
@@ -326,7 +337,7 @@
       dot.style.left = pos(r.d.diff);
       if (r.d.lo < lo || r.d.hi > hi) throw new Error('f10: a range leaves the axis: ' + r.d.lo + ' to ' + r.d.hi);
       WALK.hover(row, { title: r.label, rows: [['difference in the share in the top ten', signed(r.d.diff)],
-        ['range consistent with the data', signed(r.d.lo) + ' to ' + signed(r.d.hi)], [r.sub, '']] });
+        ['95 % confidence interval', signed(r.d.lo) + ' to ' + signed(r.d.hi)], [r.sub, '']] });
     }
     const axisF = h('div', 'f10-faxis', forest);
     for (const v of ticksF) {
@@ -335,22 +346,22 @@
       if (v === lo) tk.style.transform = 'none';
       if (v === hi) tk.style.transform = 'translateX(-100%)';
     }
-    h('p', 'f10-fcap', forest, 'difference in the share of births in the top ten, carrier minus comparison');
+    h('p', 'f10-fcap', forest, 'difference in the share of clusters in the top ten, own pole minus comparison pole');
 
     // ---------- the raw examples ----------
     const rx = h('section', 'f10-part', root);
-    h('h3', null, rx, 'The raw examples');
-    h('p', 'f10-text', rx, 'Ten held-out births have their texts saved in the record: the group’s contexts at the end of training, and the layer’s ten highest-scoring sides at the snapshot before the birth, each with its own three strongest contexts and activations at that snapshot.');
+    h('h3', null, rx, 'The saved text of ten clusters');
+    h('p', 'f10-text', rx, 'For ten held-out clusters the data file holds text: the cluster’s tokens in their surrounding text, taken at the end of training, and the layer’s ten highest-scoring poles at the checkpoint before the onset, each with its own three strongest activating tokens and their activations at that checkpoint.');
     const ctl = h('div', 'control-row f10-controls', rx);
-    const lab = h('label', 'control-label', ctl, 'Raw example');
+    const lab = h('label', 'control-label', ctl, 'Cluster');
     lab.htmlFor = 'f10-raw';
     const sel = h('select', 'f10-select', ctl);
     sel.id = 'f10-raw';
     D.raw_examples.forEach((e, i) => {
       const b = births.find((x) => x.birth === e.birth);
-      if (!b || b.carrier.rank !== e.carrier_rank) throw new Error('f10: raw example ' + e.birth + ' does not match its birth');
+      if (!b || b.carrier.rank !== e.carrier_rank) throw new Error('f10: the saved text of ' + e.birth + ' does not match its cluster');
       const [side, c] = e.birth.split(':c');
-      const o = h('option', null, sel, side + ' group ' + c + ', carrier rank ' + f.int(e.carrier_rank) + ': ' +
+      const o = h('option', null, sel, pid(side) + ' cluster ' + c + ', own pole rank ' + f.int(e.carrier_rank) + ': ' +
         (b.group_name.length > 40 ? b.group_name.slice(0, 39) + '…' : b.group_name));
       o.value = i;
     });
@@ -361,30 +372,31 @@
       const [side, c] = e.birth.split(':c');
       body.replaceChildren();
       const who = h('p', 'f10-text', body);
-      h('b', 'f10-mono', who, side);
-      who.append(' (' + sideName(side) + '), group ' + c + ', “' + b.group_name + '”, born at snapshot ' + b.birth_snapshot +
-        '. Scored at snapshot ' + e.scored_at_snapshot + ': the carrier’s rank ' + f.int(e.carrier_rank) + ', score ' + f.fixed(e.carrier_score, 6) + '.');
-      h('p', 'f10-head', body, 'The group’s contexts (' + e.group_contexts.length + ')');
+      h('b', 'f10-mono', who, pid(side));
+      who.append(' (' + sideName(side) + '), cluster ' + c + ', “' + b.group_name + '”; onset at the checkpoint of step ' + f.int(STEPS[b.birth_snapshot]) +
+        ' (stage1-step' + STEPS[b.birth_snapshot] + '). Scored at the checkpoint of step ' + f.int(STEPS[e.scored_at_snapshot]) + ' (stage1-step' + STEPS[e.scored_at_snapshot] +
+        '): the own pole’s rank ' + f.int(e.carrier_rank) + ', score ' + f.fixed(e.carrier_score, 6) + '.');
+      h('p', 'f10-head', body, 'The cluster’s tokens in their text (' + e.group_contexts.length + ')');
       const gl = h('div', 'f10-list', body);
       const gr = e.group_contexts.map((g) => contextRow(gl, g.text));
-      listHover(gl, gr, (k) => ({ title: 'Rank ' + (e.group_contexts[k].rank_in_fifty + 1) + ' of the side’s fifty',
-        rows: [[marked(e.group_contexts[k].text), '']] }), 'The group’s contexts; arrow keys show each in full');
+      listHover(gl, gr, (k) => ({ title: 'Rank ' + (e.group_contexts[k].rank_in_fifty + 1) + ' in the pole’s top-50',
+        rows: [[marked(e.group_contexts[k].text), '']] }), 'The cluster’s tokens in their text; arrow keys show each in full');
       const det = h('details', 'f10-details', body);
-      h('summary', null, det, 'The layer’s ten highest-scoring sides at snapshot ' + e.scored_at_snapshot + ', with their own strongest contexts');
+      h('summary', null, det, 'The layer’s ten highest-scoring poles at the checkpoint of step ' + f.int(STEPS[e.scored_at_snapshot]) + ', with their own strongest activating tokens');
       e.top_ten.forEach((t, k) => {
         const blk = h('div', 'f10-side', det);
         const hd = h('p', 'f10-side-head', blk);
         hd.append((k + 1) + '. ');
         if (t.side_id === e.carrier_side) h('i', 'f10-key f10-key-claim', hd);
-        h('span', 'f10-mono', hd, t.side_id);
-        hd.append((t.side_id === e.carrier_side ? ' (the carrier)' : '') + ', score ' + f.fixed(t.score, 6));
+        h('span', 'f10-mono', hd, pid(t.side_id));
+        hd.append((t.side_id === e.carrier_side ? ' (the cluster’s own pole)' : '') + ', score ' + f.fixed(t.score, 6));
         const l = h('div', 'f10-list', blk);
         const sr = t.strongest_contexts.map((sc) => contextRow(l, sc.text, f.fixed(sc.a, 3)));
         listHover(l, sr, (j) => {
           const sc = t.strongest_contexts[j];
-          return { title: t.side_id + ', its context ' + (sc.rank + 1) + ' at snapshot ' + e.scored_at_snapshot,
+          return { title: pid(t.side_id) + ', its activating token ' + (sc.rank + 1) + ' at the checkpoint of step ' + f.int(STEPS[e.scored_at_snapshot]),
             rows: [['activation', f.fixed(sc.a, 4)], [marked(sc.text), '']] };
-        }, t.side_id + ': its three strongest contexts; arrow keys show each in full');
+        }, pid(t.side_id) + ': its three strongest activating tokens; arrow keys show each in full');
       });
     }
     function pick(id) {

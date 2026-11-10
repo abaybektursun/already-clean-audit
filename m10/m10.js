@@ -1,9 +1,9 @@
-// m10: the weight-change statistic on one carrier. Registers the mount "m10" with site.js; reads window.M10_DATA
-// (m10/data.js). For one banked birth: the carrier's r at each of the fifteen steps between the sixteen snapshots
-// against its layer's median and spread, then z, and e computed from the z values shown.
-// The data holds each unit's r and z, not the layer's median and spread. For each birth it holds two units of one
-// layer (the carrier and its matched unit), so at each step the median m and spread s follow from z's definition,
-// z = (ln r - ln m) / s, applied to both units. They are checked against the range over the 32 layers that the data
+// m10: the relative weight update of one late-onset cluster's neuron. Registers the mount "m10" with site.js; reads
+// window.M10_DATA (m10/data.js). For one cluster: the neuron's r over each of the fifteen intervals between the sixteen
+// checkpoints against its layer's median and spread, then z, and e computed from the z values shown.
+// The data holds each neuron's r and z, not the layer's median and spread. For each cluster it holds two neurons of one
+// layer (the cluster's neuron and its matched neuron), so at each interval the median m and spread s follow from z's
+// definition, z = (ln r - ln m) / s, applied to both neurons. They are checked against the range over the 32 layers that the data
 // carries separately, and the page says how they were found.
 (() => {
   'use strict';
@@ -24,7 +24,7 @@
   };
   const sideOf = (id) => {
     const m = /^L(\d+)N(\d+)([+-])$/.exec(id);
-    if (!m) throw new Error('m10: cannot read the side ' + id);
+    if (!m) throw new Error('m10: cannot read the pole ' + id);
     return { layer: Number(m[1]), unit: Number(m[2]), side: m[3] === '+' ? 'positive' : 'negative' };
   };
   const mean = (a) => a.reduce((s, v) => s + v, 0) / a.length;
@@ -34,28 +34,28 @@
     const steps = D.snapshot_steps;
     const J = D.step_index;
     const NJ = J.length;
-    if (steps.length !== 16 || NJ !== 15 || J.some((j, i) => j !== i + 1)) throw new Error('m10: expected 16 snapshots and steps 1 to 15');
+    if (steps.length !== 16 || NJ !== 15 || J.some((j, i) => j !== i + 1)) throw new Error('m10: expected 16 checkpoints and intervals 1 to 15');
     const SP = D.layer_spread_over_32_layers.input_rows;
-    if (SP.length !== NJ || SP.some((s, i) => s.step !== i + 1)) throw new Error('m10: the spread over the 32 layers does not cover steps 1 to 15');
+    if (SP.length !== NJ || SP.some((s, i) => s.step !== i + 1)) throw new Error('m10: the spread over the 32 layers does not cover intervals 1 to 15');
 
-    // ---------- the numbers for one birth ----------
+    // ---------- the numbers for one cluster ----------
     function derive(b) {
       const c = b.carrier.input_rows;
       const m = b.comparison_unit.input_rows;
       const cw = sideOf(b.carrier.side);
       const mw = sideOf(b.comparison_unit.side);
-      if (cw.layer !== b.layer || mw.layer !== b.layer) throw new Error('m10: ' + b.birth + ': the two units are not in the birth’s layer');
-      if (c.r.length !== NJ || c.z.length !== NJ || m.r.length !== NJ || m.z.length !== NJ) throw new Error('m10: ' + b.birth + ' lacks a step');
+      if (cw.layer !== b.layer || mw.layer !== b.layer) throw new Error('m10: ' + b.birth + ': the two neurons are not in the cluster’s layer');
+      if (c.r.length !== NJ || c.z.length !== NJ || m.r.length !== NJ || m.z.length !== NJ) throw new Error('m10: ' + b.birth + ' lacks an interval');
       const s = [];
       const med = [];
       for (let i = 0; i < NJ; i++) {
         const dz = c.z[i] - m.z[i];
-        if (!(Math.abs(dz) > 1e-3)) throw new Error('m10: ' + b.birth + ' step ' + (i + 1) + ': the two units have the same z; the layer’s spread cannot be found');
+        if (!(Math.abs(dz) > 1e-3)) throw new Error('m10: ' + b.birth + ' interval ' + (i + 1) + ': the two neurons have the same z; the layer’s spread cannot be found');
         const si = (Math.log(c.r[i]) - Math.log(m.r[i])) / dz;
         const lo = SP[i].one_z_in_log_r_min_over_layers;
         const hi = SP[i].one_z_in_log_r_max_over_layers;
         if (!(si >= lo * (1 - 1e-3) && si <= hi * (1 + 1e-3))) {
-          throw new Error('m10: ' + b.birth + ' step ' + (i + 1) + ': the spread found, ' + si + ', is outside the range over the 32 layers [' + lo + ', ' + hi + ']');
+          throw new Error('m10: ' + b.birth + ' interval ' + (i + 1) + ': the spread found, ' + si + ', is outside the range over the 32 layers [' + lo + ', ' + hi + ']');
         }
         s.push(si);
         med.push(Math.exp(Math.log(c.r[i]) - si * c.z[i]));
@@ -63,8 +63,8 @@
       const k = b.birth_snapshot;
       const win = b.rise_window_steps;
       const ref = b.reference_steps;
-      if (win.join() !== [k - 2, k - 1, k].join()) throw new Error('m10: ' + b.birth + ': the three steps are not k − 2, k − 1, k');
-      if (ref.join() !== Array.from({ length: k - 4 }, (_, i) => i + 2).join()) throw new Error('m10: ' + b.birth + ': the earlier steps are not 2 to k − 3');
+      if (win.join() !== [k - 2, k - 1, k].join()) throw new Error('m10: ' + b.birth + ': the three intervals are not k − 2, k − 1, k');
+      if (ref.join() !== Array.from({ length: k - 4 }, (_, i) => i + 2).join()) throw new Error('m10: ' + b.birth + ': the earlier intervals are not 2 to k − 3');
       const zw = win.map((j) => c.z[j - 1]);
       const zr = ref.map((j) => c.z[j - 1]);
       const e = mean(zw) - mean(zr);
@@ -84,10 +84,14 @@
     };
     const z3 = (v) => F.fixed(v, 3);
     const sumText = (vals) => vals.map((v, i) => (i === 0 ? z3(v) : (v < 0 ? ' ' + MINUS + ' ' : ' + ') + F.fixed(Math.abs(v), 3))).join('');
-    const sideText = (w) => 'layer ' + w.layer + ', unit ' + F.int(w.unit) + ', ' + w.side + ' side';
+    const sideText = (w) => 'L' + w.layer + '.N' + w.unit + (w.side === 'positive' ? '+' : '-') + ' (layer ' + w.layer + ', neuron ' + F.int(w.unit) + ', ' + w.side + ' pole)';
     const cap = (t) => t.charAt(0).toUpperCase() + t.slice(1);
-    const span = (list) => (list.length === 1 ? 'step ' + list[0] : 'steps ' + list[0] + ' to ' + list[list.length - 1]);
-    const roleOf = (j) => (X.win.includes(j) ? 'one of the three steps ending at the birth' : X.ref.includes(j) ? 'an earlier step' : 'not used (from the random start)');
+    // an interval j is the change from the checkpoint at steps[j - 1] to the checkpoint at steps[j]; it is named by its end
+    const ends = (list) => (list.length === 1 ? 'ending at step ' + F.int(steps[list[0]]) : 'ending at steps ' + list.map((j) => F.int(steps[j])).join(', '));
+    const span = (list) => (list.length === 1 ? 'ending at step ' + F.int(steps[list[0]]) : 'ending at steps ' + F.int(steps[list[0]]) + ' to ' + F.int(steps[list[list.length - 1]]));
+    const roleOf = (j) => (X.win.includes(j) ? 'one of the three intervals ending at the onset' : X.ref.includes(j) ? 'an earlier interval' : 'not used (it starts at the random initialization)');
+    // a compact training-step label for the axis: 0, 1k, ..., 560k, 1M, 1.41M
+    const stepLabel = (s) => (s === 0 ? '0' : s >= 1e6 ? Number((s / 1e6).toFixed(2)) + 'M' : Number((s / 1e3).toFixed(1)) + 'k');
 
     // ---------- the frame ----------
     root.replaceChildren();
@@ -95,12 +99,12 @@
     root.appendChild(wrap);
 
     const pickRow = el('div', 'control-row');
-    const pickLab = el('label', 'control-label', 'Carrier');
+    const pickLab = el('label', 'control-label', 'Neuron');
     pickLab.htmlFor = 'm10-pick';
     const pick = el('select', 'm10-select');
     pick.id = 'm10-pick';
     all.forEach((x, i) => {
-      const o = el('option', '', cap(sideText(x.cw)));
+      const o = el('option', '', 'Layer ' + x.cw.layer + ', neuron ' + F.int(x.cw.unit) + ', ' + x.cw.side + ' pole');
       o.value = String(i);
       pick.appendChild(o);
     });
@@ -112,14 +116,14 @@
 
     const key = (cls, text) => { const s = el('span'); s.append(el('i', 'm10-key ' + cls), text); return s; };
     const legend = el('p', 'm10-legend');
-    legend.append(key('carrier', 'the carrier'), key('median', 'the layer’s median'), key('spread', 'the layer’s median ± one spread'),
-      key('win', 'the three steps ending at the birth'), key('mean', 'mean z over a span of steps'));
+    legend.append(key('carrier', 'this neuron'), key('median', 'the layer’s median'), key('spread', 'the layer’s median ± one spread'),
+      key('win', 'the three intervals ending at the onset'), key('mean', 'mean z over a span of intervals'));
     wrap.appendChild(legend);
 
-    wrap.appendChild(el('h3', 'm10-h', 'r: the relative change of the gate row and up row (8,192 numbers) from snapshot j − 1 to snapshot j')); // vocab-ok
+    wrap.appendChild(el('h3', 'm10-h', 'r: the relative weight update of the neuron’s gate_proj row and up_proj row (8,192 numbers) from one checkpoint to the next'));
     const rBox = el('div', 'm10-chart');
     wrap.appendChild(rBox);
-    wrap.appendChild(el('h3', 'm10-h m10-h2', 'z: r against the layer at the same step, in units of the layer’s spread'));
+    wrap.appendChild(el('h3', 'm10-h m10-h2', 'z: r z-scored within the layer over the same interval, in units of the layer’s spread'));
     const zBox = el('div', 'm10-chart');
     wrap.appendChild(zBox);
     const scrubWrap = el('div', 'm10-scrubwrap');
@@ -128,9 +132,9 @@
     scrub.min = '1';
     scrub.max = String(NJ);
     scrub.step = '1';
-    scrub.setAttribute('aria-label', 'Snapshot j');
+    scrub.setAttribute('aria-label', 'Checkpoint');
     scrubWrap.appendChild(scrub);
-    const xName = el('p', 'm10-xname', 'snapshot j: drag, or tap a column');
+    const xName = el('p', 'm10-xname', 'training step of the checkpoint (k = thousand, M = million); each column is the change from the checkpoint before. Drag, or tap a column.');
     scrubWrap.appendChild(xName);
     wrap.appendChild(scrubWrap);
 
@@ -180,9 +184,11 @@
       svgEl(s, 'rect', { x: x0, y: top, width: 3 * g.colW, height: bottom - top, class: 'm10-win' });
     }
     function xTicks(s, g, y) {
+      // every checkpoint's step where the columns are wide enough; on a narrow screen every other one
       J.forEach((j) => {
+        if (g.colW < 32 && j % 2 === 0) return;
         const t = svgEl(s, 'text', { x: g.x(j), y, class: 'm10-tick', 'text-anchor': 'middle' });
-        t.textContent = String(j);
+        t.textContent = stepLabel(steps[j]);
       });
     }
     let curRects = [];
@@ -260,9 +266,9 @@
     function stepBox(j) {
       const i = j - 1;
       return {
-        title: 'Snapshot ' + j + ', step ' + F.int(steps[j]) + ' (the change from step ' + F.int(steps[j - 1]) + ')',
+        title: 'Checkpoint at step ' + F.int(steps[j]) + ' (the change from step ' + F.int(steps[j - 1]) + ')',
         rows: [['r', sig(X.c.r[i], 4), 'claim'], ['the layer’s median', sig(X.med[i], 4), 'control'], ['the layer’s spread s', sig(X.s[i], 3)],
-          ['z', z3(X.c.z[i]), 'claim'], ['for e', X.win.includes(j) ? 'the three steps' : X.ref.includes(j) ? 'an earlier step' : 'not used']],
+          ['z', z3(X.c.z[i]), 'claim'], ['used for e', X.win.includes(j) ? 'the three intervals' : X.ref.includes(j) ? 'an earlier interval' : 'not used']],
       };
     }
 
@@ -292,38 +298,39 @@
     // ---------- the text ----------
     function drawText() {
       who.replaceChildren();
-      who.append(el('b', '', cap(sideText(X.cw))), '. Its group “' + X.b.group_name + '” is born at snapshot ' + X.k +
-        ' (step ' + F.int(steps[X.k]) + '); the three steps ending at the birth are ' + X.win.join(', ') + '.');
+      who.append(el('b', '', cap(sideText(X.cw))), '. Its cluster “' + X.b.group_name + '”, a group of the pole’s top-50 activating tokens that an LLM named, ' +
+        'has its onset at the checkpoint at step ' + F.int(steps[X.k]) + ' (stage1-step' + steps[X.k] + '): the first checkpoint at which the pole’s median activation on the cluster’s tokens is in the pole’s own top 0.1 % and stays there. ' +
+        'The three intervals ending at the onset are those ' + ends(X.win) + '.');
 
       eBox.replaceChildren();
-      eBox.appendChild(el('p', 'm10-outhead', 'e for this carrier, from the z values above'));
+      eBox.appendChild(el('p', 'm10-outhead', 'e for this neuron, from the z values above'));
       const tab = el('table', 'm10-tab');
       const row = (a, b2) => { const r = el('tr'); r.append(el('th', '', a), el('td', 'm10-num', b2)); tab.appendChild(r); };
-      row('mean z over the three steps ending at the birth (' + X.win.join(', ') + ')', '(' + sumText(X.zw) + ') / 3 = ' + z3(X.meanWin));
-      row('mean z over the earlier ' + span(X.ref) + ' (' + X.ref.length + ' steps)', '(' + sumText(X.zr) + ') / ' + X.ref.length + ' = ' + z3(X.meanRef));
+      row('mean z over the three intervals ending at the onset (' + ends(X.win) + ')', '(' + sumText(X.zw) + ') / 3 = ' + z3(X.meanWin));
+      row('mean z over the ' + X.ref.length + ' earlier intervals (' + span(X.ref) + ')', '(' + sumText(X.zr) + ') / ' + X.ref.length + ' = ' + z3(X.meanRef));
       row('e = the first mean minus the second', z3(X.meanWin) + ' ' + MINUS + ' ' + (X.meanRef < 0 ? '(' + z3(X.meanRef) + ')' : z3(X.meanRef)) + ' = ' + z3(X.e));
-      row('e as the data holds it', z3(X.c.e.banked));
+      row('e in the data file', z3(X.c.e.banked));
       eBox.appendChild(tab);
-      eBox.appendChild(el('p', 'm10-note', 'Step 1, from the random start to step 1,000, is not used. Below zero, the carrier’s weights changed less in the three steps ' +
-        'ending at the birth, relative to its layer, than over its earlier steps.'));
+      eBox.appendChild(el('p', 'm10-note', 'The first interval, from the random initialization at step 0 to step 1,000, is not used. Below zero, the neuron’s weights changed less, relative to its layer, ' +
+        'in the three intervals ending at the onset than in the earlier intervals.'));
 
-      note.textContent = 'How the layer’s median and spread are found. The spread s is 1.4826 times the median absolute deviation of ln r over the ' +
-        'layer’s units at that step, and z = (ln r − ln m) / s, with m the layer’s median. The data holds each unit’s r and z but not m and s. For this birth it holds ' +
-        'two units of layer ' + X.b.layer + ': the carrier and its matched unit (' + sideText(X.mw) + '). At each step, m and s are the two numbers for which ' +
-        'both units’ z hold: s = (ln r₁ − ln r₂) / (z₁ − z₂) and m = r₁ · e^(−s · z₁). So the z computed on this page from m and s returns the z in the data. ' +
-        'Checked on every step of all ' + all.length + ' carriers: each s found this way lies inside the range from the smallest to the largest spread over the 32 layers, which the data carries separately.';
+      note.textContent = 'How we found the layer’s median and spread. The spread s is 1.4826 times the median absolute deviation of ln r over the ' +
+        'layer’s neurons over that interval, and z = (ln r − ln m) / s, with m the layer’s median. The data file holds each neuron’s r and z but not m and s. For this cluster it holds ' +
+        'two neurons of layer ' + X.b.layer + ': the cluster’s neuron and its matched neuron (neuron ' + F.int(X.mw.unit) + ' of the same layer). At each interval, m and s are the two numbers for which ' +
+        'both neurons’ z hold: s = (ln r₁ − ln r₂) / (z₁ − z₂) and m = r₁ · e^(−s · z₁). So the z this page computes from m and s returns the z in the data. ' +
+        'We checked every interval of all ' + all.length + ' neurons: each s found this way lies inside the range from the smallest to the largest spread over the 32 layers, which the data file holds separately.';
     }
 
     function update() {
       const j = Number(scrub.value);
       const i = j - 1;
-      scrub.setAttribute('aria-valuetext', 'snapshot ' + j + ', step ' + F.int(steps[j]) + ', z ' + z3(X.c.z[i]));
+      scrub.setAttribute('aria-valuetext', 'checkpoint at step ' + F.int(steps[j]) + ', z ' + z3(X.c.z[i]));
       mark();
       out.replaceChildren();
-      out.appendChild(el('p', 'm10-outhead', 'Snapshot ' + j + ', step ' + F.int(steps[j]) + ' (the change from step ' + F.int(steps[j - 1]) + ')'));
+      out.appendChild(el('p', 'm10-outhead', 'Checkpoint at step ' + F.int(steps[j]) + ' (stage1-step' + steps[j] + '): the change from step ' + F.int(steps[j - 1])));
       const tab = el('table', 'm10-tab');
       const row = (a, b2) => { const r = el('tr'); r.append(el('th', '', a), el('td', 'm10-num', b2)); tab.appendChild(r); };
-      row('r, the carrier', sig(X.c.r[i], 4));
+      row('r, this neuron', sig(X.c.r[i], 4));
       row('m, the layer’s median r', sig(X.med[i], 4));
       row('s, the layer’s spread of ln r', sig(X.s[i], 3));
       row('z = (ln r − ln m) / s', '(ln ' + sig(X.c.r[i], 4) + ' − ln ' + sig(X.med[i], 4) + ') / ' + sig(X.s[i], 3) + ' = ' + z3((Math.log(X.c.r[i]) - Math.log(X.med[i])) / X.s[i]));

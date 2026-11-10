@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Prediction against measurement</title>
+<title>Ablation in bfloat16 and float32</title>
 <!-- The fonts are optional: this stylesheet loads without blocking the page, and site.css falls back to system fonts. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
 <body>
 <main class="page">
   <header class="page-head">
-    <h1>The gradient prediction against the switch-off, in 16-bit and in 32-bit</h1>
+    <h1>Gradient × activation attribution against zero-ablation, measured in bfloat16 and in float32</h1>
     <nav aria-label="Site">
       <a href="../index.html">The walkthrough</a>
       <button class="button" type="button" data-theme-toggle>Dark theme</button>
@@ -22,7 +22,7 @@
   </header>
   <figure class="figure" data-source="data.js">
     <div id="f09"></div>
-    <figcaption class="figure-caption"><span data-f09-state="16">The <span data-nocheck>16-bit</span> prediction against the <span data-nocheck>16-bit</span> measurement of switching off: rank agreement 0.100 on the rule-setting half and 0.043 on the held-out half, against a bar of 0.7.</span><span data-f09-state="32" hidden>The same <span data-nocheck>16-bit</span> prediction against the <span data-nocheck>32-bit</span> measurement: rank agreement 0.960 on 284 held-out pairs, band 0.915 to 0.990, against a shuffle reference of 0.118.</span> <a class="data-link">data</a></figcaption>
+    <figcaption class="figure-caption"><span data-f09-state="16">Measured in bfloat16, the loss change of a zero-ablation does not follow gradient × activation attribution: Spearman correlation 0.100 on the development split and 0.043 on the held-out split, against a threshold of 0.7.</span><span data-f09-state="32" hidden>Measured in float32, the loss change of a zero-ablation follows the same bfloat16 attribution: Spearman correlation 0.960 on 284 held-out ablations, bootstrap confidence interval 0.915 to 0.990, against a permutation baseline of 0.118.</span> <a class="data-link">data</a></figcaption>
   </figure>
 </main>
 <script src="../site.js"></script>

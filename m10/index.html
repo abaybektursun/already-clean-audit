@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The weight-change statistic</title>
+<title>Relative weight update</title>
 <!-- The fonts are optional: this stylesheet loads without blocking the page, and site.css falls back to system fonts. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
 <body>
 <main class="page">
   <header class="page-head">
-    <h1>The weight-change statistic on one carrier</h1>
+    <h1>The relative weight update of one cluster's neuron</h1>
     <nav aria-label="Site">
       <a href="../index.html">The walkthrough</a>
       <button class="button" type="button" data-theme-toggle>Dark theme</button>
@@ -22,7 +22,7 @@
   </header>
   <figure class="figure" data-source="data.js">
     <div id="m10"></div>
-    <figcaption class="figure-caption">The weight-change statistic for one carrier: r = ‖M(j) − M(j − 1)‖ / ‖M(j − 1)‖ for its gate and up rows at each snapshot j, against the layer’s spread; z is r standardized within the layer; e is the mean z over the three steps ending at the birth minus the mean z over the earlier steps. <a class="data-link">data</a><!-- vocab-ok --></figcaption>
+    <figcaption class="figure-caption">For the neuron of a late-onset cluster's pole we compute the relative weight update r = ‖W(j) − W(j − 1)‖ / ‖W(j − 1)‖ of its <code>gate_proj</code> and <code>up_proj</code> rows between consecutive checkpoints, plot it against its layer's median and spread, z-score it within the layer, and take e, the mean z over the three intervals ending at the cluster's onset minus the mean z over the earlier intervals. <a class="data-link">data</a></figcaption>
   </figure>
 </main>
 <script src="../site.js"></script>

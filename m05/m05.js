@@ -1,7 +1,7 @@
-// m05: the birth rule on one unit. Registers the mount "m05" with site.js; reads window.M05_DATA (m05/data.js).
-// One group's median own-direction activation against its side's own 99.9th percentile at each of the sixteen
-// snapshots, with one drag over the snapshots that applies the rule (present at t and at t + 1) and the crossing
-// marked; below, the ratio of the median to the percentile one snapshot before the birth for all 153 births.
+// m05: the onset rule on one cluster. Registers the mount "m05" with site.js; reads window.M05_DATA (m05/data.js).
+// One cluster's median activation in its pole's direction against the pole's own 99.9th percentile at each of the
+// sixteen checkpoints, with one drag over the checkpoints that applies the rule (at or above at t and at t + 1) and the
+// onset marked; below, the ratio of the median to the percentile at the checkpoint before the onset for all 153 onsets.
 (() => {
   'use strict';
 
@@ -22,9 +22,10 @@
   const sideOf = (id) => {
     const m = /^L(\d+)N(\d+)([+-])(?::c(\d+))?$/.exec(id);
     if (!m) throw new Error('m05: cannot read the id ' + id);
-    return { layer: Number(m[1]), unit: Number(m[2]), side: m[3] === '+' ? 'positive' : 'negative', group: m[4] === undefined ? null : Number(m[4]) };
+    return { layer: Number(m[1]), unit: Number(m[2]), side: m[3] === '+' ? 'positive' : 'negative', group: m[4] === undefined ? null : Number(m[4]),
+      name: 'L' + Number(m[1]) + '.N' + Number(m[2]) + m[3] };
   };
-  // The rule: born at the first t that is present at t and at t + 1; present at the final snapshot alone counts there.
+  // The rule: the onset is the first t that is present at t and at t + 1; present at the last checkpoint alone counts there.
   const birthOf = (present) => present.findIndex((p, t) => p && (t === present.length - 1 || present[t + 1]));
 
   function mount(root, D) {
@@ -36,12 +37,13 @@
     const med = E.median_by_snapshot;
     const thr = E.threshold_by_snapshot;
     const present = E.present_by_snapshot;
-    if (NS16 !== 16 || med.length !== NS16 || thr.length !== NS16 || present.length !== NS16) throw new Error('m05: expected sixteen snapshots');
+    if (NS16 !== 16 || med.length !== NS16 || thr.length !== NS16 || present.length !== NS16) throw new Error('m05: expected sixteen checkpoints');
     present.forEach((p, t) => {
-      if (p !== (med[t] > 0 && med[t] >= thr[t])) throw new Error('m05: present at snapshot ' + t + ' does not follow from the median and the percentile');
+      if (p !== (med[t] > 0 && med[t] >= thr[t])) throw new Error('m05: present at checkpoint ' + t + ' does not follow from the median and the percentile');
     });
     const birth = birthOf(present);
-    if (birth !== E.birth_snapshot.banked || birth !== E.birth_snapshot.recomputed) throw new Error('m05: the rule gives snapshot ' + birth + ', the data ' + E.birth_snapshot.banked);
+    if (birth !== E.birth_snapshot.banked || birth !== E.birth_snapshot.recomputed) throw new Error('m05: the rule gives checkpoint ' + birth + ', the data ' + E.birth_snapshot.banked);
+    const stepText = (t) => 'step ' + F.int(steps[t]);
     const who = sideOf(E.id);
 
     root.replaceChildren();
@@ -51,15 +53,16 @@
     // ---------- the rule on one group ----------
     const one = el('section', 'm05-one');
     wrap.appendChild(one);
-    one.appendChild(el('h3', 'm05-h', 'Layer ' + who.layer + ', unit ' + F.int(who.unit) + ', ' + E.side + ' side, group ' + E.group));
-    one.appendChild(el('p', 'm05-note', 'The group is ' + E.group_size + ' of the side’s fifty contexts (ranks ' + E.ranks_in_fifty.join(', ') +
-      '), named “' + E.group_name + '”. Its positions are fixed at the final snapshot. At each snapshot t the activation is read at each ' +
-      'position in the side’s own direction (0 where it has the other sign), and the median of the ' + E.group_size +
-      ' values is compared with the side’s own 99.9th percentile at t.'));
+    one.appendChild(el('h3', 'm05-h', who.name + ' (neuron ' + F.int(who.unit) + ' of layer ' + who.layer + ', ' + E.side + ' pole), cluster ' + E.group));
+    one.appendChild(el('p', 'm05-note', 'The cluster is ' + E.group_size + ' of the pole’s top-50 activating tokens (ranks ' + E.ranks_in_fifty.join(', ') +
+      '), which the clustering LLM put together and named “' + E.group_name + '”. Its tokens are fixed corpus tokens, taken at the last ' +
+      'checkpoint. At each checkpoint t we recomputed the activation at each of the ' + E.group_size + ' tokens in the pole’s direction ' +
+      '(0 where it has the other sign) and compared the median of the ' + E.group_size + ' values with the pole’s own 99.9th percentile at t. ' +
+      'The onset is the first checkpoint at which the median is at or above the percentile, and still is at the next checkpoint.'));
 
     const legend = el('p', 'm05-legend');
     const key = (cls, text) => { const s = el('span'); s.append(el('i', 'm05-key ' + cls), text); return s; };
-    legend.append(key('med', 'median over the group’s positions'), key('thr', 'the side’s own 99.9th percentile'), key('birth', 'birth'),
+    legend.append(key('med', 'median over the cluster’s tokens'), key('thr', 'the pole’s own 99.9th percentile'), key('birth', 'onset'),
       key('on', 'median ≥ percentile'), key('off', 'median below it'));
     one.appendChild(legend);
 
@@ -84,7 +87,7 @@
     const band = put(el('div', 'm05-cursor'), 0, 0);
     band.style.width = 100 / NS16 + '%';
     svgEl(svg, 'line', { x1: x(birth), x2: x(birth), y1: 0, y2: 100, class: 'm05-birthline' });
-    put(el('span', 'm05-birthlab', 'born at ' + birth), x(birth), 0);
+    put(el('span', 'm05-birthlab', 'onset'), x(birth), 0);
     const path = (vals, cls) => {
       let d = '';
       vals.forEach((v, t) => {
@@ -101,42 +104,47 @@
     const low = med.reduce((b, v, t) => (v > 0 && t > 0 && (b < 0 || v < med[b]) ? t : b), -1);
     put(el('span', 'm05-direct med', 'median'), x(low), y(med[low])).classList.add('below');
 
-    // the sixteen present cells and the snapshot numbers, under the plot
+    // the sixteen present cells and the checkpoints' training steps, under the plot
     const pres = el('div', 'm05-present');
     pres.setAttribute('aria-hidden', 'true');
-    const cells = present.map((p, t) => { const c = el('i', 'm05-cell' + (p ? ' on' : '') + (t === birth ? ' birth' : '')); pres.appendChild(c); return c; });
+    const cells = present.map((p, t) => {
+      const c = el('i', 'm05-cell' + (p ? ' on' : ''));
+      c.classList.toggle('birth', t === birth); // the onset's cell
+      pres.appendChild(c);
+      return c;
+    });
     const presRow = el('div', 'm05-row-lab');
     presRow.appendChild(pres);
     chart.appendChild(presRow);
     const xl = el('div', 'm05-xlab');
     xl.setAttribute('aria-hidden', 'true');
-    steps.forEach((s, t) => xl.appendChild(el('span', '', String(t))));
+    steps.forEach((s) => xl.appendChild(el('span', '', F.int(s))));
     const xRow = el('div', 'm05-row-lab');
-    xRow.append(xl, el('span', 'm05-xname', 'snapshot'));
+    xRow.append(xl, el('span', 'm05-xname', 'training step of the checkpoint (the sixteen in order, not to scale)'));
     chart.appendChild(xRow);
 
     const scrubWrap = el('div', 'm05-scrubwrap');
     const scrub = el('input', 'scrub');
     scrub.type = 'range'; scrub.min = '0'; scrub.max = String(LAST); scrub.step = '1'; scrub.value = String(birth);
-    scrub.setAttribute('aria-label', 'Snapshot');
+    scrub.setAttribute('aria-label', 'Checkpoint');
     scrubWrap.appendChild(scrub);
     chart.appendChild(scrubWrap);
 
-    // hover columns: one per snapshot; a tap or click also moves the drag there
+    // hover columns: one per checkpoint; a tap or click also moves the drag there
     const colBox = (t) => ({
-      title: 'Snapshot ' + t + ', step ' + F.int(steps[t]),
+      title: 'Checkpoint at step ' + F.int(steps[t]) + ' (stage1-step' + steps[t] + ')',
       rows: [['median', F.fixed(med[t], 4), 'ink'], ['99.9th percentile', F.fixed(thr[t], 4), 'control'], ['median ≥ percentile', present[t] ? 'yes' : 'no']],
     });
     steps.forEach((s, t) => {
       const c = put(el('div', 'm05-col'), x(t), 0);
       c.style.width = 100 / NS16 + '%';
-      c.setAttribute('aria-label', 'Snapshot ' + t);
+      c.setAttribute('aria-label', 'Checkpoint at ' + stepText(t));
       c.tabIndex = -1; // the drag is the keyboard control; the columns serve the pointer
       WALK.hover(c, () => colBox(t));
       c.addEventListener('click', () => { scrub.value = String(t); update(); });
     });
 
-    // the rule applied at the chosen snapshot
+    // the rule applied at the chosen checkpoint
     const out = el('div', 'm05-out');
     out.setAttribute('aria-live', 'polite');
     one.appendChild(out);
@@ -156,33 +164,35 @@
       return v;
     });
     const others = E.other_groups_of_side.filter((g) => g.c !== E.group).map((g) => g.birth);
-    one.appendChild(el('p', 'm05-note', 'A second reading, the median against a fixed share of the side’s largest |a| at t, dates this group to snapshot ' +
-      E.birth_by_raw_ratio_reading + '. A birth is counted as late only when both readings date it after the side’s first-born group (snapshot ' +
-      Math.min(...others) + '); here both do.'));
+    one.appendChild(el('p', 'm05-note', 'A second reading compares the median with a fixed share of the pole’s largest |a| at t; it puts this ' +
+      'cluster’s onset at ' + stepText(E.birth_by_raw_ratio_reading) + '. We count an onset as late only when both readings put it after the onset of ' +
+      'the pole’s earliest cluster (' + stepText(Math.min(...others)) + '); here both do.'));
     if (!E.late_by_both_readings) throw new Error('m05: the example is not late by both readings');
 
     function update() {
       const t = Number(scrub.value);
       band.style.left = (t / NS16) * 100 + '%';
       cells.forEach((c, i) => c.classList.toggle('pair', i === t || i === t + 1));
-      scrub.setAttribute('aria-valuetext', 'snapshot ' + t + ', step ' + F.int(steps[t]));
+      scrub.setAttribute('aria-valuetext', 'checkpoint at ' + stepText(t));
       out.replaceChildren();
-      out.appendChild(el('p', 'm05-outhead', 'Snapshot ' + t + ', step ' + F.int(steps[t])));
+      out.appendChild(el('p', 'm05-outhead', 'Checkpoint at ' + stepText(t) + ' (stage1-step' + steps[t] + ')'));
       const tab = el('table', 'm05-tab');
       const tr = (cellsText, th) => { const r = el('tr'); cellsText.forEach((c, i) => r.appendChild(el(i === 0 || th ? 'th' : 'td', i ? 'num' : '', c))); tab.appendChild(r); };
       const has1 = t < LAST;
-      tr(['', 'at t = ' + t, has1 ? 'at t + 1 = ' + (t + 1) : 'at t + 1'], true);
-      tr(['median', F.fixed(med[t], 4), has1 ? F.fixed(med[t + 1], 4) : 'no snapshot']);
-      tr(['99.9th percentile', F.fixed(thr[t], 4), has1 ? F.fixed(thr[t + 1], 4) : 'no snapshot']);
+      tr(['', 'at ' + stepText(t), has1 ? 'next: ' + stepText(t + 1) : 'next'], true);
+      tr(['median', F.fixed(med[t], 4), has1 ? F.fixed(med[t + 1], 4) : 'no next checkpoint']);
+      tr(['99.9th percentile', F.fixed(thr[t], 4), has1 ? F.fixed(thr[t + 1], 4) : 'no next checkpoint']);
       tr(['median ≥ percentile', present[t] ? 'yes' : 'no', has1 ? (present[t + 1] ? 'yes' : 'no') : '']);
       out.appendChild(tab);
       let verdict;
-      if (t === birth) verdict = 'Present at t' + (has1 ? ' and at t + 1' : ', the final snapshot') + ', and the first snapshot where that holds: the group is born at snapshot ' + t + ', step ' + F.int(steps[t]) + '.';
-      else if (t > birth) verdict = (present[t] ? 'Present at t. ' : 'Not present at t. ') + 'The group was already born, at snapshot ' + birth + '.';
-      else if (!present[t]) verdict = 'The median is below the percentile: not present at t, so not born at t.';
-      else verdict = 'Present at t but not at t + 1: not born at t.';
+      if (t === birth) verdict = 'The median is at or above the percentile here' + (has1 ? ' and at the next checkpoint' : ', the last checkpoint') +
+        ', for the first time: the cluster’s onset is at ' + stepText(t) + '.';
+      else if (t > birth) verdict = (present[t] ? 'The median is at or above the percentile here. ' : 'The median is below the percentile here. ') +
+        'The onset came earlier, at ' + stepText(birth) + '.';
+      else if (!present[t]) verdict = 'The median is below the percentile, so the onset is not here.';
+      else verdict = 'The median is at or above the percentile here but not at the next checkpoint, so the onset is not here.';
       out.appendChild(el('p', 'm05-verdict', verdict));
-      posHead.textContent = 'The ' + E.group_size + ' positions at snapshot ' + t + ' (rank in the fifty, text before, token, activation in the side’s own direction); the median of ' +
+      posHead.textContent = 'The ' + E.group_size + ' tokens at ' + stepText(t) + ' (rank in the top-50, text before, token, activation in the pole’s direction); the median of ' +
         E.group_size + ' values is the mean of the middle two.';
       E.activation_own_direction_by_snapshot[t].forEach((v, j) => { prow[j].textContent = F.fixed(v, 4); });
     }
@@ -192,16 +202,16 @@
     // ---------- all 153 births ----------
     const G = D.gradual;
     const P = G.per_birth;
-    if (P.length !== G.births) throw new Error('m05: ' + P.length + ' births, the data says ' + G.births);
+    if (P.length !== G.births) throw new Error('m05: ' + P.length + ' onsets, the data says ' + G.births);
     const pre = P.map((b) => {
-      if (b.ratio_by_snapshot.length !== NS16) throw new Error('m05: ' + b.birth + ' lacks a snapshot');
-      if (b.birth_snapshot < 3) throw new Error('m05: ' + b.birth + ' is born before snapshot 3');
+      if (b.ratio_by_snapshot.length !== NS16) throw new Error('m05: ' + b.birth + ' lacks a checkpoint');
+      if (b.birth_snapshot < 3) throw new Error('m05: ' + b.birth + ' has its onset before the fourth checkpoint');
       const r = b.ratio_by_snapshot[b.birth_snapshot - 1];
-      if (!(r >= 0 && r < 1)) throw new Error('m05: ' + b.birth + ' is at or above the threshold one snapshot before its birth');
+      if (!(r >= 0 && r < 1)) throw new Error('m05: ' + b.birth + ' is at or above the threshold at the checkpoint before its onset');
       return r;
     });
     const less = P.filter((b) => !b.dated_step_holds_more_rise).length;
-    if (less !== G.dated_step_holds_less_rise_than_two_before.banked) throw new Error('m05: ' + less + ' births hold less of the rise, the data says ' + G.dated_step_holds_less_rise_than_two_before.banked);
+    if (less !== G.dated_step_holds_less_rise_than_two_before.banked) throw new Error('m05: ' + less + ' onsets with the smaller rise, the data says ' + G.dated_step_holds_less_rise_than_two_before.banked);
     const sorted = pre.slice().sort((a, b) => a - b);
     const mid = (sorted[(sorted.length - 1) >> 1] + sorted[sorted.length >> 1]) / 2;
     const MEDIAN = G.median_ratio_one_snapshot_before.recomputed;
@@ -209,17 +219,19 @@
 
     const all = el('section', 'm05-all');
     wrap.appendChild(all);
-    all.appendChild(el('h3', 'm05-h', 'All ' + G.births + ' births that beat chance, one snapshot before the birth'));
+    all.appendChild(el('h3', 'm05-h', 'All ' + G.births + ' onsets with p ≤ 0.05, at the checkpoint before the onset'));
+    all.appendChild(el('p', 'm05-note', 'These are the ' + G.births + ' clusters whose onset has an empirical p-value of at most 0.05 against random ' +
+      'clusters of the same size (the next picture shows the test). For each, the ratio is the cluster’s median divided by the pole’s 99.9th percentile.'));
     const facts = el('div', 'm05-facts');
     const fact = (big, text) => { const f = el('p', 'm05-fact'); f.append(el('b', '', big), el('span', '', text)); facts.appendChild(f); };
-    fact(F.fixed(MEDIAN, 3), 'the median ratio of the group’s median to the side’s 99.9th percentile one snapshot before the birth');
-    fact(less + ' of ' + G.births, 'births in which the step into the birth snapshot holds less of the rise (on a log scale) than the two steps before it');
+    fact(F.fixed(MEDIAN, 3), 'the median ratio at the checkpoint before the onset');
+    fact(less + ' of ' + G.births, 'onsets whose ratio rose less (log scale) in the interval into the onset than over the two intervals before it');
     all.appendChild(facts);
-    all.appendChild(el('p', 'm05-note', 'Each dot is one birth, placed by that ratio; the ratio reaches 1 when the median equals the percentile. ' +
-      'By the rule, a group is below 1 one snapshot before its birth. Medians by half: ' + F.fixed(G.median_ratio_one_snapshot_before_by_half.rule_setting, 4) +
-      ' in the half used to set the rules, ' + F.fixed(G.median_ratio_one_snapshot_before_by_half.held_out, 4) + ' in the held-out half.'));
+    all.appendChild(el('p', 'm05-note', 'Each dot is one onset, placed by that ratio; the ratio reaches 1 when the median equals the percentile. ' +
+      'By the rule, a cluster is below 1 at the checkpoint before its onset. Median ratio by split: ' + F.fixed(G.median_ratio_one_snapshot_before_by_half.rule_setting, 4) +
+      ' in the development split (neurons with an even index), ' + F.fixed(G.median_ratio_one_snapshot_before_by_half.held_out, 4) + ' in the held-out split (odd index).'));
     const leg2 = el('p', 'm05-legend');
-    leg2.append(key('fill', 'the birth step holds less of the rise (' + less + ')'), key('ring', 'it holds more (' + (G.births - less) + ')'));
+    leg2.append(key('fill', 'smaller rise into the onset (' + less + ')'), key('ring', 'larger rise into the onset (' + (G.births - less) + ')'));
     all.appendChild(leg2);
 
     const BIN = 0.05;
@@ -230,7 +242,7 @@
     const dp = el('div', 'm05-dots');
     dp.tabIndex = 0;
     dp.setAttribute('role', 'group');
-    dp.setAttribute('aria-label', G.births + ' births by ratio one snapshot before the birth; arrow keys move between births');
+    dp.setAttribute('aria-label', G.births + ' onsets by their ratio at the checkpoint before the onset; arrow keys move between onsets');
     all.appendChild(dp);
     const dplot = el('div', 'm05-dplot');
     dp.appendChild(dplot);
@@ -267,12 +279,12 @@
       const w = sideOf(b.birth);
       const k = b.birth_snapshot;
       return {
-        title: 'Layer ' + w.layer + ', unit ' + F.int(w.unit) + ', ' + w.side + ' side, group ' + w.group,
-        rows: [['born at', 'snapshot ' + k + ', step ' + F.int(steps[k])],
-          ['ratio at snapshot ' + (k - 1), F.fixed(b.ratio_by_snapshot[k - 1], 5), 'ink'],
-          ['ratio at snapshot ' + k, F.fixed(b.ratio_by_snapshot[k], 5)],
-          ['the birth step holds', b.dated_step_holds_more_rise ? 'more of the rise' : 'less of the rise'],
-          ['half', b.half === 'rule_setting' ? 'used to set the rules' : 'held out']],
+        title: w.name + ', cluster ' + w.group,
+        rows: [['onset at', stepText(k)],
+          ['ratio at ' + stepText(k - 1), F.fixed(b.ratio_by_snapshot[k - 1], 5), 'ink'],
+          ['ratio at ' + stepText(k), F.fixed(b.ratio_by_snapshot[k], 5)],
+          ['rise into the onset', b.dated_step_holds_more_rise ? 'larger than over the two intervals before' : 'smaller than over the two intervals before'],
+          ['split', b.half === 'rule_setting' ? 'development' : 'held-out']],
       };
     };
     let focusAt = -1;

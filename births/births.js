@@ -10,8 +10,8 @@
   const D = window.BIRTHS_DATA;
   if (!D) {
     root.innerHTML = '<p class="nb-missing">data.js did not load. Run <code>python3 extract.py</code> in the folder ' +
-      'births to write it, then reload the page.</p>';
-    throw new Error('data.js did not load: run python3 extract.py in births');
+      '<code>births</code> to write it, then reload the page.</p>';
+    throw new Error('data.js did not load: run python3 extract.py in this picture’s folder');
   }
 
   root.innerHTML = `
@@ -23,7 +23,7 @@
   <p class="nb-who" id="nb-who"></p>
   <div class="nb-readout" aria-live="polite">
     <div>
-      <div class="nb-count"><b id="nb-k"></b> of <span id="nb-m"></span> groups born</div>
+      <div class="nb-count"><b id="nb-k"></b> of <span id="nb-m"></span> groups past their onset</div>
       <p class="nb-note" id="nb-note"></p>
     </div>
     <div>
@@ -33,12 +33,12 @@
       <div class="nb-label" id="nb-pct" style="margin-top:4px"></div>
     </div>
   </div>
-  <div class="nb-chart" role="group" aria-label="The neuron's groups at all 16 training points">
+  <div class="nb-chart" role="group" aria-label="The neuron's groups at all 16 checkpoints">
     <div class="nb-head">
-      <h3>The neuron’s groups, in the order they were born</h3>
+      <h3>The neuron’s groups, in the order of their onsets</h3>
       <div class="nb-legend">
-        <span><i class="nb-key is-on"></i>present, from its birth on</span>
-        <span><i class="nb-key is-pre"></i>present, but not at the next point</span>
+        <span><i class="nb-key is-on"></i>present, from its onset on</span>
+        <span><i class="nb-key is-pre"></i>present, but not at the next checkpoint</span>
         <span><i class="nb-key is-off"></i>not present</span>
         <span><i class="nb-key is-chance"></i>chance level: random groups of the same size</span>
       </div>
@@ -48,7 +48,7 @@
       <div id="nb-rows"></div>
       <div class="nb-line nb-axis">
         <span class="nb-axisname">Training step</span>
-        <div class="nb-plot nb-track" id="nb-track" role="slider" tabindex="0" aria-label="Training point"
+        <div class="nb-plot nb-track" id="nb-track" role="slider" tabindex="0" aria-label="Checkpoint"
              aria-valuemin="0" aria-valuemax="15">
           <div class="nb-rail"></div>
           <div class="nb-thumb" id="nb-thumb"></div>
@@ -90,11 +90,11 @@
   };
   const show = (s) => s.replace(/\n/g, '↵').replace(/\t/g, '⇥');
   const one = (x) => (Math.round(x * 10) / 10).toLocaleString('en-US', { minimumFractionDigits: 1 });
-  // a chance level is a training point, or half-way between two when the random groups' median falls there
+  // a chance level is a checkpoint, or half-way between two when the random groups' median falls there
   const pointText = (t) => (Number.isInteger(t) ? 'step ' + int(D.steps[t].step)
     : 'between steps ' + int(D.steps[Math.floor(t)].step) + ' and ' + int(D.steps[Math.ceil(t)].step));
   const VS = {
-    later: 'born later than chance', earlier: 'born earlier than chance', chance: 'born at chance',
+    later: 'onset later than chance', earlier: 'onset earlier than chance', chance: 'onset at chance',
   };
   const describe = (p) => {
     const m = /^L(\d+)N(\d+)([+-])$/.exec(p);
@@ -166,7 +166,7 @@
     $('bars').appendChild(col);
     return b;
   });
-  $('stripname').textContent = 'All ' + int(pop.n_groups) + ' groups of the ' + int(pop.n_neurons) + ' neurons, born at each point';
+  $('stripname').textContent = 'All ' + int(pop.n_groups) + ' groups of the ' + int(pop.n_neurons) + ' neurons, by the checkpoint of their onset';
 
   // ---------- state ----------
   let N = D.neurons[0];
@@ -256,7 +256,7 @@
     const k = { later: 0, earlier: 0, chance: 0 };
     N.g.forEach((g) => { k[g.vs] += 1; });
     return ' Against random groups of the same size from this neuron, ' + k.later +
-      (k.later === 1 ? ' group is' : ' groups are') + ' born later than chance, ' + k.earlier + ' earlier and ' +
+      (k.later === 1 ? ' group has its' : ' groups have their') + ' onset later than chance, ' + k.earlier + ' earlier and ' +
       k.chance + ' at chance.';
   }
 
@@ -275,7 +275,7 @@
     const table = $('table');
     table.textContent = '';
     const head = table.insertRow();
-    ['Group', 'Contexts', 'Born at step', 'Chance level', 'Against chance', 'Present at steps',
+    ['Group', 'Contexts', 'Onset at step', 'Chance level', 'Against chance', 'Present at steps',
       'Its strongest context at the end'].forEach((h) => {
       const th = document.createElement('th');
       th.textContent = h;
@@ -287,7 +287,7 @@
       const n = tr.insertCell(); n.className = 'nb-num'; n.textContent = String(g.size);
       const b = tr.insertCell(); b.className = 'nb-num'; b.textContent = int(D.steps[g.birth].step);
       tr.insertCell().textContent = g.chance === null ? 'none (one group)' : pointText(g.chance);
-      tr.insertCell().textContent = g.chance === null ? '' : VS[g.vs].replace('born ', '');
+      tr.insertCell().textContent = g.chance === null ? '' : VS[g.vs].replace('onset ', '');
       tr.insertCell().textContent = rangesText(g);
       const c = tr.insertCell();
       c.className = 'nb-ctxcell';
@@ -305,9 +305,9 @@
     const absent = born.filter((g) => !g.pres[cur]).length;
     $('k').textContent = String(born.length);
     $('note').textContent = born.length === 0
-      ? 'No group of this neuron is born yet.'
+      ? 'No group of this neuron has had its onset yet.'
       : 'by step ' + int(st.step) + '.' +
-        (absent ? ' ' + absent + ' of them ' + (absent === 1 ? 'is' : 'are') + ' not present at this point.' : '');
+        (absent ? ' ' + absent + ' of them ' + (absent === 1 ? 'is' : 'are') + ' not present at this checkpoint.' : '');
     $('step').textContent = int(st.step);
     $('pct').textContent = fmtPct(st.pct) + '% of training';
     $('pctfill').style.width = st.pct + '%';
@@ -323,12 +323,12 @@
     const k = document.createElement('b');
     k.textContent = int(popCum[cur]);
     pp.append('All ' + int(pop.n_neurons) + ' neurons: ', k, ' of ' + int(pop.n_groups) + ' groups (' +
-      fmtPct((100 * popCum[cur]) / pop.n_groups) + '%) born by step ' + int(st.step) + ', ' + int(pop.births[cur]) +
-      ' of them at this point.');
+      fmtPct((100 * popCum[cur]) / pop.n_groups) + '%) with their onset by step ' + int(st.step) + ', ' + int(pop.births[cur]) +
+      ' of them at this checkpoint.');
     paintRows(stagger);
     track.setAttribute('aria-valuenow', String(cur));
     track.setAttribute('aria-valuetext', 'step ' + int(st.step) + ', ' + fmtPct(st.pct) + '% of training, ' +
-      born.length + ' of ' + N.g.length + ' groups born');
+      born.length + ' of ' + N.g.length + ' groups past their onset');
   }
 
   function setStep(s, stagger) {
@@ -457,10 +457,10 @@
     const st = D.steps[s];
     tip.textContent = '';
     const b = document.createElement('b');
-    b.textContent = int(pop.births[s]) + (pop.births[s] === 1 ? ' group' : ' groups') + ' born at this point';
+    b.textContent = int(pop.births[s]) + (pop.births[s] === 1 ? ' group' : ' groups') + ' with their onset at this checkpoint';
     tip.append(b, '\nStep ' + int(st.step) + ' (' + fmtPct(st.pct) + '% of training), all ' + int(pop.n_neurons) +
-      ' neurons\n' + int(popCum[s]) + ' of ' + int(pop.n_groups) + ' born by then\nChance level: ' + one(pop.chance[s]) +
-      ' random groups of the same sizes born here, the mean of ' + pop.chance_draws + ' draws');
+      ' neurons\n' + int(popCum[s]) + ' of ' + int(pop.n_groups) + ' with their onset by then\nChance level: ' + one(pop.chance[s]) +
+      ' random groups of the same sizes with their onset here, the mean of ' + pop.chance_draws + ' draws');
     placeTip(col);
   }
 
@@ -470,7 +470,7 @@
     tip.textContent = '';
     const b = document.createElement('b');
     b.textContent = g.name;
-    const state = !g.pres[s] ? 'not present' : s >= g.birth ? 'present' : 'present, but not at the next point';
+    const state = !g.pres[s] ? 'not present' : s >= g.birth ? 'present' : 'present, but not at the next checkpoint';
     const ctx = document.createElement('span');
     ctx.className = 'nb-ctx';
     const mark = document.createElement('span');
@@ -478,9 +478,9 @@
     mark.textContent = show(g.ex[1]);
     ctx.append('…' + show(g.ex[0]).slice(-34), mark, show(g.ex[2]).slice(0, 14) + '…');
     tip.append(b, '\nStep ' + int(st.step) + ' (' + fmtPct(st.pct) + '% of training): ' + state +
-      '\nBorn at step ' + int(D.steps[g.birth].step) + '; ' + g.size + (g.size === 1 ? ' context' : ' contexts') +
+      '\nOnset at step ' + int(D.steps[g.birth].step) + '; ' + g.size + (g.size === 1 ? ' context' : ' contexts') +
       (g.chance === null ? '\nNo chance level: the neuron has one group'
-        : '\nChance level: ' + pointText(g.chance) + ', the median birth of random groups of its size; ' + VS[g.vs]) +
+        : '\nChance level: ' + pointText(g.chance) + ', the median onset of random groups of its size; ' + VS[g.vs]) +
       '\nIts strongest context at the end:', ctx);
     placeTip(cell);
   }
@@ -517,14 +517,14 @@
     for (let s = 1; s < NS; s++) if (D.steps[s].pct - D.steps[s - 1].pct > gap) { gap = D.steps[s].pct - D.steps[s - 1].pct; gi = s; }
     $('caption').textContent =
       'Rows exist only for groups among the neuron’s 50 strongest contexts at the end of training, so a group that ' +
-      'appeared and faded before the end has no row. The ' + NS + ' points are drawn evenly, but ' + early + ' fall in ' +
+      'appeared and faded before the end has no row. The ' + NS + ' checkpoints are drawn evenly, but ' + early + ' fall in ' +
       'the first 1% of training and none between ' + fmtPct(D.steps[gi - 1].pct) + '% and ' + fmtPct(D.steps[gi].pct) +
-      '%, so a birth, which is only the crossing of the neuron’s top-0.1% line, is dated only to the stretch since the point before. ' +
-      'Ticks mark the chance level. On each row the tick is the median birth point of ' + int(C.reps) + ' random groups ' +
+      '%, so an onset, which is only the crossing of the neuron’s top-0.1% line, is dated only to the stretch since the checkpoint before. ' +
+      'Ticks mark the chance level. On each row the tick is the median onset checkpoint of ' + int(C.reps) + ' random groups ' +
       'of the same size drawn from the same neuron’s 50 strongest contexts and dated by the same rule (for the strongest ' +
       'group, random groups that hold the neuron’s top context); on each bar it is the mean count of ' + pop.chance_draws +
       ' random groupings of all ' + int(pop.n_neurons) + ' neurons. Of the ' + int(C.n_groups) + ' groups on neurons with ' +
-      'two or more groups, ' + C.later + ' are born later than ' + Math.round(100 * (1 - C.alpha)) + '% of their random ' +
+      'two or more groups, ' + C.later + ' have their onset later than ' + Math.round(100 * (1 - C.alpha)) + '% of their random ' +
       'groups and ' + C.earlier + ' earlier, where chance gives ' + one(C.later_expected) + ' and ' + one(C.earlier_expected) +
       '; the other ' + int(C.n_groups - C.later - C.earlier) + ' fall within the range of their random groups.';
   }

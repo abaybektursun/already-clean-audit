@@ -45,7 +45,9 @@
 #m05 .m05-cell.on { background: var(--ink); box-shadow: none; }
 #m05 .m05-cell.birth { outline: 2px solid var(--claim); outline-offset: 2px; }
 #m05 .m05-cell.pair { transform: scale(1.25); }
-#m05 .m05-xlab { display: grid; grid-template-columns: repeat(16, minmax(0, 1fr)); justify-items: center; font-size: 12px; line-height: 1; color: var(--muted); font-variant-numeric: tabular-nums; padding: 2px 0; }
+#m05 .m05-xlab { display: grid; grid-template-columns: repeat(16, minmax(0, 1fr)); justify-items: center; align-items: start; font-size: 12px; line-height: 1; color: var(--muted); font-variant-numeric: tabular-nums; padding: 2px 0; }
+/* the training steps, read bottom to top */
+#m05 .m05-xlab span { writing-mode: vertical-rl; transform: rotate(180deg); white-space: nowrap; }
 #m05 .m05-scrubwrap { margin-left: var(--gut); }
 #m05 .m05-scrubwrap input { width: calc(100% * 15 / 16 + 22px); margin-left: calc(100% / 32 - 11px); }
 

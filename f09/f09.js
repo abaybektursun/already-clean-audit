@@ -1,9 +1,10 @@
-// f09: the 16-bit gradient prediction against the 16-bit or the 32-bit switch-off measurement, one point per pair.
-// Reads window.F09_DATA (f09/data.js). Two mounts build the same picture: "f09" opens on the 16-bit measurement
-// (chapter 6), "f09-32" on the 32-bit measurement (chapter 8); in both, the toggle switches the measurement and a
-// second control switches between the held-out half (the default) and the half used to set the rules. The rank
-// agreement for the shown half and measurement is drawn against the threshold set in advance and the shuffle reference.
-// Hover, tap or keyboard focus shows a pair's birth and values; for ten held-out births, the group's contexts.
+// f09: gradient × activation attribution in bfloat16 against the zero-ablation's loss change measured in bfloat16 or in
+// float32, one point per ablation. Reads window.F09_DATA (f09/data.js). Two mounts build the same picture: "f09" opens
+// on the bfloat16 measurement (chapter 6), "f09-32" on the float32 measurement (chapter 8); in both, the toggle switches
+// the measurement and a second control switches between the held-out split (the default) and the development split.
+// The Spearman correlation for the shown split and measurement is drawn against the threshold set in advance and the
+// permutation baseline. Hover, tap or keyboard focus shows an ablation's cluster and values; for ten held-out clusters,
+// the cluster's tokens in their text.
 (() => {
   'use strict';
 
@@ -27,8 +28,11 @@
   };
   const flat = (s) => s.replace(/\r\n|\r|\n/g, '↵').replace(/\t/g, '⇥');
   const ORD = ['', '1st', '2nd', '3rd'];
+  const PREC = { 16: 'bfloat16', 32: 'float32' };
+  const poleId = (p) => 'L' + p.layer + '.N' + p.unit + (p.sign === 'positive' ? '+' : '-');
+  const clusterName = (b) => 'Cluster ' + b.group + ' of ' + poleId(b) + ' (layer ' + b.layer + ', neuron ' + b.unit.toLocaleString('en-US') + ', ' + b.sign + ' pole)';
 
-  // rank agreement: the correlation of the two rankings, ties sharing their mean rank
+  // Spearman correlation: the correlation of the two rankings, ties sharing their mean rank
   const ranks = (x) => {
     const o = x.map((v, i) => i).sort((a, b) => x[a] - x[b]);
     const r = new Array(x.length);
@@ -73,23 +77,23 @@
     const HALVES = ['held_out', 'rule_setting'];
     const idx = { held_out: [], rule_setting: [] };
     P.half.forEach((h, i) => {
-      if (!idx[h]) throw new Error('f09: unknown half ' + h);
+      if (!idx[h]) throw new Error('f09: unknown split ' + h);
       idx[h].push(i);
     });
-    if (idx.rule_setting.length !== 328 || idx.held_out.length !== 284) throw new Error('f09: the halves hold ' + idx.rule_setting.length + ' and ' + idx.held_out.length + ' pairs, not 328 and 284');
+    if (idx.rule_setting.length !== 328 || idx.held_out.length !== 284) throw new Error('f09: the splits hold ' + idx.rule_setting.length + ' and ' + idx.held_out.length + ' ablations, not 328 and 284');
     const perBirth = new Map();
     P.birth.forEach((b, i) => {
-      if (!(b in D.births)) throw new Error('f09: no record of the birth ' + b);
-      if (D.births[b].half !== P.half[i]) throw new Error('f09: ' + b + ' is in the wrong half');
-      if (sideOf(P.side[i]).layer !== D.births[b].layer) throw new Error('f09: a switched-off side of ' + b + ' is in another layer');
-      if (P.snapshot_read[i] !== D.births[b].birth_snapshot - 1) throw new Error('f09: ' + b + ' is not read at the snapshot before its birth');
+      if (!(b in D.births)) throw new Error('f09: the data holds no cluster ' + b);
+      if (D.births[b].half !== P.half[i]) throw new Error('f09: ' + b + ' is in the wrong split');
+      if (sideOf(P.side[i]).layer !== D.births[b].layer) throw new Error('f09: an ablated pole of ' + b + ' is in another layer');
+      if (P.snapshot_read[i] !== D.births[b].birth_snapshot - 1) throw new Error('f09: ' + b + ' is not measured at the checkpoint before its onset');
       perBirth.set(b, (perBirth.get(b) || []).concat(P.place_in_list[i]));
     });
     perBirth.forEach((places, b) => {
-      if (places.slice().sort().join() !== '0,1,2,3') throw new Error('f09: ' + b + ' does not have its four switched-off sides');
+      if (places.slice().sort().join() !== '0,1,2,3') throw new Error('f09: ' + b + ' does not have its four ablated poles');
     });
     P.place_in_list.forEach((q, i) => {
-      if (q === 0 && P.side[i] !== P.birth[i].split(':')[0]) throw new Error('f09: place 0 of ' + P.birth[i] + ' is not the carrier');
+      if (q === 0 && P.side[i] !== P.birth[i].split(':')[0]) throw new Error('f09: place 0 of ' + P.birth[i] + ' is not the cluster’s own pole');
     });
     const MEAS = { 16: 'measurement_16bit', 32: 'measurement_32bit' };
     const rho = {};
@@ -98,7 +102,7 @@
       HALVES.forEach((h) => {
         const r = rankAgreement(idx[h].map((i) => P.prediction_16bit[i]), idx[h].map((i) => P[MEAS[s]][i]));
         const banked = RA['measurement_' + s + 'bit'][h].banked;
-        if (Math.abs(r - banked) > 1e-9) throw new Error('f09: rank agreement ' + s + '-bit, ' + h + ' is ' + r + ' from the rows, ' + banked + ' banked');
+        if (Math.abs(r - banked) > 1e-9) throw new Error('f09: Spearman correlation, ' + PREC[s] + ', ' + h + ' is ' + r + ' from the rows, ' + banked + ' saved');
         rho[s][h] = banked;
       });
     });
@@ -107,16 +111,18 @@
     want.forEach(([v, s]) => { if (F.fixed(v, 3) !== s) throw new Error('f09: the data gives ' + F.fixed(v, 3) + ' where the caption says ' + s); });
     if (BAR !== 0.7) throw new Error('f09: the threshold set in advance is ' + BAR + ', not 0.7');
     if (Math.max(...[P.prediction_16bit, P.measurement_16bit, P.measurement_32bit].flat().map(Math.abs)) > VMAX) throw new Error('f09: a value lies outside the axes');
+    const STEPS = D.snapshot_steps;
+    if (!STEPS || STEPS.length !== 16) throw new Error('f09: the data does not hold the sixteen checkpoint steps');
     const ctx = new Map();
     D.hover_examples_held_out.forEach((h) => {
-      if (h.half !== 'held_out' || !perBirth.has(h.birth)) throw new Error('f09: the contexts of ' + h.birth + ' are not of a held-out birth in the rows');
+      if (h.half !== 'held_out' || !perBirth.has(h.birth)) throw new Error('f09: the saved text of ' + h.birth + ' is not of a held-out cluster in the rows');
       ctx.set(h.birth, h.group_contexts.map((c) => {
         const m = /^([\s\S]*?)\[\[([\s\S]*?)\]\]([\s\S]*)$/.exec(c);
-        if (!m || /\[\[/.test(m[3])) throw new Error('f09: a context of ' + h.birth + ' does not mark exactly one position');
+        if (!m || /\[\[/.test(m[3])) throw new Error('f09: a saved text of ' + h.birth + ' does not mark exactly one token');
         return { before: m[1], token: m[2], after: m[3] };
       }));
     });
-    // a band and a shuffle reference, where the files hold them
+    // a bootstrap interval and a permutation baseline, where the files hold them
     const extra = (s, h) => {
       const r = RA['measurement_' + s + 'bit'];
       return { band: r['band_' + h] || null, shuffle: r['shuffle_reference_' + h] === undefined ? null : r['shuffle_reference_' + h] };
@@ -152,8 +158,8 @@
     };
     let state = startState;
     let half = 'held_out';
-    const pressState = toggle('Measured in', [['16', '16-bit'], ['32', '32-bit']], (v) => { state = v; update(); });
-    const pressHalf = toggle('Pairs', [['held_out', 'held-out half, ' + idx.held_out.length], ['rule_setting', 'rule-setting half, ' + idx.rule_setting.length]], (v) => { half = v; update(); });
+    const pressState = toggle('Measured in', [['16', 'bfloat16'], ['32', 'float32']], (v) => { state = v; update(); });
+    const pressHalf = toggle('Split', [['held_out', 'held-out, ' + idx.held_out.length], ['rule_setting', 'development, ' + idx.rule_setting.length]], (v) => { half = v; update(); });
     wrap.appendChild(controls);
 
     const main = el('div', 'f09-main');
@@ -164,8 +170,8 @@
     main.appendChild(sc);
     const legend = el('p', 'f09-legend');
     const key = (cls, text) => { const s = el('span'); s.append(el('i', 'f09-key ' + cls), text); return s; };
-    legend.append(key('dot', 'one pair: a birth and one switched-off side'), key('ring', 'a pair whose birth’s contexts are banked (ten held-out births)'),
-      key('diag', 'measurement = prediction'));
+    legend.append(key('dot', 'one zero-ablation: one cluster and one ablated pole'), key('ring', 'an ablation whose cluster’s text is saved (ten held-out clusters)'),
+      key('diag', 'ΔL = attribution'));
     sc.appendChild(legend);
     const yName = el('p', 'f09-yname');
     sc.appendChild(yName);
@@ -193,17 +199,17 @@
       plot.appendChild(d);
       dots.push(d);
     }
-    sc.appendChild(el('p', 'f09-xname', '16-bit prediction ΔL̂, nats'));
-    sc.appendChild(el('p', 'f09-note', 'Both axes are on a log scale of the size, on either side of 0 (linear within ±0.0001), so a value’s sign is the side of 0 it falls on. The scale keeps the order of the values, and rank agreement reads only that order.'));
+    sc.appendChild(el('p', 'f09-xname', 'attribution ΔL̂ in bfloat16, nats'));
+    sc.appendChild(el('p', 'f09-note', 'Both axes are on a log scale of the size, on either side of 0 (linear within ±0.0001), so negative values lie left of and below 0, and positive values right of and above it. The scale keeps the order of the values, and the Spearman correlation depends only on that order.'));
 
     // ---------- the rank agreement ----------
-    const halfName = () => (half === 'held_out' ? 'held-out half' : 'half used to set the rules');
+    const halfName = () => (half === 'held_out' ? 'held-out split' : 'development split');
     const ag = el('section', 'f09-agree');
     main.appendChild(ag);
     ag.setAttribute('aria-live', 'polite');
     const big = el('p', 'f09-big');
     const bigWhat = el('p', 'f09-note f09-bigwhat');
-    ag.append(el('h3', 'f09-h', 'Rank agreement with the prediction'), big, bigWhat);
+    ag.append(el('h3', 'f09-h', 'Spearman correlation with the attribution'), big, bigWhat);
     const strip = el('div', 'f09-strip');
     ag.appendChild(strip);
     const A0 = -0.2, A1 = 1;
@@ -211,7 +217,7 @@
     const stripRows = {};
     [16, 32].forEach((s) => {
       const r = el('div', 'f09-srow');
-      const name = el('span', 'f09-sname', s + '-bit measurement');
+      const name = el('span', 'f09-sname', 'ΔL measured in ' + PREC[s]);
       const val = el('span', 'f09-sval');
       const head = el('div', 'f09-shead');
       head.append(name, val);
@@ -230,10 +236,10 @@
       WALK.hover(r, () => {
         const x = extra(s, half);
         return {
-          title: s + '-bit measurement, ' + halfName(),
-          rows: [['rank agreement', F.fixed(rho[s][half], 3), 'ink'],
-            ['band', x.band ? F.fixed(x.band[0], 3) + ' to ' + F.fixed(x.band[1], 3) : 'not in the files'],
-            ['shuffle reference', x.shuffle === null ? 'not in the files' : F.fixed(x.shuffle, 3), 'control'],
+          title: 'ΔL measured in ' + PREC[s] + ', ' + halfName(),
+          rows: [['Spearman correlation', F.fixed(rho[s][half], 3), 'ink'],
+            ['bootstrap 95 % CI', x.band ? F.fixed(x.band[0], 3) + ' to ' + F.fixed(x.band[1], 3) : 'not in the files'],
+            ['permutation baseline', x.shuffle === null ? 'not in the files' : F.fixed(x.shuffle, 3), 'control'],
             ['threshold set in advance', F.fixed(BAR, 1)]],
         };
       });
@@ -246,12 +252,12 @@
     });
     strip.appendChild(sAxis);
     const sleg = el('p', 'f09-legend');
-    sleg.append(key('adot', 'rank agreement'), key('band', 'band: the range consistent with the data, births resampled'), key('shuf', 'shuffle reference'), key('bar', 'threshold set in advance, ' + F.fixed(BAR, 1)));
+    sleg.append(key('adot', 'Spearman correlation'), key('band', 'bootstrap 95 % confidence interval, clusters resampled'), key('shuf', 'permutation baseline'), key('bar', 'threshold set in advance, ' + F.fixed(BAR, 1)));
     ag.appendChild(sleg);
     const agNote = el('p', 'f09-note');
     ag.appendChild(agNote);
 
-    // ---------- the contexts of the chosen birth ----------
+    // ---------- the tokens of the chosen cluster, in their text ----------
     const cx = el('section', 'f09-ctx');
     wrap.appendChild(cx);
     const cxHead = el('h3', 'f09-h');
@@ -262,15 +268,15 @@
     const showCtx = () => {
       cxList.replaceChildren();
       if (!ctxBirth) {
-        cxHead.textContent = 'The group’s contexts';
+        cxHead.textContent = 'The cluster’s tokens in their text';
         cxNote.textContent = half === 'held_out'
-          ? 'The contexts are banked for ten held-out births, drawn as rings. Hover, tap or focus a ring to list its group’s contexts here.'
-          : 'The contexts are banked for ten births of the held-out half only; switch to that half to read them.';
+          ? 'The data file holds the text around the cluster’s tokens for ten held-out clusters, drawn as rings. Hover, tap or focus a ring to list that cluster’s tokens here.'
+          : 'The data file holds this text for ten clusters of the held-out split only; switch to that split to read them.';
         return;
       }
       const b = sideOf(ctxBirth);
-      cxHead.textContent = 'Layer ' + b.layer + ', unit ' + F.int(b.unit) + ', ' + b.sign + ' side, group ' + b.group + ': “' + D.births[ctxBirth].group_name + '”';
-      cxNote.textContent = 'The group’s ' + ctx.get(ctxBirth).length + ' contexts as banked, the group’s position marked; texts cut to 90 characters before and 40 after.';
+      cxHead.textContent = clusterName(b) + ': “' + D.births[ctxBirth].group_name + '”';
+      cxNote.textContent = 'The cluster’s ' + ctx.get(ctxBirth).length + ' tokens, each marked in its surrounding text as saved; the text is cut to 90 characters before and 40 after.';
       ctx.get(ctxBirth).forEach((c) => {
         const li = el('li', 'f09-ctxrow');
         const before = flat(c.before);
@@ -288,21 +294,22 @@
       const s = sideOf(P.side[i]);
       const q = P.place_in_list[i];
       const rows = [
-        ['side switched off', q === 0 ? 'the carrier' : 'unit ' + F.int(s.unit) + ', ' + s.sign],
+        ['zero-ablated pole', q === 0 ? 'the cluster’s own pole' : poleId(s) + ', neuron ' + F.int(s.unit) + ', ' + s.sign],
       ];
-      if (q > 0) rows.push(['its rank one snapshot before', ORD[q] + ' of the layer']);
-      rows.push(['16-bit prediction', sig(P.prediction_16bit[i], 3)],
-        ['16-bit measurement' + (state === '16' ? ' (drawn)' : ''), sig(P.measurement_16bit[i], 3)],
-        ['32-bit measurement' + (state === '32' ? ' (drawn)' : ''), sig(P.measurement_32bit[i], 3)],
-        ['born at snapshot', D.births[P.birth[i]].birth_snapshot + ', read at ' + P.snapshot_read[i]]);
+      if (q > 0) rows.push(['rank at the checkpoint before the onset', ORD[q] + ' in the layer']);
+      const kOn = D.births[P.birth[i]].birth_snapshot;
+      rows.push(['attribution, bfloat16', sig(P.prediction_16bit[i], 3)],
+        ['ΔL, bfloat16' + (state === '16' ? ' (drawn)' : ''), sig(P.measurement_16bit[i], 3)],
+        ['ΔL, float32' + (state === '32' ? ' (drawn)' : ''), sig(P.measurement_32bit[i], 3)],
+        ['onset at the checkpoint of step', F.int(STEPS[kOn])], ['measured at the checkpoint of step', F.int(STEPS[P.snapshot_read[i]])]);
       const cs = ctx.get(P.birth[i]);
       if (cs) {
         const c = cs[0];
         const before = flat(c.before);
         rows.push(['“' + (before.length > 50 ? '…' : '') + before.slice(-50) + '[' + flat(c.token) + ']' + flat(c.after).slice(0, 20) + '…”', ''],
-          ['contexts banked', cs.length + ', listed below']);
+          ['cluster tokens saved', cs.length + ', listed below']);
       }
-      return { title: 'Layer ' + b.layer + ', unit ' + F.int(b.unit) + ', ' + b.sign + ' side, group ' + b.group + ': “' + D.births[P.birth[i]].group_name + '”', rows };
+      return { title: clusterName(b) + ': “' + D.births[P.birth[i]].group_name + '”', rows };
     };
     let cur = -1;
     const mark = (i) => {
@@ -365,10 +372,10 @@
       if (ctxBirth && half !== 'held_out') ctxBirth = null;
       showCtx();
       cx.classList.toggle('off', half !== 'held_out');
-      yName.textContent = state + '-bit measurement ΔL, nats';
-      plot.setAttribute('aria-label', shown().length + ' pairs of the ' + halfName() + ': 16-bit prediction across, ' + state + '-bit measurement up; arrow keys move between pairs in order of the prediction');
+      yName.textContent = 'ΔL measured in ' + PREC[state] + ', nats';
+      plot.setAttribute('aria-label', shown().length + ' ablations of the ' + halfName() + ': bfloat16 attribution across, ΔL measured in ' + PREC[state] + ' up; arrow keys move between ablations in order of the attribution');
       big.textContent = F.fixed(rho[state][half], 3);
-      bigWhat.textContent = 'The 16-bit prediction against the ' + state + '-bit measurement, over the ' + shown().length + ' pairs of the ' + halfName() + '.';
+      bigWhat.textContent = 'The bfloat16 attribution against ΔL measured in ' + PREC[state] + ', over the ' + shown().length + ' ablations of the ' + halfName() + '.';
       [16, 32].forEach((s) => {
         const R = stripRows[s];
         const v = rho[s][half];
@@ -384,14 +391,15 @@
       const x = extra(Number(state), half);
       agNote.textContent = (rho[state][half] >= BAR ? 'Above' : 'Below') + ' the threshold of ' + F.fixed(BAR, 1) + ' set before the run. ' +
         (x.shuffle === null
-          ? 'The files hold no band and no shuffle reference for this half and measurement.'
-          : 'Shuffle reference ' + F.fixed(x.shuffle, 3) + ': with the prediction shuffled across the pairs 1,000 times, 97.5 % of the shuffles agree less than this.') +
-        ' Each birth gives four pairs: the carrier and the three other sides of its layer that ranked highest one snapshot before the birth, each switched off in turn.';
+          ? 'The files hold no bootstrap interval and no permutation baseline for this split and precision.'
+          : 'Permutation baseline ' + F.fixed(x.shuffle, 3) + ': we shuffled the attribution across the ablations 1,000 times, and 97.5 % of the shuffles gave a lower Spearman correlation than this.') +
+        ' The attribution is gradient × activation attribution, the first-order estimate of a zero-ablation’s loss change. Each late-onset cluster gives four zero-ablations, one at a time: its own pole and the three other poles of its layer that ranked highest on the cluster’s tokens at the checkpoint before the onset. ' +
+        'A pole is one sign of a neuron’s activations; a cluster is a group of a pole’s top-50 activating tokens that an LLM named; its onset is the first checkpoint at which the pole’s median activation on those tokens is in the pole’s own top 0.1 % and stays there.';
     }
     update();
   }
 
-  // the same picture twice in the article: opening on the 16-bit measurement (chapter 6) and on the 32-bit (chapter 8)
+  // the same picture twice in the article: opening on the bfloat16 measurement (chapter 6) and on the float32 (chapter 8)
   WALK.register('f09', { data: 'F09_DATA', mount: (root, D) => mount(root, D, '16') });
   WALK.register('f09-32', { data: 'F09_DATA', mount: (root, D) => mount(root, D, '32') });
 })();

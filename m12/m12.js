@@ -1,8 +1,8 @@
-// m12: an edit along a direction, on one side. Registers the mount "m12" with site.js; reads window.M12_DATA
-// (m12/data.js). For one of the 8 control sides: the three edits of its down-matrix column (own direction, random
-// direction of the same size, own direction at half), each traced through its parts: the edit vector delta and its
-// size c, the change to the down matrix's output over the side's tokens, the change R to the shared vector after the
-// layer, and the loss change per token. Below: the measurement's rounding checks and the rule that forms the pairs.
+// m12: ablating a pole's write along its down_proj column, against a random direction of the same norm. Registers the
+// mount "m12" with site.js; reads window.M12_DATA (m12/data.js). For one of the 8 control poles: the three edits (own
+// direction, random direction of the same size, own direction at half), each traced through its parts: the edit vector
+// delta and its size c, the change to the output of down_proj over the pole's tokens, the change R to the residual
+// stream after the layer, and the loss change per token. Below: the rounding checks and the rule that forms the pairs.
 (() => {
   'use strict';
 
@@ -15,7 +15,7 @@
   };
   const sideOf = (id) => {
     const m = /^L(\d+)N(\d+)([+-])$/.exec(id);
-    if (!m) throw new Error('m12: cannot read the side ' + id);
+    if (!m) throw new Error('m12: cannot read the pole ' + id);
     return { layer: Number(m[1]), unit: Number(m[2]), side: m[3] === '+' ? 'positive' : 'negative' };
   };
   const SUP = { '-': '⁻', 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴', 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹' };
@@ -23,7 +23,7 @@
   function mount(root, D) {
     const F = WALK.fmt;
     const L = D.control_layers;
-    if (L.length !== D.control_of_layers) throw new Error('m12: ' + L.length + ' control sides, the data says ' + D.control_of_layers);
+    if (L.length !== D.control_of_layers) throw new Error('m12: ' + L.length + ' control poles, the data says ' + D.control_of_layers);
     const KINDS = ['own_direction', 'random_direction', 'own_direction_half_fraction'];
     const NAME = { own_direction: 'own direction', random_direction: 'random direction', own_direction_half_fraction: 'own direction, half' };
     const CLS = { own_direction: 'own', random_direction: 'rand', own_direction_half_fraction: 'half' };
@@ -36,12 +36,12 @@
       if (Math.abs(h.edit_size_c - 0.5 * h.column_norm) > 1e-6 || h.fraction_removed !== 0.5) throw new Error('m12: layer ' + x.layer + ': the half edit is not −0.5 · w');
       x.edits.forEach((e) => {
         if (Math.abs(e.edit_vector_norm - e.edit_size_c) > 1e-6 * e.edit_size_c) throw new Error('m12: layer ' + x.layer + ': ‖δ‖ as applied differs from c');
-        if (!(e.loss_change_per_token > 0) || !(e.shared_vector_change > 0)) throw new Error('m12: layer ' + x.layer + ': a loss or shared-vector change is not positive; the bars start at zero');
+        if (!(e.loss_change_per_token > 0) || !(e.shared_vector_change > 0)) throw new Error('m12: layer ' + x.layer + ': a loss or residual-stream change is not positive; the bars start at zero');
       });
       if (Math.abs(r.shared_vector_change / o.shared_vector_change - x.shared_vector_ratio_random_over_own) > 1e-12) throw new Error('m12: layer ' + x.layer + ': the ratio does not follow from R');
       if ((o.loss_change_per_token > r.loss_change_per_token + TAU) !== x.own_cost_more_than_random) throw new Error('m12: layer ' + x.layer + ': which edit cost more does not follow from the loss changes');
       x.w = sideOf(x.side);
-      if (x.w.layer !== x.layer) throw new Error('m12: layer ' + x.layer + ': the side is in layer ' + x.w.layer);
+      if (x.w.layer !== x.layer) throw new Error('m12: layer ' + x.layer + ': the pole is in layer ' + x.w.layer);
     });
     const ownMore = L.filter((x) => x.own_cost_more_than_random).length;
     if (ownMore !== D.control_own_cost_more_count.recomputed) throw new Error('m12: ' + ownMore + ' layers where the own direction cost more, the data ' + D.control_own_cost_more_count.recomputed);
@@ -66,14 +66,15 @@
     const big = (x) => (Math.abs(x) >= 100 ? F.fixed(x, 1) : sig(x, 4));
     const c4 = (x) => F.fixed(x, 4);
     const cap = (t) => t.charAt(0).toUpperCase() + t.slice(1);
-    const sideText = (w) => 'layer ' + w.layer + ', unit ' + F.int(w.unit) + ', ' + w.side + ' side';
+    const poleId = (w) => 'L' + w.layer + '.N' + w.unit + (w.side === 'positive' ? '+' : '-');
+    const sideText = (w) => 'layer ' + w.layer + ', neuron ' + F.int(w.unit) + ', ' + w.side + ' pole';
 
     // ---------- the frame ----------
     root.replaceChildren();
     const wrap = el('div', 'm12-wrap');
     root.appendChild(wrap);
     const pickRow = el('div', 'control-row');
-    const pickLab = el('label', 'control-label', 'Control side');
+    const pickLab = el('label', 'control-label', 'Control pole');
     pickLab.htmlFor = 'm12-pick';
     const pick = el('select', 'm12-select');
     pick.id = 'm12-pick';
@@ -93,7 +94,7 @@
     const sumBox = el('p', 'm12-sum');
     wrap.appendChild(sumBox);
 
-    // the parts that do not depend on the side
+    // the parts that do not depend on the pole
     const RC = D.rounding_checks_and_zero_edit;
     const checks = RC.filter((r) => r.kind === 'rounding_check');
     const zero = RC.filter((r) => r.kind === 'zero_edit');
@@ -103,25 +104,26 @@
     if (Math.abs(10 * maxL - TAU) > 1e-20) throw new Error('m12: the tie margin is not ten times the largest rounding check');
     const floor = el('div', 'm12-block');
     floor.appendChild(el('h3', 'm12-h', 'How small a change the measurement resolves'));
-    floor.appendChild(el('p', 'm12-p', 'A rounding check adds a random δ and subtracts it again in the same pass, which is zero in exact arithmetic. The ' + checks.length +
-      ' rounding checks moved the loss by at most ' + sci(maxL, 3) + ' nats per token and the shared vector by at most ' + sig(maxR, 3) + '. The edit with δ = 0 moved the loss by ' +
-      sci(zero[0].loss_change_per_token, 2) + ' and the shared vector by ' + big(zero[0].shared_vector_change) + '. Two loss changes closer than ' + sci(TAU, 3) +
-      ' (ten times the largest rounding check) count as a tie.'));
+    floor.appendChild(el('p', 'm12-p', 'A rounding check adds a random δ and subtracts it again in the same forward pass; in exact arithmetic this changes nothing. The ' + checks.length +
+      ' rounding checks moved the loss by at most ' + sci(maxL, 3) + ' nats per token and the residual stream by at most ' + sig(maxR, 3) + '. The edit with δ = 0 moved the loss by ' +
+      sci(zero[0].loss_change_per_token, 2) + ' and the residual stream by ' + big(zero[0].shared_vector_change) + '. We count two loss changes closer than ' + sci(TAU, 3) +
+      ' (ten times the largest rounding check) as a tie.'));
     wrap.appendChild(floor);
 
     if (PR.edit_size_rule_holds !== PR.edit_size_rule_of_pairs || PR.rule_setting.recomputed !== PR.edit_size_rule_of_pairs) throw new Error('m12: the edit size rule does not hold in every pair');
     const pairs = el('div', 'm12-block');
     pairs.appendChild(el('h3', 'm12-h', 'The pairs'));
-    pairs.appendChild(el('p', 'm12-p', 'A pair is two dated sides of one layer, of different units, whose births are at least three snapshots apart, matched on activation ' +
-      'size and density (ln max |a| and ln density), then on ln ‖w‖ and ln E⁺. All four edits of a pair, own and random on each side, have one size: c = min(‖w_early‖, ‖w_late‖). ' +
-      'The side with the smaller column has its write removed fully; the other loses the fraction c/‖w‖ of it. The data holds this in ' + PR.edit_size_rule_holds + ' of ' +
-      PR.edit_size_rule_of_pairs + ' pairs of the half used to set the rules; the ' + PR.held_out + ' pairs of the held-out half were never read.'));
-    pairs.appendChild(el('p', 'm12-p', 'R is ‖h_edit − h_base‖ over all evaluation positions and the 4,096 coordinates of the shared vector, read after the edited layer (after the norm and the add). ' +
+    pairs.appendChild(el('p', 'm12-p', 'A pair is two poles of one layer, on different neurons, whose clusters have onsets at least three checkpoints apart; we matched them on activation ' +
+      'size and density (ln max |a| and ln density), then on ln ‖w‖ and ln E⁺. All four edits of a pair, own and random on each pole, have one size: c = min(‖w_early‖, ‖w_late‖), ' +
+      'where w_early and w_late are the down_proj columns of the pole with the earlier and the later onset. ' +
+      'The pole with the smaller column has its write removed fully; the other loses the fraction c/‖w‖ of it. The data holds this in ' + PR.edit_size_rule_holds + ' of ' +
+      PR.edit_size_rule_of_pairs + ' pairs of the development split; we never read the ' + PR.held_out + ' pairs of the held-out split.'));
+    pairs.appendChild(el('p', 'm12-p', 'R is ‖h_edit − h_base‖ over all evaluation tokens and the 4,096 coordinates of the residual stream h, taken after the edited layer (after the layer’s norm and its addition to the residual stream). ' +
       'The loss change is the mean over ' + F.int(EV.windows) + ' windows × ' + F.int(EV.tokens_per_window) + ' tokens (' + F.int(EV.tokens) +
-      ' tokens, from outside the 20.6-million-token corpus) of the edited loss minus the base loss, in nats per token, in 32-bit.'));
+      ' tokens, from outside the 20.6-million-token corpus in which we found the top-50 activating tokens) of the edited loss minus the unedited loss, in nats per token, in float32.'));
     wrap.appendChild(pairs);
 
-    // ---------- one side ----------
+    // ---------- one pole ----------
     function draw(i) {
       const x = L[i];
       const [o, r] = x.edits;
@@ -130,9 +132,9 @@
       pick.value = String(i);
 
       who.replaceChildren();
-      who.append(el('b', '', cap(sideText(x.w))), ': the side of layer ' + x.layer + ' with the largest E⁺, the sum over the evaluation tokens of its own-sign ' +
-        'activation squared: E⁺ = ' + F.fixed(x.own_sign_energy, 1) + '. Its down-matrix column w has ‖w‖ = ' + c4(w) +
-        '. At each token x where the side fires, an edit adds a(x) · δ to the down matrix’s output, a change of size |a(x)| · ‖δ‖; over all its tokens the energy added is ‖δ‖² · E⁺.');
+      who.append(el('b', '', poleId(x.w) + ' (' + sideText(x.w) + ')'), ': the pole of layer ' + x.layer + ' with the largest E⁺. A pole is one sign of a neuron’s activations, and ' +
+        'E⁺ is the sum, over the evaluation tokens, of the pole’s squared own-sign activations: E⁺ = ' + F.fixed(x.own_sign_energy, 1) + '. The neuron’s down_proj column w has ‖w‖ = ' + c4(w) +
+        '. At each token x where the activation a(x) has the pole’s sign, an edit adds a(x) · δ to the output of down_proj, a change of size |a(x)| · ‖δ‖; summed over those tokens, the squared size of the change is ‖δ‖² · E⁺.');
 
       edits.replaceChildren();
       const line = (e, formula) => {
@@ -140,9 +142,9 @@
         p.append(el('i', 'm12-key ' + CLS[e.kind]), el('b', '', cap(NAME[e.kind]) + ': '), formula);
         edits.appendChild(p);
       };
-      line(x.edits[0], 'δ = −(c/‖w‖) · w with c = ' + c4(o.edit_size_c) + ', so c/‖w‖ = ' + F.fixed(o.fraction_removed, 3) + ': the side’s write is removed fully. ‖δ‖ as applied: ' + c4(o.edit_vector_norm) + '.');
+      line(x.edits[0], 'δ = −(c/‖w‖) · w with c = ' + c4(o.edit_size_c) + ', so c/‖w‖ = ' + F.fixed(o.fraction_removed, 3) + ': the pole’s write is removed fully. ‖δ‖ as applied: ' + c4(o.edit_vector_norm) + '.');
       line(x.edits[1], 'δ = c · r, r a seeded random unit vector, with the same c = ' + c4(r.edit_size_c) + '. ‖δ‖ as applied: ' + c4(r.edit_vector_norm) + '.');
-      line(x.edits[2], 'δ = −0.5 · w, half the side’s write removed: c = ' + c4(x.edits[2].edit_size_c) + '. ‖δ‖ as applied: ' + c4(x.edits[2].edit_vector_norm) + '.');
+      line(x.edits[2], 'δ = −0.5 · w, half the pole’s write removed: c = ' + c4(x.edits[2].edit_size_c) + '. ‖δ‖ as applied: ' + c4(x.edits[2].edit_vector_norm) + '.');
 
       chain.replaceChildren();
       const group = (n, title, unit, val, fmtv, exact) => {
@@ -159,7 +161,7 @@
           track.appendChild(bar);
           const v = el('span', 'm12-val', fmtv(val(e)));
           row.append(nm, track, v);
-          WALK.hover(row, () => ({ title: cap(NAME[e.kind]) + ', ' + sideText(x.w), rows: [[title + (unit ? ' (' + unit + ')' : ''), exact(val(e)), CLS[e.kind] === 'own' ? 'claim' : CLS[e.kind] === 'rand' ? 'control' : 'muted']] }));
+          WALK.hover(row, () => ({ title: cap(NAME[e.kind]) + ', ' + poleId(x.w), rows: [[title + (unit ? ' (' + unit + ')' : ''), exact(val(e)), CLS[e.kind] === 'own' ? 'claim' : CLS[e.kind] === 'rand' ? 'control' : 'muted']] }));
           g.appendChild(row);
         });
         chain.appendChild(g);
@@ -167,10 +169,10 @@
       };
       const full = (v) => String(v);
       group(1, 'The edit’s size, ‖δ‖ as applied', '', (e) => e.edit_vector_norm, c4, full);
-      const g2 = group(2, 'The change to the down matrix’s output over the side’s tokens, ‖δ‖ · √E⁺', '', (e) => e.edit_size_c * rootE, big, (v) => F.fixed(v, 3));
+      const g2 = group(2, 'The change to the output of down_proj over the pole’s tokens, ‖δ‖ · √E⁺', '', (e) => e.edit_size_c * rootE, big, (v) => F.fixed(v, 3));
       g2.appendChild(el('p', 'm12-note', 'c · √E⁺ with √E⁺ = ' + F.fixed(rootE, 2) + ': ' + c4(o.edit_size_c) + ' × ' + F.fixed(rootE, 2) + ' = ' + big(o.edit_size_c * rootE) +
         ' for the own and the random edit alike.'));
-      const g3 = group(3, 'The change to the shared vector after the layer, R', '', (e) => e.shared_vector_change, big, (v) => F.fixed(v, 4));
+      const g3 = group(3, 'The change to the residual stream after the layer, R', '', (e) => e.shared_vector_change, big, (v) => F.fixed(v, 4));
       g3.appendChild(el('p', 'm12-note', 'Random ÷ own: ' + F.fixed(x.shared_vector_ratio_random_over_own, 2) + '.'));
       const g4 = group(4, 'The loss change per token', 'nats', (e) => e.loss_change_per_token, (v) => sig(v, 3), (v) => sci(v, 6));
       const dl = r.loss_change_per_token - o.loss_change_per_token;
@@ -178,10 +180,10 @@
         (dl > 0 ? 'The random edit cost more, by ' : 'The own-direction edit cost more, by ') + sig(Math.abs(dl), 3) + ' nats per token.') + ' The edit at half cost ' +
         sig(x.edits[2].loss_change_per_token, 3) + '.'));
 
-      sumBox.textContent = 'The control was set up so that, on each of the ' + L.length + ' control sides, the own-direction edit should cost more than the random edit; ' +
-        'it needed this in at least ' + D.control_needed + ' of ' + L.length + '. It cost more in ' + ownMore + ' (layers ' +
-        L.filter((y) => y.own_cost_more_than_random).map((y) => y.layer).join(' and ') + '). The random edit moved the shared vector more on every one of them.';
-      if (!L.every((y) => y.shared_vector_ratio_random_over_own > 1)) throw new Error('m12: the random edit did not move the shared vector more on every control side');
+      sumBox.textContent = 'We set up this control expecting that, on each of the ' + L.length + ' control poles, the own-direction edit would cost more loss than the random edit; ' +
+        'the control needed this in at least ' + D.control_needed + ' of ' + L.length + '. It cost more in ' + ownMore + ' (layers ' +
+        L.filter((y) => y.own_cost_more_than_random).map((y) => y.layer).join(' and ') + '). The random edit moved the residual stream more on every one of the ' + L.length + '.';
+      if (!L.every((y) => y.shared_vector_ratio_random_over_own > 1)) throw new Error('m12: the random edit did not move the residual stream more on every control pole');
     }
     pick.addEventListener('change', () => draw(Number(pick.value)));
     draw(0);

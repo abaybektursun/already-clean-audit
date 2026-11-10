@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>A unit and its two sides</title>
+<title>A neuron and its two poles</title>
 <!-- The fonts are optional: this stylesheet loads without blocking the page, and site.css falls back to system fonts. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
 <body>
 <main class="page">
   <header class="page-head">
-    <h1>A unit and its two sides</h1>
+    <h1>A neuron and its two poles</h1>
     <nav aria-label="Site">
       <a href="../index.html">The walkthrough</a>
       <button class="button" type="button" data-theme-toggle>Dark theme</button>
@@ -22,7 +22,7 @@
   </header>
   <figure class="figure" data-source="data.js">
     <div id="m02"></div>
-    <figcaption class="figure-caption"><!-- vocab-ok: OLMo's tensor names "gate matrix" and gate·h -->Unit n of one layer: row n of the gate matrix and row n of the up matrix (11,008 × 4,096 each), column n of the down matrix (4,096 × 11,008); a = silu(gate·h) · (up·h); the tokens with a &gt; 0 are the positive side, with a &lt; 0 the negative side; the banked values shown are from the snapshot at step 476,838; the layer's write to h is the sum over all 11,008 units of a_n times column n, normalized, scaled, then added. <a class="data-link">data</a></figcaption>
+    <figcaption class="figure-caption">Neuron n of a layer owns row n of <code>gate_proj</code> and of <code>up_proj</code> (11,008 × 4,096 each) and column n of <code>down_proj</code> (4,096 × 11,008), and its activation at a token is a = silu(row n of <code>gate_proj</code> · h) · (row n of <code>up_proj</code> · h); its positive pole is the tokens with a &gt; 0 and its negative pole the tokens with a &lt; 0, shown here for neuron 9,794 of layer 10 at the checkpoint at step 476,838 (<code>stage1-step476838</code>); the layer adds the sum over all 11,008 neurons of a_n times column n, after RMSNorm, to the residual stream h. <a class="data-link">data</a></figcaption>
   </figure>
 </main>
 <script src="../site.js"></script>

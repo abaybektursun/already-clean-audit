@@ -1,7 +1,8 @@
-// m09: the gradient prediction of switching a side off, and what 16-bit broke. Registers the mount "m09" with site.js;
-// reads window.M09_DATA (m09/data.js). The formula; for the 284 held-out pairs, the 16-bit prediction against the
-// measured change with one toggle between the 16-bit and the 32-bit measurement; the 16-bit prediction against the
-// 32-bit prediction; the sizes of the three quantities with their medians; and the memory that forced forward mode.
+// m09: gradient × activation attribution against zero-ablation, in bfloat16 and float32. Registers the mount "m09" with
+// site.js; reads window.M09_DATA (m09/data.js). The formula; for the 284 held-out ablations, the bfloat16 attribution
+// against the measured ΔL with one toggle between the bfloat16 and the float32 measurement; the bfloat16 attribution
+// against the float32 attribution; the sizes of the three quantities with their medians; and the memory that forced
+// forward mode.
 (() => {
   'use strict';
 
@@ -24,8 +25,10 @@
     return { layer: Number(m[1]), unit: Number(m[2]), sign: m[3] === '+' ? 'positive' : 'negative', group: m[4] === undefined ? null : Number(m[4]) };
   };
   const ORD = ['', '1st', '2nd', '3rd'];
+  const PREC = { 16: 'bfloat16', 32: 'float32' };
+  const poleId = (p) => 'L' + p.layer + '.N' + p.unit + (p.sign === 'positive' ? '+' : '-');
 
-  // rank agreement: the correlation of the two rankings, ties sharing their mean rank
+  // Spearman correlation: the correlation of the two rankings, ties sharing their mean rank
   const ranks = (x) => {
     const o = x.map((v, i) => i).sort((a, b) => x[a] - x[b]);
     const r = new Array(x.length);
@@ -77,30 +80,30 @@
     P.half.forEach((h, i) => {
       if (h === 'held_out') held.push(i);
       else if (h === 'rule_setting') rule.push(i);
-      else throw new Error('m09: unknown half ' + h);
+      else throw new Error('m09: unknown split ' + h);
     });
-    if (held.length !== 284 || rule.length !== 328) throw new Error('m09: the halves hold ' + rule.length + ' and ' + held.length + ' pairs, not 328 and 284');
+    if (held.length !== 284 || rule.length !== 328) throw new Error('m09: the splits hold ' + rule.length + ' and ' + held.length + ' ablations, not 328 and 284');
     const col = (k, ids) => ids.map((i) => P[k][i]);
     const agreeCheck = (name, x, y, rec) => {
       const r = rankAgreement(x, y);
-      if (Math.abs(r - rec.banked) > 1e-9 || rec.recomputed !== rec.banked) throw new Error('m09: ' + name + ' is ' + r + ' from the rows, ' + rec.banked + ' banked');
+      if (Math.abs(r - rec.banked) > 1e-9 || rec.recomputed !== rec.banked) throw new Error('m09: ' + name + ' is ' + r + ' from the rows, ' + rec.banked + ' in the results file');
       return rec.banked;
     };
     const rho = {
-      16: { rule: agreeCheck('16-bit rule-setting', col('prediction_16bit', rule), col('measurement_16bit', rule), T16.rank_agreement_rule_setting),
-        held: agreeCheck('16-bit held-out', col('prediction_16bit', held), col('measurement_16bit', held), T16.rank_agreement_held_out) },
-      32: { rule: agreeCheck('32-bit rule-setting', col('prediction_16bit', rule), col('measurement_32bit', rule), T32.rank_agreement_rule_setting),
-        held: agreeCheck('32-bit held-out', col('prediction_16bit', held), col('measurement_32bit', held), T32.rank_agreement_held_out) },
+      16: { rule: agreeCheck('bfloat16, development split', col('prediction_16bit', rule), col('measurement_16bit', rule), T16.rank_agreement_rule_setting),
+        held: agreeCheck('bfloat16, held-out split', col('prediction_16bit', held), col('measurement_16bit', held), T16.rank_agreement_held_out) },
+      32: { rule: agreeCheck('float32, development split', col('prediction_16bit', rule), col('measurement_32bit', rule), T32.rank_agreement_rule_setting),
+        held: agreeCheck('float32, held-out split', col('prediction_16bit', held), col('measurement_32bit', held), T32.rank_agreement_held_out) },
     };
-    const rhoPred = agreeCheck('16-bit against 32-bit prediction', col('prediction_16bit', held), col('prediction_32bit', held), PR.rank_agreement_16bit_vs_32bit_held_out);
+    const rhoPred = agreeCheck('bfloat16 against float32 attribution', col('prediction_16bit', held), col('prediction_32bit', held), PR.rank_agreement_16bit_vs_32bit_held_out);
     const all = held.concat(rule);
     const medCheck = (name, v, rec, tol) => {
-      if (Math.abs(v - rec.banked) > tol) throw new Error('m09: median ' + name + ' is ' + v + ' from the rows, ' + rec.banked + ' banked');
+      if (Math.abs(v - rec.banked) > tol) throw new Error('m09: median ' + name + ' is ' + v + ' from the rows, ' + rec.banked + ' in the results file');
       return rec.banked;
     };
-    const med16m = medCheck('|16-bit measurement|', median(col('measurement_16bit', all).map(Math.abs)), T16.median_abs_measurement_both_halves, 1e-12);
-    const med16p = medCheck('|16-bit prediction|', median(col('prediction_16bit', all).map(Math.abs)), PR.median_abs_16bit_both_halves, 1e-9);
-    const med32m = medCheck('|32-bit measurement|', median(col('measurement_32bit', held).map(Math.abs)), T32.median_abs_measurement_held_out, 1e-12);
+    const med16m = medCheck('|bfloat16 ΔL|', median(col('measurement_16bit', all).map(Math.abs)), T16.median_abs_measurement_both_halves, 1e-12);
+    const med16p = medCheck('|bfloat16 attribution|', median(col('prediction_16bit', all).map(Math.abs)), PR.median_abs_16bit_both_halves, 1e-9);
+    const med32m = medCheck('|float32 ΔL|', median(col('measurement_32bit', held).map(Math.abs)), T32.median_abs_measurement_held_out, 1e-12);
     const relDiff = medCheck('relative difference', median(held.map((i) => Math.abs(P.prediction_16bit[i] - P.prediction_32bit[i]) / Math.max(Math.abs(P.prediction_32bit[i]), 1e-30))),
       PR.median_relative_difference_held_out, 1e-12);
     [[rhoPred, 3, '0.995'], [rho[16].rule, 3, '0.100'], [rho[16].held, 3, '0.043'], [rho[32].held, 3, '0.960'], [T32.band_held_out[0], 3, '0.915'],
@@ -108,7 +111,7 @@
       [WF.gpu_memory_GB, 2, '48.31']].forEach(([v, d, s]) => {
       if (F.fixed(v, d) !== s) throw new Error('m09: the data gives ' + F.fixed(v, d) + ' where the page says ' + s);
     });
-    if (!(WF.backward_32bit_peak_GB_layer0 > WF.gpu_memory_GB)) throw new Error('m09: the 32-bit backward pass fits the GPU');
+    if (!(WF.backward_32bit_peak_GB_layer0 > WF.gpu_memory_GB)) throw new Error('m09: the float32 backward pass fits the GPU');
     const sm = WF.small_model_check;
     if (Math.abs(Math.abs(sm.forward_mode - sm.reverse_mode) / Math.abs(sm.reverse_mode) - sm.relative_difference) > 1e-15) throw new Error('m09: the small-model difference does not follow from its two values');
     if (Math.max(...[P.prediction_16bit, P.measurement_16bit, P.measurement_32bit, P.prediction_32bit].flat().map(Math.abs)) > VMAX) throw new Error('m09: a value lies outside the axes');
@@ -120,11 +123,12 @@
     // ---------- the formula ----------
     const top = el('section', 'm09-top');
     wrap.appendChild(top);
-    top.appendChild(el('h3', 'm09-h', 'The first-order prediction of switching a side off'));
-    top.appendChild(el('p', 'm09-formula', 'ΔL̂ = Σ over the group’s positions i of −h(i) · ∂L/∂h(i)'));
-    top.appendChild(el('p', 'm09-note', 'h(i) is the unit’s input to the down matrix at position i, and L is the window’s summed next-token loss. Switching off changes h(i) by −h(i), ' +
-      'so to first order the loss changes by −h(i) times the derivative; hence the minus sign. ΔL̂ is summed over the birth’s windows, in nats, and is compared with ΔL, the switched-off loss minus the clean loss summed the same way. ' +
-      'A pair is a birth and one switched-off side: the carrier, or one of the three other sides of its layer that ranked highest one snapshot before the birth.'));
+    top.appendChild(el('h3', 'm09-h', 'Gradient × activation attribution: the first-order estimate of a zero-ablation'));
+    top.appendChild(el('p', 'm09-formula', 'ΔL̂ = Σ over the cluster’s tokens i of −h(i) · ∂L/∂h(i)'));
+    top.appendChild(el('p', 'm09-note', 'h(i) is the neuron’s activation at token i (its input to down_proj), and L is the window’s summed next-token loss. Zero-ablation changes h(i) by −h(i), ' +
+      'so to first order the loss changes by −h(i) times the derivative; hence the minus sign. We sum ΔL̂ over the cluster’s corpus windows, in nats, and compare it with ΔL, the ablated loss minus the clean loss summed the same way. ' +
+      'Each point is one zero-ablation for one late-onset cluster, measured at the checkpoint before the onset: of the cluster’s own pole, or of one of the three other poles of its layer that ranked highest on the cluster’s tokens at that checkpoint. ' +
+      'A pole is one sign of a neuron’s activations; a cluster is a group of a pole’s top-50 activating tokens that an LLM put together and named; its onset is the first checkpoint at which the pole’s median activation on those tokens is in the pole’s own top 0.1 % and stays there.'));
 
     // ---------- a scatter on the signed log scale ----------
     const legendKey = (cls, text) => { const s = el('span'); s.append(el('i', 'm09-key ' + cls), text); return s; };
@@ -204,22 +208,22 @@
         refresh() { if (cur >= 0) WALK.valueBox.showFor(dots[cur], boxFor(ids[cur])); },
       };
     }
-    const scaleNote = 'Both axes are on a log scale of the size, on either side of 0 (linear within ±0.0001), so a value’s sign is the side of 0 it falls on. The scale keeps the order of the values, and rank agreement reads only that order.';
+    const scaleNote = 'Both axes are on a log scale of the size, on either side of 0 (linear within ±0.0001), so negative values lie left of and below 0, and positive values right of and above it. The scale keeps the order of the values, and the Spearman correlation depends only on that order.';
     const pairBox = (i) => {
       const b = sideOf(P.birth[i]);
       const s = sideOf(P.side[i]);
       const q = P.place_in_list[i];
-      const rows = [['side switched off', q === 0 ? 'the carrier' : 'unit ' + F.int(s.unit) + ', ' + s.sign]];
-      if (q > 0) rows.push(['its rank one snapshot before', ORD[q] + ' of the layer']);
-      rows.push(['16-bit prediction', sig(P.prediction_16bit[i], 3)], ['32-bit prediction', sig(P.prediction_32bit[i], 3)],
-        ['16-bit measurement', sig(P.measurement_16bit[i], 3)], ['32-bit measurement', sig(P.measurement_32bit[i], 3)]);
-      return { title: 'Birth: layer ' + b.layer + ', unit ' + F.int(b.unit) + ', ' + b.sign + ' side, group ' + b.group, rows };
+      const rows = [['zero-ablated pole', q === 0 ? 'the cluster’s own pole' : poleId(s) + ', neuron ' + F.int(s.unit) + ', ' + s.sign]];
+      if (q > 0) rows.push(['rank at the checkpoint before the onset', ORD[q] + ' in the layer']);
+      rows.push(['attribution, bfloat16', sig(P.prediction_16bit[i], 3)], ['attribution, float32', sig(P.prediction_32bit[i], 3)],
+        ['ΔL, bfloat16', sig(P.measurement_16bit[i], 3)], ['ΔL, float32', sig(P.measurement_32bit[i], 3)]);
+      return { title: 'Cluster ' + b.group + ' of ' + poleId(b) + ' (layer ' + b.layer + ', neuron ' + F.int(b.unit) + ', ' + b.sign + ' pole)', rows };
     };
 
     // ---------- the prediction against the measurement ----------
     const main = el('section', 'm09-main');
     wrap.appendChild(main);
-    main.appendChild(el('h3', 'm09-h', 'The 16-bit prediction against the measured ΔL, ' + held.length + ' held-out pairs'));
+    main.appendChild(el('h3', 'm09-h', 'Attribution in bfloat16 against the measured ΔL, ' + held.length + ' held-out ablations'));
     const controls = el('div', 'control-row');
     controls.appendChild(el('span', 'control-label', 'Measured in'));
     const tog = el('div', 'toggle');
@@ -227,7 +231,7 @@
     tog.setAttribute('aria-label', 'Measurement precision');
     let state = '16';
     const stBtns = ['16', '32'].map((s) => {
-      const b = el('button', '', s + '-bit');
+      const b = el('button', '', PREC[s]);
       b.type = 'button';
       b.addEventListener('click', () => { state = s; update(); });
       tog.appendChild(b);
@@ -240,10 +244,10 @@
     const left = el('div', 'm09-col');
     grid.appendChild(left);
     const leg = el('p', 'm09-legend');
-    leg.append(legendKey('dot', 'one pair'), legendKey('diag', 'measurement = prediction'));
+    leg.append(legendKey('dot', 'one ablation'), legendKey('diag', 'ΔL = attribution'));
     left.appendChild(leg);
-    const S1 = scatter(left, held, P.prediction_16bit, pairBox, held.length + ' held-out pairs: the 16-bit prediction across, the chosen measurement up; arrow keys move between pairs in order of the prediction');
-    left.appendChild(el('p', 'm09-xname', '16-bit prediction ΔL̂, nats'));
+    const S1 = scatter(left, held, P.prediction_16bit, pairBox, held.length + ' held-out ablations: the bfloat16 attribution across, the measured ΔL up; arrow keys move between ablations in order of the attribution');
+    left.appendChild(el('p', 'm09-xname', 'attribution ΔL̂ in bfloat16, nats'));
     left.appendChild(el('p', 'm09-note', scaleNote));
     const read = el('div', 'm09-read');
     read.setAttribute('aria-live', 'polite');
@@ -253,16 +257,16 @@
       stBtns.forEach((b, k) => b.setAttribute('aria-pressed', String(['16', '32'][k] === state)));
       const ys = state === '16' ? P.measurement_16bit : P.measurement_32bit;
       S1.setY(ys);
-      S1.yName.textContent = state + '-bit measurement ΔL, nats';
+      S1.yName.textContent = 'ΔL measured in ' + PREC[state] + ', nats';
       S1.refresh();
       read.replaceChildren();
       const fact = (big, text) => { const p = el('p', 'm09-fact'); p.append(el('b', '', big), el('span', '', text)); read.appendChild(p); };
-      fact(F.fixed(rho[state].held, 3), 'rank agreement of the 16-bit prediction with the ' + state + '-bit measurement over the ' + held.length + ' held-out pairs drawn' +
-        (state === '32' ? '; band ' + F.fixed(T32.band_held_out[0], 3) + ' to ' + F.fixed(T32.band_held_out[1], 3) + ', the range consistent with the data when the births are resampled' : ''));
-      fact(F.fixed(rho[state].rule, 3), 'the same over the ' + rule.length + ' pairs of the half used to set the rules');
+      fact(F.fixed(rho[state].held, 3), 'Spearman correlation of the bfloat16 attribution with ΔL measured in ' + PREC[state] + ', over the ' + held.length + ' held-out ablations drawn' +
+        (state === '32' ? '; bootstrap 95 % confidence interval ' + F.fixed(T32.band_held_out[0], 3) + ' to ' + F.fixed(T32.band_held_out[1], 3) + ', resampling the clusters' : ''));
+      fact(F.fixed(rho[state].rule, 3), 'the same over the ' + rule.length + ' ablations of the development split, on which the study set its thresholds');
       read.appendChild(el('p', 'm09-note', state === '16'
-        ? 'The 16-bit measurement is far larger than the prediction and unrelated to it in order. The study had required a rank agreement of at least ' + F.fixed(D.threshold_set_in_advance, 1) + ' before its gradient readings could count.'
-        : 'The 32-bit measurement lies along the line where it equals the prediction. Shuffle reference: with the prediction shuffled across the pairs 1,000 times, 97.5 % of the shuffles agree less than ' +
+        ? 'ΔL measured in bfloat16 is far larger than the attribution and unrelated to it in order. The study required a Spearman correlation of at least ' + F.fixed(D.threshold_set_in_advance, 1) + ' before it would use the attribution.'
+        : 'ΔL measured in float32 lies along the line where it equals the attribution. Permutation baseline: we shuffled the attribution across the ablations 1,000 times, and 97.5 % of the shuffles gave a lower Spearman correlation than ' +
           F.fixed(T32.shuffle_reference_held_out, 3) + '. The threshold set in advance was ' + F.fixed(D.threshold_set_in_advance, 1) + '.'));
     }
 
@@ -271,22 +275,22 @@
     wrap.appendChild(two);
     const pa = el('section', 'm09-pa');
     two.appendChild(pa);
-    pa.appendChild(el('h3', 'm09-h', 'The prediction in 16-bit against the prediction in 32-bit'));
-    const S2 = scatter(pa, held, P.prediction_16bit, pairBox, held.length + ' held-out pairs: the 16-bit prediction across, the 32-bit prediction up');
+    pa.appendChild(el('h3', 'm09-h', 'The attribution in bfloat16 against the attribution in float32'));
+    const S2 = scatter(pa, held, P.prediction_16bit, pairBox, held.length + ' held-out ablations: the bfloat16 attribution across, the float32 attribution up');
     S2.setY(P.prediction_32bit);
-    S2.yName.textContent = '32-bit prediction ΔL̂, nats';
-    pa.appendChild(el('p', 'm09-xname', '16-bit prediction ΔL̂, nats'));
+    S2.yName.textContent = 'attribution ΔL̂ in float32, nats';
+    pa.appendChild(el('p', 'm09-xname', 'attribution ΔL̂ in bfloat16, nats'));
     const paFacts = el('div', 'm09-facts');
     const pfact = (big, text) => { const p = el('p', 'm09-fact small'); p.append(el('b', '', big), el('span', '', text)); paFacts.appendChild(p); };
-    pfact(F.fixed(rhoPred, 3), 'rank agreement over the ' + held.length + ' held-out pairs');
-    pfact(F.fixed(relDiff * 100, 1) + ' %', 'median relative difference, |16-bit − 32-bit| / |32-bit|');
+    pfact(F.fixed(rhoPred, 3), 'Spearman correlation over the ' + held.length + ' held-out ablations');
+    pfact(F.fixed(relDiff * 100, 1) + ' %', 'median relative difference, |bfloat16 − float32| / |float32|');
     pa.appendChild(paFacts);
-    pa.appendChild(el('p', 'm09-note', 'The 32-bit prediction was taken in forward mode along the direction −h. The two predictions agree, so the 16-bit prediction was not what failed.'));
+    pa.appendChild(el('p', 'm09-note', 'We computed the float32 attribution in forward mode along the direction −h. The two attributions agree, so the bfloat16 attribution was not what failed.'));
 
     const pb = el('section', 'm09-pb');
     two.appendChild(pb);
-    pb.appendChild(el('h3', 'm09-h', 'Sizes: what the 16-bit sum could not resolve'));
-    pb.appendChild(el('p', 'm09-note', 'One tick per pair, at the size of the value; the dot is the median.'));
+    pb.appendChild(el('h3', 'm09-h', 'Sizes: what the bfloat16 sum could not resolve'));
+    pb.appendChild(el('p', 'm09-note', 'One tick per ablation, at the size of the value; the dot is the median.'));
     const strip = el('div', 'm09-strip');
     pb.appendChild(strip);
     const LO = -5, HI = 1;
@@ -305,12 +309,12 @@
       lab.style.left = xs(med) + '%';
       track.append(dot, lab);
       r.appendChild(track);
-      WALK.hover(r, { title: name, rows: [['pairs', F.int(ids.length)], ['median size, nats', sig(med, 4), 'ink'], ['median of', what]] });
+      WALK.hover(r, { title: name, rows: [['ablations', F.int(ids.length)], ['median size, nats', sig(med, 4), 'ink'], ['median of', what]] });
       strip.appendChild(r);
     };
-    sizeRow('|16-bit prediction|, both halves', all, 'prediction_16bit', med16p, 'both halves');
-    sizeRow('|16-bit measurement|, both halves', all, 'measurement_16bit', med16m, 'both halves');
-    sizeRow('|32-bit measurement|, held-out half', held, 'measurement_32bit', med32m, 'the held-out half');
+    sizeRow('|attribution in bfloat16|, both splits', all, 'prediction_16bit', med16p, 'both splits');
+    sizeRow('|ΔL in bfloat16|, both splits', all, 'measurement_16bit', med16m, 'both splits');
+    sizeRow('|ΔL in float32|, held-out split', held, 'measurement_32bit', med32m, 'the held-out split');
     const sax = el('div', 'm09-saxis');
     sax.setAttribute('aria-hidden', 'true');
     for (let p = -4; p <= 0; p++) {
@@ -320,13 +324,13 @@
     }
     strip.appendChild(sax);
     strip.appendChild(el('p', 'm09-xname', 'size in nats, log scale'));
-    pb.appendChild(el('p', 'm09-note', 'The 16-bit measurement’s median size is ' + F.fixed(med16m, 2) + ' nats where the prediction says ' + F.fixed(med16p, 3) +
-      ': summed in 16-bit over each window’s 2,048 losses, the measurement could not resolve a change of that size. The 32-bit measurement’s median, ' + F.fixed(med32m, 3) + ', matches the prediction’s.'));
+    pb.appendChild(el('p', 'm09-note', 'ΔL measured in bfloat16 has a median size of ' + F.fixed(med16m, 2) + ' nats where the attribution says ' + F.fixed(med16p, 3) +
+      ': summed in bfloat16 over each window’s 2,048 losses, the measurement could not resolve a change that small. ΔL measured in float32 has a median size of ' + F.fixed(med32m, 3) + ', the same as the attribution’s to three decimals.'));
 
     // ---------- why forward mode ----------
     const mem = el('section', 'm09-mem');
     wrap.appendChild(mem);
-    mem.appendChild(el('h3', 'm09-h', 'Why the 32-bit derivative was taken in forward mode'));
+    mem.appendChild(el('h3', 'm09-h', 'Why we computed the float32 derivative in forward mode'));
     const bars = el('div', 'm09-bars');
     mem.appendChild(bars);
     const GBMAX = Math.ceil(WF.backward_32bit_peak_GB_max_over_births / 10) * 10;
@@ -341,10 +345,10 @@
       WALK.hover(r, { title: name, rows: [['memory', F.fixed(gb, 2) + ' GB', cls]] });
       bars.appendChild(r);
     };
-    bar('a 32-bit backward pass, for a birth in layer 0', WF.backward_32bit_peak_GB_layer0, 'ink');
+    bar('a float32 backward pass, for a cluster in layer 0', WF.backward_32bit_peak_GB_layer0, 'ink');
     bar('the GPU’s memory', WF.gpu_memory_GB, 'control');
-    mem.appendChild(el('p', 'm09-note', 'The largest need over the ' + WF.births + ' births is ' + F.fixed(WF.backward_32bit_peak_GB_max_over_births, 2) + ' GB; only ' + WF.births_that_would_fit + ' of the ' + WF.births +
-      ' would fit with a margin. Forward mode carries the derivative along the one direction −h through a forward pass and stores no backward pass. On a small 32-bit model, for unit ' + sm.unit +
+    mem.appendChild(el('p', 'm09-note', 'The largest need over the ' + WF.births + ' late-onset clusters is ' + F.fixed(WF.backward_32bit_peak_GB_max_over_births, 2) + ' GB; only ' + WF.births_that_would_fit + ' of the ' + WF.births +
+      ' would fit with a margin. Forward mode carries the derivative along the one direction −h through a forward pass and stores nothing for a backward pass. On a small float32 test model, for neuron ' + sm.unit +
       ', forward mode gave ' + sm.forward_mode + ' and reverse mode ' + sm.reverse_mode + ': a relative difference of ' + sig(sm.relative_difference, 2) + '.'));
 
     update();

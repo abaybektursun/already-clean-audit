@@ -1,71 +1,111 @@
-/* m01: the model and the snapshots. Every rule is scoped under #m01; tokens come from site.css. */
+/* m01: the model and its checkpoints. Every rule is scoped under #m01; tokens come from site.css. */
 #m01 { font-size: var(--step-cap); line-height: 1.45; color: var(--ink); }
 #m01 *, #m01 *::before, #m01 *::after { box-sizing: border-box; }
 #m01 p { margin: 0; max-width: none; }
+#m01 code { font-family: var(--font-mono); font-size: var(--step--1); overflow-wrap: anywhere; }
 #m01 .m01-h { margin: 0 0 1rem; font-size: var(--step-0); font-weight: 700; line-height: 1.3; overflow-wrap: anywhere; }
-#m01 .m01-h4 { margin: 0 0 0.5rem; font-size: var(--step-cap); font-weight: 700; }
+#m01 .m01-h code { font-size: inherit; }
 #m01 .m01-note { margin-top: 0.6rem; color: var(--muted); max-width: 68ch; }
-#m01 .m01-wrap { display: grid; gap: 2.5rem; }
+#m01 .m01-wrap { display: grid; gap: 2.75rem; }
 
-/* the column of layers beside the inside of one layer */
-#m01 .m01-cols { display: grid; gap: 2rem; }
-@media (min-width: 760px) { #m01 .m01-cols { grid-template-columns: 15rem minmax(0, 1fr); gap: 2.5rem; } }
-#m01 .m01-stack { display: flex; flex-direction: column; gap: 6px; max-width: 22rem; }
-#m01 .m01-flow { color: var(--muted); font-size: var(--step--1); }
-#m01 .m01-outer {
-  display: flex; justify-content: space-between; align-items: baseline; gap: 0.75rem; flex-wrap: wrap;
-  padding: 0.35rem 0.6rem; border: 1px solid var(--rule); border-radius: 6px; cursor: default;
+/* ---------- the architecture: data flows down; the residual stream is one vertical line at x = --R ----------
+   --R  the line's centre from the left of the drawing
+   --gap the distance from the line to a branch box
+   --spine the x of the arrows inside a branch, from the branch's left edge
+   --bw the block frame's border width */
+#m01 .m01-arch { --R: 22px; --gap: 26px; --spine: 30px; --bw: 1.5px; --line: 2px; max-width: 46rem; }
+#m01 .m01-io { color: var(--muted); }
+#m01 .m01-box { position: relative; border: 1.5px solid var(--ink); border-radius: 6px; padding: 0.45rem 0.65rem 0.55rem; background: var(--bg); }
+#m01 .m01-box.norm { border-color: var(--muted); background: var(--band); }
+#m01 .m01-bh { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.1rem 1rem; }
+#m01 .m01-bname code { font-weight: 500; }
+#m01 .m01-what { margin-top: 0.1rem; }
+#m01 .m01-pc { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+#m01 .m01-trs { display: grid; grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr)); gap: 0.15rem 1rem; margin-top: 0.3rem; }
+#m01 .m01-tr { display: flex; gap: 0.6rem; align-items: baseline; padding: 1px 4px; margin-left: -4px; border-radius: 4px; cursor: default; }
+#m01 .m01-tr:hover, #m01 .m01-tr:focus-visible { background: var(--band); }
+#m01 .m01-shape { font-family: var(--font-mono); font-size: var(--step--1); color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+#m01 .m01-bnote { margin-top: 0.35rem; color: var(--muted); }
+
+/* a down arrow on the line; .spine puts it on a branch's own line; .lab carries a label beside it */
+#m01 .m01-ar { --x: var(--R); position: relative; height: 26px; }
+#m01 .m01-ar.spine { --x: var(--spine); height: 22px; }
+#m01 .m01-ar::before {
+  content: ''; position: absolute; left: calc(var(--x) - var(--line) / 2); top: 0; bottom: 7px; width: var(--line); background: var(--ink);
 }
-#m01 .m01-outer:hover, #m01 .m01-outer:focus-visible { background: var(--band); }
-#m01 .m01-outer-name { font-weight: 700; }
-#m01 .m01-tshape { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
-#m01 .m01-layers { display: grid; gap: 0; padding: 2px 0; }
-#m01 .m01-layer { display: grid; grid-template-columns: 1.75rem minmax(0, 1fr); align-items: center; height: 12px; cursor: default; }
-#m01 .m01-lnum { font-size: 12px; line-height: 1; color: var(--muted); text-align: right; padding-right: 0.4rem; font-variant-numeric: tabular-nums; }
-#m01 .m01-lbar { display: block; height: 9px; border-radius: 2px; background: var(--bar); }
-#m01 .m01-layer.full .m01-lbar { background: var(--ink); }
-#m01 .m01-layer:hover .m01-lbar, #m01 .m01-layer:focus-visible .m01-lbar { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px var(--muted); }
-#m01 .m01-legend { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; margin-top: 0.25rem; font-size: var(--step--1); color: var(--muted); }
-#m01 .m01-legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
-#m01 .m01-key { display: inline-block; width: 14px; height: 9px; border-radius: 2px; }
-#m01 .m01-key.full { background: var(--ink); }
-#m01 .m01-key.sliding { background: var(--bar); }
+#m01 .m01-ar::after {
+  content: ''; position: absolute; left: calc(var(--x) - 5px); bottom: 0;
+  border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 8px solid var(--ink);
+}
+#m01 .m01-ar.lab { height: auto; min-height: 26px; padding: 0.45rem 0 0.8rem calc(var(--x) + 12px); color: var(--muted); }
 
-/* inside one layer: tensors to true shape; --u is the drawn length of 4,096 */
-#m01 .m01-inside { container-type: inline-size; min-width: 0; }
-#m01 .m01-inside, #m01 .m01-inside * { --u: min(64px, (100cqw - 36px) / 5.7); }
-#m01 .m01-h-line { margin-bottom: 0.4rem; }
-#m01 .m01-op { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
-#m01 .m01-formula { font-family: var(--font-mono); font-size: var(--step-cap); font-weight: 500; margin-bottom: 0.75rem; overflow-wrap: anywhere; }
-#m01 .m01-trow { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0.9rem 1rem; }
-#m01 .m01-t { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; cursor: default; }
-#m01 .m01-t:hover .m01-mat, #m01 .m01-t:focus-visible .m01-mat,
-#m01 .m01-t:hover .m01-vec, #m01 .m01-t:focus-visible .m01-vec { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px var(--muted); }
-#m01 .m01-mat { background: var(--bar); border-radius: 2px; }
-#m01 .m01-vec { height: 3px; border-radius: 2px; background: var(--muted); margin-top: 6px; }
-#m01 .m01-hvec { background: var(--ink); }
-#m01 .m01-tcap { font-weight: 700; line-height: 1.2; }
-#m01 .m01-t .m01-tshape { line-height: 1.2; }
+/* the block, repeated: a dashed frame; the line runs through it */
+#m01 .m01-block { position: relative; border: var(--bw) dashed var(--muted); border-radius: 10px; padding: 0.5rem 0.6rem 0.4rem 0; }
+#m01 .m01-block::before {
+  content: ''; position: absolute; left: calc(var(--R) - var(--bw) - var(--line) / 2); top: calc(-1 * var(--bw)); bottom: calc(-1 * var(--bw));
+  width: var(--line); background: var(--ink);
+}
+#m01 .m01-x {
+  position: absolute; right: 12px; top: 0; transform: translateY(-55%); padding: 0 6px; background: var(--bg);
+  font-weight: 700; font-size: var(--step-0); line-height: 1.2;
+}
+#m01 .m01-bhd { padding: 0.2rem 0 0 calc(var(--R) + 14px); color: var(--muted); }
+#m01 .m01-sub { position: relative; margin-top: 1rem; }
+/* the fork: a dot on the line, then an arrow right into the branch's first box */
+#m01 .m01-sub::before {
+  content: ''; position: absolute; left: calc(var(--R) - var(--bw) - 4.5px); top: 14.5px; width: 9px; height: 9px; border-radius: 50%; background: var(--ink);
+}
+#m01 .m01-branch { position: relative; margin-left: calc(var(--R) - var(--bw) + var(--gap)); }
+#m01 .m01-branch::before {
+  content: ''; position: absolute; left: calc(-1 * var(--gap)); top: calc(19px - var(--line) / 2); width: calc(var(--gap) - 7px); height: var(--line); background: var(--ink);
+}
+#m01 .m01-branch::after {
+  content: ''; position: absolute; left: -8px; top: 14px;
+  border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 8px solid var(--ink);
+}
+/* the add: the branch's line comes down from its last box and runs left into the + on the residual line */
+#m01 .m01-add { position: relative; height: 42px; }
+#m01 .m01-plus {
+  position: absolute; left: calc(var(--R) - var(--bw) - 13px); top: 14px; width: 26px; height: 26px; border-radius: 50%;
+  border: 2px solid var(--ink); background: var(--bg); display: grid; place-items: center;
+  font-weight: 700; font-size: 18px; line-height: 1;
+}
+#m01 .m01-ret {
+  position: absolute; left: calc(var(--R) - var(--bw) + 13px); top: 0; height: calc(27px + var(--line) / 2);
+  width: calc(var(--gap) + var(--spine) - 13px + var(--line) / 2);
+  border-right: var(--line) solid var(--ink); border-bottom: var(--line) solid var(--ink); border-bottom-right-radius: 6px;
+}
+#m01 .m01-ret::after {
+  content: ''; position: absolute; left: 0; bottom: -6px;
+  border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-right: 8px solid var(--ink);
+}
+#m01 .m01-addnote {
+  position: absolute; left: calc(var(--R) - var(--bw) + var(--gap) + var(--spine) + 12px); top: 4px; right: 0;
+  font-family: var(--font-mono); font-size: var(--step--1); color: var(--muted); line-height: 1.3;
+}
+#m01 .m01-sum { margin-top: 1rem; font-variant-numeric: tabular-nums; max-width: 68ch; }
 
-/* the timeline */
-#m01 .m01-tl { position: relative; height: 200px; margin: 2.75rem 0 0.5rem; }
-#m01 .m01-tl svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-#m01 .m01-tl line { vector-effect: non-scaling-stroke; }
+/* ---------- the checkpoints ---------- */
+#m01 .m01-tlp { position: relative; margin: 1rem 0 0.5rem; }
+#m01 .m01-tlp svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+#m01 .m01-tlp line { vector-effect: non-scaling-stroke; }
 #m01 .m01-axis { stroke: var(--muted); stroke-width: 1; }
 #m01 .m01-conn { stroke: var(--rule); stroke-width: 1; }
 #m01 .m01-conn.off { stroke: var(--muted); stroke-dasharray: 3 3; }
-#m01 .m01-sep { stroke: var(--rule); stroke-width: 1; }
-#m01 .m01-tl > * { position: absolute; }
+#m01 .m01-tlp > * { position: absolute; }
 #m01 .m01-tick { transform: translateX(-50%); font-size: 12px; line-height: 1; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
-#m01 .m01-tick.left, #m01 .m01-axis-name.left { transform: translateX(-4px); }
-#m01 .m01-axis-name { font-size: var(--step--1); color: var(--muted); white-space: nowrap; transform: translateY(-100%); }
-#m01 .m01-tick.top-name { font-size: var(--step--1); }
-@media (max-width: 559px) { #m01 .m01-tick.minor { display: none; } }
+/* the branch names, read bottom to top; 12px is the axis tick label size */
+#m01 .m01-blab {
+  writing-mode: vertical-rl; transform: translateX(-50%) rotate(180deg); font-family: var(--font-mono); font-size: 12px; line-height: 1;
+  color: var(--muted); white-space: nowrap;
+}
+#m01 .m01-axis-name { font-size: var(--step--1); color: var(--muted); white-space: nowrap; }
+#m01 .m01-axis-name.left { transform: translateX(-4px); }
 #m01 .m01-dot {
   position: absolute; left: 50%; top: 50%; width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px;
   border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 2px var(--bg);
 }
-#m01 .m01-dot.low { left: auto; top: auto; margin: -4.5px 0 0 -4.5px; }
+#m01 .m01-dot.low { left: auto; top: auto; }
 #m01 .m01-hit { height: 36px; transform: translate(-50%, -50%); cursor: default; border-radius: 6px; }
 #m01 .m01-hit:hover .m01-dot, #m01 .m01-hit:focus-visible .m01-dot { transform: scale(1.4); }
 #m01 .m01-hit.off { width: 30px; }
@@ -75,12 +115,12 @@
 }
 #m01 .m01-off.low { left: auto; top: auto; }
 #m01 .m01-hit.off:hover .m01-off, #m01 .m01-hit.off:focus-visible .m01-off { background: var(--muted); }
-#m01 .m01-letter { position: absolute; left: 50%; top: -6px; transform: translate(-50%, -100%); font-size: var(--step--1); line-height: 1; color: var(--ink); font-weight: 700; }
-#m01 .m01-hit.below .m01-letter { top: auto; bottom: -6px; transform: translate(-50%, 100%); }
-#m01 .m01-zone { transform: translateX(-100%); font-size: var(--step--1); line-height: 1; color: var(--muted); white-space: nowrap; }
-#m01 .m01-offkeys { list-style: none; margin: 1.5rem 0 0; padding: 0; display: grid; gap: 0.35rem; max-width: 68ch; }
-#m01 .m01-offkeys li { padding-left: 1.6rem; text-indent: -1.6rem; }
+#m01 .m01-offlab { transform: translateX(-50%); white-space: nowrap; line-height: 1.2; }
 #m01 .m01-keyoff {
   display: inline-block; width: 9px; height: 9px; margin: 0 0.55rem 0 0.25rem; border: 2px solid var(--muted);
   transform: rotate(45deg); vertical-align: 1px;
 }
+#m01 .m01-offkeys { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; gap: 0.6rem; max-width: 72ch; }
+#m01 .m01-offkeys > li { padding-left: 1.6rem; }
+#m01 .m01-offkeys > li > .m01-keyoff { margin-left: -1.35rem; margin-right: 0.45rem; }
+#m01 .m01-mixes { margin: 0.35rem 0 0; padding-left: 1.1rem; display: grid; gap: 0.2rem; }

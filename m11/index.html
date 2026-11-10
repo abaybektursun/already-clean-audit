@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How a condition is built</title>
+<title>Copying the weight delta</title>
 <!-- The fonts are optional: this stylesheet loads without blocking the page, and site.css falls back to system fonts. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
 <body>
 <main class="page">
   <header class="page-head">
-    <h1>Copying changed weights: how a condition is built</h1>
+    <h1>Copying part of the weight delta onto the base model</h1>
     <nav aria-label="Site">
       <a href="../index.html">The walkthrough</a>
       <button class="button" type="button" data-theme-toggle>Dark theme</button>
@@ -22,7 +22,7 @@
   </header>
   <figure class="figure" data-source="data.js">
     <div id="m11"></div>
-    <figcaption class="figure-caption">Copying changed weights: Δ = mathematics model − base, per tensor; a unit’s change size over its gate row, up row and down column, ranked over all 352,256 MLP units; each condition’s mask on that ranking; the built model is base + c ⊙ M ⊙ Δ; its score is read on 500 problems; the noise of one reading is 1.92 points, and a difference counts above 5.44. <a class="data-link">data</a></figcaption> <!-- vocab-ok -->
+    <figcaption class="figure-caption">We build each condition by copying part of the weight delta Δ = <code>Olmo-3.1-7B-RL-Zero-Math</code> − <code>Olmo-3-1025-7B</code> onto the base model as base + c ⊙ M ⊙ Δ, with the mask M drawn on a ranking of all 352,256 MLP neurons by the norm of their <code>gate_proj</code> row, <code>up_proj</code> row and <code>down_proj</code> column deltas, and we score the built model on the 500 MATH-500 problems, where one score has a noise of 1.92 points and a difference counts above 5.44. <a class="data-link">data</a></figcaption>
   </figure>
 </main>
 <script src="../site.js"></script>
