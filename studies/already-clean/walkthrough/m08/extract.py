@@ -34,8 +34,9 @@ PROJECTION = "studies/next/n2v/projection.json"
 BIRTH = "L03N9245+:c4"
 WINDOW = 2048                                # m2.WINDOW: corpus tokens per window; input 0 is the start-of-text token
 N_SIDES = 4                                  # n2v.N_POLES: the carrier and the three other sides
-ROLE = ["carrier", "other side ranked 1st one snapshot before the birth",
-        "other side ranked 2nd one snapshot before the birth", "other side ranked 3rd one snapshot before the birth"]
+ROLE = ["the cluster's own pole", "another pole of the layer, ranked 1st at the checkpoint before the onset",
+        "another pole of the layer, ranked 2nd at the checkpoint before the onset",
+        "another pole of the layer, ranked 3rd at the checkpoint before the onset"]
 
 
 def src(rel):

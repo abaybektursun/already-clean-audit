@@ -114,7 +114,7 @@ def main():
 
     def call(e):
         true_first = e["order"] == "td"
-        return {"call": e["id"], "outcome": e["kind"], "snapshot_before": e["t"],
+        return {"call": e["id"], "outcome": e["kind"], "snapshot_before": e["t"], "step_before": jp["steps"][e["t"]],
                 "group_contexts": [{"before": b, "token": k, "after": a} for b, k, a in e["ex"]],
                 "record_a": [{"before": b, "token": k, "after": a} for b, k, a in e["a"]],
                 "record_b": [{"before": b, "token": k, "after": a} for b, k, a in e["b"]],
@@ -128,7 +128,7 @@ def main():
     data = {"judge_model": "anthropic/claude-sonnet-5-5", "sorter_model": "Claude Sonnet 5.5",
             "prompt_sha256": prompt_sha, "prompt_system": system, "prompt_user": user,
             "group_contexts_shown_at_most": 10, "record_contexts": 20, "judgments_per_group": 4,
-            "sorting_agreement_rule": "|m - m'| <= 1 between two independent sortings",
+            "sorting_agreement_rule": "|m - m'| <= 1 between two independent clusterings",
             "formula": formula, "control_check": control_gate,
             "example_calls": [picks["late-right"], picks["late-wrong"], picks["control-right"]]}
     notes = {
@@ -138,7 +138,8 @@ def main():
                          "the first late-born call the judge got right, the first it got wrong, and the first control call it "
                          "got right, in that file's order. Texts are as the judge saw them (line breaks as the ↵ character); the "
                          "marked token is `token`, shown to the judge between ⟦ and ⟧. own_side_record says which record was the "
-                         "group's own side at snapshot_before; the other record is a random side of the same layer.",
+                         "group's own side at snapshot_before (index 0 to 15; step_before is its training step, from judge/data.js "
+                         "steps); the other record is a random side of the same layer.",
         "outcome": "late-right / late-wrong: a group born late, judge right or wrong; control-right: the side's main group "
                    "against its own record at snapshot 14 (the positive control).",
         "formula": "unrelated share = (a_control - A) / (a_control - 0.5). recomputed values use the call counts in judge/data.js; "

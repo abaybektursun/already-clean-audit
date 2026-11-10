@@ -11,6 +11,7 @@ import datetime
 import hashlib
 import json
 import csv
+import re
 import subprocess
 from pathlib import Path
 
@@ -57,6 +58,7 @@ BIRTHS = "studies/next/m2/births.json"
 PER_GROUP = "studies/next/10_recount2/out/05_per_cluster_R1t.csv"
 CHANCE = "studies/next/10_recount2/out/05_chance.json"
 EXAMPLES = "studies/next/10_recount2/out/06_examples.json"
+SPEC = "studies/already-clean/SPEC_D1.md"   # §4.3: the training step of each of the sixteen checkpoints
 
 
 def main():
@@ -110,9 +112,13 @@ def main():
             "random_group_births_fresh_draw": {int(k): n for k, n in v["ref_hist_fresh_draw"].items()},
             "share_random_born_same_or_later_fresh_draw": v["p_late_fresh"], "share_random_born_same_or_later": float(r["p_late"]),
             "random_group_median_birth": float(r["ref_median"]), "passes": float(r["p_late"]) <= alpha})
+    steps = [int(r.split("|")[2].strip().replace(",", "")) for r in src(SPEC).read_text().splitlines()
+             if re.match(r"\| T_\d+ \| [\d,]+ \|", r)]
+    assert len(steps) == 16 and steps[-1] == 1413814, steps
     data = {
         "rule": {"random_groups_per_group": ch["reps"], "threshold": alpha, "seed": ch["seed"],
                  "sides_with_two_or_more_groups": ch["n_poles"]},
+        "checkpoint_steps": steps,
         "counts": counts, "split": split, "examples": examples,
         "all_groups": {"share_random_born_same_or_later": p_late, "birth_snapshot": [int(r["real"]) for r in rows],
                        "size": [int(r["size"]) for r in rows], "main": [r["is_main"] == "True" for r in rows]},
@@ -135,6 +141,8 @@ def main():
                     "maps a birth snapshot to the count of a fresh draw of 2,000 random groups (seed 7) born there, so "
                     "share_random_born_same_or_later_fresh_draw differs slightly from the main run's value.",
         "all_groups": "Parallel arrays over the 2,428 tested groups in the order of 05_per_cluster_R1t.csv.",
+        "checkpoint_steps": "The training step of each of the sixteen checkpoints, indexed by the snapshot numbers used above "
+                            "(SPEC_D1.md §4.3); the checkpoint at index k is the Hugging Face branch stage1-step<steps[k]>.",
         "split": "Each passing birth goes to the half that set the rules if its unit index is even, to the held-out half if odd "
                  "(births.json split, internal freeze / test); recomputed from the unit index.",
     }

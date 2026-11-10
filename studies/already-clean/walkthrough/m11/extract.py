@@ -152,7 +152,7 @@ def main():
     # ---- one layer: the layer holding the most of the most-changed 1 %
     pick = max(range(L), key=lambda l: (counts["most_changed_1pct"][l], -l))
     one_layer = {"layer": pick, "units_in_layer": W,
-                 "rule": "the layer holding the most units of the most-changed 1 %",
+                 "rule": "the layer that holds the most neurons of the top 1 % by weight-delta norm",
                  "unit_indices": {k: sorted(u % W for u in v if u // W == pick) for k, v in sets_named.items()}}
 
     # ---- cumulative energy at the banked ranks (all 32 layers ranked together)

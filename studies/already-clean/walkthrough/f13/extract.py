@@ -15,6 +15,7 @@ the medians on the pairs, the 16 of 21, and the power check.
 import datetime
 import hashlib
 import json
+import re
 import subprocess
 from pathlib import Path
 
@@ -25,6 +26,7 @@ ROOT = HERE.parents[3]                       # walkthrough/<picture> -> already-
 ID = HERE.name.upper()
 MAX_BYTES = 300_000
 SOURCES = []
+ASSETS = "studies/next/00_ASSETS.md"   # the sixteen stage-1 checkpoints and their branches (as m03, m05)
 
 N6 = "studies/next/n6"
 EDITS = f"{N6}/banks/L2a-01/edits.jsonl"
@@ -252,6 +254,13 @@ def main():
         "audit values": "The audit's per-layer ratios and pair medians are compared as typed from "
                         "AUDIT_PLAN_MECHANISMS_2026-11-08.md §3.50; the script asserts those strings are in the file.",
     }
+    # the training step of each checkpoint, so that the page names a checkpoint by its step and branch
+    steps = [int(re.search(r"`stage1-step(\d+)`", s)[1]) for s in src(ASSETS).read_text().splitlines()
+             if re.match(r"\| T_\d+ \| `stage1-step", s)]
+    assert len(steps) == 16, steps
+    data["snapshot_steps"] = steps
+    notes["snapshot_steps"] = ("Training step of each of the sixteen stage-1 checkpoints 0 ... 15; the checkpoint's Hugging Face "
+                               "branch is stage1-step<step> (studies/next/00_ASSETS.md, the table rows T_0 ... T_15).")
     write(data, notes)
 
 

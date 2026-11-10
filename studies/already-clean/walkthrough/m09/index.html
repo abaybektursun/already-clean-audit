@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The gradient prediction</title>
+<title>Attribution against ablation</title>
 <!-- The fonts are optional: this stylesheet loads without blocking the page, and site.css falls back to system fonts. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
 <body>
 <main class="page">
   <header class="page-head">
-    <h1>The gradient prediction, and what 16-bit broke</h1>
+    <h1>Gradient × activation attribution against zero-ablation, in bfloat16 and float32</h1>
     <nav aria-label="Site">
       <a href="../index.html">The walkthrough</a>
       <button class="button" type="button" data-theme-toggle>Dark theme</button>
@@ -22,7 +22,7 @@
   </header>
   <figure class="figure" data-source="data.js">
     <div id="m09"></div>
-    <figcaption class="figure-caption">The first-order prediction of switching off, ΔL̂ = Σ −h·∂L/∂h over the group's positions, computed in <span data-nocheck>16-bit</span> and in <span data-nocheck>32-bit</span> (rank agreement 0.995; rank agreement is the rank correlation of two readings over the same pairs, 1 when they order the pairs alike and 0 when unrelated), against the measured ΔL in <span data-nocheck>16-bit</span> (rank agreement 0.100 on the rule-setting half, 0.043 held out) and in <span data-nocheck>32-bit</span> (0.960 held out, band 0.915 to 0.990). <a class="data-link">data</a></figcaption>
+    <figcaption class="figure-caption">We compare gradient × activation attribution, ΔL̂ = Σ −h·∂L/∂h over a cluster's tokens (the first-order estimate of a zero-ablation's loss change), computed in bfloat16 and in float32 (Spearman correlation 0.995 between the two), with the measured ΔL of the zero-ablation in bfloat16 (Spearman correlation 0.100 on the development split, 0.043 on the held-out split) and in float32 (0.960 on the held-out split, bootstrap confidence interval 0.915 to 0.990). <a class="data-link">data</a></figcaption>
   </figure>
 </main>
 <script src="../site.js"></script>

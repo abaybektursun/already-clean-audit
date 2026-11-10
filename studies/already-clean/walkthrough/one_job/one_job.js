@@ -231,14 +231,14 @@
 
   function describe(p) {
     const m = /^L(\d+)N(\d+)([+-])$/.exec(p);
-    return 'layer ' + Number(m[1]) + ', neuron ' + m[2] + ', ' + (m[3] === '+' ? 'positive' : 'negative') + ' side';
+    return 'layer ' + Number(m[1]) + ', neuron ' + m[2] + ', ' + (m[3] === '+' ? 'positive' : 'negative') + ' pole';
   }
 
   function why(n, r) {
     const ex = D.explainers[n.e];
     if (n.f === 1) {
       return n.s ? 'Too rare to test: fewer than 50 tokens of the corpus activate it at 1% of its peak or more.'
-        : 'It never fires on this side in the corpus, so it was not tested.';
+        : 'The neuron never has an activation of this sign in the corpus, so this pole was not tested.';
     }
     if (n.f === 2) return 'The explainer’s answer was rejected three times for quoting the contexts it was shown, so nothing was tested.';
     if (n.f === 3) return 'The writer of the test texts gave no usable answer in three tries, so nothing was tested.';
@@ -419,7 +419,7 @@
   function caption() {
     const said = M.map((c) => c.model.neurons.filter((n) => n.l === 'ONE').length);
     $('caption').textContent =
-      'Each dot is the positive or the negative side of one of ' + N / 2 + ' neurons drawn at random from the model, ' +
+      'Each dot is the positive or the negative pole of one of ' + N / 2 + ' neurons drawn at random from the model, ' +
       'classed from its test scores at the strong line; the explainer itself had said one job for ' +
       said.slice(0, -1).join(', ') + ' and ' + said[said.length - 1] + ' of the ' + N + '. ' +
       'Cannot tell means the test gave no class, not that the neuron does unrelated things, and the counts depend on ' +

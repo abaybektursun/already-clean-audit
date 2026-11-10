@@ -1,8 +1,9 @@
-// m11: copying changed weights, and how each condition is built. Registers the mount "m11" with site.js; reads
-// window.M11_DATA (m11/data.js). The build formula; a menu of constructions and a toggle of sizes; the per-unit change
-// size of all 352,256 MLP units as a sorted curve (399 banked points) with the chosen condition's mask on the ranking;
-// the squared change each condition adds against the whole MLP change; where its units sit by layer and along one
-// layer; the change by tensor family and which model each family comes from; and how one score is read, with its noise.
+// m11: copying part of the weight delta onto the base model, and how each condition is built. Registers the mount "m11"
+// with site.js; reads window.M11_DATA (m11/data.js). The build formula; a menu of constructions and a toggle of sizes;
+// the weight-delta norm of all 352,256 MLP neurons as a sorted curve (399 saved points) with the chosen condition's
+// mask on the ranking; the squared delta norm each condition adds against the whole MLP delta; where its neurons sit by
+// layer and along one layer; the delta by tensor family and which model each family comes from; and how one MATH-500
+// score is taken, with its noise.
 (() => {
   'use strict';
 
@@ -24,13 +25,13 @@
   const pow10 = (k) => (k === 0 ? '1' : k === 1 ? '10' : k === 2 ? '100' : k === 3 ? '1,000' : k === 4 ? '10,000' : k === 5 ? '100,000' : '10' + String(k).replace(/./g, (c) => SUP[c]));
 
   const CONS = [
-    { id: 'most', name: 'the most-changed units', sized: true },
-    { id: 'scalar', name: 'random units of equal energy, one scalar', sized: true },
-    { id: 'own', name: 'random units of equal energy, at their own change', sized: true },
-    { id: 'sample', name: 'a random sample of MLP entries, scaled by 1/q', sized: true },
-    { id: 'all', name: 'all MLP', sized: false },
-    { id: 'attn', name: 'attention with every norm weight', sized: false },
-    { id: 'minus', name: 'the mathematics model without its most-changed units', sized: true },
+    { id: 'most', name: 'the top-k neurons by weight-delta norm', sized: true },
+    { id: 'scalar', name: 'random neurons matched on squared delta norm, one scalar', sized: true },
+    { id: 'own', name: 'random neurons matched on squared delta norm, at their own delta', sized: true },
+    { id: 'sample', name: 'DARE on the MLP delta: keep a random share q, rescale by 1/q', sized: true },
+    { id: 'all', name: 'the whole MLP delta', sized: false },
+    { id: 'attn', name: 'the attention and norm-weight deltas', sized: false },
+    { id: 'minus', name: 'RL-Zero-Math with its top-k neurons reset to the base model', sized: true },
   ];
   const FAM = [
     { key: 'mlp', name: 'MLP' },
@@ -66,20 +67,20 @@
       const k = setKeys(s.percent_of_units);
       const top = D.top_sets_from_curve[pctText(s.percent_of_units).replace(NB, ' ')];
       if (!top || top.units !== s.units) throw new Error('m11: the curve’s top set at ' + s.percent_of_units + ' % differs from the size block');
-      if (Math.abs(top.energy - s.most_changed.energy) > 1e-12) throw new Error('m11: the most-changed energy differs between blocks at ' + s.percent_of_units + ' %');
-      if (s.units !== Math.round((s.percent_of_units / 100) * U)) throw new Error('m11: ' + s.units + ' units is not ' + s.percent_of_units + ' % of ' + U);
+      if (Math.abs(top.energy - s.most_changed.energy) > 1e-12) throw new Error('m11: the top-k squared delta norm differs between blocks at ' + s.percent_of_units + ' %');
+      if (s.units !== Math.round((s.percent_of_units / 100) * U)) throw new Error('m11: ' + s.units + ' neurons is not ' + s.percent_of_units + ' % of ' + U);
       [['most', s.units], ['scalar', s.random_equal_energy_scaled.units], ['own', s.random_equal_energy_own_change.units]].forEach(([c, n]) => {
         const per = PL[k[c]];
         if (!per || per.length !== NL) throw new Error('m11: no per-layer counts for ' + k[c]);
         const tot = per.reduce((a, b) => a + b, 0);
-        if (tot !== n) throw new Error('m11: ' + k[c] + ' holds ' + tot + ' units by layer, the size block says ' + n);
+        if (tot !== n) throw new Error('m11: ' + k[c] + ' holds ' + tot + ' neurons by layer, the size block says ' + n);
         if (ONE.unit_indices[k[c]].length !== per[ONE.layer]) throw new Error('m11: ' + k[c] + ' layer ' + ONE.layer + ' indices do not match its count');
       });
       if (Math.abs(s.scaled_sample.scale * s.scaled_sample.keep_probability - 1) > 1e-9) throw new Error('m11: the sample scale is not 1/q at ' + s.percent_of_units + ' %');
     });
     const famSum = FAM.reduce((a, f) => a + fam[f.key].energy, 0);
-    FAM.forEach((f) => { if (Math.abs(fam[f.key].energy / famSum - fam[f.key].share_of_energy) > 1e-9) throw new Error('m11: the ' + f.key + ' energy share does not add up'); });
-    if (Math.abs(fam.mlp.energy - E0) > 1e-9) throw new Error('m11: the MLP family energy is not the whole MLP change');
+    FAM.forEach((f) => { if (Math.abs(fam[f.key].energy / famSum - fam[f.key].share_of_energy) > 1e-9) throw new Error('m11: the ' + f.key + ' share of the squared delta norm does not add up'); });
+    if (Math.abs(fam.mlp.energy - E0) > 1e-9) throw new Error('m11: the MLP family’s squared delta norm is not the whole MLP delta’s');
 
     // ---------- one condition at one size: everything the picture draws for it ----------
     function condition(id, si) {
@@ -90,19 +91,19 @@
       if (id === 'most') {
         return { ...base, units: s.units, entries: s.units * EPU, c: 1, energy: s.most_changed.realized_mlp_energy, built: true,
           ranks: [1, s.units], kind: 'exact', perLayer: PL[k.most], idx: ONE.unit_indices[k.most], from: 'base',
-          mask: 'the ' + F.int(s.units) + ' units at ranks 1 to ' + F.int(s.units) + ', every entry of each' };
+          mask: 'the ' + F.int(s.units) + ' neurons at ranks 1 to ' + F.int(s.units) + ', every entry of each' };
       }
       if (id === 'scalar') {
         const r = s.random_equal_energy_scaled;
         return { ...base, units: r.units, entries: r.units * EPU, c: r.scale_built, cPlanned: r.scale_planned, energy: r.realized_mlp_energy, built: true,
           ranks: [s.units + 1, U], kind: 'random', perLayer: PL[k.scalar], idx: ONE.unit_indices[k.scalar], from: 'base',
-          mask: F.int(r.units) + ' units drawn at random from ranks ' + F.int(s.units + 1) + ' to ' + F.int(U) };
+          mask: F.int(r.units) + ' neurons drawn at random from ranks ' + F.int(s.units + 1) + ' to ' + F.int(U) };
       }
       if (id === 'own') {
         const r = s.random_equal_energy_own_change;
         return { ...base, units: r.units, entries: r.units * EPU, c: 1, energy: r.realized_mlp_energy === null ? r.energy : r.realized_mlp_energy,
           built: r.realized_mlp_energy !== null, ranks: [s.units + 1, U], kind: 'random', perLayer: PL[k.own], idx: ONE.unit_indices[k.own], from: 'base',
-          mask: F.int(r.units) + ' units drawn at random from ranks ' + F.int(s.units + 1) + ' to ' + F.int(U) + ', added until their energy reached the most-changed set’s' };
+          mask: F.int(r.units) + ' neurons drawn at random from ranks ' + F.int(s.units + 1) + ' to ' + F.int(U) + ', added until their squared delta norm reached the top-k set’s' };
       }
       if (id === 'sample') {
         const r = s.scaled_sample;
@@ -112,7 +113,7 @@
       }
       if (id === 'all') {
         return { ...base, units: U, entries: fam.mlp.entries, c: 1, energy: E0, built: true, ranks: [1, U], kind: 'exact',
-          perLayer: Array(NL).fill(W), idx: allIdx(), from: 'base', mask: 'all ' + F.int(U) + ' units, every entry' };
+          perLayer: Array(NL).fill(W), idx: allIdx(), from: 'base', mask: 'all ' + F.int(U) + ' neurons, every entry' };
       }
       if (id === 'attn') {
         return { ...base, units: 0, entries: 0, c: null, energy: 0, built: true, ranks: null, kind: 'none',
@@ -121,7 +122,7 @@
       const most = new Set(ONE.unit_indices[k.most]);
       return { ...base, units: U - s.units, entries: (U - s.units) * EPU, c: 1, energy: s.most_changed.rest_energy, built: false,
         ranks: [s.units + 1, U], kind: 'exact', perLayer: PL[k.most].map((n) => W - n), idx: allIdx().filter((i) => !most.has(i)), from: 'math',
-        mask: 'the ' + F.int(U - s.units) + ' units at ranks ' + F.int(s.units + 1) + ' to ' + F.int(U) + '; the ' + F.int(s.units) + ' most-changed stay at the base' };
+        mask: 'the ' + F.int(U - s.units) + ' neurons at ranks ' + F.int(s.units + 1) + ' to ' + F.int(U) + '; the top ' + F.int(s.units) + ' stay at the base model' };
     }
     const fromFor = (cond, fk) => {
       if (fk === 'mlp') return cond.id === 'attn' ? 'base' : 'built';
@@ -136,12 +137,14 @@
 
     // ---------- the formula ----------
     const formula = el('div', 'm11-formula');
-    formula.appendChild(el('p', 'm11-fline', 'Δ = mathematics model − base model, tensor by tensor, in 32-bit'));
-    formula.appendChild(el('p', 'm11-fline', 'sₙ = √(‖Δ gate row‖² + ‖Δ up row‖² + ‖Δ down column‖²), over ' + F.int(EPU) + ' entries per unit')); // vocab-ok
-    formula.appendChild(el('p', 'm11-fline', 'built model = 16-bit( base + c ⊙ M ⊙ Δ ), per tensor'));
+    formula.appendChild(el('p', 'm11-fline', 'Δ = Olmo-3.1-7B-RL-Zero-Math − Olmo-3-1025-7B, the weight delta, tensor by tensor, in float32'));
+    formula.appendChild(el('p', 'm11-fline', 'sₙ = √(‖Δ gate_proj row‖² + ‖Δ up_proj row‖² + ‖Δ down_proj column‖²), over ' + F.int(EPU) + ' entries per neuron'));
+    formula.appendChild(el('p', 'm11-fline', 'built model = bfloat16( base + c ⊙ M ⊙ Δ ), per tensor'));
     wrap.appendChild(formula);
-    wrap.appendChild(el('p', 'm11-note', 'sₙ is a unit’s change size; all ' + F.int(U) + ' MLP units of the ' + NL + ' layers are ranked together by it. ' +
-      'M is a mask of entries (1 where the change is copied) and c a scale. Each condition below is one choice of M and c, and of which model the other tensors come from.'));
+    wrap.appendChild(el('p', 'm11-note', 'The base model is Olmo-3-1025-7B; Olmo-3.1-7B-RL-Zero-Math is the same model after reinforcement learning on mathematics. ' +
+      'sₙ is a neuron’s weight-delta norm; we rank all ' + F.int(U) + ' MLP neurons of the ' + NL + ' layers together by it. ' +
+      'M is a mask of entries (1 where we copy the delta) and c a scale. Each condition below is one choice of M and c, and of which model the other tensors come from. ' +
+      'The size k is a share of the ' + F.int(U) + ' neurons.'));
 
     // ---------- controls ----------
     const controls = el('div', 'control-row m11-controls');
@@ -154,7 +157,7 @@
     sizeBox.appendChild(el('span', 'control-label', 'Size'));
     const toggle = el('div', 'toggle');
     toggle.setAttribute('role', 'group');
-    toggle.setAttribute('aria-label', 'Size, in percent of the ' + F.int(U) + ' units');
+    toggle.setAttribute('aria-label', 'Size k, in percent of the ' + F.int(U) + ' neurons');
     const sizeBtns = S.map((s, i) => {
       const b = el('button', '', pctText(s.percent_of_units));
       b.type = 'button';
@@ -174,15 +177,15 @@
     // ---------- the ranking ----------
     const rank = el('section', 'm11-sec');
     wrap.appendChild(rank);
-    rank.appendChild(el('h3', 'm11-h', 'The ranking: every unit’s change size, largest first'));
+    rank.appendChild(el('h3', 'm11-h', 'The ranking: every neuron’s weight-delta norm, largest first'));
     const rLegend = el('p', 'm11-legend');
     const key = (cls, text) => { const s = el('span'); s.append(el('i', 'm11-key ' + cls), text); return s; };
-    rLegend.append(key('pt', 'one of the ' + pts.length + ' banked points of the sorted curve'), key('ptc', 'inside the mask'), key('band', 'the mask: every unit in the band'), key('bandr', 'units drawn at random from the band'));
+    rLegend.append(key('pt', 'one of the ' + pts.length + ' saved points of the sorted curve'), key('ptc', 'inside the mask'), key('band', 'the mask: every neuron in the band'), key('bandr', 'neurons drawn at random from the band'));
     rank.appendChild(rLegend);
     const plot = el('div', 'm11-plot');
     plot.tabIndex = 0;
     plot.setAttribute('role', 'group');
-    plot.setAttribute('aria-label', 'The sorted change sizes of all ' + F.int(U) + ' units by rank; arrow keys move between the banked points');
+    plot.setAttribute('aria-label', 'The sorted weight-delta norms of all ' + F.int(U) + ' neurons by rank; arrow keys move between the saved points');
     rank.appendChild(plot);
     const LMAX = Math.log10(U);
     const xr = (r) => (Math.log10(r) / LMAX) * 100;
@@ -212,7 +215,7 @@
     tEnd.style.left = '100%';
     xaxis.appendChild(tEnd);
     rank.appendChild(xaxis);
-    rank.appendChild(el('p', 'm11-xname', 'rank among the ' + F.int(U) + ' units (log scale); up: sₙ'));
+    rank.appendChild(el('p', 'm11-xname', 'rank among the ' + F.int(U) + ' neurons (log scale); up: sₙ'));
     const maskLane = el('div', 'm11-masklane');
     const maskBand = el('i', 'm11-maskband');
     maskLane.appendChild(maskBand);
@@ -225,16 +228,16 @@
     wrap.appendChild(en);
     const enHead = el('h3', 'm11-h');
     en.appendChild(enHead);
-    en.appendChild(el('p', 'm11-note', 'Energy is the sum of squared changes, Σ sₙ², in the units of the whole MLP change (' + fmtE(E0) +
-      '). A filled dot is the built model’s own record; a ring is the planned energy, where no build record is banked. Click a row, or press Enter on it, to choose that condition.'));
+    en.appendChild(el('p', 'm11-note', 'The squared delta norm is the sum of the squares of the entries added to the base model (Σ sₙ² when whole neurons are copied at c = 1); the whole MLP delta’s is ' + fmtE(E0) +
+      '. A filled dot is the value the build measured on the built model; a ring is the planned value, where no build file was saved. Click a row, or press Enter on it, to choose that condition.'));
     const eLegend = el('p', 'm11-legend');
-    eLegend.append(key('edot', 'the condition’s MLP energy'), key('ering', 'planned, no build record'), key('whole', 'the whole MLP change, ' + fmtE(E0)));
+    eLegend.append(key('edot', 'the condition’s squared delta norm'), key('ering', 'planned, no build file'), key('whole', 'the whole MLP delta, ' + fmtE(E0)));
     en.appendChild(eLegend);
     const eplot = el('div', 'm11-eplot');
     en.appendChild(eplot);
     const eAxis = el('div', 'm11-eaxis');
     en.appendChild(eAxis);
-    en.appendChild(el('p', 'm11-xname m11-ename', 'MLP energy added to the base (log scale)'));
+    en.appendChild(el('p', 'm11-xname m11-ename', 'squared delta norm added to the base model (log scale)'));
     const ELO = -3;
     const EHI = 5;
     const ex = (e) => ((Math.log10(e) - ELO) / (EHI - ELO)) * 100;
@@ -268,14 +271,14 @@
     const sx = el('div', 'm11-sxaxis');
     [0, 2500, 5000, 7500, 10000].forEach((u) => { const t = el('span', 'm11-xtick', F.int(u)); t.style.left = (u / (W - 1)) * 100 + '%'; sx.appendChild(t); });
     lay.appendChild(sx);
-    lay.appendChild(el('p', 'm11-xname', 'unit index in layer ' + ONE.layer + ' (' + ONE.rule + ')'));
+    lay.appendChild(el('p', 'm11-xname', 'neuron index in layer ' + ONE.layer + '. The strip shows layer ' + ONE.layer + ' for every condition and size, because it is ' + ONE.rule + '.'));
 
     // ---------- the change by tensor family ----------
     const famSec = el('section', 'm11-sec');
     wrap.appendChild(famSec);
-    famSec.appendChild(el('h3', 'm11-h', 'The change Δ by tensor family, and where the chosen condition takes each family from'));
+    famSec.appendChild(el('h3', 'm11-h', 'The weight delta Δ by tensor family, and which model the chosen condition takes each family from'));
     const fLegend = el('p', 'm11-legend');
-    fLegend.append(key('f0', 'entries unchanged'), key('f1', 'moved one 16-bit step'), key('f2', 'moved two or more'));
+    fLegend.append(key('f0', 'entries unchanged'), key('f1', 'moved by one bfloat16 value'), key('f2', 'moved by two or more'));
     famSec.appendChild(fLegend);
     const famList = el('div', 'm11-fams');
     famSec.appendChild(famList);
@@ -283,7 +286,7 @@
       const r = fam[f.key];
       const row = el('div', 'm11-fam');
       const head = el('p', 'm11-famhead');
-      head.append(el('b', '', f.name), ' ' + F.int(r.entries) + ' entries; energy ' + fmtE(r.energy) + ' (' + F.percent(r.share_of_energy, r.share_of_energy < 0.001 ? 4 : 1) + ' of the whole change)');
+      head.append(el('b', '', f.name), ' ' + F.int(r.entries) + ' entries; squared delta norm ' + fmtE(r.energy) + ' (' + F.percent(r.share_of_energy, r.share_of_energy < 0.001 ? 4 : 1) + ' of the whole delta)');
       row.appendChild(head);
       const bar = el('div', 'm11-fbar');
       [['f0', r.unchanged], ['f1', r.one_16bit_step], ['f2', r.two_or_more_steps]].forEach(([c, n]) => {
@@ -293,9 +296,9 @@
       });
       if (r.unchanged + r.one_16bit_step + r.two_or_more_steps !== r.entries) throw new Error('m11: the ' + f.key + ' entry counts do not add up');
       WALK.hover(bar, () => ({ title: f.name, rows: [['entries', F.int(r.entries)], ['unchanged', F.int(r.unchanged) + ' (' + F.percent(r.unchanged / r.entries, 1) + ')'],
-        ['moved one 16-bit step', F.int(r.one_16bit_step) + ' (' + F.percent(r.one_16bit_step / r.entries, 1) + ')'],
-        ['moved two or more', F.int(r.two_or_more_steps) + ' (' + F.percent(r.two_or_more_steps / r.entries, 1) + ')'], ['energy', fmtE(r.energy)]] }));
-      bar.setAttribute('aria-label', f.name + ': entries unchanged, moved one 16-bit step, moved two or more');
+        ['moved by one bfloat16 value', F.int(r.one_16bit_step) + ' (' + F.percent(r.one_16bit_step / r.entries, 1) + ')'],
+        ['moved by two or more', F.int(r.two_or_more_steps) + ' (' + F.percent(r.two_or_more_steps / r.entries, 1) + ')'], ['squared delta norm', fmtE(r.energy)]] }));
+      bar.setAttribute('aria-label', f.name + ': entries unchanged, moved by one bfloat16 value, moved by two or more');
       row.appendChild(bar);
       const from = el('p', 'm11-famfrom');
       row.appendChild(from);
@@ -306,13 +309,13 @@
     // ---------- the score and its noise ----------
     const sc = el('section', 'm11-sec');
     wrap.appendChild(sc);
-    sc.appendChild(el('h3', 'm11-h', 'How a built model is scored, and the noise of one reading'));
+    sc.appendChild(el('h3', 'm11-h', 'How we score a built model, and the noise of one score'));
     const P = D.score_protocol;
-    sc.appendChild(el('p', 'm11-text', 'The score is the share of ' + P.problems + ' competition problems answered right: one answer each, temperature ' + P.temperature +
+    sc.appendChild(el('p', 'm11-text', 'The score is the share of the ' + P.problems + ' MATH-500 problems answered right: one sampled answer each, temperature ' + P.temperature +
       ', top-p ' + P.top_p + ', up to ' + F.int(P.max_new_tokens) + ' new tokens, sampling seed ' + F.int(P.first_problem_seed) + ' + the problem’s index.'));
-    const MARKS = [[N.sigma_points, 2, 'lo', 'points: the noise of one reading, from two seed sets of the same weights'],
-      [N.difference_must_exceed_points, 2, 'hi', 'points (the shaded stretch ends here): a difference between two conditions counts only above this'],
-      [N.gain_required_above, 2, 'lo', 'points: the gain from the base model to the mathematics model had to exceed this'],
+    const MARKS = [[N.sigma_points, 2, 'lo', 'points: the noise of one score (its standard deviation), from two sets of sampling seeds on the same weights'],
+      [N.difference_must_exceed_points, 2, 'hi', 'points (the shaded stretch ends here): the study counted a difference between two conditions only above this'],
+      [N.gain_required_above, 2, 'lo', 'points: the gain from Olmo-3-1025-7B to Olmo-3.1-7B-RL-Zero-Math had to exceed this'],
       [N.gain_points, 1, 'hi', 'points: that gain']];
     const nl = el('div', 'm11-nl');
     sc.appendChild(nl);
@@ -333,19 +336,19 @@
     const nlAxis = el('div', 'm11-nlaxis');
     for (let v = 0; v <= NMAX; v += 5) { const t = el('span', 'm11-xtick', String(v)); t.style.left = nx(v); nlAxis.appendChild(t); }
     nl.appendChild(nlAxis);
-    sc.appendChild(el('p', 'm11-xname', 'points of score'));
+    sc.appendChild(el('p', 'm11-xname', 'MATH-500 score, points'));
     const nlist = el('ul', 'm11-nlist');
     MARKS.forEach(([v, d, , name]) => { const li = el('li'); li.append(el('b', '', F.fixed(v, d)), ' ' + name); nlist.appendChild(li); });
     sc.appendChild(nlist);
-    sc.appendChild(el('p', 'm11-note', 'This picture’s data holds how a score is read and its noise, not the scores themselves; the score of every condition is drawn in the picture of results.'));
+    sc.appendChild(el('p', 'm11-note', 'This picture’s data holds how we score and the noise of one score, not the scores themselves; the results picture draws every condition’s score.'));
 
     // ---------- interaction on the ranking ----------
     const banked = new Map(D.cumulative_energy_at_banked_ranks.map((b) => [b.rank, b.energy]));
     let pi = -1;
     const ptBox = (i) => {
       const [r, v] = pts[i];
-      const rows = [['sₙ', F.fixed(v, 5), 'ink'], ['share of units at or above this rank', F.percent(r / U, r / U < 0.01 ? 3 : 1)]];
-      if (banked.has(r)) rows.push(['energy of ranks 1 to ' + F.int(r), fmtE(banked.get(r)) + ' (' + F.percent(banked.get(r) / E0, 2) + ')']);
+      const rows = [['sₙ', F.fixed(v, 5), 'ink'], ['share of neurons at or above this rank', F.percent(r / U, r / U < 0.01 ? 3 : 1)]];
+      if (banked.has(r)) rows.push(['squared delta norm of ranks 1 to ' + F.int(r), fmtE(banked.get(r)) + ' (' + F.percent(banked.get(r) / E0, 2) + ')']);
       return { title: 'Rank ' + F.int(r) + ' of ' + F.int(U), rows };
     };
     const showPt = (i, e) => {
@@ -385,7 +388,7 @@
       sel.value = cid;
       sizeBtns.forEach((b, i) => { b.setAttribute('aria-pressed', String(i === si)); b.disabled = !meta.sized; });
       sizeBox.classList.toggle('off', !meta.sized);
-      const label = meta.name + (meta.sized ? ', ' + pctText(s.percent_of_units) : '');
+      const label = meta.name + (meta.sized ? ', k = ' + pctText(s.percent_of_units) : '');
 
       // the numbers
       sumBox.replaceChildren();
@@ -393,13 +396,13 @@
       const dl = el('dl', 'm11-dl');
       const item = (k, v) => dl.append(el('dt', '', k), el('dd', '', v));
       item('M, the mask', cond.mask);
-      item('MLP entries in M', F.int(cond.entries) + (cond.units ? ' (' + F.int(cond.units) + ' units × ' + F.int(EPU) + ')' : ''));
-      item('c, the scale', cond.c === null ? 'none: the MLP stays at the base' : cond.id === 'scalar' ? F.fixed(cond.c, 4) + ' as built, after a fix to the stochastic rounding (' + F.fixed(cond.cPlanned, 4) + ' planned)' :
+      item('MLP entries in M', F.int(cond.entries) + (cond.units ? ' (' + F.int(cond.units) + ' neurons × ' + F.int(EPU) + ')' : ''));
+      item('c, the scale', cond.c === null ? 'none: the MLP stays at the base model' : cond.id === 'scalar' ? F.fixed(cond.c, 4) + ' as built, after a fix to the stochastic rounding (' + F.fixed(cond.cPlanned, 4) + ' planned)' :
         cond.id === 'sample' ? '1/q = ' + F.fixed(cond.c, 2) : '1');
       const ratio = cond.energy / E0;
-      item('MLP energy added', cond.energy === 0 ? '0' : fmtE(cond.energy) + ' = ' + (ratio === 1 ? 'the whole MLP change' : ratio < 1 ? F.percent(ratio, ratio < 0.1 ? 2 : 1) + ' of the whole MLP change' :
-        F.fixed(ratio, 1) + ' times the whole MLP change') + (cond.built ? '' : ' (planned)'));
-      item('Other tensors', cond.from === 'math' ? 'all from the mathematics model' : cond.from === 'attn' ? 'attention and every norm weight from the mathematics model; embeddings and output matrix from the base' : 'all from the base model');
+      item('squared delta norm added', cond.energy === 0 ? '0' : fmtE(cond.energy) + ' = ' + (ratio === 1 ? 'the whole MLP delta' : ratio < 1 ? F.percent(ratio, ratio < 0.1 ? 2 : 1) + ' of the whole MLP delta' :
+        F.fixed(ratio, 1) + ' times the whole MLP delta') + (cond.built ? '' : ' (planned)'));
+      item('Other tensors', cond.from === 'math' ? 'all from Olmo-3.1-7B-RL-Zero-Math' : cond.from === 'attn' ? 'attention and every norm weight from Olmo-3.1-7B-RL-Zero-Math; embeddings and output matrix from the base model' : 'all from the base model');
       sumBox.appendChild(dl);
 
       // the ranking
@@ -423,19 +426,19 @@
         maskBand.style.left = xr(cond.ranks[0]) + '%';
         maskBand.style.width = (xr(cond.ranks[1]) - xr(cond.ranks[0])) + '%';
       } else maskBand.hidden = true;
-      maskText.textContent = cond.kind === 'exact' ? 'M takes every unit in the band: ranks ' + F.int(cond.ranks[0]) + ' to ' + F.int(cond.ranks[1]) + '.'
-        : cond.kind === 'random' ? 'M takes ' + F.int(cond.units) + ' units at random from the hatched band, ranks ' + F.int(cond.ranks[0]) + ' to ' + F.int(cond.ranks[1]) + '; which ranks they hold is not in this picture’s data.'
-          : cond.kind === 'entries' ? 'M takes entries, not units: each of the ' + F.int(fam.mlp.entries) + ' MLP entries, from every rank, is kept with probability q = ' + sig3(cond.q) + '.'
+      maskText.textContent = cond.kind === 'exact' ? 'M takes every neuron in the band: ranks ' + F.int(cond.ranks[0]) + ' to ' + F.int(cond.ranks[1]) + '.'
+        : cond.kind === 'random' ? 'M takes ' + F.int(cond.units) + ' neurons at random from the hatched band, ranks ' + F.int(cond.ranks[0]) + ' to ' + F.int(cond.ranks[1]) + '; this picture’s data does not hold which ranks they are.'
+          : cond.kind === 'entries' ? 'M takes entries, not neurons: DARE keeps each of the ' + F.int(fam.mlp.entries) + ' MLP entries, from every rank, with probability q = ' + sig3(cond.q) + '.'
             : 'M is empty: no MLP entry is copied.';
 
       // the energies at this size
-      enHead.textContent = 'The squared change each condition adds' + (meta.sized ? ', at ' + pctText(s.percent_of_units) : '');
+      enHead.textContent = 'The squared delta norm each condition adds' + (meta.sized ? ', at k = ' + pctText(s.percent_of_units) : '');
       eplot.replaceChildren();
       const rowsE = CONS.filter((c) => c.id !== 'attn').map((c) => condition(c.id, si));
       rowsE.forEach((r) => {
         const m = CONS.find((c) => c.id === r.id);
         const row = el('div', 'm11-erow' + (r.id === cid ? ' cur' : ''));
-        row.appendChild(el('span', 'm11-ename', m.name + (m.sized ? ', ' + pctText(s.percent_of_units) : '')));
+        row.appendChild(el('span', 'm11-ename', m.name + (m.sized ? ', k = ' + pctText(s.percent_of_units) : '')));
         row.setAttribute('role', 'button');
         const tr = el('div', 'm11-etrack');
         const ref = el('i', 'm11-ewhole');
@@ -452,9 +455,9 @@
         row.appendChild(tr);
         eplot.appendChild(row);
         WALK.hover(row, () => ({
-          title: m.name + (m.sized ? ', ' + pctText(s.percent_of_units) : ''),
-          rows: [['MLP energy added', fmtE(r.energy) + (r.built ? '' : ' (planned)'), 'ink'], ['over the whole MLP change', F.fixed(r.energy / E0, r.energy / E0 < 0.1 ? 5 : 3)],
-            ['over the most-changed set', F.fixed(r.energy / s.most_changed.energy, 3)]],
+          title: m.name + (m.sized ? ', k = ' + pctText(s.percent_of_units) : ''),
+          rows: [['squared delta norm added', fmtE(r.energy) + (r.built ? '' : ' (planned)'), 'ink'], ['over the whole MLP delta', F.fixed(r.energy / E0, r.energy / E0 < 0.1 ? 5 : 3)],
+            ['over the top-k set', F.fixed(r.energy / s.most_changed.energy, 3)]],
         }));
         row.dataset.id = r.id;
         row.addEventListener('click', () => { cid = r.id; draw(); });
@@ -467,13 +470,13 @@
         });
       });
       if (cid === 'attn') {
-        eplot.appendChild(el('p', 'm11-note', 'Attention with every norm weight adds no MLP change; it takes attention (energy ' + fmtE(fam.attn.energy) + ') and the norm weights (' + fmtE(fam.norm.energy) + ') from the mathematics model.'));
+        eplot.appendChild(el('p', 'm11-note', 'This condition adds no MLP delta; it takes attention (squared delta norm ' + fmtE(fam.attn.energy) + ') and the norm weights (' + fmtE(fam.norm.energy) + ') from Olmo-3.1-7B-RL-Zero-Math.'));
       }
 
       // the layers
       curCond = cond;
       curLabel = label;
-      layHead.textContent = cond.perLayer ? 'Where its units sit: units per layer, of ' + F.int(W) : 'Where its entries sit';
+      layHead.textContent = cond.perLayer ? 'Where its neurons sit: neurons per layer, of ' + F.int(W) : 'Where its entries sit';
       lgrid.replaceChildren();
       if (cond.perLayer) {
         lplot.hidden = false;
@@ -494,8 +497,8 @@
         lplot.hidden = true;
         lx.hidden = true;
       }
-      stripHead.textContent = cond.idx ? 'Layer ' + ONE.layer + ': the mask M along its ' + F.int(W) + ' units in index order, ' + F.int(cond.idx.length) + ' marked'
-        : 'Per-unit counts do not apply: M keeps entries at random in every unit of every layer, about ' + sig3(cond.q * EPU) + ' of each unit’s ' + F.int(EPU) + ' entries.';
+      stripHead.textContent = cond.idx ? 'Layer ' + ONE.layer + ': the mask M along its ' + F.int(W) + ' neurons in index order, ' + F.int(cond.idx.length) + ' marked'
+        : 'Counts per neuron do not apply: M keeps entries at random in every neuron of every layer, about ' + sig3(cond.q * EPU) + ' of each neuron’s ' + F.int(EPU) + ' entries.';
       strip.hidden = !cond.idx;
       sx.hidden = !cond.idx;
       spath.setAttribute('d', cond.idx ? cond.idx.map((i) => 'M' + (i + 0.5) + ' 0v10').join('') : '');
@@ -503,7 +506,7 @@
       // the families
       FAM.forEach((f, k) => {
         const where = fromFor(cond, f.key);
-        famFrom[k].textContent = 'In this condition: ' + (where === 'built' ? 'base + c ⊙ M ⊙ Δ, as above' : where === 'math' ? 'from the mathematics model' : 'from the base model');
+        famFrom[k].textContent = 'In this condition: ' + (where === 'built' ? 'base + c ⊙ M ⊙ Δ, as above' : where === 'math' ? 'from Olmo-3.1-7B-RL-Zero-Math' : 'from the base model');
       });
     }
     // one listener set for the columns; the arrow keys move between layers
@@ -514,7 +517,7 @@
     const markCol = (l) => lcolEls.forEach((c, k) => c.classList.toggle('hov', k === l));
     lplot.tabIndex = 0;
     lplot.setAttribute('role', 'group');
-    lplot.setAttribute('aria-label', 'Units of the chosen condition in each layer; arrow keys move between layers');
+    lplot.setAttribute('aria-label', 'Neurons of the chosen condition in each layer; arrow keys move between layers');
     lplot.addEventListener('pointermove', (e) => { if (e.pointerType !== 'mouse') return; const l = colAt(e); markCol(l); WALK.valueBox.show(layerBox(curCond, l, curLabel), e.clientX, e.clientY); });
     lplot.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') { markCol(-1); WALK.valueBox.hide(); } });
     lplot.addEventListener('pointerdown', (e) => { if (e.pointerType === 'mouse') return; const l = colAt(e); li = l; markCol(l); WALK.valueBox.showFor(lcolEls[l], layerBox(curCond, l, curLabel)); });
@@ -529,7 +532,7 @@
     lplot.addEventListener('blur', () => { markCol(-1); WALK.valueBox.hide(); });
     const layerBox = (cond, l, label) => ({
       title: 'Layer ' + l + ', ' + label,
-      rows: [['units in M', F.int(cond.perLayer[l]) + ' of ' + F.int(W), 'claim'], ['layer’s MLP energy', fmtE(D.per_layer.mlp_change_energy[l])],
+      rows: [['neurons in M', F.int(cond.perLayer[l]) + ' of ' + F.int(W), 'claim'], ['the layer’s squared MLP delta norm', fmtE(D.per_layer.mlp_change_energy[l])],
         ['largest sₙ in the layer', F.fixed(D.per_layer_from_curve[l].max_s, 5)], ['median sₙ in the layer', F.fixed(D.per_layer_from_curve[l].median_s, 5)]],
     });
 

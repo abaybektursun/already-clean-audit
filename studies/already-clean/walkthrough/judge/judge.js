@@ -1,7 +1,7 @@
 // "The judge's calls", shared by the walkthrough page and index.html.
 // It builds itself inside the element with id "judgecalls" and reads window.JUDGE_DATA, which data.js sets.
 // With no #judgecalls on the page it does nothing. Every call is one dot on a canvas, in one of two columns
-// (late-born groups, control groups), right calls at the bottom and wrong calls above them. The dots fall into
+// (late-onset groups, control groups), right calls at the bottom and wrong calls above them. The dots fall into
 // place once, when the picture first comes into view, while the two shares count up (at once under
 // prefers-reduced-motion, or after any press inside the picture). A button replaces every outcome with a fair
 // coin flip and back; a menu opens one call with the text the judge saw.
@@ -26,7 +26,7 @@
   };
   const tokText = (tok) => (tok.trim() === '' ? tok.replace(/ /g, '␣') : tok.trim());
   const COLS = [
-    { name: 'Late-born groups', n: D.n_late, right: D.right.late },
+    { name: 'Late-onset groups', n: D.n_late, right: D.right.late },
     { name: 'Control groups', n: D.n_control, right: D.right.control },
   ];
 
@@ -302,14 +302,14 @@
   const select = $('select');
   const KINDS = [
     ['named', 'Named in the write-up'],
-    ['late-right', 'Late-born groups, the judge right (drawn at random)'],
-    ['late-wrong', 'Late-born groups, the judge wrong (drawn at random)'],
+    ['late-right', 'Late-onset groups, the judge right (drawn at random)'],
+    ['late-wrong', 'Late-onset groups, the judge wrong (drawn at random)'],
     ['control-right', 'Control groups, the judge right (drawn at random)'],
     ['control-wrong', 'Control groups, the judge wrong (drawn at random)'],
   ];
   const DRAWN = {
-    'late-right': 'calls on late-born groups that the judge got right',
-    'late-wrong': 'calls on late-born groups that the judge got wrong',
+    'late-right': 'calls on late-onset groups that the judge got right',
+    'late-wrong': 'calls on late-onset groups that the judge got wrong',
     'control-right': 'calls on control groups that the judge got right',
     'control-wrong': 'calls on control groups that the judge got wrong',
   };
@@ -384,12 +384,12 @@
     const q = document.createElement('q');
     q.textContent = name;
     who.append(b, ' Layer ' + id.layer + ', neuron ' + id.neuron + ', ' + id.sign + ' activations. Its group ', q,
-      ' (' + plural(size, 'context', 'contexts') + ', named by the model that sorted the contexts) ' +
+      ' (' + plural(size, 'context', 'contexts') + ', named by the clustering LLM) ' +
       (control
         ? 'is the neuron’s strongest at the end of training, so this call is a control: the records come from step ' +
-          step(E.t) + ', the last saved point before the end. '
-        : 'was born at step ' + step(birth) + ', so the records come from step ' + step(E.t) +
-          ', the saved point before. ') +
+          step(E.t) + ', the last saved checkpoint before the end. '
+        : 'had its onset at step ' + step(birth) + ', so the records come from step ' + step(E.t) +
+          ', the checkpoint before. ') +
       (E.kind === 'named' ? '' : 'Drawn at random from the ' + DRAWN[E.kind] + '.'));
 
     $('exh').textContent = 'The group’s contexts at the end of training';
@@ -477,7 +477,7 @@
     const t = control ? D.control_before : birth - 1;
     tip.append(b, ' “' + name + '”, ' + plural(size, 'context', 'contexts') + '. ' +
       (control ? 'Control group, judged against the records at step ' + step(t)
-        : 'Born at step ' + step(birth) + ', judged against the records at step ' + step(t)) +
+        : 'Onset at step ' + step(birth) + ', judged against the records at step ' + step(t)) +
       ', beside ' + decoys[d.k] + '. The judge was ' + (d.judge ? 'right' : 'wrong') + '.' +
       (mode === 'coin' ? ' The coin was ' + (d.out ? 'right' : 'wrong') + '.' : '') +
       (exampleAt.has(d.g + ':' + d.k) ? ' Press to open this call below.' : ''));
@@ -522,9 +522,9 @@
 
   // ---------- text: the derived share, the table, the caption ----------
   $('share').textContent =
-    'If the judge is right on a late-born group that grew from its neuron’s earlier record as often as on a ' +
+    'If the judge is right on a late-onset group that grew from its neuron’s earlier record as often as on a ' +
     'control group, ' + pct1(D.a_ctrl) + '% of the time, and on an unrelated one half the time, then ' + pct1(D.A) +
-    '% right means ' + pct1(D.share) + '% of late-born groups are unrelated to that record, with a 95% range of ' +
+    '% right means ' + pct1(D.share) + '% of late-onset groups are unrelated to that record, with a 95% range of ' +
     Math.round(100 * D.ci95[0]) + ' to ' + Math.round(100 * D.ci95[1]) + '%.';
 
   const table = $('table');
@@ -534,9 +534,9 @@
   const coinShares = [1, 4, 6, 4, 1].map((k) => k / 16);
   const coinCounts = coinShares.map((s) => Math.round(s * D.n_late));
   [
-    ['Late-born groups', D.n_late, 4 * D.n_late, D.right.late, D.right.late / (4 * D.n_late), D.hist.late],
+    ['Late-onset groups', D.n_late, 4 * D.n_late, D.right.late, D.right.late / (4 * D.n_late), D.hist.late],
     ['Control groups', D.n_control, 4 * D.n_control, D.right.control, D.right.control / (4 * D.n_control), D.hist.control],
-    ['A fair coin on the late-born groups, expected', D.n_late, 4 * D.n_late, 2 * D.n_late, 0.5, coinCounts],
+    ['A fair coin on the late-onset groups, expected', D.n_late, 4 * D.n_late, 2 * D.n_late, 0.5, coinCounts],
   ].forEach(([label, g, n, k, s, hist]) => {
     const tr = table.insertRow();
     [label, int(g), int(n), int(k), pct1(s) + '%', ...hist.map(int)].forEach((v) => { tr.insertCell().textContent = v; });
@@ -545,7 +545,7 @@
   $('caption').textContent =
     'Control groups are each neuron’s strongest group, judged against its own record at step ' + step(D.control_before) +
     ', so the right answer is known; they are easier, sharing a marked token with that record in ' + pct1(D.overlap.control) +
-    '% of calls against ' + pct1(D.overlap.late) + '% for late-born groups. A right call means the neuron’s own record ' +
+    '% of calls against ' + pct1(D.overlap.late) + '% for late-onset groups. A right call means the neuron’s own record ' +
     'looked closer to the group than a random neuron’s, not that the group grew from it.';
 
   // ---------- once, on view ----------

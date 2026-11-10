@@ -1,7 +1,7 @@
-// alwayson: the 3,412 always-on units against the rest. Registers the mount "alwayson" with site.js; reads
-// window.ALWAYSON_DATA (alwayson/data.js). A histogram of |mean activation| over ordinary text for the 341,248 units
-// of layers 0 to 30, the always-on units and the rest drawn apart, with the cut; a menu picks one layer or all.
-// Below, the always-on units per layer; a tap on a layer's column picks that layer for the histogram.
+// alwayson: the 3,412 always-on neurons against the rest. Registers the mount "alwayson" with site.js; reads
+// window.ALWAYSON_DATA (alwayson/data.js). A histogram of |mean activation| over 200 tokens of corpus text for the
+// 341,248 neurons of layers 0 to 30, the always-on neurons and the rest drawn apart, with the cut; a menu picks one
+// layer or all. Below, the always-on neurons per layer; a tap on a layer's column picks that layer for the histogram.
 (() => {
   'use strict';
 
@@ -32,8 +32,8 @@
     if (P.histogram_always_on.length !== NL || P.histogram_rest.length !== NL || P.always_on.length !== NL) throw new Error('alwayson: expected ' + NL + ' layers');
     P.histogram_always_on.forEach((h, l) => {
       if (h.length !== NB || P.histogram_rest[l].length !== NB) throw new Error('alwayson: layer ' + l + ' histogram has the wrong number of bins');
-      if (sum(h) !== P.always_on[l]) throw new Error('alwayson: layer ' + l + ' histogram holds ' + sum(h) + ' always-on units, the data says ' + P.always_on[l]);
-      if (sum(h) + sum(P.histogram_rest[l]) !== W) throw new Error('alwayson: layer ' + l + ' histograms do not hold ' + W + ' units');
+      if (sum(h) !== P.always_on[l]) throw new Error('alwayson: layer ' + l + ' histogram holds ' + sum(h) + ' always-on neurons, the data says ' + P.always_on[l]);
+      if (sum(h) + sum(P.histogram_rest[l]) !== W) throw new Error('alwayson: layer ' + l + ' histograms do not hold ' + W + ' neurons');
     });
     if (sum(P.always_on) !== N || D.members.length !== N) throw new Error('alwayson: the members do not number ' + N);
     const smallest = Math.min(...D.members.map((m) => Math.abs(m[2])));
@@ -54,7 +54,7 @@
     // ---------- facts ----------
     const facts = el('div', 'ao-facts');
     const fact = (big, text) => { const f = el('p', 'ao-fact'); f.append(el('b', '', big), el('span', '', text)); facts.appendChild(f); };
-    fact(F.int(N), 'always-on units: the 1 % of the ' + F.int(D.units_considered) + ' units in layers ' + D.layers_considered[0] + ' to ' + D.layers_considered[1] + ' with the largest |mean activation|');
+    fact(F.int(N), 'always-on neurons: the 1 % of the ' + F.int(D.units_considered) + ' neurons in layers ' + D.layers_considered[0] + ' to ' + D.layers_considered[1] + ' with the largest |mean activation|');
     fact(F.fixed(CUT, 3), 'the cut: the smallest |mean activation| among them');
     fact(F.int(late) + ' of ' + F.int(N), 'are in layers ' + lateFrom + ' to ' + D.layers_considered[1]);
     wrap.appendChild(facts);
@@ -89,7 +89,7 @@
     hist.appendChild(hHead);
     const legend = el('p', 'ao-legend');
     const key = (cls, text) => { const s = el('span'); s.append(el('i', 'ao-key ' + cls), text); return s; };
-    legend.append(key('on', 'always-on units'), key('rest', 'the rest'), key('cut', 'the cut, ' + F.fixed(CUT, 3)));
+    legend.append(key('on', 'always-on neurons'), key('rest', 'the rest'), key('cut', 'the cut, ' + F.fixed(CUT, 3)));
     hist.appendChild(legend);
     const plot = el('div', 'ao-plot');
     plot.tabIndex = 0;
@@ -112,17 +112,17 @@
       xaxis.appendChild(t);
     }
     hist.appendChild(xaxis);
-    hist.appendChild(el('p', 'ao-xname', '|mean activation| over ' + D.positions_averaged + ' positions of ordinary text (log scale; bins of ' + F.fixed(BW, 1) + ' in log₁₀)'));
+    hist.appendChild(el('p', 'ao-xname', '|mean activation| over ' + D.positions_averaged + ' tokens of corpus text (log scale; bins of ' + F.fixed(BW, 1) + ' in log₁₀)'));
 
     // ---------- the per-layer columns ----------
     const per = el('section', 'ao-per');
     wrap.appendChild(per);
-    per.appendChild(el('h3', 'ao-h', 'Always-on units per layer'));
-    per.appendChild(el('p', 'ao-note', 'Each column is one layer’s count out of its ' + F.int(W) + ' units. Tap or click a column to show that layer above; arrow keys move between layers.'));
+    per.appendChild(el('h3', 'ao-h', 'Always-on neurons per layer'));
+    per.appendChild(el('p', 'ao-note', 'Each column is one layer’s count out of its ' + F.int(W) + ' neurons. Tap or click a column to show that layer above; arrow keys move between layers.'));
     const cplot = el('div', 'ao-cplot');
     cplot.tabIndex = 0;
     cplot.setAttribute('role', 'group');
-    cplot.setAttribute('aria-label', 'Always-on units in each of layers ' + D.layers_considered[0] + ' to ' + D.layers_considered[1] + '; arrow keys pick a layer, Escape returns to all layers');
+    cplot.setAttribute('aria-label', 'Always-on neurons in each of layers ' + D.layers_considered[0] + ' to ' + D.layers_considered[1] + '; arrow keys pick a layer, Escape returns to all layers');
     per.appendChild(cplot);
     const cgrid = el('div', 'ao-gridlayer');
     const cols = el('div', 'ao-cols');
@@ -157,10 +157,11 @@
     per.appendChild(cx);
     per.appendChild(el('p', 'ao-xname', 'layer'));
 
-    per.appendChild(el('p', 'ao-note', F.int(D.members_with_negative_mean) + ' of the ' + F.int(N) +
-      ' have a negative mean; the ranking uses the absolute value. Layer 31 is outside the ranking: it has no later layer to feed. ' +
+    per.appendChild(el('p', 'ao-note', 'The activation is a neuron’s input to down_proj, SiLU(gate_proj · x) × (up_proj · x); we averaged it over ' + D.positions_averaged +
+      ' tokens of corpus text, read at ' + D.model + '. ' + F.int(D.members_with_negative_mean) + ' of the ' + F.int(N) +
+      ' always-on neurons have a negative mean; the ranking uses the absolute value. Layer 31 is outside the ranking: it has no later layer to feed. ' +
       'The run of ' + R.date.slice(8, 10).replace(/^0/, '') + ' November computed its own cut on another machine, ' + F.fixed(R.cut, 4) +
-      ', which also takes ' + F.int(R.count) + ' units; ' + F.int(R.members_shared_with_this_bank) + ' of them are the same units.'));
+      ', which also takes ' + F.int(R.count) + ' neurons; ' + F.int(R.members_shared_with_this_bank) + ' of them are the same neurons.'));
 
     // ---------- state ----------
     let layer = 'all';
@@ -219,7 +220,7 @@
       const nOn = sum(counts.on);
       const nRest = sum(counts.rest);
       hHead.textContent = layer === 'all'
-        ? 'All ' + F.int(D.units_considered) + ' units of layers ' + D.layers_considered[0] + ' to ' + D.layers_considered[1] + ': ' + F.int(nOn) + ' always-on, ' + F.int(nRest) + ' the rest'
+        ? 'All ' + F.int(D.units_considered) + ' neurons of layers ' + D.layers_considered[0] + ' to ' + D.layers_considered[1] + ': ' + F.int(nOn) + ' always-on, ' + F.int(nRest) + ' the rest'
         : 'Layer ' + layer + ': ' + F.int(nOn) + ' always-on, ' + F.int(nRest) + ' the rest, of ' + F.int(W);
       plot.setAttribute('aria-label', hHead.textContent + '. Histogram of |mean activation|; arrow keys move between bins.');
       bLin.setAttribute('aria-pressed', String(!logScale));
@@ -239,7 +240,7 @@
       const b = 10 ** E[i + 1];
       return {
         title: '|mean activation| ' + fmtA(a) + ' to ' + fmtA(b),
-        rows: [['always-on units', F.int(counts.on[i]), 'claim'], ['the rest', F.int(counts.rest[i]), 'muted'],
+        rows: [['always-on neurons', F.int(counts.on[i]), 'claim'], ['the rest', F.int(counts.rest[i]), 'muted'],
           ['layer', layer === 'all' ? 'all ' + NL : String(layer)]],
       };
     }
@@ -271,7 +272,7 @@
     // the per-layer columns
     const colBox = (l) => ({
       title: 'Layer ' + l,
-      rows: [['always-on units', F.int(P.always_on[l]) + ' of ' + F.int(W), 'claim'],
+      rows: [['always-on neurons', F.int(P.always_on[l]) + ' of ' + F.int(W), 'claim'],
         ['median |mean activation|', fmtA(P.median_abs_mean_activation[l])],
         ['largest |mean activation|', fmtA(P.max_abs_mean_activation[l])],
         ['always-on in the run of ' + R.date.slice(8, 10).replace(/^0/, '') + ' November', F.int(R.per_layer[l])]],

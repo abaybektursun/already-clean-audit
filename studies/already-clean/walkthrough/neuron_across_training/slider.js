@@ -34,12 +34,12 @@
         <div class="label" style="margin-top:15px">of the 50 strongest contexts</div>
       </div>
     </div>
-    <div class="history" role="group" aria-label="All 16 training points">
+    <div class="history" role="group" aria-label="All 16 checkpoints">
       <div class="hist-head">
         <h3>Top 20 contexts by the token they fire on</h3>
         <div class="legend">
           <span><i class="key own"></i><span id="nat-legOwn"></span></span>
-          <span><i class="key other"></i>most common other token at that point</span>
+          <span><i class="key other"></i>most common other token at that checkpoint</span>
           <span><i class="key rest"></i>any other token</span>
         </div>
       </div>
@@ -56,7 +56,7 @@
           <svg viewBox="0 0 160 100" preserveAspectRatio="none" aria-hidden="true"><path id="nat-line"></path></svg>
           <span class="dot-label" id="nat-dotLabel"></span>
         </div>
-        <div class="plot steptrack" id="nat-track" role="slider" tabindex="0" aria-label="Training point"
+        <div class="plot steptrack" id="nat-track" role="slider" tabindex="0" aria-label="Checkpoint"
              aria-valuemin="0" aria-valuemax="15">
           <div class="rail"></div>
           <div class="thumb" id="nat-thumb"></div>
@@ -69,12 +69,12 @@
         <span class="hint">Drag across the chart, or use the left and right arrow keys.</span>
       </div>
       <details>
-        <summary>Show the 16 points as a table</summary>
+        <summary>Show the 16 checkpoints as a table</summary>
         <div class="tablewrap"><table id="nat-table"></table></div>
       </details>
     </div>
     <div class="list">
-      <div class="list-head mono"><h3>The 20 strongest contexts at this point</h3><span class="v">activation</span></div>
+      <div class="list-head mono"><h3>The 20 strongest contexts at this checkpoint</h3><span class="v">activation</span></div>
       <div class="rows" id="nat-rows"></div>
     </div>
     <p class="caption" id="nat-caption"></p>`;
@@ -113,7 +113,7 @@
     };
     const GROUP_NOTE = {
       lithium: 'The lithium neuron.',
-      late: 'Its main pattern at the final point appeared late in training, and a judge model could not link it to the neuron’s earlier top contexts.',
+      late: 'Its main pattern at the last checkpoint appeared late in training, and an LLM judge could not link it to the neuron’s earlier top contexts.',
       random: 'Drawn at random from the 600 neurons studied.',
     };
 
@@ -368,11 +368,11 @@
       const table = $('table');
       table.textContent = '';
       const head = table.insertRow();
-      ['Point', 'Step', '% of training', quoted(S.own) + ' in top 20', 'Most common other token', 'Strongest activation']
+      ['Checkpoint (Hugging Face branch)', 'Step', '% of training', quoted(S.own) + ' in top 20', 'Most common other token', 'Strongest activation']
         .forEach((h) => { const th = document.createElement('th'); th.textContent = h; head.appendChild(th); });
       D.steps.forEach((st, s) => {
         const tr = table.insertRow();
-        [st.t, int(st.step), fmtPct(st.pct), S.ownCount[s] + ' of ' + S.size[s],
+        ['stage1-step' + st.step, int(st.step), fmtPct(st.pct), S.ownCount[s] + ' of ' + S.size[s],
           S.other[s].c ? quoted(S.other[s].tok) + ' ' + S.other[s].c : '-', fmt(S.maxes[s])]
           .forEach((v) => { tr.insertCell().textContent = v; });
       });
@@ -396,7 +396,7 @@
         note.textContent = last >= 0
           ? quoted(S.own) + ' lost the top 20. It last held ' + S.ownCount[last] + ' of ' + S.size[last] +
             ', at step ' + int(D.steps[last].step) + '.'
-          : quoted(S.own) + ' is not in the top 20 at this point.';
+          : quoted(S.own) + ' is not in the top 20 at this checkpoint.';
       } else {
         note.textContent = 'of the top 20 contexts fire on ' + quoted(S.own) + '.';
       }
@@ -599,7 +599,7 @@
         ? 'had lost the top 20 by the final step'
         : 'held ' + S.ownCount[LAST] + ' of ' + S.size[LAST] + ' at the final step';
       $('caption').textContent =
-        'Each view is one MLP neuron of ' + D.model + ' at ' + NS + ' saved training points; at each point ' +
+        'Each view is one MLP neuron of ' + D.model + ' at ' + NS + ' saved checkpoints; at each checkpoint ' +
         Number((D.n_tokens_scored / 1e6).toPrecision(3)) + ' million tokens were scored, the neuron’s ' + D.k +
         ' strongest contexts were kept, and the page shows the top ' + TOP + '. ' +
         'The lithium neuron (' + li.pole + ') fired on ' + quoted(S.own) + ' in ' + S.ownCount[i60] + ' of its top ' +

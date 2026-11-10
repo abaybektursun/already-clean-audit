@@ -100,7 +100,7 @@ def main():
 
     overlap = len(set(banked) & {(l, u) for l, u, _ in first["members"]})
     data = {
-        "model": "OLMo-3 7B, end of stage 1 (snapshot 15, step 1,413,814)",
+        "model": "allenai/Olmo-3-1025-7B at the end of stage 1, the checkpoint at step 1,413,814 (stage1-step1413814)",
         "units_considered": n, "layers_considered": [0, L - 1], "units_per_layer": W,
         "positions_averaged": len(bg["e1"]),
         "always_on_count": k,

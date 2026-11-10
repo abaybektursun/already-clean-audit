@@ -1,8 +1,8 @@
-// f08: each condition's score on 500 competition problems. Registers the mount "f08" with site.js; reads
-// window.F08_DATA (f08/data.js). Every banked condition (31) as a bar on a 0-to-100 axis with its range, the base model
-// and the mathematics model as reference lines, the equal-count pair marked, and each condition's right or wrong
-// answer on problems 1 to 3. A menu, a click or the arrow keys pick a condition; the panel shows what it copies and
-// its three answers in full. Below, the registered paired differences, with the held-out word problems where banked.
+// f08: each condition's score on the 500 MATH-500 problems. Registers the mount "f08" with site.js; reads
+// window.F08_DATA (f08/data.js). Every saved condition (31) as a bar on a 0-to-100 axis with its Wilson interval,
+// Olmo-3-1025-7B and Olmo-3.1-7B-RL-Zero-Math as reference lines, the pair matched on entry count marked, and each
+// condition's right or wrong answer on problems 1 to 3. A menu, a click or the arrow keys pick a condition; the panel
+// shows what it copies and its three answers in full. Below, the pre-registered paired differences, with GSM8K where saved.
 (() => {
   'use strict';
 
@@ -12,9 +12,9 @@
     if (text !== undefined) e.textContent = text;
     return e;
   };
-  const FAMILIES = ['reference', 'most-changed units', 'random units of equal energy', 'random sample of MLP entries',
-    'half of the network', 'mathematics model minus the most-changed units', 'repeat reading'];
-  const FROM = { base: 'the base model', math: 'the mathematics model' };
+  const FAMILIES = ['reference models', 'top-k neurons by weight-delta norm', 'random neurons matched on squared delta norm', 'DARE on the MLP delta',
+    'the whole MLP, or attention and norm weights', 'RL-Zero-Math with its top-k neurons reset to the base model', 'repeat runs and variants'];
+  const FROM = { base: 'the base model, Olmo-3-1025-7B', math: 'Olmo-3.1-7B-RL-Zero-Math' };
   const nb = (t) => t.replace(/ %/g, '\u00a0%'); // keeps "0.1 %" on one line
 
   function mount(root, D) {
@@ -55,10 +55,10 @@
     const ss = byId.get(EQ.scaled_sample);
     const facts = el('div', 'f08-facts');
     const fact = (big, text) => { const f = el('p', 'f08-fact'); f.append(el('b', '', big), el('span', '', text)); facts.appendChild(f); };
-    fact(pct(mc.accuracy), mc.name + ': ' + F.int(EQ.most_changed_entries) + ' MLP entries copied (base model: ' + pct(G.base) + ')');
-    fact(pct(ss.accuracy), ss.name + ': ' + F.int(EQ.scaled_sample_entries_kept) + ' MLP entries kept at random and scaled up (mathematics model: ' + pct(G.math) + ')');
-    fact(signed(EQ.comparison.difference), 'points between the two on the same ' + EQ.comparison.n_paired + ' problems; the range ' +
-      signed(EQ.comparison.range[0]) + ' to ' + signed(EQ.comparison.range[1]) + '; a difference counts beyond ' + F.fixed(THR, 2));
+    fact(pct(mc.accuracy), mc.name + ': ' + F.int(EQ.most_changed_entries) + ' MLP entries copied (base model Olmo-3-1025-7B: ' + pct(G.base) + ')');
+    fact(pct(ss.accuracy), ss.name + ': ' + F.int(EQ.scaled_sample_entries_kept) + ' MLP entries kept at random and rescaled by 1/q (Olmo-3.1-7B-RL-Zero-Math: ' + pct(G.math) + ')');
+    fact(signed(EQ.comparison.difference), 'points between the two on the same ' + EQ.comparison.n_paired + ' problems; paired bootstrap 95 % confidence interval ' +
+      signed(EQ.comparison.range[0]) + ' to ' + signed(EQ.comparison.range[1]) + '; the study counts a difference only beyond ' + F.fixed(THR, 2));
     wrap.appendChild(facts);
 
     // ---------- controls ----------
@@ -82,8 +82,8 @@
 
     const legend = el('p', 'f08-legend');
     const key = (cls, text) => { const s = el('span'); s.append(el('i', 'f08-key ' + cls), text); return s; };
-    legend.append(key('bar', 'score: % of the 500 answered right'), key('pairbar', 'the equal-count pair'), key('whisker', 'the range (95 %)'),
-      key('base', 'base model, ' + pct(G.base)), key('math', 'mathematics model, ' + pct(G.math)),
+    legend.append(key('bar', 'score: % of the 500 answered right'), key('pairbar', 'the pair with equal entry counts'), key('whisker', 'Wilson 95 % interval'),
+      key('base', 'Olmo-3-1025-7B (base model), ' + pct(G.base)), key('math', 'Olmo-3.1-7B-RL-Zero-Math, ' + pct(G.math)),
       key('right', 'right'), key('wrong', 'wrong, on problems 1 to ' + NP));
     wrap.appendChild(legend);
 
@@ -149,13 +149,13 @@
         flat.push(c.id);
       });
     });
-    listBox.appendChild(el('p', 'f08-note', 'Score: the share of the 500 problems answered right, one answer each. ' +
+    listBox.appendChild(el('p', 'f08-note', 'Score: the share of the 500 MATH-500 problems answered right, one sampled answer each. ' +
       'Hover or tap a row for its numbers and a square for that answer; the menu, a click or the arrow keys pick a condition.'));
 
     const rowBox = (c) => ({
       title: c.name,
       rows: [['score', pct(c.accuracy), pair.has(c.id) ? 'claim' : 'ink'],
-        ['the range (95 %)', pct(c.range_consistent_with_data[0]) + ' to ' + pct(c.range_consistent_with_data[1])],
+        ['Wilson 95 % interval', pct(c.range_consistent_with_data[0]) + ' to ' + pct(c.range_consistent_with_data[1])],
         ['answers at the ' + F.int(D.length_cap_tokens) + '-token limit', F.percent(c.share_hit_length_cap, 1)],
         ['problems 1 to ' + NP, c.examples.map((e) => (e.score ? 'right' : 'wrong')).join(', ')]],
     });
@@ -187,7 +187,7 @@
       panel.appendChild(el('p', 'f08-pfam', c.family));
       panel.appendChild(el('h3', 'f08-ph', c.name));
       const score = el('p', 'f08-pscore');
-      score.append(el('b', '', pct(c.accuracy)), el('span', '', ' % of the ' + c.n_problems + ' problems answered right; the range ' +
+      score.append(el('b', '', pct(c.accuracy)), el('span', '', ' % of the ' + c.n_problems + ' problems answered right; Wilson 95 % interval ' +
         pct(c.range_consistent_with_data[0]) + ' to ' + pct(c.range_consistent_with_data[1])));
       panel.appendChild(score);
       const dl = el('dl', 'f08-dl');
@@ -200,18 +200,18 @@
       item('Answers at the ' + F.int(D.length_cap_tokens) + '-token limit', F.percent(c.share_hit_length_cap, 1));
       if (c.built) {
         item('MLP entries in the mask', F.int(c.built.mlp_entries_in_mask) + ', of which ' + F.int(c.built.mlp_entries_changed) + ' changed');
-        item('Squared change added, MLP', F.fixed(c.built.realized_mlp_change_energy, 4));
-        item('Squared change added, other tensors', F.fixed(c.built.realized_non_mlp_change_energy, 4));
+        item('Squared delta norm added, MLP', F.fixed(c.built.realized_mlp_change_energy, 4));
+        item('Squared delta norm added, other tensors', F.fixed(c.built.realized_non_mlp_change_energy, 4));
       }
       panel.appendChild(dl);
 
       const comps = allComps.filter((k) => k.first === c.id || k.second === c.id);
       if (comps.length) {
-        panel.appendChild(el('p', 'f08-plabel', 'Registered paired differences, first minus second, in points'));
+        panel.appendChild(el('p', 'f08-plabel', 'Pre-registered paired differences, first minus second, in points'));
         const ul = el('ul', 'f08-pcomps');
         comps.forEach((k) => {
           ul.appendChild(el('li', '', byId.get(k.first).name + ' − ' + byId.get(k.second).name + ': ' + signed(k.difference) +
-            ' (the range ' + signed(k.range[0]) + ' to ' + signed(k.range[1]) + ')' + (k.set === 1319 ? ', on the 1,319 held-out word problems' : '')));
+            ' (paired bootstrap 95 % confidence interval ' + signed(k.range[0]) + ' to ' + signed(k.range[1]) + ')' + (k.set === 1319 ? ', on the 1,319 problems of the GSM8K test set' : '')));
         });
         panel.appendChild(ul);
       }
@@ -274,11 +274,11 @@
     // ---------- the paired differences ----------
     const diffs = el('section', 'f08-diffs');
     wrap.appendChild(diffs);
-    diffs.appendChild(el('h3', 'f08-h', 'The registered paired differences'));
-    diffs.appendChild(el('p', 'f08-note', 'Each row is the first condition’s score minus the second’s on the same problems, with its range. ' +
-      'The shaded band is ±' + F.fixed(THR, 2) + ' points: on the 500 problems a difference counts only beyond it. ' +
-      'The ' + D.word_problems_1319.comparisons.length + ' rows marked with a diamond are on the 1,319 held-out word problems, where the base model scores ' +
-      pct(D.word_problems_1319.base) + ' and the mathematics model ' + pct(D.word_problems_1319.math) + '.'));
+    diffs.appendChild(el('h3', 'f08-h', 'The pre-registered paired differences'));
+    diffs.appendChild(el('p', 'f08-note', 'Each row is the first condition’s score minus the second’s on the same problems, with its paired bootstrap 95 % confidence interval. ' +
+      'The shaded band is ±' + F.fixed(THR, 2) + ' points: on the 500 MATH-500 problems the study counts a difference only beyond it. ' +
+      'The ' + D.word_problems_1319.comparisons.length + ' rows marked with a diamond are on the 1,319 problems of the GSM8K test set (grade-school word problems, held out), where Olmo-3-1025-7B scores ' +
+      pct(D.word_problems_1319.base) + ' and Olmo-3.1-7B-RL-Zero-Math ' + pct(D.word_problems_1319.math) + '.'));
     const lo = Math.floor(Math.min(...allComps.map((k) => k.range[0])) / 5) * 5;
     const hi = Math.ceil(Math.max(...allComps.map((k) => k.range[1]), THR) / 5) * 5;
     const dx = (v) => ((v - lo) / (hi - lo)) * 100 + '%';
@@ -300,11 +300,11 @@
       order.push({ ...k, set: 500 });
       D.word_problems_1319.comparisons.filter((w) => w.first === k.first && w.second === k.second).forEach((w) => order.push({ ...w, set: 1319 }));
     });
-    if (order.length !== allComps.length) throw new Error('f08: a word-problem comparison has no 500-problem pair');
+    if (order.length !== allComps.length) throw new Error('f08: a GSM8K comparison has no MATH-500 pair');
     order.forEach((k) => {
       const isPair = pair.has(k.first) && pair.has(k.second);
       const row = el('div', 'f08-drow' + (k.set === 1319 ? ' held' : '') + (isPair ? ' pair' : ''));
-      row.appendChild(el('span', 'f08-dname', (k.set === 1319 ? 'the same, 1,319 word problems' : byId.get(k.first).name + ' − ' + byId.get(k.second).name)));
+      row.appendChild(el('span', 'f08-dname', (k.set === 1319 ? 'the same, on the 1,319 GSM8K test problems' : byId.get(k.first).name + ' − ' + byId.get(k.second).name)));
       const tr = el('div', 'f08-dtrack');
       const band = el('i', 'f08-dband');
       band.style.left = dx(-THR);
@@ -322,10 +322,10 @@
       diffs.appendChild(row);
       WALK.hover(row, () => ({
         title: byId.get(k.first).name + ' − ' + byId.get(k.second).name,
-        rows: [['on', k.set === 1319 ? '1,319 word problems' : '500 competition problems'], ['difference', signed(k.difference) + ' points', isPair ? 'claim' : 'ink'],
-          ['the range (95 %)', signed(k.range[0]) + ' to ' + signed(k.range[1])]].concat(k.set === 500 ? [['problems paired', String(k.n_paired)]] : []),
+        rows: [['on', k.set === 1319 ? 'the 1,319 GSM8K test problems' : 'the 500 MATH-500 problems'], ['difference', signed(k.difference) + ' points', isPair ? 'claim' : 'ink'],
+          ['paired bootstrap 95 % CI', signed(k.range[0]) + ' to ' + signed(k.range[1])]].concat(k.set === 500 ? [['problems paired', String(k.n_paired)]] : []),
       }));
-      row.setAttribute('aria-label', (k.set === 1319 ? 'On the 1,319 word problems, ' : '') + byId.get(k.first).name + ' minus ' + byId.get(k.second).name + ': ' + signed(k.difference));
+      row.setAttribute('aria-label', (k.set === 1319 ? 'On the 1,319 GSM8K test problems, ' : '') + byId.get(k.first).name + ' minus ' + byId.get(k.second).name + ': ' + signed(k.difference));
       compRows.push({ row, comp: k });
     });
 

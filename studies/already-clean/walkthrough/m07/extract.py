@@ -60,6 +60,7 @@ BIRTHS = "studies/next/m2/births.json"
 VERDICT = "studies/next/m2/verdict_m2.json"
 M2_CODE = "infra/pg/m2.py"
 M2_SPEC = "studies/next/07_PICKS/M2_SPEC.md"
+SPEC = "studies/already-clean/SPEC_D1.md"   # §4.3: the training step of each of the sixteen checkpoints
 SIDES_PER_LAYER = 22016
 
 
@@ -92,11 +93,15 @@ def main():
     n_top = sum(x["carrier"]["rank"] <= 10 for x in births)
     n_cg = sum(1 for x in births if x["comparison_group"])
     n_cg_top = sum(x["comparison_group"]["rank"] <= 10 for x in births if x["comparison_group"])
+    steps = [int(r.split("|")[2].strip().replace(",", "")) for r in src(SPEC).read_text().splitlines()
+             if re.match(r"\| T_\d+ \| [\d,]+ \|", r)]
+    assert len(steps) == 16 and steps[-1] == 1413814, steps
     data = {
         "sides_per_layer": SIDES_PER_LAYER, "top": 10,
         "chance_level": compare("chance", round(10 / SIDES_PER_LAYER, 5), spec_chance, f"{M2_SPEC} §0.5 '**Chance** = ...'", 5e-6),
         "threshold_set_in_advance": v["bars"]["B"],
         "histogram": {"bins": nb, "log10_low": lo, "log10_high": hi},
+        "checkpoint_steps": steps,
         "held_out_births": len(births),
         "carrier_in_top_ten": compare("carrier top ten", n_top, v["labels"]["H_B"]["hits"], f"{VERDICT} labels.H_B.hits", 0),
         "with_comparison_group": compare("with comparison group", n_cg, v["test"]["n_pb"], f"{VERDICT} test.n_pb", 0),
@@ -121,6 +126,8 @@ def main():
         "histogram": "Each side's |a| histogram has 400 bins evenly spaced in log10 |a| from -6 to 4 (infra/pg/m2.py).",
         "threshold_set_in_advance": "The share in the top ten that the carrier had to exceed, set from sides matched on size "
                                     "(internal bar, verdict_m2.json bars.B).",
+        "checkpoint_steps": "The training step of each of the sixteen checkpoints, indexed by birth_snapshot and "
+                            "scored_at_snapshot (SPEC_D1.md §4.3); index k is the Hugging Face branch stage1-step<steps[k]>.",
     }
     write(data, notes)
 

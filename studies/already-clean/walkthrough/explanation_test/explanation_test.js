@@ -49,7 +49,7 @@
   const show = (p) => p.replace('-', '−');
   function describe(p) {
     const m = /^L(\d+)N(\d+)([+-])$/.exec(p);
-    return 'layer ' + Number(m[1]) + ', neuron ' + m[2] + ', ' + (m[3] === '+' ? 'positive' : 'negative') + ' side';
+    return 'layer ' + Number(m[1]) + ', neuron ' + m[2] + ', ' + (m[3] === '+' ? 'positive' : 'negative') + ' pole';
   }
   const fmt = (t) => (STOPS.indexOf(t) >= 0 ? t.toFixed(4) : t.toFixed(3));
   const frac = (s) => Math.max(0, Math.min(1, (s - MIN) / (MAX - MIN)));
@@ -218,7 +218,7 @@
     const b = document.createElement('b');
     b.textContent = show(n.p);
     id.append(b, describe(n.p) + ' of OLMo-3 7B' +
-      (n.p.endsWith('-') ? '. On this side a text’s score is how far below zero the neuron goes.' : '.'));
+      (n.p.endsWith('-') ? '. On a negative pole a text’s score is how far below zero the neuron goes.' : '.'));
     $('expl').textContent = '“' + n.x + '”';
     $('by').textContent = 'Written by ' + D.explainers[n.e] + ' from the neuron’s 30 strongest contexts; another ' +
       'model, shown only this sentence, wrote the 16 texts below, each marked where the neuron peaked.';

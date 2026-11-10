@@ -25,15 +25,15 @@ NX = "studies/next"
 OCT = "studies/already-clean/results"
 
 CHECKS = [
-    ("known_number", "a number published or measured before is reproduced"),
-    ("same_weights_twice", "the same weights run twice agree"),
-    ("failing_inputs", "every check has a registered input that must fail, and it fails"),
-    ("positive_control", "a positive control orders correctly"),
-    ("chance_level_control", "a chance-level control is measured and the result is read against it"),
-    ("predictions_before_data", "predictions written before the data"),
-    ("rules_on_one_half", "the rules are set on one half and the other half is read once"),
-    ("set_aside_before_held_out", "a study whose check fails is set aside before its held-out half is read"),
-    ("second_model_rederives", "a second model re-derives the numbers from the files"),
+    ("known_number", "reproduces a number published or measured before"),
+    ("same_weights_twice", "runs the same weights twice and gets the same result"),
+    ("failing_inputs", "gives every check a registered input that must fail, and the input fails"),
+    ("positive_control", "runs a positive control, and the control orders correctly"),
+    ("chance_level_control", "measures a random baseline and reads the result against it"),
+    ("predictions_before_data", "writes its predictions before the data exist"),
+    ("rules_on_one_half", "sets its thresholds on a development split and reads the held-out split once"),
+    ("set_aside_before_held_out", "sets itself aside, when a check fails, before it reads its held-out split"),
+    ("second_model_rederives", "has an independent reviewer model re-derive the numbers from the files"),
 ]
 
 
@@ -132,7 +132,7 @@ def main():
     # ------------------------------------------------------------------ October: groups and births in 300 units
     R = f"{OCT}/RESULTS.md"
     rows["october"] = {
-        "name": "Groups and births in 600 sides of 300 units (19 to 25 October)",
+        "name": "Clusters and their onsets in 600 poles of 300 neurons (19 to 25 October)",
         "known_number": cell("not recorded", "No reproduction of an earlier number is recorded in the repository's results "
                              "files; the study's bank is outside the repository.", R, "—"),
         "same_weights_twice": cell("not recorded", "No identity run of the same weights is recorded in the repository's "
@@ -223,7 +223,7 @@ def main():
 
     # M2: naming the carrier one snapshot early
     b = f"{NX}/m2/banks/score-06/m2/metrics.json"
-    t, vv, g, fcell, row = birth_study("m2", b, "Naming the carrier one snapshot before the birth (5 to 6 November)",
+    t, vv, g, fcell, row = birth_study("m2", b, "Naming the cluster’s own pole at the checkpoint before the onset (5 to 6 November)",
                                        "M2_SPEC.md", 210, "logged before any rank exists (2026-11-05)", "READ_m2.md", 10,
                                        "The headline reproduces exactly")
     fl = t["floor_freeze"]["B"]
@@ -256,7 +256,7 @@ def main():
 
     # N12: own rise, the distinct-token comparison, the gradient readings in 16-bit
     b = f"{NX}/n12/banks/score-02/n12/metrics.json"
-    t, vv, g, fcell, row = birth_study("n12", b, "Own rise, the distinct-token comparison, the gradient in 16-bit (6 November)",
+    t, vv, g, fcell, row = birth_study("n12", b, "Does the cluster’s own pole rise at the onset, or do the other poles fall; attribution in bfloat16 (6 November)",
                                        "N12_SPEC.md", 200, "logged before any test-half N12 quantity exists (2026-11-06)",
                                        "READ_n12.md", 9, "The headline reproduces exactly")
     vf, vt = t["validation_freeze"], vv["test"]["validation"]
@@ -292,7 +292,7 @@ def main():
 
     # N2V: the switch-off measurement in 32-bit
     b = f"{NX}/n2v/banks/score-02/n2v/metrics.json"
-    t, vv, g, fcell, row = birth_study("n2v", b, "The switch-off measurement in 32-bit (6 to 8 November)", "N2V_SPEC.md", 188,
+    t, vv, g, fcell, row = birth_study("n2v", b, "Zero-ablation measured in float32 (6 to 8 November)", "N2V_SPEC.md", 188,
                                        "logged before any N2V number exists (2026-11-06)", "READ_n2v.md", 11,
                                        "The verdict stands under my recount")
     wv = vv["test"]["window_jvp"]["validation"]
@@ -321,7 +321,7 @@ def main():
 
     # N1: the carrier's weight change at the birth
     b = f"{NX}/n1/banks/weights-03/n1/metrics.json"
-    t, vv, g, fcell, row = birth_study("n1", b, "The carrier's weight change at the birth (6 to 8 November)", "N1_SPEC.md", 149,
+    t, vv, g, fcell, row = birth_study("n1", b, "The relative weight update of the cluster’s neuron at the onset (6 to 8 November)", "N1_SPEC.md", 149,
                                        "logged before any weight statistic exists (2026-11-06)", "READ_n1.md", 3,
                                        "The verdict's label stands under my recount")
     rep = J(b)["reports"]
@@ -360,7 +360,7 @@ def main():
     tallies["n13"] = {"records": n_v + n_t, "failed_as_required": n_failed_v + f_t}
     gk = gates["G-KNOWN"]
     rows["n13"] = {
-        "name": "Where the mathematics gain lives (5 to 8 November)",
+        "name": "Which part of the weight delta gives RL-Zero-Math its MATH-500 gain (5 to 8 November)",
         "known_number": cell(ok(gk["pass"]), f"The published score of the base model on competition mathematics reproduced: "
                              f"{gk['value']:.2f} (its failing input {gk['failing_value']:.2f}).", f"{n13}/verdict_n13.json",
                              "gates.G-KNOWN"),
@@ -407,7 +407,7 @@ def main():
     pc = g6["G_PC"]
     AC = f"{NX}/20_ABSTRACT_CHECK.md"
     rows["n6"] = {
-        "name": "Does an older side cost more to edit (6 to 8 November)",
+        "name": "Does ablating the write of a pole with an earlier onset cost more loss (6 to 8 November)",
         "known_number": cell(ok(g6["K1"]["pass"] and g6["K2"]["pass"]), f"A banked activation fall reproduced "
                              f"({g6['K1']['value']:.6f} against {g6['K1']['target']:.6f}) and the banked corpus loss "
                              f"({g6['K2']['value']:.6f} against {g6['K2']['target']:.6f}).", b6, "gates.K1, gates.K2"),

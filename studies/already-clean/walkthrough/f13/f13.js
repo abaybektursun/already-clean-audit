@@ -1,8 +1,8 @@
-// f13: own-direction edits against random edits of the same size, per layer. Registers the mount "f13" with site.js;
-// reads window.F13_DATA (f13/data.js). Two sections, the 8 control sides and the 42 sides of the 21 pairs; each has
-// one chart of the change R to the shared vector and one of the loss change per token, against the layer. Each side
-// is two marks, its own-direction edit and its random edit, joined by a line. Hover, tap or the arrow keys give the
-// side and both edits' values.
+// f13: ablating a pole's write along its own down_proj column against a random direction of the same norm, per layer.
+// Registers the mount "f13" with site.js; reads window.F13_DATA (f13/data.js). Two sections, the 8 control poles and
+// the 42 poles of the 21 pairs; each has one chart of the change R to the residual stream and one of the loss change per
+// token, against the layer. Each pole is two marks, its own-direction edit and its random edit, joined by a line.
+// Hover, tap or the arrow keys give the pole and both edits' values.
 (() => {
   'use strict';
 
@@ -21,7 +21,7 @@
   };
   const sideOf = (id) => {
     const m = /^L(\d+)N(\d+)([+-])$/.exec(id);
-    if (!m) throw new Error('f13: cannot read the side ' + id);
+    if (!m) throw new Error('f13: cannot read the pole ' + id);
     return { layer: Number(m[1]), unit: Number(m[2]), side: m[3] === '+' ? 'positive' : 'negative' };
   };
   const median = (a) => {
@@ -37,21 +37,21 @@
     const CT = D.control;
     const PRS = D.pairs_rule_setting;
 
-    // ---------- the sides: one own-direction and one random edit each ----------
+    // ---------- the poles: one own-direction and one random edit each ----------
     const bySide = new Map();
     D.edits.forEach((e) => {
       if ((e.role !== 'control' && e.role !== 'pair') || (e.kind !== 'own_direction' && e.kind !== 'random_direction')) return;
       if (!bySide.has(e.side)) bySide.set(e.side, { side: e.side, role: e.role, w: sideOf(e.side), edits: {} });
       const s = bySide.get(e.side);
-      if (s.edits[e.kind] || s.role !== e.role) throw new Error('f13: side ' + e.side + ' has two ' + e.kind + ' edits');
+      if (s.edits[e.kind] || s.role !== e.role) throw new Error('f13: pole ' + e.side + ' has two ' + e.kind + ' edits');
       s.edits[e.kind] = e;
     });
     const sides = [...bySide.values()];
     sides.forEach((s) => {
       const o = s.edits.own_direction;
       const r = s.edits.random_direction;
-      if (!o || !r) throw new Error('f13: side ' + s.side + ' lacks an edit');
-      if (o.edit_size_c !== r.edit_size_c || o.layer !== r.layer || s.w.layer !== o.layer) throw new Error('f13: side ' + s.side + ': the two edits differ in size or layer');
+      if (!o || !r) throw new Error('f13: pole ' + s.side + ' lacks an edit');
+      if (o.edit_size_c !== r.edit_size_c || o.layer !== r.layer || s.w.layer !== o.layer) throw new Error('f13: pole ' + s.side + ': the two edits differ in size or layer');
       s.layer = o.layer;
       s.o = o;
       s.r = r;
@@ -60,8 +60,8 @@
     const ctrl = sides.filter((s) => s.role === 'control').sort((a, b) => a.layer - b.layer);
     const prs = sides.filter((s) => s.role === 'pair').sort((a, b) => a.layer - b.layer || a.o.shared_vector_change - b.o.shared_vector_change);
     const NP = PRS.pairs.recomputed;
-    if (ctrl.length !== CT.of_layers) throw new Error('f13: ' + ctrl.length + ' control sides, the data says ' + CT.of_layers);
-    if (prs.length !== 2 * NP) throw new Error('f13: ' + prs.length + ' pair sides for ' + NP + ' pairs');
+    if (ctrl.length !== CT.of_layers) throw new Error('f13: ' + ctrl.length + ' control poles, the data says ' + CT.of_layers);
+    if (prs.length !== 2 * NP) throw new Error('f13: ' + prs.length + ' pair poles for ' + NP + ' pairs');
     ctrl.forEach((s, i) => {
       const c = CT.layers[i];
       if (c.layer !== s.layer || c.side !== s.side) throw new Error('f13: control layer ' + c.layer + ' does not match its edits');
@@ -81,9 +81,9 @@
     const medRand = median(prs.map((s) => s.r.shared_vector_change));
     if (Math.abs(medOwn - PRS.median_shared_vector_change_own.recomputed) > 1e-9 || Math.abs(medRand - PRS.median_shared_vector_change_random.recomputed) > 1e-9) throw new Error('f13: the pair medians do not match the data');
     prs.forEach((s) => {
-      if (s.o.pair === null || s.o.member === null) throw new Error('f13: pair side ' + s.side + ' has no pair');
+      if (s.o.pair === null || s.o.member === null) throw new Error('f13: pair pole ' + s.side + ' has no pair');
       s.mate = prs.find((t) => t.o.pair === s.o.pair && t !== s);
-      if (!s.mate) throw new Error('f13: pair side ' + s.side + ' has no partner');
+      if (!s.mate) throw new Error('f13: pair pole ' + s.side + ' has no partner');
     });
     const pRatios = prs.map((s) => s.ratio);
     const PW = D.power_check;
@@ -105,7 +105,9 @@
     };
     const big = (x) => (Math.abs(x) >= 100 ? F.fixed(x, 1) : sig(x, 3));
     const cap = (t) => t.charAt(0).toUpperCase() + t.slice(1);
-    const sideText = (w) => 'layer ' + w.layer + ', unit ' + F.int(w.unit) + ', ' + w.side + ' side';
+    const sideText = (w) => 'L' + w.layer + '.N' + w.unit + (w.side === 'positive' ? '+' : '-') + ' (layer ' + w.layer + ', neuron ' + F.int(w.unit) + ', ' + w.side + ' pole)';
+    const STEPS = D.snapshot_steps;
+    if (!STEPS || STEPS.length !== 16) throw new Error('f13: the data does not hold the sixteen checkpoint steps');
 
     // ---------- the frame ----------
     root.replaceChildren();
@@ -113,7 +115,7 @@
     root.appendChild(wrap);
     const key = (cls, text) => { const s = el('span'); s.append(el('i', 'f13-key ' + cls), text); return s; };
     const legend = el('p', 'f13-legend');
-    legend.append(key('own', 'own-direction edit, δ = −(c/‖w‖) · w'), key('rand', 'random edit, δ = c · r, the same c'), key('link', 'the two edits of one side'));
+    legend.append(key('own', 'own-direction edit: ablating the pole’s write along its down_proj column w, δ = −(c/‖w‖) · w'), key('rand', 'random edit: δ = c · r along a seeded random unit vector r, the same c'), key('link', 'the two edits of one pole'));
     wrap.appendChild(legend);
 
     const charts = [];
@@ -129,7 +131,7 @@
       const box = el('div', 'f13-chart');
       box.tabIndex = 0;
       box.setAttribute('role', 'group');
-      box.setAttribute('aria-label', title + '; the arrow keys move between sides');
+      box.setAttribute('aria-label', title + '; the arrow keys move between poles');
       box.setAttribute('aria-describedby', 'walk-value-box');
       sec.appendChild(box);
       sec.appendChild(el('p', 'f13-xname', 'layer'));
@@ -139,8 +141,10 @@
       return c;
     }
 
-    const A = section('The ' + ctrl.length + ' control sides: in each of layers ' + ctrl.map((s) => s.layer).join(', ') + ', the side with the largest E⁺ (the sum of its squared own-sign activations over the evaluation text), its write removed fully', [
-      'The random edit moved the shared vector ' + F.fixed(rLo, 2) + ' (layer ' + ctrl[ratios.indexOf(rLo)].layer + ') to ' + F.fixed(rHi, 2) + ' (layer ' +
+    const A = section('The ' + ctrl.length + ' control poles: in each of layers ' + ctrl.map((s) => s.layer).join(', ') + ', the pole with the largest E⁺, its write removed fully', [
+      'A pole is one sign of a neuron’s activations. E⁺ is the sum, over the evaluation text, of the pole’s squared own-sign activations. ' +
+        'An edit adds a(x) · δ to the output of down_proj at each token x where the activation a(x) has the pole’s sign.',
+      'The random edit moved the residual stream ' + F.fixed(rLo, 2) + ' (layer ' + ctrl[ratios.indexOf(rLo)].layer + ') to ' + F.fixed(rHi, 2) + ' (layer ' +
         ctrl[ratios.indexOf(rHi)].layer + ') times as far as the own-direction edit.',
       'The random edit cost more in ' + nRand + ' of ' + ctrl.length + ' layers; the own-direction edit cost more in ' + nOwn + ' (layers ' +
         ctrl.filter((s) => s.ownMore).map((s) => s.layer).join(' and ') + '), each by more than the tie margin of ' + sci(TAU, 3) + ' nats per token. The control needed the own-direction edit to cost more in at least ' + CT.needed + '.',
@@ -149,18 +153,20 @@
       R: { o: (s) => s.o.shared_vector_change, r: (s) => s.r.shared_vector_change },
       L: { o: (s) => s.o.loss_change_per_token, r: (s) => s.r.loss_change_per_token },
     };
-    chartBox(A, 'The change to the shared vector after the layer, R (log scale)', { set: ctrl, v: val.R, scale: 'log' });
+    chartBox(A, 'The change to the residual stream after the layer, R (log scale)', { set: ctrl, v: val.R, scale: 'log' });
     chartBox(A, 'The loss change per token, in nats (log scale)', { set: ctrl, v: val.L, scale: 'log' });
 
-    const B = section('The ' + NP + ' pairs: ' + prs.length + ' sides in ' + new Set(prs.map((s) => s.layer)).size + ' layers, the four edits of a pair at one size c', [
-      'The two edits moved the shared vector alike: the median over the ' + prs.length + ' own-direction edits is ' + F.fixed(medOwn, 1) + ', over the ' + prs.length +
-        ' random edits ' + F.fixed(medRand, 1) + '; on one side, random ÷ own is ' + F.fixed(Math.min(...pRatios), 3) + ' to ' + F.fixed(Math.max(...pRatios), 3) + '.',
-      'A pair’s loss result is the early side’s own-direction loss change minus the late side’s. Its resampling spread over the windows, median over the ' + NP +
+    const B = section('The ' + NP + ' pairs: ' + prs.length + ' poles in ' + new Set(prs.map((s) => s.layer)).size + ' layers, the four edits of a pair at one size c', [
+      'A pair is two poles of one layer whose clusters (groups of a pole’s top-50 activating tokens that an LLM named) have onsets at least three checkpoints apart; ' +
+        'c = min(‖w_early‖, ‖w_late‖) over their two down_proj columns.',
+      'The two edits moved the residual stream alike: the median over the ' + prs.length + ' own-direction edits is ' + F.fixed(medOwn, 1) + ', over the ' + prs.length +
+        ' random edits ' + F.fixed(medRand, 1) + '; per pole, random ÷ own is ' + F.fixed(Math.min(...pRatios), 3) + ' to ' + F.fixed(Math.max(...pRatios), 3) + '.',
+      'A pair’s loss result is the own-direction loss change of the pole with the earlier onset minus that of the pole with the later onset. Its bootstrap standard deviation over the evaluation windows (1,000 resamples of the 1,024 windows), median over the ' + NP +
         ' pairs ' + sci(PW.window_spread_median.recomputed, 3) + ' nats per token, had to be at most half the median |difference|, ' + sci(PW.half_median_abs_pair_difference, 3) +
         '; it was ' + F.fixed(PW.ratio.recomputed, 3) + ' times the median |difference|, against at most ' + F.fixed(PW.ratio_needed_at_most, 1) + '.',
     ]);
     if (PW.passed !== false || !(PW.ratio.recomputed > PW.ratio_needed_at_most)) throw new Error('f13: the power check sentence states that it was not met');
-    chartBox(B, 'The change to the shared vector after the layer, R (log scale)', { set: prs, v: val.R, scale: 'log' });
+    chartBox(B, 'The change to the residual stream after the layer, R (log scale)', { set: prs, v: val.R, scale: 'log' });
     chartBox(B, 'The loss change per token, in 10⁻⁶ nats', { set: prs, v: val.L, scale: 'lin', unit: 1e-6 });
 
     // ---------- drawing ----------
@@ -244,11 +250,11 @@
         ['random ÷ own, R', F.fixed(d.ratio, 3)],
         ['own-direction edit: loss change', sci(d.o.loss_change_per_token, 3) + ' nats', 'claim'], ['random edit: loss change', sci(d.r.loss_change_per_token, 3) + ' nats', 'control'],
         ['the edit size c', F.fixed(d.o.edit_size_c, 4)]];
-      if (d.role === 'control') return { title: cap(sideText(d.w)) + ', the control side of its layer', rows };
+      if (d.role === 'control') return { title: sideText(d.w) + ', the control pole of its layer', rows };
       const m = d.mate;
       return {
-        title: cap(sideText(d.w)) + ', the ' + d.o.member + ' side of a pair, born at snapshot ' + d.o.side_birth_snapshot,
-        rows: rows.concat([['its pair', 'unit ' + F.int(m.w.unit) + ', ' + m.w.side + ' side, born at snapshot ' + m.o.side_birth_snapshot]]),
+        title: sideText(d.w) + ', the ' + (d.o.member === 'early' ? 'earlier' : 'later') + '-onset pole of its pair (onset at step ' + F.int(STEPS[d.o.side_birth_snapshot]) + ')',
+        rows: rows.concat([['the other pole of the pair', 'L' + m.w.layer + '.N' + m.w.unit + (m.w.side === 'positive' ? '+' : '-') + ', onset at step ' + F.int(STEPS[m.o.side_birth_snapshot])]]),
       };
     }
     function mark(c, i) {

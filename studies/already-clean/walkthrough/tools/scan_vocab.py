@@ -24,21 +24,30 @@ WALKTHROUGH = Path(__file__).resolve().parent.parent
 # The plan's §2 left column, then the head's list for this build. A phrase that contains a word listed alone
 # ("null baseline", "zero ablation", "freeze half", "Wilson interval") is covered by that word.
 WORDS = [
-    "gate", "null", "does not count", "pole", "test half",
+    # VOCAB_2026-11-10.md: internal words and the second edition's made-up replacements for standard terms.
+    "null", "does not count", "test half",
     "card", "lane", "executor", "worker", "arm", "S3", "S4", "k_rec", "H_local", "amendment",
-    "readout", "verdict", "label", "transplant", "DARE", "residual stream",
-    "MATH-500", "GSM8K", "Spearman", "ρ", "Wilson", "bootstrap", "top-50 slot", "slot", "favorite",
-    "freeze", "ablation", "LFS", "sha256",
-    # added 2026-11-08 from the plan's third revision (§2): invented or internal words the audits found
+    "readout", "verdict", "transplant", "top-50 slot", "slot", "favorite",
+    "freeze", "LFS", "sha256",
     "stranger", "twin", "instrument", "known number", "half precision", "full precision",
-    "exemplar", "competitor", "probe", "identity pair", "failing input", "readout", "dated alike",
-    "echo", "grid pole", "discovery set", "sorting model", "fake neuron", "bf16", "fp32",
-    "pseudo-birth", "distinct-token twin", "zero ablation",
+    "exemplar", "competitor", "probe", "identity pair", "failing input", "dated alike",
+    "echo", "grid pole", "discovery set", "sorting model", "fake neuron",
+    "pseudo-birth", "distinct-token twin",
+    "snapshot", "training point", "carrier", "shared vector", "switch off", "switched off", "switching off",
+    "switch-off", "switched-off", "rank agreement", "rule-setting", "chance share", "competition problem",
+    "mathematics model", "fifty contexts", "16-bit", "32-bit", "birth", "born", "positive side", "negative side",
+    "resampling band", "gate matrix", "up matrix", "down matrix", "weight-change statistic",
 ]
 # "head" is matched only as a role word; "attention head(s)" is the model's own term and is allowed.
 PATTERNS_HEAD = [("head (role)", re.compile(r"(?<!attention )(?<!attention-)(?<!\w)heads?(?!\w)", re.IGNORECASE))]
 # Hypothesis codes (H_age, H_MIG, ...) and the internal pass/fail labels, which are upper case.
 PATTERNS = [
+    # "gate" as a pass/fail check; gate_proj and "gate row" of gate_proj are tensor names.
+    ("gate (a check)", re.compile(r"(?<![\w_])gates?(?![\w_])(?!_proj)(?! row)", re.IGNORECASE)),
+    # "unit" for a neuron; "unit vector", "in units of" and "natural units" are ordinary uses.
+    ("unit (say neuron)", re.compile(r"(?<!in )(?<!natural )(?<!\w)units?(?!\w)(?! vector)(?! of (?:the|one|nats|its))", re.IGNORECASE)),
+    # "side" for a pole.
+    ("side (say pole)", re.compile(r"(?<!\w)(?:(?:a|the|each|its|one|own|another|control|early|late|older|other) side(?:’s|'s)?|sides)(?!\w)", re.IGNORECASE)),
     ("hypothesis code", re.compile(r"(?<![\w])H_[A-Za-z0-9]+(?![\w])")),
     ("pass/fail label", re.compile(r"(?<![\w])(?:PASS|FAIL|PASSED|FAILED)(?![\w])")),
 ]
@@ -250,11 +259,11 @@ def self_test():
     cancelled = "".join(map(chr, [118, 111, 105, 100]))
     cases = [  # (kind, source, expected [(line, word)])
         ("html", "<p>The verdict was clear.</p>", [(1, "verdict")]),
-        ("html", "<p>ok</p>\n<p>Each pole has fifty.</p>", [(2, "pole")]),
-        ("html", "<p>Two poles.</p>", [(1, "pole")]),
+        ("html", "<p>ok</p>\n<p>Each snapshot has fifty.</p>", [(2, "snapshot")]),
+        ("html", "<p>Two snapshots.</p>", [(1, "snapshot")]),
         ("html", "<p>The verdict, defined once. <!-- vocab-ok --></p>", []),
         ("html", '<div class="label readout"><label for="x">Neuron</label></div>', []),
-        ("html", '<span title="the gate result">x</span>', [(1, "gate")]),
+        ("html", '<span title="the gate result">x</span>', [(1, "gate (a check)")]),
         ("html", '<p>See <code>verdict_n13.json</code> and <a class="data-link" href="x">studies/next/n6/verdict_n6.json</a>.</p>', []),
         ("html", '<p>A twin, an instrument, the sorting model.</p>', [(1, "instrument"), (1, "sorting model"), (1, "twin")]),
         ("html", '<p>32 attention heads; the head decided.</p>', [(1, "head (role)")]),
@@ -266,7 +275,7 @@ def self_test():
         ("js", "root.innerHTML = `\n<div class=\"label\">Training step</div>\n<h3>The readout</h3>`;", [(3, "readout")]),
         ("js", "const t = `Step ${n.map((x) => 'one arm').join()} done`;", [(1, "arm")]),
         ("js", "h = `<div class=\"jd-head\" id=\"jd-head${i}\">\n${a +\n b}<p>The readout</p></div>`;", [(3, "readout")]),
-        ("js", "const x = a / b; const s = 'Spearman rank';", [(1, "Spearman")]),
+        ("js", "const x = a / b; const s = 'Carrier rank';", [(1, "carrier")]),
     ]
     bad = 0
     for kind, src, want in cases:

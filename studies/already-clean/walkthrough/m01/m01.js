@@ -1,27 +1,11 @@
-// m01: the model and the snapshots. Registers the mount "m01" with site.js; reads window.M01_DATA (m01/data.js).
-// One layer's tensors drawn to true shape, the column of 32 layers between the embedding matrix and the output
-// matrix, and the timeline of the sixteen released snapshots with the three model points outside them.
-// Every number on screen is a field of M01_DATA or a product of its tensor shapes.
+// m01: the model and its checkpoints. Registers the mount "m01" with site.js; reads window.M01_DATA (m01/data.js).
+// Top: the architecture as a paper draws it, one direction with arrows: token ids -> model.embed_tokens -> the block,
+// repeated 32 times (the residual stream as one line, two branches, two adds) -> model.norm -> lm_head -> logits.
+// Every box carries its Hugging Face tensor names and shapes; the parameter counts are products of those shapes and
+// must sum to the banked total. Bottom: the sixteen stage-1 checkpoints by step and by tokens seen, and the later
+// models named by their exact Hugging Face repository and branch.
 (() => {
   'use strict';
-
-  // Plain names for the model file's tensor names. A tensor in the data that is not listed here throws.
-  const TENSOR = {
-    'self_attn.q_proj.weight': 'query matrix',
-    'self_attn.k_proj.weight': 'key matrix',
-    'self_attn.v_proj.weight': 'value matrix',
-    'self_attn.q_norm.weight': 'query norm weight',
-    'self_attn.k_norm.weight': 'key norm weight',
-    'self_attn.o_proj.weight': 'attention output matrix',
-    'post_attention_layernorm.weight': 'norm weight after attention',
-    'mlp.gate_proj.weight': 'gate matrix', // vocab-ok: OLMo's own tensor name
-    'mlp.up_proj.weight': 'up matrix',
-    'mlp.down_proj.weight': 'down matrix',
-    'post_feedforward_layernorm.weight': 'norm weight after the MLP',
-    'model.embed_tokens.weight': 'embedding matrix',
-    'lm_head.weight': 'output matrix',
-    'model.norm.weight': 'final norm weight',
-  };
 
   const el = (tag, cls, text) => {
     const e = document.createElement(tag);
@@ -29,155 +13,183 @@
     if (text !== undefined) e.textContent = text;
     return e;
   };
+  const code = (text) => el('code', '', text);
   const prod = (shape) => shape.reduce((a, b) => a * b, 1);
 
   function mount(root, D) {
     const F = WALK.fmt;
     const H = D.hidden_size;
-    const tensors = new Map();
-    D.layer_tensors_in_order.concat(D.outside_layers).forEach((t) => {
-      if (!(t.name in TENSOR)) throw new Error('m01: no plain name for tensor ' + t.name);
-      tensors.set(t.name, t);
-    });
-    const perLayer = D.layer_tensors_in_order.reduce((s, t) => s + prod(t.shape), 0);
-    const outside = D.outside_layers.reduce((s, t) => s + prod(t.shape), 0);
-    if (perLayer * D.layers + outside !== D.parameters.banked) {
-      throw new Error('m01: the tensor shapes sum to ' + (perLayer * D.layers + outside) + ', not ' + D.parameters.banked);
-    }
-    if (D.layer_types.length !== D.layers) throw new Error('m01: layer_types has ' + D.layer_types.length + ' entries');
     const shapeText = (s) => s.map(F.int).join(' × ');
-    const tensorBox = (name) => {
+
+    // ---------- the tensors, each used exactly once ----------
+    const tensors = new Map();
+    D.layer_tensors_in_order.concat(D.outside_layers).forEach((t) => tensors.set(t.name, t));
+    const used = new Set();
+    const take = (name) => {
       const t = tensors.get(name);
-      return { title: TENSOR[name], rows: [['shape', shapeText(t.shape)], ['parameters', F.int(prod(t.shape))], ['name in the model file', name]] };
+      if (!t) throw new Error('m01: the data file has no tensor ' + name);
+      if (used.has(name)) throw new Error('m01: tensor drawn twice: ' + name);
+      used.add(name);
+      return t;
     };
-    // A matrix or a weight vector drawn to true shape: width = columns, height = rows, in units of --u per H.
-    const drawTensor = (name, caption) => {
-      const t = tensors.get(name);
-      const fig = el('div', 'm01-t');
-      const box = el('div', t.shape.length === 2 ? 'm01-mat' : 'm01-vec');
-      const rows = t.shape.length === 2 ? t.shape[0] : 1;
-      const cols = t.shape.length === 2 ? t.shape[1] : t.shape[0];
-      box.style.width = 'calc(var(--u) * ' + cols / H + ')';
-      if (t.shape.length === 2) box.style.height = 'calc(var(--u) * ' + rows / H + ')';
-      fig.append(box, el('span', 'm01-tcap', caption), el('span', 'm01-tshape', shapeText(t.shape)));
-      WALK.hover(fig, tensorBox(name));
-      fig.setAttribute('aria-label', TENSOR[name] + ', ' + shapeText(t.shape));
-      return fig;
+    const sum = (names) => names.reduce((s, n) => s + prod(tensors.get(n).shape), 0);
+
+    const ATTN = ['self_attn.q_proj.weight', 'self_attn.k_proj.weight', 'self_attn.v_proj.weight',
+      'self_attn.q_norm.weight', 'self_attn.k_norm.weight', 'self_attn.o_proj.weight'];
+    const MLP = ['mlp.gate_proj.weight', 'mlp.up_proj.weight', 'mlp.down_proj.weight'];
+    const NA = 'post_attention_layernorm.weight';
+    const NF = 'post_feedforward_layernorm.weight';
+    const EMB = 'model.embed_tokens.weight';
+    const FIN = 'model.norm.weight';
+    const OUT = 'lm_head.weight';
+
+    const perBlock = sum(ATTN) + sum([NA]) + sum(MLP) + sum([NF]);
+    const total = sum([EMB]) + D.layers * perBlock + sum([FIN]) + sum([OUT]);
+    if (total !== D.parameters.banked) throw new Error('m01: the drawn tensors sum to ' + total + ', not ' + D.parameters.banked);
+    if (D.layer_types.length !== D.layers) throw new Error('m01: layer_types has ' + D.layer_types.length + ' entries');
+    const fullLayers = [];
+    D.layer_types.forEach((t, i) => {
+      if (t === 'full_attention') fullLayers.push(i);
+      else if (t !== 'sliding_attention') throw new Error('m01: unknown layer type ' + t);
+    });
+    const params = (n) => F.int(n) + ' parameters';
+
+    // One tensor row: its short name and shape; hover or tap shows the full Hugging Face name.
+    const row = (name, label, inBlock) => {
+      const t = take(name);
+      const full = inBlock ? 'model.layers.<i>.' + name : name;
+      const r = el('div', 'm01-tr');
+      r.append(code(label), el('span', 'm01-shape', shapeText(t.shape)));
+      r.setAttribute('aria-label', full + ', shape ' + shapeText(t.shape));
+      WALK.hover(r, { title: full, rows: [['shape', shapeText(t.shape)], ['parameters', F.int(prod(t.shape))]] });
+      return r;
+    };
+    // One component box: its Hugging Face module name, what it is, its parameter count, its tensors, a note.
+    const box = (cls, name, what, count, rows, note) => {
+      const b = el('div', 'm01-box ' + cls);
+      const head = el('div', 'm01-bh');
+      const left = el('span', 'm01-bname');
+      left.appendChild(code(name));
+      head.append(left, el('span', 'm01-pc', params(count)));
+      b.append(head, el('p', 'm01-what', what));
+      const list = el('div', 'm01-trs');
+      rows.forEach((r) => list.appendChild(r));
+      b.appendChild(list);
+      if (note) b.appendChild(el('p', 'm01-bnote', note));
+      return b;
+    };
+    const arrow = (label) => {
+      const a = el('div', 'm01-ar' + (label ? ' lab' : ''));
+      a.setAttribute('aria-hidden', 'true');
+      if (label) a.appendChild(el('span', '', label));
+      return a;
     };
 
     root.replaceChildren();
     const wrap = el('div', 'm01-wrap');
     root.appendChild(wrap);
 
-    // ---------- the column of 32 layers ----------
+    // ---------- the architecture ----------
     const model = el('section', 'm01-model');
-    model.appendChild(el('h3', 'm01-h', D.model + ': ' + F.int(D.parameters.banked) + ' parameters'));
-    const cols = el('div', 'm01-cols');
-    model.appendChild(cols);
     wrap.appendChild(model);
+    const title = el('h3', 'm01-h');
+    title.append(code(D.model), ': ' + params(D.parameters.banked));
+    model.appendChild(title);
+    const arch = el('div', 'm01-arch');
+    model.appendChild(arch);
 
-    const stack = el('div', 'm01-stack');
-    cols.appendChild(stack);
-    stack.appendChild(el('p', 'm01-flow', 'tokens in'));
-    const outer = (name, text) => {
-      const t = tensors.get(name);
-      const b = el('div', 'm01-outer');
-      b.append(el('span', 'm01-outer-name', text), el('span', 'm01-tshape', shapeText(t.shape)));
-      WALK.hover(b, tensorBox(name));
-      b.setAttribute('aria-label', TENSOR[name] + ', ' + shapeText(t.shape));
-      return b;
-    };
-    const embed = D.outside_layers.find((t) => t.name === 'model.embed_tokens.weight');
-    const head = D.outside_layers.find((t) => t.name === 'lm_head.weight');
-    const fnorm = D.outside_layers.find((t) => t.name === 'model.norm.weight');
-    if (!embed || !head || !fnorm) throw new Error('m01: an embedding, output or final norm tensor is missing');
-    stack.appendChild(outer(embed.name, 'embedding matrix'));
-    const layersBox = el('div', 'm01-layers');
-    layersBox.setAttribute('role', 'list');
-    layersBox.setAttribute('aria-label', D.layers + ' layers');
-    D.layer_types.forEach((type, i) => {
-      const full = type === 'full_attention';
-      if (!full && type !== 'sliding_attention') throw new Error('m01: unknown layer type ' + type);
-      const row = el('div', 'm01-layer' + (full ? ' full' : ''));
-      row.setAttribute('role', 'listitem');
-      const num = el('span', 'm01-lnum', i === 0 || full ? String(i) : '');
-      row.append(num, el('i', 'm01-lbar'));
-      row.setAttribute('aria-label', 'Layer ' + i + (full ? ', full attention' : ', sliding-window attention'));
-      WALK.hover(row, {
-        title: 'Layer ' + i + ' of ' + D.layers + ' (numbered from 0)',
-        rows: [
-          ['attention', full ? 'full: the whole input' : 'sliding window of ' + F.int(D.sliding_window) + ' tokens'],
-          ['tensors', String(D.layer_tensors_in_order.length)],
-          ['parameters', F.int(perLayer)],
-        ],
+    arch.appendChild(el('p', 'm01-io', 'input: token ids, one per position'));
+    arch.appendChild(arrow());
+    const emb = tensors.get(EMB);
+    arch.appendChild(box('outer', 'model.embed_tokens', 'token embedding: one row of ' + F.int(H) +
+      ' numbers for each of the ' + F.int(D.vocab_size) + ' vocabulary entries', prod(emb.shape), [row(EMB, 'weight', false)]));
+    arch.appendChild(arrow('residual stream h: ' + F.int(H) + ' numbers per token'));
+
+    const block = el('div', 'm01-block');
+    block.setAttribute('role', 'group');
+    block.setAttribute('aria-label', 'One block, repeated ' + D.layers + ' times');
+    arch.appendChild(block);
+    block.appendChild(el('span', 'm01-x', '× ' + D.layers));
+    const bhd = el('p', 'm01-bhd');
+    bhd.append(code('model.layers.0'), ' to ', code('model.layers.' + (D.layers - 1)), ': ' + D.layers +
+      ' blocks of this form, each with its own weights; ' + params(perBlock) + ' per block');
+    block.appendChild(bhd);
+
+    const sublayer = (branchBoxes, addNote) => {
+      const s = el('div', 'm01-sub');
+      const br = el('div', 'm01-branch');
+      branchBoxes.forEach((b, i) => {
+        if (i) { const a = arrow(); a.classList.add('spine'); br.appendChild(a); }
+        br.appendChild(b);
       });
-      layersBox.appendChild(row);
-    });
-    stack.appendChild(layersBox);
-    stack.appendChild(outer(fnorm.name, 'final norm'));
-    stack.appendChild(outer(head.name, 'output matrix'));
-    stack.appendChild(el('p', 'm01-flow', 'a score for each of ' + F.int(D.vocab_size) + ' tokens'));
-    const legend = el('p', 'm01-legend');
-    const key = (cls, text) => { const s = el('span'); s.append(el('i', 'm01-key ' + cls), text); return s; };
-    legend.append(key('full', 'full attention'), key('sliding', 'sliding window of ' + F.int(D.sliding_window) + ' tokens'));
-    stack.appendChild(legend);
-
-    // ---------- inside one layer ----------
-    const layer = el('div', 'm01-inside');
-    cols.appendChild(layer);
-    layer.appendChild(el('h4', 'm01-h4', 'Inside each layer (the same tensors in all ' + D.layers + ')'));
-    const hline = el('p', 'm01-h-line');
-    hline.append(el('b', '', 'h'), ': the shared vector every layer reads from and adds to, ' + F.int(H) + ' numbers per token');
-    layer.appendChild(hline);
-    const hvec = el('div', 'm01-vec m01-hvec');
-    hvec.style.width = 'calc(var(--u) * 1)';
-    layer.appendChild(hvec);
-
-    const step = (formula, note, names, extra) => {
-      const s = el('div', 'm01-op');
-      s.appendChild(el('p', 'm01-formula', formula));
-      const row = el('div', 'm01-trow');
-      names.forEach(([n, c]) => row.appendChild(drawTensor(n, c)));
-      s.appendChild(row);
-      if (extra) s.appendChild(extra);
-      s.appendChild(el('p', 'm01-note', note));
+      const add = el('div', 'm01-add');
+      add.append(el('span', 'm01-plus', '+'), el('span', 'm01-ret'), el('span', 'm01-addnote', addNote));
+      add.lastChild.setAttribute('aria-hidden', 'true');
+      s.append(br, add);
       return s;
     };
-    layer.appendChild(step('h ← h + RMSNorm(Attention(h))',
-      D.attention_heads + ' attention heads of ' + D.head_dim + ' numbers each, with ' + D.key_value_heads +
-      ' key and value attention heads. Layers ' + D.layer_types.map((t, i) => (t === 'full_attention' ? i : null)).filter((i) => i !== null).join(', ') +
-      ' attend to the whole input; the others to a window of ' + F.int(D.sliding_window) + ' tokens, which holds the whole ' +
-      F.int(D.input_tokens_per_window) + '-token input, so every layer sees every earlier token.',
-      [['self_attn.q_proj.weight', 'query'], ['self_attn.k_proj.weight', 'key'], ['self_attn.v_proj.weight', 'value'],
-       ['self_attn.o_proj.weight', 'output'], ['self_attn.q_norm.weight', 'query norm'], ['self_attn.k_norm.weight', 'key norm'],
-       ['post_attention_layernorm.weight', 'RMSNorm weight']]));
-    layer.appendChild(step('h ← h + RMSNorm(MLP(h))',
-      'MLP(h) = down matrix · (silu(gate matrix · h) ⊙ (up matrix · h)): each of the ' + F.int(D.mlp_units_per_layer) + // vocab-ok
-      ' units computes one number per token, a = silu(g) · u. There is no norm on a sublayer’s input; the norm is on its output, before the add.',
-      [['mlp.gate_proj.weight', 'gate matrix'], ['mlp.up_proj.weight', 'up matrix'], ['mlp.down_proj.weight', 'down matrix'], // vocab-ok
-       ['post_feedforward_layernorm.weight', 'RMSNorm weight']]));
-    layer.appendChild(el('p', 'm01-note', 'RMSNorm(x) = w ⊙ x / √(mean(x²) + ' + D.rms_norm_eps + '), with w the norm weight of ' +
-      F.int(H) + ' numbers. Shapes are rows × columns, drawn to scale; a weight vector is drawn as a line ' + F.int(H) + ' long. The weight values are not drawn.'));
 
-    // ---------- the snapshots ----------
-    const time = el('section', 'm01-time');
-    wrap.appendChild(time);
-    time.appendChild(el('h3', 'm01-h', 'The sixteen released snapshots of training stage 1'));
-    time.appendChild(el('p', 'm01-note', 'Tokens seen = step × ' + F.int(D.tokens_per_step) + '. Top row: the snapshots in order; ' +
-      'bottom row: the same snapshots at their true token count. Hover or tap a point.'));
+    const slidingLayers = D.layers - fullLayers.length;
+    const attn = box('branch', 'self_attn', 'causal self-attention: ' + D.attention_heads + ' attention heads of dimension ' +
+      D.head_dim + ', with ' + D.key_value_heads + ' key-value attention heads', sum(ATTN),
+      [row(ATTN[0], 'q_proj', true), row(ATTN[1], 'k_proj', true), row(ATTN[2], 'v_proj', true),
+       row(ATTN[3], 'q_norm', true), row(ATTN[4], 'k_norm', true), row(ATTN[5], 'o_proj', true)],
+      'q_proj, k_proj and v_proj make the queries, keys and values; q_norm and k_norm apply RMSNorm to the queries and keys; ' +
+      'o_proj maps the attention heads’ outputs back to ' + F.int(H) + ' numbers. Layers ' + fullLayers.join(', ') +
+      ' use full attention; the other ' + slidingLayers + ' use a sliding window of ' + F.int(D.sliding_window) +
+      ' tokens. Our inputs are ' + F.int(D.input_tokens_per_window) + ' tokens long, so in every layer each token attends to all earlier tokens.');
+    const na = box('norm', 'post_attention_layernorm', 'RMSNorm on the attention output, before the add', sum([NA]), [row(NA, 'weight', true)]);
+    block.appendChild(sublayer([attn, na], 'h ← h + RMSNorm(Attention(h))'));
+
+    const mlp = box('branch', 'mlp', 'SwiGLU MLP with ' + F.int(D.mlp_units_per_layer) + ' neurons', sum(MLP),
+      [row(MLP[0], 'gate_proj', true), row(MLP[1], 'up_proj', true), row(MLP[2], 'down_proj', true)],
+      'MLP(h) = down_proj(silu(gate_proj h) ⊙ up_proj h). A neuron is one of the ' + F.int(D.mlp_units_per_layer) +
+      ' entries of silu(gate_proj h) ⊙ up_proj h; its activation is one number per token.');
+    const nf = box('norm', 'post_feedforward_layernorm', 'RMSNorm on the MLP output, before the add', sum([NF]), [row(NF, 'weight', true)]);
+    block.appendChild(sublayer([mlp, nf], 'h ← h + RMSNorm(MLP(h))'));
+
+    arch.appendChild(arrow());
+    arch.appendChild(box('norm outer', 'model.norm', 'final RMSNorm', sum([FIN]), [row(FIN, 'weight', false)]));
+    arch.appendChild(arrow());
+    arch.appendChild(box('outer', 'lm_head', 'output matrix, not tied to the embedding', sum([OUT]), [row(OUT, 'weight', false)]));
+    arch.appendChild(arrow());
+    arch.appendChild(el('p', 'm01-io', 'output: next-token logits, ' + F.int(D.vocab_size) + ' per position'));
+
+    if (used.size !== tensors.size) throw new Error('m01: ' + (tensors.size - used.size) + ' tensors of the data file are not drawn');
+
+    const total_ = el('p', 'm01-sum');
+    total_.textContent = 'Parameters: ' + F.int(sum([EMB])) + ' (model.embed_tokens) + ' + D.layers + ' × ' + F.int(perBlock) +
+      ' (blocks) + ' + F.int(sum([FIN])) + ' (model.norm) + ' + F.int(sum([OUT])) + ' (lm_head) = ' + F.int(total) + '.';
+    model.appendChild(total_);
+    model.appendChild(el('p', 'm01-note', 'RMSNorm(x) = w ⊙ x / √(mean(x²) + ' + D.rms_norm_eps + '), with w the norm’s own weight of ' +
+      F.int(H) + ' numbers; shapes are rows × columns as stored in the model file; hover or tap a tensor for its full name.'));
+
+    // ---------- the checkpoints ----------
     const S = D.snapshots;
-    if (S.length !== 16) throw new Error('m01: expected 16 snapshots, got ' + S.length);
+    if (S.length !== 16) throw new Error('m01: expected 16 checkpoints, got ' + S.length);
     const last = S[S.length - 1];
     const [mixStart, base, rl] = D.off_grid;
     const [b0, b1] = mixStart.between_snapshots;
-    const SPAN = 80; // percent of the width given to stage 1; the rest holds the two models after stage 1
-    const xOrd = (i) => ((i + 0.5) / S.length) * SPAN;
+    const repo = D.model;
+
+    const time = el('section', 'm01-time');
+    wrap.appendChild(time);
+    time.appendChild(el('h3', 'm01-h', 'The sixteen stage-1 checkpoints we used, and the later models'));
+    const intro = el('p', 'm01-note');
+    intro.append('A checkpoint is the model’s weights saved at one training step. Each of the sixteen is a branch of ',
+      code(repo), ' named by its step. Top row: the sixteen in order. Bottom row: the same checkpoints placed by tokens seen, step × ' +
+      F.int(D.tokens_per_step) + '. Hover or tap a point.');
+    time.appendChild(intro);
+
+    const LAB = 140, YT = 156, YM = 182, YB = 268, PLOT_H = 336; // px from the plot's top
+    const xOrd = (i) => ((i + 0.5) / S.length) * 100;
     const xTok = (tok) => xOrd(0) + (tok / last.tokens) * (xOrd(S.length - 1) - xOrd(0));
-    const plot = el('div', 'm01-tl');
+    const plot = el('div', 'm01-tlp');
+    plot.style.height = PLOT_H + 'px';
     time.appendChild(plot);
     const NS = 'http://www.w3.org/2000/svg';
     const svg = document.createElementNS(NS, 'svg');
-    svg.setAttribute('viewBox', '0 0 100 100');
+    svg.setAttribute('viewBox', '0 0 100 ' + PLOT_H);
     svg.setAttribute('preserveAspectRatio', 'none');
     svg.setAttribute('aria-hidden', 'true');
     plot.appendChild(svg);
@@ -187,65 +199,67 @@
       l.setAttribute('class', cls);
       svg.appendChild(l);
     };
-    const YT = 24, YB = 74; // percent of the plot height: the ordered row and the token axis
+    const place = (node, x, y) => { node.style.left = x + '%'; node.style.top = y + 'px'; plot.appendChild(node); return node; };
+
     line(xOrd(0), YB, xTok(last.tokens), YB, 'm01-axis');
-    const place = (node, x, y) => { node.style.left = x + '%'; node.style.top = y + '%'; plot.appendChild(node); return node; };
-    const tokText = (n) => F.int(n) + ' tokens';
-    // token axis ticks, in trillions
     for (let tr = 0; tr * 1e12 <= last.tokens; tr++) {
-      line(xTok(tr * 1e12), YB, xTok(tr * 1e12), YB + 4, 'm01-axis');
-      place(el('span', 'm01-tick', String(tr)), xTok(tr * 1e12), YB + 6);
+      line(xTok(tr * 1e12), YB, xTok(tr * 1e12), YB + 5, 'm01-axis');
+      place(el('span', 'm01-tick', String(tr)), xTok(tr * 1e12), YB + 8);
     }
-    place(el('span', 'm01-axis-name', 'tokens seen, trillions'), xOrd(0), 100).classList.add('left');
     S.forEach((s, i) => {
       line(xOrd(i), YT, xTok(s.tokens), YB, 'm01-conn');
       place(el('i', 'm01-dot low'), xTok(s.tokens), YB);
-      place(el('span', 'm01-tick top' + (i % 5 === 0 || i === S.length - 1 ? '' : ' minor'), String(i)), xOrd(i), YT - 20);
+      const lab = el('span', 'm01-blab', s.branch);
+      lab.style.left = xOrd(i) + '%';
+      lab.style.bottom = (PLOT_H - LAB) + 'px';
+      lab.setAttribute('aria-hidden', 'true');
+      plot.appendChild(lab);
       const hit = place(el('div', 'm01-hit'), xOrd(i), YT);
-      hit.style.width = SPAN / S.length + '%';
+      hit.style.width = 100 / S.length + '%';
       hit.appendChild(el('i', 'm01-dot'));
-      hit.setAttribute('aria-label', 'Snapshot ' + i);
-      WALK.hover(hit, { title: 'Snapshot ' + s.snapshot + ' of the sixteen', rows: [['step', F.int(s.step)], ['tokens seen', F.int(s.tokens)], ['branch', s.branch]] });
+      hit.setAttribute('aria-label', 'Checkpoint ' + s.branch + ': step ' + F.int(s.step) + ', ' + F.int(s.tokens) + ' tokens seen');
+      WALK.hover(hit, { title: s.branch, rows: [['training step', F.int(s.step)], ['tokens seen', F.int(s.tokens)], ['repository', repo]] });
     });
-    place(el('span', 'm01-tick top-name', 'snapshot'), xOrd(0), YT - 34).classList.add('left');
-    // the start of the three data mixes: between snapshots b0 and b1, at its true token count below
+
+    // stage1-step476838: between two of the sixteen in the top row, at its true token count on the axis
     const xm = (xOrd(b0) + xOrd(b1)) / 2;
-    line(xm, YT + 12, xTok(mixStart.tokens), YB, 'm01-conn off');
+    line(xm, YM, xTok(mixStart.tokens), YB, 'm01-conn off');
     place(el('i', 'm01-off low'), xTok(mixStart.tokens), YB);
-    const mixBox = {
-      title: 'a: ' + mixStart.name,
-      rows: [['step', F.int(mixStart.step)], ['tokens seen', F.int(mixStart.tokens)], ['between snapshots', b0 + ' and ' + b1]]
-        .concat(mixStart.mixes.map((m) => ['mix with ' + m.code_and_math_percent + ' % code and math', F.int(mixStart.mix_steps) + ' steps']))
-        .concat([['tokens per mix step', F.int(mixStart.mix_tokens_per_step)], ['tokens per mix', F.int(mixStart.mix_tokens)]]),
-    };
-    const offHit = (x, y, letter, content) => {
-      const h = place(el('div', 'm01-hit off'), x, y);
-      h.append(el('i', 'm01-off'), el('span', 'm01-letter', letter));
-      h.setAttribute('aria-label', content.title);
-      WALK.hover(h, content);
-      h.classList.add('below');
-      return h;
-    };
-    offHit(xm, YT + 12, 'a', mixBox);
-    // after stage 1: no token count in the data, so these two sit in their own zone, off the token axis
-    const zone = place(el('span', 'm01-zone', 'after stage 1'), 100, YT - 34);
-    zone.setAttribute('aria-hidden', 'true');
-    line(SPAN + 3, 4, SPAN + 3, 96, 'm01-sep');
-    offHit(SPAN + 7, YT, 'b', { title: 'b: ' + base.name, rows: [['model', base.repo], ['branch', base.branch + ' = ' + base.equals_branch], ['commit', base.commit.slice(0, 12)]] });
-    offHit(SPAN + 15, YT, 'c', { title: 'c: ' + rl.name, rows: [['model', rl.repo], ['branch', rl.branch], ['commit', rl.commit.slice(0, 12)]] });
-    const keys = el('ul', 'm01-offkeys');
-    [['a', mixStart.name + ': step ' + F.int(mixStart.step) + ', ' + tokText(mixStart.tokens) + ', between snapshots ' + b0 + ' and ' + b1 +
-       '; three mixes of ' + mixStart.mixes.map((m) => m.code_and_math_percent + ' %').join(', ') + ' code and math continue from it for ' +
-       F.int(mixStart.mix_tokens) + ' tokens each'],
-     ['b', base.name + ' (' + base.repo + ')'],
-     ['c', rl.name + ' (' + rl.repo + ')']].forEach(([l, t]) => {
-      const li = el('li');
-      li.append(el('span', 'm01-keyoff'), el('b', '', l + ' '), t);
-      keys.appendChild(li);
+    const mh = place(el('div', 'm01-hit off'), xm, YM);
+    mh.appendChild(el('i', 'm01-off'));
+    mh.setAttribute('aria-label', 'Checkpoint ' + mixStart.branch + ': step ' + F.int(mixStart.step) + ', where the three stage-2 data mixes start');
+    WALK.hover(mh, {
+      title: mixStart.branch,
+      rows: [['training step', F.int(mixStart.step)], ['tokens seen', F.int(mixStart.tokens)],
+        ['between', S[b0].branch + ' and ' + S[b1].branch]]
+        .concat(mixStart.mixes.map((m) => ['mix with ' + m.code_and_math_percent + ' % code and mathematics', m.branch])),
     });
+    const ml = place(el('span', 'm01-offlab'), xTok(mixStart.tokens), YB + 30);
+    ml.append(el('i', 'm01-keyoff'), code(mixStart.branch));
+    place(el('span', 'm01-axis-name', 'tokens seen, trillions'), xOrd(0), YB + 52).classList.add('left');
+
+    // the later models, by their exact names
+    const keys = el('ul', 'm01-offkeys');
+    const li1 = el('li');
+    li1.append(el('i', 'm01-keyoff'), code(mixStart.branch), ' (step ' + F.int(mixStart.step) + ', ' + F.int(mixStart.tokens) +
+      ' tokens seen, between ', code(S[b0].branch), ' and ', code(S[b1].branch), '): three stage-2 data mixes start here. Each trains ' +
+      F.int(mixStart.mix_steps) + ' more steps of ' + F.int(mixStart.mix_tokens_per_step) + ' tokens, ' + F.int(mixStart.mix_tokens) + ' tokens in all:');
+    const mixes = el('ul', 'm01-mixes');
+    mixStart.mixes.forEach((m) => {
+      const li = el('li');
+      li.append(code(m.branch), ': ' + m.code_and_math_percent + ' % code and mathematics');
+      mixes.appendChild(li);
+    });
+    li1.appendChild(mixes);
+    const li2 = el('li');
+    li2.append(code(base.repo), ', branch ', code(base.branch), ' (the same weights as branch ', code(base.equals_branch),
+      '): the finished base model, after training stages 2 and 3.');
+    const li3 = el('li');
+    li3.append(code(rl.repo), ', branch ', code(rl.branch), ': a model trained further on mathematics with reinforcement learning.');
+    [li1, li2, li3].forEach((li) => keys.appendChild(li));
     time.appendChild(keys);
-    time.appendChild(el('p', 'm01-note', 'The last snapshot: step ' + F.int(last.step) + ', ' + tokText(last.tokens) +
-      '. The models b and c come after stage 1; their token counts are not in the data file, so they stand apart from the token axis.'));
+    time.appendChild(el('p', 'm01-note', 'The last stage-1 checkpoint is ' + last.branch + ': step ' + F.int(last.step) + ', ' +
+      F.int(last.tokens) + ' tokens seen. The data file holds no token count for the two later models, so the plot does not place them.'));
   }
 
   WALK.register('m01', { data: 'M01_DATA', mount });

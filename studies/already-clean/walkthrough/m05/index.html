@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The birth rule</title>
+<title>The onset rule</title>
 <!-- The fonts are optional: this stylesheet loads without blocking the page, and site.css falls back to system fonts. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
 <body>
 <main class="page">
   <header class="page-head">
-    <h1>The birth rule on one unit</h1>
+    <h1>The onset rule on one cluster</h1>
     <nav aria-label="Site">
       <a href="../index.html">The walkthrough</a>
       <button class="button" type="button" data-theme-toggle>Dark theme</button>
@@ -22,7 +22,7 @@
   </header>
   <figure class="figure" data-source="data.js">
     <div id="m05"></div>
-    <figcaption class="figure-caption">The birth rule on one unit: at each snapshot t, the median activation over the group's positions against the side's own 99.9th percentile at t; the group is born at the first t where the median is at or above the percentile at t and at t + 1. <a class="data-link">data</a></figcaption>
+    <figcaption class="figure-caption">We dated the onset of cluster 3 of the pole L10.N9794+ with the onset rule: at each checkpoint we compared the median activation on the cluster’s tokens with the pole’s own 99.9th percentile at that checkpoint, and the onset is the first checkpoint at which the median is at or above the percentile there and at the next checkpoint, here the checkpoint at step 320,000 (<code>stage1-step320000</code>). <a class="data-link">data</a></figcaption>
   </figure>
 </main>
 <script src="../site.js"></script>

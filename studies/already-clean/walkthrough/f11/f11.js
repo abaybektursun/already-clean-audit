@@ -1,7 +1,7 @@
-// f11: the carrier's weight-change statistic against a matched unit's, 67 held-out births. Registers the mount "f11"
-// with site.js; reads window.F11_DATA (f11/data.js). One row per pair, sorted by the difference: on the left the two
-// units' e, on the right carrier minus matched unit, with the mean of the 67 differences and its range drawn as a
-// band. Hover, tap or the arrow keys give the pair and both values.
+// f11: the relative weight update e of the cluster's neuron against a matched neuron's, 67 held-out late-onset clusters.
+// Registers the mount "f11" with site.js; reads window.F11_DATA (f11/data.js). One row per pair, sorted by the
+// difference: on the left the two neurons' e, on the right the cluster's neuron minus the matched neuron, with the mean
+// of the 67 differences and its bootstrap 95 % CI drawn as a band. Hover, tap or the arrow keys give the pair and both values.
 (() => {
   'use strict';
 
@@ -20,7 +20,7 @@
   };
   const sideOf = (id) => {
     const m = /^L(\d+)N(\d+)([+-])$/.exec(id);
-    if (!m) throw new Error('f11: cannot read the side ' + id);
+    if (!m) throw new Error('f11: cannot read the pole ' + id);
     return { layer: Number(m[1]), unit: Number(m[2]), side: m[3] === '+' ? 'positive' : 'negative' };
   };
 
@@ -31,10 +31,10 @@
     const P = D.pairs.slice().sort((a, b) => b.difference_input_rows - a.difference_input_rows);
     if (P.length !== N) throw new Error('f11: ' + P.length + ' pairs, the data says ' + N);
     P.forEach((p) => {
-      if (Math.abs(p.carrier_e_input_rows - p.comparison_e_input_rows - p.difference_input_rows) > 1e-12) throw new Error('f11: ' + p.birth + ': the difference is not carrier minus matched unit');
+      if (Math.abs(p.carrier_e_input_rows - p.comparison_e_input_rows - p.difference_input_rows) > 1e-12) throw new Error('f11: ' + p.birth + ': the difference is not the cluster’s neuron minus the matched neuron');
       p.c = sideOf(p.carrier_side);
       p.m = sideOf(p.comparison_side);
-      if (p.c.layer !== p.layer || p.m.layer !== p.layer) throw new Error('f11: ' + p.birth + ': a unit is outside the birth’s layer');
+      if (p.c.layer !== p.layer || p.m.layer !== p.layer) throw new Error('f11: ' + p.birth + ': a neuron is outside the cluster’s layer');
     });
     const MEAN = H.mean_difference.recomputed;
     const LO = H.band_low.recomputed;
@@ -49,7 +49,9 @@
     if (!(LO < MEAN && MEAN < HI)) throw new Error('f11: the mean is outside its range');
 
     const f3 = (v) => F.fixed(v, 3);
-    const unitText = (w) => 'unit ' + F.int(w.unit) + ', ' + w.side + ' side';
+    const unitText = (w) => 'neuron ' + F.int(w.unit) + ' (L' + w.layer + '.N' + w.unit + (w.side === 'positive' ? '+' : '-') + ')';
+    const STEPS = D.snapshot_steps;
+    if (!STEPS || STEPS.length !== 16) throw new Error('f11: the data does not hold the sixteen checkpoint steps');
 
     root.replaceChildren();
     const wrap = el('div', 'f11-wrap');
@@ -58,25 +60,26 @@
     // the three numbers of the result
     const facts = el('div', 'f11-facts');
     const fact = (big, text) => { const f = el('p', 'f11-fact'); f.append(el('b', '', big), el('span', '', text)); facts.appendChild(f); };
-    fact(f3(MEAN), 'the mean of the ' + N + ' differences, carrier minus matched unit');
-    fact(f3(LO) + ' to ' + f3(HI), 'the range of that mean, drawn as the band');
+    fact(f3(MEAN), 'the mean of the ' + N + ' differences in e, the cluster’s neuron minus the matched neuron');
+    fact(f3(LO) + ' to ' + f3(HI), 'bootstrap 95 % confidence interval of that mean, drawn as the band');
     fact(ABOVE + ' and ' + BELOW, 'pairs above zero and below it');
     wrap.appendChild(facts);
 
-    wrap.appendChild(el('p', 'f11-note', 'Each row is one held-out birth: its carrier and a matched unit of the same layer, whose side holds a random group of ' +
-      'another unit’s contexts of the same size, dated to the same snapshot by the same rule and matched on the number of distinct tokens. e is the ' +
-      'weight-change statistic of the gate row and up row: the mean z over the three steps ending at the birth minus the mean z over the earlier steps. ' + // vocab-ok
+    wrap.appendChild(el('p', 'f11-note', 'Each row is one held-out late-onset cluster: the neuron of the cluster’s own pole, and a matched neuron of the same layer. ' +
+      'The matched neuron belongs to another pole of the layer: we drew a random group of tokens from that pole’s own top-50, of the same size as the cluster, with its onset at the same checkpoint by the same rule, and matched on the number of distinct tokens. ' +
+      'e is the relative weight update ‖ΔW‖/‖W‖ of the neuron’s gate_proj and up_proj rows between consecutive checkpoints, z-scored within the layer: the mean z over the three checkpoint intervals ending at the onset minus the mean z over the earlier intervals. ' +
+      'A pole is one sign of a neuron’s activations; a cluster is a group of a pole’s top-50 activating tokens that an LLM named; its onset is the first checkpoint at which the pole’s median activation on those tokens is in the pole’s own top 0.1 % and stays there. ' +
       'Rows are sorted by the difference.'));
 
     const key = (cls, text) => { const s = el('span'); s.append(el('i', 'f11-key ' + cls), text); return s; };
     const legend = el('p', 'f11-legend');
-    legend.append(key('carrier', 'the carrier’s e'), key('matched', 'the matched unit’s e'), key('diff', 'carrier minus matched unit'),
-      key('mean', 'mean of the ' + N + ' differences, ' + f3(MEAN)), key('band', 'its range, ' + f3(LO) + ' to ' + f3(HI)));
+    legend.append(key('carrier', 'e of the cluster’s neuron'), key('matched', 'e of the matched neuron'), key('diff', 'the cluster’s neuron minus the matched neuron'),
+      key('mean', 'mean of the ' + N + ' differences, ' + f3(MEAN)), key('band', 'its bootstrap 95 % CI, ' + f3(LO) + ' to ' + f3(HI)));
     wrap.appendChild(legend);
 
     const heads = el('div', 'f11-heads');
-    const hL = el('p', 'f11-h', 'e of each unit');
-    const hR = el('p', 'f11-h', 'carrier minus matched unit');
+    const hL = el('p', 'f11-h', 'e of each neuron');
+    const hR = el('p', 'f11-h', 'cluster’s neuron minus matched neuron');
     heads.append(hL, hR);
     wrap.appendChild(heads);
 
@@ -93,13 +96,13 @@
     const NU = D.natural_units_input_rows;
     const A = D.activation_size;
     const pc = (v) => F.fixed(Math.abs(100 * v), v > -0.001 && v < 0.001 ? 2 : 1);
-    wrap.appendChild(el('p', 'f11-note f11-more', 'The same comparison read other ways, from the same data. For the down-matrix column instead of the input rows: mean ' +
-      f3(O.mean_difference.recomputed) + ', range ' + f3(O.band_low.recomputed) + ' to ' + f3(O.band_high.recomputed) + '. On the ' + R.pairs.recomputed +
-      ' pairs of the half used to set the rules: ' + f3(R.mean_difference.recomputed) + ', range ' + f3(R.band_low.recomputed) + ' to ' + f3(R.band_high.recomputed) +
-      '. In r itself, over the three steps ending at the birth, the carriers’ r is ' + pc(NU.relative_change.recomputed) + ' % lower (range ' +
-      pc(NU.relative_band_low.recomputed) + ' % lower to ' + pc(NU.relative_band_high.recomputed) + ' % higher). The carriers’ largest activation one snapshot ' +
-      'before the birth is ' + F.fixed(A.ratio_of_max_activation, 2) + ' times the matched units’; at equal activation (a line fitted to the differences against ' +
-      'the log ratio of the two activations) the mean difference is ' + f3(A.adjusted_for_activation_size.mean_difference) + ', range ' +
+    wrap.appendChild(el('p', 'f11-note f11-more', 'We also compared the pairs in other ways, from the same data. For the down_proj column instead of the gate_proj and up_proj rows: mean ' +
+      f3(O.mean_difference.recomputed) + ', 95 % CI ' + f3(O.band_low.recomputed) + ' to ' + f3(O.band_high.recomputed) + '. On the ' + R.pairs.recomputed +
+      ' pairs of the development split: ' + f3(R.mean_difference.recomputed) + ', 95 % CI ' + f3(R.band_low.recomputed) + ' to ' + f3(R.band_high.recomputed) +
+      '. In r itself (the relative weight update before z-scoring), over the three intervals ending at the onset, the r of the clusters’ neurons is ' + pc(NU.relative_change.recomputed) + ' % lower (95 % CI ' +
+      pc(NU.relative_band_low.recomputed) + ' % lower to ' + pc(NU.relative_band_high.recomputed) + ' % higher). At the checkpoint before the onset, the largest activation of the clusters’ poles ' +
+      'is ' + F.fixed(A.ratio_of_max_activation, 2) + ' times the matched poles’; at equal activation (a line fitted to the differences against ' +
+      'the log ratio of the two activations) the mean difference is ' + f3(A.adjusted_for_activation_size.mean_difference) + ', 95 % CI ' +
       f3(A.adjusted_for_activation_size.band[0]) + ' to ' + f3(A.adjusted_for_activation_size.band[1]) + '.'));
     if (!(NU.relative_change.recomputed < 0 && NU.relative_band_low.recomputed < 0 && NU.relative_band_high.recomputed > 0)) throw new Error('f11: the r change and its range do not have the signs the sentence states');
 
@@ -175,9 +178,9 @@
     function boxFor(i) {
       const p = P[i];
       return {
-        title: 'Layer ' + p.layer + ', birth at snapshot ' + p.birth_snapshot,
-        rows: [['carrier, ' + unitText(p.c), f3(p.carrier_e_input_rows), 'claim'],
-          ['matched unit, ' + unitText(p.m), f3(p.comparison_e_input_rows), 'control'],
+        title: 'Layer ' + p.layer + ', onset at the checkpoint of step ' + F.int(STEPS[p.birth_snapshot]),
+        rows: [['cluster’s neuron, ' + unitText(p.c), f3(p.carrier_e_input_rows), 'claim'],
+          ['matched neuron, ' + unitText(p.m), f3(p.comparison_e_input_rows), 'control'],
           ['difference', f3(p.difference_input_rows), 'ink'],
           ['row', (i + 1) + ' of ' + N]],
       };

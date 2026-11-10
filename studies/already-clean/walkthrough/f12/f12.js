@@ -1,8 +1,9 @@
-// f12: per band of eight layers, the code-and-mathematics share of a side's fifty at the start and after each of the
-// three mixes, against the drift band. Registers the mount "f12" with site.js; reads window.F12_DATA (f12/data.js).
-// Four small panels, one per band, on one scale in positions of fifty (share x 50), each centred on its own start;
-// in each panel one lane for the start and one for each mix. The drift band is the start plus or minus the largest
-// band-mean change between neighbouring stage-1 snapshots. A toggle picks the mix whose move is drawn and written.
+// f12: per band of eight layers, the share of a pole's top-50 activating tokens that come from code and mathematics,
+// at the start (stage1-step476838) and after each of the three data mixes, against the drift band. Registers the mount
+// "f12" with site.js; reads window.F12_DATA (f12/data.js). Four small panels, one per band, on one scale in tokens of
+// the 50 (share x 50), each centred on its own start; in each panel one lane for the start and one for each mix. The
+// drift band is the start plus or minus the largest band-mean change between neighbouring stage-1 checkpoints. A toggle
+// picks the mix whose move is drawn and written.
 (() => {
   'use strict';
 
@@ -14,9 +15,9 @@
   };
 
   const MIXES = [
-    { key: 'no_code_or_math', short: '0\u00a0%', shape: 'circle' },
-    { key: 'code_and_math_40', short: '40\u00a0%', shape: 'square' },
-    { key: 'code_and_math_65', short: '65\u00a0%', shape: 'diamond' },
+    { key: 'no_code_or_math', short: '0\u00a0%', shape: 'circle', branch: 'stage2-step47684-mix-gen-mc-only-from-2T-ckpt' },
+    { key: 'code_and_math_40', short: '40\u00a0%', shape: 'square', branch: 'stage2-step47684-mix-round5-from-2T-ckpt' },
+    { key: 'code_and_math_65', short: '65\u00a0%', shape: 'diamond', branch: 'stage2-step47684-mix-math-code-reasoning-web-from-2T-ckpt' },
   ];
 
   function mount(root, D) {
@@ -30,7 +31,7 @@
 
     // ---------- the data must hold together before anything is drawn ----------
     MIXES.forEach((m) => {
-      if (!H[m.key] || !S[m.key]) throw new Error('f12: no harvest or shift for ' + m.key);
+      if (!H[m.key] || !S[m.key]) throw new Error('f12: no run or shift for ' + m.key);
       if (H[m.key].band_mean_share.length !== NB || S[m.key].band_mean_shift.length !== NB || S[m.key].range_banked.length !== NB) throw new Error('f12: ' + m.key + ' lacks a band');
     });
     if (H.start.band_mean_share.length !== NB || DR.band_bar.length !== NB) throw new Error('f12: the start or the drift band lacks a band');
@@ -46,7 +47,9 @@
     });
 
     const pos = (share) => share * K;                       // share of fifty -> positions of fifty
-    const snapName = (t) => Number(/^t(\d+)/.exec(t)[1]);
+    const STEPS = D.snapshot_steps;
+    if (!STEPS || STEPS.length !== 16) throw new Error('f12: the data does not hold the sixteen checkpoint steps');
+    const snapName = (t) => F.int(STEPS[Number(/^t(\d+)/.exec(t)[1])]);
     const bandName = (b) => 'Layers ' + D.bands[b].layers[0] + ' to ' + D.bands[b].layers[1];
     const signed = (x, d) => (x > 0 ? '+' : '') + F.fixed(x, d);
 
@@ -74,10 +77,10 @@
     const facts = el('div', 'f12-facts');
     const fact = (big, text) => { const f = el('p', 'f12-fact'); f.append(el('b', '', big), el('span', '', text)); facts.appendChild(f); };
     fact(F.fixed(Math.min(...movesNone), 2) + ' to ' + F.fixed(Math.max(...movesNone), 2),
-      'of one of fifty: how far 100 billion tokens with no code or mathematics moved the band mean, by band');
-    fact(F.fixed(Math.max(...moves65), 2), 'of one of fifty: the largest move under the ' + MIXES[2].short + ' mix');
+      'tokens of the 50: how far 100 billion training tokens with no code or mathematics moved the band mean, by band');
+    fact(F.fixed(Math.max(...moves65), 2), 'tokens of the 50: the largest move under the ' + MIXES[2].short + ' mix');
     fact('±' + F.fixed(Math.min(...drifts), 2) + ' to ±' + F.fixed(Math.max(...drifts), 2),
-      'the drift band: the largest band-mean change between neighbouring stage-1 snapshots, by band');
+      'the drift band: the largest change of the band mean between neighbouring stage-1 checkpoints, by band');
     wrap.appendChild(facts);
 
     // ---------- controls and legend ----------
@@ -100,7 +103,7 @@
     const key = (cls, text) => { const s = el('span'); s.append(el('i', 'f12-key ' + cls), text); return s; };
     legend.append(key('start', 'the start'), key('drift', 'the drift band'),
       key('mk circle', MIXES[0].short), key('mk square', MIXES[1].short), key('mk diamond', MIXES[2].short),
-      key('whisker', 'the range over 2,000 resamples'), key('move', 'the chosen mix’s move'));
+      key('whisker', 'bootstrap 95 % CI, 2,000 resamples'), key('move', 'the chosen mix’s move'));
     wrap.appendChild(legend);
 
     // ---------- the four panels ----------
@@ -111,7 +114,7 @@
     for (let b = 0; b < NB; b++) {
       const start = pos(H.start.band_mean_share[b]);
       const panel = el('section', 'f12-panel');
-      panel.appendChild(el('h3', 'f12-h', bandName(b) + ' (' + F.int(D.bands[b].sides) + ' sides)'));
+      panel.appendChild(el('h3', 'f12-h', bandName(b) + ' (' + F.int(D.bands[b].sides) + ' poles)'));
       const body = el('div', 'f12-body');
       panel.appendChild(body);
       const lanes = el('div', 'f12-lanes');
@@ -126,7 +129,7 @@
       plot.appendChild(drift);
       WALK.hover(drift, () => ({
         title: bandName(b) + ': the drift band',
-        rows: DR.snapshot_pairs.map(([a, c], j) => ['snapshots ' + snapName(a) + ' to ' + snapName(c), signed(pos(pairDiffs[j][b]), 3) + ' of fifty'])
+        rows: DR.snapshot_pairs.map(([a, c], j) => ['checkpoints at steps ' + snapName(a) + ' to ' + snapName(c), signed(pos(pairDiffs[j][b]), 3) + ' tokens of 50'])
           .concat([['the band: the start ±', F.fixed(pos(DR.band_bar[b]), 3), 'control']]),
       }));
       drift.setAttribute('aria-label', bandName(b) + ', the drift band');
@@ -151,7 +154,7 @@
       plot.appendChild(sm);
       WALK.hover(sm, () => ({
         title: bandName(b) + ': ' + H.start.name,
-        rows: [['share of fifty', F.fixed(H.start.band_mean_share[b], 4), 'control'], ['positions of fifty', F.fixed(start, 3)],
+        rows: [['share of the top-50', F.fixed(H.start.band_mean_share[b], 4), 'control'], ['tokens of the 50', F.fixed(start, 3)],
           ['second run of the same weights', F.fixed(H.start_second_harvest.band_mean_share[b], 4)]],
       }));
       sm.setAttribute('aria-label', bandName(b) + ', the start');
@@ -180,8 +183,8 @@
         plot.append(arrow, wh, mk, lab);
         WALK.hover(mk, () => ({
           title: bandName(b) + ': ' + H[m.key].name,
-          rows: [['share of fifty', F.fixed(H[m.key].band_mean_share[b], 4), 'ink'], ['positions of fifty', F.fixed(pos(H[m.key].band_mean_share[b]), 3)],
-            ['move from the start', signed(shift, 3) + ' of fifty'], ['the range', signed(rng[0], 3) + ' to ' + signed(rng[1], 3)],
+          rows: [['share of the top-50', F.fixed(H[m.key].band_mean_share[b], 4), 'ink'], ['tokens of the 50', F.fixed(pos(H[m.key].band_mean_share[b]), 3)],
+            ['move from the start', signed(shift, 3) + ' tokens of 50'], ['bootstrap 95 % CI', signed(rng[0], 3) + ' to ' + signed(rng[1], 3)],
             ['the drift band', '±' + F.fixed(pos(DR.band_bar[b]), 3), 'control']],
         }));
         mk.setAttribute('aria-label', bandName(b) + ', ' + m.short + ' mix');
@@ -189,7 +192,7 @@
       });
       parts.push(mixParts);
 
-      // the axis: positions of fifty, at quarter steps
+      // the axis: tokens of the 50, at quarter steps
       const axis = el('div', 'f12-axis');
       const a0 = Math.ceil((start + relLo) * 4) / 4;
       for (let v = a0; v <= start + relHi + 1e-9; v += 0.25) {
@@ -203,16 +206,20 @@
       body.appendChild(axis);
       panels.appendChild(panel);
     }
-    wrap.appendChild(el('p', 'f12-xname', 'Code-and-mathematics positions out of a side’s fifty (the share × ' + K + '), mean over the band’s sides. ' +
+    wrap.appendChild(el('p', 'f12-xname', 'Tokens from code and mathematics among a pole’s top-50 activating tokens (the share × ' + K + '), mean over the band’s poles. ' +
       'Every panel has the same scale, centred on its own start.'));
 
     const out = el('p', 'f12-out');
     out.setAttribute('aria-live', 'polite');
     wrap.appendChild(out);
 
-    wrap.appendChild(el('p', 'f12-note', 'Each mix is 100 billion tokens of training from the start, step 476,838 of stage 1. The start was run twice on the same weights: ' +
-      F.int(D.identity_pair.sides_whose_counts_differ) + ' of ' + F.int(D.identity_pair.sides) + ' sides differ. The range is over 2,000 resamples of units, both sides of a unit together, as banked. ' +
-      'The drift band is the start plus or minus the largest change of the band mean between neighbouring stage-1 snapshots (12 to 13, 13 to 14, 14 to 15). Hover, tap or tab to a mark for its numbers.'));
+    wrap.appendChild(el('p', 'f12-note', 'Each mix is 100 billion tokens of training from the start, the checkpoint stage1-step476838; the three results are the Hugging Face branches ' +
+      MIXES.map((m) => m.branch + ' (' + m.short + ')').join(', ') + '. ' +
+      'A pole is one sign of a neuron’s activations. Code and mathematics means the corpus directories ' + D.code_and_math_directories.map((d) => d.replace(/^data\//, '')).join(', ') + '. ' +
+      'We read the start twice on the same weights: ' + F.int(D.identity_pair.sides_whose_counts_differ) + ' of ' + F.int(D.identity_pair.sides) + ' poles differ. ' +
+      'The bootstrap 95 % confidence interval is over 2,000 resamples of neurons, both poles of a neuron together. ' +
+      'The drift band is the start plus or minus the largest change of the band mean between neighbouring stage-1 checkpoints (' +
+      DR.snapshot_pairs.map(([a, c]) => 'steps ' + snapName(a) + ' to ' + snapName(c)).join(', ') + '). Hover, tap or tab to a mark for its numbers.'));
 
     function select(i) {
       buttons.forEach((b, j) => b.setAttribute('aria-pressed', String(j === i)));
@@ -226,7 +233,7 @@
       const mv = S[m.key].band_mean_shift_in_slots;
       out.textContent = H[m.key].name.replace(/^after/, 'After').replace(/ %/g, '\u00a0%') + ': the band mean moved by ' +
         mv.map((v, b) => signed(v, 2) + ' (layers ' + D.bands[b].layers[0] + ' to ' + D.bands[b].layers[1] + ')').join(', ') +
-        ' of one of fifty; ' + mv.filter((v, b) => Math.abs(v) > pos(DR.band_bar[b])).length + ' of ' + NB + ' bands moved past the drift band.';
+        ' tokens of the 50; ' + mv.filter((v, b) => Math.abs(v) > pos(DR.band_bar[b])).length + ' of ' + NB + ' bands moved past the drift band.';
     }
     select(0);
   }

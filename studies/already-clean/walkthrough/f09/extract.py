@@ -14,6 +14,7 @@ own records (n12_<half>.jsonl, abl = [side, prediction, measurement]).
 import datetime
 import hashlib
 import json
+import re
 import subprocess
 from pathlib import Path
 
@@ -24,6 +25,7 @@ ROOT = HERE.parents[3]                       # walkthrough/<picture> -> already-
 ID = HERE.name.upper()
 MAX_BYTES = 300_000
 SOURCES = []
+ASSETS = "studies/next/00_ASSETS.md"   # the sixteen stage-1 checkpoints and their branches (as m03, m05)
 
 BANK = "studies/next/n2v/banks/score-02/n2v"
 N12_BANK = "studies/next/n12/banks/score-02/n12"
@@ -238,6 +240,13 @@ def main():
         "hover_examples_held_out": "The 10 held-out births of n2v samples/raw_examples_test.jsonl; group_contexts are the "
                                    "banked exemplars verbatim, the group's position marked [[ ]].",
     }
+    # the training step of each checkpoint, so that the page names a checkpoint by its step and branch
+    steps = [int(re.search(r"`stage1-step(\d+)`", s)[1]) for s in src(ASSETS).read_text().splitlines()
+             if re.match(r"\| T_\d+ \| `stage1-step", s)]
+    assert len(steps) == 16, steps
+    data["snapshot_steps"] = steps
+    notes["snapshot_steps"] = ("Training step of each of the sixteen stage-1 checkpoints 0 ... 15; the checkpoint's Hugging Face "
+                               "branch is stage1-step<step> (studies/next/00_ASSETS.md, the table rows T_0 ... T_15).")
     write(data, notes)
 
 

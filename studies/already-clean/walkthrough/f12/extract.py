@@ -10,6 +10,7 @@ window.F12_DATA = {...}. Prints `path sha256` for every input.
 import datetime
 import hashlib
 import json
+import re
 import subprocess
 from pathlib import Path
 
@@ -20,13 +21,14 @@ ROOT = HERE.parents[3]                       # walkthrough/<picture> -> already-
 ID = HERE.name.upper()
 MAX_BYTES = 300_000
 SOURCES = []
+ASSETS = "studies/next/00_ASSETS.md"   # the sixteen stage-1 checkpoints and their branches (as m03, m05)
 
 M1 = "studies/next/m1"
 SLOTS = 50
 # Harvest keys -> public names (M1_SPEC.md §0.5; M1_ASSETS.md line 41: gen-mc-only 0 %, round5 40 %,
 # math-code-reasoning-web 65 % code and math).
-HARVESTS = {"start_a": "the start, step 476,838 of stage 1 (first harvest)",
-            "start_b": "the start, step 476,838 of stage 1 (second harvest of the same weights)",
+HARVESTS = {"start_a": "the start, checkpoint stage1-step476838 (first run)",
+            "start_b": "the start, checkpoint stage1-step476838 (second run on the same weights)",
             "G": "after 100 billion tokens with no code or math (0 %)",
             "R": "after 100 billion tokens with 40 % code and math",
             "M": "after 100 billion tokens with 65 % code and math"}
@@ -204,6 +206,13 @@ def main():
         "plan_rounding": "The plan's 'within 0.36 of one' is a bound: the largest band shift of the 65 % mix is 0.3519 slots "
                          "(20_ABSTRACT_CHECK.md E2: 0.35 is nearer).",
     }
+    # the training step of each checkpoint, so that the page names a checkpoint by its step and branch
+    steps = [int(re.search(r"`stage1-step(\d+)`", s)[1]) for s in src(ASSETS).read_text().splitlines()
+             if re.match(r"\| T_\d+ \| `stage1-step", s)]
+    assert len(steps) == 16, steps
+    data["snapshot_steps"] = steps
+    notes["snapshot_steps"] = ("Training step of each of the sixteen stage-1 checkpoints 0 ... 15; the checkpoint's Hugging Face "
+                               "branch is stage1-step<step> (studies/next/00_ASSETS.md, the table rows T_0 ... T_15).")
     write(data, notes)
 
 

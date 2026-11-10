@@ -1,7 +1,7 @@
-// m03: the corpus and a side's fifty contexts. Registers the mount "m03" with site.js; reads window.M03_DATA
-// (m03/data.js). The corpus rule drawn from the data's counts; one side's fifty contexts at the final snapshot,
-// added in rank order by the reader, each marked on a strip of the corpus windows; then positions fixed at the final
-// snapshot read at an earlier snapshot, with one drag over the sixteen snapshots.
+// m03: the corpus and a pole's top-50 activating tokens. Registers the mount "m03" with site.js; reads window.M03_DATA
+// (m03/data.js). The corpus rule drawn from the data's counts; one pole's top-50 tokens at the last checkpoint,
+// added in rank order by the reader, each marked on a strip of the corpus windows; then three clusters' tokens, fixed
+// at the last checkpoint, with their activations at every checkpoint, and one drag over the sixteen checkpoints.
 (() => {
   'use strict';
 
@@ -16,8 +16,9 @@
   const sig4 = (x) => x.toPrecision(4).replace('-', '\u2212');
   const sideOf = (id) => {
     const m = /^L(\d+)N(\d+)([+-])$/.exec(id);
-    if (!m) throw new Error('m03: cannot read the side id ' + id);
-    return { layer: Number(m[1]), unit: Number(m[2]), positive: m[3] === '+' };
+    if (!m) throw new Error('m03: cannot read the pole id ' + id);
+    const layer = Number(m[1]), unit = Number(m[2]);
+    return { layer, unit, positive: m[3] === '+', name: 'L' + layer + '.N' + unit + m[3] };
   };
 
   function mount(root, D) {
@@ -25,13 +26,16 @@
     const C = D.corpus;
     const steps = D.snapshot_steps;
     const LAST = steps.length - 1;
-    if (steps.length !== 16) throw new Error('m03: expected 16 snapshot steps');
+    if (steps.length !== 16) throw new Error('m03: expected 16 checkpoint steps');
     if (C.directories.length !== C.directories_used) throw new Error('m03: directory count differs from directories_used');
     if (C.tokens_in_windows !== C.windows * C.window_tokens) throw new Error('m03: windows × window tokens is not tokens_in_windows');
     if (C.scored_tokens !== C.tokens_in_windows - C.windows) throw new Error('m03: scored tokens are not one fewer per window');
     const fifty = D.fifty_at_end;
-    if (fifty.contexts.length !== C.fifty) throw new Error('m03: the side does not have fifty contexts');
-    if (fifty.step !== steps[LAST]) throw new Error('m03: the fifty are not from the final snapshot');
+    if (fifty.contexts.length !== C.fifty) throw new Error('m03: the pole does not have 50 top tokens');
+    if (fifty.step !== steps[LAST]) throw new Error('m03: the top-50 are not from the last checkpoint');
+    const branch = (step) => 'stage1-step' + step;
+    const own = sideOf(fifty.id);
+    if (own.layer !== fifty.layer || own.unit !== fifty.unit || own.positive !== (fifty.side === 'positive')) throw new Error('m03: pole id ' + fifty.id + ' does not match its fields');
 
     root.replaceChildren();
     const wrap = el('div', 'm03-wrap');
@@ -86,14 +90,15 @@
     // ---------- one side's fifty ----------
     const fs = el('section', 'm03-fifty');
     wrap.appendChild(fs);
-    fs.appendChild(el('h3', 'm03-h', 'One side’s fifty contexts at the final snapshot'));
-    fs.appendChild(el('p', 'm03-note', 'Layer ' + fifty.layer + ', unit ' + F.int(fifty.unit) + ', ' + fifty.side + ' side, read at step ' +
-      F.int(fifty.step) + ': a is computed at every one of the ' + F.int(C.scored_tokens) + ' scored tokens, and the ' + C.fifty +
-      ' positions with the largest a are kept, each with ' + C.tokens_before_context + ' tokens before it and ' + C.tokens_after_context +
-      ' after. These positions are then fixed and read at every earlier snapshot.'));
+    fs.appendChild(el('h3', 'm03-h', 'The top-50 activating tokens of one pole at the last checkpoint'));
+    fs.appendChild(el('p', 'm03-note', 'Pole ' + own.name + ' is the ' + fifty.side + ' activations of neuron ' + F.int(fifty.unit) + ' of layer ' +
+      fifty.layer + '. At the checkpoint ' + branch(fifty.step) + ' (step ' + F.int(fifty.step) + ') we computed its activation a at all ' +
+      F.int(C.scored_tokens) + ' scored tokens and kept the ' + C.fifty + ' tokens with the largest a, each with ' + C.tokens_before_context +
+      ' tokens of text before it and ' + C.tokens_after_context + ' after: the pole’s top-50 activating tokens. They are fixed corpus tokens, ' +
+      'so the activation at them can be recomputed at any checkpoint.'));
     const ctl = el('div', 'control-row');
-    const next = el('button', 'button', 'Add the next context');
-    const allB = el('button', 'button', 'Add all fifty');
+    const next = el('button', 'button', 'Add the next token');
+    const allB = el('button', 'button', 'Add all 50');
     const clear = el('button', 'button', 'Start over');
     [next, allB, clear].forEach((b) => { b.type = 'button'; ctl.appendChild(b); });
     const count = el('span', 'control-label');
@@ -112,7 +117,7 @@
     const list = el('div', 'm03-kwic');
     list.setAttribute('role', 'list');
     const head = el('div', 'm03-khead');
-    head.append(el('span', '', 'rank'), el('span', 'm03-k-ctx', 'context, cut to one line around the token'), el('span', 'm03-k-a', 'a'));
+    head.append(el('span', '', 'rank'), el('span', 'm03-k-ctx', 'the token in its text, cut to one line'), el('span', 'm03-k-a', 'a'));
     list.appendChild(head);
     fs.appendChild(list);
     fs.appendChild(el('p', 'm03-note', '↵ marks a line break in the text. The text around each token is shortened here; a is rounded to four significant digits.'));
@@ -155,10 +160,13 @@
     // ---------- the same positions at an earlier snapshot ----------
     const rb = el('section', 'm03-back');
     wrap.appendChild(rb);
-    rb.appendChild(el('h3', 'm03-h', 'Three groups\u2019 positions read at every snapshot'));
-    rb.appendChild(el('p', 'm03-note', 'The data file does not hold this side’s fifty at earlier snapshots. It holds ' + D.positions_read_back.length +
-      ' sets of positions from other sides: each set is a group of contexts from that side’s fifty, fixed at the final snapshot and read at all ' +
-      steps.length + ' snapshots. The value is the activation in the side’s own direction: a on a positive side, −a on a negative side, and 0 where the sign is the other one.'));
+    rb.appendChild(el('h3', 'm03-h', 'Three clusters: the activation at their tokens at every checkpoint'));
+    const ex = D.positions_read_back[0];
+    rb.appendChild(el('p', 'm03-note', 'The data file does not hold this pole’s top-50 at earlier checkpoints. It holds ' +
+      D.positions_read_back.length + ' clusters from other poles. A cluster is a subset of a pole’s top-50 tokens that an LLM put ' +
+      'together and named; for example, ' + ex.group_size + ' tokens of ' + sideOf(ex.id).name + ' that it named “' + ex.group_name + '”. ' +
+      'We took each cluster’s tokens at the last checkpoint and recomputed the activation at them at all ' + steps.length + ' checkpoints. ' +
+      'The value drawn is the activation in the pole’s direction: a for a positive pole, −a for a negative pole, and 0 where a has the other sign.'));
     const sctl = el('div', 'm03-scrub');
     const lab = el('label', 'm03-scrub-label');
     lab.htmlFor = 'm03-snap';
@@ -166,20 +174,26 @@
     scrub.type = 'range'; scrub.min = '0'; scrub.max = String(LAST); scrub.step = '1'; scrub.value = String(LAST); scrub.id = 'm03-snap';
     const ticks = el('div', 'm03-sticks');
     ticks.setAttribute('aria-hidden', 'true');
-    steps.forEach((s, i) => { const t = el('span', 'm03-stick' + (i % 5 === 0 || i === LAST ? '' : ' minor'), String(i)); t.style.left = (100 * i) / LAST + '%'; ticks.appendChild(t); });
-    sctl.append(lab, scrub, ticks);
+    // Step labels: every fifth checkpoint on a phone; every third as well on a wider screen. The checkpoints are evenly spaced.
+    steps.forEach((s, i) => {
+      if (i % 5 && i % 3) return;
+      const t = el('span', 'm03-stick' + (i % 5 ? ' minor' : '') + (i === LAST ? ' last' : ''), F.int(s));
+      t.style.left = (100 * i) / LAST + '%';
+      ticks.appendChild(t);
+    });
+    sctl.append(lab, scrub, ticks, el('p', 'm03-sname', 'training step of the checkpoint (the sixteen in order, not to scale)'));
     rb.appendChild(sctl);
 
     const panels = D.positions_read_back.map((g) => {
       const who = sideOf(g.id);
       const A = g.activation_own_direction_by_snapshot;
-      if (A.length !== steps.length) throw new Error('m03: ' + g.id + ' is not read at every snapshot');
-      if ((g.side === 'positive') !== who.positive) throw new Error('m03: side of ' + g.id + ' does not match its id');
-      A.forEach((row) => { if (row.length !== g.group_size) throw new Error('m03: ' + g.id + ' has a snapshot with a different group size'); });
+      if (A.length !== steps.length) throw new Error('m03: ' + g.id + ' is not given at every checkpoint');
+      if ((g.side === 'positive') !== who.positive) throw new Error('m03: the pole of ' + g.id + ' does not match its id');
+      A.forEach((row) => { if (row.length !== g.group_size) throw new Error('m03: ' + g.id + ' has a checkpoint with a different cluster size'); });
       const max = Math.max(...A.flat());
       const p = el('div', 'm03-panel');
-      p.appendChild(el('h4', 'm03-h4', 'Layer ' + who.layer + ', unit ' + F.int(who.unit) + ', ' + g.side + ' side: ' + g.group_size +
-        ' of its fifty (ranks ' + g.ranks_in_fifty.join(', ') + ')'));
+      p.appendChild(el('h4', 'm03-h4', who.name + ' (neuron ' + F.int(who.unit) + ' of layer ' + who.layer + ', ' + g.side + ' pole): cluster “' +
+        g.group_name + '”, ' + g.group_size + ' of its top-50 tokens (ranks ' + g.ranks_in_fifty.join(', ') + ')'));
       const bgrid = el('div', 'm03-bgrid');
       p.appendChild(bgrid);
       const rows = g.positions_at_end.map((pos, j) => {
@@ -196,23 +210,23 @@
         bgrid.appendChild(r);
         return { r, bar, val, pos, j };
       });
-      p.appendChild(el('p', 'm03-note m03-scale', 'Bars on one scale per set, 0 to ' + F.fixed(max, 4) + ' (the largest value of the set at any snapshot); the thin mark is the value at the final snapshot.'));
+      p.appendChild(el('p', 'm03-note m03-scale', 'Bars on one scale per cluster, 0 to ' + F.fixed(max, 4) + ' (the largest value in the cluster at any checkpoint); the thin mark is the value at the last checkpoint.'));
       rb.appendChild(p);
       return { g, A, rows, max };
     });
     const leg2 = el('p', 'm03-legend');
-    leg2.append(key('bar', 'value at the chosen snapshot'), key('end', 'value at the final snapshot'));
+    leg2.append(key('bar', 'value at the chosen checkpoint'), key('end', 'value at the last checkpoint, step ' + F.int(steps[LAST])));
     rb.appendChild(leg2);
 
     function drawBack() {
       const t = Number(scrub.value);
-      lab.textContent = 'Snapshot ' + t + ' of ' + LAST + ': step ' + F.int(steps[t]);
-      scrub.setAttribute('aria-valuetext', 'snapshot ' + t + ', step ' + F.int(steps[t]));
+      lab.textContent = 'Checkpoint at step ' + F.int(steps[t]) + ' (' + branch(steps[t]) + ')';
+      scrub.setAttribute('aria-valuetext', 'checkpoint at step ' + F.int(steps[t]));
       panels.forEach(({ A, rows, max }) => rows.forEach(({ r, bar, val, pos, j }) => {
         const v = A[t][j];
         bar.style.width = (100 * v) / max + '%';
         val.textContent = F.fixed(v, 4);
-        r.setAttribute('aria-label', 'Rank ' + pos.rank + ', token ' + JSON.stringify(pos.token) + ', ' + F.fixed(v, 4) + ' at snapshot ' + t);
+        r.setAttribute('aria-label', 'Rank ' + pos.rank + ', token ' + JSON.stringify(pos.token) + ', ' + F.fixed(v, 4) + ' at step ' + F.int(steps[t]));
       }));
     }
     panels.forEach(({ g, A, rows }) => {
@@ -220,8 +234,8 @@
       rows.forEach(({ r, pos, j }) => WALK.hover(r, () => {
         const t = Number(scrub.value);
         return {
-          title: 'Rank ' + pos.rank + ' of layer ' + who.layer + ', unit ' + F.int(who.unit) + ', ' + g.side + ' side: “' + flat(pos.token) + '”',
-          rows: [['snapshot ' + t + ', step ' + F.int(steps[t]), F.fixed(A[t][j], 4), 'ink'], ['final snapshot', F.fixed(A[LAST][j], 4), 'muted']],
+          title: 'Rank ' + pos.rank + ' of the top-50 of ' + who.name + ': “' + flat(pos.token) + '”',
+          rows: [['at step ' + F.int(steps[t]), F.fixed(A[t][j], 4), 'ink'], ['at step ' + F.int(steps[LAST]) + ', the last checkpoint', F.fixed(A[LAST][j], 4), 'muted']],
         };
       }));
     });

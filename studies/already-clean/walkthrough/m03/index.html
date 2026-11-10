@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The corpus and the fifty contexts</title>
+<title>The corpus and the top-50 tokens</title>
 <!-- The fonts are optional: this stylesheet loads without blocking the page, and site.css falls back to system fonts. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
 <body>
 <main class="page">
   <header class="page-head">
-    <h1>The corpus and the fifty contexts</h1>
+    <h1>The corpus and the top-50 tokens</h1>
     <nav aria-label="Site">
       <a href="../index.html">The walkthrough</a>
       <button class="button" type="button" data-theme-toggle>Dark theme</button>
@@ -22,7 +22,7 @@
   </header>
   <figure class="figure" data-source="data.js">
     <div id="m03"></div>
-    <figcaption class="figure-caption">The corpus: 10,044 windows of 2,048 tokens from 50 directories of the model's own training mix, 20,560,068 scored tokens; for one side, the fifty positions where the final snapshot's activation was largest (values as banked in the first edition, four significant digits, texts cut), then three groups from three other sides, their positions read at every snapshot. <a class="data-link">data</a></figcaption>
+    <figcaption class="figure-caption">We scored 20,560,068 tokens, 10,044 windows of 2,048 tokens from 50 directories of the model’s own training mix; the picture shows the top-50 activating tokens of the pole L3.N6372+ at the last checkpoint, <code>stage1-step1413814</code> (values as banked in the first edition, four significant digits, texts cut), then three clusters of tokens from three other poles, with the activation at their tokens at every checkpoint. <a class="data-link">data</a></figcaption>
   </figure>
 </main>
 <script src="../site.js"></script>

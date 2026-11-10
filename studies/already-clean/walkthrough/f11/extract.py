@@ -13,6 +13,7 @@ units (mean log r over the rise window, scale.py's bootstrap) with read_n1/scale
 import datetime
 import hashlib
 import json
+import re
 import subprocess
 from pathlib import Path
 
@@ -23,6 +24,7 @@ ROOT = HERE.parents[3]                       # walkthrough/<picture> -> already-
 ID = HERE.name.upper()
 MAX_BYTES = 300_000
 SOURCES = []
+ASSETS = "studies/next/00_ASSETS.md"   # the sixteen stage-1 checkpoints and their branches (as m03, m05)
 
 N1 = "studies/next/n1"
 ROWS = {"held_out": f"{N1}/banks/weights-03/n1/n1_test.jsonl", "rule_setting": f"{N1}/banks/weights-03/n1/n1_freeze.jsonl"}
@@ -184,6 +186,13 @@ def main():
                            "comparison, its bootstrap band, and exp of the mean; adjusted_for_activation_size is the "
                            "intercept of the regression of the paired e gap on the log ratio (fragility.json).",
     }
+    # the training step of each checkpoint, so that the page names a checkpoint by its step and branch
+    steps = [int(re.search(r"`stage1-step(\d+)`", s)[1]) for s in src(ASSETS).read_text().splitlines()
+             if re.match(r"\| T_\d+ \| `stage1-step", s)]
+    assert len(steps) == 16, steps
+    data["snapshot_steps"] = steps
+    notes["snapshot_steps"] = ("Training step of each of the sixteen stage-1 checkpoints 0 ... 15; the checkpoint's Hugging Face "
+                               "branch is stage1-step<step> (studies/next/00_ASSETS.md, the table rows T_0 ... T_15).")
     write(data, notes)
 
 

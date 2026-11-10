@@ -45,59 +45,60 @@ def pct(k):
 def condition(arm):
     """arm name -> (public id, plain name, family, percent of units or None, MLP part in words, non-MLP code, seed set)."""
     if arm == "base":
-        return "base", "base model", "reference", None, "no change", "before", "first"
+        return "base", "Olmo-3-1025-7B (base model)", "reference models", None, "no delta", "before", "first"
     if arm == "rl":
-        return "math", "mathematics model", "reference", None, "the whole change", "after", "first"
+        return "math", "Olmo-3.1-7B-RL-Zero-Math", "reference models", None, "the whole weight delta", "after", "first"
     if arm == "zero":
-        return "zeroed_change", "base model rebuilt by the copying code with the change set to zero", "reference", None, \
-            "no change", "before", "second"
+        return "zeroed_change", "base model rebuilt by the copying code with the weight delta set to zero", "reference models", \
+            None, "no delta", "before", "second"
     if arm == "id":
-        return "identity", "mathematics model rebuilt by the copying code (identity)", "reference", None, \
-            "the whole change", "after", "second"
+        return "identity", "RL-Zero-Math rebuilt by the copying code (the whole delta copied)", "reference models", None, \
+            "the whole weight delta", "after", "second"
     if arm == "mlp":
-        return "all_mlp", "all MLP", "half of the network", None, "the whole MLP change", "before", "first"
+        return "all_mlp", "the whole MLP delta", "the whole MLP, or attention and norm weights", None, "the whole MLP delta", \
+            "before", "first"
     if arm == "attn":
-        return "attention_and_norms", "attention with every norm weight", "half of the network", None, \
-            "no MLP change", "attn_norm_after", "first"
+        return "attention_and_norms", "the attention and norm-weight deltas", "the whole MLP, or attention and norm weights", \
+            None, "no MLP delta", "attn_norm_after", "first"
     if arm == "top_k1_B":
-        return "most_changed_1_second_seeds", "most-changed 1 % of units, second seed set", "repeat reading", 1.0, \
-            "the change of the 3,523 units with the largest change size", "before", "second"
+        return "most_changed_1_second_seeds", "top 1 % of neurons by weight-delta norm, second set of sampling seeds", \
+            "repeat runs and variants", 1.0, "the delta of the 3,523 neurons with the largest weight-delta norm", "before", "second"
     if arm == "topF_k1":
-        return "most_changed_1_above_rounding", "most-changed 1 % of units, ranked on entries that moved more than one 16-bit step", \
-            "repeat reading", 1.0, "the change of the 3,523 units with the largest change size counted over entries that moved " \
-            "two or more 16-bit steps", "before", "first"
+        return "most_changed_1_above_rounding", "top 1 % of neurons, ranked on entries that moved by more than one bfloat16 value", \
+            "repeat runs and variants", 1.0, "the delta of the 3,523 neurons with the largest weight-delta norm, counted over " \
+            "entries that moved by two or more bfloat16 values", "before", "first"
     if arm == "rndT_k1_d2":
-        return "random_own_change_1_second_draw", "random units at their own change, 1 %, second random draw", "repeat reading", \
-            1.0, "random units outside the most-changed 1 % at their own change, added until their energy reaches the " \
-            "most-changed set's", "before", "first"
+        return "random_own_change_1_second_draw", "random neurons at their own delta, 1 %, second random draw", \
+            "repeat runs and variants", 1.0, "random neurons outside the top 1 % at their own delta, added until their squared " \
+            "delta norm reaches the top set's", "before", "first"
     if arm == "dare_k1_d2":
-        return "scaled_sample_1_second_draw", "random sample of MLP entries scaled up, 1 %, second random draw", "repeat reading", \
-            1.0, "each MLP entry's change kept with probability q = 0.0100 and multiplied by 1/q", "before", "first"
+        return "scaled_sample_1_second_draw", "DARE on the MLP delta, 1 %, second random draw", "repeat runs and variants", \
+            1.0, "DARE: each MLP entry's delta kept with probability q = 0.0100 and multiplied by 1/q", "before", "first"
     if arm == "rnd0_k1":
-        return "random_units_1_unscaled", "random 1 % of units at their own change, no energy matching", "repeat reading", 1.0, \
-            "3,523 random units outside the most-changed 1 %, at their own change", "before", "first"
+        return "random_units_1_unscaled", "random 1 % of neurons at their own delta, not matched on squared delta norm", \
+            "repeat runs and variants", 1.0, "3,523 random neurons outside the top 1 %, at their own delta", "before", "first"
     fam, k = arm.split("_")
     p = pct(k)
     s = f"{p:g}".replace(".", "_")
     if fam == "top":
-        return f"most_changed_{s}", f"most-changed {p:g} % of units", "most-changed units", p, \
-            f"the change of the {p:g} % of units with the largest change size", "before", "first"
+        return f"most_changed_{s}", f"top {p:g} % of neurons by weight-delta norm", "top-k neurons by weight-delta norm", p, \
+            f"the delta of the {p:g} % of neurons with the largest weight-delta norm", "before", "first"
     if fam == "rndE":
-        return f"random_equal_energy_scaled_{s}", f"random units of equal energy, one scale factor, {p:g} %", \
-            "random units of equal energy", p, f"as many random units as the most-changed {p:g} %, drawn outside it, their " \
-            "change multiplied by one scalar so the energy equals the most-changed set's", "before", "first"
+        return f"random_equal_energy_scaled_{s}", f"random neurons matched on squared delta norm by one scale factor, {p:g} %", \
+            "random neurons matched on squared delta norm", p, f"as many random neurons as the top {p:g} %, drawn outside it, " \
+            "their delta multiplied by one scalar so that the squared delta norm equals the top set's", "before", "first"
     if fam == "rndT":
-        return f"random_equal_energy_own_change_{s}", f"random units of equal energy, at their own change, {p:g} %", \
-            "random units of equal energy", p, f"random units outside the most-changed {p:g} % at their own change, added " \
-            "until their energy reaches the most-changed set's", "before", "first"
+        return f"random_equal_energy_own_change_{s}", f"random neurons matched on squared delta norm, at their own delta, {p:g} %", \
+            "random neurons matched on squared delta norm", p, f"random neurons outside the top {p:g} % at their own delta, added " \
+            "until their squared delta norm reaches the top set's", "before", "first"
     if fam == "dare":
-        return f"scaled_sample_{s}", f"random sample of MLP entries scaled up, {p:g} %", "random sample of MLP entries", p, \
-            f"each MLP entry's change kept with probability q = (units in the {p:g} % set) / 352,256 and multiplied by 1/q", \
+        return f"scaled_sample_{s}", f"DARE on the MLP delta, {p:g} %", "DARE on the MLP delta", p, \
+            f"DARE: each MLP entry's delta kept with probability q = (neurons in the {p:g} % set) / 352,256 and multiplied by 1/q", \
             "before", "first"
     if fam == "comp":
-        return f"all_but_most_changed_{s}", f"mathematics model except its most-changed {p:g} % of units", \
-            "mathematics model minus the most-changed units", p, f"the whole MLP change except the most-changed {p:g} % of " \
-            "units, which stay at the base", "after", "first"
+        return f"all_but_most_changed_{s}", f"RL-Zero-Math except its top {p:g} % of neurons", \
+            "RL-Zero-Math with its top-k neurons reset to the base model", p, f"the whole MLP delta except the top {p:g} % of " \
+            "neurons, which stay at the base model", "after", "first"
     raise ValueError(arm)
 
 
